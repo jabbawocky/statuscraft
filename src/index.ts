@@ -29,7 +29,7 @@ interface ServiceConfig {
   tags: string[];
   status_url: string;
   page_url: string;
-  type: "statuspage" | "gcp" | "aws_rss";
+  type: "statuspage" | "gcp" | "slack" | "azure";
 }
 
 const SERVICES: ServiceConfig[] = [
@@ -119,7 +119,7 @@ const SERVICES: ServiceConfig[] = [
     tags: ["communication", "chat"],
     status_url: "https://status.slack.com/api/v2.0.0/current",
     page_url: "https://status.slack.com",
-    type: "statuspage",
+    type: "slack",
   },
   {
     id: "pagerduty",
@@ -185,6 +185,70 @@ const SERVICES: ServiceConfig[] = [
     page_url: "https://status.cloud.google.com",
     type: "gcp",
   },
+  {
+    id: "google_ai",
+    name: "Google AI",
+    tags: ["ai", "llm", "api"],
+    status_url: "https://status.ai.google/api/v2/status.json",
+    page_url: "https://status.ai.google",
+    type: "statuspage",
+  },
+  {
+    id: "aws",
+    name: "AWS",
+    tags: ["cloud", "infrastructure", "hosting"],
+    status_url: "https://health.aws.amazon.com/health/status",
+    page_url: "https://health.aws.amazon.com/health/status",
+    type: "statuspage",
+  },
+  {
+    id: "azure",
+    name: "Azure",
+    tags: ["cloud", "infrastructure", "hosting"],
+    status_url: "https://azure.status.microsoft/api/v1/status",
+    page_url: "https://azure.status.microsoft/en-us/status",
+    type: "azure",
+  },
+  {
+    id: "supabase",
+    name: "Supabase",
+    tags: ["database", "hosting", "api", "devtools"],
+    status_url: "https://status.supabase.com/api/v2/status.json",
+    page_url: "https://status.supabase.com",
+    type: "statuspage",
+  },
+  {
+    id: "neon",
+    name: "Neon",
+    tags: ["database", "postgres", "hosting"],
+    status_url: "https://neonstatus.com/api/v2/status.json",
+    page_url: "https://neonstatus.com",
+    type: "statuspage",
+  },
+  {
+    id: "railway",
+    name: "Railway",
+    tags: ["hosting", "paas", "deployment"],
+    status_url: "https://status.railway.app/api/v2/status.json",
+    page_url: "https://status.railway.app",
+    type: "statuspage",
+  },
+  {
+    id: "atlassian",
+    name: "Atlassian",
+    tags: ["devtools", "project-management", "productivity"],
+    status_url: "https://status.atlassian.com/api/v2/status.json",
+    page_url: "https://status.atlassian.com",
+    type: "statuspage",
+  },
+  {
+    id: "hubspot",
+    name: "HubSpot",
+    tags: ["crm", "marketing", "sales"],
+    status_url: "https://status.hubspot.com/api/v2/status.json",
+    page_url: "https://status.hubspot.com",
+    type: "statuspage",
+  },
 ];
 
 // Statuspage indicator → normalized status
@@ -240,6 +304,60 @@ async function fetchStatuspageStatus(svc: ServiceConfig): Promise<ServiceStatus>
   }
 }
 
+async function fetchSlackStatus(svc: ServiceConfig): Promise<ServiceStatus> {
+  const now = new Date().toISOString();
+  try {
+    const res = await fetch(svc.status_url, {
+      signal: AbortSignal.timeout(8000),
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = (await res.json()) as Record<string, unknown>;
+    // Slack API: { status: "active"|"ok", active_incidents: [...] }
+    const activeIncidents = Array.isArray(data.active_incidents) ? data.active_incidents : [];
+    const status: StatusIndicator = activeIncidents.length === 0 ? "operational" : "degraded";
+    const description =
+      activeIncidents.length === 0
+        ? "All systems operational"
+        : `${activeIncidents.length} active incident(s)`;
+    return { id: svc.id, name: svc.name, status, description, last_checked: now, source_url: svc.page_url };
+  } catch (err) {
+    return {
+      id: svc.id, name: svc.name, status: "unknown",
+      description: `Fetch failed: ${err instanceof Error ? err.message : String(err)}`,
+      last_checked: now, source_url: svc.page_url,
+    };
+  }
+}
+
+async function fetchAzureStatus(svc: ServiceConfig): Promise<ServiceStatus> {
+  const now = new Date().toISOString();
+  try {
+    const res = await fetch(svc.status_url, {
+      signal: AbortSignal.timeout(10000),
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = (await res.json()) as Record<string, unknown>;
+    // Azure status API may vary; try common patterns
+    const value = (data.value as Record<string, unknown> | undefined)?.summary as string | undefined;
+    const availStatus = (data as Record<string, unknown>).availabilityState as string | undefined;
+    if (availStatus === "Available" || value?.toLowerCase().includes("no issues")) {
+      return { id: svc.id, name: svc.name, status: "operational", description: "All services operational", last_checked: now, source_url: svc.page_url };
+    }
+    if (availStatus === "Unavailable") {
+      return { id: svc.id, name: svc.name, status: "major_outage", description: "Service unavailable", last_checked: now, source_url: svc.page_url };
+    }
+    return { id: svc.id, name: svc.name, status: "unknown", description: "Status page reachable; format non-standard. Check manually.", last_checked: now, source_url: svc.page_url };
+  } catch (err) {
+    return {
+      id: svc.id, name: svc.name, status: "unknown",
+      description: `Fetch failed: ${err instanceof Error ? err.message : String(err)}`,
+      last_checked: now, source_url: svc.page_url,
+    };
+  }
+}
+
 async function fetchGCPStatus(svc: ServiceConfig): Promise<ServiceStatus> {
   const now = new Date().toISOString();
   try {
@@ -271,6 +389,8 @@ async function fetchGCPStatus(svc: ServiceConfig): Promise<ServiceStatus> {
 
 async function getServiceStatus(svc: ServiceConfig): Promise<ServiceStatus> {
   if (svc.type === "gcp") return fetchGCPStatus(svc);
+  if (svc.type === "slack") return fetchSlackStatus(svc);
+  if (svc.type === "azure") return fetchAzureStatus(svc);
   return fetchStatuspageStatus(svc);
 }
 
@@ -296,7 +416,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "1.0.0" },
+  { name: "statuscraft", version: "1.1.0" },
   { capabilities: { tools: {} } }
 );
 
