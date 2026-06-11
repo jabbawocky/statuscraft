@@ -32,6 +32,29 @@ interface ServiceConfig {
   type: "statuspage" | "gcp" | "slack" | "azure";
 }
 
+const CACHE_TTL_MS = 60_000; // 60-second TTL
+
+interface CacheEntry {
+  result: ServiceStatus;
+  expiresAt: number;
+}
+
+const statusCache = new Map<string, CacheEntry>();
+
+function getCached(id: string): ServiceStatus | null {
+  const entry = statusCache.get(id);
+  if (!entry) return null;
+  if (Date.now() > entry.expiresAt) {
+    statusCache.delete(id);
+    return null;
+  }
+  return entry.result;
+}
+
+function setCache(result: ServiceStatus): void {
+  statusCache.set(result.id, { result, expiresAt: Date.now() + CACHE_TTL_MS });
+}
+
 const SERVICES: ServiceConfig[] = [
   {
     id: "anthropic",
@@ -387,11 +410,19 @@ async function fetchGCPStatus(svc: ServiceConfig): Promise<ServiceStatus> {
   }
 }
 
-async function getServiceStatus(svc: ServiceConfig): Promise<ServiceStatus> {
+async function fetchFresh(svc: ServiceConfig): Promise<ServiceStatus> {
   if (svc.type === "gcp") return fetchGCPStatus(svc);
   if (svc.type === "slack") return fetchSlackStatus(svc);
   if (svc.type === "azure") return fetchAzureStatus(svc);
   return fetchStatuspageStatus(svc);
+}
+
+async function getServiceStatus(svc: ServiceConfig): Promise<ServiceStatus> {
+  const cached = getCached(svc.id);
+  if (cached) return cached;
+  const result = await fetchFresh(svc);
+  setCache(result);
+  return result;
 }
 
 function statusEmoji(s: StatusIndicator): string {
@@ -416,7 +447,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "1.1.0" },
+  { name: "statuscraft", version: "1.2.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -478,6 +509,21 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
           },
         },
         required: ["services"],
+      },
+    },
+    {
+      name: "refresh_status",
+      description:
+        "Force a fresh live fetch for one or all services, bypassing the 60-second cache. Use this when you need the absolute latest status — e.g. during an active incident or immediately after a known outage ends.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          service: {
+            type: "string",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 27 services.",
+          },
+        },
+        required: [],
       },
     },
   ],
@@ -615,6 +661,35 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     return {
       content: [{ type: "text", text: lines.join("\n\n") }],
+    };
+  }
+
+  if (name === "refresh_status") {
+    const serviceId = args?.service ? String(args.service).toLowerCase().trim() : null;
+
+    if (serviceId) {
+      const svc =
+        SERVICES.find((s) => s.id === serviceId) ||
+        SERVICES.find((s) => s.name.toLowerCase() === serviceId) ||
+        SERVICES.find((s) => s.name.toLowerCase().includes(serviceId));
+      if (!svc) {
+        return {
+          content: [{ type: "text", text: `Unknown service: "${args!.service}". Use list_services to see available IDs.` }],
+        };
+      }
+      statusCache.delete(svc.id);
+      const result = await getServiceStatus(svc);
+      return {
+        content: [{ type: "text", text: `Cache cleared and refreshed.\n\n${formatServiceStatus(result)}` }],
+      };
+    }
+
+    // Refresh all
+    statusCache.clear();
+    const results = await Promise.all(SERVICES.map((s) => getServiceStatus(s)));
+    const lines = results.map(formatServiceStatus);
+    return {
+      content: [{ type: "text", text: `All ${SERVICES.length} services refreshed from live sources.\n\n${lines.join("\n\n")}` }],
     };
   }
 

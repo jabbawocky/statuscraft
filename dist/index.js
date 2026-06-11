@@ -2,6 +2,21 @@
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { CallToolRequestSchema, ListToolsRequestSchema, } from "@modelcontextprotocol/sdk/types.js";
+const CACHE_TTL_MS = 60_000; // 60-second TTL
+const statusCache = new Map();
+function getCached(id) {
+    const entry = statusCache.get(id);
+    if (!entry)
+        return null;
+    if (Date.now() > entry.expiresAt) {
+        statusCache.delete(id);
+        return null;
+    }
+    return entry.result;
+}
+function setCache(result) {
+    statusCache.set(result.id, { result, expiresAt: Date.now() + CACHE_TTL_MS });
+}
 const SERVICES = [
     {
         id: "anthropic",
@@ -354,7 +369,7 @@ async function fetchGCPStatus(svc) {
         };
     }
 }
-async function getServiceStatus(svc) {
+async function fetchFresh(svc) {
     if (svc.type === "gcp")
         return fetchGCPStatus(svc);
     if (svc.type === "slack")
@@ -362,6 +377,14 @@ async function getServiceStatus(svc) {
     if (svc.type === "azure")
         return fetchAzureStatus(svc);
     return fetchStatuspageStatus(svc);
+}
+async function getServiceStatus(svc) {
+    const cached = getCached(svc.id);
+    if (cached)
+        return cached;
+    const result = await fetchFresh(svc);
+    setCache(result);
+    return result;
 }
 function statusEmoji(s) {
     switch (s) {
@@ -380,7 +403,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "1.1.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "1.2.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -433,6 +456,20 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                     },
                 },
                 required: ["services"],
+            },
+        },
+        {
+            name: "refresh_status",
+            description: "Force a fresh live fetch for one or all services, bypassing the 60-second cache. Use this when you need the absolute latest status — e.g. during an active incident or immediately after a known outage ends.",
+            inputSchema: {
+                type: "object",
+                properties: {
+                    service: {
+                        type: "string",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 27 services.",
+                    },
+                },
+                required: [],
             },
         },
     ],
@@ -539,6 +576,31 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         }
         return {
             content: [{ type: "text", text: lines.join("\n\n") }],
+        };
+    }
+    if (name === "refresh_status") {
+        const serviceId = args?.service ? String(args.service).toLowerCase().trim() : null;
+        if (serviceId) {
+            const svc = SERVICES.find((s) => s.id === serviceId) ||
+                SERVICES.find((s) => s.name.toLowerCase() === serviceId) ||
+                SERVICES.find((s) => s.name.toLowerCase().includes(serviceId));
+            if (!svc) {
+                return {
+                    content: [{ type: "text", text: `Unknown service: "${args.service}". Use list_services to see available IDs.` }],
+                };
+            }
+            statusCache.delete(svc.id);
+            const result = await getServiceStatus(svc);
+            return {
+                content: [{ type: "text", text: `Cache cleared and refreshed.\n\n${formatServiceStatus(result)}` }],
+            };
+        }
+        // Refresh all
+        statusCache.clear();
+        const results = await Promise.all(SERVICES.map((s) => getServiceStatus(s)));
+        const lines = results.map(formatServiceStatus);
+        return {
+            content: [{ type: "text", text: `All ${SERVICES.length} services refreshed from live sources.\n\n${lines.join("\n\n")}` }],
         };
     }
     throw new Error(`Unknown tool: ${name}`);

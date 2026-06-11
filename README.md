@@ -18,9 +18,10 @@ StatusCraft gives your AI client 4 tools that fetch live status from 19 major se
 | Tool | What it does |
 |---|---|
 | `get_status` | Check one service by name or ID — returns operational/degraded/partial_outage/major_outage/maintenance |
-| `get_all_status` | Check all 19 services at once, grouped by status — instant full-stack health check |
+| `get_all_status` | Check all 27 services at once, grouped by status — instant full-stack health check (cached for 60s) |
 | `list_services` | List all tracked services with IDs and tags — filter by category (ai, payments, hosting…) |
 | `check_multiple` | Check a specific list of services in parallel |
+| `refresh_status` | Force a live fetch bypassing the cache — useful during active incidents |
 
 ---
 
@@ -48,7 +49,7 @@ StatusCraft gives your AI client 4 tools that fetch live status from 19 major se
 | `fly` | Fly.io | hosting, paas, deployment |
 | `google_cloud` | Google Cloud | cloud, infrastructure, hosting |
 
-All Statuspage-based services pull from the official `/api/v2/status.json` endpoint. Google Cloud uses the incidents JSON feed.
+All Statuspage-based services pull from the official `/api/v2/status.json` endpoint. Google Cloud uses the incidents JSON feed. Results are cached in-memory for 60 seconds — use `refresh_status` to force a live fetch.
 
 ---
 
