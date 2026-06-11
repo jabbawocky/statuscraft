@@ -13,7 +13,7 @@
 
 ## What it does
 
-StatusCraft gives your AI client 5 tools that fetch live status from **53 major services**:
+StatusCraft gives your AI client 5 tools that fetch live status from **61 major services**:
 
 | Tool | What it does |
 |---|---|
@@ -50,7 +50,7 @@ No extra latency when everything is green — the incident fetch only fires for 
 
 ---
 
-## Services tracked (53)
+## Services tracked (61)
 
 ### AI & LLMs
 | ID | Service |
@@ -143,6 +143,21 @@ No extra latency when everything is green — the incident fetch only fires for 
 | `hubspot` | HubSpot |
 | `intercom` | Intercom |
 | `shopify` | Shopify |
+| `figma` | Figma |
+| `loom` | Loom |
+| `zoom` | Zoom |
+| `onepassword` | 1Password |
+
+### CI/CD & Registries
+| ID | Service |
+|---|---|
+| `circleci` | CircleCI |
+| `npm` | npm |
+
+### Entertainment & Media
+| ID | Service |
+|---|---|
+| `twitch` | Twitch |
 
 ---
 
@@ -183,6 +198,8 @@ No API key required.
 - *"Show me all observability services"*
 - *"Check openai, anthropic, and github"*
 - *"Is Grafana Cloud having a major outage?"*
+- *"Is CircleCI down? What's the current incident?"*
+- *"Check Figma, Notion, and Loom status"*
 
 ---
 

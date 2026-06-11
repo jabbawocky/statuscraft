@@ -488,6 +488,70 @@ const SERVICES: ServiceConfig[] = [
     page_url: "https://status.brex.com",
     type: "statuspage",
   },
+  {
+    id: "figma",
+    name: "Figma",
+    tags: ["design", "collaboration", "productivity"],
+    status_url: "https://status.figma.com/api/v2/status.json",
+    page_url: "https://status.figma.com",
+    type: "statuspage",
+  },
+  {
+    id: "loom",
+    name: "Loom",
+    tags: ["video", "communication", "productivity"],
+    status_url: "https://loom.status.atlassian.com/api/v2/status.json",
+    page_url: "https://loom.status.atlassian.com",
+    type: "statuspage",
+  },
+  {
+    id: "notion",
+    name: "Notion",
+    tags: ["productivity", "workspace", "notes"],
+    status_url: "https://www.notion-status.com/api/v2/status.json",
+    page_url: "https://www.notion-status.com",
+    type: "statuspage",
+  },
+  {
+    id: "onepassword",
+    name: "1Password",
+    tags: ["security", "passwords", "authentication"],
+    status_url: "https://status.1password.com/api/v2/status.json",
+    page_url: "https://status.1password.com",
+    type: "statuspage",
+  },
+  {
+    id: "circleci",
+    name: "CircleCI",
+    tags: ["ci-cd", "devtools", "automation"],
+    status_url: "https://circleci.statuspage.io/api/v2/status.json",
+    page_url: "https://status.circleci.com",
+    type: "statuspage",
+  },
+  {
+    id: "npm",
+    name: "npm",
+    tags: ["devtools", "package-registry", "javascript"],
+    status_url: "https://status.npmjs.org/api/v2/status.json",
+    page_url: "https://status.npmjs.org",
+    type: "statuspage",
+  },
+  {
+    id: "zoom",
+    name: "Zoom",
+    tags: ["video", "communication", "meetings"],
+    status_url: "https://status.zoom.us/api/v2/status.json",
+    page_url: "https://www.zoomstatus.com",
+    type: "statuspage",
+  },
+  {
+    id: "twitch",
+    name: "Twitch",
+    tags: ["streaming", "video", "gaming"],
+    status_url: "https://status.twitch.tv/api/v2/status.json",
+    page_url: "https://status.twitch.com",
+    type: "statuspage",
+  },
 ];
 
 // Statuspage indicator → normalized status
@@ -764,7 +828,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "1.2.7" },
+  { name: "statuscraft", version: "1.2.8" },
   { capabilities: { tools: {} } }
 );
 
