@@ -21,6 +21,14 @@ interface ServiceStatus {
   description: string;
   last_checked: string;
   source_url: string;
+  incident?: {
+    name: string;
+    impact: string;
+    status: string;
+    started_at: string;
+    latest_update: string;
+    affected_components: string[];
+  };
 }
 
 interface ServiceConfig {
@@ -444,6 +452,37 @@ function normalizeStatuspageIndicator(indicator: string): StatusIndicator {
   }
 }
 
+async function fetchStatuspageIncident(pageUrl: string): Promise<ServiceStatus["incident"] | undefined> {
+  try {
+    const res = await fetch(`${pageUrl}/api/v2/incidents.json`, {
+      signal: AbortSignal.timeout(6000),
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) return undefined;
+    const data = (await res.json()) as { incidents?: Record<string, unknown>[] };
+    const active = (data.incidents ?? []).filter(
+      (i) => i.status !== "resolved" && i.status !== "postmortem"
+    );
+    if (active.length === 0) return undefined;
+    const inc = active[0];
+    const updates = (inc.incident_updates as Record<string, unknown>[] | undefined) ?? [];
+    const latestUpdate = updates.length > 0 ? String((updates[0] as Record<string, unknown>).body ?? "") : "";
+    const components = ((inc.components as Record<string, unknown>[] | undefined) ?? [])
+      .map((c) => String((c as Record<string, unknown>).name ?? ""))
+      .filter(Boolean);
+    return {
+      name: String(inc.name ?? ""),
+      impact: String(inc.impact ?? ""),
+      status: String(inc.status ?? ""),
+      started_at: String(inc.started_at ?? ""),
+      latest_update: latestUpdate.slice(0, 500),
+      affected_components: components,
+    };
+  } catch {
+    return undefined;
+  }
+}
+
 async function fetchStatuspageStatus(svc: ServiceConfig): Promise<ServiceStatus> {
   const now = new Date().toISOString();
   try {
@@ -458,14 +497,21 @@ async function fetchStatuspageStatus(svc: ServiceConfig): Promise<ServiceStatus>
     const statusObj = data.status as Record<string, string> | undefined;
     const indicator = statusObj?.indicator ?? "unknown";
     const description = statusObj?.description ?? "Status unknown";
+    const normalized = normalizeStatuspageIndicator(indicator);
+
+    // Fetch incident details when non-operational
+    const incident = normalized !== "operational"
+      ? await fetchStatuspageIncident(svc.page_url)
+      : undefined;
 
     return {
       id: svc.id,
       name: svc.name,
-      status: normalizeStatuspageIndicator(indicator),
+      status: normalized,
       description,
       last_checked: now,
       source_url: svc.page_url,
+      ...(incident ? { incident } : {}),
     };
   } catch (err) {
     return {
@@ -662,7 +708,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "1.2.5" },
+  { name: "statuscraft", version: "1.2.6" },
   { capabilities: { tools: {} } }
 );
 
