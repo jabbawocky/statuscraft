@@ -554,6 +554,38 @@ const SERVICES = [
         page_url: "https://status.auth0.com",
         type: "incidentio",
     },
+    {
+        id: "okta",
+        name: "Okta",
+        tags: ["authentication", "security", "identity"],
+        status_url: "https://status.okta.com",
+        page_url: "https://status.okta.com",
+        type: "incidentio",
+    },
+    {
+        id: "asana",
+        name: "Asana",
+        tags: ["productivity", "project-management", "collaboration"],
+        status_url: "https://status.asana.com/api/v2/status.json",
+        page_url: "https://status.asana.com",
+        type: "statuspage",
+    },
+    {
+        id: "miro",
+        name: "Miro",
+        tags: ["collaboration", "whiteboard", "design"],
+        status_url: "https://status.miro.com/api/v2/status.json",
+        page_url: "https://status.miro.com",
+        type: "statuspage",
+    },
+    {
+        id: "monday",
+        name: "monday.com",
+        tags: ["productivity", "project-management", "collaboration"],
+        status_url: "https://status.monday.com/api/v2/status.json",
+        page_url: "https://status.monday.com",
+        type: "statuspage",
+    },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -826,7 +858,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "1.2.9" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "1.3.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {

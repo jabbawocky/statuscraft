@@ -600,6 +600,38 @@ const SERVICES: ServiceConfig[] = [
     page_url: "https://status.auth0.com",
     type: "incidentio",
   },
+  {
+    id: "okta",
+    name: "Okta",
+    tags: ["authentication", "security", "identity"],
+    status_url: "https://status.okta.com",
+    page_url: "https://status.okta.com",
+    type: "incidentio",
+  },
+  {
+    id: "asana",
+    name: "Asana",
+    tags: ["productivity", "project-management", "collaboration"],
+    status_url: "https://status.asana.com/api/v2/status.json",
+    page_url: "https://status.asana.com",
+    type: "statuspage",
+  },
+  {
+    id: "miro",
+    name: "Miro",
+    tags: ["collaboration", "whiteboard", "design"],
+    status_url: "https://status.miro.com/api/v2/status.json",
+    page_url: "https://status.miro.com",
+    type: "statuspage",
+  },
+  {
+    id: "monday",
+    name: "monday.com",
+    tags: ["productivity", "project-management", "collaboration"],
+    status_url: "https://status.monday.com/api/v2/status.json",
+    page_url: "https://status.monday.com",
+    type: "statuspage",
+  },
 ];
 
 // Statuspage indicator → normalized status
@@ -876,7 +908,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "1.2.9" },
+  { name: "statuscraft", version: "1.3.0" },
   { capabilities: { tools: {} } }
 );
 
