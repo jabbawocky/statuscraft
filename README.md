@@ -13,12 +13,12 @@
 
 ## What it does
 
-StatusCraft gives your AI client 5 tools that fetch live status from **67 major services**:
+StatusCraft gives your AI client 5 tools that fetch live status from **71 major services**:
 
 | Tool | What it does |
 |---|---|
 | `get_status` | Check one service — returns normalized status + incident detail when non-operational |
-| `get_all_status` | Check all 67 services at once, grouped by status (cached 60s) |
+| `get_all_status` | Check all 71 services at once, grouped by status (cached 60s) |
 | `list_services` | List all tracked services with IDs and tags — filter by category |
 | `check_multiple` | Check a specific list of services in parallel |
 | `refresh_status` | Force a live re-fetch, bypassing the 60s cache — useful during active incidents |
@@ -50,7 +50,7 @@ No extra latency when everything is green — the incident fetch only fires for 
 
 ---
 
-## Services tracked (67)
+## Services tracked (71)
 
 ### AI & LLMs
 | ID | Service |
@@ -157,6 +157,14 @@ No extra latency when everything is green — the incident fetch only fires for 
 | ID | Service |
 |---|---|
 | `auth0` | Auth0 |
+| `okta` | Okta |
+
+### Project Management & Collaboration
+| ID | Service |
+|---|---|
+| `asana` | Asana |
+| `miro` | Miro |
+| `monday` | monday.com |
 
 ### CI/CD & Registries
 | ID | Service |
@@ -212,6 +220,8 @@ No API key required.
 - *"Check Figma, Notion, and Loom status"*
 - *"Is Jira Cloud having issues?"*
 - *"Check Box and Dropbox"*
+- *"Is Okta down?"*
+- *"Check Asana, Miro, and monday.com"*
 
 ---
 
