@@ -618,6 +618,78 @@ const SERVICES = [
         page_url: "https://status.elastic.co",
         type: "statuspage",
     },
+    {
+        id: "plaid",
+        name: "Plaid",
+        tags: ["fintech", "banking", "payments"],
+        status_url: "https://status.plaid.com/api/v2/status.json",
+        page_url: "https://status.plaid.com",
+        type: "statuspage",
+    },
+    {
+        id: "snyk",
+        name: "Snyk",
+        tags: ["security", "devtools", "vulnerability-scanning"],
+        status_url: "https://status.snyk.io/api/v2/status.json",
+        page_url: "https://status.snyk.io",
+        type: "statuspage",
+    },
+    {
+        id: "tailscale",
+        name: "Tailscale",
+        tags: ["networking", "vpn", "devtools"],
+        status_url: "https://status.tailscale.com/api/v2/status.json",
+        page_url: "https://status.tailscale.com",
+        type: "statuspage",
+    },
+    {
+        id: "hashicorp",
+        name: "HashiCorp",
+        tags: ["devtools", "infrastructure", "cloud"],
+        status_url: "https://status.hashicorp.com/api/v2/status.json",
+        page_url: "https://status.hashicorp.com",
+        type: "statuspage",
+    },
+    {
+        id: "snowflake",
+        name: "Snowflake",
+        tags: ["data", "analytics", "cloud"],
+        status_url: "https://status.snowflake.com/api/v2/status.json",
+        page_url: "https://status.snowflake.com",
+        type: "statuspage",
+    },
+    {
+        id: "retool",
+        name: "Retool",
+        tags: ["devtools", "internal-tools", "no-code"],
+        status_url: "https://status.retool.com/api/v2/status.json",
+        page_url: "https://status.retool.com",
+        type: "statuspage",
+    },
+    {
+        id: "make",
+        name: "Make",
+        tags: ["automation", "integration", "no-code"],
+        status_url: "https://status.make.com/api/v2/status.json",
+        page_url: "https://status.make.com",
+        type: "statuspage",
+    },
+    {
+        id: "courier",
+        name: "Courier",
+        tags: ["notifications", "messaging", "communication"],
+        status_url: "https://status.courier.com/api/v2/status.json",
+        page_url: "https://status.courier.com",
+        type: "statuspage",
+    },
+    {
+        id: "inngest",
+        name: "Inngest",
+        tags: ["devtools", "background-jobs", "automation"],
+        status_url: "https://status.inngest.com/api/v2/status.json",
+        page_url: "https://status.inngest.com",
+        type: "statuspage",
+    },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -890,7 +962,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "1.3.1" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "1.3.2" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
