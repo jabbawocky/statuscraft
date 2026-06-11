@@ -13,12 +13,12 @@
 
 ## What it does
 
-StatusCraft gives your AI client 5 tools that fetch live status from **61 major services**:
+StatusCraft gives your AI client 5 tools that fetch live status from **67 major services**:
 
 | Tool | What it does |
 |---|---|
 | `get_status` | Check one service — returns normalized status + incident detail when non-operational |
-| `get_all_status` | Check all 53 services at once, grouped by status (cached 60s) |
+| `get_all_status` | Check all 67 services at once, grouped by status (cached 60s) |
 | `list_services` | List all tracked services with IDs and tags — filter by category |
 | `check_multiple` | Check a specific list of services in parallel |
 | `refresh_status` | Force a live re-fetch, bypassing the 60s cache — useful during active incidents |
@@ -50,7 +50,7 @@ No extra latency when everything is green — the incident fetch only fires for 
 
 ---
 
-## Services tracked (61)
+## Services tracked (67)
 
 ### AI & LLMs
 | ID | Service |
@@ -88,6 +88,9 @@ No extra latency when everything is green — the incident fetch only fires for 
 | `launchdarkly` | LaunchDarkly |
 | `linear` | Linear |
 | `atlassian` | Atlassian |
+| `jira_cloud` | Jira Cloud |
+| `confluence` | Confluence |
+| `bitbucket` | Bitbucket |
 
 ### Databases
 | ID | Service |
@@ -147,6 +150,13 @@ No extra latency when everything is green — the incident fetch only fires for 
 | `loom` | Loom |
 | `zoom` | Zoom |
 | `onepassword` | 1Password |
+| `box` | Box |
+| `dropbox` | Dropbox |
+
+### Identity & Authentication
+| ID | Service |
+|---|---|
+| `auth0` | Auth0 |
 
 ### CI/CD & Registries
 | ID | Service |
@@ -200,6 +210,8 @@ No API key required.
 - *"Is Grafana Cloud having a major outage?"*
 - *"Is CircleCI down? What's the current incident?"*
 - *"Check Figma, Notion, and Loom status"*
+- *"Is Jira Cloud having issues?"*
+- *"Check Box and Dropbox"*
 
 ---
 

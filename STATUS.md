@@ -1,8 +1,9 @@
-# StatusCraft — Mission Status: June 12, 2026 (tick 9)
+# StatusCraft — Mission Status: June 12, 2026 (tick 10)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **v1.2.9: +6 services (67 total)** (tick 10) — Added Jira Cloud, Confluence, Bitbucket (Atlassian sub-products individually tracked), Box, Dropbox, Auth0. Auth0 uses custom HTML page — extended incidentio handler to recognise "All Systems Operational" phrase. Dropbox showed live minor degradation at time of add. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.2.9.
 - ✅ **v1.2.8: +8 services (61 total)** (tick 9) — Added Figma, Loom, Notion (was 404 — moved to notion-status.com, now fixed), 1Password, CircleCI (had a live minor incident at time of add — real-world incident detail demo), npm, Zoom, Twitch. All verified live against Statuspage v2. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.2.8.
 - ✅ **v1.2.7: +7 services + README overhaul** (tick 8) — Added LaunchDarkly (minor incident live), Segment, Amplitude, Postman, Grafana Cloud (major incident live — great real-world demo), Mixpanel, Brex. All verified against Statuspage v2 before adding. 53 services total. Also rewrote README from scratch: was showing "19 services, 4 tools" — now accurate at 53 services / 5 tools, includes incident detail JSON example, categorised service table, and updated example prompts. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.2.7.
 - ✅ **v1.2.6: incident detail on non-operational services** (tick 7) — Previously all non-operational responses returned only a generic description (e.g. "Partially Degraded Service"). Now, when any Statuspage service is non-operational, StatusCraft automatically fetches `/api/v2/incidents.json` and includes a structured `incident` object: name, impact level, current status (investigating/identified/monitoring), started_at timestamp, latest update body (≤500 chars), and affected components. Verified live against Sentry's active incident ("Notification delivery", monitoring). AI clients can now answer "what's wrong with Sentry?" with real context instead of just a colour. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.2.6.
@@ -16,7 +17,7 @@
 - ✅ **v1.0.0: initial release** — 19 services, 4 tools (get_status, get_all_status, list_services, check_multiple). Statuspage v2 normalization: operational/degraded/partial_outage/major_outage/maintenance.
 
 **Metrics:**
-- Services tracked: 61
+- Services tracked: 67
 - Tools: 5 (get_status, get_all_status, list_services, check_multiple, refresh_status)
 - Stars: 0
 - Install: `npx -y github:jabbawocky/statuscraft`
@@ -29,4 +30,4 @@
 - npm publish: needs NPM_TOKEN (Mat gate)
 
 **Next autonomous action:**
-61 services. Next: Okta (status.okta.com returns 401 — auth-gated, may need HTML scrape), Auth0 (404), Salesforce (403). Research Microsoft 365, Fastly (403), Atlassian-hosted services. Consider adding Jira Cloud, Confluence, Bitbucket as separate entries since Atlassian's overall status is already tracked.
+67 services. Still unresolved: Okta (401 on JSON API — try HTML scraping next tick), Salesforce (status.salesforce.com returns 403), Fastly (status.fastly.com returns 403). High-value candidates remaining: Microsoft 365/Teams (status.office365.com or portal.office.com), GitHub Actions separately, Okta via HTML scraping, PagerDuty (already tracked), Twilio SendGrid (already tracked as sendgrid). Also consider: Asana, Canva, Miro, monday.com.
