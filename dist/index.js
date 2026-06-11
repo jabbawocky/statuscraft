@@ -234,6 +234,46 @@ const SERVICES = [
         page_url: "https://status.hubspot.com",
         type: "statuspage",
     },
+    {
+        id: "vercel",
+        name: "Vercel",
+        tags: ["hosting", "devtools", "infrastructure"],
+        status_url: "https://www.vercel-status.com/api/v2/status.json",
+        page_url: "https://www.vercel-status.com",
+        type: "statuspage",
+    },
+    {
+        id: "cloudflare",
+        name: "Cloudflare",
+        tags: ["cdn", "dns", "infrastructure", "security"],
+        status_url: "https://www.cloudflarestatus.com/api/v2/status.json",
+        page_url: "https://www.cloudflarestatus.com",
+        type: "statuspage",
+    },
+    {
+        id: "netlify",
+        name: "Netlify",
+        tags: ["hosting", "devtools", "infrastructure"],
+        status_url: "https://www.netlifystatus.com/api/v2/status.json",
+        page_url: "https://www.netlifystatus.com",
+        type: "statuspage",
+    },
+    {
+        id: "render",
+        name: "Render",
+        tags: ["hosting", "infrastructure", "devtools"],
+        status_url: "https://status.render.com/api/v2/status.json",
+        page_url: "https://status.render.com",
+        type: "statuspage",
+    },
+    {
+        id: "linear",
+        name: "Linear",
+        tags: ["project-management", "devtools", "productivity"],
+        status_url: "https://linearstatus.com/api/v2/status.json",
+        page_url: "https://linearstatus.com",
+        type: "statuspage",
+    },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -431,7 +471,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "1.2.2" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "1.2.3" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
