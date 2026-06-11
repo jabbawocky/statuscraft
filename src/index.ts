@@ -29,7 +29,7 @@ interface ServiceConfig {
   tags: string[];
   status_url: string;
   page_url: string;
-  type: "statuspage" | "gcp" | "slack" | "azure";
+  type: "statuspage" | "gcp" | "slack" | "azure" | "aws";
 }
 
 const CACHE_TTL_MS = 60_000; // 60-second TTL
@@ -220,9 +220,9 @@ const SERVICES: ServiceConfig[] = [
     id: "aws",
     name: "AWS",
     tags: ["cloud", "infrastructure", "hosting"],
-    status_url: "https://health.aws.amazon.com/health/status",
+    status_url: "https://status.aws.amazon.com/data.json",
     page_url: "https://health.aws.amazon.com/health/status",
-    type: "statuspage",
+    type: "aws",
   },
   {
     id: "azure",
@@ -381,6 +381,32 @@ async function fetchAzureStatus(svc: ServiceConfig): Promise<ServiceStatus> {
   }
 }
 
+async function fetchAWSStatus(svc: ServiceConfig): Promise<ServiceStatus> {
+  const now = new Date().toISOString();
+  try {
+    // AWS Service Health Dashboard public JSON (no auth required)
+    const res = await fetch(svc.status_url, {
+      signal: AbortSignal.timeout(10000),
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = (await res.json()) as { current?: unknown[]; archive?: unknown[] };
+    const activeIncidents = Array.isArray(data.current) ? data.current : [];
+    const status: StatusIndicator = activeIncidents.length === 0 ? "operational" : "partial_outage";
+    const description =
+      activeIncidents.length === 0
+        ? "No active service events reported"
+        : `${activeIncidents.length} active service event(s) — see dashboard for details`;
+    return { id: svc.id, name: svc.name, status, description, last_checked: now, source_url: svc.page_url };
+  } catch (err) {
+    return {
+      id: svc.id, name: svc.name, status: "unknown",
+      description: `Fetch failed: ${err instanceof Error ? err.message : String(err)}`,
+      last_checked: now, source_url: svc.page_url,
+    };
+  }
+}
+
 async function fetchGCPStatus(svc: ServiceConfig): Promise<ServiceStatus> {
   const now = new Date().toISOString();
   try {
@@ -414,6 +440,7 @@ async function fetchFresh(svc: ServiceConfig): Promise<ServiceStatus> {
   if (svc.type === "gcp") return fetchGCPStatus(svc);
   if (svc.type === "slack") return fetchSlackStatus(svc);
   if (svc.type === "azure") return fetchAzureStatus(svc);
+  if (svc.type === "aws") return fetchAWSStatus(svc);
   return fetchStatuspageStatus(svc);
 }
 
@@ -447,7 +474,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "1.2.0" },
+  { name: "statuscraft", version: "1.2.1" },
   { capabilities: { tools: {} } }
 );
 
