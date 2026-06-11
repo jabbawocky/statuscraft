@@ -586,6 +586,38 @@ const SERVICES = [
         page_url: "https://status.monday.com",
         type: "statuspage",
     },
+    {
+        id: "webflow",
+        name: "Webflow",
+        tags: ["hosting", "cms", "no-code"],
+        status_url: "https://status.webflow.com/api/v2/status.json",
+        page_url: "https://status.webflow.com",
+        type: "statuspage",
+    },
+    {
+        id: "activecampaign",
+        name: "ActiveCampaign",
+        tags: ["email", "marketing", "crm"],
+        status_url: "https://status.activecampaign.com/api/v2/status.json",
+        page_url: "https://status.activecampaign.com",
+        type: "statuspage",
+    },
+    {
+        id: "typeform",
+        name: "Typeform",
+        tags: ["forms", "surveys", "data-collection"],
+        status_url: "https://status.typeform.com/api/v2/status.json",
+        page_url: "https://status.typeform.com",
+        type: "statuspage",
+    },
+    {
+        id: "elastic",
+        name: "Elastic Cloud",
+        tags: ["search", "analytics", "observability"],
+        status_url: "https://status.elastic.co/api/v2/status.json",
+        page_url: "https://status.elastic.co",
+        type: "statuspage",
+    },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -858,7 +890,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "1.3.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "1.3.1" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
