@@ -552,6 +552,54 @@ const SERVICES: ServiceConfig[] = [
     page_url: "https://status.twitch.com",
     type: "statuspage",
   },
+  {
+    id: "jira_cloud",
+    name: "Jira Cloud",
+    tags: ["devtools", "project-management", "atlassian"],
+    status_url: "https://jira-software.status.atlassian.com/api/v2/status.json",
+    page_url: "https://jira-software.status.atlassian.com",
+    type: "statuspage",
+  },
+  {
+    id: "confluence",
+    name: "Confluence",
+    tags: ["documentation", "wiki", "atlassian"],
+    status_url: "https://confluence.status.atlassian.com/api/v2/status.json",
+    page_url: "https://confluence.status.atlassian.com",
+    type: "statuspage",
+  },
+  {
+    id: "bitbucket",
+    name: "Bitbucket",
+    tags: ["devtools", "git", "atlassian"],
+    status_url: "https://bitbucket.status.atlassian.com/api/v2/status.json",
+    page_url: "https://bitbucket.status.atlassian.com",
+    type: "statuspage",
+  },
+  {
+    id: "box",
+    name: "Box",
+    tags: ["storage", "collaboration", "productivity"],
+    status_url: "https://status.box.com/api/v2/status.json",
+    page_url: "https://status.box.com",
+    type: "statuspage",
+  },
+  {
+    id: "dropbox",
+    name: "Dropbox",
+    tags: ["storage", "collaboration", "productivity"],
+    status_url: "https://status.dropbox.com/api/v2/status.json",
+    page_url: "https://status.dropbox.com",
+    type: "statuspage",
+  },
+  {
+    id: "auth0",
+    name: "Auth0",
+    tags: ["authentication", "security", "identity"],
+    status_url: "https://status.auth0.com",
+    page_url: "https://status.auth0.com",
+    type: "incidentio",
+  },
 ];
 
 // Statuspage indicator → normalized status
@@ -764,7 +812,7 @@ async function fetchIncidentIOStatus(svc: ServiceConfig): Promise<ServiceStatus>
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const html = await res.text();
-    if (/fully operational/i.test(html) || /not aware of any issues/i.test(html)) {
+    if (/fully operational/i.test(html) || /not aware of any issues/i.test(html) || /all systems operational/i.test(html)) {
       return { id: svc.id, name: svc.name, status: "operational", description: "All systems operational", last_checked: now, source_url: svc.page_url };
     }
     if (/currently undergoing maintenance/i.test(html)) {
@@ -828,7 +876,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "1.2.8" },
+  { name: "statuscraft", version: "1.2.9" },
   { capabilities: { tools: {} } }
 );
 
