@@ -274,6 +274,14 @@ const SERVICES = [
         page_url: "https://linearstatus.com",
         type: "statuspage",
     },
+    {
+        id: "resend",
+        name: "Resend",
+        tags: ["email", "api", "developer-tools"],
+        status_url: "https://status.resend.com",
+        page_url: "https://status.resend.com",
+        type: "incidentio",
+    },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -435,6 +443,42 @@ async function fetchGCPStatus(svc) {
         };
     }
 }
+async function fetchIncidentIOStatus(svc) {
+    const now = new Date().toISOString();
+    try {
+        // incident.io pages embed live status text in their HTML — no public JSON API
+        const res = await fetch(svc.status_url, {
+            signal: AbortSignal.timeout(10000),
+            headers: { Accept: "text/html", "User-Agent": "Mozilla/5.0 StatusCraft/1.0" },
+        });
+        if (!res.ok)
+            throw new Error(`HTTP ${res.status}`);
+        const html = await res.text();
+        if (/fully operational/i.test(html) || /not aware of any issues/i.test(html)) {
+            return { id: svc.id, name: svc.name, status: "operational", description: "All systems operational", last_checked: now, source_url: svc.page_url };
+        }
+        if (/currently undergoing maintenance/i.test(html)) {
+            return { id: svc.id, name: svc.name, status: "maintenance", description: "Scheduled maintenance in progress", last_checked: now, source_url: svc.page_url };
+        }
+        if (/major outage/i.test(html)) {
+            return { id: svc.id, name: svc.name, status: "major_outage", description: "Major outage reported", last_checked: now, source_url: svc.page_url };
+        }
+        if (/currently experiencing issues/i.test(html) || /partial outage/i.test(html) || /investigating/i.test(html)) {
+            return { id: svc.id, name: svc.name, status: "partial_outage", description: "Service issues reported — check status page", last_checked: now, source_url: svc.page_url };
+        }
+        if (/degraded/i.test(html) || /monitoring/i.test(html)) {
+            return { id: svc.id, name: svc.name, status: "degraded", description: "Degraded performance", last_checked: now, source_url: svc.page_url };
+        }
+        return { id: svc.id, name: svc.name, status: "unknown", description: "Page reachable but status unclear — check manually", last_checked: now, source_url: svc.page_url };
+    }
+    catch (err) {
+        return {
+            id: svc.id, name: svc.name, status: "unknown",
+            description: `Fetch failed: ${err instanceof Error ? err.message : String(err)}`,
+            last_checked: now, source_url: svc.page_url,
+        };
+    }
+}
 async function fetchFresh(svc) {
     if (svc.type === "gcp")
         return fetchGCPStatus(svc);
@@ -444,6 +488,8 @@ async function fetchFresh(svc) {
         return fetchAzureStatus(svc);
     if (svc.type === "aws")
         return fetchAWSStatus(svc);
+    if (svc.type === "incidentio")
+        return fetchIncidentIOStatus(svc);
     return fetchStatuspageStatus(svc);
 }
 async function getServiceStatus(svc) {
@@ -471,7 +517,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "1.2.3" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "1.2.4" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {

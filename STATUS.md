@@ -1,8 +1,9 @@
-# StatusCraft — Mission Status: June 11, 2026 (tick 4)
+# StatusCraft — Mission Status: June 11, 2026 (tick 5)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **v1.2.4: Resend + incidentio handler** (tick 5) — Added Resend (email API). Resend uses incident.io for their status page, not Statuspage — no public JSON API exists. Implemented a new `incidentio` type handler that fetches the HTML and matches the live status banner phrases ("We're fully operational", "We're currently experiencing issues", "We're currently undergoing maintenance", etc.) to normalized statuses. Verified live with Playwright browser: Resend currently shows "We're fully operational" → returns `operational`. The `incidentio` handler is now available for any future incident.io-hosted services. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.2.4. 33 services total.
 - ✅ **v1.2.3: +5 services — Vercel, Cloudflare, Netlify, Render, Linear** (tick 4) — Expanded from 27 to 32 services. All five use the standard Statuspage v2 API (`/api/v2/status.json`) — each endpoint verified live before adding (200 OK, valid `status.indicator` field). Cloudflare was showing a minor incident at time of writing. Adds major hosting/CDN/devtools services most developer stacks depend on. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.2.3.
 - ✅ **v1.2.2: Azure RSS handler** (tick 3) — Fixed Azure status (was always returning `unknown`). The `/api/v1/status` JSON endpoint returns 404 — Azure exposes an RSS feed at `/en-us/status/feed/` instead. New handler fetches the RSS feed and counts `<item>` elements: 0 items = operational ("No active incidents reported"), 1–2 items = partial_outage (first item title shown as description), 3+ items = major_outage. Regex-based XML parsing, no dependency required. Verified live: feed returns 0 items today = operational. Azure is now a first-class real-data service. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.2.2.
 - ✅ **v1.2.1: AWS real status handler** (tick 2) — Replaced the AWS stub (always returned `unknown`) with a real fetcher using the public AWS Service Health Dashboard JSON at `status.aws.amazon.com/data.json`. Parses the `current` array: empty = operational, non-empty = partial_outage with incident count. Added `"aws"` type to the ServiceConfig type union. AWS was the biggest gap in coverage — now returns live operational/outage status. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.2.1.
@@ -11,7 +12,7 @@
 - ✅ **v1.0.0: initial release** — 19 services, 4 tools (get_status, get_all_status, list_services, check_multiple). Statuspage v2 normalization: operational/degraded/partial_outage/major_outage/maintenance.
 
 **Metrics:**
-- Services tracked: 32
+- Services tracked: 33
 - Tools: 5 (get_status, get_all_status, list_services, check_multiple, refresh_status)
 - Stars: 0
 - Install: `npx -y github:jabbawocky/statuscraft`
@@ -24,4 +25,4 @@
 - npm publish: needs NPM_TOKEN (Mat gate)
 
 **Next autonomous action:**
-32 services, all live. Next: add Datadog, Sentry, LaunchDarkly, Twilio, SendGrid to reach 35+ and cover the observability/comms stack most dev teams run.
+33 services, all live, two custom handler types (incidentio + azure RSS). Next: add Datadog, Sentry, LaunchDarkly to reach 35+ — observability stack coverage.
