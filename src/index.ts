@@ -962,6 +962,23 @@ const SERVICES: ServiceConfig[] = [
   { id: "salesloft", name: "Salesloft", tags: ["sales", "crm", "outreach"], status_url: "https://status.salesloft.com/api/v2/status.json", page_url: "https://status.salesloft.com", type: "statuspage" },
   { id: "gong", name: "Gong", tags: ["sales", "analytics", "ai"], status_url: "https://status.gong.io/api/v2/status.json", page_url: "https://status.gong.io", type: "statuspage" },
   { id: "contentsquare", name: "Contentsquare", tags: ["analytics", "product", "ux"], status_url: "https://status.contentsquare.com/api/v2/status.json", page_url: "https://status.contentsquare.com", type: "statuspage" },
+  // Tick 17 additions
+  { id: "close", name: "Close", tags: ["crm", "sales", "email"], status_url: "https://status.close.com/api/v2/status.json", page_url: "https://status.close.com", type: "statuspage" },
+  { id: "helpscout", name: "Help Scout", tags: ["customer-support", "email", "helpdesk"], status_url: "https://status.helpscout.com/api/v2/status.json", page_url: "https://status.helpscout.com", type: "statuspage" },
+  { id: "talkdesk", name: "Talkdesk", tags: ["communications", "customer-support", "voice", "api"], status_url: "https://status.talkdesk.com/api/v2/status.json", page_url: "https://status.talkdesk.com", type: "statuspage" },
+  { id: "teamwork", name: "Teamwork", tags: ["project-management", "collaboration", "productivity"], status_url: "https://status.teamwork.com/api/v2/status.json", page_url: "https://status.teamwork.com", type: "statuspage" },
+  { id: "jotform", name: "JotForm", tags: ["forms", "automation", "no-code"], status_url: "https://status.jotform.com/api/v2/status.json", page_url: "https://status.jotform.com", type: "statuspage" },
+  { id: "surveymonkey", name: "SurveyMonkey", tags: ["surveys", "forms", "analytics"], status_url: "https://status.surveymonkey.com/api/v2/status.json", page_url: "https://status.surveymonkey.com", type: "statuspage" },
+  { id: "qualtrics", name: "Qualtrics", tags: ["surveys", "analytics", "enterprise"], status_url: "https://status.qualtrics.com/api/v2/status.json", page_url: "https://status.qualtrics.com", type: "statuspage" },
+  { id: "mode", name: "Mode", tags: ["analytics", "bi", "data", "notebooks"], status_url: "https://status.modeanalytics.com/api/v2/status.json", page_url: "https://status.modeanalytics.com", type: "statuspage" },
+  { id: "sisense", name: "Sisense", tags: ["analytics", "bi", "data"], status_url: "https://status.sisense.com/api/v2/status.json", page_url: "https://status.sisense.com", type: "statuspage" },
+  { id: "hex", name: "Hex", tags: ["analytics", "data", "notebooks", "bi"], status_url: "https://status.hex.tech/api/v2/status.json", page_url: "https://status.hex.tech", type: "statuspage" },
+  { id: "crowdin", name: "Crowdin", tags: ["localization", "i18n", "translation"], status_url: "https://status.crowdin.com/api/v2/status.json", page_url: "https://status.crowdin.com", type: "statuspage" },
+  { id: "lokalise", name: "Lokalise", tags: ["localization", "i18n", "translation"], status_url: "https://status.lokalise.com/api/v2/status.json", page_url: "https://status.lokalise.com", type: "statuspage" },
+  { id: "mux", name: "Mux", tags: ["video", "media", "api", "streaming"], status_url: "https://status.mux.com/api/v2/status.json", page_url: "https://status.mux.com", type: "statuspage" },
+  { id: "bunny", name: "Bunny.net", tags: ["cdn", "networking", "media", "hosting"], status_url: "https://status.bunny.net/api/v2/status.json", page_url: "https://status.bunny.net", type: "statuspage" },
+  { id: "imgix", name: "Imgix", tags: ["media", "image-processing", "cdn"], status_url: "https://status.imgix.com/api/v2/status.json", page_url: "https://status.imgix.com", type: "statuspage" },
+  { id: "prismic", name: "Prismic", tags: ["cms", "content", "headless"], status_url: "https://status.prismic.io/api/v2/status.json", page_url: "https://status.prismic.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1238,7 +1255,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "1.6.0" },
+  { name: "statuscraft", version: "1.7.0" },
   { capabilities: { tools: {} } }
 );
 
