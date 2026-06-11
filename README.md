@@ -13,12 +13,12 @@
 
 ## What it does
 
-StatusCraft gives your AI client 5 tools that fetch live status from **110 major services**:
+StatusCraft gives your AI client 5 tools that fetch live status from **125 major services**:
 
 | Tool | What it does |
 |---|---|
 | `get_status` | Check one service — returns normalized status + incident detail when non-operational |
-| `get_all_status` | Check all 110 services at once, grouped by status (cached 60s) |
+| `get_all_status` | Check all 125 services at once, grouped by status (cached 60s) |
 | `list_services` | List all tracked services with IDs and tags — filter by category |
 | `check_multiple` | Check a specific list of services in parallel |
 | `refresh_status` | Force a live re-fetch, bypassing the 60s cache — useful during active incidents |
@@ -50,7 +50,7 @@ No extra latency when everything is green — the incident fetch only fires for 
 
 ---
 
-## Services tracked (110)
+## Services tracked (125)
 
 ### AI & LLMs
 | ID | Service |
@@ -307,6 +307,45 @@ No extra latency when everything is green — the incident fetch only fires for 
 | ID | Service |
 |---|---|
 | `twitch` | Twitch |
+
+### Product Analytics & UX
+| ID | Service |
+|---|---|
+| `heap` | Heap |
+| `hotjar` | Hotjar |
+| `fullstory` | FullStory |
+| `logrocket` | LogRocket |
+| `contentsquare` | Contentsquare |
+| `appcues` | Appcues |
+| `pendo` | Pendo |
+
+### Vector Databases
+| ID | Service |
+|---|---|
+| `pinecone` | Pinecone |
+
+### Log Management
+| ID | Service |
+|---|---|
+| `mezmo` | Mezmo |
+| `sumo_logic` | Sumo Logic |
+
+### BI & Data Exploration
+| ID | Service |
+|---|---|
+| `metabase` | Metabase |
+
+### Billing & Subscriptions
+| ID | Service |
+|---|---|
+| `chargebee` | Chargebee |
+
+### Sales Intelligence & CRM
+| ID | Service |
+|---|---|
+| `salesloft` | Salesloft |
+| `gong` | Gong |
+| `clearbit` | Clearbit |
 
 ---
 

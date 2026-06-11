@@ -900,6 +900,22 @@ const SERVICES = [
         page_url: "https://status.plivo.com",
         type: "statuspage",
     },
+    // Tick 16 additions
+    { id: "heap", name: "Heap", tags: ["analytics", "product", "data"], status_url: "https://status.heap.io/api/v2/status.json", page_url: "https://status.heap.io", type: "statuspage" },
+    { id: "appcues", name: "Appcues", tags: ["product", "onboarding", "analytics"], status_url: "https://status.appcues.com/api/v2/status.json", page_url: "https://status.appcues.com", type: "statuspage" },
+    { id: "pendo", name: "Pendo", tags: ["analytics", "product", "onboarding"], status_url: "https://status.pendo.io/api/v2/status.json", page_url: "https://status.pendo.io", type: "statuspage" },
+    { id: "mezmo", name: "Mezmo", tags: ["observability", "logging", "devops"], status_url: "https://status.mezmo.com/api/v2/status.json", page_url: "https://status.mezmo.com", type: "statuspage" },
+    { id: "sumo_logic", name: "Sumo Logic", tags: ["observability", "logging", "security", "analytics"], status_url: "https://status.sumologic.com/api/v2/status.json", page_url: "https://status.sumologic.com", type: "statuspage" },
+    { id: "metabase", name: "Metabase", tags: ["analytics", "bi", "data"], status_url: "https://status.metabase.com/api/v2/status.json", page_url: "https://status.metabase.com", type: "statuspage" },
+    { id: "pinecone", name: "Pinecone", tags: ["database", "vector", "ai", "ml"], status_url: "https://status.pinecone.io/api/v2/status.json", page_url: "https://status.pinecone.io", type: "statuspage" },
+    { id: "chargebee", name: "Chargebee", tags: ["fintech", "billing", "subscriptions", "payments"], status_url: "https://status.chargebee.com/api/v2/status.json", page_url: "https://status.chargebee.com", type: "statuspage" },
+    { id: "hotjar", name: "Hotjar", tags: ["analytics", "product", "ux"], status_url: "https://status.hotjar.com/api/v2/status.json", page_url: "https://status.hotjar.com", type: "statuspage" },
+    { id: "logrocket", name: "LogRocket", tags: ["observability", "error-tracking", "analytics"], status_url: "https://status.logrocket.com/api/v2/status.json", page_url: "https://status.logrocket.com", type: "statuspage" },
+    { id: "fullstory", name: "FullStory", tags: ["analytics", "product", "ux"], status_url: "https://status.fullstory.com/api/v2/status.json", page_url: "https://status.fullstory.com", type: "statuspage" },
+    { id: "clearbit", name: "Clearbit", tags: ["data", "enrichment", "marketing"], status_url: "https://status.clearbit.com/api/v2/status.json", page_url: "https://status.clearbit.com", type: "statuspage" },
+    { id: "salesloft", name: "Salesloft", tags: ["sales", "crm", "outreach"], status_url: "https://status.salesloft.com/api/v2/status.json", page_url: "https://status.salesloft.com", type: "statuspage" },
+    { id: "gong", name: "Gong", tags: ["sales", "analytics", "ai"], status_url: "https://status.gong.io/api/v2/status.json", page_url: "https://status.gong.io", type: "statuspage" },
+    { id: "contentsquare", name: "Contentsquare", tags: ["analytics", "product", "ux"], status_url: "https://status.contentsquare.com/api/v2/status.json", page_url: "https://status.contentsquare.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1172,7 +1188,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "1.5.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "1.6.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
