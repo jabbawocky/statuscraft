@@ -386,6 +386,62 @@ const SERVICES = [
         page_url: "https://www.shopifystatus.com",
         type: "statuspage",
     },
+    {
+        id: "launchdarkly",
+        name: "LaunchDarkly",
+        tags: ["feature-flags", "devtools", "developer-tools"],
+        status_url: "https://status.launchdarkly.com/api/v2/status.json",
+        page_url: "https://status.launchdarkly.com",
+        type: "statuspage",
+    },
+    {
+        id: "segment",
+        name: "Segment",
+        tags: ["analytics", "cdp", "data", "integrations"],
+        status_url: "https://status.segment.com/api/v2/status.json",
+        page_url: "https://status.segment.com",
+        type: "statuspage",
+    },
+    {
+        id: "amplitude",
+        name: "Amplitude",
+        tags: ["analytics", "product-analytics", "data"],
+        status_url: "https://status.amplitude.com/api/v2/status.json",
+        page_url: "https://status.amplitude.com",
+        type: "statuspage",
+    },
+    {
+        id: "postman",
+        name: "Postman",
+        tags: ["api", "devtools", "testing"],
+        status_url: "https://status.postman.com/api/v2/status.json",
+        page_url: "https://status.postman.com",
+        type: "statuspage",
+    },
+    {
+        id: "grafana_cloud",
+        name: "Grafana Cloud",
+        tags: ["observability", "monitoring", "dashboards"],
+        status_url: "https://status.grafana.com/api/v2/status.json",
+        page_url: "https://status.grafana.com",
+        type: "statuspage",
+    },
+    {
+        id: "mixpanel",
+        name: "Mixpanel",
+        tags: ["analytics", "product-analytics", "data"],
+        status_url: "https://status.mixpanel.com/api/v2/status.json",
+        page_url: "https://status.mixpanel.com",
+        type: "statuspage",
+    },
+    {
+        id: "brex",
+        name: "Brex",
+        tags: ["fintech", "payments", "banking"],
+        status_url: "https://status.brex.com/api/v2/status.json",
+        page_url: "https://status.brex.com",
+        type: "statuspage",
+    },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -658,7 +714,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "1.2.6" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "1.2.7" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {

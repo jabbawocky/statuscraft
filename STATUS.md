@@ -1,8 +1,9 @@
-# StatusCraft — Mission Status: June 11, 2026 (tick 7)
+# StatusCraft — Mission Status: June 11, 2026 (tick 8)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **v1.2.7: +7 services + README overhaul** (tick 8) — Added LaunchDarkly (minor incident live), Segment, Amplitude, Postman, Grafana Cloud (major incident live — great real-world demo), Mixpanel, Brex. All verified against Statuspage v2 before adding. 53 services total. Also rewrote README from scratch: was showing "19 services, 4 tools" — now accurate at 53 services / 5 tools, includes incident detail JSON example, categorised service table, and updated example prompts. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.2.7.
 - ✅ **v1.2.6: incident detail on non-operational services** (tick 7) — Previously all non-operational responses returned only a generic description (e.g. "Partially Degraded Service"). Now, when any Statuspage service is non-operational, StatusCraft automatically fetches `/api/v2/incidents.json` and includes a structured `incident` object: name, impact level, current status (investigating/identified/monitoring), started_at timestamp, latest update body (≤500 chars), and affected components. Verified live against Sentry's active incident ("Notification delivery", monitoring). AI clients can now answer "what's wrong with Sentry?" with real context instead of just a colour. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.2.6.
 - ✅ **v1.2.5: +13 services from Researcher sweep** (tick 6) — Researcher ran a live sweep of 20 candidates; Builder added all 13 verified ones. New services: Sentry, New Relic, Cohere, Replicate, Clerk, MongoDB Atlas, PlanetScale, DigitalOcean, Cloudinary, Zapier, Airtable, Intercom, Shopify. All use Statuspage v2 JSON — no new handlers required. Sentry was showing a minor incident at time of addition. 46 services total. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.2.5.
 - ✅ **v1.2.4: Resend + incidentio handler** (tick 5) — Added Resend (email API). Resend uses incident.io for their status page, not Statuspage — no public JSON API exists. Implemented a new `incidentio` type handler that fetches the HTML and matches the live status banner phrases ("We're fully operational", "We're currently experiencing issues", "We're currently undergoing maintenance", etc.) to normalized statuses. Verified live with Playwright browser: Resend currently shows "We're fully operational" → returns `operational`. The `incidentio` handler is now available for any future incident.io-hosted services. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.2.4. 33 services total.
@@ -14,7 +15,7 @@
 - ✅ **v1.0.0: initial release** — 19 services, 4 tools (get_status, get_all_status, list_services, check_multiple). Statuspage v2 normalization: operational/degraded/partial_outage/major_outage/maintenance.
 
 **Metrics:**
-- Services tracked: 46
+- Services tracked: 53
 - Tools: 5 (get_status, get_all_status, list_services, check_multiple, refresh_status)
 - Stars: 0
 - Install: `npx -y github:jabbawocky/statuscraft`
@@ -27,4 +28,4 @@
 - npm publish: needs NPM_TOKEN (Mat gate)
 
 **Next autonomous action:**
-46 services, 4 handler types (statuspage, gcp, slack, azure-rss, incidentio, aws). Next: add Okta (auth-gated, needs custom handler research), LaunchDarkly, and any services Mat specifically requests.
+53 services, README accurate. Next: investigate Okta (auth-gated status page — may need custom handler or HTML scraping), add Loom, Figma, Notion (404 on Statuspage — may have moved), Linear (already tracked).

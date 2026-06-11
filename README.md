@@ -4,7 +4,7 @@
 [![Node: >=18](https://img.shields.io/badge/Node-%3E%3D18-brightgreen)](https://nodejs.org)
 [![MCP Compatible](https://img.shields.io/badge/MCP-compatible-blue)](https://modelcontextprotocol.io)
 
-> **MCP server that checks the live status of major software services in real time.** Ask your AI agent "is GitHub down?" or "check all my stack services" — and get a live answer pulled directly from official status pages.
+> **MCP server that checks the live status of major software services in real time.** Ask your AI agent "is GitHub down?" or "what's wrong with Sentry?" — and get a live answer pulled directly from official status pages, including full incident detail when something is broken.
 
 **Install:** `npx -y github:jabbawocky/statuscraft` (no API key needed)  
 **Works with:** Claude Desktop, Claude Code, Cursor, Windsurf, any MCP-compatible client
@@ -13,43 +13,136 @@
 
 ## What it does
 
-StatusCraft gives your AI client 4 tools that fetch live status from 19 major services:
+StatusCraft gives your AI client 5 tools that fetch live status from **53 major services**:
 
 | Tool | What it does |
 |---|---|
-| `get_status` | Check one service by name or ID — returns operational/degraded/partial_outage/major_outage/maintenance |
-| `get_all_status` | Check all 27 services at once, grouped by status — instant full-stack health check (cached for 60s) |
-| `list_services` | List all tracked services with IDs and tags — filter by category (ai, payments, hosting…) |
+| `get_status` | Check one service — returns normalized status + incident detail when non-operational |
+| `get_all_status` | Check all 53 services at once, grouped by status (cached 60s) |
+| `list_services` | List all tracked services with IDs and tags — filter by category |
 | `check_multiple` | Check a specific list of services in parallel |
-| `refresh_status` | Force a live fetch bypassing the cache — useful during active incidents |
+| `refresh_status` | Force a live re-fetch, bypassing the 60s cache — useful during active incidents |
+
+### Incident detail
+
+When a service is non-operational, StatusCraft automatically fetches the incidents API and returns structured detail alongside the status:
+
+```json
+{
+  "id": "sentry",
+  "name": "Sentry",
+  "status": "degraded",
+  "description": "Partially Degraded Service",
+  "incident": {
+    "name": "Notification delivery",
+    "impact": "minor",
+    "status": "monitoring",
+    "started_at": "2026-06-11T09:50:38.604Z",
+    "latest_update": "Notifications delivery is now close to fully functional. Root cause identified as a cloud provider issue — monitoring closely.",
+    "affected_components": ["Notifications"]
+  },
+  "last_checked": "2026-06-11T13:20:00.000Z",
+  "source_url": "https://status.sentry.io"
+}
+```
+
+No extra latency when everything is green — the incident fetch only fires for non-operational services.
 
 ---
 
-## Services tracked (19)
+## Services tracked (53)
 
-| ID | Service | Tags |
-|---|---|---|
-| `anthropic` | Anthropic | ai, llm, api |
-| `openai` | OpenAI | ai, llm, api |
-| `github` | GitHub | devtools, git, hosting |
-| `stripe` | Stripe | payments, fintech, api |
-| `cloudflare` | Cloudflare | cdn, dns, security, infrastructure |
-| `discord` | Discord | communication, chat |
-| `netlify` | Netlify | hosting, cdn, deployment, jamstack |
-| `vercel` | Vercel | hosting, deployment, jamstack, frontend |
-| `linear` | Linear | project-management, devtools |
-| `notion` | Notion | productivity, docs |
-| `slack` | Slack | communication, chat |
-| `pagerduty` | PagerDuty | monitoring, ops, alerting |
-| `datadog` | Datadog | monitoring, observability, ops |
-| `twilio` | Twilio | communications, api, sms |
-| `sendgrid` | SendGrid | email, api |
-| `heroku` | Heroku | hosting, paas, deployment |
-| `render` | Render | hosting, paas, deployment |
-| `fly` | Fly.io | hosting, paas, deployment |
-| `google_cloud` | Google Cloud | cloud, infrastructure, hosting |
+### AI & LLMs
+| ID | Service |
+|---|---|
+| `anthropic` | Anthropic |
+| `openai` | OpenAI |
+| `google_ai` | Google AI |
+| `cohere` | Cohere |
+| `replicate` | Replicate |
 
-All Statuspage-based services pull from the official `/api/v2/status.json` endpoint. Google Cloud uses the incidents JSON feed. Results are cached in-memory for 60 seconds — use `refresh_status` to force a live fetch.
+### Cloud & Infrastructure
+| ID | Service |
+|---|---|
+| `aws` | AWS |
+| `azure` | Azure |
+| `google_cloud` | Google Cloud |
+| `digitalocean` | DigitalOcean |
+
+### Hosting & Deployment
+| ID | Service |
+|---|---|
+| `vercel` | Vercel |
+| `netlify` | Netlify |
+| `render` | Render |
+| `fly` | Fly.io |
+| `heroku` | Heroku |
+| `railway` | Railway |
+
+### Developer Tools & APIs
+| ID | Service |
+|---|---|
+| `github` | GitHub |
+| `postman` | Postman |
+| `clerk` | Clerk |
+| `launchdarkly` | LaunchDarkly |
+| `linear` | Linear |
+| `atlassian` | Atlassian |
+
+### Databases
+| ID | Service |
+|---|---|
+| `supabase` | Supabase |
+| `neon` | Neon |
+| `mongodb_atlas` | MongoDB Atlas |
+| `planetscale` | PlanetScale |
+
+### Payments & Fintech
+| ID | Service |
+|---|---|
+| `stripe` | Stripe |
+| `brex` | Brex |
+
+### Communication & Messaging
+| ID | Service |
+|---|---|
+| `slack` | Slack |
+| `discord` | Discord |
+| `twilio` | Twilio |
+| `sendgrid` | SendGrid |
+| `resend` | Resend |
+
+### Observability & Monitoring
+| ID | Service |
+|---|---|
+| `datadog` | Datadog |
+| `sentry` | Sentry |
+| `new_relic` | New Relic |
+| `grafana_cloud` | Grafana Cloud |
+| `pagerduty` | PagerDuty |
+
+### Analytics & Data
+| ID | Service |
+|---|---|
+| `segment` | Segment |
+| `amplitude` | Amplitude |
+| `mixpanel` | Mixpanel |
+
+### CDN & Networking
+| ID | Service |
+|---|---|
+| `cloudflare` | Cloudflare |
+| `cloudinary` | Cloudinary |
+
+### Productivity & Workspace
+| ID | Service |
+|---|---|
+| `notion` | Notion |
+| `airtable` | Airtable |
+| `zapier` | Zapier |
+| `hubspot` | HubSpot |
+| `intercom` | Intercom |
+| `shopify` | Shopify |
 
 ---
 
@@ -84,10 +177,12 @@ No API key required.
 
 - *"Is GitHub down right now?"*
 - *"Check the status of all my services"*
+- *"What's wrong with Sentry?"*
 - *"Are Stripe and SendGrid both operational?"*
 - *"Which AI services are having issues?"*
-- *"Show me all monitoring services"*
-- *"Check openai, anthropic, and github status"*
+- *"Show me all observability services"*
+- *"Check openai, anthropic, and github"*
+- *"Is Grafana Cloud having a major outage?"*
 
 ---
 
@@ -96,7 +191,7 @@ No API key required.
 | Value | Meaning |
 |---|---|
 | `operational` | All systems normal |
-| `degraded` | Performance issues, minor disruption |
+| `degraded` | Performance issues or minor disruption |
 | `partial_outage` | Some features or regions affected |
 | `major_outage` | Widespread outage |
 | `maintenance` | Scheduled maintenance in progress |
@@ -106,7 +201,7 @@ No API key required.
 
 ## Adding new services
 
-StatusCraft uses a simple service registry in `src/index.ts`. Most services that run Statuspage expose a standard `/api/v2/status.json` endpoint — adding a new service is a 6-line entry:
+Most services that run Statuspage expose a standard `/api/v2/status.json` endpoint — adding a new service is a 6-line entry in `src/index.ts`:
 
 ```typescript
 {
@@ -118,6 +213,8 @@ StatusCraft uses a simple service registry in `src/index.ts`. Most services that
   type: "statuspage",
 }
 ```
+
+Services using non-standard status pages (Azure RSS, AWS JSON, Slack, incident.io) use custom handler types already implemented in the codebase.
 
 PRs welcome.
 
