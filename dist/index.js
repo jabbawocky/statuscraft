@@ -282,6 +282,110 @@ const SERVICES = [
         page_url: "https://status.resend.com",
         type: "incidentio",
     },
+    {
+        id: "sentry",
+        name: "Sentry",
+        tags: ["observability", "error-tracking", "devtools"],
+        status_url: "https://status.sentry.io/api/v2/status.json",
+        page_url: "https://status.sentry.io",
+        type: "statuspage",
+    },
+    {
+        id: "new_relic",
+        name: "New Relic",
+        tags: ["observability", "apm", "monitoring"],
+        status_url: "https://status.newrelic.com/api/v2/status.json",
+        page_url: "https://status.newrelic.com",
+        type: "statuspage",
+    },
+    {
+        id: "cohere",
+        name: "Cohere",
+        tags: ["ai", "llm", "api"],
+        status_url: "https://status.cohere.com/api/v2/status.json",
+        page_url: "https://status.cohere.com",
+        type: "statuspage",
+    },
+    {
+        id: "replicate",
+        name: "Replicate",
+        tags: ["ai", "ml", "hosting", "api"],
+        status_url: "https://www.replicatestatus.com/api/v2/status.json",
+        page_url: "https://www.replicatestatus.com",
+        type: "statuspage",
+    },
+    {
+        id: "clerk",
+        name: "Clerk",
+        tags: ["auth", "identity", "developer-tools"],
+        status_url: "https://status.clerk.com/api/v2/status.json",
+        page_url: "https://status.clerk.com",
+        type: "statuspage",
+    },
+    {
+        id: "mongodb_atlas",
+        name: "MongoDB Atlas",
+        tags: ["database", "cloud"],
+        status_url: "https://status.mongodb.com/api/v2/status.json",
+        page_url: "https://status.mongodb.com",
+        type: "statuspage",
+    },
+    {
+        id: "planetscale",
+        name: "PlanetScale",
+        tags: ["database", "mysql", "serverless"],
+        status_url: "https://www.planetscalestatus.com/api/v2/status.json",
+        page_url: "https://www.planetscalestatus.com",
+        type: "statuspage",
+    },
+    {
+        id: "digitalocean",
+        name: "DigitalOcean",
+        tags: ["cloud", "hosting", "infrastructure"],
+        status_url: "https://status.digitalocean.com/api/v2/status.json",
+        page_url: "https://status.digitalocean.com",
+        type: "statuspage",
+    },
+    {
+        id: "cloudinary",
+        name: "Cloudinary",
+        tags: ["media", "cdn", "storage", "images"],
+        status_url: "https://status.cloudinary.com/api/v2/status.json",
+        page_url: "https://status.cloudinary.com",
+        type: "statuspage",
+    },
+    {
+        id: "zapier",
+        name: "Zapier",
+        tags: ["automation", "integrations", "productivity"],
+        status_url: "https://status.zapier.com/api/v2/status.json",
+        page_url: "https://status.zapier.com",
+        type: "statuspage",
+    },
+    {
+        id: "airtable",
+        name: "Airtable",
+        tags: ["database", "productivity", "no-code"],
+        status_url: "https://status.airtable.com/api/v2/status.json",
+        page_url: "https://status.airtable.com",
+        type: "statuspage",
+    },
+    {
+        id: "intercom",
+        name: "Intercom",
+        tags: ["crm", "support", "chat", "customer-success"],
+        status_url: "https://www.intercomstatus.com/api/v2/status.json",
+        page_url: "https://www.intercomstatus.com",
+        type: "statuspage",
+    },
+    {
+        id: "shopify",
+        name: "Shopify",
+        tags: ["ecommerce", "payments", "hosting"],
+        status_url: "https://www.shopifystatus.com/api/v2/status.json",
+        page_url: "https://www.shopifystatus.com",
+        type: "statuspage",
+    },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -517,7 +621,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "1.2.4" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "1.2.5" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
