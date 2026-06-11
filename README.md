@@ -13,12 +13,12 @@
 
 ## What it does
 
-StatusCraft gives your AI client 5 tools that fetch live status from **95 major services**:
+StatusCraft gives your AI client 5 tools that fetch live status from **110 major services**:
 
 | Tool | What it does |
 |---|---|
 | `get_status` | Check one service — returns normalized status + incident detail when non-operational |
-| `get_all_status` | Check all 95 services at once, grouped by status (cached 60s) |
+| `get_all_status` | Check all 110 services at once, grouped by status (cached 60s) |
 | `list_services` | List all tracked services with IDs and tags — filter by category |
 | `check_multiple` | Check a specific list of services in parallel |
 | `refresh_status` | Force a live re-fetch, bypassing the 60s cache — useful during active incidents |
@@ -50,7 +50,7 @@ No extra latency when everything is green — the incident fetch only fires for 
 
 ---
 
-## Services tracked (95)
+## Services tracked (110)
 
 ### AI & LLMs
 | ID | Service |
@@ -257,6 +257,45 @@ No extra latency when everything is green — the incident fetch only fires for 
 | ID | Service |
 |---|---|
 | `contentful` | Contentful |
+
+### Error Tracking
+| ID | Service |
+|---|---|
+| `rollbar` | Rollbar |
+| `honeybadger` | Honeybadger |
+
+### Incident Management
+| ID | Service |
+|---|---|
+| `incident_io` | incident.io |
+
+### Accounting & Finance
+| ID | Service |
+|---|---|
+| `xero` | Xero |
+
+### Email Marketing & Automation
+| ID | Service |
+|---|---|
+| `iterable` | Iterable |
+| `klaviyo` | Klaviyo |
+| `mailgun` | Mailgun |
+| `sparkpost` | SparkPost |
+
+### Compliance & Security Auditing
+| ID | Service |
+|---|---|
+| `vanta` | Vanta |
+| `drata` | Drata |
+| `secureframe` | Secureframe |
+
+### Video & Real-time Communications
+| ID | Service |
+|---|---|
+| `livekit` | LiveKit |
+| `daily` | Daily |
+| `bandwidth` | Bandwidth |
+| `plivo` | Plivo |
 
 ### CI/CD & Registries
 | ID | Service |

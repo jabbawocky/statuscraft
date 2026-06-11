@@ -779,6 +779,127 @@ const SERVICES = [
         page_url: "https://www.contentfulstatus.com",
         type: "statuspage",
     },
+    // Tick 15 additions
+    {
+        id: "rollbar",
+        name: "Rollbar",
+        tags: ["monitoring", "error-tracking", "observability"],
+        status_url: "https://status.rollbar.com/api/v2/status.json",
+        page_url: "https://status.rollbar.com",
+        type: "statuspage",
+    },
+    {
+        id: "honeybadger",
+        name: "Honeybadger",
+        tags: ["monitoring", "error-tracking", "observability"],
+        status_url: "https://status.honeybadger.io/api/v2/status.json",
+        page_url: "https://status.honeybadger.io",
+        type: "statuspage",
+    },
+    {
+        id: "incident_io",
+        name: "incident.io",
+        tags: ["monitoring", "incident-management", "ops"],
+        status_url: "https://status.incident.io/api/v2/status.json",
+        page_url: "https://status.incident.io",
+        type: "statuspage",
+    },
+    {
+        id: "xero",
+        name: "Xero",
+        tags: ["fintech", "accounting", "payments"],
+        status_url: "https://status.xero.com/api/v2/status.json",
+        page_url: "https://status.xero.com",
+        type: "statuspage",
+    },
+    {
+        id: "iterable",
+        name: "Iterable",
+        tags: ["email", "marketing", "automation"],
+        status_url: "https://status.iterable.com/api/v2/status.json",
+        page_url: "https://status.iterable.com",
+        type: "statuspage",
+    },
+    {
+        id: "klaviyo",
+        name: "Klaviyo",
+        tags: ["email", "marketing", "ecommerce"],
+        status_url: "https://status.klaviyo.com/api/v2/status.json",
+        page_url: "https://status.klaviyo.com",
+        type: "statuspage",
+    },
+    {
+        id: "mailgun",
+        name: "Mailgun",
+        tags: ["email", "api", "transactional"],
+        status_url: "https://status.mailgun.com/api/v2/status.json",
+        page_url: "https://status.mailgun.com",
+        type: "statuspage",
+    },
+    {
+        id: "sparkpost",
+        name: "SparkPost",
+        tags: ["email", "api", "transactional"],
+        status_url: "https://status.sparkpost.com/api/v2/status.json",
+        page_url: "https://status.sparkpost.com",
+        type: "statuspage",
+    },
+    {
+        id: "vanta",
+        name: "Vanta",
+        tags: ["security", "compliance", "audit"],
+        status_url: "https://status.vanta.com/api/v2/status.json",
+        page_url: "https://status.vanta.com",
+        type: "statuspage",
+    },
+    {
+        id: "drata",
+        name: "Drata",
+        tags: ["security", "compliance", "audit"],
+        status_url: "https://status.drata.com/api/v2/status.json",
+        page_url: "https://status.drata.com",
+        type: "statuspage",
+    },
+    {
+        id: "secureframe",
+        name: "Secureframe",
+        tags: ["security", "compliance", "audit"],
+        status_url: "https://status.secureframe.com/api/v2/status.json",
+        page_url: "https://status.secureframe.com",
+        type: "statuspage",
+    },
+    {
+        id: "livekit",
+        name: "LiveKit",
+        tags: ["video", "audio", "realtime", "api"],
+        status_url: "https://status.livekit.io/api/v2/status.json",
+        page_url: "https://status.livekit.io",
+        type: "statuspage",
+    },
+    {
+        id: "daily",
+        name: "Daily",
+        tags: ["video", "api", "realtime"],
+        status_url: "https://status.daily.co/api/v2/status.json",
+        page_url: "https://status.daily.co",
+        type: "statuspage",
+    },
+    {
+        id: "bandwidth",
+        name: "Bandwidth",
+        tags: ["communications", "voice", "api"],
+        status_url: "https://status.bandwidth.com/api/v2/status.json",
+        page_url: "https://status.bandwidth.com",
+        type: "statuspage",
+    },
+    {
+        id: "plivo",
+        name: "Plivo",
+        tags: ["communications", "sms", "voice", "api"],
+        status_url: "https://status.plivo.com/api/v2/status.json",
+        page_url: "https://status.plivo.com",
+        type: "statuspage",
+    },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1051,7 +1172,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "1.4.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "1.5.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
