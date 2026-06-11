@@ -190,7 +190,7 @@ const SERVICES = [
         id: "azure",
         name: "Azure",
         tags: ["cloud", "infrastructure", "hosting"],
-        status_url: "https://azure.status.microsoft/api/v1/status",
+        status_url: "https://azure.status.microsoft/en-us/status/feed/",
         page_url: "https://azure.status.microsoft/en-us/status",
         type: "azure",
     },
@@ -315,23 +315,23 @@ async function fetchSlackStatus(svc) {
 async function fetchAzureStatus(svc) {
     const now = new Date().toISOString();
     try {
+        // Azure exposes an RSS feed — 0 <item> elements = fully operational
         const res = await fetch(svc.status_url, {
             signal: AbortSignal.timeout(10000),
-            headers: { Accept: "application/json" },
+            headers: { Accept: "application/rss+xml, application/xml, text/xml" },
         });
         if (!res.ok)
             throw new Error(`HTTP ${res.status}`);
-        const data = (await res.json());
-        // Azure status API may vary; try common patterns
-        const value = data.value?.summary;
-        const availStatus = data.availabilityState;
-        if (availStatus === "Available" || value?.toLowerCase().includes("no issues")) {
-            return { id: svc.id, name: svc.name, status: "operational", description: "All services operational", last_checked: now, source_url: svc.page_url };
+        const xml = await res.text();
+        const itemCount = (xml.match(/<item>/g) ?? []).length;
+        if (itemCount === 0) {
+            return { id: svc.id, name: svc.name, status: "operational", description: "No active incidents reported", last_checked: now, source_url: svc.page_url };
         }
-        if (availStatus === "Unavailable") {
-            return { id: svc.id, name: svc.name, status: "major_outage", description: "Service unavailable", last_checked: now, source_url: svc.page_url };
-        }
-        return { id: svc.id, name: svc.name, status: "unknown", description: "Status page reachable; format non-standard. Check manually.", last_checked: now, source_url: svc.page_url };
+        // Extract first incident title for description
+        const titleMatch = xml.match(/<item>[\s\S]*?<title>([^<]+)<\/title>/);
+        const firstTitle = titleMatch ? titleMatch[1].trim() : `${itemCount} active incident(s)`;
+        const status = itemCount >= 3 ? "major_outage" : "partial_outage";
+        return { id: svc.id, name: svc.name, status, description: firstTitle, last_checked: now, source_url: svc.page_url };
     }
     catch (err) {
         return {
@@ -431,7 +431,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "1.2.1" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "1.2.2" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
