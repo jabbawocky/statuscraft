@@ -13,12 +13,12 @@
 
 ## What it does
 
-StatusCraft gives your AI client 5 tools that fetch live status from **84 major services**:
+StatusCraft gives your AI client 5 tools that fetch live status from **95 major services**:
 
 | Tool | What it does |
 |---|---|
 | `get_status` | Check one service — returns normalized status + incident detail when non-operational |
-| `get_all_status` | Check all 84 services at once, grouped by status (cached 60s) |
+| `get_all_status` | Check all 95 services at once, grouped by status (cached 60s) |
 | `list_services` | List all tracked services with IDs and tags — filter by category |
 | `check_multiple` | Check a specific list of services in parallel |
 | `refresh_status` | Force a live re-fetch, bypassing the 60s cache — useful during active incidents |
@@ -50,7 +50,7 @@ No extra latency when everything is green — the incident fetch only fires for 
 
 ---
 
-## Services tracked (84)
+## Services tracked (95)
 
 ### AI & LLMs
 | ID | Service |
@@ -218,6 +218,45 @@ No extra latency when everything is green — the incident fetch only fires for 
 |---|---|
 | `courier` | Courier |
 | `inngest` | Inngest |
+
+### Workflow Orchestration
+| ID | Service |
+|---|---|
+| `temporal` | Temporal Cloud |
+
+### Data Pipeline & ETL
+| ID | Service |
+|---|---|
+| `fivetran` | Fivetran |
+| `dbt_cloud` | dbt Cloud |
+
+### Testing & QA
+| ID | Service |
+|---|---|
+| `browserstack` | BrowserStack |
+| `saucelabs` | Sauce Labs |
+
+### Documents & Signatures
+| ID | Service |
+|---|---|
+| `docusign` | DocuSign |
+
+### Work Management
+| ID | Service |
+|---|---|
+| `smartsheet` | Smartsheet |
+| `shortcut` | Shortcut |
+| `productboard` | Productboard |
+
+### Documents & Collaboration
+| ID | Service |
+|---|---|
+| `coda` | Coda |
+
+### CMS & Content
+| ID | Service |
+|---|---|
+| `contentful` | Contentful |
 
 ### CI/CD & Registries
 | ID | Service |
