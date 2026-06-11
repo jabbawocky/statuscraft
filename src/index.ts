@@ -736,6 +736,95 @@ const SERVICES: ServiceConfig[] = [
     page_url: "https://status.inngest.com",
     type: "statuspage",
   },
+  // Tick 14 additions
+  {
+    id: "temporal",
+    name: "Temporal Cloud",
+    tags: ["devtools", "workflow", "background-jobs"],
+    status_url: "https://status.temporal.io/api/v2/status.json",
+    page_url: "https://status.temporal.io",
+    type: "statuspage",
+  },
+  {
+    id: "fivetran",
+    name: "Fivetran",
+    tags: ["data", "etl", "analytics"],
+    status_url: "https://status.fivetran.com/api/v2/status.json",
+    page_url: "https://status.fivetran.com",
+    type: "statuspage",
+  },
+  {
+    id: "dbt_cloud",
+    name: "dbt Cloud",
+    tags: ["data", "analytics", "etl"],
+    status_url: "https://status.getdbt.com/api/v2/status.json",
+    page_url: "https://status.getdbt.com",
+    type: "statuspage",
+  },
+  {
+    id: "browserstack",
+    name: "BrowserStack",
+    tags: ["devtools", "testing", "qa"],
+    status_url: "https://status.browserstack.com/api/v2/status.json",
+    page_url: "https://status.browserstack.com",
+    type: "statuspage",
+  },
+  {
+    id: "docusign",
+    name: "DocuSign",
+    tags: ["productivity", "legal", "documents"],
+    status_url: "https://status.docusign.com/api/v2/status.json",
+    page_url: "https://status.docusign.com",
+    type: "statuspage",
+  },
+  {
+    id: "smartsheet",
+    name: "Smartsheet",
+    tags: ["productivity", "project-management", "collaboration"],
+    status_url: "https://status.smartsheet.com/api/v2/status.json",
+    page_url: "https://status.smartsheet.com",
+    type: "statuspage",
+  },
+  {
+    id: "shortcut",
+    name: "Shortcut",
+    tags: ["devtools", "project-management", "collaboration"],
+    status_url: "https://status.shortcut.com/api/v2/status.json",
+    page_url: "https://status.shortcut.com",
+    type: "statuspage",
+  },
+  {
+    id: "coda",
+    name: "Coda",
+    tags: ["productivity", "documents", "collaboration"],
+    status_url: "https://status.coda.io/api/v2/status.json",
+    page_url: "https://status.coda.io",
+    type: "statuspage",
+  },
+  {
+    id: "productboard",
+    name: "Productboard",
+    tags: ["productivity", "product-management", "collaboration"],
+    status_url: "https://status.productboard.com/api/v2/status.json",
+    page_url: "https://status.productboard.com",
+    type: "statuspage",
+  },
+  {
+    id: "saucelabs",
+    name: "Sauce Labs",
+    tags: ["devtools", "testing", "qa"],
+    status_url: "https://status.saucelabs.com/api/v2/status.json",
+    page_url: "https://status.saucelabs.com",
+    type: "statuspage",
+  },
+  {
+    id: "contentful",
+    name: "Contentful",
+    tags: ["cms", "content", "headless"],
+    status_url: "https://www.contentfulstatus.com/api/v2/status.json",
+    page_url: "https://www.contentfulstatus.com",
+    type: "statuspage",
+  },
 ];
 
 // Statuspage indicator → normalized status
@@ -1012,7 +1101,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "1.3.2" },
+  { name: "statuscraft", version: "1.4.0" },
   { capabilities: { tools: {} } }
 );
 
