@@ -935,6 +935,20 @@ const SERVICES = [
     { id: "knock", name: "Knock", tags: ["notifications", "messaging", "api"], status_url: "https://status.knock.app/api/v2/status.json", page_url: "https://status.knock.app", type: "statuspage" },
     { id: "tinybird", name: "Tinybird", tags: ["analytics", "data", "realtime", "api"], status_url: "https://status.tinybird.co/api/v2/status.json", page_url: "https://status.tinybird.co", type: "statuspage" },
     { id: "workos", name: "WorkOS", tags: ["authentication", "sso", "enterprise", "identity"], status_url: "https://status.workos.com/api/v2/status.json", page_url: "https://status.workos.com", type: "statuspage" },
+    { id: "upstash", name: "Upstash", tags: ["database", "redis", "kafka", "serverless", "cache"], status_url: "https://status.upstash.com/api/v2/status.json", page_url: "https://status.upstash.com", type: "statuspage" },
+    { id: "convex", name: "Convex", tags: ["database", "backend", "serverless", "realtime"], status_url: "https://status.convex.dev/api/v2/status.json", page_url: "https://status.convex.dev", type: "statuspage" },
+    { id: "bugsnag", name: "Bugsnag", tags: ["error-tracking", "monitoring", "observability"], status_url: "https://status.bugsnag.com/api/v2/status.json", page_url: "https://status.bugsnag.com", type: "statuspage" },
+    { id: "warpstream", name: "WarpStream", tags: ["streaming", "kafka", "messaging", "data"], status_url: "https://status.warpstream.com/api/v2/status.json", page_url: "https://status.warpstream.com", type: "statuspage" },
+    { id: "ably", name: "Ably", tags: ["realtime", "messaging", "websockets", "api"], status_url: "https://status.ably.com/api/v2/status.json", page_url: "https://status.ably.com", type: "statuspage" },
+    { id: "pusher", name: "Pusher", tags: ["realtime", "websockets", "messaging", "api"], status_url: "https://status.pusher.com/api/v2/status.json", page_url: "https://status.pusher.com", type: "statuspage" },
+    { id: "sanity", name: "Sanity", tags: ["cms", "content", "headless", "api"], status_url: "https://status.sanity.io/api/v2/status.json", page_url: "https://status.sanity.io", type: "statuspage" },
+    { id: "builder_io", name: "Builder.io", tags: ["cms", "visual-editor", "headless", "frontend"], status_url: "https://status.builder.io/api/v2/status.json", page_url: "https://status.builder.io", type: "statuspage" },
+    { id: "hygraph", name: "Hygraph", tags: ["cms", "graphql", "headless", "api"], status_url: "https://status.hygraph.com/api/v2/status.json", page_url: "https://status.hygraph.com", type: "statuspage" },
+    { id: "axiom", name: "Axiom", tags: ["observability", "logging", "analytics", "monitoring"], status_url: "https://status.axiom.co/api/v2/status.json", page_url: "https://status.axiom.co", type: "statuspage" },
+    { id: "flagsmith", name: "Flagsmith", tags: ["feature-flags", "experimentation", "devops"], status_url: "https://status.flagsmith.com/api/v2/status.json", page_url: "https://status.flagsmith.com", type: "statuspage" },
+    { id: "lob", name: "Lob", tags: ["direct-mail", "printing", "api", "postal"], status_url: "https://status.lob.com/api/v2/status.json", page_url: "https://status.lob.com", type: "statuspage" },
+    { id: "brevo", name: "Brevo", tags: ["email", "marketing", "sms", "crm"], status_url: "https://status.brevo.com/api/v2/status.json", page_url: "https://status.brevo.com", type: "statuspage" },
+    { id: "loops", name: "Loops", tags: ["email", "marketing", "saas", "transactional"], status_url: "https://status.loops.so/api/v2/status.json", page_url: "https://status.loops.so", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
