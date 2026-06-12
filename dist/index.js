@@ -259,14 +259,6 @@ const SERVICES = [
         type: "statuspage",
     },
     {
-        id: "render",
-        name: "Render",
-        tags: ["hosting", "infrastructure", "devtools"],
-        status_url: "https://status.render.com/api/v2/status.json",
-        page_url: "https://status.render.com",
-        type: "statuspage",
-    },
-    {
         id: "linear",
         name: "Linear",
         tags: ["project-management", "devtools", "productivity"],
@@ -933,6 +925,16 @@ const SERVICES = [
     { id: "bunny", name: "Bunny.net", tags: ["cdn", "networking", "media", "hosting"], status_url: "https://status.bunny.net/api/v2/status.json", page_url: "https://status.bunny.net", type: "statuspage" },
     { id: "imgix", name: "Imgix", tags: ["media", "image-processing", "cdn"], status_url: "https://status.imgix.com/api/v2/status.json", page_url: "https://status.imgix.com", type: "statuspage" },
     { id: "prismic", name: "Prismic", tags: ["cms", "content", "headless"], status_url: "https://status.prismic.io/api/v2/status.json", page_url: "https://status.prismic.io", type: "statuspage" },
+    // Tick 20 additions
+    { id: "optimizely", name: "Optimizely", tags: ["ab-testing", "feature-flags", "experimentation"], status_url: "https://status.optimizely.com/api/v2/status.json", page_url: "https://status.optimizely.com", type: "statuspage" },
+    { id: "aircall", name: "Aircall", tags: ["communications", "voice", "cloud-phone"], status_url: "https://status.aircall.io/api/v2/status.json", page_url: "https://status.aircall.io", type: "statuspage" },
+    { id: "harness", name: "Harness", tags: ["ci-cd", "devtools", "feature-flags", "deployment"], status_url: "https://status.harness.io/api/v2/status.json", page_url: "https://status.harness.io", type: "statuspage" },
+    { id: "paddle", name: "Paddle", tags: ["fintech", "payments", "billing", "subscriptions"], status_url: "https://paddlestatus.com/", page_url: "https://paddlestatus.com", type: "incidentio" },
+    { id: "mixmax", name: "Mixmax", tags: ["email", "productivity", "sales"], status_url: "https://status.mixmax.com/api/v2/status.json", page_url: "https://status.mixmax.com", type: "statuspage" },
+    { id: "aiven", name: "Aiven", tags: ["database", "managed-services", "cloud", "streaming"], status_url: "https://status.aiven.io/api/v2/status.json", page_url: "https://status.aiven.io", type: "statuspage" },
+    { id: "knock", name: "Knock", tags: ["notifications", "messaging", "api"], status_url: "https://status.knock.app/api/v2/status.json", page_url: "https://status.knock.app", type: "statuspage" },
+    { id: "tinybird", name: "Tinybird", tags: ["analytics", "data", "realtime", "api"], status_url: "https://status.tinybird.co/api/v2/status.json", page_url: "https://status.tinybird.co", type: "statuspage" },
+    { id: "workos", name: "WorkOS", tags: ["authentication", "sso", "enterprise", "identity"], status_url: "https://status.workos.com/api/v2/status.json", page_url: "https://status.workos.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
