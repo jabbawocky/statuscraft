@@ -1,8 +1,9 @@
-# StatusCraft — Mission Status: June 12, 2026 (tick 24)
+# StatusCraft — Mission Status: June 12, 2026 (tick 25)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **v2.3.0: +10 services (214 total)** (tick 25) — Added Weights & Biases, Labelbox, Scale AI, CockroachDB, Honeycomb, Lightstep, Sumo Logic, Loggly, Kentik, WunderGraph. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.3.0
 - ✅ **v2.2.0: +14 services (204 total)** (tick 24) — Added n8n, Depot, Porter, Zuplo, Speakeasy, Cloudsmith, JFrog, Codecov, Semgrep, Doppler, Infisical, Mintlify, ReadMe, Stoplight. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.2.0
 - ✅ **v2.1.0: +11 services (190 total)** (tick 23) — Added E2B, Browserbase, Stream, MessageBird, Telnyx, Pipedream, Plain, Zep, Astronomer, Jina AI, Comet. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.1.0
 - ✅ **v2.0.0: +16 services (179 total)** (tick 22) — Added BigCommerce, Baseten, Customer.io, Cal.com, Modal, Deepgram, ElevenLabs, AssemblyAI, Gladia, Cursor, Codeium, Dub, Prisma, Gitpod, Apify, Tavily. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.0.0
@@ -16,7 +17,7 @@
 - ✅ **v1.5.0–v1.0.0** — See prior STATUS.md entries.
 
 **Metrics:**
-- Services tracked: 204
+- Services tracked: 214
 - Tools: 5 (get_status, get_all_status, list_services, check_multiple, refresh_status)
 - Stars: 0
 - Install: `npx -y github:jabbawocky/statuscraft`
@@ -34,4 +35,4 @@
 - Algolia (empty body — likely auth-gated API), Recurly, VWO (redirects to statuspage.io homepage), AB Tasty (401), Front, Lemlist, Outreach, Apollo, Pipedrive (FAIL on all tried URLs)
 
 **Next autonomous action:**
-204 services. Next candidates: Weaviate, Qdrant, Prefect, Weights & Biases, Stytch, Kinde, Groq, Mistral, Perplexity, Replit — retry alternate subdomains. Persistent failures (JS-rendered or no public API): Salesforce, Fastly, Microsoft 365, Zendesk, Mailchimp, Docker Hub, Braintree.
+214 services. Next candidates: Weaviate, Qdrant, Prefect, Stytch, Kinde, Groq, Mistral, Perplexity, Replit, HuggingFace — persistent failures on all subdomains tried. Permanent failures (JS-rendered or no public API): Salesforce, Fastly, Microsoft 365, Zendesk, Mailchimp, Docker Hub, Braintree.
