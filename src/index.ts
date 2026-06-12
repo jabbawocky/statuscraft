@@ -1066,6 +1066,16 @@ const SERVICES: ServiceConfig[] = [
   { id: "rudderstack", name: "RudderStack", tags: ["data", "cdp", "analytics", "integration"], status_url: "https://status.rudderstack.com/api/v2/status.json", page_url: "https://status.rudderstack.com", type: "statuspage" },
   { id: "drip", name: "Drip", tags: ["email", "marketing", "automation", "ecommerce"], status_url: "https://status.drip.com/api/v2/status.json", page_url: "https://status.drip.com", type: "statuspage" },
   { id: "mailerlite", name: "MailerLite", tags: ["email", "marketing", "automation", "saas"], status_url: "https://status.mailerlite.com/api/v2/status.json", page_url: "https://status.mailerlite.com", type: "statuspage" },
+  { id: "hightouch", name: "Hightouch", tags: ["data", "cdp", "integration", "analytics"], status_url: "https://hightouch.statuspage.io/api/v2/status.json", page_url: "https://hightouch.statuspage.io", type: "statuspage" },
+  { id: "convertkit", name: "ConvertKit", tags: ["email", "marketing", "automation", "creators"], status_url: "https://convertkit.statuspage.io/api/v2/status.json", page_url: "https://convertkit.statuspage.io", type: "statuspage" },
+  { id: "wise", name: "Wise", tags: ["fintech", "payments", "banking", "international"], status_url: "https://status.wise.com/api/v2/status.json", page_url: "https://status.wise.com", type: "statuspage" },
+  { id: "mailjet", name: "Mailjet", tags: ["email", "transactional", "marketing", "saas"], status_url: "https://status.mailjet.com/api/v2/status.json", page_url: "https://status.mailjet.com", type: "statuspage" },
+  { id: "bamboohr", name: "BambooHR", tags: ["hr", "payroll", "saas", "workforce"], status_url: "https://bamboohr.statuspage.io/api/v2/status.json", page_url: "https://bamboohr.statuspage.io", type: "statuspage" },
+  { id: "canva", name: "Canva", tags: ["design", "productivity", "saas", "creative"], status_url: "https://canva.statuspage.io/api/v2/status.json", page_url: "https://canva.statuspage.io", type: "statuspage" },
+  { id: "kajabi", name: "Kajabi", tags: ["elearning", "courses", "saas", "creators"], status_url: "https://status.kajabi.com/api/v2/status.json", page_url: "https://status.kajabi.com", type: "statuspage" },
+  { id: "teachable", name: "Teachable", tags: ["elearning", "courses", "saas", "creators"], status_url: "https://teachable.statuspage.io/api/v2/status.json", page_url: "https://teachable.statuspage.io", type: "statuspage" },
+  { id: "thinkific", name: "Thinkific", tags: ["elearning", "courses", "saas", "creators"], status_url: "https://status.thinkific.com/api/v2/status.json", page_url: "https://status.thinkific.com", type: "statuspage" },
+  { id: "circle", name: "Circle", tags: ["community", "saas", "creators", "engagement"], status_url: "https://status.circle.so/api/v2/status.json", page_url: "https://status.circle.so", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1449,7 +1459,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 234 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 244 services.",
           },
         },
         required: [],
