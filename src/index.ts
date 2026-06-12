@@ -1022,6 +1022,20 @@ const SERVICES: ServiceConfig[] = [
   { id: "astronomer", name: "Astronomer", tags: ["data", "airflow", "orchestration", "pipelines"], status_url: "https://status.astronomer.io/api/v2/status.json", page_url: "https://status.astronomer.io", type: "statuspage" },
   { id: "jina", name: "Jina AI", tags: ["ai", "embeddings", "search", "api"], status_url: "https://status.jina.ai/api/v2/status.json", page_url: "https://status.jina.ai", type: "statuspage" },
   { id: "comet", name: "Comet", tags: ["ml", "experiment-tracking", "mlops", "observability"], status_url: "https://status.comet.com/api/v2/status.json", page_url: "https://status.comet.com", type: "statuspage" },
+  { id: "n8n", name: "n8n", tags: ["automation", "workflows", "integration", "no-code"], status_url: "https://n8n.statuspage.io/api/v2/status.json", page_url: "https://n8n.statuspage.io", type: "statuspage" },
+  { id: "depot", name: "Depot", tags: ["ci", "docker", "build", "developer-tools"], status_url: "https://status.depot.dev/api/v2/status.json", page_url: "https://status.depot.dev", type: "statuspage" },
+  { id: "porter", name: "Porter", tags: ["paas", "kubernetes", "devops", "deployment"], status_url: "https://status.porter.run/api/v2/status.json", page_url: "https://status.porter.run", type: "statuspage" },
+  { id: "zuplo", name: "Zuplo", tags: ["api-gateway", "developer-tools", "api-management"], status_url: "https://status.zuplo.com/api/v2/status.json", page_url: "https://status.zuplo.com", type: "statuspage" },
+  { id: "speakeasy", name: "Speakeasy", tags: ["api", "sdk-generation", "developer-tools"], status_url: "https://status.speakeasyapi.dev/api/v2/status.json", page_url: "https://status.speakeasyapi.dev", type: "statuspage" },
+  { id: "cloudsmith", name: "Cloudsmith", tags: ["package-registry", "devops", "artifacts", "ci"], status_url: "https://status.cloudsmith.io/api/v2/status.json", page_url: "https://status.cloudsmith.io", type: "statuspage" },
+  { id: "jfrog", name: "JFrog", tags: ["package-registry", "devops", "artifacts", "security"], status_url: "https://status.jfrog.io/api/v2/status.json", page_url: "https://status.jfrog.io", type: "statuspage" },
+  { id: "codecov", name: "Codecov", tags: ["code-coverage", "ci", "testing", "developer-tools"], status_url: "https://status.codecov.io/api/v2/status.json", page_url: "https://status.codecov.io", type: "statuspage" },
+  { id: "semgrep", name: "Semgrep", tags: ["security", "sast", "code-analysis", "developer-tools"], status_url: "https://status.semgrep.dev/api/v2/status.json", page_url: "https://status.semgrep.dev", type: "statuspage" },
+  { id: "doppler", name: "Doppler", tags: ["secrets", "environment-variables", "security", "devops"], status_url: "https://status.doppler.com/api/v2/status.json", page_url: "https://status.doppler.com", type: "statuspage" },
+  { id: "infisical", name: "Infisical", tags: ["secrets", "environment-variables", "security", "open-source"], status_url: "https://status.infisical.com/api/v2/status.json", page_url: "https://status.infisical.com", type: "statuspage" },
+  { id: "mintlify", name: "Mintlify", tags: ["documentation", "developer-tools", "api-docs"], status_url: "https://status.mintlify.com/api/v2/status.json", page_url: "https://status.mintlify.com", type: "statuspage" },
+  { id: "readme", name: "ReadMe", tags: ["documentation", "api-docs", "developer-experience"], status_url: "https://status.readme.io/api/v2/status.json", page_url: "https://status.readme.io", type: "statuspage" },
+  { id: "stoplight", name: "Stoplight", tags: ["api-design", "documentation", "developer-tools"], status_url: "https://status.stoplight.io/api/v2/status.json", page_url: "https://status.stoplight.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1405,7 +1419,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 190 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 204 services.",
           },
         },
         required: [],
