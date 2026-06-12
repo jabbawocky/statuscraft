@@ -1064,6 +1064,17 @@ const SERVICES = [
     { id: "boomi", name: "Boomi", tags: ["integration", "ipaas", "automation", "saas"], status_url: "https://status.boomi.com/api/v2/status.json", page_url: "https://status.boomi.com", type: "statuspage" },
     { id: "filestack", name: "Filestack", tags: ["file-upload", "storage", "developer-tools", "saas"], status_url: "https://status.filestack.com/api/v2/status.json", page_url: "https://status.filestack.com", type: "statuspage" },
     { id: "uploadcare", name: "Uploadcare", tags: ["file-upload", "storage", "developer-tools", "saas"], status_url: "https://status.uploadcare.com/api/v2/status.json", page_url: "https://status.uploadcare.com", type: "statuspage" },
+    { id: "betteruptime", name: "Better Uptime", tags: ["monitoring", "uptime", "alerting", "saas"], status_url: "https://betteruptime.statuspage.io/api/v2/status.json", page_url: "https://betteruptime.statuspage.io", type: "statuspage" },
+    { id: "freshbooks", name: "FreshBooks", tags: ["accounting", "invoicing", "saas", "finance"], status_url: "https://status.freshbooks.com/api/v2/status.json", page_url: "https://status.freshbooks.com", type: "statuspage" },
+    { id: "mapbox", name: "Mapbox", tags: ["maps", "location", "developer-tools", "saas"], status_url: "https://status.mapbox.com/api/v2/status.json", page_url: "https://status.mapbox.com", type: "statuspage" },
+    { id: "greenhouse", name: "Greenhouse", tags: ["recruiting", "hr", "ats", "saas"], status_url: "https://status.greenhouse.io/api/v2/status.json", page_url: "https://status.greenhouse.io", type: "statuspage" },
+    { id: "lever", name: "Lever", tags: ["recruiting", "hr", "ats", "saas"], status_url: "https://status.lever.co/api/v2/status.json", page_url: "https://status.lever.co", type: "statuspage" },
+    { id: "gainsight", name: "Gainsight", tags: ["customer-success", "crm", "saas", "analytics"], status_url: "https://status.gainsight.com/api/v2/status.json", page_url: "https://status.gainsight.com", type: "statuspage" },
+    { id: "vitally", name: "Vitally", tags: ["customer-success", "crm", "saas", "analytics"], status_url: "https://vitally.statuspage.io/api/v2/status.json", page_url: "https://vitally.statuspage.io", type: "statuspage" },
+    { id: "phrase", name: "Phrase", tags: ["translation", "localization", "saas", "developer-tools"], status_url: "https://status.phrase.com/api/v2/status.json", page_url: "https://status.phrase.com", type: "statuspage" },
+    { id: "clio", name: "Clio", tags: ["legal", "law-firm", "saas", "productivity"], status_url: "https://status.clio.com/api/v2/status.json", page_url: "https://status.clio.com", type: "statuspage" },
+    { id: "ashby", name: "Ashby", tags: ["recruiting", "hr", "ats", "saas"], status_url: "https://status.ashbyhq.com/api/v2/status.json", page_url: "https://status.ashbyhq.com", type: "statuspage" },
+    { id: "yotpo", name: "Yotpo", tags: ["ecommerce", "reviews", "marketing", "saas"], status_url: "https://status.yotpo.com/api/v2/status.json", page_url: "https://status.yotpo.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1443,7 +1454,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 278 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 289 services.",
                     },
                 },
                 required: [],
