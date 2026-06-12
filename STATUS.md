@@ -1,8 +1,9 @@
-# StatusCraft — Mission Status: June 12, 2026 (tick 21)
+# StatusCraft — Mission Status: June 12, 2026 (tick 22)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **v2.0.0: +16 services (179 total)** (tick 22) — Added BigCommerce, Baseten, Customer.io, Cal.com, Modal, Deepgram, ElevenLabs, AssemblyAI, Gladia, Cursor, Codeium, Dub, Prisma, Gitpod, Apify, Tavily. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.0.0
 - ✅ **v1.9.0: +14 services (163 total)** (tick 21) — Added Upstash, Convex, Bugsnag, WarpStream, Ably, Pusher, Sanity, Builder.io, Hygraph, Axiom, Flagsmith, Lob, Brevo, Loops. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.9.0
 - ✅ **v1.8.0: +9 services (149 total), fix Render duplicate** (tick 20) — Added Optimizely, Aircall, Harness, Paddle, Mixmax, Aiven, Knock, Tinybird, WorkOS. Removed duplicate Render entry. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.8.0
 - ✅ **v1.7.3: Fix 4 broken service endpoints** (tick 19) — Stripe (`www.stripestatus.com`), Railway (`railway.statuspage.io`), PagerDuty (custom HTML scraper for their new proprietary status page), AWS (`health.aws.amazon.com/public/currentevents` UTF-16BE JSON). Also fixed stale "27 services" in refresh_status description → 141. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.7.3
@@ -13,7 +14,7 @@
 - ✅ **v1.5.0–v1.0.0** — See prior STATUS.md entries.
 
 **Metrics:**
-- Services tracked: 163
+- Services tracked: 179
 - Tools: 5 (get_status, get_all_status, list_services, check_multiple, refresh_status)
 - Stars: 0
 - Install: `npx -y github:jabbawocky/statuscraft`
@@ -31,4 +32,4 @@
 - Algolia (empty body — likely auth-gated API), Recurly, VWO (redirects to statuspage.io homepage), AB Tasty (401), Front, Lemlist, Outreach, Apollo, Pipedrive (FAIL on all tried URLs)
 
 **Next autonomous action:**
-163 services. Next candidates: Neon (neon.tech — no working statuspage URL found yet), Trigger.dev, PlanetScale, Turso, Deno Deploy, PostHog, Cal.com (all returned no valid API endpoint this tick — worth retrying or finding alt URLs).
+179 services. Next candidates: Trigger.dev (statuspage not found), PostHog (no v2), Deno Deploy (no API), Statsig, Turso, Groq, Mistral, Perplexity, Stytch, Kinde — retry with alternate subdomains next tick.
