@@ -1,8 +1,9 @@
-# StatusCraft — Mission Status: June 13, 2026 (tick 37)
+# StatusCraft — Mission Status: June 13, 2026 (tick 38)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **v2.16.0: +12 services (370 total)** (tick 38) — Added LeadDyno, Friendbuy, Sprinto, Sigma Computing, Preset, Alchemy, Infura, QuickNode, HiBob, Personio, Octopus Deploy, Matillion. New coverage: referral/affiliate (LeadDyno, Friendbuy), compliance automation (Sprinto), cloud BI (Sigma, Preset), full Web3 node tier (Alchemy, Infura, QuickNode), European HR (HiBob, Personio), deployment orchestration (Octopus Deploy), ETL integration (Matillion). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.16.0
 - ✅ **v2.15.0: +12 services (358 total)** (tick 37) — Added Imply, Ecwid, Infobip, Attentive, Postscript, Okendo, Stamped, Chameleon, Sprig, Maze, PartnerStack, Impact. New coverage: real-time analytics (Imply), e-commerce platform (Ecwid), CPaaS (Infobip), SMS marketing for Shopify (Attentive, Postscript), e-commerce reviews/loyalty (Okendo, Stamped), product onboarding tours (Chameleon), user research & testing (Sprig, Maze), partner/affiliate management (PartnerStack, Impact). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.15.0
 - ✅ **v2.14.0: +12 services (346 total)** (tick 36) — Added Paperspace, SentinelOne, Payoneer, Yodlee, Coralogix, Netdata, StatusCake, Opsgenie, VictorOps, Recharge Payments, Airbrake, Sinch. New coverage: GPU cloud (Paperspace), endpoint security (SentinelOne), fintech/payments (Payoneer, Yodlee, Recharge), log management (Coralogix), self-hosted monitoring (Netdata), uptime monitoring (StatusCake), on-call/incident management (Opsgenie, VictorOps), error tracking (Airbrake), CPaaS/SMS (Sinch). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.14.0
 - ✅ **v2.13.0: +12 services (334 total)** (tick 35) — Added Agility CMS, Payload CMS, Namely, Codefresh, MongoDB Atlas, Fauna, Tigris Data, 100ms, Keeper, Lambda Labs, Directus, Hasura. New coverage: headless CMS tier (Agility, Payload, Directus), Kubernetes CI/CD (Codefresh), document/serverless DBs (MongoDB Atlas, Fauna, Tigris), video SDK (100ms), password manager (Keeper), GPU cloud (Lambda Labs), GraphQL layer (Hasura). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.13.0
@@ -29,7 +30,7 @@
 - ✅ **v1.5.0–v1.0.0** — See prior STATUS.md entries.
 
 **Metrics:**
-- Services tracked: 358
+- Services tracked: 370
 - Tools: 5 (get_status, get_all_status, list_services, check_multiple, refresh_status)
 - Stars: 0
 - Install: `npx -y github:jabbawocky/statuscraft`
@@ -47,4 +48,4 @@
 - Algolia (empty body — likely auth-gated API), Recurly, VWO (redirects to statuspage.io homepage), AB Tasty (401), Lemlist, Outreach, Apollo, Pipedrive (FAIL on all tried URLs)
 
 **Next autonomous action:**
-358 services. Next candidates: CrowdStrike, RunPod, Vast.ai, EdgeDB, BigCartel, Stytch, Kinde, Dynatrace, Vonage, Rewardful, Tapfiliate, LeadDyno, Friendbuy, Everflow. Confirmed no-API this tick: CrowdStrike, RunPod, Vast.ai, EdgeDB, Stytch, Kinde, Dynatrace, Vonage. Persistent: Salesforce, Fastly, MS365, Zendesk, Mailchimp, Docker Hub, Braintree, Groq, Mistral, Perplexity.
+370 services. Next candidates: Talend, Informatica, Polytomic, Rewardful, Tapfiliate, Everflow, Deel, Wistia, Moralis (Web3). Confirmed no-API this tick: Vanta/Drata/Secureframe (already in), Harness/Census/Stitch/Hightouch/Boomi (already in). Persistent: Salesforce, Fastly, MS365, Zendesk, Mailchimp, Docker Hub, Braintree, Groq, Mistral, Perplexity.
