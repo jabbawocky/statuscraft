@@ -1053,6 +1053,17 @@ const SERVICES = [
     { id: "later", name: "Later", tags: ["social-media", "scheduling", "saas", "marketing"], status_url: "https://status.later.com/api/v2/status.json", page_url: "https://status.later.com", type: "statuspage" },
     { id: "agorapulse", name: "Agorapulse", tags: ["social-media", "scheduling", "saas", "marketing"], status_url: "https://status.agorapulse.com/api/v2/status.json", page_url: "https://status.agorapulse.com", type: "statuspage" },
     { id: "chatwoot", name: "Chatwoot", tags: ["live-chat", "customer-support", "open-source", "saas"], status_url: "https://chatwoot.statuspage.io/api/v2/status.json", page_url: "https://chatwoot.statuspage.io", type: "statuspage" },
+    { id: "databox", name: "Databox", tags: ["analytics", "bi", "dashboards", "saas"], status_url: "https://status.databox.com/api/v2/status.json", page_url: "https://status.databox.com", type: "statuspage" },
+    { id: "geckoboard", name: "Geckoboard", tags: ["analytics", "bi", "dashboards", "saas"], status_url: "https://status.geckoboard.com/api/v2/status.json", page_url: "https://status.geckoboard.com", type: "statuspage" },
+    { id: "stability_ai", name: "Stability AI", tags: ["ai", "image-generation", "ml", "api"], status_url: "https://status.stability.ai/api/v2/status.json", page_url: "https://status.stability.ai", type: "statuspage" },
+    { id: "character_ai", name: "Character.AI", tags: ["ai", "chatbot", "llm", "saas"], status_url: "https://status.character.ai/api/v2/status.json", page_url: "https://status.character.ai", type: "statuspage" },
+    { id: "signnow", name: "SignNow", tags: ["e-signature", "documents", "saas", "legal"], status_url: "https://status.signnow.com/api/v2/status.json", page_url: "https://status.signnow.com", type: "statuspage" },
+    { id: "survicate", name: "Survicate", tags: ["surveys", "feedback", "saas", "analytics"], status_url: "https://status.survicate.com/api/v2/status.json", page_url: "https://status.survicate.com", type: "statuspage" },
+    { id: "tray", name: "Tray.io", tags: ["integration", "automation", "ipaas", "saas"], status_url: "https://status.tray.io/api/v2/status.json", page_url: "https://status.tray.io", type: "statuspage" },
+    { id: "workato", name: "Workato", tags: ["integration", "automation", "ipaas", "saas"], status_url: "https://status.workato.com/api/v2/status.json", page_url: "https://status.workato.com", type: "statuspage" },
+    { id: "boomi", name: "Boomi", tags: ["integration", "ipaas", "automation", "saas"], status_url: "https://status.boomi.com/api/v2/status.json", page_url: "https://status.boomi.com", type: "statuspage" },
+    { id: "filestack", name: "Filestack", tags: ["file-upload", "storage", "developer-tools", "saas"], status_url: "https://status.filestack.com/api/v2/status.json", page_url: "https://status.filestack.com", type: "statuspage" },
+    { id: "uploadcare", name: "Uploadcare", tags: ["file-upload", "storage", "developer-tools", "saas"], status_url: "https://status.uploadcare.com/api/v2/status.json", page_url: "https://status.uploadcare.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1432,7 +1443,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 267 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 278 services.",
                     },
                 },
                 required: [],
