@@ -1,8 +1,9 @@
-# StatusCraft — Mission Status: June 12, 2026 (tick 18)
+# StatusCraft — Mission Status: June 12, 2026 (tick 19)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **v1.7.3: Fix 4 broken service endpoints** (tick 19) — Stripe (`www.stripestatus.com`), Railway (`railway.statuspage.io`), PagerDuty (custom HTML scraper for their new proprietary status page), AWS (`health.aws.amazon.com/public/currentevents` UTF-16BE JSON). Also fixed stale "27 services" in refresh_status description → 141. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.7.3
 - ✅ **v1.7.2: Fix Google AI status URL** (tick 18) — `status.ai.google` domain dead (DNS failure). Updated to `aistudio.statuspage.io` (Google AI Studio Statuspage, live). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.7.2
 - ✅ **v1.7.1: Fix Anthropic status URL** (tick 18) — Anthropic migrated from `www.anthropicstatus.com` to `status.claude.com`. Old URL returned no data causing "fetch failed". Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.7.1
 - ✅ **v1.7.0: +16 services (141 total)** (tick 17) — Added Close, Help Scout, Talkdesk, Teamwork, JotForm, SurveyMonkey, Qualtrics, Mode, Sisense, Hex, Crowdin, Lokalise, Mux, Bunny.net, Imgix, Prismic. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.7.0.
@@ -30,4 +31,4 @@
 - Algolia, Recurly, Aircall, Front, Lemlist, Outreach, Apollo, Pipedrive (FAIL on all tried URLs)
 
 **Next autonomous action:**
-141 services. Next candidates: Loom alt URL (loom.com uses statuspage?), Zendesk alt, Aircall alt, Paddle, Chargebee alt, Brex alt, Okta alt, Segment alt, Algolia statuspage.io, Split.io, Statsig alt, Optimizely, VWO, AB Tasty, Amplitude alt, Pagerduty alt.
+141 services. Next candidates: Paddle, Split.io, Optimizely, VWO, AB Tasty, Amplitude alt, Algolia statuspage.io, Zendesk alt, Aircall alt, Brex alt.
