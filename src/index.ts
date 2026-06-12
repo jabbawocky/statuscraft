@@ -1036,6 +1036,16 @@ const SERVICES: ServiceConfig[] = [
   { id: "mintlify", name: "Mintlify", tags: ["documentation", "developer-tools", "api-docs"], status_url: "https://status.mintlify.com/api/v2/status.json", page_url: "https://status.mintlify.com", type: "statuspage" },
   { id: "readme", name: "ReadMe", tags: ["documentation", "api-docs", "developer-experience"], status_url: "https://status.readme.io/api/v2/status.json", page_url: "https://status.readme.io", type: "statuspage" },
   { id: "stoplight", name: "Stoplight", tags: ["api-design", "documentation", "developer-tools"], status_url: "https://status.stoplight.io/api/v2/status.json", page_url: "https://status.stoplight.io", type: "statuspage" },
+  { id: "wandb", name: "Weights & Biases", tags: ["ml", "experiment-tracking", "mlops", "ai"], status_url: "https://status.wandb.com/api/v2/status.json", page_url: "https://status.wandb.com", type: "statuspage" },
+  { id: "labelbox", name: "Labelbox", tags: ["ml", "data-labeling", "ai", "training-data"], status_url: "https://status.labelbox.com/api/v2/status.json", page_url: "https://status.labelbox.com", type: "statuspage" },
+  { id: "scale_ai", name: "Scale AI", tags: ["ml", "data-labeling", "ai", "training-data"], status_url: "https://status.scale.com/api/v2/status.json", page_url: "https://status.scale.com", type: "statuspage" },
+  { id: "cockroachdb", name: "CockroachDB", tags: ["database", "distributed", "sql", "cloud"], status_url: "https://cockroachlabs.statuspage.io/api/v2/status.json", page_url: "https://cockroachlabs.statuspage.io", type: "statuspage" },
+  { id: "honeycomb", name: "Honeycomb", tags: ["observability", "tracing", "monitoring", "devops"], status_url: "https://status.honeycomb.io/api/v2/status.json", page_url: "https://status.honeycomb.io", type: "statuspage" },
+  { id: "lightstep", name: "Lightstep", tags: ["observability", "tracing", "monitoring", "apm"], status_url: "https://status.lightstep.com/api/v2/status.json", page_url: "https://status.lightstep.com", type: "statuspage" },
+  { id: "sumologic", name: "Sumo Logic", tags: ["logging", "observability", "security", "analytics"], status_url: "https://status.sumologic.com/api/v2/status.json", page_url: "https://status.sumologic.com", type: "statuspage" },
+  { id: "loggly", name: "Loggly", tags: ["logging", "observability", "monitoring", "cloud"], status_url: "https://status.loggly.com/api/v2/status.json", page_url: "https://status.loggly.com", type: "statuspage" },
+  { id: "kentik", name: "Kentik", tags: ["networking", "observability", "traffic-analytics", "cloud"], status_url: "https://status.kentik.com/api/v2/status.json", page_url: "https://status.kentik.com", type: "statuspage" },
+  { id: "wundergraph", name: "WunderGraph", tags: ["api", "graphql", "developer-tools", "backend"], status_url: "https://status.wundergraph.com/api/v2/status.json", page_url: "https://status.wundergraph.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1419,7 +1429,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 204 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 214 services.",
           },
         },
         required: [],
