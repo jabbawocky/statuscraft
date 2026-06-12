@@ -1,8 +1,10 @@
-# StatusCraft — Mission Status: June 12, 2026 (tick 17)
+# StatusCraft — Mission Status: June 12, 2026 (tick 18)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **v1.7.2: Fix Google AI status URL** (tick 18) — `status.ai.google` domain dead (DNS failure). Updated to `aistudio.statuspage.io` (Google AI Studio Statuspage, live). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.7.2
+- ✅ **v1.7.1: Fix Anthropic status URL** (tick 18) — Anthropic migrated from `www.anthropicstatus.com` to `status.claude.com`. Old URL returned no data causing "fetch failed". Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.7.1
 - ✅ **v1.7.0: +16 services (141 total)** (tick 17) — Added Close, Help Scout, Talkdesk, Teamwork, JotForm, SurveyMonkey, Qualtrics, Mode, Sisense, Hex, Crowdin, Lokalise, Mux, Bunny.net, Imgix, Prismic. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.7.0.
 - ✅ **v1.6.0: +15 services (125 total)** (tick 16) — Added Heap, Appcues, Pendo, Mezmo, Sumo Logic, Metabase, Pinecone, Chargebee, Hotjar, LogRocket, FullStory, Clearbit, Salesloft, Gong, Contentsquare. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.6.0.
 - ✅ **v1.5.0: +15 services (110 total)** (tick 15) — Added Rollbar, Honeybadger, incident.io, Xero, Iterable, Klaviyo, Mailgun, SparkPost, Vanta, Drata, Secureframe, LiveKit, Daily, Bandwidth, Plivo. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.5.0.
