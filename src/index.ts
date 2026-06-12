@@ -1011,6 +1011,17 @@ const SERVICES: ServiceConfig[] = [
   { id: "gitpod", name: "Gitpod", tags: ["cloud-ide", "developer-tools", "devops", "remote-dev"], status_url: "https://gitpod.statuspage.io/api/v2/status.json", page_url: "https://gitpod.statuspage.io", type: "statuspage" },
   { id: "apify", name: "Apify", tags: ["web-scraping", "automation", "data", "crawling"], status_url: "https://status.apify.com/api/v2/status.json", page_url: "https://status.apify.com", type: "statuspage" },
   { id: "tavily", name: "Tavily", tags: ["search", "ai", "research", "api"], status_url: "https://status.tavily.com/api/v2/status.json", page_url: "https://status.tavily.com", type: "statuspage" },
+  { id: "e2b", name: "E2B", tags: ["sandboxing", "code-execution", "ai", "developer-tools"], status_url: "https://status.e2b.dev/api/v2/status.json", page_url: "https://status.e2b.dev", type: "statuspage" },
+  { id: "browserbase", name: "Browserbase", tags: ["browser-automation", "web-scraping", "developer-tools", "ai"], status_url: "https://status.browserbase.com/api/v2/status.json", page_url: "https://status.browserbase.com", type: "statuspage" },
+  { id: "stream", name: "Stream", tags: ["chat", "feeds", "realtime", "api"], status_url: "https://status.getstream.io/api/v2/status.json", page_url: "https://status.getstream.io", type: "statuspage" },
+  { id: "messagebird", name: "MessageBird", tags: ["sms", "messaging", "communications", "api"], status_url: "https://status.messagebird.com/api/v2/status.json", page_url: "https://status.messagebird.com", type: "statuspage" },
+  { id: "telnyx", name: "Telnyx", tags: ["telephony", "sms", "voice", "api"], status_url: "https://status.telnyx.com/api/v2/status.json", page_url: "https://status.telnyx.com", type: "statuspage" },
+  { id: "pipedream", name: "Pipedream", tags: ["automation", "integration", "workflows", "api"], status_url: "https://status.pipedream.com/api/v2/status.json", page_url: "https://status.pipedream.com", type: "statuspage" },
+  { id: "plain", name: "Plain", tags: ["customer-support", "helpdesk", "api", "saas"], status_url: "https://status.plain.com/api/v2/status.json", page_url: "https://status.plain.com", type: "statuspage" },
+  { id: "zep", name: "Zep", tags: ["memory", "ai", "llm", "developer-tools"], status_url: "https://status.getzep.com/api/v2/status.json", page_url: "https://status.getzep.com", type: "statuspage" },
+  { id: "astronomer", name: "Astronomer", tags: ["data", "airflow", "orchestration", "pipelines"], status_url: "https://status.astronomer.io/api/v2/status.json", page_url: "https://status.astronomer.io", type: "statuspage" },
+  { id: "jina", name: "Jina AI", tags: ["ai", "embeddings", "search", "api"], status_url: "https://status.jina.ai/api/v2/status.json", page_url: "https://status.jina.ai", type: "statuspage" },
+  { id: "comet", name: "Comet", tags: ["ml", "experiment-tracking", "mlops", "observability"], status_url: "https://status.comet.com/api/v2/status.json", page_url: "https://status.comet.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1394,7 +1405,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 179 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 190 services.",
           },
         },
         required: [],
