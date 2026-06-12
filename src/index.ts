@@ -1121,6 +1121,17 @@ const SERVICES: ServiceConfig[] = [
   { id: "clio", name: "Clio", tags: ["legal", "law-firm", "saas", "productivity"], status_url: "https://status.clio.com/api/v2/status.json", page_url: "https://status.clio.com", type: "statuspage" },
   { id: "ashby", name: "Ashby", tags: ["recruiting", "hr", "ats", "saas"], status_url: "https://status.ashbyhq.com/api/v2/status.json", page_url: "https://status.ashbyhq.com", type: "statuspage" },
   { id: "yotpo", name: "Yotpo", tags: ["ecommerce", "reviews", "marketing", "saas"], status_url: "https://status.yotpo.com/api/v2/status.json", page_url: "https://status.yotpo.com", type: "statuspage" },
+  { id: "dyte", name: "Dyte", tags: ["video", "webrtc", "realtime", "developer-tools"], status_url: "https://dyte.statuspage.io/api/v2/status.json", page_url: "https://dyte.statuspage.io", type: "statuspage" },
+  { id: "quickbooks", name: "QuickBooks", tags: ["accounting", "finance", "saas", "smb"], status_url: "https://status.quickbooks.intuit.com/api/v2/status.json", page_url: "https://status.quickbooks.intuit.com", type: "statuspage" },
+  { id: "wave", name: "Wave", tags: ["accounting", "finance", "saas", "smb"], status_url: "https://status.wave.com/api/v2/status.json", page_url: "https://status.wave.com", type: "statuspage" },
+  { id: "toggl", name: "Toggl", tags: ["time-tracking", "productivity", "saas", "freelancer"], status_url: "https://status.toggl.com/api/v2/status.json", page_url: "https://status.toggl.com", type: "statuspage" },
+  { id: "harvest", name: "Harvest", tags: ["time-tracking", "invoicing", "saas", "freelancer"], status_url: "https://harvest.statuspage.io/api/v2/status.json", page_url: "https://harvest.statuspage.io", type: "statuspage" },
+  { id: "mattermost", name: "Mattermost", tags: ["messaging", "collaboration", "developer-tools", "open-source"], status_url: "https://status.mattermost.com/api/v2/status.json", page_url: "https://status.mattermost.com", type: "statuspage" },
+  { id: "element", name: "Element", tags: ["messaging", "collaboration", "open-source", "matrix"], status_url: "https://status.element.io/api/v2/status.json", page_url: "https://status.element.io", type: "statuspage" },
+  { id: "front", name: "Front", tags: ["email", "customer-support", "inbox", "saas"], status_url: "https://front.statuspage.io/api/v2/status.json", page_url: "https://front.statuspage.io", type: "statuspage" },
+  { id: "justworks", name: "Justworks", tags: ["hr", "payroll", "benefits", "saas"], status_url: "https://status.justworks.com/api/v2/status.json", page_url: "https://status.justworks.com", type: "statuspage" },
+  { id: "navan", name: "Navan", tags: ["travel", "expense", "finance", "saas"], status_url: "https://status.navan.com/api/v2/status.json", page_url: "https://status.navan.com", type: "statuspage" },
+  { id: "sap", name: "SAP", tags: ["erp", "enterprise", "finance", "saas"], status_url: "https://sap.statuspage.io/api/v2/status.json", page_url: "https://sap.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1504,7 +1515,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 289 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 300 services.",
           },
         },
         required: [],
