@@ -1108,6 +1108,18 @@ const SERVICES = [
     { id: "grafana", name: "Grafana Cloud", tags: ["monitoring", "observability", "metrics", "developer-tools"], status_url: "https://status.grafana.com/api/v2/status.json", page_url: "https://status.grafana.com", type: "statuspage" },
     { id: "pulumi", name: "Pulumi", tags: ["iac", "infrastructure", "developer-tools", "cloud"], status_url: "https://status.pulumi.com/api/v2/status.json", page_url: "https://status.pulumi.com", type: "statuspage" },
     { id: "spacelift", name: "Spacelift", tags: ["iac", "infrastructure", "ci-cd", "saas"], status_url: "https://spacelift.statuspage.io/api/v2/status.json", page_url: "https://spacelift.statuspage.io", type: "statuspage" },
+    { id: "agilitycms", name: "Agility CMS", tags: ["cms", "headless-cms", "content", "saas"], status_url: "https://status.agilitycms.com/api/v2/status.json", page_url: "https://status.agilitycms.com", type: "statuspage" },
+    { id: "payload", name: "Payload CMS", tags: ["cms", "headless-cms", "content", "developer-tools"], status_url: "https://payload.statuspage.io/api/v2/status.json", page_url: "https://payload.statuspage.io", type: "statuspage" },
+    { id: "namely", name: "Namely", tags: ["hr", "payroll", "benefits", "saas"], status_url: "https://status.namely.com/api/v2/status.json", page_url: "https://status.namely.com", type: "statuspage" },
+    { id: "codefresh", name: "Codefresh", tags: ["ci-cd", "gitops", "kubernetes", "developer-tools"], status_url: "https://status.codefresh.io/api/v2/status.json", page_url: "https://status.codefresh.io", type: "statuspage" },
+    { id: "mongodb", name: "MongoDB Atlas", tags: ["database", "nosql", "cloud", "developer-tools"], status_url: "https://status.mongodb.com/api/v2/status.json", page_url: "https://status.mongodb.com", type: "statuspage" },
+    { id: "fauna", name: "Fauna", tags: ["database", "serverless", "developer-tools", "cloud"], status_url: "https://fauna.statuspage.io/api/v2/status.json", page_url: "https://fauna.statuspage.io", type: "statuspage" },
+    { id: "tigris", name: "Tigris Data", tags: ["database", "object-storage", "developer-tools", "cloud"], status_url: "https://status.tigrisdata.com/api/v2/status.json", page_url: "https://status.tigrisdata.com", type: "statuspage" },
+    { id: "100ms", name: "100ms", tags: ["video", "webrtc", "realtime", "developer-tools"], status_url: "https://status.100ms.live/api/v2/status.json", page_url: "https://status.100ms.live", type: "statuspage" },
+    { id: "keeper", name: "Keeper", tags: ["security", "password-manager", "enterprise", "saas"], status_url: "https://keeper.statuspage.io/api/v2/status.json", page_url: "https://keeper.statuspage.io", type: "statuspage" },
+    { id: "lambdalabs", name: "Lambda Labs", tags: ["ai", "gpu", "cloud", "developer-tools"], status_url: "https://status.lambdalabs.com/api/v2/status.json", page_url: "https://status.lambdalabs.com", type: "statuspage" },
+    { id: "directus", name: "Directus", tags: ["cms", "headless-cms", "open-source", "developer-tools"], status_url: "https://directus.statuspage.io/api/v2/status.json", page_url: "https://directus.statuspage.io", type: "statuspage" },
+    { id: "hasura", name: "Hasura", tags: ["graphql", "database", "api", "developer-tools"], status_url: "https://hasura.statuspage.io/api/v2/status.json", page_url: "https://hasura.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1487,7 +1499,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 322 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 334 services.",
                     },
                 },
                 required: [],
