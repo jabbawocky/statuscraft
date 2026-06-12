@@ -1096,6 +1096,18 @@ const SERVICES = [
     { id: "stonly", name: "Stonly", tags: ["documentation", "knowledge-base", "customer-support", "saas"], status_url: "https://status.stonly.com/api/v2/status.json", page_url: "https://status.stonly.com", type: "statuspage" },
     { id: "gumroad", name: "Gumroad", tags: ["ecommerce", "digital-products", "creators", "payments"], status_url: "https://status.gumroad.com/api/v2/status.json", page_url: "https://status.gumroad.com", type: "statuspage" },
     { id: "whop", name: "Whop", tags: ["ecommerce", "digital-products", "communities", "saas"], status_url: "https://status.whop.com/api/v2/status.json", page_url: "https://status.whop.com", type: "statuspage" },
+    { id: "1password", name: "1Password", tags: ["security", "password-manager", "saas", "enterprise"], status_url: "https://status.1password.com/api/v2/status.json", page_url: "https://status.1password.com", type: "statuspage" },
+    { id: "wiz", name: "Wiz", tags: ["security", "cloud-security", "saas", "enterprise"], status_url: "https://status.wiz.io/api/v2/status.json", page_url: "https://status.wiz.io", type: "statuspage" },
+    { id: "buildkite", name: "Buildkite", tags: ["ci-cd", "developer-tools", "automation", "saas"], status_url: "https://buildkite.statuspage.io/api/v2/status.json", page_url: "https://buildkite.statuspage.io", type: "statuspage" },
+    { id: "travisci", name: "Travis CI", tags: ["ci-cd", "developer-tools", "automation", "open-source"], status_url: "https://www.traviscistatus.com/api/v2/status.json", page_url: "https://www.traviscistatus.com", type: "statuspage" },
+    { id: "semaphoreci", name: "Semaphore CI", tags: ["ci-cd", "developer-tools", "automation", "saas"], status_url: "https://status.semaphoreci.com/api/v2/status.json", page_url: "https://status.semaphoreci.com", type: "statuspage" },
+    { id: "contentstack", name: "Contentstack", tags: ["cms", "headless-cms", "content", "enterprise"], status_url: "https://status.contentstack.com/api/v2/status.json", page_url: "https://status.contentstack.com", type: "statuspage" },
+    { id: "kontent", name: "Kontent.ai", tags: ["cms", "headless-cms", "content", "saas"], status_url: "https://status.kontent.ai/api/v2/status.json", page_url: "https://status.kontent.ai", type: "statuspage" },
+    { id: "sage", name: "Sage", tags: ["accounting", "erp", "finance", "smb"], status_url: "https://status.sage.com/api/v2/status.json", page_url: "https://status.sage.com", type: "statuspage" },
+    { id: "netsuite", name: "NetSuite", tags: ["erp", "accounting", "finance", "enterprise"], status_url: "https://status.netsuite.com/api/v2/status.json", page_url: "https://status.netsuite.com", type: "statuspage" },
+    { id: "grafana", name: "Grafana Cloud", tags: ["monitoring", "observability", "metrics", "developer-tools"], status_url: "https://status.grafana.com/api/v2/status.json", page_url: "https://status.grafana.com", type: "statuspage" },
+    { id: "pulumi", name: "Pulumi", tags: ["iac", "infrastructure", "developer-tools", "cloud"], status_url: "https://status.pulumi.com/api/v2/status.json", page_url: "https://status.pulumi.com", type: "statuspage" },
+    { id: "spacelift", name: "Spacelift", tags: ["iac", "infrastructure", "ci-cd", "saas"], status_url: "https://spacelift.statuspage.io/api/v2/status.json", page_url: "https://spacelift.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1475,7 +1487,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 310 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 322 services.",
                     },
                 },
                 required: [],
