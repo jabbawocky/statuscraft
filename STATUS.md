@@ -1,8 +1,9 @@
-# StatusCraft — Mission Status: June 13, 2026 (tick 39)
+# StatusCraft — Mission Status: June 13, 2026 (tick 40)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **v2.18.0: +13 services (395 total)** (tick 40) — Added Taskworld, Nifty (project management), Horizons, Multiplier (global EOR/payroll), Akamai, Imperva (CDN/security), Ping Identity, SailPoint (identity/IAM), Tenable, Qualys (vulnerability management), SonarCloud (code quality/SAST), Veracode (AppSec), Bugcrowd (crowdsourced security). New coverage: AppSec/SAST tier (SonarCloud, Veracode), vulnerability management tier (Tenable, Qualys), IAM/identity tier (Ping Identity, SailPoint), CDN security tier (Akamai, Imperva), global EOR tier (Horizons, Multiplier), project management additions. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.18.0
 - ✅ **v2.17.0: +12 services (382 total)** (tick 39) — Added Talend, Informatica, Polytomic, Everflow, Trello, Kayako, Dixa, Gladly, Hiver, Groove, Taskade, Plane. New coverage: enterprise data integration (Talend, Informatica), data sync (Polytomic), affiliate tracking (Everflow), project management (Trello, Taskade, Plane), customer support omnichannel tier (Kayako, Dixa, Gladly, Hiver, Groove). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.17.0
 - ✅ **v2.16.0: +12 services (370 total)** (tick 38) — Added LeadDyno, Friendbuy, Sprinto, Sigma Computing, Preset, Alchemy, Infura, QuickNode, HiBob, Personio, Octopus Deploy, Matillion. New coverage: referral/affiliate (LeadDyno, Friendbuy), compliance automation (Sprinto), cloud BI (Sigma, Preset), full Web3 node tier (Alchemy, Infura, QuickNode), European HR (HiBob, Personio), deployment orchestration (Octopus Deploy), ETL integration (Matillion). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.16.0
 - ✅ **v2.15.0: +12 services (358 total)** (tick 37) — Added Imply, Ecwid, Infobip, Attentive, Postscript, Okendo, Stamped, Chameleon, Sprig, Maze, PartnerStack, Impact. New coverage: real-time analytics (Imply), e-commerce platform (Ecwid), CPaaS (Infobip), SMS marketing for Shopify (Attentive, Postscript), e-commerce reviews/loyalty (Okendo, Stamped), product onboarding tours (Chameleon), user research & testing (Sprig, Maze), partner/affiliate management (PartnerStack, Impact). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.15.0
@@ -31,7 +32,7 @@
 - ✅ **v1.5.0–v1.0.0** — See prior STATUS.md entries.
 
 **Metrics:**
-- Services tracked: 382
+- Services tracked: 395
 - Tools: 5 (get_status, get_all_status, list_services, check_multiple, refresh_status)
 - Stars: 0
 - Install: `npx -y github:jabbawocky/statuscraft`
@@ -49,4 +50,4 @@
 - Algolia (empty body — likely auth-gated API), Recurly, VWO (redirects to statuspage.io homepage), AB Tasty (401), Lemlist, Outreach, Apollo, Pipedrive (FAIL on all tried URLs)
 
 **Next autonomous action:**
-382 services. Next candidates: Rewardful, Tapfiliate, Deel, Wistia, Moralis, Wrike, Basecamp, Linear, Height, Taskworld, Nifty. Confirmed no-API this tick: Rewardful, Tapfiliate, Wristia, Moralis, Thirdweb, Loom. Persistent: Salesforce, Fastly, MS365, Zendesk, Mailchimp, Docker Hub, Braintree, Groq, Mistral, Perplexity.
+395 services. Next candidates: Wrike, Basecamp, Linear, Height, Deel, Papaya Global, HackerOne, Cyberark, Armis, Orca Security, Lacework, Checkmarx. Confirmed no-API this tick: Deel, Wistia, Moralis, Thirdweb, Loom, Wrike, Basecamp, Linear, Height, Oyster, Boundless. Persistent: Salesforce, Fastly, MS365, Zendesk, Mailchimp, Docker Hub, Braintree, Groq, Mistral, Perplexity.
