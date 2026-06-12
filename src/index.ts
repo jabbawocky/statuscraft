@@ -1214,6 +1214,19 @@ const SERVICES: ServiceConfig[] = [
   { id: "groove", name: "Groove", tags: ["customer-support", "helpdesk", "saas", "email"], status_url: "https://groove.statuspage.io/api/v2/status.json", page_url: "https://groove.statuspage.io", type: "statuspage" },
   { id: "taskade", name: "Taskade", tags: ["productivity", "collaboration", "ai", "project-management"], status_url: "https://taskade.statuspage.io/api/v2/status.json", page_url: "https://taskade.statuspage.io", type: "statuspage" },
   { id: "plane", name: "Plane", tags: ["project-management", "productivity", "open-source", "developer-tools"], status_url: "https://status.plane.com/api/v2/status.json", page_url: "https://status.plane.com", type: "statuspage" },
+  { id: "taskworld", name: "Taskworld", tags: ["project-management", "productivity", "collaboration", "saas"], status_url: "https://taskworld.statuspage.io/api/v2/status.json", page_url: "https://taskworld.statuspage.io", type: "statuspage" },
+  { id: "nifty", name: "Nifty", tags: ["project-management", "productivity", "collaboration", "saas"], status_url: "https://nifty.statuspage.io/api/v2/status.json", page_url: "https://nifty.statuspage.io", type: "statuspage" },
+  { id: "horizons", name: "Horizons", tags: ["hr", "payroll", "global-employment", "eor"], status_url: "https://horizons.statuspage.io/api/v2/status.json", page_url: "https://horizons.statuspage.io", type: "statuspage" },
+  { id: "multiplier", name: "Multiplier", tags: ["hr", "payroll", "global-employment", "eor"], status_url: "https://multiplier.statuspage.io/api/v2/status.json", page_url: "https://multiplier.statuspage.io", type: "statuspage" },
+  { id: "akamai", name: "Akamai", tags: ["cdn", "security", "networking", "enterprise"], status_url: "https://status.akamai.com/api/v2/status.json", page_url: "https://status.akamai.com", type: "statuspage" },
+  { id: "imperva", name: "Imperva", tags: ["security", "cdn", "waf", "ddos-protection"], status_url: "https://status.imperva.com/api/v2/status.json", page_url: "https://status.imperva.com", type: "statuspage" },
+  { id: "pingidentity", name: "Ping Identity", tags: ["identity", "sso", "security", "enterprise"], status_url: "https://status.pingidentity.com/api/v2/status.json", page_url: "https://status.pingidentity.com", type: "statuspage" },
+  { id: "sailpoint", name: "SailPoint", tags: ["identity", "iam", "security", "enterprise"], status_url: "https://status.sailpoint.com/api/v2/status.json", page_url: "https://status.sailpoint.com", type: "statuspage" },
+  { id: "tenable", name: "Tenable", tags: ["security", "vulnerability-management", "enterprise"], status_url: "https://status.tenable.com/api/v2/status.json", page_url: "https://status.tenable.com", type: "statuspage" },
+  { id: "qualys", name: "Qualys", tags: ["security", "vulnerability-management", "compliance", "enterprise"], status_url: "https://status.qualys.com/api/v2/status.json", page_url: "https://status.qualys.com", type: "statuspage" },
+  { id: "sonarcloud", name: "SonarCloud", tags: ["code-quality", "sast", "developer-tools", "ci-cd"], status_url: "https://sonarcloud.statuspage.io/api/v2/status.json", page_url: "https://sonarcloud.statuspage.io", type: "statuspage" },
+  { id: "veracode", name: "Veracode", tags: ["security", "sast", "appsec", "enterprise"], status_url: "https://status.veracode.com/api/v2/status.json", page_url: "https://status.veracode.com", type: "statuspage" },
+  { id: "bugcrowd", name: "Bugcrowd", tags: ["security", "bug-bounty", "penetration-testing", "crowdsourced"], status_url: "https://bugcrowd.statuspage.io/api/v2/status.json", page_url: "https://bugcrowd.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1597,7 +1610,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 382 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 395 services.",
           },
         },
         required: [],
