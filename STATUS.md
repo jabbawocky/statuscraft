@@ -1,8 +1,9 @@
-# StatusCraft — Mission Status: June 12, 2026 (tick 28)
+# StatusCraft — Mission Status: June 12, 2026 (tick 29)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **v2.7.0: +12 services (267 total)** (tick 29) — Added Kustomer, Crisp, LiveChat, Tidio, Descript, Frame.io, Sprout Social, Buffer, Hootsuite, Later, Agorapulse, Chatwoot. Covers the full customer support chat stack (Kustomer, Crisp, LiveChat, Tidio, Chatwoot), video production tools (Descript, Frame.io), and all four major social media scheduling platforms (Sprout Social, Buffer, Hootsuite, Later, Agorapulse). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.7.0
 - ✅ **v2.6.0: +11 services (255 total)** (tick 28) — Added Gorgias, Podia, Memberstack, Squarespace, Wix, Bubble, Magic, Frontegg, Apideck, Attio, Lusha. Covers ecommerce support (Gorgias), course/membership platforms (Podia, Memberstack), website builders (Squarespace, Wix), no-code (Bubble), auth (Magic, Frontegg), API integration (Apideck), CRM (Attio), and sales intelligence (Lusha). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.6.0
 - ✅ **v2.5.0: +10 services (244 total)** (tick 27) — Added Hightouch, ConvertKit, Wise, Mailjet, BambooHR, Canva, Kajabi, Teachable, Thinkific, Circle. Covers data activation (Hightouch), creator-focused email (ConvertKit), international fintech (Wise), transactional email (Mailjet), HR (BambooHR), design (Canva), and the three major course platforms (Kajabi, Teachable, Thinkific) plus community (Circle). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.5.0
 - ✅ **v2.4.0: +20 services (234 total)** (tick 26) — Added Gusto, Rippling, Remote, Lattice, Square, Klarna, Affirm, Expensify, ClickUp, PandaDoc, Dropbox Sign, Ironclad, Vimeo, Livestorm, Liveblocks, Census, Stitch Data, RudderStack, Drip, MailerLite. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.4.0
@@ -20,7 +21,7 @@
 - ✅ **v1.5.0–v1.0.0** — See prior STATUS.md entries.
 
 **Metrics:**
-- Services tracked: 255
+- Services tracked: 267
 - Tools: 5 (get_status, get_all_status, list_services, check_multiple, refresh_status)
 - Stars: 0
 - Install: `npx -y github:jabbawocky/statuscraft`
@@ -38,4 +39,4 @@
 - Algolia (empty body — likely auth-gated API), Recurly, VWO (redirects to statuspage.io homepage), AB Tasty (401), Front, Lemlist, Outreach, Apollo, Pipedrive (FAIL on all tried URLs)
 
 **Next autonomous action:**
-255 services. Next candidates: Freshdesk, Intercom (check), Drift, Zendesk (JS-gated), Notion (check), Discourse, Calendly, Beehiiv, Ghost. Confirmed no-API this tick: Lottie, Canny, Beamer, Discourse, Wrike, Calendly, Framer, Beehiiv, Ghost, Apollo, Clay, Instantly, Lemlist, Stytch, Ory, Nango, Merge. Persistent: Salesforce, Fastly, MS365, Zendesk, Mailchimp, Docker Hub, Braintree, Groq, Mistral, Perplexity.
+267 services. Next candidates: Klipfolio, Databox, Geckoboard, Wistia, Vidyard, Loom (check), Freshdesk, Drift. Confirmed no-API this tick: Freshdesk, Drift, Wistia, Jasper, Chatwoot (direct). Persistent: Salesforce, Fastly, MS365, Zendesk, Mailchimp, Docker Hub, Braintree, Groq, Mistral, Perplexity, Loom, Calendly, Beehiiv, Ghost, Framer, Apollo, Clay.
