@@ -218,10 +218,10 @@ const SERVICES: ServiceConfig[] = [
   },
   {
     id: "google_ai",
-    name: "Google AI",
+    name: "Google AI Studio",
     tags: ["ai", "llm", "api"],
-    status_url: "https://status.ai.google/api/v2/status.json",
-    page_url: "https://status.ai.google",
+    status_url: "https://aistudio.statuspage.io/api/v2/status.json",
+    page_url: "https://aistudio.statuspage.io",
     type: "statuspage",
   },
   {
@@ -1255,7 +1255,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "1.7.1" },
+  { name: "statuscraft", version: "1.7.2" },
   { capabilities: { tools: {} } }
 );
 
