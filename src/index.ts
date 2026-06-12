@@ -1087,6 +1087,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "apideck", name: "Apideck", tags: ["api", "integration", "developer-tools", "saas"], status_url: "https://status.apideck.com/api/v2/status.json", page_url: "https://status.apideck.com", type: "statuspage" },
   { id: "attio", name: "Attio", tags: ["crm", "sales", "saas", "productivity"], status_url: "https://status.attio.com/api/v2/status.json", page_url: "https://status.attio.com", type: "statuspage" },
   { id: "lusha", name: "Lusha", tags: ["sales-intelligence", "prospecting", "saas", "data"], status_url: "https://status.lusha.com/api/v2/status.json", page_url: "https://status.lusha.com", type: "statuspage" },
+  { id: "kustomer", name: "Kustomer", tags: ["customer-support", "crm", "saas", "helpdesk"], status_url: "https://status.kustomer.com/api/v2/status.json", page_url: "https://status.kustomer.com", type: "statuspage" },
+  { id: "crisp", name: "Crisp", tags: ["live-chat", "customer-support", "saas", "messaging"], status_url: "https://crisp.statuspage.io/api/v2/status.json", page_url: "https://crisp.statuspage.io", type: "statuspage" },
+  { id: "livechat", name: "LiveChat", tags: ["live-chat", "customer-support", "saas", "messaging"], status_url: "https://status.livechatinc.com/api/v2/status.json", page_url: "https://status.livechatinc.com", type: "statuspage" },
+  { id: "tidio", name: "Tidio", tags: ["live-chat", "chatbot", "saas", "customer-support"], status_url: "https://status.tidio.com/api/v2/status.json", page_url: "https://status.tidio.com", type: "statuspage" },
+  { id: "descript", name: "Descript", tags: ["video", "audio", "editing", "saas"], status_url: "https://status.descript.com/api/v2/status.json", page_url: "https://status.descript.com", type: "statuspage" },
+  { id: "frame_io", name: "Frame.io", tags: ["video", "review", "collaboration", "saas"], status_url: "https://status.frame.io/api/v2/status.json", page_url: "https://status.frame.io", type: "statuspage" },
+  { id: "sproutsocial", name: "Sprout Social", tags: ["social-media", "analytics", "saas", "marketing"], status_url: "https://status.sproutsocial.com/api/v2/status.json", page_url: "https://status.sproutsocial.com", type: "statuspage" },
+  { id: "buffer", name: "Buffer", tags: ["social-media", "scheduling", "saas", "marketing"], status_url: "https://status.buffer.com/api/v2/status.json", page_url: "https://status.buffer.com", type: "statuspage" },
+  { id: "hootsuite", name: "Hootsuite", tags: ["social-media", "scheduling", "saas", "marketing"], status_url: "https://status.hootsuite.com/api/v2/status.json", page_url: "https://status.hootsuite.com", type: "statuspage" },
+  { id: "later", name: "Later", tags: ["social-media", "scheduling", "saas", "marketing"], status_url: "https://status.later.com/api/v2/status.json", page_url: "https://status.later.com", type: "statuspage" },
+  { id: "agorapulse", name: "Agorapulse", tags: ["social-media", "scheduling", "saas", "marketing"], status_url: "https://status.agorapulse.com/api/v2/status.json", page_url: "https://status.agorapulse.com", type: "statuspage" },
+  { id: "chatwoot", name: "Chatwoot", tags: ["live-chat", "customer-support", "open-source", "saas"], status_url: "https://chatwoot.statuspage.io/api/v2/status.json", page_url: "https://chatwoot.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1470,7 +1482,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 255 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 267 services.",
           },
         },
         required: [],
