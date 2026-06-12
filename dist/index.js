@@ -1156,6 +1156,18 @@ const SERVICES = [
     { id: "personio", name: "Personio", tags: ["hr", "people", "saas", "europe"], status_url: "https://personio.statuspage.io/api/v2/status.json", page_url: "https://personio.statuspage.io", type: "statuspage" },
     { id: "octopus", name: "Octopus Deploy", tags: ["deployment", "devops", "ci-cd", "developer-tools"], status_url: "https://status.octopus.com/api/v2/status.json", page_url: "https://status.octopus.com", type: "statuspage" },
     { id: "matillion", name: "Matillion", tags: ["data", "etl", "integration", "cloud"], status_url: "https://status.matillion.com/api/v2/status.json", page_url: "https://status.matillion.com", type: "statuspage" },
+    { id: "talend", name: "Talend", tags: ["data", "etl", "integration", "cloud"], status_url: "https://talend.statuspage.io/api/v2/status.json", page_url: "https://talend.statuspage.io", type: "statuspage" },
+    { id: "informatica", name: "Informatica", tags: ["data", "etl", "integration", "enterprise"], status_url: "https://informatica.statuspage.io/api/v2/status.json", page_url: "https://informatica.statuspage.io", type: "statuspage" },
+    { id: "polytomic", name: "Polytomic", tags: ["data", "sync", "integration", "developer-tools"], status_url: "https://status.polytomic.com/api/v2/status.json", page_url: "https://status.polytomic.com", type: "statuspage" },
+    { id: "everflow", name: "Everflow", tags: ["affiliates", "tracking", "marketing", "saas"], status_url: "https://everflow.statuspage.io/api/v2/status.json", page_url: "https://everflow.statuspage.io", type: "statuspage" },
+    { id: "trello", name: "Trello", tags: ["project-management", "productivity", "collaboration", "saas"], status_url: "https://status.trello.com/api/v2/status.json", page_url: "https://status.trello.com", type: "statuspage" },
+    { id: "kayako", name: "Kayako", tags: ["customer-support", "helpdesk", "saas", "messaging"], status_url: "https://status.kayako.com/api/v2/status.json", page_url: "https://status.kayako.com", type: "statuspage" },
+    { id: "dixa", name: "Dixa", tags: ["customer-support", "helpdesk", "saas", "omnichannel"], status_url: "https://dixa.statuspage.io/api/v2/status.json", page_url: "https://dixa.statuspage.io", type: "statuspage" },
+    { id: "gladly", name: "Gladly", tags: ["customer-support", "helpdesk", "saas", "enterprise"], status_url: "https://gladly.statuspage.io/api/v2/status.json", page_url: "https://gladly.statuspage.io", type: "statuspage" },
+    { id: "hiver", name: "Hiver", tags: ["customer-support", "email", "gmail", "saas"], status_url: "https://hiver.statuspage.io/api/v2/status.json", page_url: "https://hiver.statuspage.io", type: "statuspage" },
+    { id: "groove", name: "Groove", tags: ["customer-support", "helpdesk", "saas", "email"], status_url: "https://groove.statuspage.io/api/v2/status.json", page_url: "https://groove.statuspage.io", type: "statuspage" },
+    { id: "taskade", name: "Taskade", tags: ["productivity", "collaboration", "ai", "project-management"], status_url: "https://taskade.statuspage.io/api/v2/status.json", page_url: "https://taskade.statuspage.io", type: "statuspage" },
+    { id: "plane", name: "Plane", tags: ["project-management", "productivity", "open-source", "developer-tools"], status_url: "https://status.plane.com/api/v2/status.json", page_url: "https://status.plane.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1535,7 +1547,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 370 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 382 services.",
                     },
                 },
                 required: [],
