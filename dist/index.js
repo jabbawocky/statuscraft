@@ -1030,6 +1030,17 @@ const SERVICES = [
     { id: "teachable", name: "Teachable", tags: ["elearning", "courses", "saas", "creators"], status_url: "https://teachable.statuspage.io/api/v2/status.json", page_url: "https://teachable.statuspage.io", type: "statuspage" },
     { id: "thinkific", name: "Thinkific", tags: ["elearning", "courses", "saas", "creators"], status_url: "https://status.thinkific.com/api/v2/status.json", page_url: "https://status.thinkific.com", type: "statuspage" },
     { id: "circle", name: "Circle", tags: ["community", "saas", "creators", "engagement"], status_url: "https://status.circle.so/api/v2/status.json", page_url: "https://status.circle.so", type: "statuspage" },
+    { id: "gorgias", name: "Gorgias", tags: ["customer-support", "ecommerce", "helpdesk", "saas"], status_url: "https://status.gorgias.com/api/v2/status.json", page_url: "https://status.gorgias.com", type: "statuspage" },
+    { id: "podia", name: "Podia", tags: ["elearning", "courses", "saas", "creators"], status_url: "https://podia.statuspage.io/api/v2/status.json", page_url: "https://podia.statuspage.io", type: "statuspage" },
+    { id: "memberstack", name: "Memberstack", tags: ["membership", "auth", "saas", "no-code"], status_url: "https://memberstack.statuspage.io/api/v2/status.json", page_url: "https://memberstack.statuspage.io", type: "statuspage" },
+    { id: "squarespace", name: "Squarespace", tags: ["website-builder", "ecommerce", "saas", "hosting"], status_url: "https://status.squarespace.com/api/v2/status.json", page_url: "https://status.squarespace.com", type: "statuspage" },
+    { id: "wix", name: "Wix", tags: ["website-builder", "ecommerce", "saas", "hosting"], status_url: "https://status.wix.com/api/v2/status.json", page_url: "https://status.wix.com", type: "statuspage" },
+    { id: "bubble", name: "Bubble", tags: ["no-code", "saas", "app-builder", "hosting"], status_url: "https://status.bubble.io/api/v2/status.json", page_url: "https://status.bubble.io", type: "statuspage" },
+    { id: "magic", name: "Magic", tags: ["auth", "passwordless", "developer-tools", "saas"], status_url: "https://status.magic.link/api/v2/status.json", page_url: "https://status.magic.link", type: "statuspage" },
+    { id: "frontegg", name: "Frontegg", tags: ["auth", "user-management", "developer-tools", "saas"], status_url: "https://status.frontegg.com/api/v2/status.json", page_url: "https://status.frontegg.com", type: "statuspage" },
+    { id: "apideck", name: "Apideck", tags: ["api", "integration", "developer-tools", "saas"], status_url: "https://status.apideck.com/api/v2/status.json", page_url: "https://status.apideck.com", type: "statuspage" },
+    { id: "attio", name: "Attio", tags: ["crm", "sales", "saas", "productivity"], status_url: "https://status.attio.com/api/v2/status.json", page_url: "https://status.attio.com", type: "statuspage" },
+    { id: "lusha", name: "Lusha", tags: ["sales-intelligence", "prospecting", "saas", "data"], status_url: "https://status.lusha.com/api/v2/status.json", page_url: "https://status.lusha.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1409,7 +1420,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 244 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 255 services.",
                     },
                 },
                 required: [],
