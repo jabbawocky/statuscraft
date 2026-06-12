@@ -46,8 +46,8 @@ const SERVICES = [
         id: "stripe",
         name: "Stripe",
         tags: ["payments", "fintech", "api"],
-        status_url: "https://status.stripe.com/api/v2/status.json",
-        page_url: "https://status.stripe.com",
+        status_url: "https://www.stripestatus.com/api/v2/status.json",
+        page_url: "https://www.stripestatus.com",
         type: "statuspage",
     },
     {
@@ -110,9 +110,9 @@ const SERVICES = [
         id: "pagerduty",
         name: "PagerDuty",
         tags: ["monitoring", "ops", "alerting"],
-        status_url: "https://status.pagerduty.com/api/v2/status.json",
+        status_url: "https://status.pagerduty.com/",
         page_url: "https://status.pagerduty.com",
-        type: "statuspage",
+        type: "pagerduty",
     },
     {
         id: "datadog",
@@ -182,7 +182,7 @@ const SERVICES = [
         id: "aws",
         name: "AWS",
         tags: ["cloud", "infrastructure", "hosting"],
-        status_url: "https://status.aws.amazon.com/data.json",
+        status_url: "https://health.aws.amazon.com/public/currentevents",
         page_url: "https://health.aws.amazon.com/health/status",
         type: "aws",
     },
@@ -214,8 +214,8 @@ const SERVICES = [
         id: "railway",
         name: "Railway",
         tags: ["hosting", "paas", "deployment"],
-        status_url: "https://status.railway.app/api/v2/status.json",
-        page_url: "https://status.railway.app",
+        status_url: "https://railway.statuspage.io/api/v2/status.json",
+        page_url: "https://railway.statuspage.io",
         type: "statuspage",
     },
     {
@@ -1080,15 +1080,24 @@ async function fetchAzureStatus(svc) {
 async function fetchAWSStatus(svc) {
     const now = new Date().toISOString();
     try {
-        // AWS Service Health Dashboard public JSON (no auth required)
+        // AWS Health Dashboard returns UTF-16BE JSON — must decode manually
         const res = await fetch(svc.status_url, {
             signal: AbortSignal.timeout(10000),
-            headers: { Accept: "application/json" },
+            headers: { Accept: "application/json", "Accept-Encoding": "identity" },
         });
         if (!res.ok)
             throw new Error(`HTTP ${res.status}`);
-        const data = (await res.json());
-        const activeIncidents = Array.isArray(data.current) ? data.current : [];
+        const buf = await res.arrayBuffer();
+        const bytes = new Uint8Array(buf);
+        let text;
+        if (bytes[0] === 0xfe && bytes[1] === 0xff)
+            text = new TextDecoder("utf-16be").decode(buf.slice(2));
+        else if (bytes[0] === 0xff && bytes[1] === 0xfe)
+            text = new TextDecoder("utf-16le").decode(buf.slice(2));
+        else
+            text = new TextDecoder("utf-8").decode(buf);
+        const events = JSON.parse(text);
+        const activeIncidents = Array.isArray(events) ? events : [];
         const status = activeIncidents.length === 0 ? "operational" : "partial_outage";
         const description = activeIncidents.length === 0
             ? "No active service events reported"
@@ -1167,6 +1176,39 @@ async function fetchIncidentIOStatus(svc) {
         };
     }
 }
+async function fetchPagerDutyStatus(svc) {
+    const now = new Date().toISOString();
+    try {
+        const res = await fetch(svc.status_url, {
+            signal: AbortSignal.timeout(10000),
+            headers: { Accept: "text/html", "User-Agent": "Mozilla/5.0 StatusCraft/1.0" },
+        });
+        if (!res.ok)
+            throw new Error(`HTTP ${res.status}`);
+        const html = await res.text();
+        const match = html.match(/<script id="data" type="application\/json">([\s\S]+?)<\/script>/);
+        if (!match)
+            throw new Error("No embedded data found");
+        const data = JSON.parse(match[1]);
+        const headline = data?.layout?.layout_settings?.statusPage?.globalStatusHeadline ?? "";
+        const lc = headline.toLowerCase();
+        let status = "operational";
+        if (lc.includes("outage") || lc.includes("major"))
+            status = "major_outage";
+        else if (lc.includes("partial") || lc.includes("degraded") || lc.includes("incident"))
+            status = "partial_outage";
+        else if (lc.includes("maintenance"))
+            status = "maintenance";
+        else if (lc.includes("issue") || lc.includes("investigating"))
+            status = "partial_outage";
+        return { id: svc.id, name: svc.name, status, description: headline || "All Systems Operational", last_checked: now, source_url: svc.page_url };
+    }
+    catch (err) {
+        return { id: svc.id, name: svc.name, status: "unknown",
+            description: `Fetch failed: ${err instanceof Error ? err.message : String(err)}`,
+            last_checked: now, source_url: svc.page_url };
+    }
+}
 async function fetchFresh(svc) {
     if (svc.type === "gcp")
         return fetchGCPStatus(svc);
@@ -1178,6 +1220,8 @@ async function fetchFresh(svc) {
         return fetchAWSStatus(svc);
     if (svc.type === "incidentio")
         return fetchIncidentIOStatus(svc);
+    if (svc.type === "pagerduty")
+        return fetchPagerDutyStatus(svc);
     return fetchStatuspageStatus(svc);
 }
 async function getServiceStatus(svc) {
@@ -1205,7 +1249,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "1.7.2" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "1.7.3" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -1268,7 +1312,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 27 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 141 services.",
                     },
                 },
                 required: [],
