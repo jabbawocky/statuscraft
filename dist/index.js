@@ -1132,6 +1132,18 @@ const SERVICES = [
     { id: "rechargepayments", name: "Recharge Payments", tags: ["payments", "subscriptions", "ecommerce", "saas"], status_url: "https://status.rechargepayments.com/api/v2/status.json", page_url: "https://status.rechargepayments.com", type: "statuspage" },
     { id: "airbrake", name: "Airbrake", tags: ["error-tracking", "monitoring", "developer-tools", "saas"], status_url: "https://airbrake.statuspage.io/api/v2/status.json", page_url: "https://airbrake.statuspage.io", type: "statuspage" },
     { id: "sinch", name: "Sinch", tags: ["sms", "communications", "api", "cpaas"], status_url: "https://status.sinch.com/api/v2/status.json", page_url: "https://status.sinch.com", type: "statuspage" },
+    { id: "imply", name: "Imply", tags: ["analytics", "data", "developer-tools", "database"], status_url: "https://imply.statuspage.io/api/v2/status.json", page_url: "https://imply.statuspage.io", type: "statuspage" },
+    { id: "ecwid", name: "Ecwid", tags: ["ecommerce", "saas", "payments", "website"], status_url: "https://status.ecwid.com/api/v2/status.json", page_url: "https://status.ecwid.com", type: "statuspage" },
+    { id: "infobip", name: "Infobip", tags: ["sms", "communications", "api", "cpaas"], status_url: "https://status.infobip.com/api/v2/status.json", page_url: "https://status.infobip.com", type: "statuspage" },
+    { id: "attentive", name: "Attentive", tags: ["sms", "marketing", "ecommerce", "saas"], status_url: "https://attentive.statuspage.io/api/v2/status.json", page_url: "https://attentive.statuspage.io", type: "statuspage" },
+    { id: "postscript", name: "Postscript", tags: ["sms", "marketing", "ecommerce", "shopify"], status_url: "https://postscript.statuspage.io/api/v2/status.json", page_url: "https://postscript.statuspage.io", type: "statuspage" },
+    { id: "okendo", name: "Okendo", tags: ["reviews", "ecommerce", "saas", "shopify"], status_url: "https://okendo.statuspage.io/api/v2/status.json", page_url: "https://okendo.statuspage.io", type: "statuspage" },
+    { id: "stamped", name: "Stamped", tags: ["reviews", "loyalty", "ecommerce", "saas"], status_url: "https://stamped.statuspage.io/api/v2/status.json", page_url: "https://stamped.statuspage.io", type: "statuspage" },
+    { id: "chameleon", name: "Chameleon", tags: ["onboarding", "product", "saas", "developer-tools"], status_url: "https://chameleon.statuspage.io/api/v2/status.json", page_url: "https://chameleon.statuspage.io", type: "statuspage" },
+    { id: "sprig", name: "Sprig", tags: ["research", "surveys", "product", "saas"], status_url: "https://status.sprig.com/api/v2/status.json", page_url: "https://status.sprig.com", type: "statuspage" },
+    { id: "maze", name: "Maze", tags: ["testing", "research", "product", "saas"], status_url: "https://maze.statuspage.io/api/v2/status.json", page_url: "https://maze.statuspage.io", type: "statuspage" },
+    { id: "partnerstack", name: "PartnerStack", tags: ["partnerships", "affiliates", "saas", "growth"], status_url: "https://status.partnerstack.com/api/v2/status.json", page_url: "https://status.partnerstack.com", type: "statuspage" },
+    { id: "impact", name: "Impact", tags: ["affiliates", "partnerships", "marketing", "saas"], status_url: "https://status.impact.com/api/v2/status.json", page_url: "https://status.impact.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1511,7 +1523,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 346 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 358 services.",
                     },
                 },
                 required: [],
