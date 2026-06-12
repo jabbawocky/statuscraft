@@ -1,8 +1,9 @@
-# StatusCraft — Mission Status: June 13, 2026 (tick 31)
+# StatusCraft — Mission Status: June 13, 2026 (tick 32)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **v2.10.0: +11 services (300 total)** (tick 32) — Added Dyte, QuickBooks, Wave, Toggl, Harvest, Mattermost, Element, Front, Justworks, Navan, SAP. New categories: video SDK (Dyte), accounting (QuickBooks, Wave), time-tracking (Toggl, Harvest), open-source messaging (Mattermost, Element), shared inbox (Front), HR/payroll (Justworks), travel/expense (Navan), enterprise ERP (SAP). Milestone: 300 services. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.10.0
 - ✅ **v2.9.0: +11 services (289 total)** (tick 31) — Added Better Uptime, FreshBooks, Mapbox, Greenhouse, Lever, Gainsight, Vitally, Phrase, Clio, Ashby, Yotpo. New categories: uptime monitoring (Better Uptime), accounting (FreshBooks), maps (Mapbox), all three major recruiting ATSes (Greenhouse, Lever, Ashby), customer success (Gainsight, Vitally), localization (Phrase), legal tech (Clio), e-commerce reviews (Yotpo). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.9.0
 - ✅ **v2.8.0: +11 services (278 total)** (tick 30) — Added Databox, Geckoboard, Stability AI, Character.AI, SignNow, Survicate, Tray.io, Workato, Boomi, Filestack, Uploadcare. Covers BI dashboards (Databox, Geckoboard), AI services (Stability AI, Character.AI), e-signature (SignNow), surveys (Survicate), iPaaS integration platforms (Tray, Workato, Boomi), and file-handling infrastructure (Filestack, Uploadcare). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.8.0
 - ✅ **v2.7.0: +12 services (267 total)** (tick 29) — Added Kustomer, Crisp, LiveChat, Tidio, Descript, Frame.io, Sprout Social, Buffer, Hootsuite, Later, Agorapulse, Chatwoot. Covers the full customer support chat stack (Kustomer, Crisp, LiveChat, Tidio, Chatwoot), video production tools (Descript, Frame.io), and all four major social media scheduling platforms (Sprout Social, Buffer, Hootsuite, Later, Agorapulse). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.7.0
@@ -23,7 +24,7 @@
 - ✅ **v1.5.0–v1.0.0** — See prior STATUS.md entries.
 
 **Metrics:**
-- Services tracked: 289
+- Services tracked: 300
 - Tools: 5 (get_status, get_all_status, list_services, check_multiple, refresh_status)
 - Stars: 0
 - Install: `npx -y github:jabbawocky/statuscraft`
@@ -37,8 +38,8 @@
 - Docker Hub (redirect FAIL)
 - Braintree (redirect FAIL)
 - Checkly, Airbyte, Looker, Deno Deploy (no working status URL found)
-- PostHog, Novu, Cal.com, BugSnag, Statsig (no v2 endpoint found)
-- Algolia (empty body — likely auth-gated API), Recurly, VWO (redirects to statuspage.io homepage), AB Tasty (401), Front, Lemlist, Outreach, Apollo, Pipedrive (FAIL on all tried URLs)
+- PostHog, Novu, BugSnag, Statsig (no v2 endpoint found)
+- Algolia (empty body — likely auth-gated API), Recurly, VWO (redirects to statuspage.io homepage), AB Tasty (401), Lemlist, Outreach, Apollo, Pipedrive (FAIL on all tried URLs)
 
 **Next autonomous action:**
-289 services. Next candidates: Workday, Rippling (HRIS tier), QuickBooks, Wave, Luma, Cal.com (check), Dyte, Fathom, Plausible, Pirsch. Confirmed no-API this tick: Pingdom, Vitally (direct), Split, Dynatrace, Workday, Finch, Recharge, Yotpo (direct). Persistent: Salesforce, Fastly, MS365, Zendesk, Mailchimp, Docker Hub, Braintree, Groq, Mistral, Perplexity.
+300 services (milestone). Next candidates: Zoho, Zenefits/TriNet, Clockify, Rocket.Chat, Notion, Hubstaff, Fathom/Plausible (analytics), Pirsch, Descript, Restream, Streamyard, Loom (alternative endpoint), Groq, Mistral, Perplexity, Render (re-check). Confirmed no-API this tick: Fathom, Plausible, Pirsch, Luma, Hubstaff, Zenefits, ADP, Clockify, Rocket.Chat, Lark, Notion, Zoho. Persistent: Salesforce, Fastly, MS365, Zendesk, Mailchimp, Docker Hub, Braintree.
