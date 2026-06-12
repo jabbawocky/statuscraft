@@ -1166,6 +1166,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "lambdalabs", name: "Lambda Labs", tags: ["ai", "gpu", "cloud", "developer-tools"], status_url: "https://status.lambdalabs.com/api/v2/status.json", page_url: "https://status.lambdalabs.com", type: "statuspage" },
   { id: "directus", name: "Directus", tags: ["cms", "headless-cms", "open-source", "developer-tools"], status_url: "https://directus.statuspage.io/api/v2/status.json", page_url: "https://directus.statuspage.io", type: "statuspage" },
   { id: "hasura", name: "Hasura", tags: ["graphql", "database", "api", "developer-tools"], status_url: "https://hasura.statuspage.io/api/v2/status.json", page_url: "https://hasura.statuspage.io", type: "statuspage" },
+  { id: "paperspace", name: "Paperspace", tags: ["gpu", "cloud", "ai", "developer-tools"], status_url: "https://status.paperspace.com/api/v2/status.json", page_url: "https://status.paperspace.com", type: "statuspage" },
+  { id: "sentinelone", name: "SentinelOne", tags: ["security", "endpoint", "cybersecurity", "saas"], status_url: "https://status.sentinelone.com/api/v2/status.json", page_url: "https://status.sentinelone.com", type: "statuspage" },
+  { id: "payoneer", name: "Payoneer", tags: ["payments", "fintech", "banking", "saas"], status_url: "https://status.payoneer.com/api/v2/status.json", page_url: "https://status.payoneer.com", type: "statuspage" },
+  { id: "yodlee", name: "Yodlee", tags: ["fintech", "banking", "financial-data", "api"], status_url: "https://yodlee.statuspage.io/api/v2/status.json", page_url: "https://yodlee.statuspage.io", type: "statuspage" },
+  { id: "coralogix", name: "Coralogix", tags: ["observability", "logging", "monitoring", "developer-tools"], status_url: "https://status.coralogix.com/api/v2/status.json", page_url: "https://status.coralogix.com", type: "statuspage" },
+  { id: "netdata", name: "Netdata", tags: ["monitoring", "observability", "metrics", "developer-tools"], status_url: "https://netdata.statuspage.io/api/v2/status.json", page_url: "https://netdata.statuspage.io", type: "statuspage" },
+  { id: "statuscake", name: "StatusCake", tags: ["monitoring", "uptime", "developer-tools", "saas"], status_url: "https://status.statuscake.com/api/v2/status.json", page_url: "https://status.statuscake.com", type: "statuspage" },
+  { id: "opsgenie", name: "Opsgenie", tags: ["incident-management", "alerting", "monitoring", "devops"], status_url: "https://status.opsgenie.com/api/v2/status.json", page_url: "https://status.opsgenie.com", type: "statuspage" },
+  { id: "victorops", name: "VictorOps", tags: ["incident-management", "alerting", "devops", "saas"], status_url: "https://status.victorops.com/api/v2/status.json", page_url: "https://status.victorops.com", type: "statuspage" },
+  { id: "rechargepayments", name: "Recharge Payments", tags: ["payments", "subscriptions", "ecommerce", "saas"], status_url: "https://status.rechargepayments.com/api/v2/status.json", page_url: "https://status.rechargepayments.com", type: "statuspage" },
+  { id: "airbrake", name: "Airbrake", tags: ["error-tracking", "monitoring", "developer-tools", "saas"], status_url: "https://airbrake.statuspage.io/api/v2/status.json", page_url: "https://airbrake.statuspage.io", type: "statuspage" },
+  { id: "sinch", name: "Sinch", tags: ["sms", "communications", "api", "cpaas"], status_url: "https://status.sinch.com/api/v2/status.json", page_url: "https://status.sinch.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1549,7 +1561,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 334 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 346 services.",
           },
         },
         required: [],
