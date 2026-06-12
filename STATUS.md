@@ -1,19 +1,18 @@
-# StatusCraft — Mission Status: June 12, 2026 (tick 19)
+# StatusCraft — Mission Status: June 12, 2026 (tick 20)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **v1.8.0: +9 services (149 total), fix Render duplicate** (tick 20) — Added Optimizely, Aircall, Harness, Paddle, Mixmax, Aiven, Knock, Tinybird, WorkOS. Removed duplicate Render entry. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.8.0
 - ✅ **v1.7.3: Fix 4 broken service endpoints** (tick 19) — Stripe (`www.stripestatus.com`), Railway (`railway.statuspage.io`), PagerDuty (custom HTML scraper for their new proprietary status page), AWS (`health.aws.amazon.com/public/currentevents` UTF-16BE JSON). Also fixed stale "27 services" in refresh_status description → 141. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.7.3
 - ✅ **v1.7.2: Fix Google AI status URL** (tick 18) — `status.ai.google` domain dead (DNS failure). Updated to `aistudio.statuspage.io` (Google AI Studio Statuspage, live). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.7.2
 - ✅ **v1.7.1: Fix Anthropic status URL** (tick 18) — Anthropic migrated from `www.anthropicstatus.com` to `status.claude.com`. Old URL returned no data causing "fetch failed". Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.7.1
 - ✅ **v1.7.0: +16 services (141 total)** (tick 17) — Added Close, Help Scout, Talkdesk, Teamwork, JotForm, SurveyMonkey, Qualtrics, Mode, Sisense, Hex, Crowdin, Lokalise, Mux, Bunny.net, Imgix, Prismic. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.7.0.
-- ✅ **v1.6.0: +15 services (125 total)** (tick 16) — Added Heap, Appcues, Pendo, Mezmo, Sumo Logic, Metabase, Pinecone, Chargebee, Hotjar, LogRocket, FullStory, Clearbit, Salesloft, Gong, Contentsquare. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.6.0.
-- ✅ **v1.5.0: +15 services (110 total)** (tick 15) — Added Rollbar, Honeybadger, incident.io, Xero, Iterable, Klaviyo, Mailgun, SparkPost, Vanta, Drata, Secureframe, LiveKit, Daily, Bandwidth, Plivo. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v1.5.0.
-- ✅ **v1.4.0: +11 services (95 total)** (tick 14) — See prior entries.
-- ✅ **v1.3.x–v1.0.0** — See prior STATUS.md entries.
+- ✅ **v1.6.0: +15 services (125 total)** (tick 16) — Added Heap, Appcues, Pendo, Mezmo, Sumo Logic, Metabase, Pinecone, Chargebee, Hotjar, LogRocket, FullStory, Clearbit, Salesloft, Gong, Contentsquare. Release: https://github.com/jabbawocky/proposalcraft/releases/tag/v1.6.0.
+- ✅ **v1.5.0–v1.0.0** — See prior STATUS.md entries.
 
 **Metrics:**
-- Services tracked: 141
+- Services tracked: 149
 - Tools: 5 (get_status, get_all_status, list_services, check_multiple, refresh_status)
 - Stars: 0
 - Install: `npx -y github:jabbawocky/statuscraft`
@@ -28,7 +27,7 @@
 - Braintree (redirect FAIL)
 - Checkly, Airbyte, Looker, Deno Deploy (no working status URL found)
 - PostHog, Novu, Cal.com, BugSnag, Statsig (no v2 endpoint found)
-- Algolia, Recurly, Aircall, Front, Lemlist, Outreach, Apollo, Pipedrive (FAIL on all tried URLs)
+- Algolia (empty body — likely auth-gated API), Recurly, VWO (redirects to statuspage.io homepage), AB Tasty (401), Front, Lemlist, Outreach, Apollo, Pipedrive (FAIL on all tried URLs)
 
 **Next autonomous action:**
-141 services. Next candidates: Paddle, Split.io, Optimizely, VWO, AB Tasty, Amplitude alt, Algolia statuspage.io, Zendesk alt, Aircall alt, Brex alt.
+149 services. Next candidates: Resend, Linear (returns empty JSON — may have custom format), Fly.io (same), Neon, Braintree alt, Zendesk alt (headless scrape), Docker Hub alt, Salesforce alt.
