@@ -1046,6 +1046,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "loggly", name: "Loggly", tags: ["logging", "observability", "monitoring", "cloud"], status_url: "https://status.loggly.com/api/v2/status.json", page_url: "https://status.loggly.com", type: "statuspage" },
   { id: "kentik", name: "Kentik", tags: ["networking", "observability", "traffic-analytics", "cloud"], status_url: "https://status.kentik.com/api/v2/status.json", page_url: "https://status.kentik.com", type: "statuspage" },
   { id: "wundergraph", name: "WunderGraph", tags: ["api", "graphql", "developer-tools", "backend"], status_url: "https://status.wundergraph.com/api/v2/status.json", page_url: "https://status.wundergraph.com", type: "statuspage" },
+  { id: "gusto", name: "Gusto", tags: ["hr", "payroll", "benefits", "saas"], status_url: "https://status.gusto.com/api/v2/status.json", page_url: "https://status.gusto.com", type: "statuspage" },
+  { id: "rippling", name: "Rippling", tags: ["hr", "payroll", "it", "saas"], status_url: "https://status.rippling.com/api/v2/status.json", page_url: "https://status.rippling.com", type: "statuspage" },
+  { id: "expensify", name: "Expensify", tags: ["expenses", "finance", "accounting", "saas"], status_url: "https://status.expensify.com/api/v2/status.json", page_url: "https://status.expensify.com", type: "statuspage" },
+  { id: "klarna", name: "Klarna", tags: ["payments", "bnpl", "fintech", "ecommerce"], status_url: "https://status.klarna.com/api/v2/status.json", page_url: "https://status.klarna.com", type: "statuspage" },
+  { id: "affirm", name: "Affirm", tags: ["payments", "bnpl", "fintech", "ecommerce"], status_url: "https://status.affirm.com/api/v2/status.json", page_url: "https://status.affirm.com", type: "statuspage" },
+  { id: "remote", name: "Remote", tags: ["hr", "payroll", "global", "employment"], status_url: "https://remote.statuspage.io/api/v2/status.json", page_url: "https://remote.statuspage.io", type: "statuspage" },
+  { id: "lattice", name: "Lattice", tags: ["hr", "performance", "people-management", "saas"], status_url: "https://lattice.statuspage.io/api/v2/status.json", page_url: "https://lattice.statuspage.io", type: "statuspage" },
+  { id: "square", name: "Square", tags: ["payments", "pos", "fintech", "ecommerce"], status_url: "https://issquareup.com/api/v2/status.json", page_url: "https://issquareup.com", type: "statuspage" },
+  { id: "clickup", name: "ClickUp", tags: ["project-management", "productivity", "collaboration", "saas"], status_url: "https://clickup.statuspage.io/api/v2/status.json", page_url: "https://clickup.statuspage.io", type: "statuspage" },
+  { id: "pandadoc", name: "PandaDoc", tags: ["documents", "esign", "contracts", "saas"], status_url: "https://status.pandadoc.com/api/v2/status.json", page_url: "https://status.pandadoc.com", type: "statuspage" },
+  { id: "hellosign", name: "Dropbox Sign", tags: ["esign", "documents", "contracts", "api"], status_url: "https://status.hellosign.com/api/v2/status.json", page_url: "https://status.hellosign.com", type: "statuspage" },
+  { id: "ironclad", name: "Ironclad", tags: ["contracts", "legal", "clm", "saas"], status_url: "https://status.ironcladapp.com/api/v2/status.json", page_url: "https://status.ironcladapp.com", type: "statuspage" },
+  { id: "vimeo", name: "Vimeo", tags: ["video", "hosting", "streaming", "media"], status_url: "https://status.vimeo.com/api/v2/status.json", page_url: "https://status.vimeo.com", type: "statuspage" },
+  { id: "livestorm", name: "Livestorm", tags: ["video", "webinar", "events", "saas"], status_url: "https://status.livestorm.co/api/v2/status.json", page_url: "https://status.livestorm.co", type: "statuspage" },
+  { id: "liveblocks", name: "Liveblocks", tags: ["realtime", "collaboration", "developer-tools", "api"], status_url: "https://liveblocks.statuspage.io/api/v2/status.json", page_url: "https://liveblocks.statuspage.io", type: "statuspage" },
+  { id: "census", name: "Census", tags: ["data", "reverse-etl", "analytics", "integration"], status_url: "https://status.getcensus.com/api/v2/status.json", page_url: "https://status.getcensus.com", type: "statuspage" },
+  { id: "stitch", name: "Stitch Data", tags: ["data", "etl", "integration", "pipelines"], status_url: "https://status.stitchdata.com/api/v2/status.json", page_url: "https://status.stitchdata.com", type: "statuspage" },
+  { id: "rudderstack", name: "RudderStack", tags: ["data", "cdp", "analytics", "integration"], status_url: "https://status.rudderstack.com/api/v2/status.json", page_url: "https://status.rudderstack.com", type: "statuspage" },
+  { id: "drip", name: "Drip", tags: ["email", "marketing", "automation", "ecommerce"], status_url: "https://status.drip.com/api/v2/status.json", page_url: "https://status.drip.com", type: "statuspage" },
+  { id: "mailerlite", name: "MailerLite", tags: ["email", "marketing", "automation", "saas"], status_url: "https://status.mailerlite.com/api/v2/status.json", page_url: "https://status.mailerlite.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1429,7 +1449,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 214 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 234 services.",
           },
         },
         required: [],
