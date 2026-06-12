@@ -1086,6 +1086,16 @@ const SERVICES = [
     { id: "justworks", name: "Justworks", tags: ["hr", "payroll", "benefits", "saas"], status_url: "https://status.justworks.com/api/v2/status.json", page_url: "https://status.justworks.com", type: "statuspage" },
     { id: "navan", name: "Navan", tags: ["travel", "expense", "finance", "saas"], status_url: "https://status.navan.com/api/v2/status.json", page_url: "https://status.navan.com", type: "statuspage" },
     { id: "sap", name: "SAP", tags: ["erp", "enterprise", "finance", "saas"], status_url: "https://sap.statuspage.io/api/v2/status.json", page_url: "https://sap.statuspage.io", type: "statuspage" },
+    { id: "together", name: "Together AI", tags: ["ai", "llm", "inference", "developer-tools"], status_url: "https://together.statuspage.io/api/v2/status.json", page_url: "https://together.statuspage.io", type: "statuspage" },
+    { id: "ai21", name: "AI21 Labs", tags: ["ai", "llm", "nlp", "developer-tools"], status_url: "https://status.ai21.com/api/v2/status.json", page_url: "https://status.ai21.com", type: "statuspage" },
+    { id: "streamyard", name: "StreamYard", tags: ["streaming", "video", "live", "broadcast"], status_url: "https://status.streamyard.com/api/v2/status.json", page_url: "https://status.streamyard.com", type: "statuspage" },
+    { id: "riverside", name: "Riverside.fm", tags: ["podcast", "recording", "video", "audio"], status_url: "https://status.riverside.fm/api/v2/status.json", page_url: "https://status.riverside.fm", type: "statuspage" },
+    { id: "simplecast", name: "Simplecast", tags: ["podcast", "hosting", "audio", "publishing"], status_url: "https://status.simplecast.com/api/v2/status.json", page_url: "https://status.simplecast.com", type: "statuspage" },
+    { id: "substack", name: "Substack", tags: ["newsletter", "publishing", "email", "creators"], status_url: "https://substack.statuspage.io/api/v2/status.json", page_url: "https://substack.statuspage.io", type: "statuspage" },
+    { id: "constantcontact", name: "Constant Contact", tags: ["email", "marketing", "automation", "smb"], status_url: "https://status.constantcontact.com/api/v2/status.json", page_url: "https://status.constantcontact.com", type: "statuspage" },
+    { id: "stonly", name: "Stonly", tags: ["documentation", "knowledge-base", "customer-support", "saas"], status_url: "https://status.stonly.com/api/v2/status.json", page_url: "https://status.stonly.com", type: "statuspage" },
+    { id: "gumroad", name: "Gumroad", tags: ["ecommerce", "digital-products", "creators", "payments"], status_url: "https://status.gumroad.com/api/v2/status.json", page_url: "https://status.gumroad.com", type: "statuspage" },
+    { id: "whop", name: "Whop", tags: ["ecommerce", "digital-products", "communities", "saas"], status_url: "https://status.whop.com/api/v2/status.json", page_url: "https://status.whop.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1465,7 +1475,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 300 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 310 services.",
                     },
                 },
                 required: [],
