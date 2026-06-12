@@ -1144,6 +1144,18 @@ const SERVICES = [
     { id: "maze", name: "Maze", tags: ["testing", "research", "product", "saas"], status_url: "https://maze.statuspage.io/api/v2/status.json", page_url: "https://maze.statuspage.io", type: "statuspage" },
     { id: "partnerstack", name: "PartnerStack", tags: ["partnerships", "affiliates", "saas", "growth"], status_url: "https://status.partnerstack.com/api/v2/status.json", page_url: "https://status.partnerstack.com", type: "statuspage" },
     { id: "impact", name: "Impact", tags: ["affiliates", "partnerships", "marketing", "saas"], status_url: "https://status.impact.com/api/v2/status.json", page_url: "https://status.impact.com", type: "statuspage" },
+    { id: "leaddyno", name: "LeadDyno", tags: ["affiliates", "referrals", "marketing", "saas"], status_url: "https://status.leaddyno.com/api/v2/status.json", page_url: "https://status.leaddyno.com", type: "statuspage" },
+    { id: "friendbuy", name: "Friendbuy", tags: ["referrals", "loyalty", "marketing", "ecommerce"], status_url: "https://friendbuy.statuspage.io/api/v2/status.json", page_url: "https://friendbuy.statuspage.io", type: "statuspage" },
+    { id: "sprinto", name: "Sprinto", tags: ["compliance", "security", "saas", "soc2"], status_url: "https://status.sprinto.com/api/v2/status.json", page_url: "https://status.sprinto.com", type: "statuspage" },
+    { id: "sigma", name: "Sigma Computing", tags: ["analytics", "bi", "data", "saas"], status_url: "https://status.sigmacomputing.com/api/v2/status.json", page_url: "https://status.sigmacomputing.com", type: "statuspage" },
+    { id: "preset", name: "Preset", tags: ["analytics", "bi", "data", "open-source"], status_url: "https://status.preset.io/api/v2/status.json", page_url: "https://status.preset.io", type: "statuspage" },
+    { id: "alchemy", name: "Alchemy", tags: ["web3", "blockchain", "api", "developer-tools"], status_url: "https://status.alchemy.com/api/v2/status.json", page_url: "https://status.alchemy.com", type: "statuspage" },
+    { id: "infura", name: "Infura", tags: ["web3", "blockchain", "api", "developer-tools"], status_url: "https://infura.statuspage.io/api/v2/status.json", page_url: "https://infura.statuspage.io", type: "statuspage" },
+    { id: "quicknode", name: "QuickNode", tags: ["web3", "blockchain", "api", "developer-tools"], status_url: "https://status.quicknode.com/api/v2/status.json", page_url: "https://status.quicknode.com", type: "statuspage" },
+    { id: "hibob", name: "HiBob", tags: ["hr", "people", "saas", "payroll"], status_url: "https://hibob.statuspage.io/api/v2/status.json", page_url: "https://hibob.statuspage.io", type: "statuspage" },
+    { id: "personio", name: "Personio", tags: ["hr", "people", "saas", "europe"], status_url: "https://personio.statuspage.io/api/v2/status.json", page_url: "https://personio.statuspage.io", type: "statuspage" },
+    { id: "octopus", name: "Octopus Deploy", tags: ["deployment", "devops", "ci-cd", "developer-tools"], status_url: "https://status.octopus.com/api/v2/status.json", page_url: "https://status.octopus.com", type: "statuspage" },
+    { id: "matillion", name: "Matillion", tags: ["data", "etl", "integration", "cloud"], status_url: "https://status.matillion.com/api/v2/status.json", page_url: "https://status.matillion.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1523,7 +1535,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 358 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 370 services.",
                     },
                 },
                 required: [],
