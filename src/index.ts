@@ -68,8 +68,8 @@ const SERVICES: ServiceConfig[] = [
     id: "anthropic",
     name: "Anthropic",
     tags: ["ai", "llm", "api"],
-    status_url: "https://www.anthropicstatus.com/api/v2/status.json",
-    page_url: "https://www.anthropicstatus.com",
+    status_url: "https://status.claude.com/api/v2/status.json",
+    page_url: "https://status.claude.com",
     type: "statuspage",
   },
   {
@@ -1255,7 +1255,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "1.7.0" },
+  { name: "statuscraft", version: "1.7.1" },
   { capabilities: { tools: {} } }
 );
 

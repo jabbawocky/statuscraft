@@ -22,8 +22,8 @@ const SERVICES = [
         id: "anthropic",
         name: "Anthropic",
         tags: ["ai", "llm", "api"],
-        status_url: "https://www.anthropicstatus.com/api/v2/status.json",
-        page_url: "https://www.anthropicstatus.com",
+        status_url: "https://status.claude.com/api/v2/status.json",
+        page_url: "https://status.claude.com",
         type: "statuspage",
     },
     {
@@ -1205,7 +1205,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "1.7.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "1.7.1" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
