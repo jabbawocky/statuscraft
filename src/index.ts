@@ -995,6 +995,22 @@ const SERVICES: ServiceConfig[] = [
   { id: "lob", name: "Lob", tags: ["direct-mail", "printing", "api", "postal"], status_url: "https://status.lob.com/api/v2/status.json", page_url: "https://status.lob.com", type: "statuspage" },
   { id: "brevo", name: "Brevo", tags: ["email", "marketing", "sms", "crm"], status_url: "https://status.brevo.com/api/v2/status.json", page_url: "https://status.brevo.com", type: "statuspage" },
   { id: "loops", name: "Loops", tags: ["email", "marketing", "saas", "transactional"], status_url: "https://status.loops.so/api/v2/status.json", page_url: "https://status.loops.so", type: "statuspage" },
+  { id: "bigcommerce", name: "BigCommerce", tags: ["ecommerce", "payments", "platform", "saas"], status_url: "https://status.bigcommerce.com/api/v2/status.json", page_url: "https://status.bigcommerce.com", type: "statuspage" },
+  { id: "baseten", name: "Baseten", tags: ["ml", "ai", "inference", "model-serving"], status_url: "https://status.baseten.co/api/v2/status.json", page_url: "https://status.baseten.co", type: "statuspage" },
+  { id: "customerio", name: "Customer.io", tags: ["email", "marketing", "automation", "crm"], status_url: "https://status.customerio.com/api/v2/status.json", page_url: "https://status.customerio.com", type: "statuspage" },
+  { id: "cal", name: "Cal.com", tags: ["scheduling", "calendar", "booking", "productivity"], status_url: "https://cal.statuspage.io/api/v2/status.json", page_url: "https://cal.statuspage.io", type: "statuspage" },
+  { id: "modal", name: "Modal", tags: ["serverless", "compute", "ml", "python"], status_url: "https://modal.statuspage.io/api/v2/status.json", page_url: "https://modal.statuspage.io", type: "statuspage" },
+  { id: "deepgram", name: "Deepgram", tags: ["speech-to-text", "ai", "audio", "transcription"], status_url: "https://status.deepgram.com/api/v2/status.json", page_url: "https://status.deepgram.com", type: "statuspage" },
+  { id: "elevenlabs", name: "ElevenLabs", tags: ["text-to-speech", "ai", "audio", "voice"], status_url: "https://status.elevenlabs.io/api/v2/status.json", page_url: "https://status.elevenlabs.io", type: "statuspage" },
+  { id: "assemblyai", name: "AssemblyAI", tags: ["speech-to-text", "ai", "audio", "transcription"], status_url: "https://status.assemblyai.com/api/v2/status.json", page_url: "https://status.assemblyai.com", type: "statuspage" },
+  { id: "gladia", name: "Gladia", tags: ["speech-to-text", "ai", "audio", "transcription"], status_url: "https://status.gladia.io/api/v2/status.json", page_url: "https://status.gladia.io", type: "statuspage" },
+  { id: "cursor", name: "Cursor", tags: ["ai", "ide", "developer-tools", "coding"], status_url: "https://status.cursor.com/api/v2/status.json", page_url: "https://status.cursor.com", type: "statuspage" },
+  { id: "codeium", name: "Codeium", tags: ["ai", "coding", "developer-tools", "autocomplete"], status_url: "https://status.codeium.com/api/v2/status.json", page_url: "https://status.codeium.com", type: "statuspage" },
+  { id: "dub", name: "Dub", tags: ["link-shortening", "analytics", "developer-tools"], status_url: "https://status.dub.co/api/v2/status.json", page_url: "https://status.dub.co", type: "statuspage" },
+  { id: "prisma", name: "Prisma", tags: ["database", "orm", "developer-tools", "backend"], status_url: "https://status.prisma.io/api/v2/status.json", page_url: "https://status.prisma.io", type: "statuspage" },
+  { id: "gitpod", name: "Gitpod", tags: ["cloud-ide", "developer-tools", "devops", "remote-dev"], status_url: "https://gitpod.statuspage.io/api/v2/status.json", page_url: "https://gitpod.statuspage.io", type: "statuspage" },
+  { id: "apify", name: "Apify", tags: ["web-scraping", "automation", "data", "crawling"], status_url: "https://status.apify.com/api/v2/status.json", page_url: "https://status.apify.com", type: "statuspage" },
+  { id: "tavily", name: "Tavily", tags: ["search", "ai", "research", "api"], status_url: "https://status.tavily.com/api/v2/status.json", page_url: "https://status.tavily.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1378,7 +1394,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 141 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 179 services.",
           },
         },
         required: [],
