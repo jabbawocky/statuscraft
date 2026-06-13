@@ -1,8 +1,9 @@
-# StatusCraft — Mission Status: June 13, 2026 (tick 55)
+# StatusCraft — Mission Status: June 13, 2026 (tick 56)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **chore: tick 56 audit — all 523/523 fetchers valid** (tick 56) — Full re-audit of all 523 service fetchers: 523/523 returning valid normalized status. 0 broken fetchers. README and tool description confirmed accurate at 523 services. Previously flagged services (Stripe, PagerDuty, AWS, Railway) all confirmed working. Quality-over-quantity phase: ready to resume adding services.
 - ✅ **chore: clean audit — all 523/523 fetchers valid** (tick 55) — Full re-audit of all 523 service fetchers: 523/523 returning valid normalized status. No regressions since tick 54. Tool description and README confirmed accurate at 523 services. No new services added (quality-over-quantity phase). Ready to resume adding services next tick.
 - ✅ **v2.30.1: clean audit — all 523 fetchers valid** (tick 54) — Full re-audit of all 523 service fetchers: 523/523 returning valid normalized status. Fixed server version string (was stale "2.29.1", now "2.30.1"). Tool description and README confirmed accurate at 523 services. No new services added this tick (quality-over-quantity phase in effect).
 - ✅ **v2.30.1: fetcher audit + dedup (523 unique services)** (tick 53) — Full audit of all 537 fetchers; fixed 2 broken: Heroku (custom API now uses `heroku` type parser, maps green/yellow/red → operational/degraded/major_outage) and Neon (migrated from dead statuspage URL to status.io API at `api.status.io/1.0/status/<id>`). Eliminated 14 duplicate service entries (vercel, cloudflare, netlify, linear, notion, resend, clerk, planetscale, launchdarkly, courier, inngest, temporal, gong, lever) that were inflating the count to 537; real unique coverage = 523. Updated `refresh_status` description and README from stale "141" to accurate "523". All 4 previously flagged services (Stripe, PagerDuty, AWS, Railway) confirmed still working. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.30.1
