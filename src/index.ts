@@ -1640,7 +1640,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.29.1" },
+  { name: "statuscraft", version: "2.30.1" },
   { capabilities: { tools: {} } }
 );
 
