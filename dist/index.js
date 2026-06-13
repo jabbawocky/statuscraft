@@ -1205,6 +1205,18 @@ const SERVICES = [
     { id: "forestadmin", name: "Forest Admin", tags: ["internal-tools", "admin-panel", "low-code", "saas"], status_url: "https://forestadmin.statuspage.io/api/v2/status.json", page_url: "https://forestadmin.statuspage.io", type: "statuspage" },
     { id: "redash", name: "Redash", tags: ["analytics", "bi", "data", "open-source"], status_url: "https://redash.statuspage.io/api/v2/status.json", page_url: "https://redash.statuspage.io", type: "statuspage" },
     { id: "lightdash", name: "Lightdash", tags: ["analytics", "bi", "data", "open-source"], status_url: "https://status.lightdash.com/api/v2/status.json", page_url: "https://status.lightdash.com", type: "statuspage" },
+    { id: "dbt", name: "dbt Cloud", tags: ["data", "analytics", "etl", "developer-tools"], status_url: "https://status.getdbt.com/api/v2/status.json", page_url: "https://status.getdbt.com", type: "statuspage" },
+    { id: "clickhouse", name: "ClickHouse Cloud", tags: ["database", "analytics", "olap", "developer-tools"], status_url: "https://status.clickhouse.com/api/v2/status.json", page_url: "https://status.clickhouse.com", type: "statuspage" },
+    { id: "couchbase", name: "Couchbase", tags: ["database", "nosql", "enterprise", "cloud"], status_url: "https://status.couchbase.com/api/v2/status.json", page_url: "https://status.couchbase.com", type: "statuspage" },
+    { id: "qovery", name: "Qovery", tags: ["paas", "devops", "deployment", "developer-tools"], status_url: "https://qovery.statuspage.io/api/v2/status.json", page_url: "https://qovery.statuspage.io", type: "statuspage" },
+    { id: "fusionauth", name: "FusionAuth", tags: ["identity", "authentication", "sso", "developer-tools"], status_url: "https://fusionauth.statuspage.io/api/v2/status.json", page_url: "https://fusionauth.statuspage.io", type: "statuspage" },
+    { id: "userfront", name: "Userfront", tags: ["identity", "authentication", "sso", "developer-tools"], status_url: "https://userfront.statuspage.io/api/v2/status.json", page_url: "https://userfront.statuspage.io", type: "statuspage" },
+    { id: "onesignal", name: "OneSignal", tags: ["notifications", "push", "messaging", "saas"], status_url: "https://status.onesignal.com/api/v2/status.json", page_url: "https://status.onesignal.com", type: "statuspage" },
+    { id: "engagespot", name: "Engagespot", tags: ["notifications", "in-app", "messaging", "saas"], status_url: "https://engagespot.statuspage.io/api/v2/status.json", page_url: "https://engagespot.statuspage.io", type: "statuspage" },
+    { id: "smartling", name: "Smartling", tags: ["localization", "translation", "i18n", "enterprise"], status_url: "https://status.smartling.com/api/v2/status.json", page_url: "https://status.smartling.com", type: "statuspage" },
+    { id: "weglot", name: "Weglot", tags: ["localization", "translation", "website", "saas"], status_url: "https://status.weglot.com/api/v2/status.json", page_url: "https://status.weglot.com", type: "statuspage" },
+    { id: "thunkable", name: "Thunkable", tags: ["no-code", "mobile", "app-builder", "saas"], status_url: "https://status.thunkable.com/api/v2/status.json", page_url: "https://status.thunkable.com", type: "statuspage" },
+    { id: "draftbit", name: "Draftbit", tags: ["no-code", "mobile", "react-native", "developer-tools"], status_url: "https://status.draftbit.com/api/v2/status.json", page_url: "https://status.draftbit.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1584,7 +1596,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 419 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 431 services.",
                     },
                 },
                 required: [],
