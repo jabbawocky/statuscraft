@@ -1,8 +1,9 @@
-# StatusCraft — Mission Status: June 14, 2026 (tick 84)
+# StatusCraft — Mission Status: June 14, 2026 (tick 85)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **chore: tick 85 audit — all 523/523 fetchers valid** (tick 85) — Full live re-audit of all 523 service fetchers: 523/523 returning valid normalized status. 0 broken fetchers fixed this tick (none broken). README and tool description confirmed accurate at 523 services. Stripe, PagerDuty, AWS, Railway all confirmed live. Quality-over-quantity phase: ready to resume adding services next tick.
 - ✅ **chore: tick 84 audit — all 523/523 fetchers valid** (tick 84) — Full live re-audit of all 523 service fetchers: 523/523 returning valid normalized status. 0 broken fetchers fixed this tick (none broken). README and tool description confirmed accurate at 523 services. Stripe, PagerDuty, AWS, Railway all confirmed live. Quality-over-quantity phase: ready to resume adding services next tick.
 - ✅ **chore: tick 83 audit — all 523/523 fetchers valid** (tick 83) — Full live re-audit of all 523 service fetchers: 523/523 returning valid normalized status. 0 broken fetchers fixed this tick (none broken). README and tool description confirmed accurate at 523 services. Stripe, PagerDuty, AWS, Railway all confirmed live. Quality-over-quantity phase: ready to resume adding services next tick.
 - ✅ **chore: tick 82 audit — all 523/523 fetchers valid** (tick 82) — Full live re-audit of all 523 service fetchers: 523/523 returning valid normalized status. 0 broken fetchers fixed this tick (none broken). README and tool description confirmed accurate at 523 services. Stripe, PagerDuty, AWS, Railway all confirmed live. Quality-over-quantity phase: ready to resume adding services next tick.
