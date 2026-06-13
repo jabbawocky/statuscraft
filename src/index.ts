@@ -1359,6 +1359,16 @@ const SERVICES: ServiceConfig[] = [
   { id: "celigo", name: "Celigo", tags: ["integration", "ipaas", "automation", "api"], status_url: "https://status.celigo.com/api/v2/status.json", page_url: "https://status.celigo.com", type: "statuspage" },
   { id: "kisi", name: "Kisi", tags: ["security", "access-control", "physical-security", "saas"], status_url: "https://status.kisi.io/api/v2/status.json", page_url: "https://status.kisi.io", type: "statuspage" },
   { id: "privy", name: "Privy", tags: ["ecommerce", "email", "marketing", "sms"], status_url: "https://status.privy.com/api/v2/status.json", page_url: "https://status.privy.com", type: "statuspage" },
+  { id: "braze", name: "Braze", tags: ["marketing", "customer-engagement", "push", "email"], status_url: "https://status.braze.com/api/v2/status.json", page_url: "https://status.braze.com", type: "statuspage" },
+  { id: "scaleway", name: "Scaleway", tags: ["cloud", "infrastructure", "european", "hosting"], status_url: "https://status.scaleway.com/api/v2/status.json", page_url: "https://status.scaleway.com", type: "statuspage" },
+  { id: "pubnub", name: "PubNub", tags: ["realtime", "messaging", "push", "api"], status_url: "https://status.pubnub.com/api/v2/status.json", page_url: "https://status.pubnub.com", type: "statuspage" },
+  { id: "safetyculture", name: "SafetyCulture", tags: ["workplace-safety", "inspections", "operations", "saas"], status_url: "https://status.safetyculture.com/api/v2/status.json", page_url: "https://status.safetyculture.com", type: "statuspage" },
+  { id: "zilliz", name: "Zilliz", tags: ["vector-database", "ai", "cloud", "ml"], status_url: "https://status.zilliz.com/api/v2/status.json", page_url: "https://status.zilliz.com", type: "statuspage" },
+  { id: "podio", name: "Podio", tags: ["project-management", "collaboration", "crm", "saas"], status_url: "https://status.podio.com/api/v2/status.json", page_url: "https://status.podio.com", type: "statuspage" },
+  { id: "lucid", name: "Lucid Software", tags: ["diagramming", "visual-collaboration", "productivity", "saas"], status_url: "https://status.lucid.co/api/v2/status.json", page_url: "https://status.lucid.co", type: "statuspage" },
+  { id: "sprinklr", name: "Sprinklr", tags: ["social-media", "marketing", "customer-experience", "enterprise"], status_url: "https://status.sprinklr.com/api/v2/status.json", page_url: "https://status.sprinklr.com", type: "statuspage" },
+  { id: "bynder", name: "Bynder", tags: ["dam", "digital-asset-management", "marketing", "saas"], status_url: "https://status.bynder.com/api/v2/status.json", page_url: "https://status.bynder.com", type: "statuspage" },
+  { id: "clicksend", name: "ClickSend", tags: ["sms", "email", "communications", "api"], status_url: "https://status.clicksend.com/api/v2/status.json", page_url: "https://status.clicksend.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
