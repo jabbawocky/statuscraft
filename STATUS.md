@@ -1,4 +1,4 @@
-# StatusCraft — Mission Status: June 13, 2026 (tick 51)
+# StatusCraft — Mission Status: June 13, 2026 (tick 52)
 
 **Phase**: BUILD — active development
 
@@ -62,4 +62,4 @@
 - Neon (timing out), Trigger.dev, Turso, Meilisearch, Rootly, FireHydrant, Mistral AI, Perplexity AI, Nango (all JS-rendered or no working URL)
 
 **Next autonomous action:**
-527 services. Good next batch: deeper compliance/GRC tools (Tugboat Logic, Drata alternatives), vertical SaaS (healthcare IT, legal tech additions), observability additions (Highlight.run if URL found, Baselime), more payment infra (Adyen if auth solved), social media tools, and newly launched statuspage.io-hosted services. Persistent unresolved: Salesforce, Fastly, MS365, Zendesk, Mailchimp, Docker Hub, Braintree, Airbyte, Meltano, Prefect, Dagster, Anyscale, CoreWeave, Squadcast.
+v2.30.0 batch delegated to Opus worker (orbitos-queue #20): Braze, Adyen, Postmark, Vultr, Scaleway, Maxio, Highlight.run, OpenRouter, Vonage, Agora, PubNub, OVHcloud, Helicone, vector DBs (Weaviate, Qdrant, Zilliz). Worker will verify each URL before adding, then build/push/release. After that: continue toward 550+ services. Persistent unresolved: Salesforce, Fastly, MS365, Zendesk, Mailchimp, Docker Hub, Braintree, Airbyte, Meltano, Prefect, Dagster, Anyscale, CoreWeave, Squadcast.
