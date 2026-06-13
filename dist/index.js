@@ -1265,6 +1265,18 @@ const SERVICES = [
     { id: "zerobounce", name: "ZeroBounce", tags: ["email", "verification", "deliverability", "marketing"], status_url: "https://zerobounce.statuspage.io/api/v2/status.json", page_url: "https://zerobounce.statuspage.io", type: "statuspage" },
     { id: "dnsimple", name: "DNSimple", tags: ["dns", "domains", "infrastructure", "developer-tools"], status_url: "https://dnsimple.statuspage.io/api/v2/status.json", page_url: "https://dnsimple.statuspage.io", type: "statuspage" },
     { id: "bunnycdn", name: "BunnyCDN", tags: ["cdn", "infrastructure", "performance", "storage"], status_url: "https://bunnycdn.statuspage.io/api/v2/status.json", page_url: "https://bunnycdn.statuspage.io", type: "statuspage" },
+    { id: "shipstation", name: "ShipStation", tags: ["shipping", "logistics", "ecommerce", "fulfillment"], status_url: "https://shipstation.statuspage.io/api/v2/status.json", page_url: "https://shipstation.statuspage.io", type: "statuspage" },
+    { id: "alchemer", name: "Alchemer", tags: ["surveys", "research", "forms", "enterprise"], status_url: "https://alchemer.statuspage.io/api/v2/status.json", page_url: "https://alchemer.statuspage.io", type: "statuspage" },
+    { id: "lumos", name: "Lumos", tags: ["access-management", "iga", "identity", "enterprise"], status_url: "https://status.lumos.com/api/v2/status.json", page_url: "https://status.lumos.com", type: "statuspage" },
+    { id: "convoy", name: "Convoy", tags: ["webhooks", "events", "developer-tools", "infrastructure"], status_url: "https://convoy.statuspage.io/api/v2/status.json", page_url: "https://convoy.statuspage.io", type: "statuspage" },
+    { id: "bento", name: "Bento", tags: ["email", "marketing", "automation", "saas"], status_url: "https://bento.statuspage.io/api/v2/status.json", page_url: "https://bento.statuspage.io", type: "statuspage" },
+    { id: "nylas", name: "Nylas", tags: ["email", "calendar", "api", "developer-tools"], status_url: "https://nylas.statuspage.io/api/v2/status.json", page_url: "https://nylas.statuspage.io", type: "statuspage" },
+    { id: "openphone", name: "OpenPhone", tags: ["voip", "phone", "sms", "communications"], status_url: "https://status.openphone.com/api/v2/status.json", page_url: "https://status.openphone.com", type: "statuspage" },
+    { id: "lemonsqueezy", name: "Lemon Squeezy", tags: ["payments", "billing", "saas", "ecommerce"], status_url: "https://lemon.statuspage.io/api/v2/status.json", page_url: "https://lemon.statuspage.io", type: "statuspage" },
+    { id: "lago", name: "Lago", tags: ["billing", "metering", "usage-based", "open-source"], status_url: "https://status.getlago.com/api/v2/status.json", page_url: "https://status.getlago.com", type: "statuspage" },
+    { id: "orb", name: "Orb", tags: ["billing", "usage-based", "metering", "saas"], status_url: "https://orb.statuspage.io/api/v2/status.json", page_url: "https://orb.statuspage.io", type: "statuspage" },
+    { id: "stigg", name: "Stigg", tags: ["billing", "pricing", "packaging", "saas"], status_url: "https://status.stigg.io/api/v2/status.json", page_url: "https://status.stigg.io", type: "statuspage" },
+    { id: "zitadel", name: "ZITADEL", tags: ["authentication", "identity", "open-source", "enterprise"], status_url: "https://status.zitadel.com/api/v2/status.json", page_url: "https://status.zitadel.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1644,7 +1656,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 479 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 491 services.",
                     },
                 },
                 required: [],
