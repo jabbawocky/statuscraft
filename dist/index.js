@@ -1301,6 +1301,18 @@ const SERVICES = [
     { id: "loop", name: "Loop", tags: ["communication", "collaboration", "team", "productivity"], status_url: "https://loop.statuspage.io/api/v2/status.json", page_url: "https://status.loopworks.com", type: "statuspage" },
     { id: "bitrise", name: "Bitrise", tags: ["ci-cd", "mobile", "devops", "developer-tools"], status_url: "https://status.bitrise.io/api/v2/status.json", page_url: "https://status.bitrise.io", type: "statuspage" },
     { id: "backstage", name: "Backstage", tags: ["developer-platform", "devops", "service-catalog", "open-source"], status_url: "https://backstage.statuspage.io/api/v2/status.json", page_url: "https://backstage.statuspage.io", type: "statuspage" },
+    { id: "videoask", name: "VideoAsk", tags: ["video", "forms", "survey", "saas"], status_url: "https://status.videoask.com/api/v2/status.json", page_url: "https://status.videoask.com", type: "statuspage" },
+    { id: "finix", name: "Finix", tags: ["payments", "fintech", "banking-as-a-service", "api"], status_url: "https://status.finix.com/api/v2/status.json", page_url: "https://status.finix.com", type: "statuspage" },
+    { id: "unit", name: "Unit", tags: ["fintech", "banking-as-a-service", "payments", "api"], status_url: "https://status.unit.co/api/v2/status.json", page_url: "https://status.unit.co", type: "statuspage" },
+    { id: "synctera", name: "Synctera", tags: ["fintech", "banking-as-a-service", "payments", "api"], status_url: "https://status.synctera.com/api/v2/status.json", page_url: "https://status.synctera.com", type: "statuspage" },
+    { id: "otter_ai", name: "Otter.ai", tags: ["ai", "transcription", "meetings", "productivity"], status_url: "https://status.otter.ai/api/v2/status.json", page_url: "https://status.otter.ai", type: "statuspage" },
+    { id: "gong", name: "Gong", tags: ["sales", "revenue-intelligence", "analytics", "crm"], status_url: "https://status.gong.io/api/v2/status.json", page_url: "https://status.gong.io", type: "statuspage" },
+    { id: "yesware", name: "Yesware", tags: ["sales", "email", "outreach", "productivity"], status_url: "https://status.yesware.com/api/v2/status.json", page_url: "https://status.yesware.com", type: "statuspage" },
+    { id: "reflektive", name: "Reflektive", tags: ["hr", "performance", "people-management", "saas"], status_url: "https://status.reflektive.com/api/v2/status.json", page_url: "https://status.reflektive.com", type: "statuspage" },
+    { id: "lever", name: "Lever", tags: ["recruiting", "hr", "ats", "saas"], status_url: "https://status.lever.co/api/v2/status.json", page_url: "https://status.lever.co", type: "statuspage" },
+    { id: "celigo", name: "Celigo", tags: ["integration", "ipaas", "automation", "api"], status_url: "https://status.celigo.com/api/v2/status.json", page_url: "https://status.celigo.com", type: "statuspage" },
+    { id: "kisi", name: "Kisi", tags: ["security", "access-control", "physical-security", "saas"], status_url: "https://status.kisi.io/api/v2/status.json", page_url: "https://status.kisi.io", type: "statuspage" },
+    { id: "privy", name: "Privy", tags: ["ecommerce", "email", "marketing", "sms"], status_url: "https://status.privy.com/api/v2/status.json", page_url: "https://status.privy.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1680,7 +1692,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 515 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 527 services.",
                     },
                 },
                 required: [],
