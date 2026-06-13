@@ -51,51 +51,11 @@ const SERVICES = [
         type: "statuspage",
     },
     {
-        id: "cloudflare",
-        name: "Cloudflare",
-        tags: ["cdn", "dns", "security", "infrastructure"],
-        status_url: "https://www.cloudflarestatus.com/api/v2/status.json",
-        page_url: "https://www.cloudflarestatus.com",
-        type: "statuspage",
-    },
-    {
         id: "discord",
         name: "Discord",
         tags: ["communication", "chat"],
         status_url: "https://discordstatus.com/api/v2/status.json",
         page_url: "https://discordstatus.com",
-        type: "statuspage",
-    },
-    {
-        id: "netlify",
-        name: "Netlify",
-        tags: ["hosting", "cdn", "deployment", "jamstack"],
-        status_url: "https://www.netlifystatus.com/api/v2/status.json",
-        page_url: "https://www.netlifystatus.com",
-        type: "statuspage",
-    },
-    {
-        id: "vercel",
-        name: "Vercel",
-        tags: ["hosting", "deployment", "jamstack", "frontend"],
-        status_url: "https://www.vercel-status.com/api/v2/status.json",
-        page_url: "https://www.vercel-status.com",
-        type: "statuspage",
-    },
-    {
-        id: "linear",
-        name: "Linear",
-        tags: ["project-management", "devtools"],
-        status_url: "https://linearstatus.com/api/v2/status.json",
-        page_url: "https://linearstatus.com",
-        type: "statuspage",
-    },
-    {
-        id: "notion",
-        name: "Notion",
-        tags: ["productivity", "docs"],
-        status_url: "https://www.notionstatuspage.com/api/v2/status.json",
-        page_url: "https://www.notionstatuspage.com",
         type: "statuspage",
     },
     {
@@ -144,7 +104,7 @@ const SERVICES = [
         tags: ["hosting", "paas", "deployment"],
         status_url: "https://status.heroku.com/api/v4/current-status",
         page_url: "https://status.heroku.com",
-        type: "statuspage",
+        type: "heroku",
     },
     {
         id: "render",
@@ -206,9 +166,9 @@ const SERVICES = [
         id: "neon",
         name: "Neon",
         tags: ["database", "postgres", "hosting"],
-        status_url: "https://neonstatus.com/api/v2/status.json",
+        status_url: "https://api.status.io/1.0/status/6878fc85709daa75be6c7e3c",
         page_url: "https://neonstatus.com",
-        type: "statuspage",
+        type: "statusio",
     },
     {
         id: "railway",
@@ -267,14 +227,6 @@ const SERVICES = [
         type: "statuspage",
     },
     {
-        id: "resend",
-        name: "Resend",
-        tags: ["email", "api", "developer-tools"],
-        status_url: "https://status.resend.com",
-        page_url: "https://status.resend.com",
-        type: "incidentio",
-    },
-    {
         id: "sentry",
         name: "Sentry",
         tags: ["observability", "error-tracking", "devtools"],
@@ -307,27 +259,11 @@ const SERVICES = [
         type: "statuspage",
     },
     {
-        id: "clerk",
-        name: "Clerk",
-        tags: ["auth", "identity", "developer-tools"],
-        status_url: "https://status.clerk.com/api/v2/status.json",
-        page_url: "https://status.clerk.com",
-        type: "statuspage",
-    },
-    {
         id: "mongodb_atlas",
         name: "MongoDB Atlas",
         tags: ["database", "cloud"],
         status_url: "https://status.mongodb.com/api/v2/status.json",
         page_url: "https://status.mongodb.com",
-        type: "statuspage",
-    },
-    {
-        id: "planetscale",
-        name: "PlanetScale",
-        tags: ["database", "mysql", "serverless"],
-        status_url: "https://www.planetscalestatus.com/api/v2/status.json",
-        page_url: "https://www.planetscalestatus.com",
         type: "statuspage",
     },
     {
@@ -376,14 +312,6 @@ const SERVICES = [
         tags: ["ecommerce", "payments", "hosting"],
         status_url: "https://www.shopifystatus.com/api/v2/status.json",
         page_url: "https://www.shopifystatus.com",
-        type: "statuspage",
-    },
-    {
-        id: "launchdarkly",
-        name: "LaunchDarkly",
-        tags: ["feature-flags", "devtools", "developer-tools"],
-        status_url: "https://status.launchdarkly.com/api/v2/status.json",
-        page_url: "https://status.launchdarkly.com",
         type: "statuspage",
     },
     {
@@ -666,31 +594,7 @@ const SERVICES = [
         page_url: "https://status.make.com",
         type: "statuspage",
     },
-    {
-        id: "courier",
-        name: "Courier",
-        tags: ["notifications", "messaging", "communication"],
-        status_url: "https://status.courier.com/api/v2/status.json",
-        page_url: "https://status.courier.com",
-        type: "statuspage",
-    },
-    {
-        id: "inngest",
-        name: "Inngest",
-        tags: ["devtools", "background-jobs", "automation"],
-        status_url: "https://status.inngest.com/api/v2/status.json",
-        page_url: "https://status.inngest.com",
-        type: "statuspage",
-    },
     // Tick 14 additions
-    {
-        id: "temporal",
-        name: "Temporal Cloud",
-        tags: ["devtools", "workflow", "background-jobs"],
-        status_url: "https://status.temporal.io/api/v2/status.json",
-        page_url: "https://status.temporal.io",
-        type: "statuspage",
-    },
     {
         id: "fivetran",
         name: "Fivetran",
@@ -1306,10 +1210,8 @@ const SERVICES = [
     { id: "unit", name: "Unit", tags: ["fintech", "banking-as-a-service", "payments", "api"], status_url: "https://status.unit.co/api/v2/status.json", page_url: "https://status.unit.co", type: "statuspage" },
     { id: "synctera", name: "Synctera", tags: ["fintech", "banking-as-a-service", "payments", "api"], status_url: "https://status.synctera.com/api/v2/status.json", page_url: "https://status.synctera.com", type: "statuspage" },
     { id: "otter_ai", name: "Otter.ai", tags: ["ai", "transcription", "meetings", "productivity"], status_url: "https://status.otter.ai/api/v2/status.json", page_url: "https://status.otter.ai", type: "statuspage" },
-    { id: "gong", name: "Gong", tags: ["sales", "revenue-intelligence", "analytics", "crm"], status_url: "https://status.gong.io/api/v2/status.json", page_url: "https://status.gong.io", type: "statuspage" },
     { id: "yesware", name: "Yesware", tags: ["sales", "email", "outreach", "productivity"], status_url: "https://status.yesware.com/api/v2/status.json", page_url: "https://status.yesware.com", type: "statuspage" },
     { id: "reflektive", name: "Reflektive", tags: ["hr", "performance", "people-management", "saas"], status_url: "https://status.reflektive.com/api/v2/status.json", page_url: "https://status.reflektive.com", type: "statuspage" },
-    { id: "lever", name: "Lever", tags: ["recruiting", "hr", "ats", "saas"], status_url: "https://status.lever.co/api/v2/status.json", page_url: "https://status.lever.co", type: "statuspage" },
     { id: "celigo", name: "Celigo", tags: ["integration", "ipaas", "automation", "api"], status_url: "https://status.celigo.com/api/v2/status.json", page_url: "https://status.celigo.com", type: "statuspage" },
     { id: "kisi", name: "Kisi", tags: ["security", "access-control", "physical-security", "saas"], status_url: "https://status.kisi.io/api/v2/status.json", page_url: "https://status.kisi.io", type: "statuspage" },
     { id: "privy", name: "Privy", tags: ["ecommerce", "email", "marketing", "sms"], status_url: "https://status.privy.com/api/v2/status.json", page_url: "https://status.privy.com", type: "statuspage" },
@@ -1599,6 +1501,73 @@ async function fetchPagerDutyStatus(svc) {
             last_checked: now, source_url: svc.page_url };
     }
 }
+async function fetchHerokuStatus(svc) {
+    const now = new Date().toISOString();
+    try {
+        const res = await fetch(svc.status_url, {
+            signal: AbortSignal.timeout(8000),
+            headers: { Accept: "application/json" },
+        });
+        if (!res.ok)
+            throw new Error(`HTTP ${res.status}`);
+        const data = (await res.json());
+        const systems = data.status ?? [];
+        const incidents = data.incidents ?? [];
+        const hasRed = systems.some((s) => s.status === "red");
+        const hasYellow = systems.some((s) => s.status === "yellow");
+        let status;
+        if (hasRed)
+            status = "major_outage";
+        else if (hasYellow || incidents.length > 0)
+            status = "degraded";
+        else
+            status = "operational";
+        const description = status === "operational"
+            ? "All systems operational"
+            : `${incidents.length} active incident(s) — see status page`;
+        return { id: svc.id, name: svc.name, status, description, last_checked: now, source_url: svc.page_url };
+    }
+    catch (err) {
+        return {
+            id: svc.id, name: svc.name, status: "unknown",
+            description: `Fetch failed: ${err instanceof Error ? err.message : String(err)}`,
+            last_checked: now, source_url: svc.page_url,
+        };
+    }
+}
+async function fetchStatusIOStatus(svc) {
+    const now = new Date().toISOString();
+    try {
+        const res = await fetch(svc.status_url, {
+            signal: AbortSignal.timeout(8000),
+            headers: { Accept: "application/json" },
+        });
+        if (!res.ok)
+            throw new Error(`HTTP ${res.status}`);
+        const data = (await res.json());
+        const code = data?.result?.status_overall?.status_code ?? 0;
+        const statusText = data?.result?.status_overall?.status ?? "Unknown";
+        let status;
+        if (code === 100)
+            status = "operational";
+        else if (code === 200 || code === 300)
+            status = "degraded";
+        else if (code === 400)
+            status = "partial_outage";
+        else if (code >= 500)
+            status = "major_outage";
+        else
+            status = "unknown";
+        return { id: svc.id, name: svc.name, status, description: statusText, last_checked: now, source_url: svc.page_url };
+    }
+    catch (err) {
+        return {
+            id: svc.id, name: svc.name, status: "unknown",
+            description: `Fetch failed: ${err instanceof Error ? err.message : String(err)}`,
+            last_checked: now, source_url: svc.page_url,
+        };
+    }
+}
 async function fetchFresh(svc) {
     if (svc.type === "gcp")
         return fetchGCPStatus(svc);
@@ -1612,6 +1581,10 @@ async function fetchFresh(svc) {
         return fetchIncidentIOStatus(svc);
     if (svc.type === "pagerduty")
         return fetchPagerDutyStatus(svc);
+    if (svc.type === "heroku")
+        return fetchHerokuStatus(svc);
+    if (svc.type === "statusio")
+        return fetchStatusIOStatus(svc);
     return fetchStatuspageStatus(svc);
 }
 async function getServiceStatus(svc) {
@@ -1639,7 +1612,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "1.7.3" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.29.1" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -1702,7 +1675,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 527 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 523 services.",
                     },
                 },
                 required: [],
