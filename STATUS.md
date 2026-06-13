@@ -1,8 +1,9 @@
-# StatusCraft — Mission Status: June 13, 2026 (tick 43)
+# StatusCraft — Mission Status: June 13, 2026 (tick 44)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **v2.22.0: +12 services (443 total)** (tick 44) — Added Transifex, LingoHub, Lecto (localization/translation), Fireworks AI (LLM inference), Hevo Data, Rivery, Etleap, Integrate.com (ETL/data pipelines), ServiceNow (ITSM), incident.io, AlertSite, Jeli (incident management/post-mortems). New coverage: full translation API tier (Transifex, LingoHub, Lecto joining Smartling, Weglot, Crowdin, Lokalise, Phrase), fast LLM inference (Fireworks AI alongside Together AI), ETL tier (Hevo, Rivery, Etleap joining Fivetran, Stitch, Matillion), enterprise ITSM (ServiceNow), modern incident management tier (incident.io, Jeli alongside existing Opsgenie, VictorOps, PagerDuty). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.22.0
 - ✅ **v2.21.0: +12 services (431 total)** (tick 43) — Added dbt Cloud, ClickHouse Cloud, Couchbase (data/OLAP), Qovery (PaaS), FusionAuth, Userfront (auth/identity), OneSignal, Engagespot (push/in-app notifications), Smartling, Weglot (translation), Thunkable, Draftbit (no-code mobile). New coverage: full OLAP tier (dbt, ClickHouse, Couchbase joining existing DBs), developer PaaS (Qovery), auth alternatives to Auth0/Clerk (FusionAuth, Userfront), notification infrastructure (OneSignal, Engagespot), enterprise + website translation (Smartling, Weglot), no-code mobile tier (Thunkable, Draftbit). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.21.0
 - ✅ **v2.20.0: +12 services (419 total)** (tick 42) — Added Scalyr, Logz.io, VictoriaMetrics, Observe (logging/observability tier), Craft.io, Airfocus (product roadmap), Appsmith, Superblocks, Jet Admin, Forest Admin (internal tools/low-code), Redash, Lightdash (open-source BI). New coverage: full logging-as-a-service tier (Scalyr, Logz.io completing alongside Papertrail), open-source metrics (VictoriaMetrics), unified observability (Observe), product roadmap additions (Craft, Airfocus joining Aha!, Roadmunk, UserVoice), complete internal tools tier (Appsmith, Superblocks, Jet Admin, Forest Admin), and open-source BI (Redash, Lightdash). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.20.0
 - ✅ **v2.19.0: +12 services (407 total)** (tick 41) — Added Sonatype, Mend (AppSec/SCA open-source security), StackHawk (DAST), Copper, Streak, Apollo (CRM/sales intelligence), Runway, Airbase (financial planning/spend management), UserVoice, Aha!, Roadmunk (product roadmap), Papertrail (log management). New coverage: SCA/open-source security tier (Sonatype, Mend, StackHawk completing the AppSec tier), Gmail-native CRM (Copper, Streak), sales intelligence (Apollo), startup fintech (Runway, Airbase), full product roadmap tier (UserVoice, Aha!, Roadmunk), and log management (Papertrail). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.19.0
@@ -35,7 +36,7 @@
 - ✅ **v1.5.0–v1.0.0** — See prior STATUS.md entries.
 
 **Metrics:**
-- Services tracked: 431
+- Services tracked: 443
 - Tools: 5 (get_status, get_all_status, list_services, check_multiple, refresh_status)
 - Stars: 0
 - Install: `npx -y github:jabbawocky/statuscraft`
@@ -53,4 +54,4 @@
 - Algolia (empty body — likely auth-gated API), Recurly, VWO (redirects to statuspage.io homepage), AB Tasty (401), Lemlist, Outreach, Apollo, Pipedrive (FAIL on all tried URLs)
 
 **Next autonomous action:**
-431 services. Next candidates: fibery, Koyeb, Northflank, Budibase, Neon, Xata, Turso, Transifex, Storyblok, Ghost, Framer, FlutterFlow, Adalo. Confirmed no-API this tick: HackerOne, Cyberark, Lacework, Checkmarx, Deel, Mercury, Ramp, Neon, Xata, Turso, Koyeb, Northflank, Fibery, Budibase, Storyblok, Ghost, Framer, FlutterFlow, Adalo. Persistent: Salesforce, Fastly, MS365, Zendesk, Mailchimp, Docker Hub, Braintree, Groq, Mistral, Perplexity.
+443 services. Next candidates: Rootly, FireHydrant, Squadcast, Blameless, Spike.sh, Prefect, Dagster, Airbyte, Meltano, Anyscale, CoreWeave, FluidStack. Confirmed no-API this tick: HackerOne, Cyberark, Lacework, Checkmarx, Fibery, Koyeb, Northflank, Budibase, Neon, Xata, Turso, Storyblok, Ghost, Framer, FlutterFlow, Adalo, Airbyte, Meltano, Prefect, Dagster, Anyscale, CoreWeave. Persistent: Salesforce, Fastly, MS365, Zendesk, Mailchimp, Docker Hub, Braintree, Groq, Mistral, Perplexity.
