@@ -1275,6 +1275,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "incidentio", name: "incident.io", tags: ["incident-management", "devops", "on-call", "saas"], status_url: "https://status.incident.io/api/v2/status.json", page_url: "https://status.incident.io", type: "statuspage" },
   { id: "alertsite", name: "AlertSite", tags: ["monitoring", "uptime", "performance", "saas"], status_url: "https://status.alertsite.com/api/v2/status.json", page_url: "https://status.alertsite.com", type: "statuspage" },
   { id: "jeli", name: "Jeli", tags: ["incident-analysis", "postmortem", "devops", "saas"], status_url: "https://jeli.statuspage.io/api/v2/status.json", page_url: "https://jeli.statuspage.io", type: "statuspage" },
+  { id: "spike", name: "Spike.sh", tags: ["incident-management", "on-call", "alerting", "devops"], status_url: "https://spike.statuspage.io/api/v2/status.json", page_url: "https://spike.statuspage.io", type: "statuspage" },
+  { id: "funnel", name: "Funnel", tags: ["marketing", "analytics", "data", "etl"], status_url: "https://funnel.statuspage.io/api/v2/status.json", page_url: "https://funnel.statuspage.io", type: "statuspage" },
+  { id: "supermetrics", name: "Supermetrics", tags: ["marketing", "analytics", "reporting", "saas"], status_url: "https://status.supermetrics.com/api/v2/status.json", page_url: "https://status.supermetrics.com", type: "statuspage" },
+  { id: "oblivus", name: "Oblivus", tags: ["gpu", "cloud", "compute", "ai"], status_url: "https://status.oblivus.com/api/v2/status.json", page_url: "https://status.oblivus.com", type: "statuspage" },
+  { id: "hyperstack", name: "Hyperstack", tags: ["gpu", "cloud", "compute", "ai"], status_url: "https://hyperstack.statuspage.io/api/v2/status.json", page_url: "https://hyperstack.statuspage.io", type: "statuspage" },
+  { id: "datacrunch", name: "DataCrunch", tags: ["gpu", "cloud", "compute", "ai"], status_url: "https://datacrunch.statuspage.io/api/v2/status.json", page_url: "https://datacrunch.statuspage.io", type: "statuspage" },
+  { id: "document360", name: "Document360", tags: ["documentation", "knowledge-base", "saas", "support"], status_url: "https://document360.statuspage.io/api/v2/status.json", page_url: "https://document360.statuspage.io", type: "statuspage" },
+  { id: "slab", name: "Slab", tags: ["knowledge-base", "documentation", "collaboration", "saas"], status_url: "https://slab.statuspage.io/api/v2/status.json", page_url: "https://slab.statuspage.io", type: "statuspage" },
+  { id: "tettra", name: "Tettra", tags: ["knowledge-base", "documentation", "slack", "saas"], status_url: "https://tettra.statuspage.io/api/v2/status.json", page_url: "https://tettra.statuspage.io", type: "statuspage" },
+  { id: "guru", name: "Guru", tags: ["knowledge-base", "documentation", "enterprise", "saas"], status_url: "https://status.getguru.com/api/v2/status.json", page_url: "https://status.getguru.com", type: "statuspage" },
+  { id: "archbee", name: "Archbee", tags: ["documentation", "api-docs", "knowledge-base", "saas"], status_url: "https://status.archbee.com/api/v2/status.json", page_url: "https://status.archbee.com", type: "statuspage" },
+  { id: "bump", name: "Bump.sh", tags: ["api-docs", "documentation", "developer-tools", "saas"], status_url: "https://bump.statuspage.io/api/v2/status.json", page_url: "https://bump.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1658,7 +1670,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 443 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 455 services.",
           },
         },
         required: [],
