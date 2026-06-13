@@ -1227,6 +1227,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "sonarcloud", name: "SonarCloud", tags: ["code-quality", "sast", "developer-tools", "ci-cd"], status_url: "https://sonarcloud.statuspage.io/api/v2/status.json", page_url: "https://sonarcloud.statuspage.io", type: "statuspage" },
   { id: "veracode", name: "Veracode", tags: ["security", "sast", "appsec", "enterprise"], status_url: "https://status.veracode.com/api/v2/status.json", page_url: "https://status.veracode.com", type: "statuspage" },
   { id: "bugcrowd", name: "Bugcrowd", tags: ["security", "bug-bounty", "penetration-testing", "crowdsourced"], status_url: "https://bugcrowd.statuspage.io/api/v2/status.json", page_url: "https://bugcrowd.statuspage.io", type: "statuspage" },
+  { id: "sonatype", name: "Sonatype", tags: ["security", "sca", "open-source", "appsec"], status_url: "https://status.sonatype.com/api/v2/status.json", page_url: "https://status.sonatype.com", type: "statuspage" },
+  { id: "mend", name: "Mend", tags: ["security", "sca", "open-source", "appsec"], status_url: "https://status.mend.io/api/v2/status.json", page_url: "https://status.mend.io", type: "statuspage" },
+  { id: "stackhawk", name: "StackHawk", tags: ["security", "dast", "api-testing", "appsec"], status_url: "https://status.stackhawk.com/api/v2/status.json", page_url: "https://status.stackhawk.com", type: "statuspage" },
+  { id: "copper", name: "Copper", tags: ["crm", "sales", "google-workspace", "saas"], status_url: "https://status.copper.com/api/v2/status.json", page_url: "https://status.copper.com", type: "statuspage" },
+  { id: "streak", name: "Streak", tags: ["crm", "sales", "gmail", "saas"], status_url: "https://status.streak.com/api/v2/status.json", page_url: "https://status.streak.com", type: "statuspage" },
+  { id: "apollo", name: "Apollo", tags: ["sales", "crm", "sales-intelligence", "prospecting"], status_url: "https://apollo.statuspage.io/api/v2/status.json", page_url: "https://apollo.statuspage.io", type: "statuspage" },
+  { id: "runway", name: "Runway", tags: ["finance", "financial-planning", "startups", "saas"], status_url: "https://runway.statuspage.io/api/v2/status.json", page_url: "https://runway.statuspage.io", type: "statuspage" },
+  { id: "airbase", name: "Airbase", tags: ["finance", "spend-management", "procurement", "saas"], status_url: "https://status.airbase.com/api/v2/status.json", page_url: "https://status.airbase.com", type: "statuspage" },
+  { id: "uservoice", name: "UserVoice", tags: ["product", "feedback", "roadmap", "saas"], status_url: "https://status.uservoice.com/api/v2/status.json", page_url: "https://status.uservoice.com", type: "statuspage" },
+  { id: "aha", name: "Aha!", tags: ["product", "roadmap", "strategy", "saas"], status_url: "https://aha.statuspage.io/api/v2/status.json", page_url: "https://aha.statuspage.io", type: "statuspage" },
+  { id: "roadmunk", name: "Roadmunk", tags: ["product", "roadmap", "planning", "saas"], status_url: "https://status.roadmunk.com/api/v2/status.json", page_url: "https://status.roadmunk.com", type: "statuspage" },
+  { id: "papertrail", name: "Papertrail", tags: ["logging", "observability", "devops", "saas"], status_url: "https://papertrail.statuspage.io/api/v2/status.json", page_url: "https://papertrail.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1610,7 +1622,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 395 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 407 services.",
           },
         },
         required: [],
