@@ -1277,6 +1277,18 @@ const SERVICES = [
     { id: "orb", name: "Orb", tags: ["billing", "usage-based", "metering", "saas"], status_url: "https://orb.statuspage.io/api/v2/status.json", page_url: "https://orb.statuspage.io", type: "statuspage" },
     { id: "stigg", name: "Stigg", tags: ["billing", "pricing", "packaging", "saas"], status_url: "https://status.stigg.io/api/v2/status.json", page_url: "https://status.stigg.io", type: "statuspage" },
     { id: "zitadel", name: "ZITADEL", tags: ["authentication", "identity", "open-source", "enterprise"], status_url: "https://status.zitadel.com/api/v2/status.json", page_url: "https://status.zitadel.com", type: "statuspage" },
+    { id: "resend", name: "Resend", tags: ["email", "transactional", "api", "developer-tools"], status_url: "https://resend-status.com/api/v2/status.json", page_url: "https://resend-status.com", type: "statuspage" },
+    { id: "groq", name: "Groq", tags: ["ai", "llm", "inference", "developer-tools"], status_url: "https://groqstatus.com/api/v2/status.json", page_url: "https://groqstatus.com", type: "statuspage" },
+    { id: "clerk", name: "Clerk", tags: ["authentication", "identity", "developer-tools", "saas"], status_url: "https://status.clerk.com/api/v2/status.json", page_url: "https://status.clerk.com", type: "statuspage" },
+    { id: "planetscale", name: "PlanetScale", tags: ["database", "mysql", "serverless", "developer-tools"], status_url: "https://planetscale.statuspage.io/api/v2/status.json", page_url: "https://planetscale.statuspage.io", type: "statuspage" },
+    { id: "temporal", name: "Temporal", tags: ["workflow", "orchestration", "developer-tools", "cloud"], status_url: "https://temporal.statuspage.io/api/v2/status.json", page_url: "https://temporal.statuspage.io", type: "statuspage" },
+    { id: "inngest", name: "Inngest", tags: ["workflows", "background-jobs", "developer-tools", "serverless"], status_url: "https://status.inngest.com/api/v2/status.json", page_url: "https://status.inngest.com", type: "statuspage" },
+    { id: "svix", name: "Svix", tags: ["webhooks", "developer-tools", "infrastructure", "api"], status_url: "https://svix.statuspage.io/api/v2/status.json", page_url: "https://svix.statuspage.io", type: "statuspage" },
+    { id: "courier", name: "Courier", tags: ["notifications", "messaging", "developer-tools", "saas"], status_url: "https://status.courier.com/api/v2/status.json", page_url: "https://status.courier.com", type: "statuspage" },
+    { id: "launchdarkly", name: "LaunchDarkly", tags: ["feature-flags", "feature-management", "developer-tools", "saas"], status_url: "https://launchdarkly.statuspage.io/api/v2/status.json", page_url: "https://launchdarkly.statuspage.io", type: "statuspage" },
+    { id: "splitio", name: "Split.io", tags: ["feature-flags", "feature-management", "developer-tools", "saas"], status_url: "https://splitio.statuspage.io/api/v2/status.json", page_url: "https://splitio.statuspage.io", type: "statuspage" },
+    { id: "moov", name: "Moov", tags: ["payments", "fintech", "banking", "developer-tools"], status_url: "https://status.moov.io/api/v2/status.json", page_url: "https://status.moov.io", type: "statuspage" },
+    { id: "column", name: "Column", tags: ["banking", "fintech", "api", "developer-tools"], status_url: "https://status.column.com/api/v2/status.json", page_url: "https://status.column.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
