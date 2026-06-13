@@ -1287,6 +1287,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "guru", name: "Guru", tags: ["knowledge-base", "documentation", "enterprise", "saas"], status_url: "https://status.getguru.com/api/v2/status.json", page_url: "https://status.getguru.com", type: "statuspage" },
   { id: "archbee", name: "Archbee", tags: ["documentation", "api-docs", "knowledge-base", "saas"], status_url: "https://status.archbee.com/api/v2/status.json", page_url: "https://status.archbee.com", type: "statuspage" },
   { id: "bump", name: "Bump.sh", tags: ["api-docs", "documentation", "developer-tools", "saas"], status_url: "https://bump.statuspage.io/api/v2/status.json", page_url: "https://bump.statuspage.io", type: "statuspage" },
+  { id: "dialpad", name: "Dialpad", tags: ["voip", "communications", "cloud-phone", "saas"], status_url: "https://dialpad.statuspage.io/api/v2/status.json", page_url: "https://dialpad.statuspage.io", type: "statuspage" },
+  { id: "fillout", name: "Fillout", tags: ["forms", "surveys", "no-code", "saas"], status_url: "https://fillout.statuspage.io/api/v2/status.json", page_url: "https://fillout.statuspage.io", type: "statuspage" },
+  { id: "tally", name: "Tally", tags: ["forms", "surveys", "no-code", "saas"], status_url: "https://tally.statuspage.io/api/v2/status.json", page_url: "https://tally.statuspage.io", type: "statuspage" },
+  { id: "paperform", name: "Paperform", tags: ["forms", "surveys", "booking", "saas"], status_url: "https://paperform.statuspage.io/api/v2/status.json", page_url: "https://paperform.statuspage.io", type: "statuspage" },
+  { id: "formstack", name: "Formstack", tags: ["forms", "workflows", "automation", "saas"], status_url: "https://formstack.statuspage.io/api/v2/status.json", page_url: "https://formstack.statuspage.io", type: "statuspage" },
+  { id: "printful", name: "Printful", tags: ["print-on-demand", "ecommerce", "fulfillment", "saas"], status_url: "https://printful.statuspage.io/api/v2/status.json", page_url: "https://printful.statuspage.io", type: "statuspage" },
+  { id: "gelato", name: "Gelato", tags: ["print-on-demand", "ecommerce", "fulfillment", "saas"], status_url: "https://status.gelato.com/api/v2/status.json", page_url: "https://status.gelato.com", type: "statuspage" },
+  { id: "linode", name: "Linode (Akamai Cloud)", tags: ["cloud", "infrastructure", "vps", "hosting"], status_url: "https://linode.statuspage.io/api/v2/status.json", page_url: "https://linode.statuspage.io", type: "statuspage" },
+  { id: "totango", name: "Totango", tags: ["customer-success", "crm", "saas", "enterprise"], status_url: "https://totango.statuspage.io/api/v2/status.json", page_url: "https://totango.statuspage.io", type: "statuspage" },
+  { id: "cortex", name: "Cortex", tags: ["devops", "service-catalog", "developer-experience", "saas"], status_url: "https://cortex.statuspage.io/api/v2/status.json", page_url: "https://cortex.statuspage.io", type: "statuspage" },
+  { id: "walkme", name: "WalkMe", tags: ["digital-adoption", "onboarding", "enterprise", "saas"], status_url: "https://status.walkme.com/api/v2/status.json", page_url: "https://status.walkme.com", type: "statuspage" },
+  { id: "cronofy", name: "Cronofy", tags: ["scheduling", "calendar-api", "developer-tools", "saas"], status_url: "https://status.cronofy.com/api/v2/status.json", page_url: "https://status.cronofy.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1670,7 +1682,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 455 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 467 services.",
           },
         },
         required: [],
