@@ -1239,6 +1239,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "aha", name: "Aha!", tags: ["product", "roadmap", "strategy", "saas"], status_url: "https://aha.statuspage.io/api/v2/status.json", page_url: "https://aha.statuspage.io", type: "statuspage" },
   { id: "roadmunk", name: "Roadmunk", tags: ["product", "roadmap", "planning", "saas"], status_url: "https://status.roadmunk.com/api/v2/status.json", page_url: "https://status.roadmunk.com", type: "statuspage" },
   { id: "papertrail", name: "Papertrail", tags: ["logging", "observability", "devops", "saas"], status_url: "https://papertrail.statuspage.io/api/v2/status.json", page_url: "https://papertrail.statuspage.io", type: "statuspage" },
+  { id: "scalyr", name: "Scalyr", tags: ["logging", "observability", "devops", "saas"], status_url: "https://status.scalyr.com/api/v2/status.json", page_url: "https://status.scalyr.com", type: "statuspage" },
+  { id: "logzio", name: "Logz.io", tags: ["logging", "observability", "elk", "devops"], status_url: "https://status.logz.io/api/v2/status.json", page_url: "https://status.logz.io", type: "statuspage" },
+  { id: "victoriametrics", name: "VictoriaMetrics", tags: ["monitoring", "metrics", "observability", "open-source"], status_url: "https://status.victoriametrics.com/api/v2/status.json", page_url: "https://status.victoriametrics.com", type: "statuspage" },
+  { id: "observeinc", name: "Observe", tags: ["observability", "monitoring", "logging", "analytics"], status_url: "https://status.observeinc.com/api/v2/status.json", page_url: "https://status.observeinc.com", type: "statuspage" },
+  { id: "craft", name: "Craft.io", tags: ["product", "roadmap", "planning", "saas"], status_url: "https://craft.statuspage.io/api/v2/status.json", page_url: "https://craft.statuspage.io", type: "statuspage" },
+  { id: "airfocus", name: "Airfocus", tags: ["product", "roadmap", "prioritization", "saas"], status_url: "https://status.airfocus.com/api/v2/status.json", page_url: "https://status.airfocus.com", type: "statuspage" },
+  { id: "appsmith", name: "Appsmith", tags: ["internal-tools", "low-code", "open-source", "developer-tools"], status_url: "https://appsmith.statuspage.io/api/v2/status.json", page_url: "https://appsmith.statuspage.io", type: "statuspage" },
+  { id: "superblocks", name: "Superblocks", tags: ["internal-tools", "low-code", "developer-tools", "saas"], status_url: "https://superblocks.statuspage.io/api/v2/status.json", page_url: "https://superblocks.statuspage.io", type: "statuspage" },
+  { id: "jetadmin", name: "Jet Admin", tags: ["internal-tools", "low-code", "admin-panel", "saas"], status_url: "https://jetadmin.statuspage.io/api/v2/status.json", page_url: "https://jetadmin.statuspage.io", type: "statuspage" },
+  { id: "forestadmin", name: "Forest Admin", tags: ["internal-tools", "admin-panel", "low-code", "saas"], status_url: "https://forestadmin.statuspage.io/api/v2/status.json", page_url: "https://forestadmin.statuspage.io", type: "statuspage" },
+  { id: "redash", name: "Redash", tags: ["analytics", "bi", "data", "open-source"], status_url: "https://redash.statuspage.io/api/v2/status.json", page_url: "https://redash.statuspage.io", type: "statuspage" },
+  { id: "lightdash", name: "Lightdash", tags: ["analytics", "bi", "data", "open-source"], status_url: "https://status.lightdash.com/api/v2/status.json", page_url: "https://status.lightdash.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1622,7 +1634,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 407 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 419 services.",
           },
         },
         required: [],
