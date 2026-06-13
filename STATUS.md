@@ -1,8 +1,9 @@
-# StatusCraft — Mission Status: June 13, 2026 (tick 41)
+# StatusCraft — Mission Status: June 13, 2026 (tick 42)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **v2.20.0: +12 services (419 total)** (tick 42) — Added Scalyr, Logz.io, VictoriaMetrics, Observe (logging/observability tier), Craft.io, Airfocus (product roadmap), Appsmith, Superblocks, Jet Admin, Forest Admin (internal tools/low-code), Redash, Lightdash (open-source BI). New coverage: full logging-as-a-service tier (Scalyr, Logz.io completing alongside Papertrail), open-source metrics (VictoriaMetrics), unified observability (Observe), product roadmap additions (Craft, Airfocus joining Aha!, Roadmunk, UserVoice), complete internal tools tier (Appsmith, Superblocks, Jet Admin, Forest Admin), and open-source BI (Redash, Lightdash). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.20.0
 - ✅ **v2.19.0: +12 services (407 total)** (tick 41) — Added Sonatype, Mend (AppSec/SCA open-source security), StackHawk (DAST), Copper, Streak, Apollo (CRM/sales intelligence), Runway, Airbase (financial planning/spend management), UserVoice, Aha!, Roadmunk (product roadmap), Papertrail (log management). New coverage: SCA/open-source security tier (Sonatype, Mend, StackHawk completing the AppSec tier), Gmail-native CRM (Copper, Streak), sales intelligence (Apollo), startup fintech (Runway, Airbase), full product roadmap tier (UserVoice, Aha!, Roadmunk), and log management (Papertrail). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.19.0
 - ✅ **v2.18.0: +13 services (395 total)** (tick 40) — Added Taskworld, Nifty (project management), Horizons, Multiplier (global EOR/payroll), Akamai, Imperva (CDN/security), Ping Identity, SailPoint (identity/IAM), Tenable, Qualys (vulnerability management), SonarCloud (code quality/SAST), Veracode (AppSec), Bugcrowd (crowdsourced security). New coverage: AppSec/SAST tier (SonarCloud, Veracode), vulnerability management tier (Tenable, Qualys), IAM/identity tier (Ping Identity, SailPoint), CDN security tier (Akamai, Imperva), global EOR tier (Horizons, Multiplier), project management additions. Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.18.0
 - ✅ **v2.17.0: +12 services (382 total)** (tick 39) — Added Talend, Informatica, Polytomic, Everflow, Trello, Kayako, Dixa, Gladly, Hiver, Groove, Taskade, Plane. New coverage: enterprise data integration (Talend, Informatica), data sync (Polytomic), affiliate tracking (Everflow), project management (Trello, Taskade, Plane), customer support omnichannel tier (Kayako, Dixa, Gladly, Hiver, Groove). Release: https://github.com/jabbawocky/statuscraft/releases/tag/v2.17.0
@@ -33,7 +34,7 @@
 - ✅ **v1.5.0–v1.0.0** — See prior STATUS.md entries.
 
 **Metrics:**
-- Services tracked: 407
+- Services tracked: 419
 - Tools: 5 (get_status, get_all_status, list_services, check_multiple, refresh_status)
 - Stars: 0
 - Install: `npx -y github:jabbawocky/statuscraft`
@@ -51,4 +52,4 @@
 - Algolia (empty body — likely auth-gated API), Recurly, VWO (redirects to statuspage.io homepage), AB Tasty (401), Lemlist, Outreach, Apollo, Pipedrive (FAIL on all tried URLs)
 
 **Next autonomous action:**
-407 services. Next candidates: HackerOne, Cyberark, Lacework, Checkmarx, scalyr, logz.io, VictoriaMetrics, Observe, craft.io, airfocus, fibery, Deel. Confirmed no-API this tick: Wrike, Basecamp, Linear, Height, Oyster, Boundless, Papaya Global, Armis, Orca Security, Mercury, Ramp. Persistent: Salesforce, Fastly, MS365, Zendesk, Mailchimp, Docker Hub, Braintree, Groq, Mistral, Perplexity.
+419 services. Next candidates: HackerOne, Cyberark, Lacework, Checkmarx, fibery, Deel, dbt Cloud, Qovery, Dokku, Koyeb, Northflank, Budibase. Confirmed no-API this tick: Mercury, Ramp, Divvy, Deel, Concur, HackerOne, Cyberark, Lacework, Checkmarx, Typesense, Meilisearch, Weaviate, Marqo. Persistent: Salesforce, Fastly, MS365, Zendesk, Mailchimp, Docker Hub, Braintree, Groq, Mistral, Perplexity.
