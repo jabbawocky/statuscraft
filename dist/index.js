@@ -1253,6 +1253,18 @@ const SERVICES = [
     { id: "cortex", name: "Cortex", tags: ["devops", "service-catalog", "developer-experience", "saas"], status_url: "https://cortex.statuspage.io/api/v2/status.json", page_url: "https://cortex.statuspage.io", type: "statuspage" },
     { id: "walkme", name: "WalkMe", tags: ["digital-adoption", "onboarding", "enterprise", "saas"], status_url: "https://status.walkme.com/api/v2/status.json", page_url: "https://status.walkme.com", type: "statuspage" },
     { id: "cronofy", name: "Cronofy", tags: ["scheduling", "calendar-api", "developer-tools", "saas"], status_url: "https://status.cronofy.com/api/v2/status.json", page_url: "https://status.cronofy.com", type: "statuspage" },
+    { id: "checkly", name: "Checkly", tags: ["monitoring", "synthetic", "testing", "devops"], status_url: "https://checkly.statuspage.io/api/v2/status.json", page_url: "https://checkly.statuspage.io", type: "statuspage" },
+    { id: "catchpoint", name: "Catchpoint", tags: ["monitoring", "network", "observability", "enterprise"], status_url: "https://catchpoint.statuspage.io/api/v2/status.json", page_url: "https://catchpoint.statuspage.io", type: "statuspage" },
+    { id: "playht", name: "PlayHT", tags: ["ai", "voice", "text-to-speech", "audio"], status_url: "https://playht.statuspage.io/api/v2/status.json", page_url: "https://playht.statuspage.io", type: "statuspage" },
+    { id: "heygen", name: "HeyGen", tags: ["ai", "video", "avatar", "content"], status_url: "https://status.heygen.com/api/v2/status.json", page_url: "https://status.heygen.com", type: "statuspage" },
+    { id: "deepl", name: "DeepL", tags: ["translation", "ai", "nlp", "api"], status_url: "https://deepl.statuspage.io/api/v2/status.json", page_url: "https://deepl.statuspage.io", type: "statuspage" },
+    { id: "rev", name: "Rev", tags: ["transcription", "captions", "audio", "video"], status_url: "https://rev.statuspage.io/api/v2/status.json", page_url: "https://rev.statuspage.io", type: "statuspage" },
+    { id: "lambdatest", name: "LambdaTest", tags: ["testing", "browser", "automation", "devtools"], status_url: "https://lambdatest.statuspage.io/api/v2/status.json", page_url: "https://lambdatest.statuspage.io", type: "statuspage" },
+    { id: "easypost", name: "EasyPost", tags: ["shipping", "logistics", "api", "ecommerce"], status_url: "https://easypost.statuspage.io/api/v2/status.json", page_url: "https://easypost.statuspage.io", type: "statuspage" },
+    { id: "shippo", name: "Shippo", tags: ["shipping", "logistics", "api", "ecommerce"], status_url: "https://shippo.statuspage.io/api/v2/status.json", page_url: "https://shippo.statuspage.io", type: "statuspage" },
+    { id: "zerobounce", name: "ZeroBounce", tags: ["email", "verification", "deliverability", "marketing"], status_url: "https://zerobounce.statuspage.io/api/v2/status.json", page_url: "https://zerobounce.statuspage.io", type: "statuspage" },
+    { id: "dnsimple", name: "DNSimple", tags: ["dns", "domains", "infrastructure", "developer-tools"], status_url: "https://dnsimple.statuspage.io/api/v2/status.json", page_url: "https://dnsimple.statuspage.io", type: "statuspage" },
+    { id: "bunnycdn", name: "BunnyCDN", tags: ["cdn", "infrastructure", "performance", "storage"], status_url: "https://bunnycdn.statuspage.io/api/v2/status.json", page_url: "https://bunnycdn.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1632,7 +1644,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 467 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 479 services.",
                     },
                 },
                 required: [],
