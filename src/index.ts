@@ -1335,6 +1335,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "splitio", name: "Split.io", tags: ["feature-flags", "feature-management", "developer-tools", "saas"], status_url: "https://splitio.statuspage.io/api/v2/status.json", page_url: "https://splitio.statuspage.io", type: "statuspage" },
   { id: "moov", name: "Moov", tags: ["payments", "fintech", "banking", "developer-tools"], status_url: "https://status.moov.io/api/v2/status.json", page_url: "https://status.moov.io", type: "statuspage" },
   { id: "column", name: "Column", tags: ["banking", "fintech", "api", "developer-tools"], status_url: "https://status.column.com/api/v2/status.json", page_url: "https://status.column.com", type: "statuspage" },
+  { id: "bland", name: "Bland AI", tags: ["ai", "voice", "phone", "api"], status_url: "https://bland.statuspage.io/api/v2/status.json", page_url: "https://bland.statuspage.io", type: "statuspage" },
+  { id: "langsmith", name: "LangSmith", tags: ["ai", "llm", "observability", "developer-tools"], status_url: "https://status.smith.langchain.com/api/v2/status.json", page_url: "https://status.smith.langchain.com", type: "statuspage" },
+  { id: "langfuse", name: "Langfuse", tags: ["ai", "llm", "observability", "open-source"], status_url: "https://status.langfuse.com/api/v2/status.json", page_url: "https://status.langfuse.com", type: "statuspage" },
+  { id: "tavus", name: "Tavus", tags: ["ai", "video", "personalization", "api"], status_url: "https://tavus.statuspage.io/api/v2/status.json", page_url: "https://tavus.statuspage.io", type: "statuspage" },
+  { id: "callhippo", name: "CallHippo", tags: ["voip", "phone", "communications", "saas"], status_url: "https://callhippo.statuspage.io/api/v2/status.json", page_url: "https://callhippo.statuspage.io", type: "statuspage" },
+  { id: "windsurf", name: "Windsurf", tags: ["ai", "ide", "coding", "developer-tools"], status_url: "https://status.windsurf.com/api/v2/status.json", page_url: "https://status.windsurf.com", type: "statuspage" },
+  { id: "kong", name: "Kong", tags: ["api-gateway", "infrastructure", "developer-tools", "cloud"], status_url: "https://kong.statuspage.io/api/v2/status.json", page_url: "https://kong.statuspage.io", type: "statuspage" },
+  { id: "port", name: "Port", tags: ["developer-platform", "devops", "developer-tools", "saas"], status_url: "https://port.statuspage.io/api/v2/status.json", page_url: "https://port.statuspage.io", type: "statuspage" },
+  { id: "clari", name: "Clari", tags: ["sales", "revenue", "crm", "analytics"], status_url: "https://clari.statuspage.io/api/v2/status.json", page_url: "https://trust.clari.com", type: "statuspage" },
+  { id: "loop", name: "Loop", tags: ["communication", "collaboration", "team", "productivity"], status_url: "https://loop.statuspage.io/api/v2/status.json", page_url: "https://status.loopworks.com", type: "statuspage" },
+  { id: "bitrise", name: "Bitrise", tags: ["ci-cd", "mobile", "devops", "developer-tools"], status_url: "https://status.bitrise.io/api/v2/status.json", page_url: "https://status.bitrise.io", type: "statuspage" },
+  { id: "backstage", name: "Backstage", tags: ["developer-platform", "devops", "service-catalog", "open-source"], status_url: "https://backstage.statuspage.io/api/v2/status.json", page_url: "https://backstage.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1718,7 +1730,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 491 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 515 services.",
           },
         },
         required: [],
