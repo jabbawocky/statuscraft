@@ -1263,6 +1263,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "weglot", name: "Weglot", tags: ["localization", "translation", "website", "saas"], status_url: "https://status.weglot.com/api/v2/status.json", page_url: "https://status.weglot.com", type: "statuspage" },
   { id: "thunkable", name: "Thunkable", tags: ["no-code", "mobile", "app-builder", "saas"], status_url: "https://status.thunkable.com/api/v2/status.json", page_url: "https://status.thunkable.com", type: "statuspage" },
   { id: "draftbit", name: "Draftbit", tags: ["no-code", "mobile", "react-native", "developer-tools"], status_url: "https://status.draftbit.com/api/v2/status.json", page_url: "https://status.draftbit.com", type: "statuspage" },
+  { id: "transifex", name: "Transifex", tags: ["localization", "translation", "i18n", "saas"], status_url: "https://status.transifex.com/api/v2/status.json", page_url: "https://status.transifex.com", type: "statuspage" },
+  { id: "lingohub", name: "LingoHub", tags: ["localization", "translation", "i18n", "developer-tools"], status_url: "https://lingohub.statuspage.io/api/v2/status.json", page_url: "https://lingohub.statuspage.io", type: "statuspage" },
+  { id: "lecto", name: "Lecto", tags: ["translation", "api", "localization", "developer-tools"], status_url: "https://lecto.statuspage.io/api/v2/status.json", page_url: "https://lecto.statuspage.io", type: "statuspage" },
+  { id: "fireworks", name: "Fireworks AI", tags: ["ai", "llm", "inference", "developer-tools"], status_url: "https://fireworks.statuspage.io/api/v2/status.json", page_url: "https://fireworks.statuspage.io", type: "statuspage" },
+  { id: "hevo", name: "Hevo Data", tags: ["data", "etl", "integration", "pipelines"], status_url: "https://status.hevodata.com/api/v2/status.json", page_url: "https://status.hevodata.com", type: "statuspage" },
+  { id: "rivery", name: "Rivery", tags: ["data", "etl", "integration", "cloud"], status_url: "https://status.rivery.io/api/v2/status.json", page_url: "https://status.rivery.io", type: "statuspage" },
+  { id: "etleap", name: "Etleap", tags: ["data", "etl", "integration", "cloud"], status_url: "https://status.etleap.com/api/v2/status.json", page_url: "https://status.etleap.com", type: "statuspage" },
+  { id: "integrate", name: "Integrate.com", tags: ["data", "integration", "demand-generation", "b2b"], status_url: "https://status.integrate.com/api/v2/status.json", page_url: "https://status.integrate.com", type: "statuspage" },
+  { id: "servicenow", name: "ServiceNow", tags: ["itsm", "enterprise", "workflow", "saas"], status_url: "https://servicenow.statuspage.io/api/v2/status.json", page_url: "https://servicenow.statuspage.io", type: "statuspage" },
+  { id: "incidentio", name: "incident.io", tags: ["incident-management", "devops", "on-call", "saas"], status_url: "https://status.incident.io/api/v2/status.json", page_url: "https://status.incident.io", type: "statuspage" },
+  { id: "alertsite", name: "AlertSite", tags: ["monitoring", "uptime", "performance", "saas"], status_url: "https://status.alertsite.com/api/v2/status.json", page_url: "https://status.alertsite.com", type: "statuspage" },
+  { id: "jeli", name: "Jeli", tags: ["incident-analysis", "postmortem", "devops", "saas"], status_url: "https://jeli.statuspage.io/api/v2/status.json", page_url: "https://jeli.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1646,7 +1658,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 431 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 443 services.",
           },
         },
         required: [],
