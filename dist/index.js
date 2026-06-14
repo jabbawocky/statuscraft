@@ -2592,6 +2592,26 @@ const SERVICES = [
     { id: "dremio", name: "Dremio Cloud", tags: ["data", "lakehouse", "analytics", "cloud"], status_url: "https://status.dremio.com/api/v2/status.json", page_url: "https://status.dremio.com", type: "statuspage" },
     // Data catalog
     { id: "alation", name: "Alation", tags: ["data-catalog", "governance", "analytics", "enterprise"], status_url: "https://status.alationcloud.com/api/v2/status.json", page_url: "https://status.alationcloud.com", type: "statuspage" },
+    // Fraud prevention / e-commerce
+    { id: "signifyd", name: "Signifyd", tags: ["fraud-prevention", "ecommerce", "payments", "security"], status_url: "https://status.signifyd.com/api/v2/status.json", page_url: "https://status.signifyd.com", type: "statuspage" },
+    // Fraud prevention / chargeback protection
+    { id: "riskified", name: "Riskified", tags: ["fraud-prevention", "ecommerce", "payments", "security"], status_url: "https://status.riskified.com/api/v2/status.json", page_url: "https://status.riskified.com", type: "statuspage" },
+    // Fraud / compliance / KYC AI
+    { id: "sardine_ai", name: "Sardine AI", tags: ["fraud-prevention", "compliance", "kyc", "fintech", "security"], status_url: "https://status.sardine.ai/api/v2/status.json", page_url: "https://status.sardine.ai", type: "statuspage" },
+    // AI-powered email security
+    { id: "abnormal_security", name: "Abnormal AI", tags: ["email-security", "ai", "security", "enterprise"], status_url: "https://status.abnormalsecurity.com/api/v2/status.json", page_url: "https://status.abnormalsecurity.com", type: "statuspage" },
+    // Email security (anti-phishing / anti-spam)
+    { id: "vadesecure", name: "Vade Secure", tags: ["email-security", "anti-phishing", "security"], status_url: "https://status.vadesecure.com/api/v2/status.json", page_url: "https://status.vadesecure.com", type: "statuspage" },
+    // Website security / WAF / CDN
+    { id: "sucuri", name: "Sucuri", tags: ["security", "waf", "cdn", "website-security"], status_url: "https://status.sucuri.net/api/v2/status.json", page_url: "https://status.sucuri.net", type: "statuspage" },
+    // Managed WordPress / Magento hosting
+    { id: "nexcess", name: "Nexcess", tags: ["hosting", "wordpress", "magento", "managed"], status_url: "https://status.nexcess.net/api/v2/status.json", page_url: "https://status.nexcess.net", type: "statuspage" },
+    // Managed dedicated / cloud hosting
+    { id: "liquidweb", name: "Liquid Web", tags: ["hosting", "managed", "dedicated", "cloud"], status_url: "https://status.liquidweb.com/api/v2/status.json", page_url: "https://status.liquidweb.com", type: "statuspage" },
+    // Sales enablement / content platform
+    { id: "bigtincan", name: "Bigtincan", tags: ["sales-enablement", "content", "saas", "enterprise"], status_url: "https://status.bigtincan.com/api/v2/status.json", page_url: "https://status.bigtincan.com", type: "statuspage" },
+    // LMS / learning experience platform (Cornerstone)
+    { id: "edcast", name: "EdCast by Cornerstone", tags: ["lms", "learning", "e-learning", "enterprise"], status_url: "https://status.edcast.com/api/v2/status.json", page_url: "https://status.edcast.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3042,7 +3062,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1351 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1361 services.",
                     },
                 },
                 required: [],
