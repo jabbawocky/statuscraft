@@ -2290,6 +2290,17 @@ const SERVICES = [
     { id: "procurify", name: "Procurify", tags: ["procurement", "spend-management", "purchasing", "finance"], status_url: "https://status.procurify.com/api/v2/status.json", page_url: "https://status.procurify.com", type: "statuspage" },
     { id: "socio_events", name: "Socio Events", tags: ["events", "virtual", "hybrid", "engagement"], status_url: "https://status.socio.events/api/v2/status.json", page_url: "https://status.socio.events", type: "statuspage" },
     { id: "slido", name: "Slido", tags: ["events", "polls", "q-and-a", "audience-engagement"], status_url: "https://status.slido.com/api/v2/status.json", page_url: "https://status.slido.com", type: "statuspage" },
+    { id: "jellyfish", name: "Jellyfish", tags: ["engineering", "analytics", "productivity", "devtools"], status_url: "https://status.jellyfish.co/api/v2/status.json", page_url: "https://status.jellyfish.co", type: "statuspage" },
+    { id: "higher_logic", name: "Higher Logic", tags: ["community", "association", "member-engagement", "collaboration"], status_url: "https://status.higherlogic.com/api/v2/status.json", page_url: "https://status.higherlogic.com", type: "statuspage" },
+    { id: "planning_center", name: "Planning Center", tags: ["church", "faith", "nonprofit", "management"], status_url: "https://status.planningcenter.com/api/v2/status.json", page_url: "https://status.planningcenter.com", type: "statuspage" },
+    { id: "bullhorn", name: "Bullhorn", tags: ["recruiting", "staffing", "crm", "ats"], status_url: "https://status.bullhorn.com/api/v2/status.json", page_url: "https://status.bullhorn.com", type: "statuspage" },
+    { id: "process_street", name: "Process Street", tags: ["workflow", "process", "checklist", "productivity"], status_url: "https://status.process.st/api/v2/status.json", page_url: "https://status.process.st", type: "statuspage" },
+    { id: "onfleet", name: "Onfleet", tags: ["delivery", "logistics", "last-mile", "fleet"], status_url: "https://status.onfleet.com/api/v2/status.json", page_url: "https://status.onfleet.com", type: "statuspage" },
+    { id: "kickserv", name: "Kickserv", tags: ["field-service", "scheduling", "service-management", "operations"], status_url: "https://status.kickserv.com/api/v2/status.json", page_url: "https://status.kickserv.com", type: "statuspage" },
+    { id: "jobnimbus", name: "JobNimbus", tags: ["crm", "contractors", "construction", "project-management"], status_url: "https://status.jobnimbus.com/api/v2/status.json", page_url: "https://status.jobnimbus.com", type: "statuspage" },
+    { id: "reggora", name: "Reggora", tags: ["appraisal", "mortgage", "real-estate", "fintech"], status_url: "https://status.reggora.com/api/v2/status.json", page_url: "https://status.reggora.com", type: "statuspage" },
+    { id: "eltropy", name: "Eltropy", tags: ["banking", "credit-union", "digital-banking", "communications"], status_url: "https://status.eltropy.com/api/v2/status.json", page_url: "https://status.eltropy.com", type: "statuspage" },
+    { id: "glia", name: "Glia", tags: ["customer-service", "banking", "digital-service", "fintech"], status_url: "https://status.glia.com/api/v2/status.json", page_url: "https://status.glia.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -2740,7 +2751,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1170 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1181 services.",
                     },
                 },
                 required: [],
