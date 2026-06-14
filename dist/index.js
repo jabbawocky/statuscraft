@@ -1225,6 +1225,58 @@ const SERVICES = [
     { id: "sprinklr", name: "Sprinklr", tags: ["social-media", "marketing", "customer-experience", "enterprise"], status_url: "https://status.sprinklr.com/api/v2/status.json", page_url: "https://status.sprinklr.com", type: "statuspage" },
     { id: "bynder", name: "Bynder", tags: ["dam", "digital-asset-management", "marketing", "saas"], status_url: "https://status.bynder.com/api/v2/status.json", page_url: "https://status.bynder.com", type: "statuspage" },
     { id: "clicksend", name: "ClickSend", tags: ["sms", "email", "communications", "api"], status_url: "https://status.clicksend.com/api/v2/status.json", page_url: "https://status.clicksend.com", type: "statuspage" },
+    // Package registries / open-source ecosystems
+    { id: "pypi", name: "PyPI", tags: ["python", "packages", "open-source", "developer-tools"], status_url: "https://status.python.org/api/v2/status.json", page_url: "https://status.python.org", type: "statuspage" },
+    { id: "rubygems", name: "RubyGems", tags: ["ruby", "packages", "open-source", "developer-tools"], status_url: "https://status.rubygems.org/api/v2/status.json", page_url: "https://status.rubygems.org", type: "statuspage" },
+    { id: "crates_io", name: "crates.io", tags: ["rust", "packages", "open-source", "developer-tools"], status_url: "https://status.crates.io/api/v2/status.json", page_url: "https://status.crates.io", type: "statuspage" },
+    { id: "maven_central", name: "Maven Central", tags: ["java", "packages", "open-source", "developer-tools"], status_url: "https://status.maven.org/api/v2/status.json", page_url: "https://status.maven.org", type: "statuspage" },
+    { id: "hex_pm", name: "Hex.pm", tags: ["elixir", "erlang", "packages", "open-source"], status_url: "https://status.hex.pm/api/v2/status.json", page_url: "https://status.hex.pm", type: "statuspage" },
+    // Cloud hosting
+    { id: "kinsta", name: "Kinsta", tags: ["wordpress", "hosting", "cloud", "managed"], status_url: "https://status.kinsta.com/api/v2/status.json", page_url: "https://status.kinsta.com", type: "statuspage" },
+    { id: "upcloud", name: "UpCloud", tags: ["cloud", "vps", "european", "hosting"], status_url: "https://status.upcloud.com/api/v2/status.json", page_url: "https://status.upcloud.com", type: "statuspage" },
+    { id: "cloudways", name: "Cloudways", tags: ["cloud", "hosting", "managed", "wordpress"], status_url: "https://status.cloudways.com/api/v2/status.json", page_url: "https://status.cloudways.com", type: "statuspage" },
+    { id: "pantheon", name: "Pantheon", tags: ["wordpress", "drupal", "hosting", "webops"], status_url: "https://status.pantheon.io/api/v2/status.json", page_url: "https://status.pantheon.io", type: "statuspage" },
+    { id: "flightcontrol", name: "Flightcontrol", tags: ["cloud", "deployment", "aws", "developer-tools"], status_url: "https://status.flightcontrol.dev/api/v2/status.json", page_url: "https://status.flightcontrol.dev", type: "statuspage" },
+    { id: "azion", name: "Azion", tags: ["cdn", "edge", "serverless", "infrastructure"], status_url: "https://status.azion.com/api/v2/status.json", page_url: "https://status.azion.com", type: "statuspage" },
+    { id: "acquia", name: "Acquia", tags: ["drupal", "cms", "cloud", "enterprise"], status_url: "https://status.acquia.com/api/v2/status.json", page_url: "https://status.acquia.com", type: "statuspage" },
+    // Billing / payments
+    { id: "zuora", name: "Zuora", tags: ["billing", "subscriptions", "revenue", "enterprise"], status_url: "https://trust.zuora.com/api/v2/status.json", page_url: "https://trust.zuora.com", type: "statuspage" },
+    { id: "avalara", name: "Avalara", tags: ["tax", "compliance", "ecommerce", "api"], status_url: "https://status.avalara.com/api/v2/status.json", page_url: "https://status.avalara.com", type: "statuspage" },
+    { id: "taxjar", name: "TaxJar", tags: ["tax", "compliance", "ecommerce", "automation"], status_url: "https://status.taxjar.com/api/v2/status.json", page_url: "https://status.taxjar.com", type: "statuspage" },
+    // Identity / security
+    { id: "jumpcloud", name: "JumpCloud", tags: ["identity", "mdm", "directory", "zero-trust"], status_url: "https://status.jumpcloud.com/api/v2/status.json", page_url: "https://status.jumpcloud.com", type: "statuspage" },
+    { id: "duo", name: "Duo Security", tags: ["mfa", "authentication", "security", "zero-trust"], status_url: "https://status.duo.com/api/v2/status.json", page_url: "https://status.duo.com", type: "statuspage" },
+    { id: "rapid7", name: "Rapid7", tags: ["security", "vulnerability", "siem", "cloud"], status_url: "https://status.rapid7.com/api/v2/status.json", page_url: "https://status.rapid7.com", type: "statuspage" },
+    { id: "aquasec", name: "Aqua Security", tags: ["security", "cloud-native", "container", "devsecops"], status_url: "https://status.aquasec.com/api/v2/status.json", page_url: "https://status.aquasec.com", type: "statuspage" },
+    { id: "traceable", name: "Traceable AI", tags: ["security", "api-security", "observability", "ai"], status_url: "https://status.traceable.ai/api/v2/status.json", page_url: "https://status.traceable.ai", type: "statuspage" },
+    // API management
+    { id: "apigee", name: "Apigee", tags: ["api-management", "gateway", "google", "enterprise"], status_url: "https://status.apigee.com/api/v2/status.json", page_url: "https://status.apigee.com", type: "statuspage" },
+    // Monitoring
+    { id: "hetrixtools", name: "HetrixTools", tags: ["monitoring", "uptime", "server", "blacklist"], status_url: "https://status.hetrixtools.com/api/v2/status.json", page_url: "https://status.hetrixtools.com", type: "statuspage" },
+    // Communications / VoIP
+    { id: "talkdesk", name: "Talkdesk", tags: ["contact-center", "voip", "ccaas", "ai"], status_url: "https://status.talkdesk.com/api/v2/status.json", page_url: "https://status.talkdesk.com", type: "statuspage" },
+    { id: "nextiva", name: "Nextiva", tags: ["voip", "ucaas", "phone", "communications"], status_url: "https://status.nextiva.com/api/v2/status.json", page_url: "https://status.nextiva.com", type: "statuspage" },
+    { id: "justcall", name: "JustCall", tags: ["voip", "sms", "phone", "sales"], status_url: "https://status.justcall.io/api/v2/status.json", page_url: "https://status.justcall.io", type: "statuspage" },
+    { id: "genesys", name: "Genesys Cloud", tags: ["contact-center", "ccaas", "voip", "enterprise"], status_url: "https://status.mypurecloud.com/api/v2/status.json", page_url: "https://status.mypurecloud.com", type: "statuspage" },
+    // Sales / GTM
+    { id: "zoominfo", name: "ZoomInfo", tags: ["sales", "intelligence", "b2b", "data"], status_url: "https://status.zoominfo.com/api/v2/status.json", page_url: "https://status.zoominfo.com", type: "statuspage" },
+    { id: "chili_piper", name: "Chili Piper", tags: ["scheduling", "sales", "revenue", "saas"], status_url: "https://status.chilipiper.com/api/v2/status.json", page_url: "https://status.chilipiper.com", type: "statuspage" },
+    { id: "demandbase", name: "Demandbase", tags: ["abm", "b2b", "marketing", "sales"], status_url: "https://status.demandbase.com/api/v2/status.json", page_url: "https://status.demandbase.com", type: "statuspage" },
+    { id: "qualified_com", name: "Qualified", tags: ["sales", "pipeline", "chat", "ai"], status_url: "https://status.qualified.com/api/v2/status.json", page_url: "https://status.qualified.com", type: "statuspage" },
+    { id: "bazaarvoice", name: "Bazaarvoice", tags: ["reviews", "ugc", "ecommerce", "marketing"], status_url: "https://status.bazaarvoice.com/api/v2/status.json", page_url: "https://status.bazaarvoice.com", type: "statuspage" },
+    { id: "knak", name: "Knak", tags: ["email", "builder", "marketing", "enterprise"], status_url: "https://status.knak.com/api/v2/status.json", page_url: "https://status.knak.com", type: "statuspage" },
+    // E-commerce
+    { id: "bigcommerce", name: "BigCommerce", tags: ["ecommerce", "saas", "hosting", "enterprise"], status_url: "https://status.bigcommerce.com/api/v2/status.json", page_url: "https://status.bigcommerce.com", type: "statuspage" },
+    { id: "omnisend", name: "Omnisend", tags: ["email", "sms", "ecommerce", "marketing"], status_url: "https://status.omnisend.com/api/v2/status.json", page_url: "https://status.omnisend.com", type: "statuspage" },
+    // Location / address
+    { id: "geocodio", name: "Geocodio", tags: ["geocoding", "address", "location", "api"], status_url: "https://status.geocod.io/api/v2/status.json", page_url: "https://status.geocod.io", type: "statuspage" },
+    { id: "smarty", name: "Smarty", tags: ["address-validation", "geocoding", "usps", "api"], status_url: "https://status.smarty.com/api/v2/status.json", page_url: "https://status.smarty.com", type: "statuspage" },
+    // AI / ML
+    { id: "tidb_cloud", name: "TiDB Cloud", tags: ["database", "mysql", "distributed", "cloud"], status_url: "https://status.tidbcloud.com/api/v2/status.json", page_url: "https://status.tidbcloud.com", type: "statuspage" },
+    // CI/CD
+    { id: "cloudbees", name: "CloudBees", tags: ["ci-cd", "devops", "jenkins", "enterprise"], status_url: "https://status.cloudbees.com/api/v2/status.json", page_url: "https://status.cloudbees.com", type: "statuspage" },
+    // HR / compliance
+    { id: "finch", name: "Finch", tags: ["hr", "payroll", "integration", "api"], status_url: "https://status.tryfinch.com/api/v2/status.json", page_url: "https://status.tryfinch.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1675,7 +1727,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 523 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 562 services.",
                     },
                 },
                 required: [],

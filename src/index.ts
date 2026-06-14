@@ -1318,7 +1318,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "geocodio", name: "Geocodio", tags: ["geocoding", "address", "location", "api"], status_url: "https://status.geocod.io/api/v2/status.json", page_url: "https://status.geocod.io", type: "statuspage" },
   { id: "smarty", name: "Smarty", tags: ["address-validation", "geocoding", "usps", "api"], status_url: "https://status.smarty.com/api/v2/status.json", page_url: "https://status.smarty.com", type: "statuspage" },
   // AI / ML
-  { id: "humanloop", name: "Humanloop", tags: ["ai", "llm", "evaluation", "developer-tools"], status_url: "https://status.humanloop.com/api/v2/status.json", page_url: "https://status.humanloop.com", type: "statuspage" },
   { id: "tidb_cloud", name: "TiDB Cloud", tags: ["database", "mysql", "distributed", "cloud"], status_url: "https://status.tidbcloud.com/api/v2/status.json", page_url: "https://status.tidbcloud.com", type: "statuspage" },
   // CI/CD
   { id: "cloudbees", name: "CloudBees", tags: ["ci-cd", "devops", "jenkins", "enterprise"], status_url: "https://status.cloudbees.com/api/v2/status.json", page_url: "https://status.cloudbees.com", type: "statuspage" },
@@ -1766,7 +1765,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 563 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 562 services.",
           },
         },
         required: [],
