@@ -1446,6 +1446,34 @@ const SERVICES: ServiceConfig[] = [
   { id: "helpjuice", name: "Helpjuice", tags: ["knowledge-base", "help-center", "support", "saas"], status_url: "https://status.helpjuice.com/api/v2/status.json", page_url: "https://status.helpjuice.com", type: "statuspage" },
   // Recurring billing
   { id: "chargeover", name: "ChargeOver", tags: ["billing", "subscriptions", "payments", "saas"], status_url: "https://status.chargeover.com/api/v2/status.json", page_url: "https://status.chargeover.com", type: "statuspage" },
+  // Payments / BNPL
+  { id: "afterpay", name: "Afterpay", tags: ["payments", "bnpl", "ecommerce", "fintech"], status_url: "https://status.afterpay.com/api/v2/status.json", page_url: "https://status.afterpay.com", type: "statuspage" },
+  // Identity verification
+  { id: "onfido", name: "Onfido", tags: ["identity", "kyc", "verification", "security"], status_url: "https://status.onfido.com/api/v2/status.json", page_url: "https://status.onfido.com", type: "statuspage" },
+  { id: "veriff", name: "Veriff", tags: ["identity", "kyc", "verification", "security"], status_url: "https://status.veriff.com/api/v2/status.json", page_url: "https://status.veriff.com", type: "statuspage" },
+  { id: "socure", name: "Socure", tags: ["identity", "fraud", "kyc", "fintech"], status_url: "https://status.socure.com/api/v2/status.json", page_url: "https://status.socure.com", type: "statuspage" },
+  { id: "alloy", name: "Alloy", tags: ["fintech", "kyc", "compliance", "fraud"], status_url: "https://status.alloy.com/api/v2/status.json", page_url: "https://status.alloy.com", type: "statuspage" },
+  // Project management / SaaS
+  { id: "37signals", name: "37signals (Basecamp / HEY)", tags: ["project-management", "email", "saas", "productivity"], status_url: "https://www.37status.com/api/v2/status.json", page_url: "https://www.37status.com", type: "statuspage" },
+  // Sales intelligence / data enrichment
+  { id: "rocketreach", name: "RocketReach", tags: ["sales", "data-enrichment", "prospecting", "saas"], status_url: "https://status.rocketreach.co/api/v2/status.json", page_url: "https://status.rocketreach.co", type: "statuspage" },
+  // Partnerships / co-selling
+  { id: "crossbeam", name: "Crossbeam", tags: ["partnerships", "co-selling", "data-sharing", "saas"], status_url: "https://status.crossbeam.com/api/v2/status.json", page_url: "https://status.crossbeam.com", type: "statuspage" },
+  // Affiliate marketing
+  { id: "awin", name: "Awin", tags: ["affiliate", "marketing", "partnerships", "ecommerce"], status_url: "https://status.awin.com/api/v2/status.json", page_url: "https://status.awin.com", type: "statuspage" },
+  // Global HR / employer of record
+  { id: "oysterhr", name: "OysterHR", tags: ["hr", "eor", "global-payroll", "remote-work"], status_url: "https://status.oysterhr.com/api/v2/status.json", page_url: "https://status.oysterhr.com", type: "statuspage" },
+  // Ad tech
+  { id: "criteo", name: "Criteo", tags: ["advertising", "retargeting", "ecommerce", "adtech"], status_url: "https://status.criteo.com/api/v2/status.json", page_url: "https://status.criteo.com", type: "statuspage" },
+  // Interactive product demos
+  { id: "storylane", name: "Storylane", tags: ["demos", "sales", "product", "saas"], status_url: "https://status.storylane.io/api/v2/status.json", page_url: "https://status.storylane.io", type: "statuspage" },
+  { id: "reprise", name: "Reprise", tags: ["demos", "sales", "product", "saas"], status_url: "https://status.reprise.com/api/v2/status.json", page_url: "https://status.reprise.com", type: "statuspage" },
+  // Developer tunneling
+  { id: "ngrok", name: "ngrok", tags: ["devtools", "tunneling", "networking", "developer"], status_url: "https://status.ngrok.com/api/v2/status.json", page_url: "https://status.ngrok.com", type: "statuspage" },
+  // PKI / SSL
+  { id: "digicert", name: "DigiCert", tags: ["ssl", "pki", "certificates", "security"], status_url: "https://status.digicert.com/api/v2/status.json", page_url: "https://status.digicert.com", type: "statuspage" },
+  // Domain registrar / hosting
+  { id: "godaddy", name: "GoDaddy", tags: ["domains", "hosting", "dns", "registrar"], status_url: "https://status.godaddy.com/api/v2/status.json", page_url: "https://status.godaddy.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1815,7 +1843,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.32.0" },
+  { name: "statuscraft", version: "2.33.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -1888,7 +1916,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 633 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 649 services.",
           },
         },
         required: [],
