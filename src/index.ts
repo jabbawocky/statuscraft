@@ -2808,6 +2808,36 @@ const SERVICES: ServiceConfig[] = [
 
   // Automotive SaaS
   { id: "dealersocket", name: "DealerSocket", tags: ["automotive", "crm", "dealership", "saas"], status_url: "https://status.dealersocket.com/api/v2/status.json", page_url: "https://status.dealersocket.com", type: "statuspage" },
+
+  // Healthcare patient engagement
+  { id: "phreesia", name: "Phreesia", tags: ["healthcare", "patient-intake", "practice-management", "saas"], status_url: "https://status.phreesia.net/api/v2/status.json", page_url: "https://status.phreesia.net", type: "statuspage" },
+
+  // Healthcare workflow automation
+  { id: "workpath", name: "Workpath", tags: ["healthcare", "workflow", "automation", "saas"], status_url: "https://status.workpath.com/api/v2/status.json", page_url: "https://status.workpath.com", type: "statuspage" },
+
+  // Banking-as-a-Service
+  { id: "unit_co", name: "Unit", tags: ["fintech", "banking-as-a-service", "api", "payments"], status_url: "https://status.unit.co/api/v2/status.json", page_url: "https://status.unit.co", type: "statuspage" },
+
+  // Accounting data API (FIS Railz)
+  { id: "railz", name: "Railz", tags: ["fintech", "accounting", "data", "api"], status_url: "https://status.railz.ai/api/v2/status.json", page_url: "https://status.railz.ai", type: "statuspage" },
+
+  // Small business management
+  { id: "thryv", name: "Thryv", tags: ["small-business", "crm", "marketing", "saas"], status_url: "https://status.thryv.com/api/v2/status.json", page_url: "https://status.thryv.com", type: "statuspage" },
+
+  // Deskless workforce management
+  { id: "skedulo", name: "Skedulo", tags: ["workforce-management", "field-service", "scheduling", "saas"], status_url: "https://status.skedulo.com/api/v2/status.json", page_url: "https://status.skedulo.com", type: "statuspage" },
+
+  // Fleet & field operations
+  { id: "intellishift", name: "IntelliShift", tags: ["fleet-management", "telematics", "field-operations", "saas"], status_url: "https://status.intellishift.com/api/v2/status.json", page_url: "https://status.intellishift.com", type: "statuspage" },
+
+  // Route optimization
+  { id: "routific", name: "Routific", tags: ["logistics", "route-optimization", "delivery", "saas"], status_url: "https://status.routific.com/api/v2/status.json", page_url: "https://status.routific.com", type: "statuspage" },
+
+  // MSP IT visibility
+  { id: "liongard", name: "Liongard", tags: ["msp", "it-management", "visibility", "saas"], status_url: "https://status.liongard.com/api/v2/status.json", page_url: "https://status.liongard.com", type: "statuspage" },
+
+  // Restaurant workforce scheduling
+  { id: "seven_shifts", name: "7shifts", tags: ["restaurant", "workforce-management", "scheduling", "saas"], status_url: "https://status.7shifts.com/api/v2/status.json", page_url: "https://status.7shifts.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3212,7 +3242,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1394 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1404 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3250,7 +3280,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1394 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1404 services.",
           },
         },
         required: [],
