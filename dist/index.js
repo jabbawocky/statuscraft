@@ -2658,6 +2658,24 @@ const SERVICES = [
     { id: "sysdig", name: "Sysdig", tags: ["security", "cloud-native", "monitoring", "containers"], status_url: "https://sysdig.statuspage.io/api/v2/status.json", page_url: "https://status.sysdigcloud.com", type: "statuspage" },
     // UI/UX prototyping and design tool
     { id: "marvelapp", name: "Marvel App", tags: ["design", "prototyping", "ux", "collaboration"], status_url: "https://status.marvelapp.com/api/v2/status.json", page_url: "https://status.marvelapp.com", type: "statuspage" },
+    // Incident management / alerting
+    { id: "xmatters", name: "xMatters", tags: ["incident-management", "alerting", "devops", "on-call"], status_url: "https://status.xmatters.com/api/v2/status.json", page_url: "https://status.xmatters.com", type: "statuspage" },
+    // Healthcare / EHR
+    { id: "curemd", name: "CureMD", tags: ["healthcare", "ehr", "practice-management", "medical"], status_url: "https://status.curemd.com/api/v2/status.json", page_url: "https://status.curemd.com", type: "statuspage" },
+    { id: "klara", name: "Klara", tags: ["healthcare", "patient-communication", "telehealth", "saas"], status_url: "https://status.klara.com/api/v2/status.json", page_url: "https://status.klara.com", type: "statuspage" },
+    // Property management
+    { id: "leadsimple", name: "LeadSimple", tags: ["property-management", "crm", "real-estate", "saas"], status_url: "https://status.leadsimple.com/api/v2/status.json", page_url: "https://status.leadsimple.com", type: "statuspage" },
+    // Field service management
+    { id: "fieldaware", name: "FieldAware", tags: ["field-service", "fsm", "workforce", "operations"], status_url: "https://status.fieldaware.com/api/v2/status.json", page_url: "https://status.fieldaware.com", type: "statuspage" },
+    { id: "zuper", name: "Zuper", tags: ["field-service", "fsm", "workforce-management", "saas"], status_url: "https://status.zuper.co/api/v2/status.json", page_url: "https://status.zuper.co", type: "statuspage" },
+    { id: "fieldpulse", name: "FieldPulse", tags: ["field-service", "fsm", "contractor", "saas"], status_url: "https://status.fieldpulse.com/api/v2/status.json", page_url: "https://status.fieldpulse.com", type: "statuspage" },
+    // Insurance / Insurtech
+    { id: "insurity", name: "Insurity", tags: ["insurance", "insurtech", "p-c", "enterprise"], status_url: "https://status.insurity.com/api/v2/status.json", page_url: "https://status.insurity.com", type: "statuspage" },
+    { id: "bold_penguin", name: "Bold Penguin", tags: ["insurance", "insurtech", "commercial", "api"], status_url: "https://status.boldpenguin.com/api/v2/status.json", page_url: "https://status.boldpenguin.com", type: "statuspage" },
+    // Identity verification
+    { id: "intellicheck", name: "Intellicheck", tags: ["identity-verification", "kyc", "fraud", "security"], status_url: "https://status.intellicheck.com/api/v2/status.json", page_url: "https://status.intellicheck.com", type: "statuspage" },
+    // Automotive SaaS
+    { id: "dealersocket", name: "DealerSocket", tags: ["automotive", "crm", "dealership", "saas"], status_url: "https://status.dealersocket.com/api/v2/status.json", page_url: "https://status.dealersocket.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3045,7 +3063,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.45.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.46.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -3073,7 +3091,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1383 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1394 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3108,7 +3126,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1383 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1394 services.",
                     },
                 },
                 required: [],
