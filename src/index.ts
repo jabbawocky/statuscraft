@@ -268,8 +268,8 @@ const SERVICES: ServiceConfig[] = [
     id: "linear",
     name: "Linear",
     tags: ["project-management", "devtools", "productivity"],
-    status_url: "https://linearstatus.com/api/v2/status.json",
-    page_url: "https://linearstatus.com",
+    status_url: "https://status.linear.app/api/v2/status.json",
+    page_url: "https://status.linear.app",
     type: "statuspage",
   },
   {
@@ -2338,6 +2338,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "solutionreach", name: "Solutionreach", tags: ["healthcare", "patient-communication", "dental", "medical"], status_url: "https://status.solutionreach.com/api/v2/status.json", page_url: "https://status.solutionreach.com", type: "statuspage" },
   { id: "civicplus", name: "CivicPlus", tags: ["govtech", "government", "municipal", "civic"], status_url: "https://status.civicplus.com/api/v2/status.json", page_url: "https://status.civicplus.com", type: "statuspage" },
   { id: "trustarc", name: "TrustArc", tags: ["privacy", "compliance", "gdpr", "consent"], status_url: "https://status.trustarc.com/api/v2/status.json", page_url: "https://status.trustarc.com", type: "statuspage" },
+  { id: "turbot", name: "Turbot", tags: ["cloud", "compliance", "security", "infrastructure"], status_url: "https://status.turbot.com/api/v2/status.json", page_url: "https://status.turbot.com", type: "statuspage" },
+  { id: "getdbt", name: "dbt Cloud", tags: ["data", "analytics", "transformation", "devtools"], status_url: "https://status.getdbt.com/api/v2/status.json", page_url: "https://status.getdbt.com", type: "statuspage" },
+  { id: "panther", name: "Panther", tags: ["security", "siem", "detection", "cloud"], status_url: "https://status.panther.com/api/v2/status.json", page_url: "https://status.panther.com", type: "statuspage" },
+  { id: "deepwatch", name: "Deepwatch", tags: ["security", "mdr", "detection", "managed-services"], status_url: "https://status.deepwatch.com/api/v2/status.json", page_url: "https://status.deepwatch.com", type: "statuspage" },
+  { id: "corelight", name: "Corelight", tags: ["security", "network", "detection", "monitoring"], status_url: "https://status.corelight.com/api/v2/status.json", page_url: "https://status.corelight.com", type: "statuspage" },
+  { id: "expel", name: "Expel", tags: ["security", "operations", "mdr", "managed-services"], status_url: "https://status.expel.io/api/v2/status.json", page_url: "https://status.expel.io", type: "statuspage" },
+  { id: "orca_security", name: "Orca Security", tags: ["security", "cloud", "cnapp", "compliance"], status_url: "https://status.orcasecurity.io/api/v2/status.json", page_url: "https://status.orcasecurity.io", type: "statuspage" },
+  { id: "scale_ai", name: "Scale AI", tags: ["ai", "data", "annotation", "training"], status_url: "https://status.scale.com/api/v2/status.json", page_url: "https://status.scale.com", type: "statuspage" },
+  { id: "wordtune", name: "Wordtune", tags: ["ai", "writing", "productivity", "saas"], status_url: "https://status.wordtune.com/api/v2/status.json", page_url: "https://status.wordtune.com", type: "statuspage" },
+  { id: "quantumworkplace", name: "Quantum Workplace", tags: ["hr", "employee-engagement", "performance", "saas"], status_url: "https://status.quantumworkplace.com/api/v2/status.json", page_url: "https://status.quantumworkplace.com", type: "statuspage" },
+  { id: "precisely", name: "Precisely", tags: ["data", "quality", "enrichment", "analytics"], status_url: "https://status.precisely.com/api/v2/status.json", page_url: "https://status.precisely.com", type: "statuspage" },
+  { id: "broadvoice", name: "Broadvoice", tags: ["voip", "communications", "cloud", "telephony"], status_url: "https://status.broadvoice.com/api/v2/status.json", page_url: "https://status.broadvoice.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2780,7 +2792,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1134 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1146 services.",
           },
         },
         required: [],
