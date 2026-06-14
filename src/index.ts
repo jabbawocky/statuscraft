@@ -1837,6 +1837,22 @@ const SERVICES: ServiceConfig[] = [
   { id: "webpagetest", name: "WebPageTest", tags: ["performance", "testing", "developer-tools", "monitoring"], status_url: "https://status.webpagetest.org/api/v2/status.json", page_url: "https://status.webpagetest.org", type: "statuspage" },
   // Databases
   { id: "tembo", name: "Tembo", tags: ["database", "postgres", "cloud", "saas"], status_url: "https://status.tembo.io/api/v2/status.json", page_url: "https://status.tembo.io", type: "statuspage" },
+  // Tick 120 additions
+  { id: "khan_academy", name: "Khan Academy", tags: ["education", "learning", "nonprofit", "saas"], status_url: "https://status.khanacademy.org/api/v2/status.json", page_url: "https://status.khanacademy.org", type: "statuspage" },
+  { id: "strava", name: "Strava", tags: ["fitness", "sports", "social", "mobile"], status_url: "https://status.strava.com/api/v2/status.json", page_url: "https://status.strava.com", type: "statuspage" },
+  { id: "peloton", name: "Peloton", tags: ["fitness", "hardware", "streaming", "saas"], status_url: "https://status.onepeloton.com/api/v2/status.json", page_url: "https://status.onepeloton.com", type: "statuspage" },
+  { id: "mightynetworks", name: "Mighty Networks", tags: ["community", "courses", "social", "saas"], status_url: "https://status.mightynetworks.com/api/v2/status.json", page_url: "https://status.mightynetworks.com", type: "statuspage" },
+  { id: "insightly", name: "Insightly", tags: ["crm", "project-management", "saas", "sales"], status_url: "https://status.insightly.com/api/v2/status.json", page_url: "https://status.insightly.com", type: "statuspage" },
+  { id: "freeagent", name: "FreeAgent", tags: ["accounting", "fintech", "small-business", "saas"], status_url: "https://status.freeagent.com/api/v2/status.json", page_url: "https://status.freeagent.com", type: "statuspage" },
+  { id: "vindicia", name: "Vindicia", tags: ["billing", "subscriptions", "payments", "fintech"], status_url: "https://status.vindicia.com/api/v2/status.json", page_url: "https://status.vindicia.com", type: "statuspage" },
+  { id: "fera", name: "Fera.ai", tags: ["reviews", "ecommerce", "social-proof", "saas"], status_url: "https://status.fera.ai/api/v2/status.json", page_url: "https://status.fera.ai", type: "statuspage" },
+  { id: "judge_me", name: "Judge.me", tags: ["reviews", "ecommerce", "social-proof", "shopify"], status_url: "https://status.judge.me/api/v2/status.json", page_url: "https://status.judge.me", type: "statuspage" },
+  { id: "taxbit", name: "TaxBit", tags: ["crypto", "tax", "fintech", "compliance"], status_url: "https://status.taxbit.com/api/v2/status.json", page_url: "https://status.taxbit.com", type: "statuspage" },
+  { id: "cointracker", name: "CoinTracker", tags: ["crypto", "tax", "portfolio", "fintech"], status_url: "https://status.cointracker.io/api/v2/status.json", page_url: "https://status.cointracker.io", type: "statuspage" },
+  { id: "emailonacid", name: "Email on Acid", tags: ["email", "testing", "qa", "deliverability"], status_url: "https://status.emailonacid.com/api/v2/status.json", page_url: "https://status.emailonacid.com", type: "statuspage" },
+  { id: "litmus", name: "Litmus", tags: ["email", "testing", "marketing", "analytics"], status_url: "https://status.litmus.com/api/v2/status.json", page_url: "https://status.litmus.com", type: "statuspage" },
+  { id: "mediasite", name: "Mediasite", tags: ["video", "webinar", "learning", "enterprise"], status_url: "https://status.mediasite.com/api/v2/status.json", page_url: "https://status.mediasite.com", type: "statuspage" },
+  { id: "appcenter", name: "Visual Studio App Center", tags: ["mobile", "ci-cd", "testing", "microsoft"], status_url: "https://status.appcenter.ms/api/v2/status.json", page_url: "https://status.appcenter.ms", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2206,7 +2222,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.39.0" },
+  { name: "statuscraft", version: "2.40.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -2279,7 +2295,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 856 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 871 services.",
           },
         },
         required: [],
