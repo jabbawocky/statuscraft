@@ -2872,6 +2872,31 @@ const SERVICES: ServiceConfig[] = [
   { id: "appsflyer", name: "AppsFlyer", tags: ["mobile-analytics", "attribution", "marketing", "saas"], status_url: "https://status.appsflyer.com/api/v2/status.json", page_url: "https://status.appsflyer.com", type: "statuspage" },
   { id: "attio", name: "Attio", tags: ["crm", "sales", "collaboration", "saas"], status_url: "https://status.attio.com/api/v2/status.json", page_url: "https://status.attio.com", type: "statuspage" },
   { id: "kustomer", name: "Kustomer", tags: ["customer-service", "crm", "helpdesk", "saas"], status_url: "https://status.kustomer.com/api/v2/status.json", page_url: "https://status.kustomer.com", type: "statuspage" },
+  // Wellness / mental health
+  { id: "calm", name: "Calm", tags: ["wellness", "meditation", "mindfulness", "mobile"], status_url: "https://status.calm.com/api/v2/status.json", page_url: "https://status.calm.com", type: "statuspage" },
+  // Healthcare data / interoperability
+  { id: "particle_health", name: "Particle Health", tags: ["healthcare", "health-data", "api", "interoperability"], status_url: "https://status.particlehealth.com/api/v2/status.json", page_url: "https://status.particlehealth.com", type: "statuspage" },
+  // Gaming / Xbox
+  { id: "xbox_live", name: "Xbox Live", tags: ["gaming", "microsoft", "console", "online"], status_url: "https://xboxlive.statuspage.io/api/v2/status.json", page_url: "https://xboxlive.statuspage.io", type: "statuspage" },
+  // Music / live events
+  { id: "bandsintown", name: "Bandsintown", tags: ["music", "events", "ticketing", "entertainment"], status_url: "https://status.bandsintown.com/api/v2/status.json", page_url: "https://status.bandsintown.com", type: "statuspage" },
+  // Cloud infrastructure
+  { id: "latitude_sh", name: "Latitude.sh", tags: ["cloud", "infrastructure", "bare-metal", "hosting"], status_url: "https://status.latitude.sh/api/v2/status.json", page_url: "https://status.latitude.sh", type: "statuspage" },
+  // HR / payroll / workforce
+  { id: "employment_hero", name: "Employment Hero", tags: ["hr", "payroll", "workforce", "saas"], status_url: "https://status.employmenthero.com/api/v2/status.json", page_url: "https://status.employmenthero.com", type: "statuspage" },
+  { id: "tanda", name: "Tanda", tags: ["workforce", "scheduling", "hr", "time-tracking"], status_url: "https://status.tanda.co/api/v2/status.json", page_url: "https://status.tanda.co", type: "statuspage" },
+  { id: "rotageek", name: "Rotageek", tags: ["workforce", "scheduling", "retail", "hr"], status_url: "https://status.rotageek.com/api/v2/status.json", page_url: "https://status.rotageek.com", type: "statuspage" },
+  { id: "breathehr", name: "Breathe HR", tags: ["hr", "sme", "uk", "saas"], status_url: "https://status.breathehr.com/api/v2/status.json", page_url: "https://status.breathehr.com", type: "statuspage" },
+  // Payments
+  { id: "tyro", name: "Tyro", tags: ["payments", "fintech", "eftpos", "australia"], status_url: "https://status.tyro.com/api/v2/status.json", page_url: "https://status.tyro.com", type: "statuspage" },
+  // No-code / workflow
+  { id: "trackvia", name: "TrackVia", tags: ["no-code", "workflow", "database", "operations"], status_url: "https://status.trackvia.com/api/v2/status.json", page_url: "https://status.trackvia.com", type: "statuspage" },
+  // E-commerce / supply chain
+  { id: "logicbroker", name: "Logicbroker", tags: ["ecommerce", "supply-chain", "drop-shipping", "integration"], status_url: "https://status.logicbroker.com/api/v2/status.json", page_url: "https://status.logicbroker.com", type: "statuspage" },
+  // Expense management
+  { id: "emburse_professional", name: "Emburse Professional", tags: ["expense-management", "travel", "finance", "enterprise"], status_url: "https://status.certify.com/api/v2/status.json", page_url: "https://status.certify.com", type: "statuspage" },
+  // API management / integration platform
+  { id: "axway", name: "Axway", tags: ["api-management", "integration", "enterprise", "mft"], status_url: "https://status.axway.com/api/v2/status.json", page_url: "https://status.axway.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3276,7 +3301,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1437 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1451 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3314,7 +3339,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1437 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1451 services.",
           },
         },
         required: [],
