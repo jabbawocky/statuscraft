@@ -2315,6 +2315,17 @@ const SERVICES: ServiceConfig[] = [
   { id: "osano", name: "Osano", tags: ["privacy", "consent", "compliance", "gdpr"], status_url: "https://status.osano.com/api/v2/status.json", page_url: "https://status.osano.com", type: "statuspage" },
   // Cookie consent management
   { id: "cookiebot", name: "Cookiebot", tags: ["privacy", "consent", "cookies", "compliance"], status_url: "https://status.cookiebot.com/api/v2/status.json", page_url: "https://status.cookiebot.com", type: "statuspage" },
+  // Tick 138 additions
+  { id: "brandwatch", name: "Brandwatch", tags: ["social media", "analytics", "monitoring", "marketing"], status_url: "https://status.brandwatch.com/api/v2/status.json", page_url: "https://status.brandwatch.com", type: "statuspage" },
+  { id: "sumup", name: "SumUp", tags: ["payments", "pos", "card", "fintech"], status_url: "https://status.sumup.com/api/v2/status.json", page_url: "https://status.sumup.com", type: "statuspage" },
+  { id: "frontify", name: "Frontify", tags: ["brand management", "dam", "design", "assets"], status_url: "https://status.frontify.com/api/v2/status.json", page_url: "https://status.frontify.com", type: "statuspage" },
+  { id: "sumsub", name: "Sumsub", tags: ["kyc", "identity", "verification", "compliance"], status_url: "https://status.sumsub.com/api/v2/status.json", page_url: "https://status.sumsub.com", type: "statuspage" },
+  { id: "lilt", name: "Lilt", tags: ["translation", "localization", "ai", "enterprise"], status_url: "https://status.lilt.com/api/v2/status.json", page_url: "https://status.lilt.com", type: "statuspage" },
+  { id: "smartcat", name: "Smartcat", tags: ["translation", "localization", "tms", "enterprise"], status_url: "https://status.smartcat.ai/api/v2/status.json", page_url: "https://status.smartcat.ai", type: "statuspage" },
+  { id: "vouched", name: "Vouched", tags: ["identity", "verification", "kyc", "ai"], status_url: "https://status.vouched.id/api/v2/status.json", page_url: "https://status.vouched.id", type: "statuspage" },
+  { id: "ometria", name: "Ometria", tags: ["crm", "retail", "marketing", "customer"], status_url: "https://status.ometria.com/api/v2/status.json", page_url: "https://status.ometria.com", type: "statuspage" },
+  { id: "walnut", name: "Walnut", tags: ["demos", "sales", "product", "interactive"], status_url: "https://status.walnut.io/api/v2/status.json", page_url: "https://status.walnut.io", type: "statuspage" },
+  { id: "metronome", name: "Metronome", tags: ["billing", "usage", "metering", "saas"], status_url: "https://status.metronome.com/api/v2/status.json", page_url: "https://status.metronome.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2757,7 +2768,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1113 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1123 services.",
           },
         },
         required: [],
