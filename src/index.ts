@@ -1912,6 +1912,31 @@ const SERVICES: ServiceConfig[] = [
   { id: "envoy", name: "Envoy", tags: ["visitor-management", "workplace", "office", "facilities"], status_url: "https://status.envoy.com/api/v2/status.json", page_url: "https://status.envoy.com", type: "statuspage" },
   { id: "brivo", name: "Brivo", tags: ["access-control", "security", "physical-security", "saas"], status_url: "https://status.brivo.com/api/v2/status.json", page_url: "https://status.brivo.com", type: "statuspage" },
   { id: "eptura_visitor", name: "Eptura Visitor", tags: ["visitor-management", "workplace", "facilities", "saas"], status_url: "https://status.proxyclick.com/api/v2/status.json", page_url: "https://status.proxyclick.com", type: "statuspage" },
+  // Tick 125 additions
+  // Security awareness training / phishing simulation
+  { id: "knowbe4", name: "KnowBe4", tags: ["security", "awareness-training", "phishing-simulation", "saas"], status_url: "https://status.knowbe4.com/api/v2/status.json", page_url: "https://status.knowbe4.com", type: "statuspage" },
+  // Image CDN and optimization
+  { id: "imagekit", name: "ImageKit", tags: ["cdn", "image-optimization", "media", "api"], status_url: "https://imagekit.statuspage.io/api/v2/status.json", page_url: "https://imagekit.statuspage.io", type: "statuspage" },
+  // Applicant tracking system
+  { id: "jazzhr", name: "JazzHR", tags: ["hr", "ats", "recruiting", "saas"], status_url: "https://status.jazzhr.com/api/v2/status.json", page_url: "https://status.jazzhr.com", type: "statuspage" },
+  // Recruiting platform
+  { id: "workable", name: "Workable", tags: ["hr", "recruiting", "ats", "saas"], status_url: "https://workable.statuspage.io/api/v2/status.json", page_url: "https://workable.statuspage.io", type: "statuspage" },
+  // Learning and talent management suite
+  { id: "cornerstoneondemand", name: "Cornerstone OnDemand", tags: ["lms", "learning", "talent-management", "hr"], status_url: "https://cornerstoneondemand.statuspage.io/api/v2/status.json", page_url: "https://cornerstoneondemand.statuspage.io", type: "statuspage" },
+  // Construction project management
+  { id: "buildertrend", name: "Buildertrend", tags: ["construction", "project-management", "field-service", "saas"], status_url: "https://status.buildertrend.net/api/v2/status.json", page_url: "https://status.buildertrend.net", type: "statuspage" },
+  // IoT fleet management and device OS
+  { id: "balena", name: "Balena", tags: ["iot", "fleet-management", "embedded", "devices"], status_url: "https://status.balena.io/api/v2/status.json", page_url: "https://status.balena.io", type: "statuspage" },
+  // Cellular IoT connectivity
+  { id: "hologram", name: "Hologram", tags: ["iot", "cellular", "connectivity", "hardware"], status_url: "https://status.hologram.io/api/v2/status.json", page_url: "https://status.hologram.io", type: "statuspage" },
+  // Game development / real-time 3D platform
+  { id: "unity", name: "Unity", tags: ["gaming", "game-engine", "developer-tools", "3d"], status_url: "https://unity.statuspage.io/api/v2/status.json", page_url: "https://unity.statuspage.io", type: "statuspage" },
+  // IT service management
+  { id: "topdesk", name: "TOPdesk", tags: ["itsm", "service-management", "help-desk", "saas"], status_url: "https://status.topdesk.com/api/v2/status.json", page_url: "https://status.topdesk.com", type: "statuspage" },
+  // Reverse ETL / data activation
+  { id: "census", name: "Census", tags: ["data", "reverse-etl", "data-activation", "analytics"], status_url: "https://status.getcensus.com/api/v2/status.json", page_url: "https://status.getcensus.com", type: "statuspage" },
+  // Cloud ETL / data pipeline
+  { id: "stitch_data", name: "Stitch Data", tags: ["data", "etl", "data-integration", "saas"], status_url: "https://status.stitchdata.com/api/v2/status.json", page_url: "https://status.stitchdata.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2354,7 +2379,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 912 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 924 services.",
           },
         },
         required: [],
