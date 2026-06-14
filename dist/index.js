@@ -1355,6 +1355,31 @@ const SERVICES = [
     { id: "jobvite", name: "Jobvite", tags: ["ats", "recruiting", "hr", "talent"], status_url: "https://status.jobvite.com/api/v2/status.json", page_url: "https://status.jobvite.com", type: "statuspage" },
     { id: "smartrecruiters", name: "SmartRecruiters", tags: ["ats", "recruiting", "hr", "enterprise"], status_url: "https://status.smartrecruiters.com/api/v2/status.json", page_url: "https://status.smartrecruiters.com", type: "statuspage" },
     { id: "teamtailor", name: "Teamtailor", tags: ["ats", "recruiting", "employer-brand", "hr"], status_url: "https://status.teamtailor.com/api/v2/status.json", page_url: "https://status.teamtailor.com", type: "statuspage" },
+    // Tick 103 additions — cloud/IaaS, dev tools, logistics, legal tech, tax, e-commerce, CX
+    // Cloud / IaaS
+    { id: "oracle_cloud", name: "Oracle Cloud (OCI)", tags: ["cloud", "infrastructure", "iaas", "hosting"], status_url: "https://ocistatus.oraclecloud.com/api/v2/status.json", page_url: "https://ocistatus.oraclecloud.com", type: "statuspage" },
+    // Dev tools / DevOps
+    { id: "gitlab", name: "GitLab", tags: ["devtools", "git", "ci-cd", "hosting"], status_url: "https://api.status.io/1.0/status/5b36dc6502d06804c08349f7", page_url: "https://status.gitlab.com", type: "statusio" },
+    // Headless commerce
+    { id: "nacelle", name: "Nacelle", tags: ["ecommerce", "headless", "commerce", "saas"], status_url: "https://status.nacelle.com/api/v2/status.json", page_url: "https://status.nacelle.com", type: "statuspage" },
+    // Legal tech
+    { id: "litify", name: "Litify", tags: ["legal", "crm", "saas", "law"], status_url: "https://status.litify.com/api/v2/status.json", page_url: "https://status.litify.com", type: "statuspage" },
+    // Finance / investment management
+    { id: "allvue", name: "Allvue Systems", tags: ["finance", "investment-management", "alts", "saas"], status_url: "https://status.allvuesystems.com/api/v2/status.json", page_url: "https://status.allvuesystems.com", type: "statuspage" },
+    // Tax compliance
+    { id: "vertex", name: "Vertex Inc", tags: ["tax", "compliance", "finance", "saas"], status_url: "https://status.vertexinc.com/api/v2/status.json", page_url: "https://status.vertexinc.com", type: "statuspage" },
+    // Logistics / supply chain visibility
+    { id: "project44", name: "project44", tags: ["logistics", "supply-chain", "visibility", "saas"], status_url: "https://status.project44.com/api/v2/status.json", page_url: "https://status.project44.com", type: "statuspage" },
+    { id: "bringg", name: "Bringg", tags: ["logistics", "delivery", "last-mile", "saas"], status_url: "https://status.bringg.com/api/v2/status.json", page_url: "https://status.bringg.com", type: "statuspage" },
+    // E-commerce fulfillment / shipping
+    { id: "shipbob", name: "ShipBob", tags: ["logistics", "fulfillment", "ecommerce", "shipping"], status_url: "https://status.shipbob.com/api/v2/status.json", page_url: "https://status.shipbob.com", type: "statuspage" },
+    { id: "stamps", name: "Stamps.com", tags: ["shipping", "postage", "ecommerce", "logistics"], status_url: "https://status.stamps.com/api/v2/status.json", page_url: "https://status.stamps.com", type: "statuspage" },
+    { id: "pirateship", name: "Pirate Ship", tags: ["shipping", "postage", "ecommerce", "logistics"], status_url: "https://status.pirateship.com/api/v2/status.json", page_url: "https://status.pirateship.com", type: "statuspage" },
+    // Subscription commerce
+    { id: "ordergroove", name: "Ordergroove", tags: ["ecommerce", "subscriptions", "retention", "saas"], status_url: "https://status.ordergroove.com/api/v2/status.json", page_url: "https://status.ordergroove.com", type: "statuspage" },
+    // Customer experience / UX research
+    { id: "satismeter", name: "SatisMeter", tags: ["analytics", "feedback", "nps", "customer-success"], status_url: "https://status.satismeter.com/api/v2/status.json", page_url: "https://status.satismeter.com", type: "statuspage" },
+    { id: "userzoom", name: "UserZoom", tags: ["ux-research", "usability-testing", "analytics", "saas"], status_url: "https://status.userzoom.com/api/v2/status.json", page_url: "https://status.userzoom.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1742,7 +1767,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.30.1" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.31.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -1805,7 +1830,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 608 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 622 services.",
                     },
                 },
                 required: [],
