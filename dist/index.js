@@ -2242,6 +2242,18 @@ const SERVICES = [
     { id: "ometria", name: "Ometria", tags: ["crm", "retail", "marketing", "customer"], status_url: "https://status.ometria.com/api/v2/status.json", page_url: "https://status.ometria.com", type: "statuspage" },
     { id: "walnut", name: "Walnut", tags: ["demos", "sales", "product", "interactive"], status_url: "https://status.walnut.io/api/v2/status.json", page_url: "https://status.walnut.io", type: "statuspage" },
     { id: "metronome", name: "Metronome", tags: ["billing", "usage", "metering", "saas"], status_url: "https://status.metronome.com/api/v2/status.json", page_url: "https://status.metronome.com", type: "statuspage" },
+    // Tick 139 additions
+    { id: "practice_fusion", name: "Practice Fusion", tags: ["healthcare", "ehr", "emr", "medical"], status_url: "https://status.practicefusion.com/api/v2/status.json", page_url: "https://status.practicefusion.com", type: "statuspage" },
+    { id: "login_gov", name: "Login.gov", tags: ["government", "identity", "authentication", "federal"], status_url: "https://status.login.gov/api/v2/status.json", page_url: "https://status.login.gov", type: "statuspage" },
+    { id: "idme", name: "ID.me", tags: ["identity", "verification", "government", "authentication"], status_url: "https://status.id.me/api/v2/status.json", page_url: "https://status.id.me", type: "statuspage" },
+    { id: "morningstar", name: "Morningstar", tags: ["finance", "data", "analytics", "investment"], status_url: "https://status.morningstar.com/api/v2/status.json", page_url: "https://status.morningstar.com", type: "statuspage" },
+    { id: "hint_health", name: "Hint Health", tags: ["healthcare", "direct-primary-care", "saas", "medical"], status_url: "https://status.hint.com/api/v2/status.json", page_url: "https://status.hint.com", type: "statuspage" },
+    { id: "tebra", name: "Tebra", tags: ["healthcare", "practice-management", "ehr", "medical"], status_url: "https://status.tebra.com/api/v2/status.json", page_url: "https://status.tebra.com", type: "statuspage" },
+    { id: "tigerconnect", name: "TigerConnect", tags: ["healthcare", "communication", "messaging", "clinical"], status_url: "https://status.tigerconnect.com/api/v2/status.json", page_url: "https://status.tigerconnect.com", type: "statuspage" },
+    { id: "powerschool", name: "PowerSchool", tags: ["edtech", "k12", "sis", "education"], status_url: "https://status.powerschool.com/api/v2/status.json", page_url: "https://status.powerschool.com", type: "statuspage" },
+    { id: "solutionreach", name: "Solutionreach", tags: ["healthcare", "patient-communication", "dental", "medical"], status_url: "https://status.solutionreach.com/api/v2/status.json", page_url: "https://status.solutionreach.com", type: "statuspage" },
+    { id: "civicplus", name: "CivicPlus", tags: ["govtech", "government", "municipal", "civic"], status_url: "https://status.civicplus.com/api/v2/status.json", page_url: "https://status.civicplus.com", type: "statuspage" },
+    { id: "trustarc", name: "TrustArc", tags: ["privacy", "compliance", "gdpr", "consent"], status_url: "https://status.trustarc.com/api/v2/status.json", page_url: "https://status.trustarc.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -2692,7 +2704,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1123 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1134 services.",
                     },
                 },
                 required: [],
