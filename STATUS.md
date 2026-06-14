@@ -1,8 +1,9 @@
-# StatusCraft — Mission Status: June 14, 2026 (tick 92)
+# StatusCraft — Mission Status: June 14, 2026 (tick 93)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **chore: tick 93 audit — all 562/562 fetchers valid** (tick 93) — Full live audit: 562/562 fetchers returning valid normalized status. 0 broken fetchers this tick. Stripe, PagerDuty, AWS, Railway all confirmed live. README and tool description accurate at 562 services. STATUS.md metrics fixed (was stale at 523, now 562). Quality-over-quantity phase: all fetchers clean, ready to resume adding services next tick.
 - ✅ **chore: tick 92 audit — all 562/562 fetchers valid** (tick 92) — Full live audit: 562/562 fetchers returning valid normalized status. 0 broken fetchers this tick. Stripe (stripestatus.com/api/v2), PagerDuty (HTML-embedded), AWS (UTF-16 JSON), Railway (statuspage) all confirmed live with real data. README and tool description accurate at 562 services. Quality-over-quantity phase complete — all fetchers clean, ready to resume adding services next tick.
 - ✅ **chore: tick 91 audit — all 562/562 fetchers valid** (tick 91) — Full live audit: 562/562 fetchers returning valid normalized status. 0 broken fetchers this tick. README and tool description confirmed accurate at 562 services. Stripe, PagerDuty, AWS, Railway all confirmed live. Quality-over-quantity phase: all fetchers clean, ready to resume adding services next tick.
 - ✅ **fix: remove Humanloop, 562/562 fetchers valid** (tick 90) — Full live audit: 562/562 fetchers returning valid normalized status. 1 broken fetcher fixed: Humanloop removed — `status.humanloop.com` redirects to incident.io marketing page with `{"page":null,"status":null}` from the statuspage API shim; old `humanloop.statuspage.io` has only 2021 demo/example components, not maintained. No parseable live API exists. Removal drops count to 562; README and tool description updated. 562/562 clean.
@@ -83,7 +84,7 @@
 - ✅ **v1.5.0–v1.0.0** — See prior STATUS.md entries.
 
 **Metrics:**
-- Services tracked: 523
+- Services tracked: 562
 - Tools: 5 (get_status, get_all_status, list_services, check_multiple, refresh_status)
 - Stars: 0
 - Install: `npx -y github:jabbawocky/statuscraft`
