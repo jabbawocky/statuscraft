@@ -2189,6 +2189,22 @@ const SERVICES: ServiceConfig[] = [
   { id: "skedda", name: "Skedda", tags: ["scheduling", "room-booking", "facilities", "saas"], status_url: "https://status.skedda.com/api/v2/status.json", page_url: "https://status.skedda.com", type: "statuspage" },
   // Healthcare practice management
   { id: "noterro", name: "Noterro", tags: ["healthcare", "practice-management", "allied-health", "saas"], status_url: "https://status.noterro.com/api/v2/status.json", page_url: "https://status.noterro.com", type: "statuspage" },
+  // Document automation / CPQ
+  { id: "conga", name: "Conga", tags: ["document-automation", "contracts", "cpq", "enterprise"], status_url: "https://status.conga.com/api/v2/status.json", page_url: "https://status.conga.com", type: "statuspage" },
+  // Legal practice management
+  { id: "smokeball", name: "Smokeball", tags: ["legal", "law-firm", "practice-management", "saas"], status_url: "https://status.smokeball.com/api/v2/status.json", page_url: "https://status.smokeball.com", type: "statuspage" },
+  // Field service / trade software
+  { id: "fieldedge", name: "FieldEdge", tags: ["field-service", "hvac", "plumbing", "saas"], status_url: "https://status.fieldedge.com/api/v2/status.json", page_url: "https://status.fieldedge.com", type: "statuspage" },
+  // Log management
+  { id: "humio", name: "Humio (CrowdStrike)", tags: ["logging", "observability", "devops", "security"], status_url: "https://status.humio.com/api/v2/status.json", page_url: "https://status.humio.com", type: "statuspage" },
+  { id: "logdna", name: "LogDNA (Mezmo)", tags: ["logging", "observability", "devops", "cloud"], status_url: "https://status.logdna.com/api/v2/status.json", page_url: "https://status.logdna.com", type: "statuspage" },
+  // IT helpdesk / ITSM
+  { id: "spiceworks", name: "Spiceworks", tags: ["it-helpdesk", "itsm", "community", "saas"], status_url: "https://status.spiceworks.com/api/v2/status.json", page_url: "https://status.spiceworks.com", type: "statuspage" },
+  { id: "samanage", name: "Samanage (SolarWinds ITSM)", tags: ["itsm", "it-service-management", "saas", "enterprise"], status_url: "https://status.samanage.com/api/v2/status.json", page_url: "https://status.samanage.com", type: "statuspage" },
+  // Talent acquisition / recruiting
+  { id: "fountain", name: "Fountain", tags: ["recruiting", "hr", "hourly-hiring", "saas"], status_url: "https://status.fountain.com/api/v2/status.json", page_url: "https://status.fountain.com", type: "statuspage" },
+  { id: "phenom", name: "Phenom", tags: ["recruiting", "talent", "hr", "saas"], status_url: "https://status.phenom.com/api/v2/status.json", page_url: "https://status.phenom.com", type: "statuspage" },
+  { id: "paradox_ai", name: "Paradox", tags: ["recruiting", "ai", "conversational", "hr"], status_url: "https://status.paradox.ai/api/v2/status.json", page_url: "https://status.paradox.ai", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2631,7 +2647,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1043 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1053 services.",
           },
         },
         required: [],
