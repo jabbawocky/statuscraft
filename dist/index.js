@@ -1804,6 +1804,18 @@ const SERVICES = [
     { id: "litmus", name: "Litmus", tags: ["email", "testing", "marketing", "analytics"], status_url: "https://status.litmus.com/api/v2/status.json", page_url: "https://status.litmus.com", type: "statuspage" },
     { id: "mediasite", name: "Mediasite", tags: ["video", "webinar", "learning", "enterprise"], status_url: "https://status.mediasite.com/api/v2/status.json", page_url: "https://status.mediasite.com", type: "statuspage" },
     { id: "appcenter", name: "Visual Studio App Center", tags: ["mobile", "ci-cd", "testing", "microsoft"], status_url: "https://status.appcenter.ms/api/v2/status.json", page_url: "https://status.appcenter.ms", type: "statuspage" },
+    // Tick 121 additions
+    { id: "teleport", name: "Teleport Cloud", tags: ["security", "infrastructure", "zero-trust", "devops"], status_url: "https://status.teleport.sh/api/v2/status.json", page_url: "https://status.teleport.sh", type: "statuspage" },
+    { id: "bigpanda", name: "BigPanda", tags: ["aiops", "monitoring", "incident-management", "observability"], status_url: "https://status.bigpanda.io/api/v2/status.json", page_url: "https://status.bigpanda.io", type: "statuspage" },
+    { id: "lastpass", name: "LastPass", tags: ["security", "password-manager", "identity", "saas"], status_url: "https://lastpass.statuspage.io/api/v2/status.json", page_url: "https://status.lastpass.com", type: "statuspage" },
+    { id: "cdnjs", name: "cdnjs", tags: ["cdn", "javascript", "open-source", "developer-tools"], status_url: "https://status.cdnjs.com/api/v2/status.json", page_url: "https://status.cdnjs.com", type: "statuspage" },
+    { id: "nosto", name: "Nosto", tags: ["ecommerce", "personalization", "marketing", "saas"], status_url: "https://status.nosto.com/api/v2/status.json", page_url: "https://status.nosto.com", type: "statuspage" },
+    { id: "wire", name: "Wire", tags: ["messaging", "security", "collaboration", "enterprise"], status_url: "https://status.wire.com/api/v2/status.json", page_url: "https://status.wire.com", type: "statuspage" },
+    { id: "matrix_org", name: "Matrix.org", tags: ["messaging", "open-source", "protocol", "decentralized"], status_url: "https://status.matrix.org/api/v2/status.json", page_url: "https://status.matrix.org", type: "statuspage" },
+    { id: "trint", name: "Trint", tags: ["transcription", "media", "ai", "journalism"], status_url: "https://status.trint.com/api/v2/status.json", page_url: "https://status.trint.com", type: "statuspage" },
+    { id: "worldpay", name: "Worldpay", tags: ["payments", "fintech", "acquiring", "processing"], status_url: "https://status.worldpay.com/api/v2/status.json", page_url: "https://status.worldpay.com", type: "statuspage" },
+    { id: "360learning", name: "360Learning", tags: ["lms", "learning", "training", "saas"], status_url: "https://status.360learning.com/api/v2/status.json", page_url: "https://status.360learning.com", type: "statuspage" },
+    { id: "litmos", name: "Litmos", tags: ["lms", "learning", "training", "saas"], status_url: "https://litmos.statuspage.io/api/v2/status.json", page_url: "https://litmos.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -2254,7 +2266,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 871 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 882 services.",
                     },
                 },
                 required: [],
