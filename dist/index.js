@@ -2787,6 +2787,36 @@ const SERVICES = [
     { id: "accelo", name: "Accelo", tags: ["psa", "professional-services", "project-management", "saas"], status_url: "https://status.accelo.com/api/v2/status.json", page_url: "https://status.accelo.com", type: "statuspage" },
     // BPM / workflow automation
     { id: "processmaker", name: "ProcessMaker", tags: ["bpm", "workflow-automation", "process-management", "saas"], status_url: "https://status.processmaker.com/api/v2/status.json", page_url: "https://status.processmaker.com", type: "statuspage" },
+    // File storage / cloud storage
+    { id: "dropbox", name: "Dropbox", tags: ["storage", "file-sharing", "cloud", "saas"], status_url: "https://status.dropbox.com/api/v2/status.json", page_url: "https://status.dropbox.com", type: "statuspage" },
+    { id: "box", name: "Box", tags: ["storage", "file-sharing", "cloud", "saas", "collaboration"], status_url: "https://status.box.com/api/v2/status.json", page_url: "https://status.box.com", type: "statuspage" },
+    // Design / collaboration
+    { id: "figma", name: "Figma", tags: ["design", "collaboration", "saas", "devtools"], status_url: "https://status.figma.com/api/v2/status.json", page_url: "https://status.figma.com", type: "statuspage" },
+    // Product analytics / data
+    { id: "amplitude", name: "Amplitude", tags: ["analytics", "product-analytics", "saas", "data"], status_url: "https://status.amplitude.com/api/v2/status.json", page_url: "https://status.amplitude.com", type: "statuspage" },
+    { id: "segment", name: "Segment", tags: ["cdp", "analytics", "data", "saas"], status_url: "https://status.segment.com/api/v2/status.json", page_url: "https://status.segment.com", type: "statuspage" },
+    // Error tracking / observability
+    { id: "sentry", name: "Sentry", tags: ["error-tracking", "monitoring", "observability", "devtools"], status_url: "https://status.sentry.io/api/v2/status.json", page_url: "https://status.sentry.io", type: "statuspage" },
+    // Email / SMS / marketing automation
+    { id: "klaviyo", name: "Klaviyo", tags: ["email", "sms", "marketing-automation", "ecommerce"], status_url: "https://status.klaviyo.com/api/v2/status.json", page_url: "https://status.klaviyo.com", type: "statuspage" },
+    { id: "activecampaign", name: "ActiveCampaign", tags: ["email", "marketing-automation", "crm", "saas"], status_url: "https://status.activecampaign.com/api/v2/status.json", page_url: "https://status.activecampaign.com", type: "statuspage" },
+    // CRM / customer success
+    { id: "hubspot", name: "HubSpot", tags: ["crm", "marketing-automation", "saas", "sales"], status_url: "https://status.hubspot.com/api/v2/status.json", page_url: "https://status.hubspot.com", type: "statuspage" },
+    { id: "intercom", name: "Intercom", tags: ["crm", "customer-messaging", "support", "saas"], status_url: "https://www.intercomstatus.com/api/v2/status.json", page_url: "https://www.intercomstatus.com", type: "statuspage" },
+    // Database / nocode
+    { id: "airtable", name: "Airtable", tags: ["database", "nocode", "collaboration", "saas"], status_url: "https://status.airtable.com/api/v2/status.json", page_url: "https://status.airtable.com", type: "statuspage" },
+    // Project management / issue tracking
+    { id: "asana", name: "Asana", tags: ["project-management", "task-management", "collaboration", "saas"], status_url: "https://status.asana.com/api/v2/status.json", page_url: "https://status.asana.com", type: "statuspage" },
+    { id: "linear", name: "Linear", tags: ["project-management", "issue-tracking", "devtools", "saas"], status_url: "https://linearstatus.com/api/v2/status.json", page_url: "https://linearstatus.com", type: "statuspage" },
+    // Automation / integration
+    { id: "zapier", name: "Zapier", tags: ["automation", "integration", "nocode", "saas"], status_url: "https://status.zapier.com/api/v2/status.json", page_url: "https://status.zapier.com", type: "statuspage" },
+    { id: "make", name: "Make", tags: ["automation", "integration", "nocode", "saas"], status_url: "https://status.make.com/api/v2/status.json", page_url: "https://status.make.com", type: "statuspage" },
+    // Forms / surveys
+    { id: "typeform", name: "Typeform", tags: ["forms", "surveys", "saas", "data-collection"], status_url: "https://status.typeform.com/api/v2/status.json", page_url: "https://status.typeform.com", type: "statuspage" },
+    // Hosting / PaaS / JAMstack
+    { id: "fly", name: "Fly.io", tags: ["hosting", "paas", "containers", "cloud"], status_url: "https://status.flyio.net/api/v2/status.json", page_url: "https://status.flyio.net", type: "statuspage" },
+    { id: "netlify", name: "Netlify", tags: ["hosting", "jamstack", "cdn", "saas"], status_url: "https://www.netlifystatus.com/api/v2/status.json", page_url: "https://www.netlifystatus.com", type: "statuspage" },
+    { id: "vercel", name: "Vercel", tags: ["hosting", "jamstack", "cdn", "frontend"], status_url: "https://www.vercel-status.com/api/v2/status.json", page_url: "https://www.vercel-status.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3202,7 +3232,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1467 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1486 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3237,7 +3267,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1467 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1486 services.",
                     },
                 },
                 required: [],
