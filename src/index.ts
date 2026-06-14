@@ -3087,6 +3087,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "gemfury", name: "Gemfury", tags: ["package-registry", "devtools", "hosting"], status_url: "https://status.gemfury.com/api/v2/status.json", page_url: "https://status.gemfury.com", type: "statuspage" },
   // Field service management
   { id: "jobber", name: "Jobber", tags: ["field-service", "smb", "crm", "saas"], status_url: "https://jobber.statuspage.io/api/v2/status.json", page_url: "https://jobber.statuspage.io", type: "statuspage" },
+  // Construction management
+  { id: "esub", name: "eSUB Construction Software", tags: ["construction", "project-management", "field-service", "saas"], status_url: "https://status.esub.com/api/v2/status.json", page_url: "https://status.esub.com", type: "statuspage" },
+  // Property / rental tech
+  { id: "rently", name: "Rently", tags: ["real-estate", "property-management", "saas"], status_url: "https://status.rently.com/api/v2/status.json", page_url: "https://status.rently.com", type: "statuspage" },
+  // Telecom / identity verification
+  { id: "telesign", name: "TeleSign", tags: ["communication", "sms", "verification", "cpaas", "api"], status_url: "https://status.telesign.com/api/v2/status.json", page_url: "https://status.telesign.com", type: "statuspage" },
+  // Enterprise file sync
+  { id: "syncplicity", name: "Syncplicity", tags: ["cloud-storage", "file-sync", "enterprise", "collaboration"], status_url: "https://status.syncplicity.com/api/v2/status.json", page_url: "https://status.syncplicity.com", type: "statuspage" },
+  // Event management
+  { id: "stova", name: "Stova", tags: ["events", "event-management", "saas"], status_url: "https://status.stova.io/api/v2/status.json", page_url: "https://status.stova.io", type: "statuspage" },
+  // Network intelligence / observability
+  { id: "thousandeyes", name: "ThousandEyes (Cisco)", tags: ["monitoring", "network", "observability", "cisco"], status_url: "https://status.thousandeyes.com/api/v2/status.json", page_url: "https://status.thousandeyes.com", type: "statuspage" },
+  // Last-mile delivery
+  { id: "lalamove", name: "Lalamove", tags: ["delivery", "logistics", "last-mile", "api"], status_url: "https://status.lalamove.com/api/v2/status.json", page_url: "https://status.lalamove.com", type: "statuspage" },
+  // Time-series database cloud
+  { id: "influxdb_cloud", name: "InfluxDB Cloud", tags: ["database", "time-series", "cloud", "monitoring", "observability"], status_url: "https://status.influxdata.com/api/v2/status.json", page_url: "https://status.influxdata.com", type: "statuspage" },
+  // CDN / video delivery
+  { id: "bunny_net", name: "bunny.net", tags: ["cdn", "infrastructure", "video", "hosting"], status_url: "https://status.bunny.net/api/v2/status.json", page_url: "https://status.bunny.net", type: "statuspage" },
+  // Accessibility testing
+  { id: "evinced", name: "Evinced", tags: ["accessibility", "testing", "devtools"], status_url: "https://status.evinced.com/api/v2/status.json", page_url: "https://status.evinced.com", type: "statuspage" },
+  // Transactional email templates
+  { id: "sendwithus", name: "Sendwithus", tags: ["email", "transactional", "templates", "api"], status_url: "https://status.sendwithus.com/api/v2/status.json", page_url: "https://status.sendwithus.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3491,7 +3513,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1566 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1577 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3529,7 +3551,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1566 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1577 services.",
           },
         },
         required: [],
