@@ -2171,6 +2171,34 @@ const SERVICES = [
     // Productivity / collaboration
     { id: "coda", name: "Coda", tags: ["productivity", "collaboration", "saas"], status_url: "https://status.coda.io/api/v2/status.json", page_url: "https://status.coda.io", type: "statuspage" },
     { id: "smartsheet", name: "Smartsheet", tags: ["productivity", "project-management", "enterprise", "saas"], status_url: "https://status.smartsheet.com/api/v2/status.json", page_url: "https://status.smartsheet.com", type: "statuspage" },
+    // Cloud storage
+    { id: "storj", name: "Storj DCS", tags: ["storage", "cloud", "infrastructure", "developer-tools"], status_url: "https://status.storj.io/api/v2/status.json", page_url: "https://status.storj.io", type: "statuspage" },
+    // CI/CD
+    { id: "appveyor", name: "AppVeyor", tags: ["ci-cd", "developer-tools", "windows", "automation"], status_url: "https://status.appveyor.com/api/v2/status.json", page_url: "https://status.appveyor.com", type: "statuspage" },
+    // Customer support
+    { id: "groovehq", name: "Groove", tags: ["customer-support", "helpdesk", "saas"], status_url: "https://status.groovehq.com/api/v2/status.json", page_url: "https://status.groovehq.com", type: "statuspage" },
+    // Video / webinars
+    { id: "crowdcast", name: "Crowdcast", tags: ["video", "webinar", "events", "streaming"], status_url: "https://status.crowdcast.io/api/v2/status.json", page_url: "https://status.crowdcast.io", type: "statuspage" },
+    // Social media monitoring
+    { id: "mention", name: "Mention", tags: ["social-media", "monitoring", "analytics", "marketing"], status_url: "https://status.mention.com/api/v2/status.json", page_url: "https://status.mention.com", type: "statuspage" },
+    // E-commerce / SMS marketing
+    { id: "recart", name: "Recart", tags: ["ecommerce", "sms", "messaging", "marketing"], status_url: "https://status.recart.com/api/v2/status.json", page_url: "https://status.recart.com", type: "statuspage" },
+    // Network security / zero-trust
+    { id: "perimeter81", name: "Perimeter 81", tags: ["security", "networking", "vpn", "zero-trust"], status_url: "https://status.perimeter81.com/api/v2/status.json", page_url: "https://status.perimeter81.com", type: "statuspage" },
+    // CPaaS / messaging
+    { id: "cm_com", name: "CM.com", tags: ["communications", "sms", "messaging", "api"], status_url: "https://status.cm.com/api/v2/status.json", page_url: "https://status.cm.com", type: "statuspage" },
+    // Push notifications
+    { id: "webpushr", name: "Webpushr", tags: ["push-notifications", "marketing", "web", "mobile"], status_url: "https://status.webpushr.com/api/v2/status.json", page_url: "https://status.webpushr.com", type: "statuspage" },
+    // Email security / anti-phishing
+    { id: "ironscales", name: "IRONSCALES", tags: ["security", "email-security", "phishing", "saas"], status_url: "https://status.ironscales.com/api/v2/status.json", page_url: "https://status.ironscales.com", type: "statuspage" },
+    // E-signature
+    { id: "signwell", name: "SignWell", tags: ["e-signature", "documents", "saas"], status_url: "https://status.signwell.com/api/v2/status.json", page_url: "https://status.signwell.com", type: "statuspage" },
+    // Open-source license compliance
+    { id: "fossa", name: "FOSSA", tags: ["security", "open-source", "license-compliance", "developer-tools"], status_url: "https://status.fossa.com/api/v2/status.json", page_url: "https://status.fossa.com", type: "statuspage" },
+    // Developer portal (Atlassian)
+    { id: "compass", name: "Compass", tags: ["developer-portal", "devtools", "atlassian", "saas"], status_url: "https://compass.status.atlassian.com/api/v2/status.json", page_url: "https://compass.status.atlassian.com", type: "statuspage" },
+    // Remote access
+    { id: "anydesk", name: "AnyDesk", tags: ["remote-access", "desktop", "saas"], status_url: "https://status.anydesk.com/api/v2/status.json", page_url: "https://status.anydesk.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -2621,7 +2649,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1083 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1097 services.",
                     },
                 },
                 required: [],
