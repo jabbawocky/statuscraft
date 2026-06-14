@@ -2838,6 +2838,16 @@ const SERVICES: ServiceConfig[] = [
 
   // Restaurant workforce scheduling
   { id: "seven_shifts", name: "7shifts", tags: ["restaurant", "workforce-management", "scheduling", "saas"], status_url: "https://status.7shifts.com/api/v2/status.json", page_url: "https://status.7shifts.com", type: "statuspage" },
+  { id: "mavenlink", name: "Mavenlink", tags: ["project-management", "resource-management", "professional-services", "saas"], status_url: "https://status.mavenlink.com/api/v2/status.json", page_url: "https://status.mavenlink.com", type: "statuspage" },
+  { id: "liquidplanner", name: "LiquidPlanner", tags: ["project-management", "scheduling", "resource-planning", "saas"], status_url: "https://status.liquidplanner.com/api/v2/status.json", page_url: "https://status.liquidplanner.com", type: "statuspage" },
+  { id: "mem_ai", name: "Mem", tags: ["notes", "ai", "knowledge-management", "productivity"], status_url: "https://status.mem.ai/api/v2/status.json", page_url: "https://status.mem.ai", type: "statuspage" },
+  { id: "oneleet", name: "Oneleet", tags: ["security", "compliance", "penetration-testing", "saas"], status_url: "https://status.oneleet.com/api/v2/status.json", page_url: "https://status.oneleet.com", type: "statuspage" },
+  { id: "immuta", name: "Immuta", tags: ["data-governance", "security", "access-control", "enterprise"], status_url: "https://status.immuta.com/api/v2/status.json", page_url: "https://status.immuta.com", type: "statuspage" },
+  { id: "flexera", name: "Flexera", tags: ["software-management", "saas-management", "itam", "enterprise"], status_url: "https://status.flexera.com/api/v2/status.json", page_url: "https://status.flexera.com", type: "statuspage" },
+  { id: "zylo", name: "Zylo", tags: ["saas-management", "software-spend", "itam", "saas"], status_url: "https://status.zylo.com/api/v2/status.json", page_url: "https://status.zylo.com", type: "statuspage" },
+  { id: "productiv", name: "Productiv", tags: ["saas-management", "software-analytics", "it", "enterprise"], status_url: "https://status.productiv.com/api/v2/status.json", page_url: "https://status.productiv.com", type: "statuspage" },
+  { id: "vena", name: "Vena", tags: ["fpa", "finance", "planning", "enterprise"], status_url: "https://status.vena.io/api/v2/status.json", page_url: "https://status.vena.io", type: "statuspage" },
+  { id: "smartvault", name: "SmartVault", tags: ["document-management", "accounting", "file-sharing", "saas"], status_url: "https://status.smartvault.com/api/v2/status.json", page_url: "https://status.smartvault.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3242,7 +3252,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1404 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1414 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3280,7 +3290,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1404 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1414 services.",
           },
         },
         required: [],
