@@ -2095,6 +2095,55 @@ const SERVICES: ServiceConfig[] = [
 
   // Digital mortgage / e-closing platform
   { id: "snapdocs", name: "Snapdocs", tags: ["mortgage", "real-estate", "fintech", "e-signing"], status_url: "https://status.snapdocs.com/api/v2/status.json", page_url: "https://status.snapdocs.com", type: "statuspage" },
+
+  // Graph database cloud service
+  { id: "neo4j", name: "Neo4j Aura", tags: ["database", "graph", "cloud", "saas"], status_url: "https://status.neo4j.io/api/v2/status.json", page_url: "https://status.neo4j.io", type: "statuspage" },
+
+  // Code coverage service
+  { id: "coveralls", name: "Coveralls", tags: ["devtools", "ci-cd", "code-coverage", "testing"], status_url: "https://status.coveralls.io/api/v2/status.json", page_url: "https://status.coveralls.io", type: "statuspage" },
+
+  // HTML/CSS screenshot & image generation API
+  { id: "hcti", name: "HTML/CSS to Image", tags: ["api", "image-generation", "screenshot", "devtools"], status_url: "https://status.htmlcsstoimage.com/api/v2/status.json", page_url: "https://status.htmlcsstoimage.com", type: "statuspage" },
+
+  // QA testing automation
+  { id: "rainforestqa", name: "Rainforest QA", tags: ["testing", "qa", "automation", "devtools"], status_url: "https://status.rainforestqa.com/api/v2/status.json", page_url: "https://status.rainforestqa.com", type: "statuspage" },
+  { id: "applitools", name: "Applitools", tags: ["testing", "visual-testing", "ai", "qa"], status_url: "https://status.applitools.com/api/v2/status.json", page_url: "https://status.applitools.com", type: "statuspage" },
+  { id: "testsigma", name: "Testsigma", tags: ["testing", "qa", "cloud", "automation"], status_url: "https://status.testsigma.com/api/v2/status.json", page_url: "https://status.testsigma.com", type: "statuspage" },
+  { id: "katalon", name: "Katalon", tags: ["testing", "qa", "automation", "devtools"], status_url: "https://status.katalon.com/api/v2/status.json", page_url: "https://status.katalon.com", type: "statuspage" },
+
+  // Mobile/web logging & crash reporting
+  { id: "bugfender", name: "Bugfender", tags: ["monitoring", "mobile", "logging", "crash-reporting"], status_url: "https://status.bugfender.com/api/v2/status.json", page_url: "https://status.bugfender.com", type: "statuspage" },
+
+  // Mobile attribution / marketing analytics
+  { id: "singular", name: "Singular", tags: ["mobile", "attribution", "marketing", "analytics"], status_url: "https://status.singular.net/api/v2/status.json", page_url: "https://status.singular.net", type: "statuspage" },
+  { id: "airbridge", name: "Airbridge", tags: ["mobile", "attribution", "marketing", "analytics"], status_url: "https://status.airbridge.io/api/v2/status.json", page_url: "https://status.airbridge.io", type: "statuspage" },
+
+  // Open banking / financial data APIs
+  { id: "mono", name: "Mono", tags: ["fintech", "open-banking", "api", "africa"], status_url: "https://status.mono.co/api/v2/status.json", page_url: "https://status.mono.co", type: "statuspage" },
+  { id: "tink", name: "Tink", tags: ["fintech", "open-banking", "api", "europe"], status_url: "https://status.tink.com/api/v2/status.json", page_url: "https://status.tink.com", type: "statuspage" },
+  { id: "yapily", name: "Yapily", tags: ["fintech", "open-banking", "api", "europe"], status_url: "https://status.yapily.com/api/v2/status.json", page_url: "https://status.yapily.com", type: "statuspage" },
+
+  // Sales intelligence / B2B data
+  { id: "leadfeeder", name: "Leadfeeder", tags: ["sales", "b2b", "analytics", "website-tracking"], status_url: "https://status.leadfeeder.com/api/v2/status.json", page_url: "https://status.leadfeeder.com", type: "statuspage" },
+  { id: "phantombuster", name: "PhantomBuster", tags: ["automation", "scraping", "sales", "b2b"], status_url: "https://status.phantombuster.com/api/v2/status.json", page_url: "https://status.phantombuster.com", type: "statuspage" },
+  { id: "uplead", name: "UpLead", tags: ["b2b", "data", "sales", "leads"], status_url: "https://status.uplead.com/api/v2/status.json", page_url: "https://status.uplead.com", type: "statuspage" },
+  { id: "bookyourdata", name: "BookYourData", tags: ["b2b", "data", "email", "leads"], status_url: "https://status.bookyourdata.com/api/v2/status.json", page_url: "https://status.bookyourdata.com", type: "statuspage" },
+
+  // Email builder / template tools
+  { id: "dyspatch", name: "Dyspatch", tags: ["email", "template", "builder", "saas"], status_url: "https://status.dyspatch.io/api/v2/status.json", page_url: "https://status.dyspatch.io", type: "statuspage" },
+  { id: "movableink", name: "Movable Ink", tags: ["email", "personalization", "marketing", "saas"], status_url: "https://status.movableink.com/api/v2/status.json", page_url: "https://status.movableink.com", type: "statuspage" },
+  { id: "beefree", name: "Beefree", tags: ["email", "builder", "sdk", "templates"], status_url: "https://status.beefree.io/api/v2/status.json", page_url: "https://status.beefree.io", type: "statuspage" },
+  { id: "stripo", name: "Stripo", tags: ["email", "builder", "templates", "saas"], status_url: "https://status.stripo.email/api/v2/status.json", page_url: "https://status.stripo.email", type: "statuspage" },
+
+  // API gateway / management
+  { id: "tyk", name: "Tyk Cloud", tags: ["api", "gateway", "api-management", "devtools"], status_url: "https://status.tyk.io/api/v2/status.json", page_url: "https://status.tyk.io", type: "statuspage" },
+
+  // Crypto exchanges
+  { id: "bitstamp", name: "Bitstamp", tags: ["crypto", "exchange", "fintech", "trading"], status_url: "https://status.bitstamp.net/api/v2/status.json", page_url: "https://status.bitstamp.net", type: "statuspage" },
+  { id: "crypto_com", name: "Crypto.com", tags: ["crypto", "exchange", "fintech", "trading"], status_url: "https://status.crypto.com/api/v2/status.json", page_url: "https://status.crypto.com", type: "statuspage" },
+
+  // Customer support / help desk
+  { id: "helpdesk", name: "HelpDesk", tags: ["customer-support", "helpdesk", "saas", "ticketing"], status_url: "https://status.helpdesk.com/api/v2/status.json", page_url: "https://status.helpdesk.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2537,7 +2586,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 993 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1018 services.",
           },
         },
         required: [],

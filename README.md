@@ -13,12 +13,12 @@
 
 ## What it does
 
-StatusCraft gives your AI client 5 tools that fetch live status from **993 major services**:
+StatusCraft gives your AI client 5 tools that fetch live status from **1018 major services**:
 
 | Tool | What it does |
 |---|---|
 | `get_status` | Check one service — returns normalized status + incident detail when non-operational |
-| `get_all_status` | Check all 993 services at once, grouped by status (cached 60s) |
+| `get_all_status` | Check all 1018 services at once, grouped by status (cached 60s) |
 | `list_services` | List all tracked services with IDs and tags — filter by category |
 | `check_multiple` | Check a specific list of services in parallel |
 | `refresh_status` | Force a live re-fetch, bypassing the 60s cache — useful during active incidents |
@@ -50,7 +50,7 @@ No extra latency when everything is green — the incident fetch only fires for 
 
 ---
 
-## Services tracked (993)
+## Services tracked (1018)
 
 ### AI & LLMs
 | ID | Service |
@@ -390,6 +390,67 @@ No extra latency when everything is green — the incident fetch only fires for 
 | ID | Service |
 |---|---|
 | `prismic` | Prismic |
+
+### Databases
+| ID | Service |
+|---|---|
+| `neo4j` | Neo4j Aura |
+
+### Developer Tools / Testing
+| ID | Service |
+|---|---|
+| `coveralls` | Coveralls |
+| `hcti` | HTML/CSS to Image |
+| `rainforestqa` | Rainforest QA |
+| `applitools` | Applitools |
+| `testsigma` | Testsigma |
+| `katalon` | Katalon |
+| `bugfender` | Bugfender |
+
+### Mobile Attribution
+| ID | Service |
+|---|---|
+| `singular` | Singular |
+| `airbridge` | Airbridge |
+
+### Open Banking / Financial Data
+| ID | Service |
+|---|---|
+| `mono` | Mono |
+| `tink` | Tink |
+| `yapily` | Yapily |
+
+### Sales Intelligence / B2B Data
+| ID | Service |
+|---|---|
+| `leadfeeder` | Leadfeeder |
+| `phantombuster` | PhantomBuster |
+| `uplead` | UpLead |
+| `bookyourdata` | BookYourData |
+
+### Email Builder Tools
+| ID | Service |
+|---|---|
+| `dyspatch` | Dyspatch |
+| `movableink` | Movable Ink |
+| `beefree` | Beefree |
+| `stripo` | Stripo |
+
+### API Management
+| ID | Service |
+|---|---|
+| `tyk` | Tyk Cloud |
+
+### Crypto Exchanges
+| ID | Service |
+|---|---|
+| `bitstamp` | Bitstamp |
+| `crypto_com` | Crypto.com |
+
+### Customer Support
+| ID | Service |
+|---|---|
+| `helpdesk` | HelpDesk |
 
 ---
 
