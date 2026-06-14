@@ -2480,6 +2480,60 @@ const SERVICES = [
     { id: "anomali", name: "Anomali", tags: ["security", "threat-intelligence", "siem", "saas"], status_url: "https://status.anomali.com/api/v2/status.json", page_url: "https://status.anomali.com", type: "statuspage" },
     // IoT connectivity
     { id: "emnify", name: "emnify", tags: ["iot", "connectivity", "sim", "infrastructure"], status_url: "https://status.emnify.com/api/v2/status.json", page_url: "https://status.emnify.com", type: "statuspage" },
+    // Enterprise architecture / IT portfolio management
+    { id: "ardoq", name: "Ardoq", tags: ["enterprise-architecture", "it-portfolio", "saas", "governance"], status_url: "https://status.ardoq.com/api/v2/status.json", page_url: "https://status.ardoq.com", type: "statuspage" },
+    // Video interviewing / hiring platform
+    { id: "spark_hire", name: "Spark Hire Recruit", tags: ["recruiting", "video-interview", "hr", "saas"], status_url: "https://status.comeet.com/api/v2/status.json", page_url: "https://status.comeet.com", type: "statuspage" },
+    // Website builder
+    { id: "ucraft", name: "Ucraft", tags: ["website-builder", "no-code", "saas", "ecommerce"], status_url: "https://status.ucraft.com/api/v2/status.json", page_url: "https://status.ucraft.com", type: "statuspage" },
+    // CMS / digital experience platform
+    { id: "sitefinity", name: "Sitefinity Insight", tags: ["cms", "digital-experience", "marketing", "saas"], status_url: "https://status.sitefinity.com/api/v2/status.json", page_url: "https://status.sitefinity.com", type: "statuspage" },
+    // Payment processing
+    { id: "paysafe", name: "Paysafe", tags: ["payments", "fintech", "processing", "api"], status_url: "https://status.paysafe.com/api/v2/status.json", page_url: "https://status.paysafe.com", type: "statuspage" },
+    // Crowdfunding platform
+    { id: "kickstarter", name: "Kickstarter", tags: ["crowdfunding", "marketplace", "creative", "saas"], status_url: "https://status.kickstarter.com/api/v2/status.json", page_url: "https://status.kickstarter.com", type: "statuspage" },
+    // Crypto payment processing
+    { id: "bitpay", name: "BitPay", tags: ["crypto", "payments", "bitcoin", "fintech"], status_url: "https://status.bitpay.com/api/v2/status.json", page_url: "https://status.bitpay.com", type: "statuspage" },
+    // Crypto on-ramp
+    { id: "moonpay", name: "MoonPay", tags: ["crypto", "on-ramp", "payments", "fintech"], status_url: "https://status.moonpay.com/api/v2/status.json", page_url: "https://status.moonpay.com", type: "statuspage" },
+    // Fiat-to-crypto gateway
+    { id: "onramper", name: "Onramper", tags: ["crypto", "on-ramp", "fintech", "api"], status_url: "https://status.onramper.com/api/v2/status.json", page_url: "https://status.onramper.com", type: "statuspage" },
+    // IoT / LoRaWAN network
+    { id: "the_things_network", name: "The Things Network", tags: ["iot", "lorawan", "connectivity", "open-source"], status_url: "https://status.thethings.network/api/v2/status.json", page_url: "https://status.thethings.network", type: "statuspage" },
+    // IoT data platform
+    { id: "ubidots", name: "Ubidots", tags: ["iot", "data-platform", "analytics", "saas"], status_url: "https://status.ubidots.com/api/v2/status.json", page_url: "https://status.ubidots.com", type: "statuspage" },
+    // Lending / fintech software
+    { id: "meridianlink", name: "MeridianLink", tags: ["fintech", "lending", "banking", "saas"], status_url: "https://status.meridianlink.com/api/v2/status.json", page_url: "https://status.meridianlink.com", type: "statuspage" },
+    // Professional services automation / PSA
+    { id: "kantata", name: "Kantata OX", tags: ["psa", "project-management", "resource-management", "saas"], status_url: "https://status.mavenlink.com/api/v2/status.json", page_url: "https://status.mavenlink.com", type: "statuspage" },
+    // Community / customer engagement platform
+    { id: "khoros", name: "Khoros", tags: ["community", "customer-engagement", "social", "saas"], status_url: "https://status.khoros.com/api/v2/status.json", page_url: "https://status.khoros.com", type: "statuspage" },
+    // Online community platform
+    { id: "hivebrite", name: "Hivebrite", tags: ["community", "membership", "network", "saas"], status_url: "https://status.hivebrite.com/api/v2/status.json", page_url: "https://status.hivebrite.com", type: "statuspage" },
+    // No-code database / app builder
+    { id: "knack", name: "Knack", tags: ["no-code", "database", "app-builder", "saas"], status_url: "https://status.knack.com/api/v2/status.json", page_url: "https://status.knack.com", type: "statuspage" },
+    // Community / membership engagement platform
+    { id: "bettermode", name: "Bettermode", tags: ["community", "membership", "engagement", "saas"], status_url: "https://status.bettermode.com/api/v2/status.json", page_url: "https://status.bettermode.com", type: "statuspage" },
+    // Ecommerce analytics / attribution
+    { id: "triple_whale", name: "Triple Whale", tags: ["ecommerce", "analytics", "attribution", "marketing"], status_url: "https://status.triplewhale.com/api/v2/status.json", page_url: "https://status.triplewhale.com", type: "statuspage" },
+    // Browser-based QA test automation
+    { id: "reflect", name: "Reflect", tags: ["testing", "qa", "automation", "devtools"], status_url: "https://status.reflect.run/api/v2/status.json", page_url: "https://status.reflect.run", type: "statuspage" },
+    // Product experience / user analytics (Gainsight PX)
+    { id: "gainsight_px", name: "Gainsight PX", tags: ["product-analytics", "user-experience", "onboarding", "saas"], status_url: "https://status.aptrinsic.com/api/v2/status.json", page_url: "https://status.aptrinsic.com", type: "statuspage" },
+    // Data observability platform
+    { id: "metaplane", name: "Metaplane", tags: ["data-observability", "data-quality", "analytics", "saas"], status_url: "https://status.metaplane.dev/api/v2/status.json", page_url: "https://status.metaplane.dev", type: "statuspage" },
+    // NFT marketplace
+    { id: "opensea", name: "OpenSea", tags: ["nft", "web3", "marketplace", "crypto"], status_url: "https://status.opensea.io/api/v2/status.json", page_url: "https://status.opensea.io", type: "statuspage" },
+    // AI customer support / triage
+    { id: "forethought", name: "Forethought AI", tags: ["ai", "customer-support", "helpdesk", "saas"], status_url: "https://status.forethought.ai/api/v2/status.json", page_url: "https://status.forethought.ai", type: "statuspage" },
+    // DeFi protocol / crypto lending
+    { id: "aave", name: "Aave", tags: ["defi", "web3", "crypto", "lending"], status_url: "https://status.aave.com/api/v2/status.json", page_url: "https://status.aave.com", type: "statuspage" },
+    // NVIDIA GPU Cloud catalog / ML models
+    { id: "nvidia_ngc", name: "NVIDIA NGC", tags: ["ai", "ml", "gpu", "cloud"], status_url: "https://status.ngc.nvidia.com/api/v2/status.json", page_url: "https://status.ngc.nvidia.com", type: "statuspage" },
+    // 3D digital twin / virtual tours
+    { id: "matterport", name: "Matterport", tags: ["3d", "digital-twin", "real-estate", "saas"], status_url: "https://status.matterport.com/api/v2/status.json", page_url: "https://status.matterport.com", type: "statuspage" },
+    // Data catalog and collaboration
+    { id: "data_world", name: "data.world", tags: ["data-catalog", "data-collaboration", "analytics", "saas"], status_url: "https://status.data.world/api/v2/status.json", page_url: "https://status.data.world", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -2867,7 +2921,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.44.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.45.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -2930,7 +2984,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1292 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1318 services.",
                     },
                 },
                 required: [],

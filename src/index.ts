@@ -2596,6 +2596,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "hivebrite", name: "Hivebrite", tags: ["community", "membership", "network", "saas"], status_url: "https://status.hivebrite.com/api/v2/status.json", page_url: "https://status.hivebrite.com", type: "statuspage" },
   // No-code database / app builder
   { id: "knack", name: "Knack", tags: ["no-code", "database", "app-builder", "saas"], status_url: "https://status.knack.com/api/v2/status.json", page_url: "https://status.knack.com", type: "statuspage" },
+  // Community / membership engagement platform
+  { id: "bettermode", name: "Bettermode", tags: ["community", "membership", "engagement", "saas"], status_url: "https://status.bettermode.com/api/v2/status.json", page_url: "https://status.bettermode.com", type: "statuspage" },
+  // Ecommerce analytics / attribution
+  { id: "triple_whale", name: "Triple Whale", tags: ["ecommerce", "analytics", "attribution", "marketing"], status_url: "https://status.triplewhale.com/api/v2/status.json", page_url: "https://status.triplewhale.com", type: "statuspage" },
+  // Browser-based QA test automation
+  { id: "reflect", name: "Reflect", tags: ["testing", "qa", "automation", "devtools"], status_url: "https://status.reflect.run/api/v2/status.json", page_url: "https://status.reflect.run", type: "statuspage" },
+  // Product experience / user analytics (Gainsight PX)
+  { id: "gainsight_px", name: "Gainsight PX", tags: ["product-analytics", "user-experience", "onboarding", "saas"], status_url: "https://status.aptrinsic.com/api/v2/status.json", page_url: "https://status.aptrinsic.com", type: "statuspage" },
+  // Data observability platform
+  { id: "metaplane", name: "Metaplane", tags: ["data-observability", "data-quality", "analytics", "saas"], status_url: "https://status.metaplane.dev/api/v2/status.json", page_url: "https://status.metaplane.dev", type: "statuspage" },
+  // NFT marketplace
+  { id: "opensea", name: "OpenSea", tags: ["nft", "web3", "marketplace", "crypto"], status_url: "https://status.opensea.io/api/v2/status.json", page_url: "https://status.opensea.io", type: "statuspage" },
+  // AI customer support / triage
+  { id: "forethought", name: "Forethought AI", tags: ["ai", "customer-support", "helpdesk", "saas"], status_url: "https://status.forethought.ai/api/v2/status.json", page_url: "https://status.forethought.ai", type: "statuspage" },
+  // DeFi protocol / crypto lending
+  { id: "aave", name: "Aave", tags: ["defi", "web3", "crypto", "lending"], status_url: "https://status.aave.com/api/v2/status.json", page_url: "https://status.aave.com", type: "statuspage" },
+  // NVIDIA GPU Cloud catalog / ML models
+  { id: "nvidia_ngc", name: "NVIDIA NGC", tags: ["ai", "ml", "gpu", "cloud"], status_url: "https://status.ngc.nvidia.com/api/v2/status.json", page_url: "https://status.ngc.nvidia.com", type: "statuspage" },
+  // 3D digital twin / virtual tours
+  { id: "matterport", name: "Matterport", tags: ["3d", "digital-twin", "real-estate", "saas"], status_url: "https://status.matterport.com/api/v2/status.json", page_url: "https://status.matterport.com", type: "statuspage" },
+  // Data catalog and collaboration
+  { id: "data_world", name: "data.world", tags: ["data-catalog", "data-collaboration", "analytics", "saas"], status_url: "https://status.data.world/api/v2/status.json", page_url: "https://status.data.world", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3038,7 +3060,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1308 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1318 services.",
           },
         },
         required: [],
