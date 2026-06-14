@@ -1961,6 +1961,34 @@ const SERVICES: ServiceConfig[] = [
   { id: "middesk", name: "Middesk", tags: ["identity", "kyb", "compliance", "fintech"], status_url: "https://status.middesk.com/api/v2/status.json", page_url: "https://status.middesk.com", type: "statuspage" },
   // Project management / team collaboration
   { id: "hive", name: "Hive", tags: ["collaboration", "project-management", "productivity", "saas"], status_url: "https://status.hive.com/api/v2/status.json", page_url: "https://status.hive.com", type: "statuspage" },
+  // E-signature platforms
+  { id: "boldsign", name: "BoldSign", tags: ["esignature", "documents", "saas", "api"], status_url: "https://status.boldsign.com/api/v2/status.json", page_url: "https://status.boldsign.com", type: "statuspage" },
+  { id: "scrive", name: "Scrive", tags: ["esignature", "e-identification", "documents", "compliance"], status_url: "https://status.scrive.com/api/v2/status.json", page_url: "https://status.scrive.com", type: "statuspage" },
+  // Password manager
+  { id: "nordpass", name: "NordPass", tags: ["password-manager", "security", "identity", "saas"], status_url: "https://status.nordpass.com/api/v2/status.json", page_url: "https://status.nordpass.com", type: "statuspage" },
+  // Cross-border payments / FX
+  { id: "currencycloud", name: "CurrencyCloud", tags: ["fintech", "fx", "cross-border-payments", "api"], status_url: "https://status.currencycloud.com/api/v2/status.json", page_url: "https://status.currencycloud.com", type: "statuspage" },
+  // Tax technology
+  { id: "vertexinc", name: "Vertex Inc", tags: ["tax", "compliance", "fintech", "saas"], status_url: "https://status.vertexinc.com/api/v2/status.json", page_url: "https://status.vertexinc.com", type: "statuspage" },
+  // HR / LMS
+  { id: "eloomi", name: "eloomi", tags: ["hr", "lms", "learning-management", "saas"], status_url: "https://status.eloomi.com/api/v2/status.json", page_url: "https://status.eloomi.com", type: "statuspage" },
+  // Shipping / fulfillment
+  { id: "shippingeasy", name: "ShippingEasy", tags: ["shipping", "ecommerce", "fulfillment", "logistics"], status_url: "https://status.shippingeasy.com/api/v2/status.json", page_url: "https://status.shippingeasy.com", type: "statuspage" },
+  // Freight marketplace / logistics
+  { id: "freightos", name: "Freightos", tags: ["freight", "logistics", "supply-chain", "marketplace"], status_url: "https://status.freightos.com/api/v2/status.json", page_url: "https://status.freightos.com", type: "statuspage" },
+  // E-commerce platform
+  { id: "volusion", name: "Volusion", tags: ["ecommerce", "saas", "online-store", "payments"], status_url: "https://status.volusion.com/api/v2/status.json", page_url: "https://status.volusion.com", type: "statuspage" },
+  // Online course platform
+  { id: "learnworlds", name: "LearnWorlds", tags: ["elearning", "lms", "online-courses", "saas"], status_url: "https://status.learnworlds.com/api/v2/status.json", page_url: "https://status.learnworlds.com", type: "statuspage" },
+  // Domain registrar / hosting
+  { id: "gandi", name: "Gandi", tags: ["domain", "registrar", "hosting", "dns"], status_url: "https://status.gandi.net/api/v2/status.json", page_url: "https://status.gandi.net", type: "statuspage" },
+  // IT financial management
+  { id: "apptio", name: "Apptio", tags: ["it-finance", "cloud-cost", "finops", "saas"], status_url: "https://status.apptio.com/api/v2/status.json", page_url: "https://status.apptio.com", type: "statuspage" },
+  // Local business digital platform
+  { id: "vendasta", name: "Vendasta", tags: ["marketing", "local-business", "saas", "white-label"], status_url: "https://status.vendasta.com/api/v2/status.json", page_url: "https://status.vendasta.com", type: "statuspage" },
+  // Employee rewards / gifting
+  { id: "rybbon", name: "Rybbon (BHN Rewards)", tags: ["rewards", "gifting", "employee-engagement", "saas"], status_url: "https://status.rybbon.net/api/v2/status.json", page_url: "https://status.rybbon.net", type: "statuspage" },
+  { id: "xoxoday", name: "Xoxoday", tags: ["rewards", "gifting", "employee-engagement", "saas"], status_url: "https://status.xoxoday.com/api/v2/status.json", page_url: "https://status.xoxoday.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2330,7 +2358,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.41.0" },
+  { name: "statuscraft", version: "2.42.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -2403,7 +2431,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 936 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 951 services.",
           },
         },
         required: [],
