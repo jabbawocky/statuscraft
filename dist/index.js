@@ -2517,7 +2517,7 @@ const SERVICES = [
     // Ecommerce analytics / attribution
     { id: "triple_whale", name: "Triple Whale", tags: ["ecommerce", "analytics", "attribution", "marketing"], status_url: "https://status.triplewhale.com/api/v2/status.json", page_url: "https://status.triplewhale.com", type: "statuspage" },
     // Browser-based QA test automation
-    { id: "reflect", name: "Reflect", tags: ["testing", "qa", "automation", "devtools"], status_url: "https://status.reflect.run/api/v2/status.json", page_url: "https://status.reflect.run", type: "statuspage" },
+    { id: "reflect", name: "Reflect", tags: ["testing", "qa", "automation", "devtools"], status_url: "https://reflect.status.smartbear.com/api/v2/status.json", page_url: "https://reflect.status.smartbear.com", type: "statuspage" },
     // Product experience / user analytics (Gainsight PX)
     { id: "gainsight_px", name: "Gainsight PX", tags: ["product-analytics", "user-experience", "onboarding", "saas"], status_url: "https://status.aptrinsic.com/api/v2/status.json", page_url: "https://status.aptrinsic.com", type: "statuspage" },
     // Data observability platform
@@ -2879,6 +2879,31 @@ const SERVICES = [
     { id: "confluence", name: "Confluence", tags: ["collaboration", "wiki", "atlassian", "documentation"], status_url: "https://confluence.status.atlassian.com/api/v2/status.json", page_url: "https://confluence.status.atlassian.com", type: "statuspage" },
     // Customer support / communications
     { id: "intercom", name: "Intercom", tags: ["customer-support", "communication", "saas", "crm"], status_url: "https://www.intercomstatus.com/api/v2/status.json", page_url: "https://www.intercomstatus.com", type: "statuspage" },
+    // AI / LLM providers
+    { id: "deepseek", name: "DeepSeek", tags: ["ai", "llm", "api"], status_url: "https://deepseek.statuspage.io/api/v2/status.json", page_url: "https://status.deepseek.com", type: "statuspage" },
+    // Social / professional networks
+    { id: "linkedin_api", name: "LinkedIn API", tags: ["social", "professional", "api"], status_url: "https://linkedin.statuspage.io/api/v2/status.json", page_url: "https://www.linkedin-apistatus.com", type: "statuspage" },
+    { id: "tumblr", name: "Tumblr", tags: ["social", "blogging", "consumer"], status_url: "https://tumblr.statuspage.io/api/v2/status.json", page_url: "https://tumblr.statuspage.io", type: "statuspage" },
+    // Music / streaming
+    { id: "spotify", name: "Spotify", tags: ["music", "streaming", "consumer"], status_url: "https://spotify.statuspage.io/api/v2/status.json", page_url: "https://spotify.statuspage.io", type: "statuspage" },
+    // Ride-share / delivery
+    { id: "uber", name: "Uber", tags: ["rideshare", "delivery", "consumer"], status_url: "https://uber.statuspage.io/api/v2/status.json", page_url: "https://uber.statuspage.io", type: "statuspage" },
+    { id: "lyft", name: "Lyft", tags: ["rideshare", "consumer"], status_url: "https://lyft.statuspage.io/api/v2/status.json", page_url: "https://lyft.statuspage.io", type: "statuspage" },
+    { id: "doordash", name: "DoorDash", tags: ["food-delivery", "consumer", "marketplace"], status_url: "https://doordash.statuspage.io/api/v2/status.json", page_url: "https://www.doordashstatus.com", type: "statuspage" },
+    { id: "deliveroo", name: "Deliveroo", tags: ["food-delivery", "consumer", "marketplace"], status_url: "https://deliveroo.statuspage.io/api/v2/status.json", page_url: "https://status.deliveroo.com", type: "statuspage" },
+    { id: "just_eat", name: "Just Eat", tags: ["food-delivery", "consumer", "marketplace"], status_url: "https://justeat.statuspage.io/api/v2/status.json", page_url: "https://justeat.statuspage.io", type: "statuspage" },
+    // Payments / fintech
+    { id: "mastercard", name: "Mastercard", tags: ["payments", "fintech", "banking"], status_url: "https://mastercard.statuspage.io/api/v2/status.json", page_url: "https://mastercard.statuspage.io", type: "statuspage" },
+    { id: "mx_merchant", name: "MX Merchant", tags: ["payments", "fintech", "merchant"], status_url: "https://status.mxmerchant.com/api/v2/status.json", page_url: "https://status.mxmerchant.com", type: "statuspage" },
+    // Retail / e-commerce
+    { id: "walmart", name: "Walmart", tags: ["retail", "ecommerce", "consumer"], status_url: "https://walmart.statuspage.io/api/v2/status.json", page_url: "https://walmart.statuspage.io", type: "statuspage" },
+    // Gaming
+    { id: "steam_platform", name: "Steam", tags: ["gaming", "platform", "consumer"], status_url: "https://steam2.statuspage.io/api/v2/status.json", page_url: "https://steam2.statuspage.io", type: "statuspage" },
+    // Weather / data
+    { id: "accuweather", name: "AccuWeather", tags: ["weather", "data", "api"], status_url: "https://accuweather.statuspage.io/api/v2/status.json", page_url: "https://status.accuweather.com", type: "statuspage" },
+    // Developer tools / web
+    { id: "zyte", name: "Zyte", tags: ["scraping", "web", "data", "api"], status_url: "https://status.zyte.com/api/v2/status.json", page_url: "https://status.zyte.com", type: "statuspage" },
+    { id: "kraken_io", name: "Kraken.io", tags: ["image-optimization", "cdn", "api"], status_url: "https://kraken.statuspage.io/api/v2/status.json", page_url: "https://status.kraken.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3294,7 +3319,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1526 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1543 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3329,7 +3354,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1526 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1543 services.",
                     },
                 },
                 required: [],
