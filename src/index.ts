@@ -2461,6 +2461,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "pulseway", name: "Pulseway", tags: ["rmm", "it-management", "msp", "monitoring"], status_url: "https://status.pulseway.com/api/v2/status.json", page_url: "https://status.pulseway.com", type: "statuspage" },
   // B2B payment routing
   { id: "routable", name: "Routable", tags: ["payments", "b2b", "fintech", "api"], status_url: "https://status.routable.com/api/v2/status.json", page_url: "https://status.routable.com", type: "statuspage" },
+  // Gaming payments
+  { id: "xsolla", name: "Xsolla", tags: ["gaming", "payments", "fintech", "saas"], status_url: "https://status.xsolla.com/api/v2/status.json", page_url: "https://status.xsolla.com", type: "statuspage" },
+  // Restaurant POS
+  { id: "upserve", name: "Upserve", tags: ["pos", "restaurant", "hospitality", "payments"], status_url: "https://status.upserve.com/api/v2/status.json", page_url: "https://status.upserve.com", type: "statuspage" },
+  { id: "spoton", name: "SpotOn", tags: ["pos", "restaurant", "retail", "payments"], status_url: "https://status.spoton.com/api/v2/status.json", page_url: "https://status.spoton.com", type: "statuspage" },
+  // Fitness management
+  { id: "wodify", name: "Wodify", tags: ["fitness", "gym-management", "crossfit", "saas"], status_url: "https://status.wodify.com/api/v2/status.json", page_url: "https://status.wodify.com", type: "statuspage" },
+  // Customer data platforms
+  { id: "blueconic", name: "BlueConic", tags: ["cdp", "customer-data", "marketing", "saas"], status_url: "https://status.blueconic.com/api/v2/status.json", page_url: "https://status.blueconic.com", type: "statuspage" },
+  { id: "amperity", name: "Amperity", tags: ["cdp", "customer-data", "analytics", "saas"], status_url: "https://status.amperity.com/api/v2/status.json", page_url: "https://status.amperity.com", type: "statuspage" },
+  // Session recording / analytics
+  { id: "luckyorange", name: "Lucky Orange", tags: ["analytics", "session-recording", "heatmaps", "saas"], status_url: "https://status.luckyorange.com/api/v2/status.json", page_url: "https://status.luckyorange.com", type: "statuspage" },
+  // Document AI / AP automation
+  { id: "hypatos", name: "Hypatos", tags: ["document-ai", "ap-automation", "finance", "saas"], status_url: "https://status.hypatos.ai/api/v2/status.json", page_url: "https://status.hypatos.ai", type: "statuspage" },
+  // Data security / DLP
+  { id: "nightfall", name: "Nightfall AI", tags: ["security", "dlp", "data-protection", "saas"], status_url: "https://status.nightfall.ai/api/v2/status.json", page_url: "https://status.nightfall.ai", type: "statuspage" },
+  // Event ticketing
+  { id: "universe", name: "Universe", tags: ["events", "ticketing", "saas"], status_url: "https://status.universe.com/api/v2/status.json", page_url: "https://status.universe.com", type: "statuspage" },
+  // Email marketing automation
+  { id: "vero", name: "Vero", tags: ["email", "marketing", "automation", "saas"], status_url: "https://status.getvero.com/api/v2/status.json", page_url: "https://status.getvero.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2903,7 +2923,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1225 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1236 services.",
           },
         },
         required: [],
