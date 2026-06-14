@@ -2283,6 +2283,38 @@ const SERVICES: ServiceConfig[] = [
   { id: "compass", name: "Compass", tags: ["developer-portal", "devtools", "atlassian", "saas"], status_url: "https://compass.status.atlassian.com/api/v2/status.json", page_url: "https://compass.status.atlassian.com", type: "statuspage" },
   // Remote access
   { id: "anydesk", name: "AnyDesk", tags: ["remote-access", "desktop", "saas"], status_url: "https://status.anydesk.com/api/v2/status.json", page_url: "https://status.anydesk.com", type: "statuspage" },
+  // Web3 video conferencing
+  { id: "huddle01", name: "Huddle01", tags: ["video", "web3", "conferencing", "decentralized"], status_url: "https://status.huddle01.com/api/v2/status.json", page_url: "https://status.huddle01.com", type: "statuspage" },
+  // Fitness / trainer platform
+  { id: "trainerize", name: "ABC Trainerize", tags: ["fitness", "training", "wellness", "saas"], status_url: "https://status.trainerize.com/api/v2/status.json", page_url: "https://status.trainerize.com", type: "statuspage" },
+  // Indoor cycling / fitness gaming
+  { id: "zwift", name: "Zwift", tags: ["fitness", "gaming", "cycling", "sports"], status_url: "https://status.zwift.com/api/v2/status.json", page_url: "https://status.zwift.com", type: "statuspage" },
+  // Donation / fundraising platform
+  { id: "donorbox", name: "Donorbox", tags: ["nonprofit", "donations", "fundraising", "payments"], status_url: "https://status.donorbox.org/api/v2/status.json", page_url: "https://status.donorbox.org", type: "statuspage" },
+  // Financial data / market data API
+  { id: "intrinio", name: "Intrinio", tags: ["financial-data", "market-data", "api", "fintech"], status_url: "https://status.intrinio.com/api/v2/status.json", page_url: "https://status.intrinio.com", type: "statuspage" },
+  // IoT application platform
+  { id: "losant", name: "Losant", tags: ["iot", "platform", "developer-tools", "saas"], status_url: "https://status.losant.com/api/v2/status.json", page_url: "https://status.losant.com", type: "statuspage" },
+  // Academic LaTeX editor
+  { id: "overleaf", name: "Overleaf", tags: ["academic", "latex", "collaboration", "writing"], status_url: "https://status.overleaf.com/api/v2/status.json", page_url: "https://status.overleaf.com", type: "statuspage" },
+  // Government / civic technology
+  { id: "granicus", name: "Granicus", tags: ["govtech", "government", "civic", "saas"], status_url: "https://status.granicus.com/api/v2/status.json", page_url: "https://status.granicus.com", type: "statuspage" },
+  // Hedera distributed ledger network
+  { id: "hedera", name: "Hedera", tags: ["blockchain", "distributed-ledger", "web3", "infrastructure"], status_url: "https://status.hedera.com/api/v2/status.json", page_url: "https://status.hedera.com", type: "statuspage" },
+  // Solana blockchain network
+  { id: "solana", name: "Solana", tags: ["blockchain", "web3", "crypto", "infrastructure"], status_url: "https://status.solana.com/api/v2/status.json", page_url: "https://status.solana.com", type: "statuspage" },
+  // Medium publishing platform
+  { id: "medium", name: "Medium", tags: ["publishing", "blogging", "content", "saas"], status_url: "https://status.medium.com/api/v2/status.json", page_url: "https://status.medium.com", type: "statuspage" },
+  // Avalanche blockchain
+  { id: "avalanche", name: "Avalanche", tags: ["blockchain", "web3", "crypto", "infrastructure"], status_url: "https://status.avax.network/api/v2/status.json", page_url: "https://status.avax.network", type: "statuspage" },
+  // Polygon blockchain
+  { id: "polygon", name: "Polygon", tags: ["blockchain", "web3", "crypto", "layer2"], status_url: "https://status.polygon.technology/api/v2/status.json", page_url: "https://status.polygon.technology", type: "statuspage" },
+  // Flow blockchain (Dapper Labs)
+  { id: "flow_blockchain", name: "Flow", tags: ["blockchain", "web3", "nft", "gaming"], status_url: "https://status.flow.com/api/v2/status.json", page_url: "https://status.flow.com", type: "statuspage" },
+  // Consent management / data privacy
+  { id: "osano", name: "Osano", tags: ["privacy", "consent", "compliance", "gdpr"], status_url: "https://status.osano.com/api/v2/status.json", page_url: "https://status.osano.com", type: "statuspage" },
+  // Cookie consent management
+  { id: "cookiebot", name: "Cookiebot", tags: ["privacy", "consent", "cookies", "compliance"], status_url: "https://status.cookiebot.com/api/v2/status.json", page_url: "https://status.cookiebot.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2652,7 +2684,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.44.0" },
+  { name: "statuscraft", version: "2.41.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -2725,7 +2757,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1097 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1113 services.",
           },
         },
         required: [],
