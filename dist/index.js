@@ -2552,6 +2552,46 @@ const SERVICES = [
     // CRM
     { id: "capsule_crm", name: "Capsule CRM", tags: ["crm", "sales", "smb", "saas"], status_url: "https://status.capsulecrm.com/api/v2/status.json", page_url: "https://status.capsulecrm.com", type: "statuspage" },
     { id: "close_crm", name: "Close CRM", tags: ["crm", "sales", "inside-sales", "saas"], status_url: "https://status.close.com/api/v2/status.json", page_url: "https://status.close.com", type: "statuspage" },
+    // Fintech / banking
+    { id: "belvo", name: "Belvo", tags: ["fintech", "banking", "open-finance", "latam"], status_url: "https://status.belvo.com/api/v2/status.json", page_url: "https://status.belvo.com", type: "statuspage" },
+    { id: "tide", name: "Tide", tags: ["banking", "neobank", "business-banking", "uk"], status_url: "https://status.tide.co/api/v2/status.json", page_url: "https://status.tide.co", type: "statuspage" },
+    // Fraud / trust & safety
+    { id: "sift", name: "Sift", tags: ["fraud", "trust-safety", "risk", "payments"], status_url: "https://status.sift.com/api/v2/status.json", page_url: "https://status.sift.com", type: "statuspage" },
+    // Speech-to-text / AI voice
+    { id: "rev_ai", name: "Rev AI", tags: ["speech-to-text", "ai", "transcription", "api"], status_url: "https://status.rev.ai/api/v2/status.json", page_url: "https://status.rev.ai", type: "statuspage" },
+    // No-code backend
+    { id: "xano", name: "Xano", tags: ["no-code", "backend", "database", "api"], status_url: "https://status.xano.com/api/v2/status.json", page_url: "https://status.xano.com", type: "statuspage" },
+    // Freight / logistics
+    { id: "transfix", name: "Transfix", tags: ["logistics", "freight", "transportation", "saas"], status_url: "https://status.transfix.io/api/v2/status.json", page_url: "https://status.transfix.io", type: "statuspage" },
+    // CPaaS / messaging
+    { id: "8x8_cpaas", name: "8x8 CPaaS", tags: ["messaging", "sms", "cpaas", "communication"], status_url: "https://status.wavecell.com/api/v2/status.json", page_url: "https://status.wavecell.com", type: "statuspage" },
+    // Developer tools
+    { id: "aviator", name: "Aviator", tags: ["devtools", "merge-queue", "ci-cd", "git"], status_url: "https://status.aviator.co/api/v2/status.json", page_url: "https://status.aviator.co", type: "statuspage" },
+    // In-app purchases / mobile subscriptions
+    { id: "adapty", name: "Adapty", tags: ["in-app-purchases", "subscriptions", "mobile", "sdk"], status_url: "https://status.adapty.io/api/v2/status.json", page_url: "https://status.adapty.io", type: "statuspage" },
+    { id: "qonversion", name: "Qonversion", tags: ["in-app-purchases", "subscriptions", "mobile", "analytics"], status_url: "https://status.qonversion.io/api/v2/status.json", page_url: "https://status.qonversion.io", type: "statuspage" },
+    { id: "nami", name: "Nami", tags: ["in-app-purchases", "subscriptions", "mobile", "paywalls"], status_url: "https://status.namiml.com/api/v2/status.json", page_url: "https://status.namiml.com", type: "statuspage" },
+    { id: "apphud", name: "Apphud", tags: ["in-app-purchases", "subscriptions", "mobile", "analytics"], status_url: "https://status.apphud.com/api/v2/status.json", page_url: "https://status.apphud.com", type: "statuspage" },
+    // Security automation / SOAR
+    { id: "torq", name: "Torq", tags: ["security", "soar", "automation", "no-code"], status_url: "https://status.torq.io/api/v2/status.json", page_url: "https://status.torq.io", type: "statuspage" },
+    // Video API
+    { id: "daily_co", name: "Daily.co", tags: ["video", "api", "webrtc", "real-time"], status_url: "https://status.daily.co/api/v2/status.json", page_url: "https://status.daily.co", type: "statuspage" },
+    // SEO / web crawling
+    { id: "lumar", name: "Lumar", tags: ["seo", "crawling", "analytics", "developer-tools"], status_url: "https://status.lumar.io/api/v2/status.json", page_url: "https://status.lumar.io", type: "statuspage" },
+    // AI / ML platform
+    { id: "lightning_ai", name: "Lightning AI", tags: ["ai", "ml", "training", "cloud"], status_url: "https://status.lightning.ai/api/v2/status.json", page_url: "https://status.lightning.ai", type: "statuspage" },
+    // HR integrations API
+    { id: "stackone", name: "StackOne", tags: ["hr", "integrations", "api", "saas"], status_url: "https://status.stackone.com/api/v2/status.json", page_url: "https://status.stackone.com", type: "statuspage" },
+    // Authorization / SpiceDB
+    { id: "authzed", name: "Authzed", tags: ["authorization", "permissions", "api", "security"], status_url: "https://status.authzed.com/api/v2/status.json", page_url: "https://status.authzed.com", type: "statuspage" },
+    // Creator economy / digital products
+    { id: "stan_store", name: "Stan", tags: ["creator-economy", "ecommerce", "digital-products", "saas"], status_url: "https://status.stan.store/api/v2/status.json", page_url: "https://status.stan.store", type: "statuspage" },
+    // Conversational AI / enterprise chatbots
+    { id: "cognigy", name: "Cognigy", tags: ["conversational-ai", "chatbot", "enterprise", "saas"], status_url: "https://status.cognigy.ai/api/v2/status.json", page_url: "https://status.cognigy.ai", type: "statuspage" },
+    // Data lakehouse
+    { id: "dremio", name: "Dremio Cloud", tags: ["data", "lakehouse", "analytics", "cloud"], status_url: "https://status.dremio.com/api/v2/status.json", page_url: "https://status.dremio.com", type: "statuspage" },
+    // Data catalog
+    { id: "alation", name: "Alation", tags: ["data-catalog", "governance", "analytics", "enterprise"], status_url: "https://status.alationcloud.com/api/v2/status.json", page_url: "https://status.alationcloud.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3002,7 +3042,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1328 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1351 services.",
                     },
                 },
                 required: [],

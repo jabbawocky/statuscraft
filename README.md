@@ -13,12 +13,12 @@
 
 ## What it does
 
-StatusCraft gives your AI client 5 tools that fetch live status from **1341 major services**:
+StatusCraft gives your AI client 5 tools that fetch live status from **1351 major services**:
 
 | Tool | What it does |
 |---|---|
 | `get_status` | Check one service — returns normalized status + incident detail when non-operational |
-| `get_all_status` | Check all 1341 services at once, grouped by status (cached 60s) |
+| `get_all_status` | Check all 1351 services at once, grouped by status (cached 60s) |
 | `list_services` | List all tracked services with IDs and tags — filter by category |
 | `check_multiple` | Check a specific list of services in parallel |
 | `refresh_status` | Force a live re-fetch, bypassing the 60s cache — useful during active incidents |
@@ -50,7 +50,7 @@ No extra latency when everything is green — the incident fetch only fires for 
 
 ---
 
-## Services tracked (1341)
+## Services tracked (1351)
 
 ### AI & LLMs
 | ID | Service |
@@ -451,6 +451,56 @@ No extra latency when everything is green — the incident fetch only fires for 
 | ID | Service |
 |---|---|
 | `helpdesk` | HelpDesk |
+
+### Security Automation / SOAR
+| ID | Service |
+|---|---|
+| `torq` | Torq |
+
+### Video API
+| ID | Service |
+|---|---|
+| `daily_co` | Daily.co |
+
+### SEO / Web Crawling
+| ID | Service |
+|---|---|
+| `lumar` | Lumar |
+
+### AI / ML Platforms
+| ID | Service |
+|---|---|
+| `lightning_ai` | Lightning AI |
+
+### HR Integrations
+| ID | Service |
+|---|---|
+| `stackone` | StackOne |
+
+### Authorization
+| ID | Service |
+|---|---|
+| `authzed` | Authzed |
+
+### Creator Economy
+| ID | Service |
+|---|---|
+| `stan_store` | Stan |
+
+### Conversational AI
+| ID | Service |
+|---|---|
+| `cognigy` | Cognigy |
+
+### Data Lakehouse
+| ID | Service |
+|---|---|
+| `dremio` | Dremio Cloud |
+
+### Data Catalog
+| ID | Service |
+|---|---|
+| `alation` | Alation |
 
 ---
 

@@ -2664,6 +2664,36 @@ const SERVICES: ServiceConfig[] = [
   { id: "qonversion", name: "Qonversion", tags: ["in-app-purchases", "subscriptions", "mobile", "analytics"], status_url: "https://status.qonversion.io/api/v2/status.json", page_url: "https://status.qonversion.io", type: "statuspage" },
   { id: "nami", name: "Nami", tags: ["in-app-purchases", "subscriptions", "mobile", "paywalls"], status_url: "https://status.namiml.com/api/v2/status.json", page_url: "https://status.namiml.com", type: "statuspage" },
   { id: "apphud", name: "Apphud", tags: ["in-app-purchases", "subscriptions", "mobile", "analytics"], status_url: "https://status.apphud.com/api/v2/status.json", page_url: "https://status.apphud.com", type: "statuspage" },
+
+  // Security automation / SOAR
+  { id: "torq", name: "Torq", tags: ["security", "soar", "automation", "no-code"], status_url: "https://status.torq.io/api/v2/status.json", page_url: "https://status.torq.io", type: "statuspage" },
+
+  // Video API
+  { id: "daily_co", name: "Daily.co", tags: ["video", "api", "webrtc", "real-time"], status_url: "https://status.daily.co/api/v2/status.json", page_url: "https://status.daily.co", type: "statuspage" },
+
+  // SEO / web crawling
+  { id: "lumar", name: "Lumar", tags: ["seo", "crawling", "analytics", "developer-tools"], status_url: "https://status.lumar.io/api/v2/status.json", page_url: "https://status.lumar.io", type: "statuspage" },
+
+  // AI / ML platform
+  { id: "lightning_ai", name: "Lightning AI", tags: ["ai", "ml", "training", "cloud"], status_url: "https://status.lightning.ai/api/v2/status.json", page_url: "https://status.lightning.ai", type: "statuspage" },
+
+  // HR integrations API
+  { id: "stackone", name: "StackOne", tags: ["hr", "integrations", "api", "saas"], status_url: "https://status.stackone.com/api/v2/status.json", page_url: "https://status.stackone.com", type: "statuspage" },
+
+  // Authorization / SpiceDB
+  { id: "authzed", name: "Authzed", tags: ["authorization", "permissions", "api", "security"], status_url: "https://status.authzed.com/api/v2/status.json", page_url: "https://status.authzed.com", type: "statuspage" },
+
+  // Creator economy / digital products
+  { id: "stan_store", name: "Stan", tags: ["creator-economy", "ecommerce", "digital-products", "saas"], status_url: "https://status.stan.store/api/v2/status.json", page_url: "https://status.stan.store", type: "statuspage" },
+
+  // Conversational AI / enterprise chatbots
+  { id: "cognigy", name: "Cognigy", tags: ["conversational-ai", "chatbot", "enterprise", "saas"], status_url: "https://status.cognigy.ai/api/v2/status.json", page_url: "https://status.cognigy.ai", type: "statuspage" },
+
+  // Data lakehouse
+  { id: "dremio", name: "Dremio Cloud", tags: ["data", "lakehouse", "analytics", "cloud"], status_url: "https://status.dremio.com/api/v2/status.json", page_url: "https://status.dremio.com", type: "statuspage" },
+
+  // Data catalog
+  { id: "alation", name: "Alation", tags: ["data-catalog", "governance", "analytics", "enterprise"], status_url: "https://status.alationcloud.com/api/v2/status.json", page_url: "https://status.alationcloud.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3106,7 +3136,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1341 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1351 services.",
           },
         },
         required: [],
