@@ -222,8 +222,8 @@ const SERVICES = [
         id: "linear",
         name: "Linear",
         tags: ["project-management", "devtools", "productivity"],
-        status_url: "https://status.linear.app/api/v2/status.json",
-        page_url: "https://status.linear.app",
+        status_url: "https://linearstatus.com/api/v2/status.json",
+        page_url: "https://linearstatus.com",
         type: "statuspage",
     },
     {
@@ -2301,6 +2301,57 @@ const SERVICES = [
     { id: "reggora", name: "Reggora", tags: ["appraisal", "mortgage", "real-estate", "fintech"], status_url: "https://status.reggora.com/api/v2/status.json", page_url: "https://status.reggora.com", type: "statuspage" },
     { id: "eltropy", name: "Eltropy", tags: ["banking", "credit-union", "digital-banking", "communications"], status_url: "https://status.eltropy.com/api/v2/status.json", page_url: "https://status.eltropy.com", type: "statuspage" },
     { id: "glia", name: "Glia", tags: ["customer-service", "banking", "digital-service", "fintech"], status_url: "https://status.glia.com/api/v2/status.json", page_url: "https://status.glia.com", type: "statuspage" },
+    // Climate / sustainability tech
+    { id: "watershed", name: "Watershed", tags: ["climate", "carbon", "sustainability", "esg"], status_url: "https://status.watershed.com/api/v2/status.json", page_url: "https://status.watershed.com", type: "statuspage" },
+    { id: "persefoni", name: "Persefoni", tags: ["climate", "esg", "carbon-accounting", "sustainability"], status_url: "https://status.persefoni.com/api/v2/status.json", page_url: "https://status.persefoni.com", type: "statuspage" },
+    { id: "arcadia", name: "Arcadia", tags: ["energy", "utilities", "clean-energy", "climate"], status_url: "https://status.arcadia.com/api/v2/status.json", page_url: "https://status.arcadia.com", type: "statuspage" },
+    // Mental health benefits
+    { id: "spring_health", name: "Spring Health", tags: ["mental-health", "hr", "benefits", "wellness"], status_url: "https://springhealth.statuspage.io/api/v2/status.json", page_url: "https://springhealth.statuspage.io", type: "statuspage" },
+    // Accounting automation
+    { id: "botkeeper", name: "Botkeeper", tags: ["accounting", "bookkeeping", "ai", "automation"], status_url: "https://status.botkeeper.com/api/v2/status.json", page_url: "https://status.botkeeper.com", type: "statuspage" },
+    // Payment orchestration
+    { id: "gr4vy", name: "Gr4vy", tags: ["payments", "orchestration", "fintech", "api"], status_url: "https://status.gr4vy.com/api/v2/status.json", page_url: "https://status.gr4vy.com", type: "statuspage" },
+    // Master data management
+    { id: "reltio", name: "Reltio", tags: ["mdm", "master-data", "data-management", "cloud"], status_url: "https://status.reltio.com/api/v2/status.json", page_url: "https://status.reltio.com", type: "statuspage" },
+    // Email creation platform
+    { id: "stensul", name: "Stensul", tags: ["email", "marketing", "creation", "saas"], status_url: "https://status.stensul.com/api/v2/status.json", page_url: "https://status.stensul.com", type: "statuspage" },
+    // Digital asset management
+    { id: "acquia_dam", name: "Acquia DAM (Widen)", tags: ["dam", "digital-asset-management", "marketing", "cms"], status_url: "https://status.widen.com/api/v2/status.json", page_url: "https://status.widen.com", type: "statuspage" },
+    { id: "air", name: "Air", tags: ["creative-ops", "dam", "collaboration", "design"], status_url: "https://status.air.inc/api/v2/status.json", page_url: "https://status.air.inc", type: "statuspage" },
+    // Privacy / consent management
+    { id: "privacera", name: "Privacera", tags: ["data-privacy", "governance", "security", "cloud"], status_url: "https://status.privacera.com/api/v2/status.json", page_url: "https://status.privacera.com", type: "statuspage" },
+    { id: "transcend", name: "Transcend", tags: ["privacy", "data-rights", "compliance", "saas"], status_url: "https://status.transcend.io/api/v2/status.json", page_url: "https://status.transcend.io", type: "statuspage" },
+    { id: "ketch", name: "Ketch", tags: ["privacy", "consent", "data-governance", "compliance"], status_url: "https://status.ketch.com/api/v2/status.json", page_url: "https://status.ketch.com", type: "statuspage" },
+    { id: "didomi", name: "Didomi", tags: ["consent", "privacy", "gdpr", "saas"], status_url: "https://status.didomi.io/api/v2/status.json", page_url: "https://status.didomi.io", type: "statuspage" },
+    // Restaurant operations
+    { id: "restaurant365", name: "Restaurant365", tags: ["restaurant", "accounting", "operations", "saas"], status_url: "https://status.restaurant365.com/api/v2/status.json", page_url: "https://status.restaurant365.com", type: "statuspage" },
+    // Communications / CPaaS
+    { id: "kaleyra", name: "Kaleyra", tags: ["sms", "communications", "cpaas", "api"], status_url: "https://status.kaleyra.com/api/v2/status.json", page_url: "https://status.kaleyra.com", type: "statuspage" },
+    // Fleet telematics / IoT
+    { id: "lytx", name: "Lytx", tags: ["fleet", "telematics", "video", "iot"], status_url: "https://status.lytx.com/api/v2/status.json", page_url: "https://status.lytx.com", type: "statuspage" },
+    // B2B chemical commerce platform
+    { id: "knowde", name: "Knowde", tags: ["chemicals", "b2b", "marketplace", "saas"], status_url: "https://status.knowde.com/api/v2/status.json", page_url: "https://status.knowde.com", type: "statuspage" },
+    // Product analytics / digital experience
+    { id: "quantum_metric", name: "Quantum Metric", tags: ["analytics", "digital-experience", "product", "enterprise"], status_url: "https://status.quantummetric.com/api/v2/status.json", page_url: "https://status.quantummetric.com", type: "statuspage" },
+    // QA / test management
+    { id: "qase", name: "Qase", tags: ["testing", "qa", "test-management", "devtools"], status_url: "https://status.qase.io/api/v2/status.json", page_url: "https://status.qase.io", type: "statuspage" },
+    // GraphQL platform
+    { id: "apollo_graphql", name: "Apollo GraphQL", tags: ["graphql", "api", "developer-tools", "platform"], status_url: "https://status.apollographql.com/api/v2/status.json", page_url: "https://status.apollographql.com", type: "statuspage" },
+    // UGC / visual content marketing
+    { id: "crowdriff", name: "CrowdRiff", tags: ["ugc", "marketing", "visual-content", "saas"], status_url: "https://status.crowdriff.com/api/v2/status.json", page_url: "https://status.crowdriff.com", type: "statuspage" },
+    // Cloud database (DataStax Astra)
+    { id: "astradb", name: "DataStax Astra", tags: ["database", "cassandra", "cloud", "nosql"], status_url: "https://status.astra.datastax.com/api/v2/status.json", page_url: "https://status.astra.datastax.com", type: "statuspage" },
+    // Global HR / employer of record
+    { id: "oyster_hr", name: "Oyster HR", tags: ["hr", "employer-of-record", "global-payroll", "saas"], status_url: "https://status.oysterhr.com/api/v2/status.json", page_url: "https://status.oysterhr.com", type: "statuspage" },
+    // EHR / practice management
+    { id: "practicefusion", name: "Practice Fusion", tags: ["ehr", "healthcare", "practice-management", "saas"], status_url: "https://status.practicefusion.com/api/v2/status.json", page_url: "https://status.practicefusion.com", type: "statuspage" },
+    // Payment processing
+    { id: "stax_payments", name: "Stax Payments", tags: ["payments", "payment-processing", "fintech", "saas"], status_url: "https://status.staxpayments.com/api/v2/status.json", page_url: "https://status.staxpayments.com", type: "statuspage" },
+    // Form builders
+    { id: "cognito_forms", name: "Cognito Forms", tags: ["forms", "data-collection", "workflow", "saas"], status_url: "https://status.cognitoforms.com/api/v2/status.json", page_url: "https://status.cognitoforms.com", type: "statuspage" },
+    { id: "wufoo", name: "Wufoo", tags: ["forms", "surveys", "data-collection", "saas"], status_url: "https://status.wufoo.com/api/v2/status.json", page_url: "https://status.wufoo.com", type: "statuspage" },
+    // CRM
+    { id: "pipelinecrm", name: "Pipeline CRM", tags: ["crm", "sales", "pipeline", "saas"], status_url: "https://status.pipelinecrm.com/api/v2/status.json", page_url: "https://status.pipelinecrm.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -2688,7 +2739,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.42.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.43.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -2751,7 +2802,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1181 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1211 services.",
                     },
                 },
                 required: [],
