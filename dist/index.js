@@ -1592,6 +1592,48 @@ const SERVICES = [
     { id: "kili_technology", name: "Kili Technology", tags: ["ai", "ml", "data-labeling", "annotation"], status_url: "https://status.kili-technology.com/api/v2/status.json", page_url: "https://status.kili-technology.com", type: "statuspage" },
     // ML training data / annotation platform
     { id: "encord", name: "Encord", tags: ["ai", "ml", "data-labeling", "annotation"], status_url: "https://status.encord.com/api/v2/status.json", page_url: "https://status.encord.com", type: "statuspage" },
+    // IoT cloud platform
+    { id: "particle", name: "Particle", tags: ["iot", "cloud", "hardware", "developer-tools"], status_url: "https://status.particle.io/api/v2/status.json", page_url: "https://status.particle.io", type: "statuspage" },
+    // HR software (Europe)
+    { id: "factorial", name: "Factorial", tags: ["hr", "payroll", "people-ops", "saas"], status_url: "https://status.factorialhr.com/api/v2/status.json", page_url: "https://status.factorialhr.com", type: "statuspage" },
+    // AI video generation
+    { id: "synthesia", name: "Synthesia", tags: ["ai", "video", "generation", "saas"], status_url: "https://status.synthesia.io/api/v2/status.json", page_url: "https://status.synthesia.io", type: "statuspage" },
+    // Code search and intelligence platform
+    { id: "sourcegraph", name: "Sourcegraph", tags: ["devtools", "code-search", "developer-tools", "saas"], status_url: "https://sourcegraphstatus.com/api/v2/status.json", page_url: "https://sourcegraphstatus.com", type: "statuspage" },
+    // Landing page builder
+    { id: "unbounce", name: "Unbounce", tags: ["marketing", "landing-pages", "conversion", "saas"], status_url: "https://status.unbounce.com/api/v2/status.json", page_url: "https://status.unbounce.com", type: "statuspage" },
+    // Identity verification platform
+    { id: "persona", name: "Persona", tags: ["identity", "kyc", "verification", "security"], status_url: "https://status.withpersona.com/api/v2/status.json", page_url: "https://status.withpersona.com", type: "statuspage" },
+    // Conversational AI / chatbot builder
+    { id: "voiceflow", name: "Voiceflow", tags: ["ai", "chatbot", "conversational-ai", "devtools"], status_url: "https://status.voiceflow.com/api/v2/status.json", page_url: "https://status.voiceflow.com", type: "statuspage" },
+    // ACH payments platform
+    { id: "dwolla", name: "Dwolla", tags: ["payments", "ach", "fintech", "api"], status_url: "https://status.dwolla.com/api/v2/status.json", page_url: "https://status.dwolla.com", type: "statuspage" },
+    // Employment background checks
+    { id: "checkr", name: "Checkr", tags: ["hr", "background-checks", "compliance", "saas"], status_url: "https://checkrstatus.com/api/v2/status.json", page_url: "https://checkrstatus.com", type: "statuspage" },
+    // AI-powered fraud prevention
+    { id: "sardine_ai", name: "Sardine", tags: ["security", "fraud-prevention", "fintech", "api"], status_url: "https://status.sardine.ai/api/v2/status.json", page_url: "https://status.sardine.ai", type: "statuspage" },
+    // HR software (Canada)
+    { id: "humi", name: "Humi", tags: ["hr", "payroll", "people-ops", "canada"], status_url: "https://status.humi.ca/api/v2/status.json", page_url: "https://status.humi.ca", type: "statuspage" },
+    // Payment facilitation (Worldpay for Platforms)
+    { id: "payrix", name: "Payrix", tags: ["payments", "payfac", "fintech", "api"], status_url: "https://status.payrix.com/api/v2/status.json", page_url: "https://status.payrix.com", type: "statuspage" },
+    // Payment orchestration platform
+    { id: "spreedly", name: "Spreedly", tags: ["payments", "orchestration", "fintech", "api"], status_url: "https://status.spreedly.com/api/v2/status.json", page_url: "https://status.spreedly.com", type: "statuspage" },
+    // Async standup / team updates bot
+    { id: "geekbot", name: "Geekbot", tags: ["productivity", "standup", "slack", "saas"], status_url: "https://status.geekbot.com/api/v2/status.json", page_url: "https://status.geekbot.com", type: "statuspage" },
+    // Chatbot builder platform
+    { id: "botpress", name: "Botpress", tags: ["ai", "chatbot", "conversational-ai", "devtools"], status_url: "https://status.botpress.com/api/v2/status.json", page_url: "https://status.botpress.com", type: "statuspage" },
+    // No-code chatbot builder
+    { id: "landbot", name: "Landbot", tags: ["chatbot", "no-code", "conversational-ai", "saas"], status_url: "https://status.landbot.io/api/v2/status.json", page_url: "https://status.landbot.io", type: "statuspage" },
+    // Roofing contractor management software
+    { id: "acculynx", name: "AccuLynx", tags: ["construction", "roofing", "field-service", "saas"], status_url: "https://status.acculynx.com/api/v2/status.json", page_url: "https://status.acculynx.com", type: "statuspage" },
+    // Banking API (ACH / RTP)
+    { id: "increase", name: "Increase", tags: ["banking", "fintech", "api", "payments"], status_url: "https://status.increase.com/api/v2/status.json", page_url: "https://status.increase.com", type: "statuspage" },
+    // Banking-as-a-Service platform
+    { id: "treasury_prime", name: "Treasury Prime", tags: ["banking", "baas", "fintech", "api"], status_url: "https://status.treasuryprime.com/api/v2/status.json", page_url: "https://status.treasuryprime.com", type: "statuspage" },
+    // Modern card issuing
+    { id: "lithic", name: "Lithic", tags: ["payments", "card-issuing", "fintech", "api"], status_url: "https://status.lithic.com/api/v2/status.json", page_url: "https://status.lithic.com", type: "statuspage" },
+    // Card issuing / embedded finance
+    { id: "highnote", name: "Highnote", tags: ["payments", "card-issuing", "fintech", "api"], status_url: "https://status.highnote.com/api/v2/status.json", page_url: "https://status.highnote.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1979,7 +2021,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.34.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.35.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -2042,7 +2084,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 752 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 774 services.",
                     },
                 },
                 required: [],
