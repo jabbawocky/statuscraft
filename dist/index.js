@@ -1524,6 +1524,31 @@ const SERVICES = [
     { id: "kaseya", name: "Kaseya", tags: ["it-management", "rmm", "msp", "enterprise"], status_url: "https://status.kaseya.com/api/v2/status.json", page_url: "https://status.kaseya.com", type: "statuspage" },
     { id: "auvik", name: "Auvik Networks", tags: ["network-monitoring", "it-management", "msp", "saas"], status_url: "https://status.auvik.com/api/v2/status.json", page_url: "https://status.auvik.com", type: "statuspage" },
     { id: "datto", name: "Datto", tags: ["backup", "disaster-recovery", "msp", "enterprise"], status_url: "https://status.datto.com/api/v2/status.json", page_url: "https://status.datto.com", type: "statuspage" },
+    // Education / LMS
+    { id: "instructure", name: "Instructure (Canvas LMS)", tags: ["edtech", "lms", "education", "saas"], status_url: "https://status.instructure.com/api/v2/status.json", page_url: "https://status.instructure.com", type: "statuspage" },
+    { id: "blackboard", name: "Blackboard", tags: ["edtech", "lms", "education", "saas"], status_url: "https://status.blackboard.com/api/v2/status.json", page_url: "https://status.blackboard.com", type: "statuspage" },
+    { id: "coursera", name: "Coursera", tags: ["edtech", "education", "saas"], status_url: "https://status.coursera.org/api/v2/status.json", page_url: "https://status.coursera.org", type: "statuspage" },
+    { id: "udemy", name: "Udemy for Business", tags: ["edtech", "education", "hr", "saas"], status_url: "https://status.udemy.com/api/v2/status.json", page_url: "https://status.udemy.com", type: "statuspage" },
+    { id: "learnupon", name: "LearnUpon LMS", tags: ["edtech", "lms", "hr", "saas"], status_url: "https://status.learnupon.com/api/v2/status.json", page_url: "https://status.learnupon.com", type: "statuspage" },
+    { id: "threesixtylearning", name: "360Learning", tags: ["edtech", "lms", "hr", "saas"], status_url: "https://status.360learning.com/api/v2/status.json", page_url: "https://status.360learning.com", type: "statuspage" },
+    // Data streaming / event platforms
+    { id: "confluent", name: "Confluent Cloud", tags: ["data", "kafka", "streaming", "saas"], status_url: "https://status.confluent.cloud/api/v2/status.json", page_url: "https://status.confluent.cloud", type: "statuspage" },
+    // Engineering / CAD / AEC
+    { id: "autodesk", name: "Autodesk", tags: ["developer-tools", "construction", "manufacturing", "saas"], status_url: "https://health.autodesk.com/api/v2/status.json", page_url: "https://health.autodesk.com", type: "statuspage" },
+    { id: "bentley", name: "Bentley Systems", tags: ["construction", "engineering", "infrastructure", "saas"], status_url: "https://status.bentley.com/api/v2/status.json", page_url: "https://status.bentley.com", type: "statuspage" },
+    // Insurance software
+    { id: "guidewire", name: "Guidewire", tags: ["insurance", "enterprise", "saas"], status_url: "https://status.guidewire.com/api/v2/status.json", page_url: "https://status.guidewire.com", type: "statuspage" },
+    // Video / media delivery
+    { id: "jwplayer", name: "JW Player", tags: ["video", "media", "cdn", "saas"], status_url: "https://status.jwplayer.com/api/v2/status.json", page_url: "https://status.jwplayer.com", type: "statuspage" },
+    { id: "kaltura", name: "Kaltura", tags: ["video", "media", "edtech", "saas"], status_url: "https://status.kaltura.com/api/v2/status.json", page_url: "https://status.kaltura.com", type: "statuspage" },
+    { id: "dailymotion", name: "Dailymotion", tags: ["video", "media", "saas"], status_url: "https://status.dailymotion.com/api/v2/status.json", page_url: "https://status.dailymotion.com", type: "statuspage" },
+    // Nonprofit CRM
+    { id: "bloomerang", name: "Bloomerang", tags: ["crm", "nonprofit", "saas"], status_url: "https://status.bloomerang.co/api/v2/status.json", page_url: "https://status.bloomerang.co", type: "statuspage" },
+    { id: "blackbaud", name: "Blackbaud", tags: ["nonprofit", "crm", "fundraising", "saas"], status_url: "https://status.blackbaud.com/api/v2/status.json", page_url: "https://status.blackbaud.com", type: "statuspage" },
+    // Supply chain / logistics
+    { id: "fourkites", name: "FourKites", tags: ["logistics", "supply-chain", "saas"], status_url: "https://status.fourkites.com/api/v2/status.json", page_url: "https://status.fourkites.com", type: "statuspage" },
+    // Fleet management
+    { id: "fleetio", name: "Fleetio", tags: ["fleet", "logistics", "saas"], status_url: "https://status.fleetio.com/api/v2/status.json", page_url: "https://status.fleetio.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1974,7 +1999,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 714 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 730 services.",
                     },
                 },
                 required: [],
