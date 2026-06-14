@@ -2904,6 +2904,27 @@ const SERVICES = [
     // Developer tools / web
     { id: "zyte", name: "Zyte", tags: ["scraping", "web", "data", "api"], status_url: "https://status.zyte.com/api/v2/status.json", page_url: "https://status.zyte.com", type: "statuspage" },
     { id: "kraken_io", name: "Kraken.io", tags: ["image-optimization", "cdn", "api"], status_url: "https://kraken.statuspage.io/api/v2/status.json", page_url: "https://status.kraken.io", type: "statuspage" },
+    // Tick 168 additions
+    // Gaming / consumer
+    { id: "roblox", name: "Roblox", tags: ["gaming", "platform", "consumer"], status_url: "https://api.status.io/1.0/status/59db90dbcdeb2f04dadcf16d", page_url: "https://status.roblox.com", type: "statusio" },
+    // WordPress managed hosting
+    { id: "pagely", name: "Pagely", tags: ["hosting", "wordpress", "managed", "cloud"], status_url: "https://status.pagely.com/api/v2/status.json", page_url: "https://status.pagely.com", type: "statuspage" },
+    { id: "wpcloud", name: "WordPress.com Cloud", tags: ["hosting", "wordpress", "cloud", "managed"], status_url: "https://wpcloud.statuspage.io/api/v2/status.json", page_url: "https://wpcloud.statuspage.io", type: "statuspage" },
+    // CI/CD
+    { id: "circleci", name: "CircleCI", tags: ["ci-cd", "devtools", "automation", "cloud"], status_url: "https://circleci.statuspage.io/api/v2/status.json", page_url: "https://circleci.statuspage.io", type: "statuspage" },
+    { id: "bitbucket", name: "Bitbucket", tags: ["git", "devtools", "ci-cd", "atlassian"], status_url: "https://bitbucket.statuspage.io/api/v2/status.json", page_url: "https://bitbucket.statuspage.io", type: "statuspage" },
+    { id: "nx_cloud", name: "Nx Cloud", tags: ["ci-cd", "devtools", "monorepo", "build-cache"], status_url: "https://status.nx.app/api/v2/status.json", page_url: "https://status.nx.app", type: "statuspage" },
+    // Community / online courses
+    { id: "mighty_networks", name: "Mighty Networks", tags: ["community", "courses", "membership", "saas"], status_url: "https://status.mightynetworks.com/api/v2/status.json", page_url: "https://status.mightynetworks.com", type: "statuspage" },
+    // Email marketing
+    { id: "constant_contact", name: "Constant Contact", tags: ["email", "marketing", "crm", "saas"], status_url: "https://status.constantcontact.com/api/v2/status.json", page_url: "https://status.constantcontact.com", type: "statuspage" },
+    // DevOps / infrastructure configuration
+    { id: "chef", name: "Chef", tags: ["devops", "infrastructure", "configuration-management", "automation"], status_url: "https://status.chef.io/api/v2/status.json", page_url: "https://status.chef.io", type: "statuspage" },
+    { id: "puppet", name: "Puppet", tags: ["devops", "infrastructure", "configuration-management", "automation"], status_url: "https://puppet.statuspage.io/api/v2/status.json", page_url: "https://puppet.statuspage.io", type: "statuspage" },
+    // Enterprise Linux / developer platform
+    { id: "redhat", name: "Red Hat", tags: ["linux", "enterprise", "cloud", "developer-platform"], status_url: "https://status.redhat.com/api/v2/status.json", page_url: "https://status.redhat.com", type: "statuspage" },
+    // Analytics / OLAP database
+    { id: "firebolt", name: "Firebolt", tags: ["database", "analytics", "olap", "cloud"], status_url: "https://status.firebolt.io/api/v2/status.json", page_url: "https://status.firebolt.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3319,7 +3340,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1543 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1554 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3354,7 +3375,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1543 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1554 services.",
                     },
                 },
                 required: [],
