@@ -1352,6 +1352,55 @@ const SERVICES: ServiceConfig[] = [
   { id: "section_io", name: "Section.io", tags: ["cdn", "edge", "platform", "devops"], status_url: "https://status.section.io/api/v2/status.json", page_url: "https://status.section.io", type: "statuspage" },
   // GPU compute
   { id: "sfcompute", name: "SF Compute", tags: ["gpu", "compute", "cloud", "ai"], status_url: "https://status.sfcompute.com/api/v2/status.json", page_url: "https://status.sfcompute.com", type: "statuspage" },
+  // AI / inference
+  { id: "cartesia", name: "Cartesia AI", tags: ["ai", "tts", "audio", "inference"], status_url: "https://status.cartesia.ai/api/v2/status.json", page_url: "https://status.cartesia.ai", type: "statuspage" },
+  { id: "cerebras", name: "Cerebras Inference", tags: ["ai", "llm", "inference", "cloud"], status_url: "https://status.cerebras.ai/api/v2/status.json", page_url: "https://status.cerebras.ai", type: "statuspage" },
+  // Payments / fintech
+  { id: "gocardless", name: "GoCardless", tags: ["payments", "bank-debit", "fintech", "api"], status_url: "https://status.gocardless.com/api/v2/status.json", page_url: "https://status.gocardless.com", type: "statuspage" },
+  { id: "airwallex", name: "Airwallex", tags: ["payments", "fintech", "global", "api"], status_url: "https://status.airwallex.com/api/v2/status.json", page_url: "https://status.airwallex.com", type: "statuspage" },
+  // Media intelligence
+  { id: "meltwater", name: "Meltwater", tags: ["media-intelligence", "monitoring", "pr", "analytics"], status_url: "https://status.meltwater.com/api/v2/status.json", page_url: "https://status.meltwater.com", type: "statuspage" },
+  // Marketing / CMS
+  { id: "bloomreach", name: "Bloomreach", tags: ["marketing", "cms", "personalization", "ecommerce"], status_url: "https://status.bloomreach.com/api/v2/status.json", page_url: "https://status.bloomreach.com", type: "statuspage" },
+  // CRM
+  { id: "affinity", name: "Affinity", tags: ["crm", "relationship-intelligence", "sales", "vc"], status_url: "https://status.affinity.co/api/v2/status.json", page_url: "https://status.affinity.co", type: "statuspage" },
+  // API tooling
+  { id: "swaggerhub", name: "SwaggerHub", tags: ["api", "openapi", "documentation", "developer-tools"], status_url: "https://status.swaggerhub.com/api/v2/status.json", page_url: "https://status.swaggerhub.com", type: "statuspage" },
+  // Financial reporting / GRC
+  { id: "workiva", name: "Workiva", tags: ["financial-reporting", "grc", "compliance", "enterprise"], status_url: "https://status.workiva.com/api/v2/status.json", page_url: "https://status.workiva.com", type: "statuspage" },
+  // Construction / project
+  { id: "procore", name: "Procore", tags: ["construction", "project-management", "enterprise", "saas"], status_url: "https://status.procore.com/api/v2/status.json", page_url: "https://status.procore.com", type: "statuspage" },
+  // Sales enablement
+  { id: "seismic", name: "Seismic", tags: ["sales-enablement", "content", "marketing", "enterprise"], status_url: "https://status.seismic.com/api/v2/status.json", page_url: "https://status.seismic.com", type: "statuspage" },
+  { id: "highspot", name: "Highspot", tags: ["sales-enablement", "content", "training", "enterprise"], status_url: "https://status.highspot.com/api/v2/status.json", page_url: "https://status.highspot.com", type: "statuspage" },
+  { id: "showpad", name: "Showpad", tags: ["sales-enablement", "content", "coaching", "enterprise"], status_url: "https://status.showpad.com/api/v2/status.json", page_url: "https://status.showpad.com", type: "statuspage" },
+  // Revenue ops
+  { id: "leandata", name: "LeanData", tags: ["revenue-ops", "routing", "attribution", "sales"], status_url: "https://status.leandata.com/api/v2/status.json", page_url: "https://status.leandata.com", type: "statuspage" },
+  // Competitive intelligence
+  { id: "klue", name: "Klue", tags: ["competitive-intelligence", "sales", "marketing", "saas"], status_url: "https://status.klue.com/api/v2/status.json", page_url: "https://status.klue.com", type: "statuspage" },
+  // Interactive demos
+  { id: "navattic", name: "Navattic", tags: ["demos", "product", "sales", "saas"], status_url: "https://status.navattic.com/api/v2/status.json", page_url: "https://status.navattic.com", type: "statuspage" },
+  // Meeting intelligence
+  { id: "grain", name: "Grain", tags: ["meeting-intelligence", "recording", "ai", "sales"], status_url: "https://status.grain.com/api/v2/status.json", page_url: "https://status.grain.com", type: "statuspage" },
+  { id: "fathom", name: "Fathom Video", tags: ["meeting-recorder", "ai", "notes", "productivity"], status_url: "https://status.fathom.video/api/v2/status.json", page_url: "https://status.fathom.video", type: "statuspage" },
+  // Legal practice management
+  { id: "mycase", name: "MyCase", tags: ["legal", "practice-management", "law-firm", "saas"], status_url: "https://status.mycase.com/api/v2/status.json", page_url: "https://status.mycase.com", type: "statuspage" },
+  // Fitness / wellness
+  { id: "mindbody", name: "Mindbody", tags: ["fitness", "wellness", "scheduling", "saas"], status_url: "https://status.mindbodyonline.com/api/v2/status.json", page_url: "https://status.mindbodyonline.com", type: "statuspage" },
+  // Scheduling
+  { id: "acuity", name: "Acuity Scheduling", tags: ["scheduling", "calendar", "appointments", "saas"], status_url: "https://status.acuityscheduling.com/api/v2/status.json", page_url: "https://status.acuityscheduling.com", type: "statuspage" },
+  // Reputation / reviews
+  { id: "birdeye", name: "Birdeye", tags: ["reputation", "reviews", "listings", "cx"], status_url: "https://status.birdeye.com/api/v2/status.json", page_url: "https://status.birdeye.com", type: "statuspage" },
+  { id: "trustpilot", name: "Trustpilot", tags: ["reviews", "reputation", "ecommerce", "trust"], status_url: "https://status.trustpilot.com/api/v2/status.json", page_url: "https://status.trustpilot.com", type: "statuspage" },
+  { id: "feefo", name: "Feefo", tags: ["reviews", "reputation", "ecommerce", "verified"], status_url: "https://status.feefo.com/api/v2/status.json", page_url: "https://status.feefo.com", type: "statuspage" },
+  // SMS / messaging
+  { id: "textmagic", name: "Textmagic", tags: ["sms", "messaging", "api", "business"], status_url: "https://status.textmagic.com/api/v2/status.json", page_url: "https://status.textmagic.com", type: "statuspage" },
+  // Chatbots
+  { id: "chatfuel", name: "Chatfuel", tags: ["chatbot", "messaging", "automation", "ai"], status_url: "https://status.chatfuel.com/api/v2/status.json", page_url: "https://status.chatfuel.com", type: "statuspage" },
+  // ATS / recruiting
+  { id: "jobvite", name: "Jobvite", tags: ["ats", "recruiting", "hr", "talent"], status_url: "https://status.jobvite.com/api/v2/status.json", page_url: "https://status.jobvite.com", type: "statuspage" },
+  { id: "smartrecruiters", name: "SmartRecruiters", tags: ["ats", "recruiting", "hr", "enterprise"], status_url: "https://status.smartrecruiters.com/api/v2/status.json", page_url: "https://status.smartrecruiters.com", type: "statuspage" },
+  { id: "teamtailor", name: "Teamtailor", tags: ["ats", "recruiting", "employer-brand", "hr"], status_url: "https://status.teamtailor.com/api/v2/status.json", page_url: "https://status.teamtailor.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1794,7 +1843,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 579 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 608 services.",
           },
         },
         required: [],
