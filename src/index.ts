@@ -2636,6 +2636,34 @@ const SERVICES: ServiceConfig[] = [
   // CRM
   { id: "capsule_crm", name: "Capsule CRM", tags: ["crm", "sales", "smb", "saas"], status_url: "https://status.capsulecrm.com/api/v2/status.json", page_url: "https://status.capsulecrm.com", type: "statuspage" },
   { id: "close_crm", name: "Close CRM", tags: ["crm", "sales", "inside-sales", "saas"], status_url: "https://status.close.com/api/v2/status.json", page_url: "https://status.close.com", type: "statuspage" },
+
+  // Fintech / banking
+  { id: "belvo", name: "Belvo", tags: ["fintech", "banking", "open-finance", "latam"], status_url: "https://status.belvo.com/api/v2/status.json", page_url: "https://status.belvo.com", type: "statuspage" },
+  { id: "tide", name: "Tide", tags: ["banking", "neobank", "business-banking", "uk"], status_url: "https://status.tide.co/api/v2/status.json", page_url: "https://status.tide.co", type: "statuspage" },
+
+  // Fraud / trust & safety
+  { id: "sift", name: "Sift", tags: ["fraud", "trust-safety", "risk", "payments"], status_url: "https://status.sift.com/api/v2/status.json", page_url: "https://status.sift.com", type: "statuspage" },
+
+  // Speech-to-text / AI voice
+  { id: "rev_ai", name: "Rev AI", tags: ["speech-to-text", "ai", "transcription", "api"], status_url: "https://status.rev.ai/api/v2/status.json", page_url: "https://status.rev.ai", type: "statuspage" },
+
+  // No-code backend
+  { id: "xano", name: "Xano", tags: ["no-code", "backend", "database", "api"], status_url: "https://status.xano.com/api/v2/status.json", page_url: "https://status.xano.com", type: "statuspage" },
+
+  // Freight / logistics
+  { id: "transfix", name: "Transfix", tags: ["logistics", "freight", "transportation", "saas"], status_url: "https://status.transfix.io/api/v2/status.json", page_url: "https://status.transfix.io", type: "statuspage" },
+
+  // CPaaS / messaging
+  { id: "8x8_cpaas", name: "8x8 CPaaS", tags: ["messaging", "sms", "cpaas", "communication"], status_url: "https://status.wavecell.com/api/v2/status.json", page_url: "https://status.wavecell.com", type: "statuspage" },
+
+  // Developer tools
+  { id: "aviator", name: "Aviator", tags: ["devtools", "merge-queue", "ci-cd", "git"], status_url: "https://status.aviator.co/api/v2/status.json", page_url: "https://status.aviator.co", type: "statuspage" },
+
+  // In-app purchases / mobile subscriptions
+  { id: "adapty", name: "Adapty", tags: ["in-app-purchases", "subscriptions", "mobile", "sdk"], status_url: "https://status.adapty.io/api/v2/status.json", page_url: "https://status.adapty.io", type: "statuspage" },
+  { id: "qonversion", name: "Qonversion", tags: ["in-app-purchases", "subscriptions", "mobile", "analytics"], status_url: "https://status.qonversion.io/api/v2/status.json", page_url: "https://status.qonversion.io", type: "statuspage" },
+  { id: "nami", name: "Nami", tags: ["in-app-purchases", "subscriptions", "mobile", "paywalls"], status_url: "https://status.namiml.com/api/v2/status.json", page_url: "https://status.namiml.com", type: "statuspage" },
+  { id: "apphud", name: "Apphud", tags: ["in-app-purchases", "subscriptions", "mobile", "analytics"], status_url: "https://status.apphud.com/api/v2/status.json", page_url: "https://status.apphud.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3078,7 +3106,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1328 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1341 services.",
           },
         },
         required: [],
