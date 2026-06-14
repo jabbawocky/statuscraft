@@ -2084,6 +2084,27 @@ const SERVICES = [
     { id: "kit", name: "Kit (ConvertKit)", tags: ["email", "newsletter", "creators", "marketing"], status_url: "https://status.kit.com/api/v2/status.json", page_url: "https://status.kit.com", type: "statuspage" },
     // Email deliverability / newsletter platform
     { id: "simplero", name: "Simplero", tags: ["email", "courses", "membership", "creators"], status_url: "https://status.simplero.com/api/v2/status.json", page_url: "https://status.simplero.com", type: "statuspage" },
+    // Marketing analytics / call tracking
+    { id: "callrail", name: "CallRail", tags: ["marketing", "analytics", "call-tracking", "saas"], status_url: "https://status.callrail.com/api/v2/status.json", page_url: "https://status.callrail.com", type: "statuspage" },
+    // Media / audio / video APIs
+    { id: "dolby", name: "Dolby.io", tags: ["media", "audio", "video", "api"], status_url: "https://status.dolby.io/api/v2/status.json", page_url: "https://status.dolby.io", type: "statuspage" },
+    // Work management / project collaboration
+    { id: "smartsuite", name: "SmartSuite", tags: ["project-management", "collaboration", "no-code", "saas"], status_url: "https://status.smartsuite.com/api/v2/status.json", page_url: "https://status.smartsuite.com", type: "statuspage" },
+    // Events / virtual event platform
+    { id: "spotme", name: "SpotMe", tags: ["events", "virtual-events", "conference", "saas"], status_url: "https://status.spotme.com/api/v2/status.json", page_url: "https://status.spotme.com", type: "statuspage" },
+    // Sports league / team management
+    { id: "sportsengine", name: "SportsEngine", tags: ["sports", "team-management", "scheduling", "saas"], status_url: "https://status.sportsengine.com/api/v2/status.json", page_url: "https://status.sportsengine.com", type: "statuspage" },
+    // Sports video analysis
+    { id: "hudl", name: "Hudl", tags: ["sports", "video-analysis", "coaching", "saas"], status_url: "https://status.hudl.com/api/v2/status.json", page_url: "https://status.hudl.com", type: "statuspage" },
+    // Community / member engagement platform
+    { id: "higher_logic", name: "Higher Logic", tags: ["community", "membership", "associations", "saas"], status_url: "https://status.higherlogic.com/api/v2/status.json", page_url: "https://status.higherlogic.com", type: "statuspage" },
+    // Workforce / shift management
+    { id: "deputy", name: "Deputy", tags: ["workforce", "scheduling", "hr", "saas"], status_url: "https://status.deputy.com/api/v2/status.json", page_url: "https://status.deputy.com", type: "statuspage" },
+    { id: "sevenshift", name: "7shifts", tags: ["restaurant", "scheduling", "workforce", "saas"], status_url: "https://status.7shifts.com/api/v2/status.json", page_url: "https://status.7shifts.com", type: "statuspage" },
+    // Space / room booking
+    { id: "skedda", name: "Skedda", tags: ["scheduling", "room-booking", "facilities", "saas"], status_url: "https://status.skedda.com/api/v2/status.json", page_url: "https://status.skedda.com", type: "statuspage" },
+    // Healthcare practice management
+    { id: "noterro", name: "Noterro", tags: ["healthcare", "practice-management", "allied-health", "saas"], status_url: "https://status.noterro.com/api/v2/status.json", page_url: "https://status.noterro.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -2534,7 +2555,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1032 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1043 services.",
                     },
                 },
                 required: [],
