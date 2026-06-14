@@ -1,8 +1,10 @@
-# StatusCraft — Mission Status: June 15, 2026 (tick 165)
+# StatusCraft — Mission Status: June 15, 2026 (tick 166)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **feat: +26 live-verified services — 1500 → 1526** (tick 166) — Expansion tick: added 26 new real services across 7 categories: AI/LLM providers (AI21 Labs, Stability AI, RunwayML, ElevenLabs, AssemblyAI, Deepgram, Cartesia); AI dev tools (Tabnine, Cursor, LangSmith, Pinecone); Security/identity (1Password, NordPass, Clerk); Payments/fintech (Klarna, Afterpay, Wise); Cloud storage (Box, Dropbox); CRM/marketing (HubSpot); Collaboration/project mgmt (Airtable, Monday.com, Asana, Jira, Confluence, Intercom). All 26/26 live-verified via /api/v2/status.json before commit. Health check (14-service sample): Akeyless (operational), Kindful (operational), Funraise (operational), Logikcull (operational), Booksy (operational), Healthie (operational), CloudSigma (minor — live), Anthropic (operational), OpenAI (operational), GitHub (operational), Stripe (operational), Sentry (operational), Supabase (operational), Vercel (minor — live) — all returning valid live data. README and tool description updated to 1526.
+
 - ✅ **feat: +14 live-verified services — 1486 → 1500** (tick 165) — Expansion tick: added 14 new real services across diverse categories: TestRail (QA/test management); MyFitnessPal (fitness/health consumer platform); Homebase (workforce scheduling for hourly workers); Tradeshift (B2B supply chain/invoicing network); Viewpoint (construction project management ERP); CloudSigma (cloud IaaS Europe/global); Healthie (telehealth/EHR platform); Booksy (beauty & wellness appointment booking); Logikcull (legal e-discovery/document review); Everlaw (legal e-discovery/litigation platform); Weave (healthcare/dental office communications); Funraise (nonprofit fundraising SaaS); Kindful (nonprofit CRM/donor management); Akeyless (secrets management/zero-trust security). All 14/14 live-verified via /api/v2/status.json before commit. Health check (sample): OpenAI (operational), GitHub (operational), Stripe (operational), Cloudflare (minor — live), Sentry (operational), Supabase (operational), Vercel (minor — live), Anthropic (operational via status.claude.com) — all returning valid live data. README and tool description updated to 1500.
 
 
