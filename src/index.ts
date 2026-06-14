@@ -2144,6 +2144,30 @@ const SERVICES: ServiceConfig[] = [
 
   // Customer support / help desk
   { id: "helpdesk", name: "HelpDesk", tags: ["customer-support", "helpdesk", "saas", "ticketing"], status_url: "https://status.helpdesk.com/api/v2/status.json", page_url: "https://status.helpdesk.com", type: "statuspage" },
+
+  // Tick 131 additions
+  // Scheduling / appointment booking (fitness, beauty, wellness verticals)
+  { id: "acuityscheduling", name: "Acuity Scheduling", tags: ["scheduling", "appointments", "booking", "saas"], status_url: "https://status.acuityscheduling.com/api/v2/status.json", page_url: "https://status.acuityscheduling.com", type: "statuspage" },
+  { id: "vagaro", name: "Vagaro", tags: ["scheduling", "salon", "spa", "fitness"], status_url: "https://status.vagaro.com/api/v2/status.json", page_url: "https://status.vagaro.com", type: "statuspage" },
+  { id: "pike13", name: "Pike13", tags: ["scheduling", "fitness", "classes", "booking"], status_url: "https://status.pike13.com/api/v2/status.json", page_url: "https://status.pike13.com", type: "statuspage" },
+  { id: "glofox", name: "Glofox", tags: ["fitness", "gym-management", "scheduling", "saas"], status_url: "https://status.glofox.com/api/v2/status.json", page_url: "https://status.glofox.com", type: "statuspage" },
+  // Live chat widget
+  { id: "tawkto", name: "tawk.to", tags: ["live-chat", "customer-support", "messaging", "saas"], status_url: "https://status.tawk.to/api/v2/status.json", page_url: "https://status.tawk.to", type: "statuspage" },
+  // Landing page builders
+  { id: "instapage", name: "Instapage", tags: ["landing-pages", "marketing", "conversion", "saas"], status_url: "https://status.instapage.com/api/v2/status.json", page_url: "https://status.instapage.com", type: "statuspage" },
+  { id: "landingi", name: "Landingi", tags: ["landing-pages", "marketing", "no-code", "saas"], status_url: "https://status.landingi.com/api/v2/status.json", page_url: "https://status.landingi.com", type: "statuspage" },
+  // Customer onboarding / project delivery
+  { id: "rocketlane", name: "Rocketlane", tags: ["project-management", "onboarding", "client-portal", "saas"], status_url: "https://status.rocketlane.com/api/v2/status.json", page_url: "https://status.rocketlane.com", type: "statuspage" },
+  // Security compliance / vendor risk management
+  { id: "conveyor", name: "Conveyor", tags: ["security", "compliance", "vendor-risk", "saas"], status_url: "https://status.conveyor.com/api/v2/status.json", page_url: "https://status.conveyor.com", type: "statuspage" },
+  // Embedded integration / workflow automation platform
+  { id: "paragon", name: "Paragon", tags: ["integrations", "embedded-ipaas", "developer-tools", "saas"], status_url: "https://status.useparagon.com/api/v2/status.json", page_url: "https://status.useparagon.com", type: "statuspage" },
+  // Creator / course platforms
+  { id: "thinkific", name: "Thinkific", tags: ["elearning", "courses", "saas", "creators"], status_url: "https://status.thinkific.com/api/v2/status.json", page_url: "https://status.thinkific.com", type: "statuspage" },
+  { id: "kartra", name: "Kartra", tags: ["marketing", "funnels", "courses", "saas"], status_url: "https://status.kartra.com/api/v2/status.json", page_url: "https://status.kartra.com", type: "statuspage" },
+  { id: "kit", name: "Kit (ConvertKit)", tags: ["email", "newsletter", "creators", "marketing"], status_url: "https://status.kit.com/api/v2/status.json", page_url: "https://status.kit.com", type: "statuspage" },
+  // Email deliverability / newsletter platform
+  { id: "simplero", name: "Simplero", tags: ["email", "courses", "membership", "creators"], status_url: "https://status.simplero.com/api/v2/status.json", page_url: "https://status.simplero.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2513,7 +2537,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.42.0" },
+  { name: "statuscraft", version: "2.43.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -2586,7 +2610,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1018 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1032 services.",
           },
         },
         required: [],
