@@ -1734,6 +1734,36 @@ const SERVICES = [
     { id: "chime", name: "Chime", tags: ["fintech", "banking", "neobank", "payments"], status_url: "https://status.chime.com/api/v2/status.json", page_url: "https://status.chime.com", type: "statuspage" },
     // Presentation platform
     { id: "prezi", name: "Prezi", tags: ["productivity", "presentations", "collaboration", "saas"], status_url: "https://status.prezi.com/api/v2/status.json", page_url: "https://status.prezi.com", type: "statuspage" },
+    // Mobile/app development platform
+    { id: "expo", name: "Expo", tags: ["mobile", "react-native", "developer-tools", "deployment"], status_url: "https://status.expo.dev/api/v2/status.json", page_url: "https://status.expo.dev", type: "statuspage" },
+    // Security / bug bounty
+    { id: "hackerone", name: "HackerOne", tags: ["security", "bug-bounty", "vulnerability", "saas"], status_url: "https://www.hackeronestatus.com/api/v2/status.json", page_url: "https://www.hackeronestatus.com", type: "statuspage" },
+    // Passwordless / zero-trust authentication
+    { id: "beyondidentity", name: "Beyond Identity", tags: ["auth", "identity", "security", "zero-trust"], status_url: "https://status.beyondidentity.com/api/v2/status.json", page_url: "https://status.beyondidentity.com", type: "statuspage" },
+    // Privileged Access Management (PAM)
+    { id: "delinea", name: "Delinea", tags: ["security", "pam", "identity", "privileged-access"], status_url: "https://status.delinea.com/api/v2/status.json", page_url: "https://status.delinea.com", type: "statuspage" },
+    // Financial modeling / BI
+    { id: "causal", name: "Causal", tags: ["analytics", "bi", "financial-modeling", "saas"], status_url: "https://status.causal.app/api/v2/status.json", page_url: "https://status.causal.app", type: "statuspage" },
+    // Secure file sharing / collaboration
+    { id: "tresorit", name: "Tresorit", tags: ["file-sharing", "security", "cloud-storage", "collaboration"], status_url: "https://status.tresorit.com/api/v2/status.json", page_url: "https://status.tresorit.com", type: "statuspage" },
+    // Document parsing / data extraction
+    { id: "docparser", name: "Docparser", tags: ["document-processing", "ocr", "api", "automation"], status_url: "https://status.docparser.com/api/v2/status.json", page_url: "https://status.docparser.com", type: "statuspage" },
+    // GraphQL platform / federation
+    { id: "apollographql", name: "Apollo GraphQL", tags: ["graphql", "api", "developer-tools", "platform"], status_url: "https://status.apollographql.com/api/v2/status.json", page_url: "https://status.apollographql.com", type: "statuspage" },
+    // Cloud architecture diagramming
+    { id: "cloudcraft", name: "Cloudcraft", tags: ["devops", "cloud", "diagramming", "developer-tools"], status_url: "https://status.cloudcraft.co/api/v2/status.json", page_url: "https://status.cloudcraft.co", type: "statuspage" },
+    // AI voice conversations
+    { id: "retellai", name: "Retell AI", tags: ["ai", "voice", "telephony", "api"], status_url: "https://status.retellai.com/api/v2/status.json", page_url: "https://status.retellai.com", type: "statuspage" },
+    // AI inference (SambaNova Systems)
+    { id: "sambanova", name: "SambaNova", tags: ["ai", "llm", "inference", "api"], status_url: "https://status.sambanova.ai/api/v2/status.json", page_url: "https://status.sambanova.ai", type: "statuspage" },
+    // Lambda AI cloud inference
+    { id: "lambda_ai", name: "Lambda AI", tags: ["ai", "cloud", "inference", "gpu"], status_url: "https://status.lambda.ai/api/v2/status.json", page_url: "https://status.lambda.ai", type: "statuspage" },
+    // Data catalog / data governance
+    { id: "atlan", name: "Atlan", tags: ["data", "catalog", "governance", "metadata"], status_url: "https://status.atlan.com/api/v2/status.json", page_url: "https://status.atlan.com", type: "statuspage" },
+    // No-code app builder
+    { id: "stacker", name: "Stacker", tags: ["no-code", "app-builder", "productivity", "saas"], status_url: "https://status.stacker.app/api/v2/status.json", page_url: "https://status.stacker.app", type: "statuspage" },
+    // Business intelligence / analytics
+    { id: "omni", name: "Omni Analytics", tags: ["bi", "analytics", "data", "saas"], status_url: "https://status.omni.co/api/v2/status.json", page_url: "https://status.omni.co", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -2184,7 +2214,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 826 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 841 services.",
                     },
                 },
                 required: [],
