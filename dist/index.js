@@ -2534,6 +2534,24 @@ const SERVICES = [
     { id: "matterport", name: "Matterport", tags: ["3d", "digital-twin", "real-estate", "saas"], status_url: "https://status.matterport.com/api/v2/status.json", page_url: "https://status.matterport.com", type: "statuspage" },
     // Data catalog and collaboration
     { id: "data_world", name: "data.world", tags: ["data-catalog", "data-collaboration", "analytics", "saas"], status_url: "https://status.data.world/api/v2/status.json", page_url: "https://status.data.world", type: "statuspage" },
+    // Documentation platform
+    { id: "gitbook", name: "GitBook", tags: ["documentation", "developer-tools", "publishing", "saas"], status_url: "https://www.gitbookstatus.com/api/v2/status.json", page_url: "https://www.gitbookstatus.com", type: "statuspage" },
+    // UCaaS / telephony (tick 152)
+    { id: "mitel", name: "Mitel CloudLink", tags: ["voip", "ucaas", "telephony", "enterprise"], status_url: "https://status.mitel.io/api/v2/status.json", page_url: "https://status.mitel.io", type: "statuspage" },
+    // Digital experience analytics
+    { id: "siteimprove", name: "Siteimprove", tags: ["analytics", "seo", "accessibility", "digital-experience"], status_url: "https://status.siteimprove.com/api/v2/status.json", page_url: "https://status.siteimprove.com", type: "statuspage" },
+    // LMS / eLearning
+    { id: "learningpool", name: "Learning Pool", tags: ["lms", "elearning", "training", "saas"], status_url: "https://status.learningpool.com/api/v2/status.json", page_url: "https://status.learningpool.com", type: "statuspage" },
+    { id: "bridge_lms", name: "Bridge", tags: ["lms", "elearning", "hr", "performance"], status_url: "https://status.bridgeapp.com/api/v2/status.json", page_url: "https://status.bridgeapp.com", type: "statuspage" },
+    // Enterprise content management
+    { id: "hyland", name: "Hyland", tags: ["ecm", "content-management", "enterprise", "saas"], status_url: "https://status.hylandcloud.com/api/v2/status.json", page_url: "https://status.hylandcloud.com", type: "statuspage" },
+    // AI document processing / OCR
+    { id: "abbyy", name: "ABBYY", tags: ["ocr", "document-ai", "automation", "enterprise"], status_url: "https://status.abbyy.com/api/v2/status.json", page_url: "https://status.abbyy.com", type: "statuspage" },
+    // Customer support
+    { id: "helpshift", name: "Helpshift", tags: ["customer-support", "mobile", "chat", "saas"], status_url: "https://status.helpshift.com/api/v2/status.json", page_url: "https://status.helpshift.com", type: "statuspage" },
+    // CRM
+    { id: "capsule_crm", name: "Capsule CRM", tags: ["crm", "sales", "smb", "saas"], status_url: "https://status.capsulecrm.com/api/v2/status.json", page_url: "https://status.capsulecrm.com", type: "statuspage" },
+    { id: "close_crm", name: "Close CRM", tags: ["crm", "sales", "inside-sales", "saas"], status_url: "https://status.close.com/api/v2/status.json", page_url: "https://status.close.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -2984,7 +3002,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1318 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1328 services.",
                     },
                 },
                 required: [],
