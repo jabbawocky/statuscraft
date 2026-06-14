@@ -2817,6 +2817,32 @@ const SERVICES = [
     { id: "fly", name: "Fly.io", tags: ["hosting", "paas", "containers", "cloud"], status_url: "https://status.flyio.net/api/v2/status.json", page_url: "https://status.flyio.net", type: "statuspage" },
     { id: "netlify", name: "Netlify", tags: ["hosting", "jamstack", "cdn", "saas"], status_url: "https://www.netlifystatus.com/api/v2/status.json", page_url: "https://www.netlifystatus.com", type: "statuspage" },
     { id: "vercel", name: "Vercel", tags: ["hosting", "jamstack", "cdn", "frontend"], status_url: "https://www.vercel-status.com/api/v2/status.json", page_url: "https://www.vercel-status.com", type: "statuspage" },
+    // QA / testing tools
+    { id: "testrail", name: "TestRail", tags: ["testing", "qa", "test-management", "devtools"], status_url: "https://status.testrail.com/api/v2/status.json", page_url: "https://status.testrail.com", type: "statuspage" },
+    // Fitness / health consumer
+    { id: "myfitnesspal", name: "MyFitnessPal", tags: ["fitness", "health", "wellness", "consumer"], status_url: "https://status.myfitnesspal.com/api/v2/status.json", page_url: "https://status.myfitnesspal.com", type: "statuspage" },
+    // Workforce scheduling for hourly workers
+    { id: "homebase", name: "Homebase", tags: ["workforce", "scheduling", "hr", "smb"], status_url: "https://status.joinhomebase.com/api/v2/status.json", page_url: "https://status.joinhomebase.com", type: "statuspage" },
+    // B2B supply chain / invoicing network
+    { id: "tradeshift", name: "Tradeshift", tags: ["supply-chain", "procurement", "invoicing", "b2b"], status_url: "https://status.tradeshift.com/api/v2/status.json", page_url: "https://status.tradeshift.com", type: "statuspage" },
+    // Construction project management ERP
+    { id: "viewpoint", name: "Viewpoint", tags: ["construction", "erp", "project-management", "enterprise"], status_url: "https://status.viewpoint.com/api/v2/status.json", page_url: "https://status.viewpoint.com", type: "statuspage" },
+    // Cloud IaaS (Europe / global)
+    { id: "cloudsigma", name: "CloudSigma", tags: ["cloud", "iaas", "hosting", "infrastructure"], status_url: "https://status.cloudsigma.com/api/v2/status.json", page_url: "https://status.cloudsigma.com", type: "statuspage" },
+    // Telehealth / EHR platform
+    { id: "healthie", name: "Healthie", tags: ["healthcare", "telehealth", "ehr", "wellness"], status_url: "https://status.gethealthie.com/api/v2/status.json", page_url: "https://status.gethealthie.com", type: "statuspage" },
+    // Beauty & wellness appointment booking
+    { id: "booksy", name: "Booksy", tags: ["booking", "beauty", "wellness", "appointments"], status_url: "https://status.booksy.com/api/v2/status.json", page_url: "https://status.booksy.com", type: "statuspage" },
+    // Legal e-discovery / document review
+    { id: "logikcull", name: "Logikcull", tags: ["legal", "ediscovery", "document-review", "saas"], status_url: "https://status.logikcull.com/api/v2/status.json", page_url: "https://status.logikcull.com", type: "statuspage" },
+    { id: "everlaw", name: "Everlaw", tags: ["legal", "ediscovery", "litigation", "saas"], status_url: "https://status.everlaw.com/api/v2/status.json", page_url: "https://status.everlaw.com", type: "statuspage" },
+    // Healthcare / dental office communications platform
+    { id: "weave", name: "Weave", tags: ["healthcare", "dental", "patient-communications", "saas"], status_url: "https://status.getweave.com/api/v2/status.json", page_url: "https://status.getweave.com", type: "statuspage" },
+    // Nonprofit fundraising platforms
+    { id: "funraise", name: "Funraise", tags: ["nonprofit", "fundraising", "donations", "saas"], status_url: "https://status.funraise.org/api/v2/status.json", page_url: "https://status.funraise.org", type: "statuspage" },
+    { id: "kindful", name: "Kindful", tags: ["nonprofit", "crm", "fundraising", "donor-management"], status_url: "https://status.kindful.com/api/v2/status.json", page_url: "https://status.kindful.com", type: "statuspage" },
+    // Secrets management / zero-trust security
+    { id: "akeyless", name: "Akeyless", tags: ["security", "secrets-management", "zero-trust", "devops"], status_url: "https://status.akeyless.io/api/v2/status.json", page_url: "https://status.akeyless.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3232,7 +3258,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1486 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1500 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3267,7 +3293,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1486 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1500 services.",
                     },
                 },
                 required: [],
