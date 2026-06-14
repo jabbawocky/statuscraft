@@ -2843,6 +2843,42 @@ const SERVICES = [
     { id: "kindful", name: "Kindful", tags: ["nonprofit", "crm", "fundraising", "donor-management"], status_url: "https://status.kindful.com/api/v2/status.json", page_url: "https://status.kindful.com", type: "statuspage" },
     // Secrets management / zero-trust security
     { id: "akeyless", name: "Akeyless", tags: ["security", "secrets-management", "zero-trust", "devops"], status_url: "https://status.akeyless.io/api/v2/status.json", page_url: "https://status.akeyless.io", type: "statuspage" },
+    // AI / LLM providers
+    { id: "ai21", name: "AI21 Labs", tags: ["ai", "llm", "api"], status_url: "https://status.ai21.com/api/v2/status.json", page_url: "https://status.ai21.com", type: "statuspage" },
+    { id: "stability", name: "Stability AI", tags: ["ai", "image-gen", "api"], status_url: "https://status.stability.ai/api/v2/status.json", page_url: "https://status.stability.ai", type: "statuspage" },
+    { id: "runway", name: "RunwayML", tags: ["ai", "video-gen", "creative", "api"], status_url: "https://status.runwayml.com/api/v2/status.json", page_url: "https://status.runwayml.com", type: "statuspage" },
+    { id: "elevenlabs", name: "ElevenLabs", tags: ["ai", "voice", "tts", "api"], status_url: "https://status.elevenlabs.io/api/v2/status.json", page_url: "https://status.elevenlabs.io", type: "statuspage" },
+    { id: "assemblyai", name: "AssemblyAI", tags: ["ai", "speech-to-text", "transcription", "api"], status_url: "https://status.assemblyai.com/api/v2/status.json", page_url: "https://status.assemblyai.com", type: "statuspage" },
+    { id: "deepgram", name: "Deepgram", tags: ["ai", "speech", "transcription", "api"], status_url: "https://status.deepgram.com/api/v2/status.json", page_url: "https://status.deepgram.com", type: "statuspage" },
+    { id: "cartesia", name: "Cartesia", tags: ["ai", "tts", "voice", "api"], status_url: "https://status.cartesia.ai/api/v2/status.json", page_url: "https://status.cartesia.ai", type: "statuspage" },
+    // AI dev tools
+    { id: "tabnine", name: "Tabnine", tags: ["ai", "devtools", "code-completion", "ide"], status_url: "https://status.tabnine.com/api/v2/status.json", page_url: "https://status.tabnine.com", type: "statuspage" },
+    { id: "cursor", name: "Cursor", tags: ["ai", "devtools", "ide", "code-editor"], status_url: "https://status.cursor.com/api/v2/status.json", page_url: "https://status.cursor.com", type: "statuspage" },
+    { id: "langsmith", name: "LangSmith", tags: ["ai", "llm-ops", "devtools", "observability"], status_url: "https://status.smith.langchain.com/api/v2/status.json", page_url: "https://status.smith.langchain.com", type: "statuspage" },
+    { id: "pinecone", name: "Pinecone", tags: ["ai", "vector-db", "database", "api"], status_url: "https://status.pinecone.io/api/v2/status.json", page_url: "https://status.pinecone.io", type: "statuspage" },
+    // Security / password management
+    { id: "onepassword", name: "1Password", tags: ["security", "password-manager", "identity"], status_url: "https://status.1password.com/api/v2/status.json", page_url: "https://status.1password.com", type: "statuspage" },
+    { id: "nordpass", name: "NordPass", tags: ["security", "password-manager", "identity"], status_url: "https://status.nordpass.com/api/v2/status.json", page_url: "https://status.nordpass.com", type: "statuspage" },
+    // Auth / identity
+    { id: "clerk", name: "Clerk", tags: ["auth", "identity", "api", "devtools"], status_url: "https://status.clerk.com/api/v2/status.json", page_url: "https://status.clerk.com", type: "statuspage" },
+    // Payments / fintech
+    { id: "klarna", name: "Klarna", tags: ["payments", "fintech", "bnpl", "ecommerce"], status_url: "https://status.klarna.com/api/v2/status.json", page_url: "https://status.klarna.com", type: "statuspage" },
+    { id: "afterpay", name: "Afterpay", tags: ["payments", "fintech", "bnpl", "ecommerce"], status_url: "https://status.afterpay.com/api/v2/status.json", page_url: "https://status.afterpay.com", type: "statuspage" },
+    { id: "wise", name: "Wise", tags: ["fintech", "payments", "banking", "money-transfer"], status_url: "https://status.wise.com/api/v2/status.json", page_url: "https://status.wise.com", type: "statuspage" },
+    // Cloud storage
+    { id: "box", name: "Box", tags: ["storage", "cloud", "collaboration", "saas"], status_url: "https://status.box.com/api/v2/status.json", page_url: "https://status.box.com", type: "statuspage" },
+    { id: "dropbox", name: "Dropbox", tags: ["storage", "cloud", "collaboration", "saas"], status_url: "https://status.dropbox.com/api/v2/status.json", page_url: "https://status.dropbox.com", type: "statuspage" },
+    // CRM / marketing
+    { id: "hubspot", name: "HubSpot", tags: ["crm", "marketing", "sales", "saas"], status_url: "https://status.hubspot.com/api/v2/status.json", page_url: "https://status.hubspot.com", type: "statuspage" },
+    // Project management / collaboration
+    { id: "airtable", name: "Airtable", tags: ["database", "collaboration", "project-management", "saas"], status_url: "https://status.airtable.com/api/v2/status.json", page_url: "https://status.airtable.com", type: "statuspage" },
+    { id: "monday", name: "Monday.com", tags: ["project-management", "collaboration", "saas"], status_url: "https://status.monday.com/api/v2/status.json", page_url: "https://status.monday.com", type: "statuspage" },
+    { id: "asana", name: "Asana", tags: ["project-management", "collaboration", "saas"], status_url: "https://status.asana.com/api/v2/status.json", page_url: "https://status.asana.com", type: "statuspage" },
+    // Atlassian products
+    { id: "jira", name: "Jira", tags: ["devtools", "project-management", "atlassian", "issue-tracking"], status_url: "https://jira-software.status.atlassian.com/api/v2/status.json", page_url: "https://jira-software.status.atlassian.com", type: "statuspage" },
+    { id: "confluence", name: "Confluence", tags: ["collaboration", "wiki", "atlassian", "documentation"], status_url: "https://confluence.status.atlassian.com/api/v2/status.json", page_url: "https://confluence.status.atlassian.com", type: "statuspage" },
+    // Customer support / communications
+    { id: "intercom", name: "Intercom", tags: ["customer-support", "communication", "saas", "crm"], status_url: "https://www.intercomstatus.com/api/v2/status.json", page_url: "https://www.intercomstatus.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3230,7 +3266,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.46.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.47.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -3258,7 +3294,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1500 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1526 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3293,7 +3329,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1500 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1526 services.",
                     },
                 },
                 required: [],
