@@ -2545,6 +2545,25 @@ const SERVICES: ServiceConfig[] = [
   { id: "upstash", name: "Upstash", tags: ["database", "redis", "kafka", "developer-tools"], status_url: "https://status.upstash.com/api/v2/status.json", page_url: "https://status.upstash.com", type: "statuspage" },
   { id: "supabase", name: "Supabase", tags: ["database", "postgres", "backend", "developer-tools"], status_url: "https://status.supabase.com/api/v2/status.json", page_url: "https://status.supabase.com", type: "statuspage" },
   { id: "hygraph", name: "Hygraph", tags: ["cms", "graphql", "headless", "developer-tools"], status_url: "https://status.hygraph.com/api/v2/status.json", page_url: "https://status.hygraph.com", type: "statuspage" },
+  // Fintech / trading infrastructure
+  { id: "tradier", name: "Tradier", tags: ["fintech", "brokerage", "trading", "api"], status_url: "https://status.tradier.com/api/v2/status.json", page_url: "https://status.tradier.com", type: "statuspage" },
+  { id: "cashapp", name: "Cash App", tags: ["fintech", "payments", "mobile", "banking"], status_url: "https://status.cash.app/api/v2/status.json", page_url: "https://status.cash.app", type: "statuspage" },
+  // Marketing / CDP
+  { id: "blueshift", name: "Blueshift", tags: ["marketing", "cdp", "ai", "email"], status_url: "https://status.blueshift.com/api/v2/status.json", page_url: "https://status.blueshift.com", type: "statuspage" },
+  // AI / creative tools
+  { id: "runway_ml", name: "Runway", tags: ["ai", "video", "creative", "generative"], status_url: "https://status.runwayml.com/api/v2/status.json", page_url: "https://status.runwayml.com", type: "statuspage" },
+  { id: "lovable", name: "Lovable", tags: ["ai", "developer-tools", "no-code", "web"], status_url: "https://status.lovable.dev/api/v2/status.json", page_url: "https://status.lovable.dev", type: "statuspage" },
+  { id: "bolt", name: "Bolt.new", tags: ["ai", "developer-tools", "no-code", "coding"], status_url: "https://status.bolt.new/api/v2/status.json", page_url: "https://status.bolt.new", type: "statuspage" },
+  // AI meeting tools
+  { id: "tactiq", name: "Tactiq", tags: ["ai", "meeting-transcription", "productivity", "collaboration"], status_url: "https://status.tactiq.io/api/v2/status.json", page_url: "https://status.tactiq.io", type: "statuspage" },
+  // Email / messaging security
+  { id: "vade", name: "Vade", tags: ["security", "email", "ai", "anti-phishing"], status_url: "https://status.vadesecure.com/api/v2/status.json", page_url: "https://status.vadesecure.com", type: "statuspage" },
+  // Cyber threat intelligence
+  { id: "recorded_future", name: "Recorded Future", tags: ["security", "threat-intelligence", "cyber", "saas"], status_url: "https://status.recordedfuture.com/api/v2/status.json", page_url: "https://status.recordedfuture.com", type: "statuspage" },
+  { id: "greynoise", name: "GreyNoise", tags: ["security", "threat-intelligence", "network", "saas"], status_url: "https://status.greynoise.io/api/v2/status.json", page_url: "https://status.greynoise.io", type: "statuspage" },
+  { id: "anomali", name: "Anomali", tags: ["security", "threat-intelligence", "siem", "saas"], status_url: "https://status.anomali.com/api/v2/status.json", page_url: "https://status.anomali.com", type: "statuspage" },
+  // IoT connectivity
+  { id: "emnify", name: "emnify", tags: ["iot", "connectivity", "sim", "infrastructure"], status_url: "https://status.emnify.com/api/v2/status.json", page_url: "https://status.emnify.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2914,7 +2933,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.43.0" },
+  { name: "statuscraft", version: "2.44.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -2987,7 +3006,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1280 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1292 services.",
           },
         },
         required: [],
