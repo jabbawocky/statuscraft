@@ -1816,6 +1816,22 @@ const SERVICES = [
     { id: "worldpay", name: "Worldpay", tags: ["payments", "fintech", "acquiring", "processing"], status_url: "https://status.worldpay.com/api/v2/status.json", page_url: "https://status.worldpay.com", type: "statuspage" },
     { id: "360learning", name: "360Learning", tags: ["lms", "learning", "training", "saas"], status_url: "https://status.360learning.com/api/v2/status.json", page_url: "https://status.360learning.com", type: "statuspage" },
     { id: "litmos", name: "Litmos", tags: ["lms", "learning", "training", "saas"], status_url: "https://litmos.statuspage.io/api/v2/status.json", page_url: "https://litmos.statuspage.io", type: "statuspage" },
+    // Tick 122 additions
+    // Mobile attribution / engagement
+    { id: "branch", name: "Branch", tags: ["mobile", "attribution", "deep-links", "analytics"], status_url: "https://status.branch.io/api/v2/status.json", page_url: "https://status.branch.io", type: "statuspage" },
+    { id: "adjust", name: "Adjust", tags: ["mobile", "attribution", "analytics", "adtech"], status_url: "https://status.adjust.com/api/v2/status.json", page_url: "https://status.adjust.com", type: "statuspage" },
+    { id: "clevertap", name: "CleverTap", tags: ["mobile", "analytics", "engagement", "marketing"], status_url: "https://status.clevertap.com/api/v2/status.json", page_url: "https://status.clevertap.com", type: "statuspage" },
+    { id: "moengage", name: "MoEngage", tags: ["mobile", "engagement", "marketing", "saas"], status_url: "https://status.moengage.com/api/v2/status.json", page_url: "https://status.moengage.com", type: "statuspage" },
+    // ABM / revenue intelligence
+    { id: "sixsense", name: "6sense", tags: ["abm", "revenue-intelligence", "marketing", "saas"], status_url: "https://status.6sense.com/api/v2/status.json", page_url: "https://status.6sense.com", type: "statuspage" },
+    // Video conferencing infrastructure
+    { id: "pexip", name: "Pexip", tags: ["video-conferencing", "infrastructure", "enterprise", "saas"], status_url: "https://status.pexip.com/api/v2/status.json", page_url: "https://status.pexip.com", type: "statuspage" },
+    // Business messaging / VoIP / contact center
+    { id: "avochato", name: "Avochato", tags: ["sms", "messaging", "business", "saas"], status_url: "https://status.avochato.com/api/v2/status.json", page_url: "https://status.avochato.com", type: "statuspage" },
+    { id: "kixie", name: "Kixie", tags: ["voip", "sales-dialer", "crm", "saas"], status_url: "https://status.kixie.com/api/v2/status.json", page_url: "https://status.kixie.com", type: "statuspage" },
+    { id: "aloware", name: "Aloware", tags: ["contact-center", "voip", "sales", "saas"], status_url: "https://status.aloware.com/api/v2/status.json", page_url: "https://status.aloware.com", type: "statuspage" },
+    // Web accessibility
+    { id: "audioeye", name: "AudioEye", tags: ["accessibility", "ada", "compliance", "saas"], status_url: "https://status.audioeye.com/api/v2/status.json", page_url: "https://status.audioeye.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -2266,7 +2282,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 882 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 892 services.",
                     },
                 },
                 required: [],
