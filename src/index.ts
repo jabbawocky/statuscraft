@@ -1758,6 +1758,31 @@ const SERVICES: ServiceConfig[] = [
   { id: "d_id", name: "D-ID", tags: ["ai", "video", "avatars", "generative"], status_url: "https://status.d-id.com/api/v2/status.json", page_url: "https://status.d-id.com", type: "statuspage" },
   // Decentralized IoT wireless network
   { id: "helium", name: "Helium", tags: ["iot", "blockchain", "wireless", "network"], status_url: "https://status.helium.com/api/v2/status.json", page_url: "https://status.helium.com", type: "statuspage" },
+  // BNPL / installment payments
+  { id: "sezzle", name: "Sezzle", tags: ["payments", "bnpl", "fintech", "ecommerce"], status_url: "https://status.sezzle.com/api/v2/status.json", page_url: "https://status.sezzle.com", type: "statuspage" },
+  { id: "splitit", name: "Splitit", tags: ["payments", "bnpl", "fintech", "ecommerce"], status_url: "https://status.splitit.com/api/v2/status.json", page_url: "https://status.splitit.com", type: "statuspage" },
+  { id: "paidy", name: "Paidy", tags: ["payments", "bnpl", "fintech", "japan"], status_url: "https://status.paidy.com/api/v2/status.json", page_url: "https://status.paidy.com", type: "statuspage" },
+  // Time-series database platform
+  { id: "influxdata", name: "InfluxDB Cloud", tags: ["database", "time-series", "iot", "observability"], status_url: "https://status.influxdata.com/api/v2/status.json", page_url: "https://status.influxdata.com", type: "statuspage" },
+  // Monitoring platform (status.io)
+  { id: "dynatrace", name: "Dynatrace", tags: ["monitoring", "observability", "apm", "infrastructure"], status_url: "https://api.status.io/1.0/status/546d8cb6af8407b6730000cb", page_url: "https://dynatrace.status.io", type: "statusio" },
+  // Google Firebase (GCP incident format)
+  { id: "firebase", name: "Google Firebase", tags: ["database", "hosting", "mobile", "google"], status_url: "https://status.firebase.google.com/incidents.json", page_url: "https://status.firebase.google.com", type: "gcp" },
+  // Social media platform
+  { id: "reddit", name: "Reddit", tags: ["social", "community", "media"], status_url: "https://www.redditstatus.com/api/v2/status.json", page_url: "https://www.redditstatus.com", type: "statuspage" },
+  // Serverless database with branching
+  { id: "xata", name: "Xata", tags: ["database", "postgres", "search", "serverless"], status_url: "https://www.xatastatus.com/api/v2/status.json", page_url: "https://www.xatastatus.com", type: "statuspage" },
+  // Email marketing platform
+  { id: "getresponse", name: "GetResponse", tags: ["email", "marketing", "automation", "saas"], status_url: "https://status.getresponse.com/api/v2/status.json", page_url: "https://status.getresponse.com", type: "statuspage" },
+  // Code quality and test coverage
+  { id: "codeclimate", name: "Code Climate", tags: ["code-quality", "testing", "devtools", "ci-cd"], status_url: "https://status.codeclimate.com/api/v2/status.json", page_url: "https://status.codeclimate.com", type: "statuspage" },
+  // Investing platform
+  { id: "wealthsimple", name: "Wealthsimple", tags: ["fintech", "investing", "trading", "canada"], status_url: "https://status.wealthsimple.com/api/v2/status.json", page_url: "https://status.wealthsimple.com", type: "statuspage" },
+  { id: "robinhood", name: "Robinhood", tags: ["fintech", "investing", "trading", "stocks"], status_url: "https://status.robinhood.com/api/v2/status.json", page_url: "https://status.robinhood.com", type: "statuspage" },
+  // Neobank
+  { id: "chime", name: "Chime", tags: ["fintech", "banking", "neobank", "payments"], status_url: "https://status.chime.com/api/v2/status.json", page_url: "https://status.chime.com", type: "statuspage" },
+  // Presentation platform
+  { id: "prezi", name: "Prezi", tags: ["productivity", "presentations", "collaboration", "saas"], status_url: "https://status.prezi.com/api/v2/status.json", page_url: "https://status.prezi.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2127,7 +2152,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.37.0" },
+  { name: "statuscraft", version: "2.38.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -2200,7 +2225,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 812 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 826 services.",
           },
         },
         required: [],
