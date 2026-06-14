@@ -2350,6 +2350,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "quantumworkplace", name: "Quantum Workplace", tags: ["hr", "employee-engagement", "performance", "saas"], status_url: "https://status.quantumworkplace.com/api/v2/status.json", page_url: "https://status.quantumworkplace.com", type: "statuspage" },
   { id: "precisely", name: "Precisely", tags: ["data", "quality", "enrichment", "analytics"], status_url: "https://status.precisely.com/api/v2/status.json", page_url: "https://status.precisely.com", type: "statuspage" },
   { id: "broadvoice", name: "Broadvoice", tags: ["voip", "communications", "cloud", "telephony"], status_url: "https://status.broadvoice.com/api/v2/status.json", page_url: "https://status.broadvoice.com", type: "statuspage" },
+  { id: "logz", name: "Logz.io", tags: ["observability", "logging", "monitoring", "devops"], status_url: "https://status.logz.io/api/v2/status.json", page_url: "https://status.logz.io", type: "statuspage" },
+  { id: "getstream", name: "Stream", tags: ["messaging", "chat", "feeds", "real-time"], status_url: "https://status.getstream.io/api/v2/status.json", page_url: "https://status.getstream.io", type: "statuspage" },
+  { id: "otter", name: "Otter.ai", tags: ["ai", "transcription", "meeting", "productivity"], status_url: "https://status.otter.ai/api/v2/status.json", page_url: "https://status.otter.ai", type: "statuspage" },
+  { id: "wheniwork", name: "When I Work", tags: ["workforce", "scheduling", "hr", "shift-management"], status_url: "https://status.wheniwork.com/api/v2/status.json", page_url: "https://status.wheniwork.com", type: "statuspage" },
+  { id: "sigmacomputing", name: "Sigma Computing", tags: ["bi", "analytics", "data", "spreadsheet"], status_url: "https://status.sigmacomputing.com/api/v2/status.json", page_url: "https://status.sigmacomputing.com", type: "statuspage" },
+  { id: "diligent", name: "Diligent", tags: ["governance", "board", "grc", "compliance"], status_url: "https://status.diligent.com/api/v2/status.json", page_url: "https://status.diligent.com", type: "statuspage" },
+  { id: "onspring", name: "Onspring", tags: ["grc", "no-code", "workflow", "compliance"], status_url: "https://status.onspring.com/api/v2/status.json", page_url: "https://status.onspring.com", type: "statuspage" },
+  { id: "assembly", name: "Assembly", tags: ["employee-engagement", "hr", "recognition", "intranet"], status_url: "https://status.assembly.com/api/v2/status.json", page_url: "https://status.assembly.com", type: "statuspage" },
+  { id: "performyard", name: "PerformYard", tags: ["hr", "performance", "reviews", "goals"], status_url: "https://status.performyard.com/api/v2/status.json", page_url: "https://status.performyard.com", type: "statuspage" },
+  { id: "everstage", name: "Everstage", tags: ["sales", "compensation", "commissions", "revenue"], status_url: "https://status.everstage.com/api/v2/status.json", page_url: "https://status.everstage.com", type: "statuspage" },
+  { id: "reclaim", name: "Reclaim.ai", tags: ["ai", "scheduling", "calendar", "productivity"], status_url: "https://status.reclaim.ai/api/v2/status.json", page_url: "https://status.reclaim.ai", type: "statuspage" },
+  { id: "ashby", name: "Ashby", tags: ["ats", "recruiting", "hiring", "hr"], status_url: "https://status.ashbyhq.com/api/v2/status.json", page_url: "https://status.ashbyhq.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2792,7 +2804,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1146 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1158 services.",
           },
         },
         required: [],
