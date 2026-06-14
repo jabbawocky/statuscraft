@@ -3067,6 +3067,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "redhat", name: "Red Hat", tags: ["linux", "enterprise", "cloud", "developer-platform"], status_url: "https://status.redhat.com/api/v2/status.json", page_url: "https://status.redhat.com", type: "statuspage" },
   // Analytics / OLAP database
   { id: "firebolt", name: "Firebolt", tags: ["database", "analytics", "olap", "cloud"], status_url: "https://status.firebolt.io/api/v2/status.json", page_url: "https://status.firebolt.io", type: "statuspage" },
+  // Tick 169 additions
+  // Identity verification
+  { id: "idnow", name: "IDnow", tags: ["identity", "kyc", "verification", "security"], status_url: "https://idnow.statuspage.io/api/v2/status.json", page_url: "https://idnow.statuspage.io", type: "statuspage" },
+  { id: "jumio", name: "Jumio", tags: ["identity", "kyc", "verification", "security"], status_url: "https://jumio.statuspage.io/api/v2/status.json", page_url: "https://jumio.statuspage.io", type: "statuspage" },
+  // Background screening
+  { id: "sterling", name: "Sterling", tags: ["background-check", "hr", "compliance", "screening"], status_url: "https://sterling.statuspage.io/api/v2/status.json", page_url: "https://sterling.statuspage.io", type: "statuspage" },
+  { id: "accurate", name: "Accurate Background", tags: ["background-check", "hr", "compliance", "screening"], status_url: "https://status.accurate.com/api/v2/status.json", page_url: "https://status.accurate.com", type: "statuspage" },
+  { id: "cisive", name: "Cisive", tags: ["background-check", "hr", "compliance", "screening"], status_url: "https://status.cisive.com/api/v2/status.json", page_url: "https://status.cisive.com", type: "statuspage" },
+  // Insurance tech
+  { id: "hippo", name: "Hippo Insurance", tags: ["insurance", "insurtech", "consumer"], status_url: "https://hippo.statuspage.io/api/v2/status.json", page_url: "https://hippo.statuspage.io", type: "statuspage" },
+  // Scheduling
+  { id: "cal_com", name: "Cal.com", tags: ["scheduling", "calendar", "productivity", "open-source"], status_url: "https://cal.statuspage.io/api/v2/status.json", page_url: "https://cal.statuspage.io", type: "statuspage" },
+  // Gaming platforms
+  { id: "nexon", name: "Nexon", tags: ["gaming", "platform", "consumer"], status_url: "https://nexon.statuspage.io/api/v2/status.json", page_url: "https://nexon.statuspage.io", type: "statuspage" },
+  { id: "garena", name: "Garena", tags: ["gaming", "platform", "consumer"], status_url: "https://garena.statuspage.io/api/v2/status.json", page_url: "https://garena.statuspage.io", type: "statuspage" },
+  { id: "gearbox", name: "Gearbox SHiFT", tags: ["gaming", "platform", "consumer"], status_url: "https://status.gearbox.com/api/v2/status.json", page_url: "https://status.gearbox.com", type: "statuspage" },
+  // Package registry
+  { id: "gemfury", name: "Gemfury", tags: ["package-registry", "devtools", "hosting"], status_url: "https://status.gemfury.com/api/v2/status.json", page_url: "https://status.gemfury.com", type: "statuspage" },
+  // Field service management
+  { id: "jobber", name: "Jobber", tags: ["field-service", "smb", "crm", "saas"], status_url: "https://jobber.statuspage.io/api/v2/status.json", page_url: "https://jobber.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3471,7 +3491,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1554 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1566 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3509,7 +3529,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1554 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1566 services.",
           },
         },
         required: [],
