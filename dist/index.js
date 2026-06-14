@@ -2612,6 +2612,26 @@ const SERVICES = [
     { id: "bigtincan", name: "Bigtincan", tags: ["sales-enablement", "content", "saas", "enterprise"], status_url: "https://status.bigtincan.com/api/v2/status.json", page_url: "https://status.bigtincan.com", type: "statuspage" },
     // LMS / learning experience platform (Cornerstone)
     { id: "edcast", name: "EdCast by Cornerstone", tags: ["lms", "learning", "e-learning", "enterprise"], status_url: "https://status.edcast.com/api/v2/status.json", page_url: "https://status.edcast.com", type: "statuspage" },
+    // Data observability
+    { id: "bigeye", name: "Bigeye", tags: ["data-observability", "data-quality", "analytics", "saas"], status_url: "https://status.bigeye.com/api/v2/status.json", page_url: "https://status.bigeye.com", type: "statuspage" },
+    // Visual content creation
+    { id: "visme", name: "Visme", tags: ["visual-content", "design", "presentations", "infographics"], status_url: "https://status.visme.co/api/v2/status.json", page_url: "https://status.visme.co", type: "statuspage" },
+    // Translation / CAT tool
+    { id: "memoq", name: "memoQ", tags: ["translation", "localization", "cat-tool", "enterprise"], status_url: "https://status.memoq.com/api/v2/status.json", page_url: "https://status.memoq.com", type: "statuspage" },
+    // Screen recording / EdTech
+    { id: "screencastify", name: "Screencastify", tags: ["screen-recording", "edtech", "video", "education"], status_url: "https://status.screencastify.com/api/v2/status.json", page_url: "https://status.screencastify.com", type: "statuspage" },
+    // Crypto / blockchain infrastructure
+    { id: "paxos", name: "Paxos", tags: ["crypto", "blockchain", "fintech", "payments"], status_url: "https://status.paxos.com/api/v2/status.json", page_url: "https://status.paxos.com", type: "statuspage" },
+    // IoT / cellular connectivity
+    { id: "blues", name: "Blues (Notehub)", tags: ["iot", "cellular", "connectivity", "embedded"], status_url: "https://status.notehub.io/api/v2/status.json", page_url: "https://status.notehub.io", type: "statuspage" },
+    // Message broker (RabbitMQ-as-a-service)
+    { id: "cloudamqp", name: "CloudAMQP", tags: ["messaging", "rabbitmq", "amqp", "cloud"], status_url: "https://status.cloudamqp.com/api/v2/status.json", page_url: "https://status.cloudamqp.com", type: "statuspage" },
+    // Fitness wearable / health platform
+    { id: "whoop", name: "WHOOP", tags: ["fitness", "wearable", "health", "wellness"], status_url: "https://status.whoop.com/api/v2/status.json", page_url: "https://status.whoop.com", type: "statuspage" },
+    // Smart ring / health platform
+    { id: "oura", name: "Oura Ring", tags: ["fitness", "wearable", "health", "sleep"], status_url: "https://status.ouraring.com/api/v2/status.json", page_url: "https://status.ouraring.com", type: "statuspage" },
+    // Software test management / QA
+    { id: "tricentis", name: "Tricentis", tags: ["testing", "qa", "test-management", "enterprise"], status_url: "https://status.tricentis.com/api/v2/status.json", page_url: "https://status.tricentis.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3027,7 +3047,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1370 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3062,7 +3082,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1361 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1370 services.",
                     },
                 },
                 required: [],
