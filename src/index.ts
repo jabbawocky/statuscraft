@@ -2481,6 +2481,70 @@ const SERVICES: ServiceConfig[] = [
   { id: "universe", name: "Universe", tags: ["events", "ticketing", "saas"], status_url: "https://status.universe.com/api/v2/status.json", page_url: "https://status.universe.com", type: "statuspage" },
   // Email marketing automation
   { id: "vero", name: "Vero", tags: ["email", "marketing", "automation", "saas"], status_url: "https://status.getvero.com/api/v2/status.json", page_url: "https://status.getvero.com", type: "statuspage" },
+  // Gaming platform
+  { id: "epicgames", name: "Epic Games", tags: ["gaming", "developer-tools", "saas"], status_url: "https://status.epicgames.com/api/v2/status.json", page_url: "https://status.epicgames.com", type: "statuspage" },
+  // Crypto exchanges
+  { id: "coinbase", name: "Coinbase", tags: ["crypto", "fintech", "payments", "saas"], status_url: "https://status.coinbase.com/api/v2/status.json", page_url: "https://status.coinbase.com", type: "statuspage" },
+  { id: "kraken", name: "Kraken", tags: ["crypto", "fintech", "payments", "saas"], status_url: "https://status.kraken.com/api/v2/status.json", page_url: "https://status.kraken.com", type: "statuspage" },
+  // Web3 / blockchain infrastructure
+  { id: "alchemy", name: "Alchemy", tags: ["web3", "blockchain", "developer-tools", "api"], status_url: "https://status.alchemy.com/api/v2/status.json", page_url: "https://status.alchemy.com", type: "statuspage" },
+  { id: "infura", name: "Infura", tags: ["web3", "blockchain", "developer-tools", "api"], status_url: "https://status.infura.io/api/v2/status.json", page_url: "https://status.infura.io", type: "statuspage" },
+  { id: "quicknode", name: "QuickNode", tags: ["web3", "blockchain", "developer-tools", "api"], status_url: "https://status.quicknode.com/api/v2/status.json", page_url: "https://status.quicknode.com", type: "statuspage" },
+  // Shipping / logistics
+  { id: "shipstation", name: "ShipStation", tags: ["logistics", "shipping", "ecommerce", "saas"], status_url: "https://status.shipstation.com/api/v2/status.json", page_url: "https://status.shipstation.com", type: "statuspage" },
+  // Construction & legal SaaS
+  { id: "procore", name: "Procore", tags: ["construction", "project-management", "saas"], status_url: "https://status.procore.com/api/v2/status.json", page_url: "https://status.procore.com", type: "statuspage" },
+  { id: "clio", name: "Clio", tags: ["legal", "law-practice", "saas"], status_url: "https://status.clio.com/api/v2/status.json", page_url: "https://status.clio.com", type: "statuspage" },
+  // Mobile measurement / attribution
+  { id: "appsflyer", name: "AppsFlyer", tags: ["mobile", "analytics", "attribution", "saas"], status_url: "https://status.appsflyer.com/api/v2/status.json", page_url: "https://status.appsflyer.com", type: "statuspage" },
+  { id: "branch", name: "Branch", tags: ["mobile", "analytics", "attribution", "developer-tools"], status_url: "https://status.branch.io/api/v2/status.json", page_url: "https://status.branch.io", type: "statuspage" },
+  { id: "adjust", name: "Adjust", tags: ["mobile", "analytics", "attribution", "saas"], status_url: "https://status.adjust.com/api/v2/status.json", page_url: "https://status.adjust.com", type: "statuspage" },
+  // iPaaS / automation
+  { id: "workato", name: "Workato", tags: ["automation", "integration", "ipaas", "saas"], status_url: "https://status.workato.com/api/v2/status.json", page_url: "https://status.workato.com", type: "statuspage" },
+  // IoT platform
+  { id: "particle", name: "Particle", tags: ["iot", "developer-tools", "hardware", "saas"], status_url: "https://status.particle.io/api/v2/status.json", page_url: "https://status.particle.io", type: "statuspage" },
+  // Privacy / consent management
+  { id: "onetrust", name: "OneTrust", tags: ["privacy", "compliance", "consent", "saas"], status_url: "https://onetrust.statuspage.io/api/v2/status.json", page_url: "https://onetrust.statuspage.io", type: "statuspage" },
+  { id: "trustarc", name: "TrustArc", tags: ["privacy", "compliance", "consent", "saas"], status_url: "https://status.trustarc.com/api/v2/status.json", page_url: "https://status.trustarc.com", type: "statuspage" },
+  // Ad verification
+  { id: "doubleverify", name: "DoubleVerify", tags: ["adtech", "advertising", "brand-safety", "saas"], status_url: "https://status.doubleverify.com/api/v2/status.json", page_url: "https://status.doubleverify.com", type: "statuspage" },
+  // SMS / messaging
+  { id: "clicksend", name: "ClickSend", tags: ["sms", "messaging", "communications", "api"], status_url: "https://status.clicksend.com/api/v2/status.json", page_url: "https://status.clicksend.com", type: "statuspage" },
+  // Email / lifecycle marketing
+  { id: "customerio", name: "Customer.io", tags: ["email", "marketing", "automation", "saas"], status_url: "https://status.customerio.com/api/v2/status.json", page_url: "https://status.customerio.com", type: "statuspage" },
+  // Cloud / IaaS
+  { id: "linode", name: "Linode (Akamai)", tags: ["cloud", "iaas", "hosting", "infrastructure"], status_url: "https://status.linode.com/api/v2/status.json", page_url: "https://status.linode.com", type: "statuspage" },
+  { id: "render", name: "Render", tags: ["cloud", "hosting", "paas", "developer-tools"], status_url: "https://status.render.com/api/v2/status.json", page_url: "https://status.render.com", type: "statuspage" },
+  { id: "bunny", name: "Bunny.net", tags: ["cdn", "hosting", "edge", "infrastructure"], status_url: "https://status.bunny.net/api/v2/status.json", page_url: "https://status.bunny.net", type: "statuspage" },
+  { id: "equinix_metal", name: "Equinix Metal", tags: ["cloud", "bare-metal", "infrastructure", "iaas"], status_url: "https://equinixmetal.statuspage.io/api/v2/status.json", page_url: "https://equinixmetal.statuspage.io", type: "statuspage" },
+  // Vector databases
+  { id: "pinecone", name: "Pinecone", tags: ["database", "vector-db", "ai", "developer-tools"], status_url: "https://status.pinecone.io/api/v2/status.json", page_url: "https://status.pinecone.io", type: "statuspage" },
+  // AI / LLM services
+  { id: "elevenlabs", name: "ElevenLabs", tags: ["ai", "voice", "text-to-speech", "api"], status_url: "https://status.elevenlabs.io/api/v2/status.json", page_url: "https://status.elevenlabs.io", type: "statuspage" },
+  { id: "baseten", name: "Baseten", tags: ["ai", "ml", "deployment", "developer-tools"], status_url: "https://status.baseten.co/api/v2/status.json", page_url: "https://status.baseten.co", type: "statuspage" },
+  { id: "clarifai", name: "Clarifai", tags: ["ai", "computer-vision", "ml", "api"], status_url: "https://status.clarifai.com/api/v2/status.json", page_url: "https://status.clarifai.com", type: "statuspage" },
+  { id: "scale", name: "Scale AI", tags: ["ai", "data-labeling", "ml", "saas"], status_url: "https://status.scale.com/api/v2/status.json", page_url: "https://status.scale.com", type: "statuspage" },
+  // Fleet management
+  { id: "fleetio", name: "Fleetio", tags: ["fleet", "logistics", "saas"], status_url: "https://status.fleetio.com/api/v2/status.json", page_url: "https://status.fleetio.com", type: "statuspage" },
+  { id: "sensepass", name: "SensePass", tags: ["payments", "saas", "retail"], status_url: "https://status.sensepass.com/api/v2/status.json", page_url: "https://status.sensepass.com", type: "statuspage" },
+  // Survey / CX research platforms
+  { id: "qualtrics", name: "Qualtrics", tags: ["surveys", "cx", "analytics", "enterprise"], status_url: "https://status.qualtrics.com/api/v2/status.json", page_url: "https://status.qualtrics.com", type: "statuspage" },
+  { id: "surveymonkey", name: "SurveyMonkey", tags: ["surveys", "analytics", "saas"], status_url: "https://status.surveymonkey.com/api/v2/status.json", page_url: "https://status.surveymonkey.com", type: "statuspage" },
+  // Reputation / review management
+  { id: "birdeye", name: "Birdeye", tags: ["reputation", "reviews", "marketing", "saas"], status_url: "https://status.birdeye.com/api/v2/status.json", page_url: "https://status.birdeye.com", type: "statuspage" },
+  { id: "yotpo", name: "Yotpo", tags: ["reviews", "ecommerce", "marketing", "saas"], status_url: "https://status.yotpo.com/api/v2/status.json", page_url: "https://status.yotpo.com", type: "statuspage" },
+  { id: "trustpilot", name: "Trustpilot", tags: ["reviews", "reputation", "saas"], status_url: "https://status.trustpilot.com/api/v2/status.json", page_url: "https://status.trustpilot.com", type: "statuspage" },
+  // Auth / identity
+  { id: "clerk", name: "Clerk", tags: ["auth", "identity", "developer-tools", "saas"], status_url: "https://status.clerk.com/api/v2/status.json", page_url: "https://status.clerk.com", type: "statuspage" },
+  { id: "frontegg", name: "Frontegg", tags: ["auth", "identity", "developer-tools", "saas"], status_url: "https://status.frontegg.com/api/v2/status.json", page_url: "https://status.frontegg.com", type: "statuspage" },
+  { id: "workos", name: "WorkOS", tags: ["auth", "identity", "enterprise", "developer-tools"], status_url: "https://status.workos.com/api/v2/status.json", page_url: "https://status.workos.com", type: "statuspage" },
+  { id: "magic", name: "Magic", tags: ["auth", "web3", "identity", "developer-tools"], status_url: "https://status.magic.link/api/v2/status.json", page_url: "https://status.magic.link", type: "statuspage" },
+  // Databases
+  { id: "tidbcloud", name: "TiDB Cloud", tags: ["database", "cloud", "mysql", "saas"], status_url: "https://status.tidbcloud.com/api/v2/status.json", page_url: "https://status.tidbcloud.com", type: "statuspage" },
+  { id: "couchbase", name: "Couchbase", tags: ["database", "nosql", "cloud", "saas"], status_url: "https://status.couchbase.com/api/v2/status.json", page_url: "https://status.couchbase.com", type: "statuspage" },
+  { id: "upstash", name: "Upstash", tags: ["database", "redis", "kafka", "developer-tools"], status_url: "https://status.upstash.com/api/v2/status.json", page_url: "https://status.upstash.com", type: "statuspage" },
+  { id: "supabase", name: "Supabase", tags: ["database", "postgres", "backend", "developer-tools"], status_url: "https://status.supabase.com/api/v2/status.json", page_url: "https://status.supabase.com", type: "statuspage" },
+  { id: "hygraph", name: "Hygraph", tags: ["cms", "graphql", "headless", "developer-tools"], status_url: "https://status.hygraph.com/api/v2/status.json", page_url: "https://status.hygraph.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2923,7 +2987,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1236 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1280 services.",
           },
         },
         required: [],
