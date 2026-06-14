@@ -2362,6 +2362,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "everstage", name: "Everstage", tags: ["sales", "compensation", "commissions", "revenue"], status_url: "https://status.everstage.com/api/v2/status.json", page_url: "https://status.everstage.com", type: "statuspage" },
   { id: "reclaim", name: "Reclaim.ai", tags: ["ai", "scheduling", "calendar", "productivity"], status_url: "https://status.reclaim.ai/api/v2/status.json", page_url: "https://status.reclaim.ai", type: "statuspage" },
   { id: "ashby", name: "Ashby", tags: ["ats", "recruiting", "hiring", "hr"], status_url: "https://status.ashbyhq.com/api/v2/status.json", page_url: "https://status.ashbyhq.com", type: "statuspage" },
+  { id: "shiphero", name: "ShipHero", tags: ["logistics", "fulfillment", "warehouse", "ecommerce"], status_url: "https://status.shiphero.com/api/v2/status.json", page_url: "https://status.shiphero.com", type: "statuspage" },
+  { id: "extensiv", name: "Extensiv", tags: ["logistics", "fulfillment", "warehouse", "3pl"], status_url: "https://status.extensiv.com/api/v2/status.json", page_url: "https://status.extensiv.com", type: "statuspage" },
+  { id: "incident_io", name: "Incident.io", tags: ["incident-management", "ops", "on-call", "devops"], status_url: "https://status.incident.io/api/v2/status.json", page_url: "https://status.incident.io", type: "statuspage" },
+  { id: "playfab", name: "PlayFab", tags: ["gaming", "backend", "game-services", "microsoft"], status_url: "https://status.playfab.com/api/v2/status.json", page_url: "https://status.playfab.com", type: "statuspage" },
+  { id: "lightspeed", name: "Lightspeed", tags: ["pos", "retail", "restaurant", "ecommerce"], status_url: "https://status.lightspeedhq.com/api/v2/status.json", page_url: "https://status.lightspeedhq.com", type: "statuspage" },
+  { id: "tawkto", name: "Tawk.to", tags: ["live-chat", "customer-support", "messaging", "saas"], status_url: "https://status.tawk.to/api/v2/status.json", page_url: "https://status.tawk.to", type: "statuspage" },
+  { id: "inspectlet", name: "Inspectlet", tags: ["analytics", "session-recording", "heatmaps", "ux"], status_url: "https://status.inspectlet.com/api/v2/status.json", page_url: "https://status.inspectlet.com", type: "statuspage" },
+  { id: "zenduty", name: "Zenduty", tags: ["incident-management", "on-call", "alerting", "devops"], status_url: "https://status.zenduty.com/api/v2/status.json", page_url: "https://status.zenduty.com", type: "statuspage" },
+  { id: "localytics", name: "Localytics", tags: ["analytics", "mobile", "marketing", "engagement"], status_url: "https://status.localytics.com/api/v2/status.json", page_url: "https://status.localytics.com", type: "statuspage" },
+  { id: "procurify", name: "Procurify", tags: ["procurement", "spend-management", "purchasing", "finance"], status_url: "https://status.procurify.com/api/v2/status.json", page_url: "https://status.procurify.com", type: "statuspage" },
+  { id: "socio_events", name: "Socio Events", tags: ["events", "virtual", "hybrid", "engagement"], status_url: "https://status.socio.events/api/v2/status.json", page_url: "https://status.socio.events", type: "statuspage" },
+  { id: "slido", name: "Slido", tags: ["events", "polls", "q-and-a", "audience-engagement"], status_url: "https://status.slido.com/api/v2/status.json", page_url: "https://status.slido.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2731,7 +2743,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.41.0" },
+  { name: "statuscraft", version: "2.42.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -2804,7 +2816,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1158 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1170 services.",
           },
         },
         required: [],

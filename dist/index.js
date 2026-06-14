@@ -2266,6 +2266,30 @@ const SERVICES = [
     { id: "quantumworkplace", name: "Quantum Workplace", tags: ["hr", "employee-engagement", "performance", "saas"], status_url: "https://status.quantumworkplace.com/api/v2/status.json", page_url: "https://status.quantumworkplace.com", type: "statuspage" },
     { id: "precisely", name: "Precisely", tags: ["data", "quality", "enrichment", "analytics"], status_url: "https://status.precisely.com/api/v2/status.json", page_url: "https://status.precisely.com", type: "statuspage" },
     { id: "broadvoice", name: "Broadvoice", tags: ["voip", "communications", "cloud", "telephony"], status_url: "https://status.broadvoice.com/api/v2/status.json", page_url: "https://status.broadvoice.com", type: "statuspage" },
+    { id: "logz", name: "Logz.io", tags: ["observability", "logging", "monitoring", "devops"], status_url: "https://status.logz.io/api/v2/status.json", page_url: "https://status.logz.io", type: "statuspage" },
+    { id: "getstream", name: "Stream", tags: ["messaging", "chat", "feeds", "real-time"], status_url: "https://status.getstream.io/api/v2/status.json", page_url: "https://status.getstream.io", type: "statuspage" },
+    { id: "otter", name: "Otter.ai", tags: ["ai", "transcription", "meeting", "productivity"], status_url: "https://status.otter.ai/api/v2/status.json", page_url: "https://status.otter.ai", type: "statuspage" },
+    { id: "wheniwork", name: "When I Work", tags: ["workforce", "scheduling", "hr", "shift-management"], status_url: "https://status.wheniwork.com/api/v2/status.json", page_url: "https://status.wheniwork.com", type: "statuspage" },
+    { id: "sigmacomputing", name: "Sigma Computing", tags: ["bi", "analytics", "data", "spreadsheet"], status_url: "https://status.sigmacomputing.com/api/v2/status.json", page_url: "https://status.sigmacomputing.com", type: "statuspage" },
+    { id: "diligent", name: "Diligent", tags: ["governance", "board", "grc", "compliance"], status_url: "https://status.diligent.com/api/v2/status.json", page_url: "https://status.diligent.com", type: "statuspage" },
+    { id: "onspring", name: "Onspring", tags: ["grc", "no-code", "workflow", "compliance"], status_url: "https://status.onspring.com/api/v2/status.json", page_url: "https://status.onspring.com", type: "statuspage" },
+    { id: "assembly", name: "Assembly", tags: ["employee-engagement", "hr", "recognition", "intranet"], status_url: "https://status.assembly.com/api/v2/status.json", page_url: "https://status.assembly.com", type: "statuspage" },
+    { id: "performyard", name: "PerformYard", tags: ["hr", "performance", "reviews", "goals"], status_url: "https://status.performyard.com/api/v2/status.json", page_url: "https://status.performyard.com", type: "statuspage" },
+    { id: "everstage", name: "Everstage", tags: ["sales", "compensation", "commissions", "revenue"], status_url: "https://status.everstage.com/api/v2/status.json", page_url: "https://status.everstage.com", type: "statuspage" },
+    { id: "reclaim", name: "Reclaim.ai", tags: ["ai", "scheduling", "calendar", "productivity"], status_url: "https://status.reclaim.ai/api/v2/status.json", page_url: "https://status.reclaim.ai", type: "statuspage" },
+    { id: "ashby", name: "Ashby", tags: ["ats", "recruiting", "hiring", "hr"], status_url: "https://status.ashbyhq.com/api/v2/status.json", page_url: "https://status.ashbyhq.com", type: "statuspage" },
+    { id: "shiphero", name: "ShipHero", tags: ["logistics", "fulfillment", "warehouse", "ecommerce"], status_url: "https://status.shiphero.com/api/v2/status.json", page_url: "https://status.shiphero.com", type: "statuspage" },
+    { id: "extensiv", name: "Extensiv", tags: ["logistics", "fulfillment", "warehouse", "3pl"], status_url: "https://status.extensiv.com/api/v2/status.json", page_url: "https://status.extensiv.com", type: "statuspage" },
+    { id: "incident_io", name: "Incident.io", tags: ["incident-management", "ops", "on-call", "devops"], status_url: "https://status.incident.io/api/v2/status.json", page_url: "https://status.incident.io", type: "statuspage" },
+    { id: "playfab", name: "PlayFab", tags: ["gaming", "backend", "game-services", "microsoft"], status_url: "https://status.playfab.com/api/v2/status.json", page_url: "https://status.playfab.com", type: "statuspage" },
+    { id: "lightspeed", name: "Lightspeed", tags: ["pos", "retail", "restaurant", "ecommerce"], status_url: "https://status.lightspeedhq.com/api/v2/status.json", page_url: "https://status.lightspeedhq.com", type: "statuspage" },
+    { id: "tawkto", name: "Tawk.to", tags: ["live-chat", "customer-support", "messaging", "saas"], status_url: "https://status.tawk.to/api/v2/status.json", page_url: "https://status.tawk.to", type: "statuspage" },
+    { id: "inspectlet", name: "Inspectlet", tags: ["analytics", "session-recording", "heatmaps", "ux"], status_url: "https://status.inspectlet.com/api/v2/status.json", page_url: "https://status.inspectlet.com", type: "statuspage" },
+    { id: "zenduty", name: "Zenduty", tags: ["incident-management", "on-call", "alerting", "devops"], status_url: "https://status.zenduty.com/api/v2/status.json", page_url: "https://status.zenduty.com", type: "statuspage" },
+    { id: "localytics", name: "Localytics", tags: ["analytics", "mobile", "marketing", "engagement"], status_url: "https://status.localytics.com/api/v2/status.json", page_url: "https://status.localytics.com", type: "statuspage" },
+    { id: "procurify", name: "Procurify", tags: ["procurement", "spend-management", "purchasing", "finance"], status_url: "https://status.procurify.com/api/v2/status.json", page_url: "https://status.procurify.com", type: "statuspage" },
+    { id: "socio_events", name: "Socio Events", tags: ["events", "virtual", "hybrid", "engagement"], status_url: "https://status.socio.events/api/v2/status.json", page_url: "https://status.socio.events", type: "statuspage" },
+    { id: "slido", name: "Slido", tags: ["events", "polls", "q-and-a", "audience-engagement"], status_url: "https://status.slido.com/api/v2/status.json", page_url: "https://status.slido.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -2653,7 +2677,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.41.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.42.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -2716,7 +2740,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1146 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1170 services.",
                     },
                 },
                 required: [],
