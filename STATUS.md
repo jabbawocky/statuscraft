@@ -1,8 +1,9 @@
-# StatusCraft — Mission Status: June 14, 2026 (tick 93)
+# StatusCraft — Mission Status: June 14, 2026 (tick 94)
 
 **Phase**: BUILD — active development
 
 **What shipped:**
+- ✅ **chore: tick 94 audit — all 562/562 fetchers valid** (tick 94) — Full live audit: 562/562 fetchers returning valid normalized status. 0 broken fetchers this tick. Stripe (www.stripestatus.com/api/v2), PagerDuty (HTML-embedded), AWS (UTF-16 JSON), Railway (railway.statuspage.io/api/v2) all confirmed live. README and tool description accurate at 562 services. Quality-over-quantity phase: all fetchers clean, ready to resume adding services next tick.
 - ✅ **chore: tick 93 audit — all 562/562 fetchers valid** (tick 93) — Full live audit: 562/562 fetchers returning valid normalized status. 0 broken fetchers this tick. Stripe, PagerDuty, AWS, Railway all confirmed live. README and tool description accurate at 562 services. STATUS.md metrics fixed (was stale at 523, now 562). Quality-over-quantity phase: all fetchers clean, ready to resume adding services next tick.
 - ✅ **chore: tick 92 audit — all 562/562 fetchers valid** (tick 92) — Full live audit: 562/562 fetchers returning valid normalized status. 0 broken fetchers this tick. Stripe (stripestatus.com/api/v2), PagerDuty (HTML-embedded), AWS (UTF-16 JSON), Railway (statuspage) all confirmed live with real data. README and tool description accurate at 562 services. Quality-over-quantity phase complete — all fetchers clean, ready to resume adding services next tick.
 - ✅ **chore: tick 91 audit — all 562/562 fetchers valid** (tick 91) — Full live audit: 562/562 fetchers returning valid normalized status. 0 broken fetchers this tick. README and tool description confirmed accurate at 562 services. Stripe, PagerDuty, AWS, Railway all confirmed live. Quality-over-quantity phase: all fetchers clean, ready to resume adding services next tick.
