@@ -1428,6 +1428,37 @@ const SERVICES = [
     { id: "digicert", name: "DigiCert", tags: ["ssl", "pki", "certificates", "security"], status_url: "https://status.digicert.com/api/v2/status.json", page_url: "https://status.digicert.com", type: "statuspage" },
     // Domain registrar / hosting
     { id: "godaddy", name: "GoDaddy", tags: ["domains", "hosting", "dns", "registrar"], status_url: "https://status.godaddy.com/api/v2/status.json", page_url: "https://status.godaddy.com", type: "statuspage" },
+    // Developer tools / terminal
+    { id: "warp", name: "Warp", tags: ["devtools", "terminal", "ai", "developer"], status_url: "https://status.warp.dev/api/v2/status.json", page_url: "https://status.warp.dev", type: "statuspage" },
+    // Data streaming
+    { id: "redpanda", name: "Redpanda", tags: ["data-streaming", "kafka", "messaging", "developer"], status_url: "https://status.redpanda.com/api/v2/status.json", page_url: "https://status.redpanda.com", type: "statuspage" },
+    // Data integration / ETL
+    { id: "estuary", name: "Estuary", tags: ["data-integration", "etl", "streaming", "developer"], status_url: "https://status.estuary.dev/api/v2/status.json", page_url: "https://status.estuary.dev", type: "statuspage" },
+    // Vector database
+    { id: "turbopuffer", name: "turbopuffer", tags: ["vector-db", "search", "ai", "developer"], status_url: "https://status.turbopuffer.com/api/v2/status.json", page_url: "https://status.turbopuffer.com", type: "statuspage" },
+    // Open banking / fintech data
+    { id: "truelayer", name: "TrueLayer", tags: ["fintech", "open-banking", "payments", "api"], status_url: "https://status.truelayer.com/api/v2/status.json", page_url: "https://status.truelayer.com", type: "statuspage" },
+    { id: "codat", name: "Codat", tags: ["fintech", "financial-data", "accounting", "api"], status_url: "https://status.codat.io/api/v2/status.json", page_url: "https://status.codat.io", type: "statuspage" },
+    // Live chat / customer support
+    { id: "tawk_to", name: "tawk.to", tags: ["live-chat", "customer-support", "messaging", "saas"], status_url: "https://status.tawk.to/api/v2/status.json", page_url: "https://status.tawk.to", type: "statuspage" },
+    { id: "olark", name: "Olark", tags: ["live-chat", "customer-support", "messaging", "saas"], status_url: "https://status.olark.com/api/v2/status.json", page_url: "https://status.olark.com", type: "statuspage" },
+    // Network security
+    { id: "barracuda", name: "Barracuda Networks", tags: ["security", "email-security", "networking", "enterprise"], status_url: "https://status.barracuda.com/api/v2/status.json", page_url: "https://status.barracuda.com", type: "statuspage" },
+    // Enterprise file sharing / content management
+    { id: "sharefile", name: "ShareFile", tags: ["file-sharing", "documents", "cloud-storage", "enterprise"], status_url: "https://status.sharefile.com/api/v2/status.json", page_url: "https://status.sharefile.com", type: "statuspage" },
+    { id: "egnyte", name: "Egnyte", tags: ["content-management", "file-sharing", "cloud-storage", "enterprise"], status_url: "https://status.egnyte.com/api/v2/status.json", page_url: "https://status.egnyte.com", type: "statuspage" },
+    // Visual testing
+    { id: "percy", name: "Percy", tags: ["testing", "visual-testing", "qa", "devtools"], status_url: "https://status.percy.io/api/v2/status.json", page_url: "https://status.percy.io", type: "statuspage" },
+    // Email testing
+    { id: "mailosaur", name: "Mailosaur", tags: ["email", "testing", "qa", "developer"], status_url: "https://status.mailosaur.com/api/v2/status.json", page_url: "https://status.mailosaur.com", type: "statuspage" },
+    // Construction management
+    { id: "fieldwire", name: "Fieldwire", tags: ["construction", "project-management", "field-service", "saas"], status_url: "https://status.fieldwire.com/api/v2/status.json", page_url: "https://status.fieldwire.com", type: "statuspage" },
+    // Spa / salon / wellness management
+    { id: "zenoti", name: "Zenoti", tags: ["wellness", "spa", "salon", "saas"], status_url: "https://status.zenoti.com/api/v2/status.json", page_url: "https://status.zenoti.com", type: "statuspage" },
+    // POS / retail
+    { id: "lightspeedhq", name: "Lightspeed", tags: ["pos", "retail", "ecommerce", "payments"], status_url: "https://status.lightspeedhq.com/api/v2/status.json", page_url: "https://status.lightspeedhq.com", type: "statuspage" },
+    { id: "clover", name: "Clover", tags: ["pos", "payments", "retail", "smb"], status_url: "https://status.clover.com/api/v2/status.json", page_url: "https://status.clover.com", type: "statuspage" },
+    { id: "shopkeep", name: "ShopKeep", tags: ["pos", "retail", "smb", "payments"], status_url: "https://status.shopkeep.com/api/v2/status.json", page_url: "https://status.shopkeep.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1878,7 +1909,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 649 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 667 services.",
                     },
                 },
                 required: [],
