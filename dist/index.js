@@ -2755,6 +2755,38 @@ const SERVICES = [
     { id: "emburse_professional", name: "Emburse Professional", tags: ["expense-management", "travel", "finance", "enterprise"], status_url: "https://status.certify.com/api/v2/status.json", page_url: "https://status.certify.com", type: "statuspage" },
     // API management / integration platform
     { id: "axway", name: "Axway", tags: ["api-management", "integration", "enterprise", "mft"], status_url: "https://status.axway.com/api/v2/status.json", page_url: "https://status.axway.com", type: "statuspage" },
+    // Sales commissions / incentive compensation
+    { id: "captivateiq", name: "CaptivateIQ", tags: ["sales", "commissions", "incentive-compensation", "saas"], status_url: "https://status.captivateiq.com/api/v2/status.json", page_url: "https://status.captivateiq.com", type: "statuspage" },
+    // VoIP / telephony (Germany / Europe)
+    { id: "sipgate", name: "sipgate", tags: ["voip", "telephony", "communication", "germany"], status_url: "https://status.sipgate.de/api/v2/status.json", page_url: "https://status.sipgate.de", type: "statuspage" },
+    // EdTech — quiz / assessment
+    { id: "socrative", name: "Socrative", tags: ["edtech", "quiz", "assessment", "education"], status_url: "https://status.socrative.com/api/v2/status.json", page_url: "https://status.socrative.com", type: "statuspage" },
+    // Financial crime / risk management
+    { id: "abrigo", name: "Abrigo", tags: ["fintech", "financial-crime", "risk-management", "banking"], status_url: "https://status.abrigo.com/api/v2/status.json", page_url: "https://status.abrigo.com", type: "statuspage" },
+    // IT monitoring / observability
+    { id: "logicmonitor", name: "LogicMonitor", tags: ["monitoring", "observability", "infrastructure", "it-ops"], status_url: "https://status.logicmonitor.com/api/v2/status.json", page_url: "https://status.logicmonitor.com", type: "statuspage" },
+    // Video monetization / OTT
+    { id: "uscreen", name: "Uscreen", tags: ["video", "ott", "monetization", "streaming"], status_url: "https://status.uscreen.tv/api/v2/status.json", page_url: "https://status.uscreen.tv", type: "statuspage" },
+    // Religious / bible software
+    { id: "faithlife", name: "Faithlife", tags: ["faith", "church", "bible", "software"], status_url: "https://status.faithlife.com/api/v2/status.json", page_url: "https://status.faithlife.com", type: "statuspage" },
+    // Church tech / mobile apps
+    { id: "subsplash", name: "Subsplash", tags: ["church", "faith", "mobile-apps", "giving"], status_url: "https://status.subsplash.com/api/v2/status.json", page_url: "https://status.subsplash.com", type: "statuspage" },
+    // Automotive DMS / retail tech
+    { id: "tekion", name: "Tekion", tags: ["automotive", "dms", "retail-tech", "cloud"], status_url: "https://status.tekion.com/api/v2/status.json", page_url: "https://status.tekion.com", type: "statuspage" },
+    // Data management platform / DMP
+    { id: "lotame", name: "Lotame", tags: ["data-management", "dmp", "advertising", "audience"], status_url: "https://status.lotame.com/api/v2/status.json", page_url: "https://status.lotame.com", type: "statuspage" },
+    // Data connectivity / clean room
+    { id: "liveramp", name: "LiveRamp", tags: ["data-connectivity", "clean-room", "identity", "advertising"], status_url: "https://status.liveramp.com/api/v2/status.json", page_url: "https://status.liveramp.com", type: "statuspage" },
+    // CDP / customer data platform (EU)
+    { id: "zeotap", name: "Zeotap", tags: ["cdp", "customer-data", "identity", "advertising"], status_url: "https://status.zeotap.com/api/v2/status.json", page_url: "https://status.zeotap.com", type: "statuspage" },
+    // Buy now pay later (Italy / EU)
+    { id: "scalapay", name: "Scalapay", tags: ["bnpl", "payments", "fintech", "europe"], status_url: "https://status.scalapay.com/api/v2/status.json", page_url: "https://status.scalapay.com", type: "statuspage" },
+    // Video tech for publishers / ad monetization
+    { id: "connatix", name: "Connatix", tags: ["video", "publishing", "advertising", "monetization"], status_url: "https://status.connatix.com/api/v2/status.json", page_url: "https://status.connatix.com", type: "statuspage" },
+    // Professional services automation (PSA)
+    { id: "accelo", name: "Accelo", tags: ["psa", "professional-services", "project-management", "saas"], status_url: "https://status.accelo.com/api/v2/status.json", page_url: "https://status.accelo.com", type: "statuspage" },
+    // BPM / workflow automation
+    { id: "processmaker", name: "ProcessMaker", tags: ["bpm", "workflow-automation", "process-management", "saas"], status_url: "https://status.processmaker.com/api/v2/status.json", page_url: "https://status.processmaker.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3170,7 +3202,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1451 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1467 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3205,7 +3237,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1451 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1467 services.",
                     },
                 },
                 required: [],
