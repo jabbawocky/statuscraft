@@ -2224,6 +2224,37 @@ const SERVICES: ServiceConfig[] = [
   { id: "domotz", name: "Domotz", tags: ["network-monitoring", "msp", "iot", "it-management"], status_url: "https://status.domotz.com/api/v2/status.json", page_url: "https://status.domotz.com", type: "statuspage" },
   // Customer / extended-enterprise LMS
   { id: "thought_industries", name: "Thought Industries", tags: ["lms", "learning", "customer-education", "saas"], status_url: "https://status.thoughtindustries.com/api/v2/status.json", page_url: "https://status.thoughtindustries.com", type: "statuspage" },
+  // Payments / fintech
+  { id: "gocardless", name: "GoCardless", tags: ["payments", "fintech", "saas", "api"], status_url: "https://status.gocardless.com/api/v2/status.json", page_url: "https://status.gocardless.com", type: "statuspage" },
+  { id: "zuora", name: "Zuora", tags: ["payments", "billing", "subscription-management", "saas", "enterprise"], status_url: "https://zuora.statuspage.io/api/v2/status.json", page_url: "https://zuora.statuspage.io", type: "statuspage" },
+  // Observability / error tracking
+  { id: "honeycomb", name: "Honeycomb", tags: ["observability", "monitoring", "devtools", "saas"], status_url: "https://honeycomb.statuspage.io/api/v2/status.json", page_url: "https://honeycomb.statuspage.io", type: "statuspage" },
+  { id: "rollbar", name: "Rollbar", tags: ["observability", "error-tracking", "devtools", "saas"], status_url: "https://status.rollbar.com/api/v2/status.json", page_url: "https://status.rollbar.com", type: "statuspage" },
+  { id: "logrocket", name: "LogRocket", tags: ["observability", "analytics", "devtools", "saas"], status_url: "https://status.logrocket.com/api/v2/status.json", page_url: "https://status.logrocket.com", type: "statuspage" },
+  { id: "scout_apm", name: "Scout APM", tags: ["observability", "monitoring", "devtools", "saas"], status_url: "https://status.scoutapm.com/api/v2/status.json", page_url: "https://status.scoutapm.com", type: "statuspage" },
+  // Analytics / session replay
+  { id: "fullstory", name: "FullStory", tags: ["analytics", "session-replay", "saas", "enterprise"], status_url: "https://status.fullstory.com/api/v2/status.json", page_url: "https://status.fullstory.com", type: "statuspage" },
+  // Database / cache infrastructure
+  { id: "upstash", name: "Upstash", tags: ["database", "cache", "serverless", "infrastructure"], status_url: "https://upstash.statuspage.io/api/v2/status.json", page_url: "https://upstash.statuspage.io", type: "statuspage" },
+  // Marketing / local search
+  { id: "yext", name: "Yext", tags: ["marketing", "local-search", "saas", "enterprise"], status_url: "https://yext.statuspage.io/api/v2/status.json", page_url: "https://yext.statuspage.io", type: "statuspage" },
+  // Security / identity
+  { id: "onepassword", name: "1Password", tags: ["security", "identity", "saas", "enterprise"], status_url: "https://status.1password.com/api/v2/status.json", page_url: "https://status.1password.com", type: "statuspage" },
+  { id: "jumpcloud", name: "JumpCloud", tags: ["identity", "security", "saas", "enterprise", "directory"], status_url: "https://status.jumpcloud.com/api/v2/status.json", page_url: "https://status.jumpcloud.com", type: "statuspage" },
+  // Communications / voice / SMS
+  { id: "telnyx", name: "Telnyx", tags: ["communications", "sms", "voice", "api", "saas"], status_url: "https://status.telnyx.com/api/v2/status.json", page_url: "https://status.telnyx.com", type: "statuspage" },
+  { id: "bandwidth", name: "Bandwidth", tags: ["communications", "sms", "voice", "api", "saas"], status_url: "https://status.bandwidth.com/api/v2/status.json", page_url: "https://status.bandwidth.com", type: "statuspage" },
+  // Headless CMS
+  { id: "prismic", name: "Prismic", tags: ["cms", "headless-cms", "saas", "developer-tools"], status_url: "https://status.prismic.io/api/v2/status.json", page_url: "https://status.prismic.io", type: "statuspage" },
+  // E-commerce
+  { id: "bigcommerce", name: "BigCommerce", tags: ["ecommerce", "saas", "enterprise"], status_url: "https://status.bigcommerce.com/api/v2/status.json", page_url: "https://status.bigcommerce.com", type: "statuspage" },
+  { id: "squarespace", name: "Squarespace", tags: ["website-builder", "ecommerce", "saas"], status_url: "https://status.squarespace.com/api/v2/status.json", page_url: "https://status.squarespace.com", type: "statuspage" },
+  { id: "ecwid", name: "Ecwid", tags: ["ecommerce", "saas"], status_url: "https://status.ecwid.com/api/v2/status.json", page_url: "https://status.ecwid.com", type: "statuspage" },
+  // Restaurant technology
+  { id: "toast", name: "Toast POS", tags: ["pos", "restaurant-technology", "payments", "saas"], status_url: "https://status.toasttab.com/api/v2/status.json", page_url: "https://status.toasttab.com", type: "statuspage" },
+  // Productivity / collaboration
+  { id: "coda", name: "Coda", tags: ["productivity", "collaboration", "saas"], status_url: "https://status.coda.io/api/v2/status.json", page_url: "https://status.coda.io", type: "statuspage" },
+  { id: "smartsheet", name: "Smartsheet", tags: ["productivity", "project-management", "enterprise", "saas"], status_url: "https://status.smartsheet.com/api/v2/status.json", page_url: "https://status.smartsheet.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2666,7 +2697,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1063 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1083 services.",
           },
         },
         required: [],
