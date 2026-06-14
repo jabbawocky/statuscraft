@@ -1853,6 +1853,65 @@ const SERVICES = [
     { id: "omnivore", name: "Omnivore", tags: ["read-it-later", "reading", "content", "open-source"], status_url: "https://status.omnivore.io/api/v2/status.json", page_url: "https://status.omnivore.io", type: "statuspage" },
     // Restaurant tech / digital ordering platform
     { id: "lunchbox", name: "Lunchbox", tags: ["restaurant", "online-ordering", "delivery", "saas"], status_url: "https://status.lunchbox.io/api/v2/status.json", page_url: "https://status.lunchbox.io", type: "statuspage" },
+    { id: "aweber", name: "AWeber", tags: ["email-marketing", "marketing", "newsletters", "saas"], status_url: "https://status.aweber.com/api/v2/status.json", page_url: "https://status.aweber.com", type: "statuspage" },
+    { id: "clickfunnels", name: "ClickFunnels", tags: ["marketing", "funnels", "landing-pages", "saas"], status_url: "https://status.clickfunnels.com/api/v2/status.json", page_url: "https://status.clickfunnels.com", type: "statuspage" },
+    { id: "sevenrooms", name: "SevenRooms", tags: ["restaurant", "reservations", "hospitality", "saas"], status_url: "https://status.sevenrooms.com/api/v2/status.json", page_url: "https://status.sevenrooms.com", type: "statuspage" },
+    { id: "beehiiv", name: "beehiiv", tags: ["newsletters", "email-marketing", "publishing", "creator"], status_url: "https://status.beehiiv.com/api/v2/status.json", page_url: "https://status.beehiiv.com", type: "statuspage" },
+    { id: "uipath", name: "UiPath", tags: ["rpa", "automation", "enterprise", "saas"], status_url: "https://status.uipath.com/api/v2/status.json", page_url: "https://status.uipath.com", type: "statuspage" },
+    { id: "datarobot", name: "DataRobot", tags: ["ai", "ml", "machine-learning", "data-science"], status_url: "https://status.datarobot.com/api/v2/status.json", page_url: "https://status.datarobot.com", type: "statuspage" },
+    { id: "robin", name: "Robin", tags: ["workplace", "desk-booking", "office", "facilities"], status_url: "https://status.robinpowered.com/api/v2/status.json", page_url: "https://status.robinpowered.com", type: "statuspage" },
+    { id: "envoy", name: "Envoy", tags: ["visitor-management", "workplace", "office", "facilities"], status_url: "https://status.envoy.com/api/v2/status.json", page_url: "https://status.envoy.com", type: "statuspage" },
+    { id: "brivo", name: "Brivo", tags: ["access-control", "security", "physical-security", "saas"], status_url: "https://status.brivo.com/api/v2/status.json", page_url: "https://status.brivo.com", type: "statuspage" },
+    { id: "eptura_visitor", name: "Eptura Visitor", tags: ["visitor-management", "workplace", "facilities", "saas"], status_url: "https://status.proxyclick.com/api/v2/status.json", page_url: "https://status.proxyclick.com", type: "statuspage" },
+    // Tick 125 additions
+    // Security awareness training / phishing simulation
+    { id: "knowbe4", name: "KnowBe4", tags: ["security", "awareness-training", "phishing-simulation", "saas"], status_url: "https://status.knowbe4.com/api/v2/status.json", page_url: "https://status.knowbe4.com", type: "statuspage" },
+    // Image CDN and optimization
+    { id: "imagekit", name: "ImageKit", tags: ["cdn", "image-optimization", "media", "api"], status_url: "https://imagekit.statuspage.io/api/v2/status.json", page_url: "https://imagekit.statuspage.io", type: "statuspage" },
+    // Applicant tracking system
+    { id: "jazzhr", name: "JazzHR", tags: ["hr", "ats", "recruiting", "saas"], status_url: "https://status.jazzhr.com/api/v2/status.json", page_url: "https://status.jazzhr.com", type: "statuspage" },
+    // Recruiting platform
+    { id: "workable", name: "Workable", tags: ["hr", "recruiting", "ats", "saas"], status_url: "https://workable.statuspage.io/api/v2/status.json", page_url: "https://workable.statuspage.io", type: "statuspage" },
+    // Learning and talent management suite
+    { id: "cornerstoneondemand", name: "Cornerstone OnDemand", tags: ["lms", "learning", "talent-management", "hr"], status_url: "https://cornerstoneondemand.statuspage.io/api/v2/status.json", page_url: "https://cornerstoneondemand.statuspage.io", type: "statuspage" },
+    // Construction project management
+    { id: "buildertrend", name: "Buildertrend", tags: ["construction", "project-management", "field-service", "saas"], status_url: "https://status.buildertrend.net/api/v2/status.json", page_url: "https://status.buildertrend.net", type: "statuspage" },
+    // IoT fleet management and device OS
+    { id: "balena", name: "Balena", tags: ["iot", "fleet-management", "embedded", "devices"], status_url: "https://status.balena.io/api/v2/status.json", page_url: "https://status.balena.io", type: "statuspage" },
+    // Cellular IoT connectivity
+    { id: "hologram", name: "Hologram", tags: ["iot", "cellular", "connectivity", "hardware"], status_url: "https://status.hologram.io/api/v2/status.json", page_url: "https://status.hologram.io", type: "statuspage" },
+    // Game development / real-time 3D platform
+    { id: "unity", name: "Unity", tags: ["gaming", "game-engine", "developer-tools", "3d"], status_url: "https://unity.statuspage.io/api/v2/status.json", page_url: "https://unity.statuspage.io", type: "statuspage" },
+    // IT service management
+    { id: "topdesk", name: "TOPdesk", tags: ["itsm", "service-management", "help-desk", "saas"], status_url: "https://status.topdesk.com/api/v2/status.json", page_url: "https://status.topdesk.com", type: "statuspage" },
+    // Reverse ETL / data activation
+    { id: "census", name: "Census", tags: ["data", "reverse-etl", "data-activation", "analytics"], status_url: "https://status.getcensus.com/api/v2/status.json", page_url: "https://status.getcensus.com", type: "statuspage" },
+    // Cloud ETL / data pipeline
+    { id: "stitch_data", name: "Stitch Data", tags: ["data", "etl", "data-integration", "saas"], status_url: "https://status.stitchdata.com/api/v2/status.json", page_url: "https://status.stitchdata.com", type: "statuspage" },
+    // Blockchain analytics / compliance intelligence
+    { id: "chainalysis", name: "Chainalysis", tags: ["blockchain", "crypto", "compliance", "analytics"], status_url: "https://status.chainalysis.com/api/v2/status.json", page_url: "https://status.chainalysis.com", type: "statuspage" },
+    // Blockchain infrastructure / node management
+    { id: "blockdaemon", name: "Blockdaemon", tags: ["blockchain", "infrastructure", "nodes", "crypto"], status_url: "https://status.blockdaemon.com/api/v2/status.json", page_url: "https://status.blockdaemon.com", type: "statuspage" },
+    // Subscription revenue analytics
+    { id: "baremetrics", name: "Baremetrics", tags: ["analytics", "subscriptions", "revenue", "saas"], status_url: "https://status.baremetrics.com/api/v2/status.json", page_url: "https://status.baremetrics.com", type: "statuspage" },
+    // 3PL e-commerce fulfillment
+    { id: "shipmonk", name: "ShipMonk", tags: ["logistics", "fulfillment", "e-commerce", "shipping"], status_url: "https://status.shipmonk.com/api/v2/status.json", page_url: "https://status.shipmonk.com", type: "statuspage" },
+    // Algorithmic stock trading API
+    { id: "alpaca", name: "Alpaca", tags: ["fintech", "trading", "api", "stocks"], status_url: "https://status.alpaca.markets/api/v2/status.json", page_url: "https://status.alpaca.markets", type: "statuspage" },
+    // Financial market data API
+    { id: "iex_cloud", name: "IEX Cloud", tags: ["fintech", "market-data", "api", "stocks"], status_url: "https://status.iexapis.com/api/v2/status.json", page_url: "https://status.iexapis.com", type: "statuspage" },
+    // Bitcoin / Stacks blockchain developer tools
+    { id: "hiro", name: "Hiro Systems", tags: ["blockchain", "bitcoin", "developer-tools", "stacks"], status_url: "https://status.hiro.so/api/v2/status.json", page_url: "https://status.hiro.so", type: "statuspage" },
+    // Banking-as-a-Service platform
+    { id: "treasury_prime", name: "Treasury Prime", tags: ["fintech", "banking", "baas", "api"], status_url: "https://status.treasuryprime.com/api/v2/status.json", page_url: "https://status.treasuryprime.com", type: "statuspage" },
+    // Payment processing / instant ACH
+    { id: "tabapay", name: "TabaPay", tags: ["payments", "fintech", "ach", "instant-payments"], status_url: "https://status.tabapay.com/api/v2/status.json", page_url: "https://status.tabapay.com", type: "statuspage" },
+    // Embedded lending / revenue-based financing
+    { id: "parafin", name: "Parafin", tags: ["fintech", "lending", "embedded-finance", "api"], status_url: "https://status.parafin.com/api/v2/status.json", page_url: "https://status.parafin.com", type: "statuspage" },
+    // Business identity verification / KYB
+    { id: "middesk", name: "Middesk", tags: ["identity", "kyb", "compliance", "fintech"], status_url: "https://status.middesk.com/api/v2/status.json", page_url: "https://status.middesk.com", type: "statuspage" },
+    // Project management / team collaboration
+    { id: "hive", name: "Hive", tags: ["collaboration", "project-management", "productivity", "saas"], status_url: "https://status.hive.com/api/v2/status.json", page_url: "https://status.hive.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -2240,7 +2299,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.40.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.41.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -2303,7 +2362,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 902 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 936 services.",
                     },
                 },
                 required: [],

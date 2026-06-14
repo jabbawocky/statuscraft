@@ -1937,6 +1937,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "census", name: "Census", tags: ["data", "reverse-etl", "data-activation", "analytics"], status_url: "https://status.getcensus.com/api/v2/status.json", page_url: "https://status.getcensus.com", type: "statuspage" },
   // Cloud ETL / data pipeline
   { id: "stitch_data", name: "Stitch Data", tags: ["data", "etl", "data-integration", "saas"], status_url: "https://status.stitchdata.com/api/v2/status.json", page_url: "https://status.stitchdata.com", type: "statuspage" },
+  // Blockchain analytics / compliance intelligence
+  { id: "chainalysis", name: "Chainalysis", tags: ["blockchain", "crypto", "compliance", "analytics"], status_url: "https://status.chainalysis.com/api/v2/status.json", page_url: "https://status.chainalysis.com", type: "statuspage" },
+  // Blockchain infrastructure / node management
+  { id: "blockdaemon", name: "Blockdaemon", tags: ["blockchain", "infrastructure", "nodes", "crypto"], status_url: "https://status.blockdaemon.com/api/v2/status.json", page_url: "https://status.blockdaemon.com", type: "statuspage" },
+  // Subscription revenue analytics
+  { id: "baremetrics", name: "Baremetrics", tags: ["analytics", "subscriptions", "revenue", "saas"], status_url: "https://status.baremetrics.com/api/v2/status.json", page_url: "https://status.baremetrics.com", type: "statuspage" },
+  // 3PL e-commerce fulfillment
+  { id: "shipmonk", name: "ShipMonk", tags: ["logistics", "fulfillment", "e-commerce", "shipping"], status_url: "https://status.shipmonk.com/api/v2/status.json", page_url: "https://status.shipmonk.com", type: "statuspage" },
+  // Algorithmic stock trading API
+  { id: "alpaca", name: "Alpaca", tags: ["fintech", "trading", "api", "stocks"], status_url: "https://status.alpaca.markets/api/v2/status.json", page_url: "https://status.alpaca.markets", type: "statuspage" },
+  // Financial market data API
+  { id: "iex_cloud", name: "IEX Cloud", tags: ["fintech", "market-data", "api", "stocks"], status_url: "https://status.iexapis.com/api/v2/status.json", page_url: "https://status.iexapis.com", type: "statuspage" },
+  // Bitcoin / Stacks blockchain developer tools
+  { id: "hiro", name: "Hiro Systems", tags: ["blockchain", "bitcoin", "developer-tools", "stacks"], status_url: "https://status.hiro.so/api/v2/status.json", page_url: "https://status.hiro.so", type: "statuspage" },
+  // Banking-as-a-Service platform
+  { id: "treasury_prime", name: "Treasury Prime", tags: ["fintech", "banking", "baas", "api"], status_url: "https://status.treasuryprime.com/api/v2/status.json", page_url: "https://status.treasuryprime.com", type: "statuspage" },
+  // Payment processing / instant ACH
+  { id: "tabapay", name: "TabaPay", tags: ["payments", "fintech", "ach", "instant-payments"], status_url: "https://status.tabapay.com/api/v2/status.json", page_url: "https://status.tabapay.com", type: "statuspage" },
+  // Embedded lending / revenue-based financing
+  { id: "parafin", name: "Parafin", tags: ["fintech", "lending", "embedded-finance", "api"], status_url: "https://status.parafin.com/api/v2/status.json", page_url: "https://status.parafin.com", type: "statuspage" },
+  // Business identity verification / KYB
+  { id: "middesk", name: "Middesk", tags: ["identity", "kyb", "compliance", "fintech"], status_url: "https://status.middesk.com/api/v2/status.json", page_url: "https://status.middesk.com", type: "statuspage" },
+  // Project management / team collaboration
+  { id: "hive", name: "Hive", tags: ["collaboration", "project-management", "productivity", "saas"], status_url: "https://status.hive.com/api/v2/status.json", page_url: "https://status.hive.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2379,7 +2403,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 924 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 936 services.",
           },
         },
         required: [],
