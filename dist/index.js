@@ -1380,6 +1380,26 @@ const SERVICES = [
     // Customer experience / UX research
     { id: "satismeter", name: "SatisMeter", tags: ["analytics", "feedback", "nps", "customer-success"], status_url: "https://status.satismeter.com/api/v2/status.json", page_url: "https://status.satismeter.com", type: "statuspage" },
     { id: "userzoom", name: "UserZoom", tags: ["ux-research", "usability-testing", "analytics", "saas"], status_url: "https://status.userzoom.com/api/v2/status.json", page_url: "https://status.userzoom.com", type: "statuspage" },
+    // Tick 104 additions — scheduling, writing, PIM, CMS, fundraising, training/LMS, billing, KB
+    // Scheduling
+    { id: "calendly", name: "Calendly", tags: ["scheduling", "calendar", "productivity", "saas"], status_url: "https://calendlystatus.com/api/v2/status.json", page_url: "https://calendlystatus.com", type: "statuspage" },
+    // Writing assistant
+    { id: "grammarly", name: "Grammarly", tags: ["writing", "ai", "productivity", "saas"], status_url: "https://status.grammarly.com/api/v2/status.json", page_url: "https://status.grammarly.com", type: "statuspage" },
+    // Product Information Management (PIM)
+    { id: "salsify", name: "Salsify", tags: ["pim", "ecommerce", "product-data", "saas"], status_url: "https://status.salsify.com/api/v2/status.json", page_url: "https://status.salsify.com", type: "statuspage" },
+    { id: "akeneo", name: "Akeneo", tags: ["pim", "ecommerce", "product-data", "saas"], status_url: "https://status.akeneo.com/api/v2/status.json", page_url: "https://status.akeneo.com", type: "statuspage" },
+    // Headless CMS
+    { id: "buttercms", name: "ButterCMS", tags: ["cms", "headless", "content", "saas"], status_url: "https://status.buttercms.com/api/v2/status.json", page_url: "https://status.buttercms.com", type: "statuspage" },
+    // Nonprofit fundraising
+    { id: "classy", name: "Classy (GoFundMe Pro)", tags: ["fundraising", "nonprofit", "payments", "saas"], status_url: "https://status.classy.org/api/v2/status.json", page_url: "https://status.classy.org", type: "statuspage" },
+    // Employee training / SOPs / LMS
+    { id: "trainual", name: "Trainual", tags: ["training", "lms", "hr", "saas"], status_url: "https://status.trainual.com/api/v2/status.json", page_url: "https://status.trainual.com", type: "statuspage" },
+    { id: "degreed", name: "Degreed", tags: ["lms", "learning", "hr", "enterprise"], status_url: "https://status.degreed.com/api/v2/status.json", page_url: "https://status.degreed.com", type: "statuspage" },
+    { id: "northpass", name: "Northpass", tags: ["lms", "training", "customer-education", "saas"], status_url: "https://status.northpass.com/api/v2/status.json", page_url: "https://status.northpass.com", type: "statuspage" },
+    // Knowledge base
+    { id: "helpjuice", name: "Helpjuice", tags: ["knowledge-base", "help-center", "support", "saas"], status_url: "https://status.helpjuice.com/api/v2/status.json", page_url: "https://status.helpjuice.com", type: "statuspage" },
+    // Recurring billing
+    { id: "chargeover", name: "ChargeOver", tags: ["billing", "subscriptions", "payments", "saas"], status_url: "https://status.chargeover.com/api/v2/status.json", page_url: "https://status.chargeover.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1767,7 +1787,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.31.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.32.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -1830,7 +1850,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 622 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 633 services.",
                     },
                 },
                 required: [],
