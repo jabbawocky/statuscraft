@@ -2029,6 +2029,72 @@ const SERVICES: ServiceConfig[] = [
   { id: "revel", name: "Revel Systems", tags: ["pos", "retail", "restaurant", "saas"], status_url: "https://revel.statuspage.io/api/v2/status.json", page_url: "https://revel.statuspage.io", type: "statuspage" },
   // Commercial real estate CRM / marketing
   { id: "buildout", name: "Buildout", tags: ["real-estate", "crm", "commercial", "saas"], status_url: "https://buildout.statuspage.io/api/v2/status.json", page_url: "https://buildout.statuspage.io", type: "statuspage" },
+
+  // Customer experience / voice-of-customer platform
+  { id: "medallia", name: "Medallia", tags: ["cx", "voc", "survey", "enterprise"], status_url: "https://medallia.statuspage.io/api/v2/status.json", page_url: "https://medallia.statuspage.io", type: "statuspage" },
+
+  // Frontline workforce communications
+  { id: "beekeeper", name: "Beekeeper", tags: ["communications", "workforce", "frontline", "saas"], status_url: "https://beekeeper.statuspage.io/api/v2/status.json", page_url: "https://beekeeper.statuspage.io", type: "statuspage" },
+
+  // Email delivery service
+  { id: "smtp2go", name: "SMTP2GO", tags: ["email", "transactional", "smtp", "delivery"], status_url: "https://smtp2go.statuspage.io/api/v2/status.json", page_url: "https://smtp2go.statuspage.io", type: "statuspage" },
+
+  // Open-source LMS / e-learning platform
+  { id: "moodle", name: "Moodle", tags: ["education", "lms", "open-source", "e-learning"], status_url: "https://moodle.statuspage.io/api/v2/status.json", page_url: "https://moodle.statuspage.io", type: "statuspage" },
+
+  // Sports team management platform
+  { id: "teamsnap", name: "TeamSnap", tags: ["sports", "team-management", "scheduling", "saas"], status_url: "https://teamsnap.statuspage.io/api/v2/status.json", page_url: "https://teamsnap.statuspage.io", type: "statuspage" },
+
+  // Data science & AI e-learning
+  { id: "datacamp", name: "DataCamp", tags: ["education", "data-science", "e-learning", "ai"], status_url: "https://status.datacamp.com/api/v2/status.json", page_url: "https://status.datacamp.com", type: "statuspage" },
+
+  // Hotel/hospitality PMS platform
+  { id: "apaleo", name: "Apaleo", tags: ["hospitality", "pms", "hotel", "api-first"], status_url: "https://apaleo.statuspage.io/api/v2/status.json", page_url: "https://apaleo.statuspage.io", type: "statuspage" },
+
+  // Open source foundation (hosts npm, PyPI, Maven, etc. infra)
+  { id: "linuxfoundation", name: "Linux Foundation", tags: ["open-source", "foundation", "developer", "infrastructure"], status_url: "https://status.linuxfoundation.org/api/v2/status.json", page_url: "https://status.linuxfoundation.org", type: "statuspage" },
+
+  // Accounting close management / financial close automation
+  { id: "floqast", name: "FloQast", tags: ["accounting", "finance", "close-management", "saas"], status_url: "https://status.floqast.com/api/v2/status.json", page_url: "https://status.floqast.com", type: "statuspage" },
+
+  // Connected planning platform (enterprise FP&A / supply chain)
+  { id: "anaplan", name: "Anaplan", tags: ["planning", "finance", "fpa", "enterprise"], status_url: "https://status.anaplan.com/api/v2/status.json", page_url: "https://status.anaplan.com", type: "statuspage" },
+
+  // Enterprise data management / backup
+  { id: "veritas", name: "Veritas", tags: ["backup", "data-management", "enterprise", "storage"], status_url: "https://veritas.statuspage.io/api/v2/status.json", page_url: "https://veritas.statuspage.io", type: "statuspage" },
+
+  // Print-on-demand / dropshipping
+  { id: "spod", name: "SPOD", tags: ["print-on-demand", "ecommerce", "dropshipping", "fulfillment"], status_url: "https://spod.statuspage.io/api/v2/status.json", page_url: "https://spod.statuspage.io", type: "statuspage" },
+
+  // Procurement / spend management
+  { id: "zip_hq", name: "Zip", tags: ["procurement", "spend-management", "finance", "enterprise"], status_url: "https://status.ziphq.com/api/v2/status.json", page_url: "https://status.ziphq.com", type: "statuspage" },
+
+  // Real estate / property management software
+  { id: "mri_software", name: "MRI Software", tags: ["real-estate", "property-management", "enterprise", "saas"], status_url: "https://status.mrisoftware.com/api/v2/status.json", page_url: "https://status.mrisoftware.com", type: "statuspage" },
+
+  // Medical practice management (EHR / billing)
+  { id: "advancedmd", name: "AdvancedMD", tags: ["healthcare", "ehr", "practice-management", "medical"], status_url: "https://advancedmd.statuspage.io/api/v2/status.json", page_url: "https://advancedmd.statuspage.io", type: "statuspage" },
+
+  // Property management / landlord software
+  { id: "doorloop", name: "DoorLoop", tags: ["real-estate", "property-management", "landlord", "saas"], status_url: "https://status.doorloop.com/api/v2/status.json", page_url: "https://status.doorloop.com", type: "statuspage" },
+
+  // Field service management / FSM
+  { id: "servicefusion", name: "ServiceFusion", tags: ["field-service", "fsm", "hvac", "saas"], status_url: "https://servicefusion.statuspage.io/api/v2/status.json", page_url: "https://servicefusion.statuspage.io", type: "statuspage" },
+
+  // Healthcare scheduling & practice management
+  { id: "jane_app", name: "Jane App", tags: ["healthcare", "scheduling", "practice-management", "saas"], status_url: "https://status.janeapp.com/api/v2/status.json", page_url: "https://status.janeapp.com", type: "statuspage" },
+
+  // Mental health / behavioral health practice management
+  { id: "theranest", name: "TheraNest", tags: ["healthcare", "mental-health", "ehr", "saas"], status_url: "https://theranest.statuspage.io/api/v2/status.json", page_url: "https://theranest.statuspage.io", type: "statuspage" },
+
+  // Healthcare practice management (allied health, PT, chiro)
+  { id: "cliniko", name: "Cliniko", tags: ["healthcare", "practice-management", "allied-health", "saas"], status_url: "https://status.cliniko.com/api/v2/status.json", page_url: "https://status.cliniko.com", type: "statuspage" },
+
+  // Real estate closing / title & escrow platform
+  { id: "qualia", name: "Qualia", tags: ["real-estate", "closing", "title", "fintech"], status_url: "https://status.qualia.com/api/v2/status.json", page_url: "https://status.qualia.com", type: "statuspage" },
+
+  // Digital mortgage / e-closing platform
+  { id: "snapdocs", name: "Snapdocs", tags: ["mortgage", "real-estate", "fintech", "e-signing"], status_url: "https://status.snapdocs.com/api/v2/status.json", page_url: "https://status.snapdocs.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2471,7 +2537,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 971 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 993 services.",
           },
         },
         required: [],
