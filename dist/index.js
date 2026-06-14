@@ -1475,6 +1475,25 @@ const SERVICES = [
     { id: "webinarjam", name: "WebinarJam", tags: ["webinars", "events", "marketing", "saas"], status_url: "https://status.webinarjam.com/api/v2/status.json", page_url: "https://status.webinarjam.com", type: "statuspage" },
     { id: "lumigo", name: "Lumigo", tags: ["observability", "serverless", "monitoring", "developer"], status_url: "https://status.lumigo.io/api/v2/status.json", page_url: "https://status.lumigo.io", type: "statuspage" },
     { id: "tomorrow_io", name: "Tomorrow.io", tags: ["weather", "api", "climate", "developer"], status_url: "https://status.tomorrow.io/api/v2/status.json", page_url: "https://status.tomorrow.io", type: "statuspage" },
+    // Tick 108 additions
+    // Cybersecurity / enterprise security
+    { id: "paloalto_networks", name: "Palo Alto Networks", tags: ["security", "firewall", "cloud-security", "enterprise"], status_url: "https://status.paloaltonetworks.com/api/v2/status.json", page_url: "https://status.paloaltonetworks.com", type: "statuspage" },
+    { id: "rubrik", name: "Rubrik", tags: ["security", "backup", "data-management", "enterprise"], status_url: "https://status.rubrik.com/api/v2/status.json", page_url: "https://status.rubrik.com", type: "statuspage" },
+    { id: "cohesity", name: "Cohesity", tags: ["security", "data-management", "backup", "enterprise"], status_url: "https://status.cohesity.com/api/v2/status.json", page_url: "https://status.cohesity.com", type: "statuspage" },
+    // Device management
+    { id: "jamf", name: "Jamf", tags: ["device-management", "apple", "mdm", "enterprise"], status_url: "https://status.jamf.com/api/v2/status.json", page_url: "https://status.jamf.com", type: "statuspage" },
+    // Healthcare tech
+    { id: "drchrono", name: "DrChrono", tags: ["healthcare", "ehr", "medical", "saas"], status_url: "https://status.drchrono.com/api/v2/status.json", page_url: "https://status.drchrono.com", type: "statuspage" },
+    { id: "healthsherpa", name: "HealthSherpa", tags: ["healthcare", "health-insurance", "marketplace", "saas"], status_url: "https://status.healthsherpa.com/api/v2/status.json", page_url: "https://status.healthsherpa.com", type: "statuspage" },
+    // Real estate / property management
+    { id: "yardi", name: "Yardi Systems", tags: ["real-estate", "property-management", "erp", "enterprise"], status_url: "https://status.yardi.com/api/v2/status.json", page_url: "https://status.yardi.com", type: "statuspage" },
+    { id: "buildium", name: "Buildium", tags: ["real-estate", "property-management", "landlord", "saas"], status_url: "https://status.buildium.com/api/v2/status.json", page_url: "https://status.buildium.com", type: "statuspage" },
+    { id: "propertyware", name: "Propertyware", tags: ["real-estate", "property-management", "landlord", "saas"], status_url: "https://status.propertyware.com/api/v2/status.json", page_url: "https://status.propertyware.com", type: "statuspage" },
+    // Enterprise content management
+    { id: "opentext", name: "OpenText", tags: ["content-management", "ecm", "information-management", "enterprise"], status_url: "https://status.opentext.com/api/v2/status.json", page_url: "https://status.opentext.com", type: "statuspage" },
+    { id: "laserfiche", name: "Laserfiche", tags: ["content-management", "ecm", "document-management", "enterprise"], status_url: "https://status.laserfiche.com/api/v2/status.json", page_url: "https://status.laserfiche.com", type: "statuspage" },
+    // Construction / BIM tech
+    { id: "newforma_konekt", name: "Newforma Konekt", tags: ["construction", "project-management", "bim", "enterprise"], status_url: "https://status.bimtrack.co/api/v2/status.json", page_url: "https://status.bimtrack.co", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1862,7 +1881,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.33.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.34.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -1925,7 +1944,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 682 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 694 services.",
                     },
                 },
                 required: [],
