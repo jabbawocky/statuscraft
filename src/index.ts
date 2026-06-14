@@ -2744,6 +2744,45 @@ const SERVICES: ServiceConfig[] = [
   { id: "oura", name: "Oura Ring", tags: ["fitness", "wearable", "health", "sleep"], status_url: "https://status.ouraring.com/api/v2/status.json", page_url: "https://status.ouraring.com", type: "statuspage" },
   // Software test management / QA
   { id: "tricentis", name: "Tricentis", tags: ["testing", "qa", "test-management", "enterprise"], status_url: "https://status.tricentis.com/api/v2/status.json", page_url: "https://status.tricentis.com", type: "statuspage" },
+
+  // AI / LLM (China)
+  { id: "moonshot_ai", name: "Moonshot AI", tags: ["ai", "llm", "api", "china"], status_url: "https://status.moonshot.cn/api/v2/status.json", page_url: "https://status.moonshot.cn", type: "statuspage" },
+
+  // Cloud cost management / FinOps
+  { id: "cloudability", name: "Cloudability", tags: ["cloud-cost", "finops", "cloud", "analytics"], status_url: "https://status.cloudability.com/api/v2/status.json", page_url: "https://status.cloudability.com", type: "statuspage" },
+
+  // SaaS sales tax compliance
+  { id: "anrok", name: "Anrok", tags: ["tax", "compliance", "saas", "fintech"], status_url: "https://anrok.statuspage.io/api/v2/status.json", page_url: "https://anrok-status.com", type: "statuspage" },
+
+  // Build automation / CI
+  { id: "gradle", name: "Gradle", tags: ["build", "ci", "devtools", "java"], status_url: "https://status.gradle.com/api/v2/status.json", page_url: "https://status.gradle.com", type: "statuspage" },
+
+  // GitHub project management
+  { id: "zenhub", name: "ZenHub", tags: ["project-management", "devtools", "agile", "github"], status_url: "https://status.zenhub.com/api/v2/status.json", page_url: "https://status.zenhub.com", type: "statuspage" },
+
+  // Open source foundation infrastructure
+  { id: "apache", name: "Apache Software Foundation", tags: ["open-source", "infrastructure", "hosting", "foundation"], status_url: "https://status.apache.org/api/v2/status.json", page_url: "https://status.apache.org", type: "statuspage" },
+
+  // AI agent platform for teams
+  { id: "dust", name: "Dust", tags: ["ai", "agents", "llm", "enterprise"], status_url: "https://status.dust.tt/api/v2/status.json", page_url: "https://status.dust.tt", type: "statuspage" },
+
+  // Compliance automation / trust management
+  { id: "trustcloud", name: "TrustCloud", tags: ["compliance", "security", "grc", "trust"], status_url: "https://status.trustcloud.ai/api/v2/status.json", page_url: "https://status.trustcloud.ai", type: "statuspage" },
+
+  // B2B integration platform / embedded iPaaS
+  { id: "cyclr", name: "Cyclr", tags: ["integration", "ipaas", "api", "automation"], status_url: "https://cyclr.statuspage.io/api/v2/status.json", page_url: "https://cyclr.statuspage.io", type: "statuspage" },
+
+  // Terraform cloud enterprise / infrastructure management
+  { id: "scalr", name: "Scalr", tags: ["terraform", "infrastructure", "devops", "cloud"], status_url: "https://status.scalr.io/api/v2/status.json", page_url: "https://status.scalr.io", type: "statuspage" },
+
+  // Kubernetes management platform
+  { id: "spectrocloud", name: "Spectro Cloud", tags: ["kubernetes", "cloud-native", "devops", "infrastructure"], status_url: "https://spectrocloud.statuspage.io/api/v2/status.json", page_url: "https://spectrocloud.statuspage.io", type: "statuspage" },
+
+  // Cloud security / container monitoring
+  { id: "sysdig", name: "Sysdig", tags: ["security", "cloud-native", "monitoring", "containers"], status_url: "https://sysdig.statuspage.io/api/v2/status.json", page_url: "https://status.sysdigcloud.com", type: "statuspage" },
+
+  // UI/UX prototyping and design tool
+  { id: "marvelapp", name: "Marvel App", tags: ["design", "prototyping", "ux", "collaboration"], status_url: "https://status.marvelapp.com/api/v2/status.json", page_url: "https://status.marvelapp.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3148,7 +3187,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1370 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1383 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3186,7 +3225,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1370 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1383 services.",
           },
         },
         required: [],
