@@ -2676,6 +2676,60 @@ const SERVICES = [
     { id: "intellicheck", name: "Intellicheck", tags: ["identity-verification", "kyc", "fraud", "security"], status_url: "https://status.intellicheck.com/api/v2/status.json", page_url: "https://status.intellicheck.com", type: "statuspage" },
     // Automotive SaaS
     { id: "dealersocket", name: "DealerSocket", tags: ["automotive", "crm", "dealership", "saas"], status_url: "https://status.dealersocket.com/api/v2/status.json", page_url: "https://status.dealersocket.com", type: "statuspage" },
+    // Healthcare patient engagement
+    { id: "phreesia", name: "Phreesia", tags: ["healthcare", "patient-intake", "practice-management", "saas"], status_url: "https://status.phreesia.net/api/v2/status.json", page_url: "https://status.phreesia.net", type: "statuspage" },
+    // Healthcare workflow automation
+    { id: "workpath", name: "Workpath", tags: ["healthcare", "workflow", "automation", "saas"], status_url: "https://status.workpath.com/api/v2/status.json", page_url: "https://status.workpath.com", type: "statuspage" },
+    // Banking-as-a-Service
+    { id: "unit_co", name: "Unit", tags: ["fintech", "banking-as-a-service", "api", "payments"], status_url: "https://status.unit.co/api/v2/status.json", page_url: "https://status.unit.co", type: "statuspage" },
+    // Accounting data API (FIS Railz)
+    { id: "railz", name: "Railz", tags: ["fintech", "accounting", "data", "api"], status_url: "https://status.railz.ai/api/v2/status.json", page_url: "https://status.railz.ai", type: "statuspage" },
+    // Small business management
+    { id: "thryv", name: "Thryv", tags: ["small-business", "crm", "marketing", "saas"], status_url: "https://status.thryv.com/api/v2/status.json", page_url: "https://status.thryv.com", type: "statuspage" },
+    // Deskless workforce management
+    { id: "skedulo", name: "Skedulo", tags: ["workforce-management", "field-service", "scheduling", "saas"], status_url: "https://status.skedulo.com/api/v2/status.json", page_url: "https://status.skedulo.com", type: "statuspage" },
+    // Fleet & field operations
+    { id: "intellishift", name: "IntelliShift", tags: ["fleet-management", "telematics", "field-operations", "saas"], status_url: "https://status.intellishift.com/api/v2/status.json", page_url: "https://status.intellishift.com", type: "statuspage" },
+    // Route optimization
+    { id: "routific", name: "Routific", tags: ["logistics", "route-optimization", "delivery", "saas"], status_url: "https://status.routific.com/api/v2/status.json", page_url: "https://status.routific.com", type: "statuspage" },
+    // MSP IT visibility
+    { id: "liongard", name: "Liongard", tags: ["msp", "it-management", "visibility", "saas"], status_url: "https://status.liongard.com/api/v2/status.json", page_url: "https://status.liongard.com", type: "statuspage" },
+    // Restaurant workforce scheduling
+    { id: "seven_shifts", name: "7shifts", tags: ["restaurant", "workforce-management", "scheduling", "saas"], status_url: "https://status.7shifts.com/api/v2/status.json", page_url: "https://status.7shifts.com", type: "statuspage" },
+    { id: "mavenlink", name: "Mavenlink", tags: ["project-management", "resource-management", "professional-services", "saas"], status_url: "https://status.mavenlink.com/api/v2/status.json", page_url: "https://status.mavenlink.com", type: "statuspage" },
+    { id: "liquidplanner", name: "LiquidPlanner", tags: ["project-management", "scheduling", "resource-planning", "saas"], status_url: "https://status.liquidplanner.com/api/v2/status.json", page_url: "https://status.liquidplanner.com", type: "statuspage" },
+    { id: "mem_ai", name: "Mem", tags: ["notes", "ai", "knowledge-management", "productivity"], status_url: "https://status.mem.ai/api/v2/status.json", page_url: "https://status.mem.ai", type: "statuspage" },
+    { id: "oneleet", name: "Oneleet", tags: ["security", "compliance", "penetration-testing", "saas"], status_url: "https://status.oneleet.com/api/v2/status.json", page_url: "https://status.oneleet.com", type: "statuspage" },
+    { id: "immuta", name: "Immuta", tags: ["data-governance", "security", "access-control", "enterprise"], status_url: "https://status.immuta.com/api/v2/status.json", page_url: "https://status.immuta.com", type: "statuspage" },
+    { id: "flexera", name: "Flexera", tags: ["software-management", "saas-management", "itam", "enterprise"], status_url: "https://status.flexera.com/api/v2/status.json", page_url: "https://status.flexera.com", type: "statuspage" },
+    { id: "zylo", name: "Zylo", tags: ["saas-management", "software-spend", "itam", "saas"], status_url: "https://status.zylo.com/api/v2/status.json", page_url: "https://status.zylo.com", type: "statuspage" },
+    { id: "productiv", name: "Productiv", tags: ["saas-management", "software-analytics", "it", "enterprise"], status_url: "https://status.productiv.com/api/v2/status.json", page_url: "https://status.productiv.com", type: "statuspage" },
+    { id: "vena", name: "Vena", tags: ["fpa", "finance", "planning", "enterprise"], status_url: "https://status.vena.io/api/v2/status.json", page_url: "https://status.vena.io", type: "statuspage" },
+    { id: "smartvault", name: "SmartVault", tags: ["document-management", "accounting", "file-sharing", "saas"], status_url: "https://status.smartvault.com/api/v2/status.json", page_url: "https://status.smartvault.com", type: "statuspage" },
+    // Tick 161 additions
+    { id: "retool", name: "Retool", tags: ["internal-tools", "no-code", "low-code", "saas"], status_url: "https://status.retool.com/api/v2/status.json", page_url: "https://status.retool.com", type: "statuspage" },
+    { id: "webflow", name: "Webflow", tags: ["website-builder", "no-code", "cms", "hosting"], status_url: "https://status.webflow.com/api/v2/status.json", page_url: "https://status.webflow.com", type: "statuspage" },
+    { id: "plaid", name: "Plaid", tags: ["fintech", "banking", "api", "payments"], status_url: "https://status.plaid.com/api/v2/status.json", page_url: "https://status.plaid.com", type: "statuspage" },
+    { id: "temporal", name: "Temporal", tags: ["workflow", "orchestration", "developer-tools", "cloud"], status_url: "https://temporal.statuspage.io/api/v2/status.json", page_url: "https://temporal.statuspage.io", type: "statuspage" },
+    { id: "fivetran", name: "Fivetran", tags: ["data-integration", "etl", "analytics", "saas"], status_url: "https://status.fivetran.com/api/v2/status.json", page_url: "https://status.fivetran.com", type: "statuspage" },
+    { id: "clerk", name: "Clerk", tags: ["auth", "identity", "developer-tools", "saas"], status_url: "https://status.clerk.com/api/v2/status.json", page_url: "https://status.clerk.com", type: "statuspage" },
+    { id: "upstash", name: "Upstash", tags: ["database", "redis", "serverless", "kafka"], status_url: "https://status.upstash.com/api/v2/status.json", page_url: "https://status.upstash.com", type: "statuspage" },
+    { id: "convex", name: "Convex", tags: ["database", "backend", "serverless", "developer-tools"], status_url: "https://status.convex.dev/api/v2/status.json", page_url: "https://status.convex.dev", type: "statuspage" },
+    { id: "ably", name: "Ably", tags: ["realtime", "messaging", "pubsub", "api"], status_url: "https://status.ably.com/api/v2/status.json", page_url: "https://status.ably.com", type: "statuspage" },
+    { id: "pusher", name: "Pusher", tags: ["realtime", "messaging", "websockets", "api"], status_url: "https://status.pusher.com/api/v2/status.json", page_url: "https://status.pusher.com", type: "statuspage" },
+    { id: "affinity", name: "Affinity", tags: ["crm", "relationships", "sales", "saas"], status_url: "https://status.affinity.co/api/v2/status.json", page_url: "https://status.affinity.co", type: "statuspage" },
+    { id: "ashbyhq", name: "Ashby", tags: ["recruiting", "ats", "hr", "saas"], status_url: "https://status.ashbyhq.com/api/v2/status.json", page_url: "https://status.ashbyhq.com", type: "statuspage" },
+    { id: "greenhouse", name: "Greenhouse", tags: ["recruiting", "ats", "hr", "saas"], status_url: "https://status.greenhouse.io/api/v2/status.json", page_url: "https://status.greenhouse.io", type: "statuspage" },
+    { id: "lever", name: "Lever", tags: ["recruiting", "ats", "hr", "saas"], status_url: "https://status.lever.co/api/v2/status.json", page_url: "https://status.lever.co", type: "statuspage" },
+    { id: "rippling", name: "Rippling", tags: ["hr", "payroll", "it", "saas"], status_url: "https://status.rippling.com/api/v2/status.json", page_url: "https://status.rippling.com", type: "statuspage" },
+    { id: "gusto", name: "Gusto", tags: ["hr", "payroll", "benefits", "saas"], status_url: "https://status.gusto.com/api/v2/status.json", page_url: "https://status.gusto.com", type: "statuspage" },
+    { id: "monday", name: "monday.com", tags: ["project-management", "work-os", "collaboration", "saas"], status_url: "https://status.monday.com/api/v2/status.json", page_url: "https://status.monday.com", type: "statuspage" },
+    { id: "drata", name: "Drata", tags: ["compliance", "security", "soc2", "saas"], status_url: "https://status.drata.com/api/v2/status.json", page_url: "https://status.drata.com", type: "statuspage" },
+    { id: "vanta", name: "Vanta", tags: ["compliance", "security", "soc2", "saas"], status_url: "https://status.vanta.com/api/v2/status.json", page_url: "https://status.vanta.com", type: "statuspage" },
+    { id: "launchdarkly", name: "LaunchDarkly", tags: ["feature-flags", "developer-tools", "experimentation", "saas"], status_url: "https://status.launchdarkly.com/api/v2/status.json", page_url: "https://status.launchdarkly.com", type: "statuspage" },
+    { id: "appsflyer", name: "AppsFlyer", tags: ["mobile-analytics", "attribution", "marketing", "saas"], status_url: "https://status.appsflyer.com/api/v2/status.json", page_url: "https://status.appsflyer.com", type: "statuspage" },
+    { id: "attio", name: "Attio", tags: ["crm", "sales", "collaboration", "saas"], status_url: "https://status.attio.com/api/v2/status.json", page_url: "https://status.attio.com", type: "statuspage" },
+    { id: "kustomer", name: "Kustomer", tags: ["customer-service", "crm", "helpdesk", "saas"], status_url: "https://status.kustomer.com/api/v2/status.json", page_url: "https://status.kustomer.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3091,7 +3145,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1394 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1437 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3126,7 +3180,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1394 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1437 services.",
                     },
                 },
                 required: [],

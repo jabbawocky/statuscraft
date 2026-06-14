@@ -2848,6 +2848,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "productiv", name: "Productiv", tags: ["saas-management", "software-analytics", "it", "enterprise"], status_url: "https://status.productiv.com/api/v2/status.json", page_url: "https://status.productiv.com", type: "statuspage" },
   { id: "vena", name: "Vena", tags: ["fpa", "finance", "planning", "enterprise"], status_url: "https://status.vena.io/api/v2/status.json", page_url: "https://status.vena.io", type: "statuspage" },
   { id: "smartvault", name: "SmartVault", tags: ["document-management", "accounting", "file-sharing", "saas"], status_url: "https://status.smartvault.com/api/v2/status.json", page_url: "https://status.smartvault.com", type: "statuspage" },
+  // Tick 161 additions
+  { id: "retool", name: "Retool", tags: ["internal-tools", "no-code", "low-code", "saas"], status_url: "https://status.retool.com/api/v2/status.json", page_url: "https://status.retool.com", type: "statuspage" },
+  { id: "webflow", name: "Webflow", tags: ["website-builder", "no-code", "cms", "hosting"], status_url: "https://status.webflow.com/api/v2/status.json", page_url: "https://status.webflow.com", type: "statuspage" },
+  { id: "plaid", name: "Plaid", tags: ["fintech", "banking", "api", "payments"], status_url: "https://status.plaid.com/api/v2/status.json", page_url: "https://status.plaid.com", type: "statuspage" },
+  { id: "temporal", name: "Temporal", tags: ["workflow", "orchestration", "developer-tools", "cloud"], status_url: "https://temporal.statuspage.io/api/v2/status.json", page_url: "https://temporal.statuspage.io", type: "statuspage" },
+  { id: "fivetran", name: "Fivetran", tags: ["data-integration", "etl", "analytics", "saas"], status_url: "https://status.fivetran.com/api/v2/status.json", page_url: "https://status.fivetran.com", type: "statuspage" },
+  { id: "clerk", name: "Clerk", tags: ["auth", "identity", "developer-tools", "saas"], status_url: "https://status.clerk.com/api/v2/status.json", page_url: "https://status.clerk.com", type: "statuspage" },
+  { id: "upstash", name: "Upstash", tags: ["database", "redis", "serverless", "kafka"], status_url: "https://status.upstash.com/api/v2/status.json", page_url: "https://status.upstash.com", type: "statuspage" },
+  { id: "convex", name: "Convex", tags: ["database", "backend", "serverless", "developer-tools"], status_url: "https://status.convex.dev/api/v2/status.json", page_url: "https://status.convex.dev", type: "statuspage" },
+  { id: "ably", name: "Ably", tags: ["realtime", "messaging", "pubsub", "api"], status_url: "https://status.ably.com/api/v2/status.json", page_url: "https://status.ably.com", type: "statuspage" },
+  { id: "pusher", name: "Pusher", tags: ["realtime", "messaging", "websockets", "api"], status_url: "https://status.pusher.com/api/v2/status.json", page_url: "https://status.pusher.com", type: "statuspage" },
+  { id: "affinity", name: "Affinity", tags: ["crm", "relationships", "sales", "saas"], status_url: "https://status.affinity.co/api/v2/status.json", page_url: "https://status.affinity.co", type: "statuspage" },
+  { id: "ashbyhq", name: "Ashby", tags: ["recruiting", "ats", "hr", "saas"], status_url: "https://status.ashbyhq.com/api/v2/status.json", page_url: "https://status.ashbyhq.com", type: "statuspage" },
+  { id: "greenhouse", name: "Greenhouse", tags: ["recruiting", "ats", "hr", "saas"], status_url: "https://status.greenhouse.io/api/v2/status.json", page_url: "https://status.greenhouse.io", type: "statuspage" },
+  { id: "lever", name: "Lever", tags: ["recruiting", "ats", "hr", "saas"], status_url: "https://status.lever.co/api/v2/status.json", page_url: "https://status.lever.co", type: "statuspage" },
+  { id: "rippling", name: "Rippling", tags: ["hr", "payroll", "it", "saas"], status_url: "https://status.rippling.com/api/v2/status.json", page_url: "https://status.rippling.com", type: "statuspage" },
+  { id: "gusto", name: "Gusto", tags: ["hr", "payroll", "benefits", "saas"], status_url: "https://status.gusto.com/api/v2/status.json", page_url: "https://status.gusto.com", type: "statuspage" },
+  { id: "monday", name: "monday.com", tags: ["project-management", "work-os", "collaboration", "saas"], status_url: "https://status.monday.com/api/v2/status.json", page_url: "https://status.monday.com", type: "statuspage" },
+  { id: "drata", name: "Drata", tags: ["compliance", "security", "soc2", "saas"], status_url: "https://status.drata.com/api/v2/status.json", page_url: "https://status.drata.com", type: "statuspage" },
+  { id: "vanta", name: "Vanta", tags: ["compliance", "security", "soc2", "saas"], status_url: "https://status.vanta.com/api/v2/status.json", page_url: "https://status.vanta.com", type: "statuspage" },
+  { id: "launchdarkly", name: "LaunchDarkly", tags: ["feature-flags", "developer-tools", "experimentation", "saas"], status_url: "https://status.launchdarkly.com/api/v2/status.json", page_url: "https://status.launchdarkly.com", type: "statuspage" },
+  { id: "appsflyer", name: "AppsFlyer", tags: ["mobile-analytics", "attribution", "marketing", "saas"], status_url: "https://status.appsflyer.com/api/v2/status.json", page_url: "https://status.appsflyer.com", type: "statuspage" },
+  { id: "attio", name: "Attio", tags: ["crm", "sales", "collaboration", "saas"], status_url: "https://status.attio.com/api/v2/status.json", page_url: "https://status.attio.com", type: "statuspage" },
+  { id: "kustomer", name: "Kustomer", tags: ["customer-service", "crm", "helpdesk", "saas"], status_url: "https://status.kustomer.com/api/v2/status.json", page_url: "https://status.kustomer.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3252,7 +3276,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1414 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1437 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3290,7 +3314,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1414 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1437 services.",
           },
         },
         required: [],
