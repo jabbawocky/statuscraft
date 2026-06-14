@@ -2436,6 +2436,31 @@ const SERVICES: ServiceConfig[] = [
   { id: "wufoo", name: "Wufoo", tags: ["forms", "surveys", "data-collection", "saas"], status_url: "https://status.wufoo.com/api/v2/status.json", page_url: "https://status.wufoo.com", type: "statuspage" },
   // CRM
   { id: "pipelinecrm", name: "Pipeline CRM", tags: ["crm", "sales", "pipeline", "saas"], status_url: "https://status.pipelinecrm.com/api/v2/status.json", page_url: "https://status.pipelinecrm.com", type: "statuspage" },
+  // Payment gateway
+  { id: "authorizenet", name: "Authorize.Net", tags: ["payments", "payment-gateway", "fintech", "api"], status_url: "https://authorize.statuspage.io/api/v2/status.json", page_url: "https://authorize.statuspage.io", type: "statuspage" },
+  // Review / reputation management
+  { id: "reviewtrackers", name: "ReviewTrackers", tags: ["reviews", "reputation", "analytics", "saas"], status_url: "https://status.reviewtrackers.com/api/v2/status.json", page_url: "https://status.reviewtrackers.com", type: "statuspage" },
+  // Marketing automation
+  { id: "act_on", name: "Act-On", tags: ["marketing", "email", "automation", "saas"], status_url: "https://status.act-on.com/api/v2/status.json", page_url: "https://status.act-on.com", type: "statuspage" },
+  { id: "sharpspring", name: "SharpSpring", tags: ["marketing", "crm", "automation", "saas"], status_url: "https://status.sharpspring.com/api/v2/status.json", page_url: "https://status.sharpspring.com", type: "statuspage" },
+  // Time tracking / workforce management
+  { id: "replicon", name: "Replicon", tags: ["time-tracking", "workforce", "hr", "saas"], status_url: "https://status.replicon.com/api/v2/status.json", page_url: "https://status.replicon.com", type: "statuspage" },
+  // Cloud UC/CC
+  { id: "avaya_cloud", name: "Avaya Cloud", tags: ["ucaas", "ccaas", "communications", "telephony"], status_url: "https://avayacloud.statuspage.io/api/v2/status.json", page_url: "https://avayacloud.statuspage.io", type: "statuspage" },
+  // Link shortening / analytics
+  { id: "bitly", name: "Bitly", tags: ["link-shortening", "analytics", "saas"], status_url: "https://status.bitly.com/api/v2/status.json", page_url: "https://status.bitly.com", type: "statuspage" },
+  { id: "rebrandly", name: "Rebrandly", tags: ["link-shortening", "branding", "saas"], status_url: "https://status.rebrandly.com/api/v2/status.json", page_url: "https://status.rebrandly.com", type: "statuspage" },
+  // SMS marketing
+  { id: "simpletexting", name: "SimpleTexting", tags: ["sms", "marketing", "texting", "saas"], status_url: "https://status.simpletexting.com/api/v2/status.json", page_url: "https://status.simpletexting.com", type: "statuspage" },
+  // Form builders
+  { id: "formbuilder_123", name: "123FormBuilder", tags: ["forms", "surveys", "data-collection", "saas"], status_url: "https://status.123formbuilder.com/api/v2/status.json", page_url: "https://status.123formbuilder.com", type: "statuspage" },
+  { id: "formassembly", name: "FormAssembly", tags: ["forms", "data-collection", "compliance", "saas"], status_url: "https://status.formassembly.com/api/v2/status.json", page_url: "https://status.formassembly.com", type: "statuspage" },
+  // Telemedicine
+  { id: "doxy_me", name: "Doxy.me", tags: ["telemedicine", "healthcare", "video", "saas"], status_url: "https://status.doxy.me/api/v2/status.json", page_url: "https://status.doxy.me", type: "statuspage" },
+  // RMM / IT management
+  { id: "pulseway", name: "Pulseway", tags: ["rmm", "it-management", "msp", "monitoring"], status_url: "https://status.pulseway.com/api/v2/status.json", page_url: "https://status.pulseway.com", type: "statuspage" },
+  // B2B payment routing
+  { id: "routable", name: "Routable", tags: ["payments", "b2b", "fintech", "api"], status_url: "https://status.routable.com/api/v2/status.json", page_url: "https://status.routable.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2878,7 +2903,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1211 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1225 services.",
           },
         },
         required: [],
