@@ -1657,6 +1657,58 @@ const SERVICES = [
     { id: "count_co", name: "Count", tags: ["analytics", "bi", "sql", "data"], status_url: "https://status.count.co/api/v2/status.json", page_url: "https://status.count.co", type: "statuspage" },
     // Reputation management
     { id: "reputation", name: "Reputation.com", tags: ["reputation", "reviews", "marketing", "saas"], status_url: "https://status.reputation.com/api/v2/status.json", page_url: "https://status.reputation.com", type: "statuspage" },
+    // JavaScript error tracking
+    { id: "trackjs", name: "TrackJS", tags: ["error-tracking", "javascript", "monitoring", "developer-tools"], status_url: "https://status.trackjs.com/api/v2/status.json", page_url: "https://status.trackjs.com", type: "statuspage" },
+    // Video hosting / streaming API
+    { id: "api_video", name: "api.video", tags: ["video", "api", "media", "streaming"], status_url: "https://status.api.video/api/v2/status.json", page_url: "https://status.api.video", type: "statuspage" },
+    // AI image generation
+    { id: "ideogram", name: "Ideogram", tags: ["ai", "image-generation", "creative", "saas"], status_url: "https://status.ideogram.ai/api/v2/status.json", page_url: "https://status.ideogram.ai", type: "statuspage" },
+    // Payment orchestration platform
+    { id: "primer", name: "Primer", tags: ["payments", "fintech", "api", "orchestration"], status_url: "https://status.primer.io/api/v2/status.json", page_url: "https://status.primer.io", type: "statuspage" },
+    // Email marketing for creators / small business
+    { id: "emailoctopus", name: "EmailOctopus", tags: ["email", "marketing", "saas", "automation"], status_url: "https://status.emailoctopus.com/api/v2/status.json", page_url: "https://status.emailoctopus.com", type: "statuspage" },
+    // Cold email / outreach automation
+    { id: "woodpecker", name: "Woodpecker", tags: ["email", "sales", "outreach", "automation"], status_url: "https://status.woodpecker.co/api/v2/status.json", page_url: "https://status.woodpecker.co", type: "statuspage" },
+    // Shipment tracking / post-purchase
+    { id: "aftership", name: "AfterShip", tags: ["logistics", "shipping", "tracking", "ecommerce"], status_url: "https://status.aftership.com/api/v2/status.json", page_url: "https://status.aftership.com", type: "statuspage" },
+    // Multi-carrier shipping API
+    { id: "shipengine", name: "ShipEngine", tags: ["shipping", "logistics", "api", "ecommerce"], status_url: "https://status.shipengine.com/api/v2/status.json", page_url: "https://status.shipengine.com", type: "statuspage" },
+    // E-commerce subscription management
+    { id: "skio", name: "Skio", tags: ["subscriptions", "ecommerce", "payments", "saas"], status_url: "https://status.skio.com/api/v2/status.json", page_url: "https://status.skio.com", type: "statuspage" },
+    // Loyalty & rewards platform
+    { id: "loyaltylion", name: "LoyaltyLion", tags: ["loyalty", "rewards", "ecommerce", "marketing"], status_url: "https://status.loyaltylion.com/api/v2/status.json", page_url: "https://status.loyaltylion.com", type: "statuspage" },
+    // Compliance evidence automation
+    { id: "anecdotes", name: "Anecdotes.ai", tags: ["compliance", "grc", "security", "saas"], status_url: "https://status.anecdotes.ai/api/v2/status.json", page_url: "https://status.anecdotes.ai", type: "statuspage" },
+    // Cloud object storage (S3-compatible)
+    { id: "wasabi", name: "Wasabi Cloud Storage", tags: ["storage", "cloud", "object-storage", "s3"], status_url: "https://status.wasabi.com/api/v2/status.json", page_url: "https://status.wasabi.com", type: "statuspage" },
+    // AI prompt engineering & evaluation platform
+    { id: "humanloop", name: "Humanloop", tags: ["ai", "llm", "prompts", "evaluation"], status_url: "https://humanloop.statuspage.io/api/v2/status.json", page_url: "https://humanloop.statuspage.io", type: "statuspage" },
+    // Headless commerce infrastructure
+    { id: "commercelayer", name: "Commerce Layer", tags: ["ecommerce", "headless", "api", "payments"], status_url: "https://status.commercelayer.io/api/v2/status.json", page_url: "https://status.commercelayer.io", type: "statuspage" },
+    // Managed detection & response (MDR) security
+    { id: "huntress", name: "Huntress", tags: ["security", "mdr", "endpoint", "saas"], status_url: "https://status.huntress.com/api/v2/status.json", page_url: "https://status.huntress.com", type: "statuspage" },
+    // AI-powered email security
+    { id: "abnormal_security", name: "Abnormal Security", tags: ["security", "email", "ai", "threat-protection"], status_url: "https://status.abnormalsecurity.com/api/v2/status.json", page_url: "https://status.abnormalsecurity.com", type: "statuspage" },
+    // Computer vision & AI platform
+    { id: "clarifai", name: "Clarifai", tags: ["ai", "computer-vision", "ml", "api"], status_url: "https://status.clarifai.com/api/v2/status.json", page_url: "https://status.clarifai.com", type: "statuspage" },
+    // Marketing automation (EU-focused)
+    { id: "actito", name: "Actito", tags: ["marketing", "automation", "email", "crm"], status_url: "https://status.actito.com/api/v2/status.json", page_url: "https://status.actito.com", type: "statuspage" },
+    // Email retargeting & cart abandonment
+    { id: "rejoiner", name: "Rejoiner", tags: ["email", "marketing", "ecommerce", "retargeting"], status_url: "https://status.rejoiner.com/api/v2/status.json", page_url: "https://status.rejoiner.com", type: "statuspage" },
+    // Healthcare data integration platform
+    { id: "redox", name: "Redox", tags: ["healthcare", "ehr", "api", "data-integration"], status_url: "https://status.redoxengine.com/api/v2/status.json", page_url: "https://status.redoxengine.com", type: "statuspage" },
+    // Health data network & FHIR API
+    { id: "healthgorilla", name: "Health Gorilla", tags: ["healthcare", "fhir", "api", "health-data"], status_url: "https://status.healthgorilla.com/api/v2/status.json", page_url: "https://status.healthgorilla.com", type: "statuspage" },
+    // Mobile push notification platform
+    { id: "batch", name: "Batch", tags: ["push-notifications", "mobile", "messaging", "engagement"], status_url: "https://status.batch.com/api/v2/status.json", page_url: "https://status.batch.com", type: "statuspage" },
+    // Apple device management (MDM)
+    { id: "addigy", name: "Addigy", tags: ["mdm", "apple", "device-management", "it"], status_url: "https://status.addigy.com/api/v2/status.json", page_url: "https://status.addigy.com", type: "statuspage" },
+    // Apple device management platform
+    { id: "kandji", name: "Kandji", tags: ["mdm", "apple", "device-management", "security"], status_url: "https://status.kandji.io/api/v2/status.json", page_url: "https://status.kandji.io", type: "statuspage" },
+    // AI video generation (talking avatars)
+    { id: "d_id", name: "D-ID", tags: ["ai", "video", "avatars", "generative"], status_url: "https://status.d-id.com/api/v2/status.json", page_url: "https://status.d-id.com", type: "statuspage" },
+    // Decentralized IoT wireless network
+    { id: "helium", name: "Helium", tags: ["iot", "blockchain", "wireless", "network"], status_url: "https://status.helium.com/api/v2/status.json", page_url: "https://status.helium.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -2044,7 +2096,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.36.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.37.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -2107,7 +2159,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 786 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 812 services.",
                     },
                 },
                 required: [],

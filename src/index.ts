@@ -1730,6 +1730,34 @@ const SERVICES: ServiceConfig[] = [
   { id: "anecdotes", name: "Anecdotes.ai", tags: ["compliance", "grc", "security", "saas"], status_url: "https://status.anecdotes.ai/api/v2/status.json", page_url: "https://status.anecdotes.ai", type: "statuspage" },
   // Cloud object storage (S3-compatible)
   { id: "wasabi", name: "Wasabi Cloud Storage", tags: ["storage", "cloud", "object-storage", "s3"], status_url: "https://status.wasabi.com/api/v2/status.json", page_url: "https://status.wasabi.com", type: "statuspage" },
+  // AI prompt engineering & evaluation platform
+  { id: "humanloop", name: "Humanloop", tags: ["ai", "llm", "prompts", "evaluation"], status_url: "https://humanloop.statuspage.io/api/v2/status.json", page_url: "https://humanloop.statuspage.io", type: "statuspage" },
+  // Headless commerce infrastructure
+  { id: "commercelayer", name: "Commerce Layer", tags: ["ecommerce", "headless", "api", "payments"], status_url: "https://status.commercelayer.io/api/v2/status.json", page_url: "https://status.commercelayer.io", type: "statuspage" },
+  // Managed detection & response (MDR) security
+  { id: "huntress", name: "Huntress", tags: ["security", "mdr", "endpoint", "saas"], status_url: "https://status.huntress.com/api/v2/status.json", page_url: "https://status.huntress.com", type: "statuspage" },
+  // AI-powered email security
+  { id: "abnormal_security", name: "Abnormal Security", tags: ["security", "email", "ai", "threat-protection"], status_url: "https://status.abnormalsecurity.com/api/v2/status.json", page_url: "https://status.abnormalsecurity.com", type: "statuspage" },
+  // Computer vision & AI platform
+  { id: "clarifai", name: "Clarifai", tags: ["ai", "computer-vision", "ml", "api"], status_url: "https://status.clarifai.com/api/v2/status.json", page_url: "https://status.clarifai.com", type: "statuspage" },
+  // Marketing automation (EU-focused)
+  { id: "actito", name: "Actito", tags: ["marketing", "automation", "email", "crm"], status_url: "https://status.actito.com/api/v2/status.json", page_url: "https://status.actito.com", type: "statuspage" },
+  // Email retargeting & cart abandonment
+  { id: "rejoiner", name: "Rejoiner", tags: ["email", "marketing", "ecommerce", "retargeting"], status_url: "https://status.rejoiner.com/api/v2/status.json", page_url: "https://status.rejoiner.com", type: "statuspage" },
+  // Healthcare data integration platform
+  { id: "redox", name: "Redox", tags: ["healthcare", "ehr", "api", "data-integration"], status_url: "https://status.redoxengine.com/api/v2/status.json", page_url: "https://status.redoxengine.com", type: "statuspage" },
+  // Health data network & FHIR API
+  { id: "healthgorilla", name: "Health Gorilla", tags: ["healthcare", "fhir", "api", "health-data"], status_url: "https://status.healthgorilla.com/api/v2/status.json", page_url: "https://status.healthgorilla.com", type: "statuspage" },
+  // Mobile push notification platform
+  { id: "batch", name: "Batch", tags: ["push-notifications", "mobile", "messaging", "engagement"], status_url: "https://status.batch.com/api/v2/status.json", page_url: "https://status.batch.com", type: "statuspage" },
+  // Apple device management (MDM)
+  { id: "addigy", name: "Addigy", tags: ["mdm", "apple", "device-management", "it"], status_url: "https://status.addigy.com/api/v2/status.json", page_url: "https://status.addigy.com", type: "statuspage" },
+  // Apple device management platform
+  { id: "kandji", name: "Kandji", tags: ["mdm", "apple", "device-management", "security"], status_url: "https://status.kandji.io/api/v2/status.json", page_url: "https://status.kandji.io", type: "statuspage" },
+  // AI video generation (talking avatars)
+  { id: "d_id", name: "D-ID", tags: ["ai", "video", "avatars", "generative"], status_url: "https://status.d-id.com/api/v2/status.json", page_url: "https://status.d-id.com", type: "statuspage" },
+  // Decentralized IoT wireless network
+  { id: "helium", name: "Helium", tags: ["iot", "blockchain", "wireless", "network"], status_url: "https://status.helium.com/api/v2/status.json", page_url: "https://status.helium.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2099,7 +2127,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.36.0" },
+  { name: "statuscraft", version: "2.37.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -2172,7 +2200,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 798 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 812 services.",
           },
         },
         required: [],
