@@ -1832,6 +1832,27 @@ const SERVICES = [
     { id: "aloware", name: "Aloware", tags: ["contact-center", "voip", "sales", "saas"], status_url: "https://status.aloware.com/api/v2/status.json", page_url: "https://status.aloware.com", type: "statuspage" },
     // Web accessibility
     { id: "audioeye", name: "AudioEye", tags: ["accessibility", "ada", "compliance", "saas"], status_url: "https://status.audioeye.com/api/v2/status.json", page_url: "https://status.audioeye.com", type: "statuspage" },
+    // Tick 123 additions
+    // Cap table / equity management
+    { id: "carta", name: "Carta", tags: ["fintech", "cap-table", "equity", "saas"], status_url: "https://status.carta.com/api/v2/status.json", page_url: "https://status.carta.com", type: "statuspage" },
+    // Streaming SQL / real-time database
+    { id: "materialize", name: "Materialize", tags: ["database", "streaming", "sql", "real-time"], status_url: "https://status.materialize.com/api/v2/status.json", page_url: "https://status.materialize.com", type: "statuspage" },
+    // Developer portal / internal developer platform
+    { id: "port", name: "Port", tags: ["developer-portal", "platform-engineering", "idp", "devops"], status_url: "https://status.getport.io/api/v2/status.json", page_url: "https://status.getport.io", type: "statuspage" },
+    // Email newsletter platform
+    { id: "buttondown", name: "Buttondown", tags: ["email", "newsletter", "publishing", "saas"], status_url: "https://status.buttondown.com/api/v2/status.json", page_url: "https://status.buttondown.com", type: "statuspage" },
+    // AI speech recognition / transcription
+    { id: "speechmatics", name: "Speechmatics", tags: ["ai", "speech-recognition", "transcription", "api"], status_url: "https://status.speechmatics.com/api/v2/status.json", page_url: "https://status.speechmatics.com", type: "statuspage" },
+    // Mortgage / lending technology
+    { id: "blend", name: "Blend", tags: ["fintech", "mortgage", "lending", "saas"], status_url: "https://status.blend.com/api/v2/status.json", page_url: "https://status.blend.com", type: "statuspage" },
+    // In-app subscription / monetization management
+    { id: "revenuecat", name: "RevenueCat", tags: ["mobile", "subscriptions", "payments", "saas"], status_url: "https://status.revenuecat.com/api/v2/status.json", page_url: "https://status.revenuecat.com", type: "statuspage" },
+    // No-code data automation / ETL
+    { id: "parabola", name: "Parabola", tags: ["no-code", "data", "automation", "etl"], status_url: "https://status.parabola.io/api/v2/status.json", page_url: "https://status.parabola.io", type: "statuspage" },
+    // Read-it-later / article saving
+    { id: "omnivore", name: "Omnivore", tags: ["read-it-later", "reading", "content", "open-source"], status_url: "https://status.omnivore.io/api/v2/status.json", page_url: "https://status.omnivore.io", type: "statuspage" },
+    // Restaurant tech / digital ordering platform
+    { id: "lunchbox", name: "Lunchbox", tags: ["restaurant", "online-ordering", "delivery", "saas"], status_url: "https://status.lunchbox.io/api/v2/status.json", page_url: "https://status.lunchbox.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -2282,7 +2303,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 892 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 902 services.",
                     },
                 },
                 required: [],
