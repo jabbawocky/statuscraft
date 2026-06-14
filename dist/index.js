@@ -118,8 +118,8 @@ const SERVICES = [
         id: "fly",
         name: "Fly.io",
         tags: ["hosting", "paas", "deployment"],
-        status_url: "https://status.fly.io/api/v2/status.json",
-        page_url: "https://status.fly.io",
+        status_url: "https://flyio.statuspage.io/api/v2/status.json",
+        page_url: "https://status.flyio.net",
         type: "statuspage",
     },
     {
@@ -1940,6 +1940,46 @@ const SERVICES = [
     // Employee rewards / gifting
     { id: "rybbon", name: "Rybbon (BHN Rewards)", tags: ["rewards", "gifting", "employee-engagement", "saas"], status_url: "https://status.rybbon.net/api/v2/status.json", page_url: "https://status.rybbon.net", type: "statuspage" },
     { id: "xoxoday", name: "Xoxoday", tags: ["rewards", "gifting", "employee-engagement", "saas"], status_url: "https://status.xoxoday.com/api/v2/status.json", page_url: "https://status.xoxoday.com", type: "statuspage" },
+    // AI image generation / inference
+    { id: "fal", name: "Fal.ai", tags: ["ai", "inference", "image-generation", "api"], status_url: "https://fal.statuspage.io/api/v2/status.json", page_url: "https://fal.statuspage.io", type: "statuspage" },
+    // Vector / ML database
+    { id: "lancedb", name: "LanceDB", tags: ["database", "vector", "ai", "ml"], status_url: "https://lancedb.statuspage.io/api/v2/status.json", page_url: "https://lancedb.statuspage.io", type: "statuspage" },
+    // Communications API
+    { id: "vonage", name: "Vonage API", tags: ["communications", "sms", "voice", "api"], status_url: "https://vonageapi.statuspage.io/api/v2/status.json", page_url: "https://vonageapi.statuspage.io", type: "statuspage" },
+    // Email security / secure email gateway
+    { id: "mimecast", name: "Mimecast", tags: ["email", "security", "enterprise", "compliance"], status_url: "https://api.status.io/1.0/status/5d849b1c02e65b3ec45369d4", page_url: "https://status.mimecast.com", type: "statusio" },
+    // Customer data platform
+    { id: "lytics", name: "Lytics", tags: ["cdp", "analytics", "personalization", "data"], status_url: "https://lytics.statuspage.io/api/v2/status.json", page_url: "https://lytics.statuspage.io", type: "statuspage" },
+    // Data management platform (formerly Treasure Data, now Treasure AI by ARM)
+    { id: "treasure_ai", name: "Treasure AI", tags: ["cdp", "data", "analytics", "enterprise"], status_url: "https://treasure-data.statuspage.io/api/v2/status.json", page_url: "https://status.treasure.ai", type: "statuspage" },
+    // CDN
+    { id: "cachefly", name: "CacheFly", tags: ["cdn", "networking", "media", "performance"], status_url: "https://cachefly.statuspage.io/api/v2/status.json", page_url: "https://cachefly.statuspage.io", type: "statuspage" },
+    // CockroachDB Cloud (managed / cloud)
+    { id: "cockroachdb_cloud", name: "CockroachDB Cloud", tags: ["database", "distributed", "sql", "cloud"], status_url: "https://cockroachcloud.statuspage.io/api/v2/status.json", page_url: "https://cockroachcloud.statuspage.io", type: "statuspage" },
+    // Billing / subscription management
+    { id: "maxio", name: "Maxio", tags: ["billing", "subscription", "revenue", "saas"], status_url: "https://maxio.statuspage.io/api/v2/status.json", page_url: "https://maxio.statuspage.io", type: "statuspage" },
+    // E-commerce personalization
+    { id: "rebuy", name: "Rebuy", tags: ["ecommerce", "personalization", "shopify", "saas"], status_url: "https://rebuy.statuspage.io/api/v2/status.json", page_url: "https://rebuy.statuspage.io", type: "statuspage" },
+    // API testing / collaboration
+    { id: "hoppscotch", name: "Hoppscotch", tags: ["api", "developer-tools", "testing", "open-source"], status_url: "https://hoppscotch.statuspage.io/api/v2/status.json", page_url: "https://hoppscotch.statuspage.io", type: "statuspage" },
+    // Logistics / TMS
+    { id: "turvo", name: "Turvo", tags: ["logistics", "supply-chain", "tms", "saas"], status_url: "https://turvo.statuspage.io/api/v2/status.json", page_url: "https://status.turvo.com", type: "statuspage" },
+    // Banking-as-a-service
+    { id: "treasury_prime", name: "Treasury Prime", tags: ["fintech", "banking", "baas", "api"], status_url: "https://treasuryprime.statuspage.io/api/v2/status.json", page_url: "https://status.treasuryprime.com", type: "statuspage" },
+    // IoT / hardware platform
+    { id: "arduino", name: "Arduino", tags: ["iot", "hardware", "embedded", "cloud"], status_url: "https://arduino.statuspage.io/api/v2/status.json", page_url: "https://status.arduino.cc", type: "statuspage" },
+    // Education LMS (now part of PowerSchool)
+    { id: "schoology", name: "Schoology", tags: ["education", "lms", "k12", "saas"], status_url: "https://schoology.statuspage.io/api/v2/status.json", page_url: "https://schoology.statuspage.io", type: "statuspage" },
+    // Education platform for K-12
+    { id: "seesaw", name: "Seesaw", tags: ["education", "k12", "learning", "saas"], status_url: "https://seesaw.statuspage.io/api/v2/status.json", page_url: "https://seesaw.statuspage.io", type: "statuspage" },
+    // Field service management
+    { id: "servicemax", name: "ServiceMax", tags: ["field-service", "iot", "enterprise", "saas"], status_url: "https://servicemax.statuspage.io/api/v2/status.json", page_url: "https://servicemax.statuspage.io", type: "statuspage" },
+    // Hospitality / hotel property management system
+    { id: "mews", name: "Mews", tags: ["hospitality", "pms", "hotel", "saas"], status_url: "https://mews.statuspage.io/api/v2/status.json", page_url: "https://mews.statuspage.io", type: "statuspage" },
+    // Point-of-sale (restaurant / retail)
+    { id: "revel", name: "Revel Systems", tags: ["pos", "retail", "restaurant", "saas"], status_url: "https://revel.statuspage.io/api/v2/status.json", page_url: "https://revel.statuspage.io", type: "statuspage" },
+    // Commercial real estate CRM / marketing
+    { id: "buildout", name: "Buildout", tags: ["real-estate", "crm", "commercial", "saas"], status_url: "https://buildout.statuspage.io/api/v2/status.json", page_url: "https://buildout.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -2390,7 +2430,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 951 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 971 services.",
                     },
                 },
                 required: [],
