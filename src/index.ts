@@ -2564,6 +2564,38 @@ const SERVICES: ServiceConfig[] = [
   { id: "anomali", name: "Anomali", tags: ["security", "threat-intelligence", "siem", "saas"], status_url: "https://status.anomali.com/api/v2/status.json", page_url: "https://status.anomali.com", type: "statuspage" },
   // IoT connectivity
   { id: "emnify", name: "emnify", tags: ["iot", "connectivity", "sim", "infrastructure"], status_url: "https://status.emnify.com/api/v2/status.json", page_url: "https://status.emnify.com", type: "statuspage" },
+  // Enterprise architecture / IT portfolio management
+  { id: "ardoq", name: "Ardoq", tags: ["enterprise-architecture", "it-portfolio", "saas", "governance"], status_url: "https://status.ardoq.com/api/v2/status.json", page_url: "https://status.ardoq.com", type: "statuspage" },
+  // Video interviewing / hiring platform
+  { id: "spark_hire", name: "Spark Hire Recruit", tags: ["recruiting", "video-interview", "hr", "saas"], status_url: "https://status.comeet.com/api/v2/status.json", page_url: "https://status.comeet.com", type: "statuspage" },
+  // Website builder
+  { id: "ucraft", name: "Ucraft", tags: ["website-builder", "no-code", "saas", "ecommerce"], status_url: "https://status.ucraft.com/api/v2/status.json", page_url: "https://status.ucraft.com", type: "statuspage" },
+  // CMS / digital experience platform
+  { id: "sitefinity", name: "Sitefinity Insight", tags: ["cms", "digital-experience", "marketing", "saas"], status_url: "https://status.sitefinity.com/api/v2/status.json", page_url: "https://status.sitefinity.com", type: "statuspage" },
+  // Payment processing
+  { id: "paysafe", name: "Paysafe", tags: ["payments", "fintech", "processing", "api"], status_url: "https://status.paysafe.com/api/v2/status.json", page_url: "https://status.paysafe.com", type: "statuspage" },
+  // Crowdfunding platform
+  { id: "kickstarter", name: "Kickstarter", tags: ["crowdfunding", "marketplace", "creative", "saas"], status_url: "https://status.kickstarter.com/api/v2/status.json", page_url: "https://status.kickstarter.com", type: "statuspage" },
+  // Crypto payment processing
+  { id: "bitpay", name: "BitPay", tags: ["crypto", "payments", "bitcoin", "fintech"], status_url: "https://status.bitpay.com/api/v2/status.json", page_url: "https://status.bitpay.com", type: "statuspage" },
+  // Crypto on-ramp
+  { id: "moonpay", name: "MoonPay", tags: ["crypto", "on-ramp", "payments", "fintech"], status_url: "https://status.moonpay.com/api/v2/status.json", page_url: "https://status.moonpay.com", type: "statuspage" },
+  // Fiat-to-crypto gateway
+  { id: "onramper", name: "Onramper", tags: ["crypto", "on-ramp", "fintech", "api"], status_url: "https://status.onramper.com/api/v2/status.json", page_url: "https://status.onramper.com", type: "statuspage" },
+  // IoT / LoRaWAN network
+  { id: "the_things_network", name: "The Things Network", tags: ["iot", "lorawan", "connectivity", "open-source"], status_url: "https://status.thethings.network/api/v2/status.json", page_url: "https://status.thethings.network", type: "statuspage" },
+  // IoT data platform
+  { id: "ubidots", name: "Ubidots", tags: ["iot", "data-platform", "analytics", "saas"], status_url: "https://status.ubidots.com/api/v2/status.json", page_url: "https://status.ubidots.com", type: "statuspage" },
+  // Lending / fintech software
+  { id: "meridianlink", name: "MeridianLink", tags: ["fintech", "lending", "banking", "saas"], status_url: "https://status.meridianlink.com/api/v2/status.json", page_url: "https://status.meridianlink.com", type: "statuspage" },
+  // Professional services automation / PSA
+  { id: "kantata", name: "Kantata OX", tags: ["psa", "project-management", "resource-management", "saas"], status_url: "https://status.mavenlink.com/api/v2/status.json", page_url: "https://status.mavenlink.com", type: "statuspage" },
+  // Community / customer engagement platform
+  { id: "khoros", name: "Khoros", tags: ["community", "customer-engagement", "social", "saas"], status_url: "https://status.khoros.com/api/v2/status.json", page_url: "https://status.khoros.com", type: "statuspage" },
+  // Online community platform
+  { id: "hivebrite", name: "Hivebrite", tags: ["community", "membership", "network", "saas"], status_url: "https://status.hivebrite.com/api/v2/status.json", page_url: "https://status.hivebrite.com", type: "statuspage" },
+  // No-code database / app builder
+  { id: "knack", name: "Knack", tags: ["no-code", "database", "app-builder", "saas"], status_url: "https://status.knack.com/api/v2/status.json", page_url: "https://status.knack.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2933,7 +2965,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.44.0" },
+  { name: "statuscraft", version: "2.45.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -3006,7 +3038,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1292 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1308 services.",
           },
         },
         required: [],
