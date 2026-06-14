@@ -2385,6 +2385,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "reggora", name: "Reggora", tags: ["appraisal", "mortgage", "real-estate", "fintech"], status_url: "https://status.reggora.com/api/v2/status.json", page_url: "https://status.reggora.com", type: "statuspage" },
   { id: "eltropy", name: "Eltropy", tags: ["banking", "credit-union", "digital-banking", "communications"], status_url: "https://status.eltropy.com/api/v2/status.json", page_url: "https://status.eltropy.com", type: "statuspage" },
   { id: "glia", name: "Glia", tags: ["customer-service", "banking", "digital-service", "fintech"], status_url: "https://status.glia.com/api/v2/status.json", page_url: "https://status.glia.com", type: "statuspage" },
+  // Climate / sustainability tech
+  { id: "watershed", name: "Watershed", tags: ["climate", "carbon", "sustainability", "esg"], status_url: "https://status.watershed.com/api/v2/status.json", page_url: "https://status.watershed.com", type: "statuspage" },
+  { id: "persefoni", name: "Persefoni", tags: ["climate", "esg", "carbon-accounting", "sustainability"], status_url: "https://status.persefoni.com/api/v2/status.json", page_url: "https://status.persefoni.com", type: "statuspage" },
+  { id: "arcadia", name: "Arcadia", tags: ["energy", "utilities", "clean-energy", "climate"], status_url: "https://status.arcadia.com/api/v2/status.json", page_url: "https://status.arcadia.com", type: "statuspage" },
+  // Mental health benefits
+  { id: "spring_health", name: "Spring Health", tags: ["mental-health", "hr", "benefits", "wellness"], status_url: "https://springhealth.statuspage.io/api/v2/status.json", page_url: "https://springhealth.statuspage.io", type: "statuspage" },
+  // Accounting automation
+  { id: "botkeeper", name: "Botkeeper", tags: ["accounting", "bookkeeping", "ai", "automation"], status_url: "https://status.botkeeper.com/api/v2/status.json", page_url: "https://status.botkeeper.com", type: "statuspage" },
+  // Payment orchestration
+  { id: "gr4vy", name: "Gr4vy", tags: ["payments", "orchestration", "fintech", "api"], status_url: "https://status.gr4vy.com/api/v2/status.json", page_url: "https://status.gr4vy.com", type: "statuspage" },
+  // Master data management
+  { id: "reltio", name: "Reltio", tags: ["mdm", "master-data", "data-management", "cloud"], status_url: "https://status.reltio.com/api/v2/status.json", page_url: "https://status.reltio.com", type: "statuspage" },
+  // Email creation platform
+  { id: "stensul", name: "Stensul", tags: ["email", "marketing", "creation", "saas"], status_url: "https://status.stensul.com/api/v2/status.json", page_url: "https://status.stensul.com", type: "statuspage" },
+  // Digital asset management
+  { id: "acquia_dam", name: "Acquia DAM (Widen)", tags: ["dam", "digital-asset-management", "marketing", "cms"], status_url: "https://status.widen.com/api/v2/status.json", page_url: "https://status.widen.com", type: "statuspage" },
+  { id: "air", name: "Air", tags: ["creative-ops", "dam", "collaboration", "design"], status_url: "https://status.air.inc/api/v2/status.json", page_url: "https://status.air.inc", type: "statuspage" },
+  // Privacy / consent management
+  { id: "privacera", name: "Privacera", tags: ["data-privacy", "governance", "security", "cloud"], status_url: "https://status.privacera.com/api/v2/status.json", page_url: "https://status.privacera.com", type: "statuspage" },
+  { id: "transcend", name: "Transcend", tags: ["privacy", "data-rights", "compliance", "saas"], status_url: "https://status.transcend.io/api/v2/status.json", page_url: "https://status.transcend.io", type: "statuspage" },
+  { id: "ketch", name: "Ketch", tags: ["privacy", "consent", "data-governance", "compliance"], status_url: "https://status.ketch.com/api/v2/status.json", page_url: "https://status.ketch.com", type: "statuspage" },
+  { id: "didomi", name: "Didomi", tags: ["consent", "privacy", "gdpr", "saas"], status_url: "https://status.didomi.io/api/v2/status.json", page_url: "https://status.didomi.io", type: "statuspage" },
+  // Restaurant operations
+  { id: "restaurant365", name: "Restaurant365", tags: ["restaurant", "accounting", "operations", "saas"], status_url: "https://status.restaurant365.com/api/v2/status.json", page_url: "https://status.restaurant365.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2827,7 +2851,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1181 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1196 services.",
           },
         },
         required: [],
