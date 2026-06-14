@@ -1683,6 +1683,29 @@ const SERVICES: ServiceConfig[] = [
   { id: "lithic", name: "Lithic", tags: ["payments", "card-issuing", "fintech", "api"], status_url: "https://status.lithic.com/api/v2/status.json", page_url: "https://status.lithic.com", type: "statuspage" },
   // Card issuing / embedded finance
   { id: "highnote", name: "Highnote", tags: ["payments", "card-issuing", "fintech", "api"], status_url: "https://status.highnote.com/api/v2/status.json", page_url: "https://status.highnote.com", type: "statuspage" },
+  // Low-code / no-code platforms
+  { id: "outsystems", name: "OutSystems", tags: ["low-code", "no-code", "development", "saas"], status_url: "https://status.outsystems.com/api/v2/status.json", page_url: "https://status.outsystems.com", type: "statuspage" },
+  { id: "mendix", name: "Mendix", tags: ["low-code", "no-code", "development", "saas"], status_url: "https://status.mendix.com/api/v2/status.json", page_url: "https://status.mendix.com", type: "statuspage" },
+  // Automation / integration
+  { id: "make_com", name: "Make", tags: ["automation", "integration", "no-code", "workflow"], status_url: "https://status.make.com/api/v2/status.json", page_url: "https://status.make.com", type: "statuspage" },
+  { id: "stitch_data", name: "Stitch Data", tags: ["etl", "data-integration", "pipeline", "analytics"], status_url: "https://status.stitchdata.com/api/v2/status.json", page_url: "https://status.stitchdata.com", type: "statuspage" },
+  // Code quality / security
+  { id: "sonarqube", name: "SonarQube", tags: ["code-quality", "sast", "devtools", "ci-cd"], status_url: "https://status.sonarqube.com/api/v2/status.json", page_url: "https://status.sonarqube.com", type: "statuspage" },
+  // Monitoring / observability
+  { id: "newrelic", name: "New Relic", tags: ["monitoring", "observability", "apm", "saas"], status_url: "https://status.newrelic.com/api/v2/status.json", page_url: "https://status.newrelic.com", type: "statuspage" },
+  { id: "logz_io", name: "Logz.io", tags: ["monitoring", "observability", "logging", "saas"], status_url: "https://status.logz.io/api/v2/status.json", page_url: "https://status.logz.io", type: "statuspage" },
+  // LMS / e-learning
+  { id: "skilljar", name: "Skilljar", tags: ["lms", "e-learning", "training", "saas"], status_url: "https://status.skilljar.com/api/v2/status.json", page_url: "https://status.skilljar.com", type: "statuspage" },
+  // CRM / sales
+  { id: "nutshell", name: "Nutshell", tags: ["crm", "sales", "email", "saas"], status_url: "https://status.nutshell.com/api/v2/status.json", page_url: "https://status.nutshell.com", type: "statuspage" },
+  // Email marketing
+  { id: "listrak", name: "Listrak", tags: ["email", "marketing", "ecommerce", "saas"], status_url: "https://status.listrak.com/api/v2/status.json", page_url: "https://status.listrak.com", type: "statuspage" },
+  // Legal tech
+  { id: "practicepanther", name: "PracticePanther", tags: ["legal", "law-firm", "practice-management", "saas"], status_url: "https://status.practicepanther.com/api/v2/status.json", page_url: "https://status.practicepanther.com", type: "statuspage" },
+  // Analytics / BI
+  { id: "count_co", name: "Count", tags: ["analytics", "bi", "sql", "data"], status_url: "https://status.count.co/api/v2/status.json", page_url: "https://status.count.co", type: "statuspage" },
+  // Reputation management
+  { id: "reputation", name: "Reputation.com", tags: ["reputation", "reviews", "marketing", "saas"], status_url: "https://status.reputation.com/api/v2/status.json", page_url: "https://status.reputation.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2052,7 +2075,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.35.0" },
+  { name: "statuscraft", version: "2.36.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -2125,7 +2148,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 774 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 786 services.",
           },
         },
         required: [],
