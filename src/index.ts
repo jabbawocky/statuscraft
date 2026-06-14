@@ -1323,6 +1323,35 @@ const SERVICES: ServiceConfig[] = [
   { id: "cloudbees", name: "CloudBees", tags: ["ci-cd", "devops", "jenkins", "enterprise"], status_url: "https://status.cloudbees.com/api/v2/status.json", page_url: "https://status.cloudbees.com", type: "statuspage" },
   // HR / compliance
   { id: "finch", name: "Finch", tags: ["hr", "payroll", "integration", "api"], status_url: "https://status.tryfinch.com/api/v2/status.json", page_url: "https://status.tryfinch.com", type: "statuspage" },
+  // Communications / messaging
+  { id: "bird", name: "Bird", tags: ["communications", "sms", "email", "messaging"], status_url: "https://status.bird.com/api/v2/status.json", page_url: "https://status.bird.com", type: "statuspage" },
+  { id: "mailersend", name: "MailerSend", tags: ["email", "transactional", "api", "developer-tools"], status_url: "https://status.mailersend.com/api/v2/status.json", page_url: "https://status.mailersend.com", type: "statuspage" },
+  // Payments / e-commerce
+  { id: "flutterwave", name: "Flutterwave", tags: ["payments", "fintech", "africa", "api"], status_url: "https://status.flutterwave.com/api/v2/status.json", page_url: "https://status.flutterwave.com", type: "statuspage" },
+  { id: "fastspring", name: "FastSpring", tags: ["ecommerce", "payments", "saas", "subscriptions"], status_url: "https://status.fastspring.com/api/v2/status.json", page_url: "https://status.fastspring.com", type: "statuspage" },
+  { id: "bold_commerce", name: "Bold Commerce", tags: ["ecommerce", "checkout", "subscriptions", "shopify"], status_url: "https://status.boldcommerce.com/api/v2/status.json", page_url: "https://status.boldcommerce.com", type: "statuspage" },
+  // Creator platforms
+  { id: "patreon", name: "Patreon", tags: ["creator", "membership", "subscriptions", "saas"], status_url: "https://status.patreon.com/api/v2/status.json", page_url: "https://status.patreon.com", type: "statuspage" },
+  { id: "memberful", name: "Memberful", tags: ["membership", "creator", "subscriptions", "saas"], status_url: "https://status.memberful.com/api/v2/status.json", page_url: "https://status.memberful.com", type: "statuspage" },
+  // Ad tech
+  { id: "kevel", name: "Kevel", tags: ["ad-tech", "api", "advertising", "saas"], status_url: "https://status.kevel.co/api/v2/status.json", page_url: "https://status.kevel.co", type: "statuspage" },
+  // AI evaluation / LLM tooling
+  { id: "braintrust", name: "Braintrust", tags: ["ai", "llm", "evaluation", "developer-tools"], status_url: "https://status.braintrust.dev/api/v2/status.json", page_url: "https://status.braintrust.dev", type: "statuspage" },
+  // Auth / Web3
+  { id: "magic_link", name: "Magic.link", tags: ["auth", "web3", "passwordless", "identity"], status_url: "https://status.magic.link/api/v2/status.json", page_url: "https://status.magic.link", type: "statuspage" },
+  // BI / Analytics
+  { id: "mode_analytics", name: "Mode Analytics", tags: ["analytics", "bi", "sql", "data"], status_url: "https://status.modeanalytics.com/api/v2/status.json", page_url: "https://status.modeanalytics.com", type: "statuspage" },
+  // Customer success
+  { id: "planhat", name: "Planhat", tags: ["customer-success", "crm", "saas", "analytics"], status_url: "https://status.planhat.com/api/v2/status.json", page_url: "https://status.planhat.com", type: "statuspage" },
+  { id: "catalyst_io", name: "Catalyst", tags: ["customer-success", "crm", "saas", "analytics"], status_url: "https://status.catalyst.io/api/v2/status.json", page_url: "https://status.catalyst.io", type: "statuspage" },
+  // Security / AppSec
+  { id: "cycode", name: "Cycode", tags: ["security", "appsec", "devsecops", "code-security"], status_url: "https://status.cycode.com/api/v2/status.json", page_url: "https://status.cycode.com", type: "statuspage" },
+  // DNS security
+  { id: "dnsfilter", name: "DNSFilter", tags: ["dns", "security", "filtering", "network"], status_url: "https://status.dnsfilter.com/api/v2/status.json", page_url: "https://status.dnsfilter.com", type: "statuspage" },
+  // CDN / edge
+  { id: "section_io", name: "Section.io", tags: ["cdn", "edge", "platform", "devops"], status_url: "https://status.section.io/api/v2/status.json", page_url: "https://status.section.io", type: "statuspage" },
+  // GPU compute
+  { id: "sfcompute", name: "SF Compute", tags: ["gpu", "compute", "cloud", "ai"], status_url: "https://status.sfcompute.com/api/v2/status.json", page_url: "https://status.sfcompute.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1765,7 +1794,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 562 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 579 services.",
           },
         },
         required: [],
