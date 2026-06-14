@@ -1902,6 +1902,16 @@ const SERVICES: ServiceConfig[] = [
   { id: "omnivore", name: "Omnivore", tags: ["read-it-later", "reading", "content", "open-source"], status_url: "https://status.omnivore.io/api/v2/status.json", page_url: "https://status.omnivore.io", type: "statuspage" },
   // Restaurant tech / digital ordering platform
   { id: "lunchbox", name: "Lunchbox", tags: ["restaurant", "online-ordering", "delivery", "saas"], status_url: "https://status.lunchbox.io/api/v2/status.json", page_url: "https://status.lunchbox.io", type: "statuspage" },
+  { id: "aweber", name: "AWeber", tags: ["email-marketing", "marketing", "newsletters", "saas"], status_url: "https://status.aweber.com/api/v2/status.json", page_url: "https://status.aweber.com", type: "statuspage" },
+  { id: "clickfunnels", name: "ClickFunnels", tags: ["marketing", "funnels", "landing-pages", "saas"], status_url: "https://status.clickfunnels.com/api/v2/status.json", page_url: "https://status.clickfunnels.com", type: "statuspage" },
+  { id: "sevenrooms", name: "SevenRooms", tags: ["restaurant", "reservations", "hospitality", "saas"], status_url: "https://status.sevenrooms.com/api/v2/status.json", page_url: "https://status.sevenrooms.com", type: "statuspage" },
+  { id: "beehiiv", name: "beehiiv", tags: ["newsletters", "email-marketing", "publishing", "creator"], status_url: "https://status.beehiiv.com/api/v2/status.json", page_url: "https://status.beehiiv.com", type: "statuspage" },
+  { id: "uipath", name: "UiPath", tags: ["rpa", "automation", "enterprise", "saas"], status_url: "https://status.uipath.com/api/v2/status.json", page_url: "https://status.uipath.com", type: "statuspage" },
+  { id: "datarobot", name: "DataRobot", tags: ["ai", "ml", "machine-learning", "data-science"], status_url: "https://status.datarobot.com/api/v2/status.json", page_url: "https://status.datarobot.com", type: "statuspage" },
+  { id: "robin", name: "Robin", tags: ["workplace", "desk-booking", "office", "facilities"], status_url: "https://status.robinpowered.com/api/v2/status.json", page_url: "https://status.robinpowered.com", type: "statuspage" },
+  { id: "envoy", name: "Envoy", tags: ["visitor-management", "workplace", "office", "facilities"], status_url: "https://status.envoy.com/api/v2/status.json", page_url: "https://status.envoy.com", type: "statuspage" },
+  { id: "brivo", name: "Brivo", tags: ["access-control", "security", "physical-security", "saas"], status_url: "https://status.brivo.com/api/v2/status.json", page_url: "https://status.brivo.com", type: "statuspage" },
+  { id: "eptura_visitor", name: "Eptura Visitor", tags: ["visitor-management", "workplace", "facilities", "saas"], status_url: "https://status.proxyclick.com/api/v2/status.json", page_url: "https://status.proxyclick.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2271,7 +2281,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.40.0" },
+  { name: "statuscraft", version: "2.41.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -2344,7 +2354,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 902 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 912 services.",
           },
         },
         required: [],
