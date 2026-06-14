@@ -1494,6 +1494,36 @@ const SERVICES = [
     { id: "laserfiche", name: "Laserfiche", tags: ["content-management", "ecm", "document-management", "enterprise"], status_url: "https://status.laserfiche.com/api/v2/status.json", page_url: "https://status.laserfiche.com", type: "statuspage" },
     // Construction / BIM tech
     { id: "newforma_konekt", name: "Newforma Konekt", tags: ["construction", "project-management", "bim", "enterprise"], status_url: "https://status.bimtrack.co/api/v2/status.json", page_url: "https://status.bimtrack.co", type: "statuspage" },
+    // Tick 109 additions
+    // Restaurant / hospitality tech
+    { id: "toasttab", name: "Toast POS", tags: ["pos", "restaurant", "hospitality", "payments"], status_url: "https://status.toasttab.com/api/v2/status.json", page_url: "https://status.toasttab.com", type: "statuspage" },
+    { id: "olo", name: "Olo", tags: ["restaurant", "online-ordering", "delivery", "saas"], status_url: "https://status.olo.com/api/v2/status.json", page_url: "https://status.olo.com", type: "statuspage" },
+    // CRM / sales
+    { id: "capsulecrm", name: "Capsule CRM", tags: ["crm", "sales", "smb", "saas"], status_url: "https://status.capsulecrm.com/api/v2/status.json", page_url: "https://status.capsulecrm.com", type: "statuspage" },
+    // Social media management
+    { id: "buffer", name: "Buffer", tags: ["social-media", "marketing", "scheduling", "saas"], status_url: "https://status.buffer.com/api/v2/status.json", page_url: "https://status.buffer.com", type: "statuspage" },
+    { id: "statusbrew", name: "Statusbrew", tags: ["social-media", "marketing", "analytics", "saas"], status_url: "https://status.statusbrew.com/api/v2/status.json", page_url: "https://status.statusbrew.com", type: "statuspage" },
+    // Sales enablement / training
+    { id: "mindtickle", name: "MindTickle", tags: ["sales-enablement", "training", "revenue", "enterprise"], status_url: "https://status.mindtickle.com/api/v2/status.json", page_url: "https://status.mindtickle.com", type: "statuspage" },
+    // ERP / integration
+    { id: "salto", name: "Salto", tags: ["erp", "integration", "netsuite", "saas"], status_url: "https://status.salto.io/api/v2/status.json", page_url: "https://status.salto.io", type: "statuspage" },
+    // Field service / home services
+    { id: "housecallpro", name: "Housecall Pro", tags: ["field-service", "home-services", "hvac", "saas"], status_url: "https://status.housecallpro.com/api/v2/status.json", page_url: "https://status.housecallpro.com", type: "statuspage" },
+    // HR / recruiting
+    { id: "recruitee", name: "Tellent (Recruitee)", tags: ["ats", "recruiting", "hr", "saas"], status_url: "https://status.recruitee.com/api/v2/status.json", page_url: "https://status.recruitee.com", type: "statuspage" },
+    { id: "comeet", name: "Comeet", tags: ["ats", "recruiting", "hr", "saas"], status_url: "https://status.comeet.com/api/v2/status.json", page_url: "https://status.comeet.com", type: "statuspage" },
+    // Proposals / e-signatures
+    { id: "proposify", name: "Proposify", tags: ["proposals", "sales", "e-signature", "saas"], status_url: "https://status.proposify.com/api/v2/status.json", page_url: "https://status.proposify.com", type: "statuspage" },
+    { id: "qwilr", name: "Qwilr", tags: ["proposals", "sales", "content", "saas"], status_url: "https://status.qwilr.com/api/v2/status.json", page_url: "https://status.qwilr.com", type: "statuspage" },
+    // Spend management / corporate cards
+    { id: "spendesk", name: "Spendesk", tags: ["spend-management", "finance", "corporate-cards", "saas"], status_url: "https://status.spendesk.com/api/v2/status.json", page_url: "https://status.spendesk.com", type: "statuspage" },
+    { id: "pleo", name: "Pleo", tags: ["spend-management", "finance", "corporate-cards", "saas"], status_url: "https://status.pleo.io/api/v2/status.json", page_url: "https://status.pleo.io", type: "statuspage" },
+    // IT management / MSP / RMM
+    { id: "ninjaone", name: "NinjaOne", tags: ["it-management", "rmm", "msp", "endpoint"], status_url: "https://status.ninjaone.com/api/v2/status.json", page_url: "https://status.ninjaone.com", type: "statuspage" },
+    { id: "atera", name: "Atera", tags: ["it-management", "rmm", "msp", "saas"], status_url: "https://status.atera.com/api/v2/status.json", page_url: "https://status.atera.com", type: "statuspage" },
+    { id: "kaseya", name: "Kaseya", tags: ["it-management", "rmm", "msp", "enterprise"], status_url: "https://status.kaseya.com/api/v2/status.json", page_url: "https://status.kaseya.com", type: "statuspage" },
+    { id: "auvik", name: "Auvik Networks", tags: ["network-monitoring", "it-management", "msp", "saas"], status_url: "https://status.auvik.com/api/v2/status.json", page_url: "https://status.auvik.com", type: "statuspage" },
+    { id: "datto", name: "Datto", tags: ["backup", "disaster-recovery", "msp", "enterprise"], status_url: "https://status.datto.com/api/v2/status.json", page_url: "https://status.datto.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -1944,7 +1974,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 694 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 714 services.",
                     },
                 },
                 required: [],
