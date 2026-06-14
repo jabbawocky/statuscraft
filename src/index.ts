@@ -1813,6 +1813,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "stacker", name: "Stacker", tags: ["no-code", "app-builder", "productivity", "saas"], status_url: "https://status.stacker.app/api/v2/status.json", page_url: "https://status.stacker.app", type: "statuspage" },
   // Business intelligence / analytics
   { id: "omni", name: "Omni Analytics", tags: ["bi", "analytics", "data", "saas"], status_url: "https://status.omni.co/api/v2/status.json", page_url: "https://status.omni.co", type: "statuspage" },
+  // Crypto exchanges
+  { id: "coinbase", name: "Coinbase", tags: ["crypto", "exchange", "fintech", "payments"], status_url: "https://status.coinbase.com/api/v2/status.json", page_url: "https://status.coinbase.com", type: "statuspage" },
+  { id: "kraken", name: "Kraken", tags: ["crypto", "exchange", "fintech", "trading"], status_url: "https://status.kraken.com/api/v2/status.json", page_url: "https://status.kraken.com", type: "statuspage" },
+  { id: "gemini", name: "Gemini Exchange", tags: ["crypto", "exchange", "fintech", "trading"], status_url: "https://status.gemini.com/api/v2/status.json", page_url: "https://status.gemini.com", type: "statuspage" },
+  { id: "blockchain_com", name: "Blockchain.com", tags: ["crypto", "bitcoin", "fintech", "wallet"], status_url: "https://status.blockchain.com/api/v2/status.json", page_url: "https://status.blockchain.com", type: "statuspage" },
+  { id: "cexio", name: "CEX.IO", tags: ["crypto", "exchange", "fintech", "trading"], status_url: "https://status.cex.io/api/v2/status.json", page_url: "https://status.cex.io", type: "statuspage" },
+  // Project management
+  { id: "workflowmax", name: "WorkflowMax", tags: ["project-management", "job-management", "saas", "productivity"], status_url: "https://status.workflowmax.com/api/v2/status.json", page_url: "https://status.workflowmax.com", type: "statuspage" },
+  // AI / vector search
+  { id: "vectara", name: "Vectara", tags: ["ai", "search", "vector-db", "llm", "rag"], status_url: "https://status.vectara.com/api/v2/status.json", page_url: "https://status.vectara.com", type: "statuspage" },
+  // Education
+  { id: "duolingo", name: "Duolingo", tags: ["education", "language-learning", "saas", "mobile"], status_url: "https://status.duolingo.com/api/v2/status.json", page_url: "https://status.duolingo.com", type: "statuspage" },
+  { id: "kahoot", name: "Kahoot", tags: ["education", "learning", "gamification", "saas"], status_url: "https://status.kahoot.com/api/v2/status.json", page_url: "https://status.kahoot.com", type: "statuspage" },
+  // Email clients / privacy
+  { id: "superhuman", name: "Superhuman", tags: ["email", "productivity", "saas", "enterprise"], status_url: "https://status.superhuman.com/api/v2/status.json", page_url: "https://status.superhuman.com", type: "statuspage" },
+  { id: "proton", name: "Proton", tags: ["email", "privacy", "security", "vpn"], status_url: "https://status.proton.me/api/v2/status.json", page_url: "https://status.proton.me", type: "statuspage" },
+  // 3D design
+  { id: "spline", name: "Spline", tags: ["design", "3d", "creative", "developer-tools"], status_url: "https://status.spline.design/api/v2/status.json", page_url: "https://status.spline.design", type: "statuspage" },
+  // Website builder
+  { id: "duda", name: "Duda", tags: ["website-builder", "cms", "saas", "agencies"], status_url: "https://status.duda.co/api/v2/status.json", page_url: "https://status.duda.co", type: "statuspage" },
+  // Web performance testing
+  { id: "webpagetest", name: "WebPageTest", tags: ["performance", "testing", "developer-tools", "monitoring"], status_url: "https://status.webpagetest.org/api/v2/status.json", page_url: "https://status.webpagetest.org", type: "statuspage" },
+  // Databases
+  { id: "tembo", name: "Tembo", tags: ["database", "postgres", "cloud", "saas"], status_url: "https://status.tembo.io/api/v2/status.json", page_url: "https://status.tembo.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2182,7 +2206,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.38.0" },
+  { name: "statuscraft", version: "2.39.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -2255,7 +2279,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 841 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 856 services.",
           },
         },
         required: [],
