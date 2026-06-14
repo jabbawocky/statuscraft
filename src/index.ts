@@ -1505,6 +1505,23 @@ const SERVICES: ServiceConfig[] = [
   { id: "lightspeedhq", name: "Lightspeed", tags: ["pos", "retail", "ecommerce", "payments"], status_url: "https://status.lightspeedhq.com/api/v2/status.json", page_url: "https://status.lightspeedhq.com", type: "statuspage" },
   { id: "clover", name: "Clover", tags: ["pos", "payments", "retail", "smb"], status_url: "https://status.clover.com/api/v2/status.json", page_url: "https://status.clover.com", type: "statuspage" },
   { id: "shopkeep", name: "ShopKeep", tags: ["pos", "retail", "smb", "payments"], status_url: "https://status.shopkeep.com/api/v2/status.json", page_url: "https://status.shopkeep.com", type: "statuspage" },
+
+  // Tick 107 additions
+  { id: "goto", name: "GoTo", tags: ["collaboration", "meetings", "remote-work", "ucaas"], status_url: "https://status.goto.com/api/v2/status.json", page_url: "https://status.goto.com", type: "statuspage" },
+  { id: "splashtop", name: "Splashtop", tags: ["remote-access", "remote-desktop", "it", "saas"], status_url: "https://status.splashtop.com/api/v2/status.json", page_url: "https://status.splashtop.com", type: "statuspage" },
+  { id: "teamviewer", name: "TeamViewer", tags: ["remote-access", "remote-desktop", "it", "enterprise"], status_url: "https://status.teamviewer.com/api/v2/status.json", page_url: "https://status.teamviewer.com", type: "statuspage" },
+  { id: "easyship", name: "Easyship", tags: ["ecommerce", "shipping", "logistics", "saas"], status_url: "https://status.easyship.com/api/v2/status.json", page_url: "https://status.easyship.com", type: "statuspage" },
+  { id: "conductor", name: "Conductor", tags: ["seo", "content", "marketing", "analytics"], status_url: "https://status.conductor.com/api/v2/status.json", page_url: "https://status.conductor.com", type: "statuspage" },
+  { id: "manatal", name: "Manatal", tags: ["ats", "recruitment", "hr", "saas"], status_url: "https://status.manatal.com/api/v2/status.json", page_url: "https://status.manatal.com", type: "statuspage" },
+  { id: "workleap", name: "Workleap", tags: ["hr", "employee-experience", "engagement", "saas"], status_url: "https://status.workleap.com/api/v2/status.json", page_url: "https://status.workleap.com", type: "statuspage" },
+  { id: "servicetitan", name: "ServiceTitan", tags: ["field-service", "hvac", "plumbing", "saas"], status_url: "https://status.servicetitan.com/api/v2/status.json", page_url: "https://status.servicetitan.com", type: "statuspage" },
+  { id: "bizzabo", name: "Bizzabo", tags: ["events", "event-management", "marketing", "saas"], status_url: "https://status.bizzabo.com/api/v2/status.json", page_url: "https://status.bizzabo.com", type: "statuspage" },
+  { id: "airmeet", name: "Airmeet", tags: ["events", "virtual-events", "webinars", "saas"], status_url: "https://status.airmeet.com/api/v2/status.json", page_url: "https://status.airmeet.com", type: "statuspage" },
+  { id: "goldcast", name: "Goldcast", tags: ["events", "webinars", "marketing", "saas"], status_url: "https://status.goldcast.io/api/v2/status.json", page_url: "https://status.goldcast.io", type: "statuspage" },
+  { id: "demio", name: "Demio", tags: ["webinars", "events", "marketing", "saas"], status_url: "https://status.demio.com/api/v2/status.json", page_url: "https://status.demio.com", type: "statuspage" },
+  { id: "webinarjam", name: "WebinarJam", tags: ["webinars", "events", "marketing", "saas"], status_url: "https://status.webinarjam.com/api/v2/status.json", page_url: "https://status.webinarjam.com", type: "statuspage" },
+  { id: "lumigo", name: "Lumigo", tags: ["observability", "serverless", "monitoring", "developer"], status_url: "https://status.lumigo.io/api/v2/status.json", page_url: "https://status.lumigo.io", type: "statuspage" },
+  { id: "tomorrow_io", name: "Tomorrow.io", tags: ["weather", "api", "climate", "developer"], status_url: "https://status.tomorrow.io/api/v2/status.json", page_url: "https://status.tomorrow.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -1947,7 +1964,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 667 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 682 services.",
           },
         },
         required: [],
