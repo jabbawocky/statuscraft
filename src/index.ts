@@ -1598,6 +1598,27 @@ const SERVICES: ServiceConfig[] = [
   { id: "fourkites", name: "FourKites", tags: ["logistics", "supply-chain", "saas"], status_url: "https://status.fourkites.com/api/v2/status.json", page_url: "https://status.fourkites.com", type: "statuspage" },
   // Fleet management
   { id: "fleetio", name: "Fleetio", tags: ["fleet", "logistics", "saas"], status_url: "https://status.fleetio.com/api/v2/status.json", page_url: "https://status.fleetio.com", type: "statuspage" },
+  // UX research
+  { id: "usertesting", name: "UserTesting", tags: ["ux", "research", "testing", "saas"], status_url: "https://status.usertesting.com/api/v2/status.json", page_url: "https://status.usertesting.com", type: "statuspage" },
+  // Mobile attribution / analytics
+  { id: "appsflyer", name: "AppsFlyer", tags: ["analytics", "mobile", "attribution", "marketing"], status_url: "https://status.appsflyer.com/api/v2/status.json", page_url: "https://status.appsflyer.com", type: "statuspage" },
+  // Security / identity access management
+  { id: "cerby", name: "Cerby", tags: ["security", "iam", "access-management", "saas"], status_url: "https://status.cerby.com/api/v2/status.json", page_url: "https://status.cerby.com", type: "statuspage" },
+  { id: "socket_dev", name: "Socket", tags: ["security", "supply-chain", "npm", "devtools"], status_url: "https://status.socket.dev/api/v2/status.json", page_url: "https://status.socket.dev", type: "statuspage" },
+  // AI coding assistant
+  { id: "tabnine", name: "Tabnine", tags: ["ai", "developer-tools", "code-completion", "ide"], status_url: "https://status.tabnine.com/api/v2/status.json", page_url: "https://status.tabnine.com", type: "statuspage" },
+  // Bare-metal / colocation cloud
+  { id: "equinix_metal", name: "Equinix Metal", tags: ["cloud", "bare-metal", "infrastructure", "iaas"], status_url: "https://status.equinixmetal.com/api/v2/status.json", page_url: "https://status.equinixmetal.com", type: "statuspage" },
+  // Visual collaboration
+  { id: "mural", name: "Mural", tags: ["collaboration", "whiteboard", "design", "saas"], status_url: "https://status.mural.co/api/v2/status.json", page_url: "https://status.mural.co", type: "statuspage" },
+  // Checkout / payments
+  { id: "bolt_payments", name: "Bolt", tags: ["payments", "checkout", "ecommerce", "fintech"], status_url: "https://status.bolt.com/api/v2/status.json", page_url: "https://status.bolt.com", type: "statuspage" },
+  // Serverless GPU compute
+  { id: "beam_cloud", name: "Beam Cloud", tags: ["cloud", "serverless", "gpu", "ai-infra"], status_url: "https://status.beam.cloud/api/v2/status.json", page_url: "https://status.beam.cloud", type: "statuspage" },
+  // Compliance cloud / HIPAA PaaS
+  { id: "aptible", name: "Aptible", tags: ["cloud", "compliance", "hipaa", "paas"], status_url: "https://status.aptible.com/api/v2/status.json", page_url: "https://status.aptible.com", type: "statuspage" },
+  // Business VoIP / call center
+  { id: "cloudtalk", name: "CloudTalk", tags: ["voip", "telephony", "call-center", "saas"], status_url: "https://status.cloudtalk.io/api/v2/status.json", page_url: "https://status.cloudtalk.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2040,7 +2061,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 730 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 741 services.",
           },
         },
         required: [],
