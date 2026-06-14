@@ -1619,6 +1619,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "aptible", name: "Aptible", tags: ["cloud", "compliance", "hipaa", "paas"], status_url: "https://status.aptible.com/api/v2/status.json", page_url: "https://status.aptible.com", type: "statuspage" },
   // Business VoIP / call center
   { id: "cloudtalk", name: "CloudTalk", tags: ["voip", "telephony", "call-center", "saas"], status_url: "https://status.cloudtalk.io/api/v2/status.json", page_url: "https://status.cloudtalk.io", type: "statuspage" },
+  // Card issuing / payments infrastructure
+  { id: "marqeta", name: "Marqeta", tags: ["payments", "card-issuing", "fintech", "api"], status_url: "https://status.marqeta.com/api/v2/status.json", page_url: "https://status.marqeta.com", type: "statuspage" },
+  // Event-driven background jobs / queues
+  { id: "inngest", name: "Inngest", tags: ["devtools", "queues", "background-jobs", "serverless"], status_url: "https://status.inngest.com/api/v2/status.json", page_url: "https://status.inngest.com", type: "statuspage" },
+  // Gaming / digital content platform
+  { id: "epicgames", name: "Epic Games", tags: ["gaming", "marketplace", "digital-content", "saas"], status_url: "https://status.epicgames.com/api/v2/status.json", page_url: "https://status.epicgames.com", type: "statuspage" },
+  // Real-time collaborative comments SDK
+  { id: "velt", name: "Velt", tags: ["devtools", "collaboration", "sdk", "realtime"], status_url: "https://status.velt.dev/api/v2/status.json", page_url: "https://status.velt.dev", type: "statuspage" },
+  // Zero-trust network access
+  { id: "twingate", name: "Twingate", tags: ["security", "vpn", "zero-trust", "networking"], status_url: "https://status.twingate.com/api/v2/status.json", page_url: "https://status.twingate.com", type: "statuspage" },
+  // Global payments / money movement (APAC/emerging markets)
+  { id: "nium", name: "Nium", tags: ["payments", "fintech", "global", "api"], status_url: "https://status.nium.com/api/v2/status.json", page_url: "https://status.nium.com", type: "statuspage" },
+  // Secrets detection / developer security
+  { id: "gitguardian", name: "GitGuardian", tags: ["security", "secrets", "devsecops", "devtools"], status_url: "https://status.gitguardian.com/api/v2/status.json", page_url: "https://status.gitguardian.com", type: "statuspage" },
+  // Southeast Asian payment gateway
+  { id: "xendit", name: "Xendit", tags: ["payments", "fintech", "southeast-asia", "api"], status_url: "https://status.xendit.co/api/v2/status.json", page_url: "https://status.xendit.co", type: "statuspage" },
+  // 3D printing / digital manufacturing
+  { id: "formlabs", name: "Formlabs", tags: ["manufacturing", "3d-printing", "iot", "cloud"], status_url: "https://status.formlabs.com/api/v2/status.json", page_url: "https://status.formlabs.com", type: "statuspage" },
+  // ML data labeling / annotation platform
+  { id: "kili_technology", name: "Kili Technology", tags: ["ai", "ml", "data-labeling", "annotation"], status_url: "https://status.kili-technology.com/api/v2/status.json", page_url: "https://status.kili-technology.com", type: "statuspage" },
+  // ML training data / annotation platform
+  { id: "encord", name: "Encord", tags: ["ai", "ml", "data-labeling", "annotation"], status_url: "https://status.encord.com/api/v2/status.json", page_url: "https://status.encord.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -2061,7 +2083,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 741 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 752 services.",
           },
         },
         required: [],
