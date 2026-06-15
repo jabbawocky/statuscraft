@@ -4258,6 +4258,17 @@ const SERVICES: ServiceConfig[] = [
   { id: "justt_ai", name: "Justt", tags: ["chargeback", "dispute-management", "payments", "fintech", "ai"], status_url: "https://status.justt.ai/api/v2/status.json", page_url: "https://status.justt.ai", type: "statuspage" },
   { id: "workyard", name: "Workyard", tags: ["workforce-management", "construction", "field-service", "time-tracking", "saas"], status_url: "https://status.workyard.com/api/v2/status.json", page_url: "https://status.workyard.com", type: "statuspage" },
   { id: "twelve_twenty", name: "12twenty", tags: ["recruiting", "talent-acquisition", "campus-recruiting", "hr", "saas"], status_url: "https://status.12twenty.com/api/v2/status.json", page_url: "https://status.12twenty.com", type: "statuspage" },
+  // Tick 230 additions — 10 new live-verified services
+  { id: "inspectorio", name: "Inspectorio", tags: ["supply-chain", "quality-inspection", "compliance", "retail", "enterprise"], status_url: "https://status.inspectorio.com/api/v2/status.json", page_url: "https://status.inspectorio.com", type: "statuspage" },
+  { id: "tracify", name: "Tracify", tags: ["attribution", "ecommerce", "marketing-analytics", "ads", "saas"], status_url: "https://status.tracify.ai/api/v2/status.json", page_url: "https://status.tracify.ai", type: "statuspage" },
+  { id: "funnel_io", name: "Funnel", tags: ["marketing-data", "attribution", "analytics", "bi", "saas"], status_url: "https://status.funnel.io/api/v2/status.json", page_url: "https://status.funnel.io", type: "statuspage" },
+  { id: "gridly", name: "Gridly", tags: ["localization", "content-ops", "translation", "spreadsheet", "saas"], status_url: "https://status.gridly.com/api/v2/status.json", page_url: "https://status.gridly.com", type: "statuspage" },
+  { id: "snappy_gifts", name: "Snappy Gifts", tags: ["corporate-gifting", "employee-rewards", "hr", "engagement", "saas"], status_url: "https://status.snappy.com/api/v2/status.json", page_url: "https://status.snappy.com", type: "statuspage" },
+  { id: "proof_notarize", name: "Proof", tags: ["notarization", "legal", "e-signature", "fintech", "real-estate"], status_url: "https://status.notarize.com/api/v2/status.json", page_url: "https://status.notarize.com", type: "statuspage" },
+  { id: "truework", name: "Truework", tags: ["employment-verification", "income-verification", "hr", "fintech", "api"], status_url: "https://status.truework.com/api/v2/status.json", page_url: "https://status.truework.com", type: "statuspage" },
+  { id: "coreview", name: "CoreView", tags: ["microsoft-365", "saas-management", "governance", "it", "enterprise"], status_url: "https://status.coreview.com/api/v2/status.json", page_url: "https://status.coreview.com", type: "statuspage" },
+  { id: "crexi", name: "Crexi", tags: ["commercial-real-estate", "marketplace", "cre", "listings", "analytics"], status_url: "https://status.crexi.com/api/v2/status.json", page_url: "https://status.crexi.com", type: "statuspage" },
+  { id: "tackle_io", name: "Tackle.io", tags: ["cloud-marketplace", "aws-marketplace", "saas", "revenue", "b2b"], status_url: "https://status.tackle.io/api/v2/status.json", page_url: "https://status.tackle.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4695,7 +4706,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2271 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2281 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4733,7 +4744,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2271 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2281 services.",
           },
         },
         required: [],
