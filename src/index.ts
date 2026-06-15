@@ -3884,6 +3884,19 @@ const SERVICES: ServiceConfig[] = [
   { id: "tiphaus", name: "TipHaus", tags: ["restaurant", "tip-management", "payroll", "hospitality", "saas"], status_url: "https://tiphaus.statuspage.io/api/v2/status.json", page_url: "https://tiphaus.statuspage.io", type: "statuspage" },
   { id: "vetspire", name: "Vetspire", tags: ["veterinary", "ehr", "practice-management", "healthcare", "saas"], status_url: "https://vetspire.statuspage.io/api/v2/status.json", page_url: "https://vetspire.statuspage.io", type: "statuspage" },
   { id: "kentro", name: "Kentro", tags: ["inventory", "order-management", "ecommerce", "fulfillment", "saas"], status_url: "https://kentro.statuspage.io/api/v2/status.json", page_url: "https://kentro.statuspage.io", type: "statuspage" },
+  { id: "paymob", name: "Paymob", tags: ["payments", "fintech", "mena", "gateway", "api"], status_url: "https://paymob.statuspage.io/api/v2/status.json", page_url: "https://paymob.statuspage.io", type: "statuspage" },
+  { id: "canto", name: "Canto", tags: ["dam", "digital-assets", "media", "brand", "saas"], status_url: "https://canto.statuspage.io/api/v2/status.json", page_url: "https://canto.statuspage.io", type: "statuspage" },
+  { id: "oxylabs", name: "Oxylabs", tags: ["proxy", "scraping", "data-collection", "web", "api"], status_url: "https://oxylabs.statuspage.io/api/v2/status.json", page_url: "https://oxylabs.statuspage.io", type: "statuspage" },
+  { id: "mailmodo", name: "Mailmodo", tags: ["email", "marketing", "amp-email", "campaigns", "saas"], status_url: "https://mailmodo.statuspage.io/api/v2/status.json", page_url: "https://mailmodo.statuspage.io", type: "statuspage" },
+  { id: "kickbox", name: "Kickbox", tags: ["email-verification", "deliverability", "email", "api", "saas"], status_url: "https://kickbox.statuspage.io/api/v2/status.json", page_url: "https://kickbox.statuspage.io", type: "statuspage" },
+  { id: "emailable", name: "Emailable", tags: ["email-verification", "email", "deliverability", "api", "saas"], status_url: "https://emailable.statuspage.io/api/v2/status.json", page_url: "https://emailable.statuspage.io", type: "statuspage" },
+  { id: "banked", name: "Banked", tags: ["open-banking", "payments", "fintech", "api", "saas"], status_url: "https://banked.statuspage.io/api/v2/status.json", page_url: "https://banked.statuspage.io", type: "statuspage" },
+  { id: "form3", name: "Form3", tags: ["payments", "cloud", "fintech", "api", "enterprise"], status_url: "https://form3.statuspage.io/api/v2/status.json", page_url: "https://form3.statuspage.io", type: "statuspage" },
+  { id: "tokenio", name: "Token.io", tags: ["open-banking", "payments", "fintech", "api", "saas"], status_url: "https://token.statuspage.io/api/v2/status.json", page_url: "https://token.statuspage.io", type: "statuspage" },
+  { id: "composio", name: "Composio", tags: ["ai", "integrations", "agents", "developer-tools", "api"], status_url: "https://composio.statuspage.io/api/v2/status.json", page_url: "https://composio.statuspage.io", type: "statuspage" },
+  { id: "unify", name: "Unify", tags: ["gtm", "crm", "data", "sales-intelligence", "saas"], status_url: "https://unify.statuspage.io/api/v2/status.json", page_url: "https://unify.statuspage.io", type: "statuspage" },
+  { id: "halon", name: "Halon", tags: ["email", "mta", "security", "deliverability", "saas"], status_url: "https://halon.statuspage.io/api/v2/status.json", page_url: "https://halon.statuspage.io", type: "statuspage" },
+  { id: "metadata_io", name: "Metadata", tags: ["marketing", "abm", "paid-media", "b2b", "saas"], status_url: "https://metadata.statuspage.io/api/v2/status.json", page_url: "https://metadata.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4321,7 +4334,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1989 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2002 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4359,7 +4372,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1989 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2002 services.",
           },
         },
         required: [],
