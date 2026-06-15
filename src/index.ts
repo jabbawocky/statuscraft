@@ -4059,6 +4059,38 @@ const SERVICES: ServiceConfig[] = [
   { id: "sharetribe", name: "Sharetribe", tags: ["marketplace", "ecommerce", "platform", "saas", "sharing-economy"], status_url: "https://status.sharetribe.com/api/v2/status.json", page_url: "https://status.sharetribe.com", type: "statuspage" },
   // Funnel / page builder
   { id: "bucket_io", name: "Bucket.io", tags: ["funnel", "page-builder", "marketing", "saas", "no-code"], status_url: "https://status.bucket.io/api/v2/status.json", page_url: "https://status.bucket.io", type: "statuspage" },
+  // AI framework for LLM-powered apps
+  { id: "llamaindex", name: "LlamaIndex", tags: ["ai", "llm", "framework", "developer-tools", "open-source"], status_url: "https://llamaindex.statuspage.io/api/v2/status.json", page_url: "https://llamaindex.statuspage.io", type: "statuspage" },
+  // AI-powered test automation
+  { id: "testim", name: "Testim", tags: ["testing", "qa", "automation", "ai", "developer-tools"], status_url: "https://testim.statuspage.io/api/v2/status.json", page_url: "https://testim.statuspage.io", type: "statuspage" },
+  // Crowdsourced software QA testing
+  { id: "test_io", name: "Test IO", tags: ["testing", "qa", "crowdsourced", "developer-tools", "saas"], status_url: "https://testio.statuspage.io/api/v2/status.json", page_url: "https://testio.statuspage.io", type: "statuspage" },
+  // Webinar / virtual event platform
+  { id: "on24", name: "ON24", tags: ["webinar", "virtual-events", "marketing", "enterprise", "saas"], status_url: "https://on24.statuspage.io/api/v2/status.json", page_url: "https://on24.statuspage.io", type: "statuspage" },
+  // Scheduling & calendar booking tool
+  { id: "meetergo", name: "Meetergo", tags: ["scheduling", "calendar", "productivity", "meetings", "saas"], status_url: "https://meetergo.statuspage.io/api/v2/status.json", page_url: "https://meetergo.statuspage.io", type: "statuspage" },
+  // Crypto exchange
+  { id: "bitfinex", name: "Bitfinex", tags: ["crypto", "exchange", "trading", "blockchain", "fintech"], status_url: "https://bitfinex.statuspage.io/api/v2/status.json", page_url: "https://bitfinex.statuspage.io", type: "statuspage" },
+  // Video collaboration & review platform (Adobe)
+  { id: "frameio", name: "Frame.io", tags: ["video", "collaboration", "creative", "media", "saas"], status_url: "https://status.frame.io/api/v2/status.json", page_url: "https://status.frame.io", type: "statuspage" },
+  // Supply chain visibility platform
+  { id: "shippeo", name: "Shippeo", tags: ["supply-chain", "logistics", "visibility", "saas", "enterprise"], status_url: "https://shippeo.statuspage.io/api/v2/status.json", page_url: "https://shippeo.statuspage.io", type: "statuspage" },
+  // LinkedIn developer API status
+  { id: "linkedin_api", name: "LinkedIn API", tags: ["social", "api", "developer-tools", "enterprise", "professional"], status_url: "https://linkedin.statuspage.io/api/v2/status.json", page_url: "https://linkedin.statuspage.io", type: "statuspage" },
+  // Email security & DMARC management
+  { id: "easydmarc", name: "EasyDMARC", tags: ["email", "security", "dmarc", "deliverability", "saas"], status_url: "https://status.easydmarc.com/api/v2/status.json", page_url: "https://status.easydmarc.com", type: "statuspage" },
+  // Email authentication platform
+  { id: "valimail", name: "Valimail", tags: ["email", "security", "dmarc", "authentication", "saas"], status_url: "https://status.valimail.com/api/v2/status.json", page_url: "https://status.valimail.com", type: "statuspage" },
+  // Spotify podcast creation platform
+  { id: "anchor", name: "Anchor", tags: ["podcast", "audio", "streaming", "creator", "saas"], status_url: "https://anchor.statuspage.io/api/v2/status.json", page_url: "https://anchor.statuspage.io", type: "statuspage" },
+  // Fashion resale marketplace
+  { id: "depop", name: "Depop", tags: ["marketplace", "ecommerce", "fashion", "resale", "consumer"], status_url: "https://depop.statuspage.io/api/v2/status.json", page_url: "https://depop.statuspage.io", type: "statuspage" },
+  // NFT creative marketplace
+  { id: "foundation_app", name: "Foundation", tags: ["nft", "marketplace", "web3", "blockchain", "creator"], status_url: "https://foundation.statuspage.io/api/v2/status.json", page_url: "https://foundation.statuspage.io", type: "statuspage" },
+  // Passwordless authentication platform
+  { id: "passage", name: "Passage", tags: ["auth", "passwordless", "identity", "developer-tools", "api"], status_url: "https://passage.statuspage.io/api/v2/status.json", page_url: "https://passage.statuspage.io", type: "statuspage" },
+  // AI image generation platform
+  { id: "midjourney", name: "Midjourney", tags: ["ai", "image-generation", "creative", "generative-ai", "saas"], status_url: "https://midjourney.statuspage.io/api/v2/status.json", page_url: "https://midjourney.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4496,7 +4528,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2092 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2108 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4534,7 +4566,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2092 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2108 services.",
           },
         },
         required: [],
