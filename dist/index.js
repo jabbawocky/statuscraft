@@ -3393,6 +3393,28 @@ const SERVICES = [
     { id: "veed_io", name: "VEED.io", tags: ["video", "editing", "ai", "content-creation", "saas"], status_url: "https://status.veed.io/api/v2/status.json", page_url: "https://status.veed.io", type: "statuspage" },
     // Mergify — GitHub pull request automation & merge queue platform
     { id: "mergify", name: "Mergify", tags: ["developer-tools", "github", "ci-cd", "automation", "pull-requests"], status_url: "https://status.mergify.com/api/v2/status.json", page_url: "https://status.mergify.com", type: "statuspage" },
+    // Cohere — enterprise AI & large language model API platform
+    { id: "cohere", name: "Cohere", tags: ["ai", "llm", "nlp", "api", "developer-tools"], status_url: "https://status.cohere.com/api/v2/status.json", page_url: "https://status.cohere.com", type: "statuspage" },
+    // Fly.io — global application deployment platform (VMs near users)
+    { id: "fly_io", name: "Fly.io", tags: ["cloud", "hosting", "edge", "infrastructure", "developer-tools"], status_url: "https://status.flyio.net/api/v2/status.json", page_url: "https://status.flyio.net", type: "statuspage" },
+    // Railway — instant cloud deployments for developers (full-stack hosting)
+    { id: "railway", name: "Railway", tags: ["cloud", "hosting", "deployment", "developer-tools", "paas"], status_url: "https://railway.statuspage.io/api/v2/status.json", page_url: "https://railway.statuspage.io", type: "statuspage" },
+    // Replicate — cloud platform for running open-source ML models via API
+    { id: "replicate", name: "Replicate", tags: ["ai", "ml", "inference", "api", "developer-tools"], status_url: "https://www.replicatestatus.com/api/v2/status.json", page_url: "https://www.replicatestatus.com", type: "statuspage" },
+    // Brex — corporate cards & spend management platform for startups
+    { id: "brex", name: "Brex", tags: ["fintech", "banking", "corporate-cards", "spend-management", "saas"], status_url: "https://status.brex.com/api/v2/status.json", page_url: "https://status.brex.com", type: "statuspage" },
+    // Snyk — developer security platform for finding & fixing vulnerabilities
+    { id: "snyk", name: "Snyk", tags: ["security", "devsecops", "vulnerabilities", "developer-tools", "sca"], status_url: "https://status.snyk.io/api/v2/status.json", page_url: "https://status.snyk.io", type: "statuspage" },
+    // Tailscale — zero-config VPN & secure network connectivity platform
+    { id: "tailscale", name: "Tailscale", tags: ["networking", "vpn", "security", "infrastructure", "developer-tools"], status_url: "https://status.tailscale.com/api/v2/status.json", page_url: "https://status.tailscale.com", type: "statuspage" },
+    // Mixpanel — product analytics platform for user behavior & event tracking
+    { id: "mixpanel", name: "Mixpanel", tags: ["analytics", "product", "user-behavior", "saas", "data"], status_url: "https://mixpanelstatus.com/api/v2/status.json", page_url: "https://mixpanelstatus.com", type: "statuspage" },
+    // DigitalOcean — cloud infrastructure platform (VMs, Kubernetes, databases, storage)
+    { id: "digitalocean", name: "DigitalOcean", tags: ["cloud", "iaas", "infrastructure", "hosting", "kubernetes"], status_url: "https://status.digitalocean.com/api/v2/status.json", page_url: "https://status.digitalocean.com", type: "statuspage" },
+    // Cloudinary — cloud-based image & video management, optimization & delivery CDN
+    { id: "cloudinary", name: "Cloudinary", tags: ["cdn", "media", "image", "video", "cloud"], status_url: "https://status.cloudinary.com/api/v2/status.json", page_url: "https://status.cloudinary.com", type: "statuspage" },
+    // npm — JavaScript package registry & package manager (Node.js ecosystem)
+    { id: "npm", name: "npm", tags: ["package-registry", "javascript", "nodejs", "developer-tools", "open-source"], status_url: "https://status.npmjs.org/api/v2/status.json", page_url: "https://status.npmjs.org", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3850,7 +3872,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1792 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1803 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3885,7 +3907,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1792 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1803 services.",
                     },
                 },
                 required: [],
