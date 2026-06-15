@@ -981,7 +981,7 @@ const SERVICES = [
     { id: "yotpo", name: "Yotpo", tags: ["ecommerce", "reviews", "marketing", "saas"], status_url: "https://status.yotpo.com/api/v2/status.json", page_url: "https://status.yotpo.com", type: "statuspage" },
     { id: "dyte", name: "Dyte", tags: ["video", "webrtc", "realtime", "developer-tools"], status_url: "https://dyte.statuspage.io/api/v2/status.json", page_url: "https://dyte.statuspage.io", type: "statuspage" },
     { id: "quickbooks", name: "QuickBooks", tags: ["accounting", "finance", "saas", "smb"], status_url: "https://status.quickbooks.intuit.com/api/v2/status.json", page_url: "https://status.quickbooks.intuit.com", type: "statuspage" },
-    { id: "wave", name: "Wave", tags: ["accounting", "finance", "saas", "smb"], status_url: "https://status.wave.com/api/v2/status.json", page_url: "https://status.wave.com", type: "statuspage" },
+    { id: "wave", name: "Wave", tags: ["accounting", "finance", "saas", "smb"], status_url: "https://status.waveapps.com/api/v2/status.json", page_url: "https://status.waveapps.com", type: "statuspage" },
     { id: "toggl", name: "Toggl", tags: ["time-tracking", "productivity", "saas", "freelancer"], status_url: "https://status.toggl.com/api/v2/status.json", page_url: "https://status.toggl.com", type: "statuspage" },
     { id: "harvest", name: "Harvest", tags: ["time-tracking", "invoicing", "saas", "freelancer"], status_url: "https://harvest.statuspage.io/api/v2/status.json", page_url: "https://harvest.statuspage.io", type: "statuspage" },
     { id: "mattermost", name: "Mattermost", tags: ["messaging", "collaboration", "developer-tools", "open-source"], status_url: "https://status.mattermost.com/api/v2/status.json", page_url: "https://status.mattermost.com", type: "statuspage" },
@@ -4030,6 +4030,16 @@ const SERVICES = [
     { id: "abnormal_security", name: "Abnormal Security", tags: ["security", "email-security", "ai", "phishing"], status_url: "https://status.abnormalsecurity.com/api/v2/status.json", page_url: "https://status.abnormalsecurity.com", type: "statuspage" },
     { id: "mindbridge", name: "MindBridge", tags: ["ai", "auditing", "finance", "risk", "analytics"], status_url: "https://status.mindbridge.ai/api/v2/status.json", page_url: "https://status.mindbridge.ai", type: "statuspage" },
     { id: "lightning_ai", name: "Lightning AI", tags: ["ml", "ai", "training", "gpu", "developer-tools"], status_url: "https://status.lightning.ai/api/v2/status.json", page_url: "https://status.lightning.ai", type: "statuspage" },
+    { id: "uxcam", name: "UXCam", tags: ["mobile-analytics", "session-replay", "ux", "mobile", "saas"], status_url: "https://status.uxcam.com/api/v2/status.json", page_url: "https://status.uxcam.com", type: "statuspage" },
+    { id: "smsapi", name: "SMSAPI", tags: ["sms", "messaging", "communications", "cpaas", "api"], status_url: "https://status.smsapi.com/api/v2/status.json", page_url: "https://status.smsapi.com", type: "statuspage" },
+    { id: "qualified", name: "Qualified", tags: ["sales", "conversational-marketing", "pipeline", "saas", "b2b"], status_url: "https://status.qualified.com/api/v2/status.json", page_url: "https://status.qualified.com", type: "statuspage" },
+    { id: "boldcommerce", name: "Bold Commerce", tags: ["ecommerce", "checkout", "subscriptions", "headless", "shopify"], status_url: "https://status.boldcommerce.com/api/v2/status.json", page_url: "https://status.boldcommerce.com", type: "statuspage" },
+    { id: "sardine_ai", name: "Sardine AI", tags: ["fraud-prevention", "risk", "fintech", "identity", "security"], status_url: "https://status.sardine.ai/api/v2/status.json", page_url: "https://status.sardine.ai", type: "statuspage" },
+    { id: "coalesce", name: "Coalesce", tags: ["data", "transformation", "dbt", "analytics", "cloud"], status_url: "https://status.coalesce.io/api/v2/status.json", page_url: "https://status.coalesce.io", type: "statuspage" },
+    { id: "triplewhale", name: "Triple Whale", tags: ["ecommerce-analytics", "attribution", "marketing", "shopify", "saas"], status_url: "https://status.triplewhale.com/api/v2/status.json", page_url: "https://status.triplewhale.com", type: "statuspage" },
+    { id: "xandr", name: "Xandr", tags: ["advertising", "adtech", "programmatic", "microsoft", "marketplace"], status_url: "https://status.xandr.com/api/v2/status.json", page_url: "https://status.xandr.com", type: "statuspage" },
+    { id: "triplelift", name: "TripleLift", tags: ["advertising", "adtech", "programmatic", "native", "marketplace"], status_url: "https://status.triplelift.com/api/v2/status.json", page_url: "https://status.triplelift.com", type: "statuspage" },
+    { id: "payplug", name: "Payplug", tags: ["payments", "fintech", "europe", "gateway", "ecommerce"], status_url: "https://status.payplug.com/api/v2/status.json", page_url: "https://status.payplug.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4487,7 +4497,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2188 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2197 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
