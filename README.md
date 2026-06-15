@@ -13,12 +13,12 @@
 
 ## What it does
 
-StatusCraft gives your AI client 5 tools that fetch live status from **1588 major services**:
+StatusCraft gives your AI client 5 tools that fetch live status from **1600 major services**:
 
 | Tool | What it does |
 |---|---|
 | `get_status` | Check one service — returns normalized status + incident detail when non-operational |
-| `get_all_status` | Check all 1588 services at once, grouped by status (cached 60s) |
+| `get_all_status` | Check all 1600 services at once, grouped by status (cached 60s) |
 | `list_services` | List all tracked services with IDs and tags — filter by category |
 | `check_multiple` | Check a specific list of services in parallel |
 | `refresh_status` | Force a live re-fetch, bypassing the 60s cache — useful during active incidents |
@@ -50,7 +50,7 @@ No extra latency when everything is green — the incident fetch only fires for 
 
 ---
 
-## Services tracked (1588)
+## Services tracked (1600)
 
 ### AI & LLMs
 | ID | Service |

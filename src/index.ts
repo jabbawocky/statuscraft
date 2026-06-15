@@ -3128,6 +3128,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "dnssimple", name: "DNSimple", tags: ["dns", "domains", "infrastructure", "api"], status_url: "https://dnsimplestatus.com/api/v2/status.json", page_url: "https://dnsimplestatus.com", type: "statuspage" },
   // Payments
   { id: "authorizenet", name: "Authorize.Net", tags: ["payments", "payment-processing", "fintech", "api"], status_url: "https://status.authorize.net/api/v2/status.json", page_url: "https://status.authorize.net", type: "statuspage" },
+  { id: "pay_com", name: "Pay.com", tags: ["payments", "payment-processing", "fintech", "api"], status_url: "https://status.pay.com/api/v2/status.json", page_url: "https://status.pay.com", type: "statuspage" },
+  // AI/LLM platforms
+  { id: "poe", name: "Poe", tags: ["ai", "llm", "chatbot", "platform"], status_url: "https://status.poe.com/api/v2/status.json", page_url: "https://status.poe.com", type: "statuspage" },
+  // Hosting / server management
+  { id: "cpanel", name: "cPanel", tags: ["hosting", "server", "control-panel", "infrastructure"], status_url: "https://cpanel.statuspage.io/api/v2/status.json", page_url: "https://status.cpanel.net", type: "statuspage" },
+  // Gaming infrastructure
+  { id: "photon_engine", name: "Photon Engine", tags: ["gaming", "multiplayer", "networking", "realtime"], status_url: "https://photon.statuspage.io/api/v2/status.json", page_url: "https://photon.statuspage.io", type: "statuspage" },
+  // Manufacturing / industrial operations
+  { id: "tulip", name: "Tulip Interfaces", tags: ["manufacturing", "operations", "no-code", "industrial", "iot"], status_url: "https://status.tulip.co/api/v2/status.json", page_url: "https://status.tulip.co", type: "statuspage" },
+  // Spend management / AP automation
+  { id: "teampay", name: "Teampay", tags: ["spend-management", "finance", "ap-automation", "saas"], status_url: "https://status.teampay.co/api/v2/status.json", page_url: "https://status.teampay.co", type: "statuspage" },
+  { id: "expensya", name: "Expensya", tags: ["expense-management", "finance", "saas", "travel"], status_url: "https://status.expensya.com/api/v2/status.json", page_url: "https://status.expensya.com", type: "statuspage" },
+  // Logistics / freight
+  { id: "truckstop", name: "Truckstop", tags: ["logistics", "freight", "trucking", "marketplace"], status_url: "https://truckstop.statuspage.io/api/v2/status.json", page_url: "https://truckstop.statuspage.io", type: "statuspage" },
+  // Events
+  { id: "swoogo", name: "Swoogo", tags: ["events", "event-management", "conference", "saas"], status_url: "https://swoogo.statuspage.io/api/v2/status.json", page_url: "https://www.swoogostatus.com", type: "statuspage" },
+  { id: "vfairs", name: "vFairs", tags: ["events", "virtual-events", "conference", "saas"], status_url: "https://status.vfairs.com/api/v2/status.json", page_url: "https://status.vfairs.com", type: "statuspage" },
+  { id: "grip_events", name: "Grip", tags: ["events", "networking", "matchmaking", "conference"], status_url: "https://status.grip.events/api/v2/status.json", page_url: "https://status.grip.events", type: "statuspage" },
+  // Sales outreach
+  { id: "overloop", name: "Overloop", tags: ["sales", "outreach", "prospecting", "automation", "saas"], status_url: "https://overloop.statuspage.io/api/v2/status.json", page_url: "https://overloop.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3532,7 +3552,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1588 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1600 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3570,7 +3590,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1588 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1600 services.",
           },
         },
         required: [],
