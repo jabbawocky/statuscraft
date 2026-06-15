@@ -4138,6 +4138,16 @@ const SERVICES = [
     { id: "copado", name: "Copado", tags: ["salesforce", "devops", "release-management", "ci-cd", "enterprise"], status_url: "https://status.copado.com/api/v2/status.json", page_url: "https://status.copado.com", type: "statuspage" },
     { id: "rydoo", name: "Rydoo", tags: ["expense-management", "travel", "finance", "hr", "saas"], status_url: "https://status.rydoo.com/api/v2/status.json", page_url: "https://status.rydoo.com", type: "statuspage" },
     { id: "soldo", name: "Soldo", tags: ["spend-management", "corporate-cards", "finance", "expense", "fintech"], status_url: "https://soldo.statuspage.io/api/v2/status.json", page_url: "https://soldo.statuspage.io", type: "statuspage" },
+    { id: "taulia", name: "Taulia", tags: ["supply-chain-finance", "working-capital", "procurement", "fintech", "enterprise"], status_url: "https://taulia.statuspage.io/api/v2/status.json", page_url: "https://taulia.statuspage.io", type: "statuspage" },
+    { id: "validic", name: "Validic", tags: ["healthcare", "health-data", "iot", "api", "interoperability"], status_url: "https://validic.statuspage.io/api/v2/status.json", page_url: "https://validic.statuspage.io", type: "statuspage" },
+    { id: "orion_advisor", name: "Orion Advisor", tags: ["wealth-management", "fintech", "ria", "portfolio-management", "enterprise"], status_url: "https://status.orionadvisor.com/api/v2/status.json", page_url: "https://status.orionadvisor.com", type: "statuspage" },
+    { id: "loop_returns", name: "Loop Returns", tags: ["ecommerce", "returns", "shopify", "saas", "logistics"], status_url: "https://status.loop.com/api/v2/status.json", page_url: "https://status.loop.com", type: "statuspage" },
+    { id: "redtail", name: "Redtail Technology", tags: ["crm", "wealth-management", "financial-advisors", "ria", "saas"], status_url: "https://status.redtailtechnology.com/api/v2/status.json", page_url: "https://status.redtailtechnology.com", type: "statuspage" },
+    { id: "healthstream", name: "HealthStream", tags: ["healthcare", "learning-management", "credentialing", "workforce", "enterprise"], status_url: "https://healthstream.statuspage.io/api/v2/status.json", page_url: "https://healthstream.statuspage.io", type: "statuspage" },
+    { id: "maintainx", name: "MaintainX", tags: ["cmms", "maintenance", "facilities", "iot", "manufacturing"], status_url: "https://maintainx.statuspage.io/api/v2/status.json", page_url: "https://maintainx.statuspage.io", type: "statuspage" },
+    { id: "kore_ai", name: "Kore.ai", tags: ["ai", "chatbot", "conversational-ai", "enterprise", "saas"], status_url: "https://koreai.statuspage.io/api/v2/status.json", page_url: "https://koreai.statuspage.io", type: "statuspage" },
+    { id: "limble_cmms", name: "Limble CMMS", tags: ["cmms", "maintenance", "asset-management", "facilities", "manufacturing"], status_url: "https://limblecmms.statuspage.io/api/v2/status.json", page_url: "https://limblecmms.statuspage.io", type: "statuspage" },
+    { id: "linksquares", name: "LinkSquares", tags: ["contracts", "legal", "ai", "clm", "enterprise"], status_url: "https://linksquares.statuspage.io/api/v2/status.json", page_url: "https://linksquares.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4595,7 +4605,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2292 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2302 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -4630,7 +4640,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2292 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2302 services.",
                     },
                 },
                 required: [],

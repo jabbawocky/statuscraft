@@ -13,7 +13,7 @@
 
 ## What it does
 
-StatusCraft gives your AI client 5 tools that fetch live status from **2292 major services**:
+StatusCraft gives your AI client 5 tools that fetch live status from **2302 major services**:
 
 | Tool | What it does |
 |---|---|
