@@ -37,7 +37,7 @@ interface ServiceConfig {
   tags: string[];
   status_url: string;
   page_url: string;
-  type: "statuspage" | "gcp" | "slack" | "azure" | "aws" | "incidentio" | "pagerduty" | "heroku" | "statusio";
+  type: "statuspage" | "gcp" | "slack" | "azure" | "aws" | "incidentio" | "pagerduty" | "heroku" | "statusio" | "betterstack";
 }
 
 const CACHE_TTL_MS = 60_000; // 60-second TTL
@@ -3396,6 +3396,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "snappt", name: "Snappt", tags: ["real-estate", "tenant-screening", "fraud-detection", "rental", "saas"], status_url: "https://status.snappt.com/api/v2/status.json", page_url: "https://status.snappt.com", type: "statuspage" },
   // AskNicely — NPS & customer feedback platform
   { id: "asknicely", name: "AskNicely", tags: ["cx", "nps", "customer-feedback", "surveys", "saas"], status_url: "https://status.asknicely.com/api/v2/status.json", page_url: "https://status.asknicely.com", type: "statuspage" },
+  // Prismatic — embedded iPaaS / integration platform for B2B SaaS
+  { id: "prismatic", name: "Prismatic", tags: ["ipaas", "integration", "automation", "developer-tools", "saas"], status_url: "https://status.prismatic.io/api/v2/status.json", page_url: "https://status.prismatic.io", type: "statuspage" },
+  // deepset — AI/NLP platform & Haystack framework cloud service
+  { id: "deepset", name: "deepset", tags: ["ai", "nlp", "llm", "developer-tools", "saas"], status_url: "https://status.deepset.ai/api/v2/status.json", page_url: "https://status.deepset.ai", type: "statuspage" },
+  // SuperAnnotate AI — ML data annotation & model training platform
+  { id: "superannotate", name: "SuperAnnotate AI", tags: ["ai", "ml", "annotation", "data-labeling", "saas"], status_url: "https://status.superannotate.com/api/v2/status.json", page_url: "https://status.superannotate.com", type: "statuspage" },
+  // Arctic Wolf — managed security / SOC-as-a-service
+  { id: "arctic_wolf", name: "Arctic Wolf", tags: ["security", "soc", "mdr", "enterprise", "saas"], status_url: "https://status.arcticwolf.com/api/v2/status.json", page_url: "https://status.arcticwolf.com", type: "statuspage" },
+  // Stytch — auth & identity platform (BetterStack)
+  { id: "stytch", name: "Stytch", tags: ["auth", "identity", "sso", "developer-tools", "api"], status_url: "https://status.stytch.com/api/v2/summary.json", page_url: "https://status.stytch.com", type: "betterstack" },
+  // Deno Deploy — edge runtime & serverless JavaScript platform (BetterStack)
+  { id: "deno", name: "Deno Deploy", tags: ["edge", "serverless", "runtime", "developer-tools", "iaas"], status_url: "https://status.deno.com/api/v2/summary.json", page_url: "https://status.deno.com", type: "betterstack" },
+  // Netcore Cloud — email, SMS & customer engagement platform
+  { id: "netcore_cloud", name: "Netcore Cloud", tags: ["email", "sms", "marketing", "engagement", "saas"], status_url: "https://status.netcorecloud.com/api/v2/status.json", page_url: "https://status.netcorecloud.com", type: "statuspage" },
+  // ProductPlan — product roadmap & strategy platform
+  { id: "productplan", name: "ProductPlan", tags: ["product-management", "roadmap", "planning", "saas"], status_url: "https://status.productplan.com/api/v2/status.json", page_url: "https://status.productplan.com", type: "statuspage" },
+  // Cleverbridge — global subscription commerce & billing platform
+  { id: "cleverbridge", name: "Cleverbridge", tags: ["ecommerce", "billing", "subscriptions", "payments", "saas"], status_url: "https://status.cleverbridge.com/api/v2/status.json", page_url: "https://status.cleverbridge.com", type: "statuspage" },
+  // Mynewsdesk — PR & media relations platform
+  { id: "mynewsdesk", name: "Mynewsdesk", tags: ["pr", "media", "communications", "saas"], status_url: "https://status.mynewsdesk.com/api/v2/status.json", page_url: "https://status.mynewsdesk.com", type: "statuspage" },
+  // Accredible — digital credentials & certificate platform
+  { id: "accredible", name: "Accredible", tags: ["credentials", "certificates", "education", "hr", "saas"], status_url: "https://status.accredible.com/api/v2/status.json", page_url: "https://status.accredible.com", type: "statuspage" },
+  // Badgr — open digital badges & micro-credentials platform
+  { id: "badgr", name: "Badgr", tags: ["credentials", "badges", "education", "open-badges", "saas"], status_url: "https://status.badgr.com/api/v2/status.json", page_url: "https://status.badgr.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3723,6 +3747,38 @@ async function fetchStatusIOStatus(svc: ServiceConfig): Promise<ServiceStatus> {
   }
 }
 
+async function fetchBetterStackStatus(svc: ServiceConfig): Promise<ServiceStatus> {
+  const now = new Date().toISOString();
+  try {
+    const res = await fetch(svc.status_url, {
+      signal: AbortSignal.timeout(8000),
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = (await res.json()) as { page?: { name?: string; status?: string } };
+    const pageStatus = data?.page?.status ?? "UNKNOWN";
+    let status: StatusIndicator;
+    switch (pageStatus.toUpperCase()) {
+      case "UP": status = "operational"; break;
+      case "DEGRADED": status = "degraded"; break;
+      case "DOWN": status = "major_outage"; break;
+      case "MAINTENANCE": status = "maintenance"; break;
+      default: status = "unknown";
+    }
+    const description =
+      status === "operational" ? "All systems operational"
+      : status === "maintenance" ? "Scheduled maintenance in progress"
+      : `Service status: ${pageStatus}`;
+    return { id: svc.id, name: svc.name, status, description, last_checked: now, source_url: svc.page_url };
+  } catch (err) {
+    return {
+      id: svc.id, name: svc.name, status: "unknown",
+      description: `Fetch failed: ${err instanceof Error ? err.message : String(err)}`,
+      last_checked: now, source_url: svc.page_url,
+    };
+  }
+}
+
 async function fetchFresh(svc: ServiceConfig): Promise<ServiceStatus> {
   if (svc.type === "gcp") return fetchGCPStatus(svc);
   if (svc.type === "slack") return fetchSlackStatus(svc);
@@ -3732,6 +3788,7 @@ async function fetchFresh(svc: ServiceConfig): Promise<ServiceStatus> {
   if (svc.type === "pagerduty") return fetchPagerDutyStatus(svc);
   if (svc.type === "heroku") return fetchHerokuStatus(svc);
   if (svc.type === "statusio") return fetchStatusIOStatus(svc);
+  if (svc.type === "betterstack") return fetchBetterStackStatus(svc);
   return fetchStatuspageStatus(svc);
 }
 
@@ -3765,7 +3822,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.49.0" },
+  { name: "statuscraft", version: "2.50.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -3800,7 +3857,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1724 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1736 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3838,7 +3895,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1724 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1736 services.",
           },
         },
         required: [],
