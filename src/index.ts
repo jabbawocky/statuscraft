@@ -4290,6 +4290,27 @@ const SERVICES: ServiceConfig[] = [
   { id: "kore_ai", name: "Kore.ai", tags: ["ai", "chatbot", "conversational-ai", "enterprise", "saas"], status_url: "https://koreai.statuspage.io/api/v2/status.json", page_url: "https://koreai.statuspage.io", type: "statuspage" },
   { id: "limble_cmms", name: "Limble CMMS", tags: ["cmms", "maintenance", "asset-management", "facilities", "manufacturing"], status_url: "https://limblecmms.statuspage.io/api/v2/status.json", page_url: "https://limblecmms.statuspage.io", type: "statuspage" },
   { id: "linksquares", name: "LinkSquares", tags: ["contracts", "legal", "ai", "clm", "enterprise"], status_url: "https://linksquares.statuspage.io/api/v2/status.json", page_url: "https://linksquares.statuspage.io", type: "statuspage" },
+  // Quantum computing
+  { id: "ionq", name: "IonQ", tags: ["quantum-computing", "cloud", "developer-tools", "enterprise"], status_url: "https://ionq.statuspage.io/api/v2/status.json", page_url: "https://status.ionq.co", type: "statuspage" },
+  { id: "rigetti", name: "Rigetti Computing", tags: ["quantum-computing", "cloud", "developer-tools", "api"], status_url: "https://rigetti.statuspage.io/api/v2/status.json", page_url: "https://rigetti.statuspage.io", type: "statuspage" },
+  // Government tech
+  { id: "opengov", name: "OpenGov", tags: ["govtech", "government", "budgeting", "transparency", "saas"], status_url: "https://opengov.statuspage.io/api/v2/status.json", page_url: "https://www.opengovstatus.com", type: "statuspage" },
+  // Healthcare niche
+  { id: "chirotouch", name: "ChiroTouch", tags: ["healthcare", "chiropractic", "ehr", "practice-management", "saas"], status_url: "https://chirotouch.statuspage.io/api/v2/status.json", page_url: "https://chirotouch.statuspage.io", type: "statuspage" },
+  // Sports & recreation
+  { id: "golf_genius", name: "Golf Genius", tags: ["golf", "tournament-management", "sports", "saas"], status_url: "https://status.golfgenius.com/api/v2/status.json", page_url: "https://status.golfgenius.com", type: "statuspage" },
+  // Automotive services
+  { id: "tekmetric", name: "Tekmetric", tags: ["automotive", "auto-repair", "shop-management", "saas"], status_url: "https://status.tekmetric.com/api/v2/status.json", page_url: "https://status.tekmetric.com", type: "statuspage" },
+  // Insurance tech
+  { id: "insly", name: "Insly", tags: ["insurance", "insurtech", "policy-management", "saas"], status_url: "https://status.insly.com/api/v2/status.json", page_url: "https://status.insly.com", type: "statuspage" },
+  // Crypto tax
+  { id: "koinly", name: "Koinly", tags: ["crypto", "tax", "portfolio", "fintech"], status_url: "https://koinly.statuspage.io/api/v2/status.json", page_url: "http://status.koinly.io", type: "statuspage" },
+  // AI productivity
+  { id: "circleback", name: "Circleback", tags: ["ai", "meetings", "notes", "crm", "productivity"], status_url: "https://status.circleback.ai/api/v2/status.json", page_url: "https://status.circleback.ai", type: "statuspage" },
+  // Early childhood education
+  { id: "brightwheel", name: "Brightwheel", tags: ["edtech", "childcare", "early-childhood", "daycare", "saas"], status_url: "https://brightwheel.statuspage.io/api/v2/status.json", page_url: "https://brightwheel.statuspage.io", type: "statuspage" },
+  // K-12 educational content
+  { id: "savvas", name: "Savvas Learning", tags: ["edtech", "k12", "curriculum", "publishing", "education"], status_url: "https://savvas.statuspage.io/api/v2/status.json", page_url: "https://status.savvas.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4727,7 +4748,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2302 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2313 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4765,7 +4786,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2302 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2313 services.",
           },
         },
         required: [],
