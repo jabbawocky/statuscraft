@@ -3376,6 +3376,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "cardconnect", name: "CardConnect", tags: ["payments", "merchant-services", "processing", "fintech", "api"], status_url: "https://status.cardconnect.com/api/v2/status.json", page_url: "https://status.cardconnect.com", type: "statuspage" },
   // Shift4 — integrated payment processing for hospitality & retail
   { id: "shift4", name: "Shift4", tags: ["payments", "payment-processing", "hospitality", "retail", "fintech"], status_url: "https://status.shift4.com/api/v2/status.json", page_url: "https://status.shift4.com", type: "statuspage" },
+  // Khan Academy — free online education platform
+  { id: "khanacademy", name: "Khan Academy", tags: ["edtech", "education", "nonprofit", "learning"], status_url: "https://status.khanacademy.org/api/v2/status.json", page_url: "https://status.khanacademy.org", type: "statuspage" },
+  // Planning Center — church/ministry management platform
+  { id: "planningcenter", name: "Planning Center", tags: ["church", "ministry", "scheduling", "nonprofit", "saas"], status_url: "https://status.planningcenter.com/api/v2/status.json", page_url: "https://status.planningcenter.com", type: "statuspage" },
+  // Emburse — enterprise expense management & travel
+  { id: "emburse", name: "Emburse", tags: ["expense-management", "travel", "finance", "enterprise", "saas"], status_url: "https://emburse.statuspage.io/api/v2/status.json", page_url: "https://emburse.statuspage.io", type: "statuspage" },
+  // Nextech — EHR & practice management for ophthalmology and dermatology
+  { id: "nextech", name: "Nextech", tags: ["healthcare", "ehr", "ophthalmology", "dermatology", "saas"], status_url: "https://status.nextech.com/api/v2/status.json", page_url: "https://status.nextech.com", type: "statuspage" },
+  // CareCloud — cloud-based healthcare practice management & EHR
+  { id: "carecloud", name: "CareCloud", tags: ["healthcare", "ehr", "practice-management", "billing", "saas"], status_url: "https://status.carecloud.com/api/v2/status.json", page_url: "https://status.carecloud.com", type: "statuspage" },
+  // Jane — practice management for allied health professionals
+  { id: "janeapp", name: "Jane", tags: ["healthcare", "practice-management", "scheduling", "allied-health", "saas"], status_url: "https://status.janeapp.com/api/v2/status.json", page_url: "https://status.janeapp.com", type: "statuspage" },
+  // Floify — mortgage point-of-sale & loan origination platform
+  { id: "floify", name: "Floify", tags: ["mortgage", "fintech", "loan-origination", "lending", "saas"], status_url: "https://status.floify.com/api/v2/status.json", page_url: "https://status.floify.com", type: "statuspage" },
+  // Encompass Supply Chain Solutions — supply chain management platform
+  { id: "encompass_scs", name: "Encompass Supply Chain Solutions", tags: ["supply-chain", "logistics", "distribution", "enterprise"], status_url: "https://status.encompass.com/api/v2/status.json", page_url: "https://status.encompass.com", type: "statuspage" },
+  // Snappt — AI-powered tenant screening & rental fraud detection
+  { id: "snappt", name: "Snappt", tags: ["real-estate", "tenant-screening", "fraud-detection", "rental", "saas"], status_url: "https://status.snappt.com/api/v2/status.json", page_url: "https://status.snappt.com", type: "statuspage" },
+  // AskNicely — NPS & customer feedback platform
+  { id: "asknicely", name: "AskNicely", tags: ["cx", "nps", "customer-feedback", "surveys", "saas"], status_url: "https://status.asknicely.com/api/v2/status.json", page_url: "https://status.asknicely.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3780,7 +3800,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1714 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1724 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3818,7 +3838,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1714 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1724 services.",
           },
         },
         required: [],
