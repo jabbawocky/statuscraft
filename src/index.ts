@@ -4142,6 +4142,16 @@ const SERVICES: ServiceConfig[] = [
   { id: "sofi", name: "SoFi", tags: ["fintech", "banking", "lending", "investing", "consumer"], status_url: "https://sofi.statuspage.io/api/v2/status.json", page_url: "https://sofi.statuspage.io", type: "statuspage" },
   { id: "float", name: "Float", tags: ["resource-planning", "scheduling", "project-management", "capacity", "saas"], status_url: "https://status.float.com/api/v2/status.json", page_url: "https://status.float.com", type: "statuspage" },
   { id: "planful", name: "Planful", tags: ["financial-planning", "budgeting", "analytics", "finance", "saas"], status_url: "https://planful.statuspage.io/api/v2/status.json", page_url: "https://planful.statuspage.io", type: "statuspage" },
+  { id: "monday_com", name: "monday.com", tags: ["project-management", "work-os", "collaboration", "saas", "enterprise"], status_url: "https://status.monday.com/api/v2/status.json", page_url: "https://status.monday.com", type: "statuspage" },
+  { id: "brainly", name: "Brainly", tags: ["education", "edtech", "learning", "q-and-a", "saas"], status_url: "https://status.brainly.com/api/v2/status.json", page_url: "https://status.brainly.com", type: "statuspage" },
+  { id: "neon_db", name: "Neon", tags: ["database", "postgres", "serverless", "cloud", "developer-tools"], status_url: "https://neondb.statuspage.io/api/v2/status.json", page_url: "https://neondb.statuspage.io", type: "statuspage" },
+  { id: "nixtla", name: "Nixtla", tags: ["ai", "forecasting", "time-series", "ml", "api"], status_url: "https://status.nixtla.io/api/v2/status.json", page_url: "https://status.nixtla.io", type: "statuspage" },
+  { id: "comet_ml", name: "Comet", tags: ["mlops", "ml", "experiment-tracking", "ai", "devtools"], status_url: "https://status.comet.com/api/v2/status.json", page_url: "https://status.comet.com", type: "statuspage" },
+  { id: "neptune_ai", name: "Neptune.ai", tags: ["mlops", "ml", "experiment-tracking", "ai", "devtools"], status_url: "https://neptune.statuspage.io/api/v2/status.json", page_url: "https://neptune.statuspage.io", type: "statuspage" },
+  { id: "epic_games", name: "Epic Games", tags: ["gaming", "game-store", "entertainment", "unreal", "platform"], status_url: "https://status.epicgames.com/api/v2/status.json", page_url: "https://status.epicgames.com", type: "statuspage" },
+  { id: "victoria_metrics", name: "VictoriaMetrics", tags: ["monitoring", "metrics", "observability", "time-series", "cloud"], status_url: "https://status.victoriametrics.com/api/v2/status.json", page_url: "https://status.victoriametrics.com", type: "statuspage" },
+  { id: "betterstack", name: "Better Stack", tags: ["monitoring", "uptime", "logging", "observability", "devtools"], status_url: "https://betteruptime.statuspage.io/api/v2/status.json", page_url: "https://betteruptime.statuspage.io", type: "statuspage" },
+  { id: "knock_app", name: "Knock", tags: ["notifications", "messaging", "developer-tools", "api", "saas"], status_url: "https://status.knock.app/api/v2/status.json", page_url: "https://status.knock.app", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4579,7 +4589,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2157 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2167 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4617,7 +4627,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2157 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2167 services.",
           },
         },
         required: [],
