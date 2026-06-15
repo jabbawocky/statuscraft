@@ -3369,6 +3369,30 @@ const SERVICES = [
     { id: "code_climate", name: "Code Climate", tags: ["code-quality", "developer-tools", "ci", "analytics", "saas"], status_url: "https://status.codeclimate.com/api/v2/status.json", page_url: "https://status.codeclimate.com", type: "statuspage" },
     // Sleuth — DORA metrics & deployment tracking platform for engineering teams
     { id: "sleuth", name: "Sleuth", tags: ["dora-metrics", "deployments", "developer-tools", "devops", "analytics"], status_url: "https://status.sleuth.io/api/v2/status.json", page_url: "https://status.sleuth.io", type: "statuspage" },
+    // Arbitrum — Ethereum Layer 2 optimistic rollup (Offchain Labs)
+    { id: "arbitrum", name: "Arbitrum", tags: ["blockchain", "l2", "ethereum", "web3", "infrastructure"], status_url: "https://arbitrum.statuspage.io/api/v2/status.json", page_url: "https://arbitrum.statuspage.io", type: "statuspage" },
+    // Hex — collaborative data analytics & SQL notebooks platform
+    { id: "hex", name: "Hex", tags: ["analytics", "data", "notebooks", "sql", "collaboration"], status_url: "https://status.hex.tech/api/v2/status.json", page_url: "https://status.hex.tech", type: "statuspage" },
+    // SearchSpring — ecommerce search, merchandising & personalization
+    { id: "searchspring", name: "SearchSpring", tags: ["ecommerce", "search", "merchandising", "personalization", "saas"], status_url: "https://status.searchspring.com/api/v2/status.json", page_url: "https://status.searchspring.com", type: "statuspage" },
+    // ModernFi — bank deposit placement network (CDARS/ICS for credit unions & banks)
+    { id: "modernfi", name: "ModernFi", tags: ["fintech", "banking", "deposits", "fdic", "api"], status_url: "https://status.modernfi.com/api/v2/status.json", page_url: "https://status.modernfi.com", type: "statuspage" },
+    // June — product analytics platform built for B2B SaaS companies
+    { id: "june", name: "June", tags: ["analytics", "product", "b2b", "saas", "developer-tools"], status_url: "https://june.statuspage.io/api/v2/status.json", page_url: "https://june.statuspage.io", type: "statuspage" },
+    // Momento — serverless caching & pub/sub platform (zero-ops, instant scale)
+    { id: "momento", name: "Momento", tags: ["cache", "serverless", "infrastructure", "developer-tools", "pub-sub"], status_url: "https://momento.statuspage.io/api/v2/status.json", page_url: "https://momento.statuspage.io", type: "statuspage" },
+    // Kobiton — mobile device testing platform (real devices + AI automation)
+    { id: "kobiton", name: "Kobiton", tags: ["mobile", "testing", "qa", "automation", "developer-tools"], status_url: "https://status.kobiton.com/api/v2/status.json", page_url: "https://status.kobiton.com", type: "statuspage" },
+    // OKX — global crypto exchange & Web3 platform
+    { id: "okx", name: "OKX", tags: ["crypto", "exchange", "web3", "fintech", "trading"], status_url: "https://okx.statuspage.io/api/v2/status.json", page_url: "https://okx.statuspage.io", type: "statuspage" },
+    // Atomic Financial — payroll connectivity & employment data API
+    { id: "atomic_financial", name: "Atomic Financial", tags: ["fintech", "payroll", "employment", "api", "developer-tools"], status_url: "https://status.atomic.financial/api/v2/status.json", page_url: "https://status.atomic.financial", type: "statuspage" },
+    // Leonardo AI — AI image & video generation platform
+    { id: "leonardo_ai", name: "Leonardo AI", tags: ["ai", "image-generation", "creative", "saas", "api"], status_url: "https://leonardo.statuspage.io/api/v2/status.json", page_url: "https://leonardo.statuspage.io", type: "statuspage" },
+    // VEED.io — online video editing & creation platform
+    { id: "veed_io", name: "VEED.io", tags: ["video", "editing", "ai", "content-creation", "saas"], status_url: "https://status.veed.io/api/v2/status.json", page_url: "https://status.veed.io", type: "statuspage" },
+    // Mergify — GitHub pull request automation & merge queue platform
+    { id: "mergify", name: "Mergify", tags: ["developer-tools", "github", "ci-cd", "automation", "pull-requests"], status_url: "https://status.mergify.com/api/v2/status.json", page_url: "https://status.mergify.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3826,7 +3850,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1780 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1792 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3861,7 +3885,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1780 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1792 services.",
                     },
                 },
                 required: [],
