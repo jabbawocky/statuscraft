@@ -3148,6 +3148,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "grip_events", name: "Grip", tags: ["events", "networking", "matchmaking", "conference"], status_url: "https://status.grip.events/api/v2/status.json", page_url: "https://status.grip.events", type: "statuspage" },
   // Sales outreach
   { id: "overloop", name: "Overloop", tags: ["sales", "outreach", "prospecting", "automation", "saas"], status_url: "https://overloop.statuspage.io/api/v2/status.json", page_url: "https://overloop.statuspage.io", type: "statuspage" },
+  // Healthcare/EHR
+  { id: "simplepractice", name: "SimplePractice", tags: ["healthcare", "ehr", "therapy", "mental-health", "practice-management"], status_url: "https://simplepractice.statuspage.io/api/v2/status.json", page_url: "https://www.simplepracticestatus.com", type: "statuspage" },
+  // PLM/product lifecycle
+  { id: "arena", name: "Arena Solutions", tags: ["plm", "product-lifecycle", "manufacturing", "saas"], status_url: "https://arena.statuspage.io/api/v2/status.json", page_url: "https://statuspage.arenasolutions.com", type: "statuspage" },
+  // Crypto asset custody
+  { id: "fireblocks", name: "Fireblocks", tags: ["crypto", "digital-assets", "custody", "fintech", "web3"], status_url: "https://fireblocks.statuspage.io/api/v2/status.json", page_url: "https://status.fireblocks.com", type: "statuspage" },
+  // Crypto hardware wallet
+  { id: "ledger", name: "Ledger", tags: ["crypto", "hardware-wallet", "web3", "security", "fintech"], status_url: "https://ledger.statuspage.io/api/v2/status.json", page_url: "https://status.ledger.com", type: "statuspage" },
+  // Event ticketing
+  { id: "tixr", name: "Tixr", tags: ["events", "ticketing", "entertainment", "saas"], status_url: "https://tixr.statuspage.io/api/v2/status.json", page_url: "https://tixr.statuspage.io", type: "statuspage" },
+  // Blockchain compliance
+  { id: "trm_labs", name: "TRM Labs", tags: ["blockchain", "crypto", "compliance", "fraud", "web3"], status_url: "https://trmlabs.statuspage.io/api/v2/status.json", page_url: "https://status.trmlabs.com", type: "statuspage" },
+  // Customer data platform
+  { id: "treasure_ai", name: "Treasure AI", tags: ["cdp", "customer-data", "analytics", "saas"], status_url: "https://status.treasure.ai/api/v2/status.json", page_url: "https://status.treasure.ai", type: "statuspage" },
+  // Video interviewing
+  { id: "hirevue", name: "HireVue", tags: ["recruiting", "hr", "video-interview", "ai", "saas"], status_url: "https://hirevue.statuspage.io/api/v2/status.json", page_url: "https://status.hirevue.com", type: "statuspage" },
+  // Technical interviewing
+  { id: "coderpad", name: "CoderPad", tags: ["recruiting", "technical-interview", "developer-tools", "saas"], status_url: "https://coderpad.statuspage.io/api/v2/status.json", page_url: "https://status.coderpad.io", type: "statuspage" },
+  // Hetzner Cloud
+  { id: "hetzner_cloud", name: "Hetzner Cloud", tags: ["cloud", "iaas", "vps", "european", "hosting"], status_url: "https://hcloud.statuspage.io/api/v2/status.json", page_url: "https://hcloud.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3552,7 +3572,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1600 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1610 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3590,7 +3610,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1600 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1610 services.",
           },
         },
         required: [],
