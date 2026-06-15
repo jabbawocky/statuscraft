@@ -4228,6 +4228,21 @@ const SERVICES: ServiceConfig[] = [
   { id: "health_gorilla", name: "Health Gorilla", tags: ["healthcare", "health-data", "lab-results", "fhir", "api"], status_url: "https://status.healthgorilla.com/api/v2/status.json", page_url: "https://status.healthgorilla.com", type: "statuspage" },
   { id: "deliverect", name: "Deliverect", tags: ["food-delivery", "restaurant", "pos-integration", "ecommerce", "saas"], status_url: "https://status.deliverect.com/api/v2/status.json", page_url: "https://status.deliverect.com", type: "statuspage" },
   { id: "thoughtspot", name: "ThoughtSpot", tags: ["analytics", "bi", "search-analytics", "ai", "enterprise"], status_url: "https://status.thoughtspot.cloud/api/v2/status.json", page_url: "https://status.thoughtspot.cloud", type: "statuspage" },
+  // Tick 228 additions — 14 new live-verified services
+  { id: "whiparound", name: "Whip Around", tags: ["fleet-management", "vehicle-inspection", "maintenance", "field-service", "saas"], status_url: "https://status.whip-around.com/api/v2/status.json", page_url: "https://status.whip-around.com", type: "statuspage" },
+  { id: "apivideo", name: "api.video", tags: ["video", "streaming", "transcoding", "media", "api"], status_url: "https://status.api.video/api/v2/status.json", page_url: "https://status.api.video", type: "statuspage" },
+  { id: "smugmug", name: "SmugMug", tags: ["photo-hosting", "photography", "media", "storage", "consumer"], status_url: "https://status.smugmug.com/api/v2/status.json", page_url: "https://status.smugmug.com", type: "statuspage" },
+  { id: "nshift", name: "nShift", tags: ["shipping", "logistics", "delivery", "e-commerce", "enterprise"], status_url: "https://status.nshift.com/api/v2/status.json", page_url: "https://status.nshift.com", type: "statuspage" },
+  { id: "goshippo", name: "Shippo", tags: ["shipping", "logistics", "labels", "rates", "api"], status_url: "https://status.goshippo.com/api/v2/status.json", page_url: "https://status.goshippo.com", type: "statuspage" },
+  { id: "name_com", name: "Name.com", tags: ["domains", "registrar", "dns", "hosting", "ssl"], status_url: "https://status.name.com/api/v2/status.json", page_url: "https://status.name.com", type: "statuspage" },
+  { id: "rho", name: "Rho", tags: ["fintech", "business-banking", "corporate-cards", "ap-automation", "saas"], status_url: "https://status.rho.co/api/v2/status.json", page_url: "https://status.rho.co", type: "statuspage" },
+  { id: "oyster", name: "Oyster HR", tags: ["hr", "employer-of-record", "global-hiring", "payroll", "saas"], status_url: "https://status.oysterhr.com/api/v2/status.json", page_url: "https://status.oysterhr.com", type: "statuspage" },
+  { id: "tidelift", name: "Tidelift", tags: ["open-source", "supply-chain", "security", "dependencies", "developer-tools"], status_url: "https://status.tidelift.com/api/v2/status.json", page_url: "https://status.tidelift.com", type: "statuspage" },
+  { id: "hawkai", name: "Hawk AI", tags: ["aml", "fraud-detection", "financial-crime", "compliance", "fintech"], status_url: "https://status.hawk.ai/api/v2/status.json", page_url: "https://status.hawk.ai", type: "statuspage" },
+  { id: "clearpay", name: "Clearpay", tags: ["bnpl", "payments", "buy-now-pay-later", "fintech", "uk"], status_url: "https://status.clearpay.co.uk/api/v2/status.json", page_url: "https://status.clearpay.co.uk", type: "statuspage" },
+  { id: "peakon", name: "Peakon", tags: ["employee-engagement", "hr", "surveys", "analytics", "saas"], status_url: "https://status.peakon.com/api/v2/status.json", page_url: "https://status.peakon.com", type: "statuspage" },
+  { id: "schoox", name: "Schoox", tags: ["lms", "learning-management", "training", "enterprise", "saas"], status_url: "https://status.schoox.com/api/v2/status.json", page_url: "https://status.schoox.com", type: "statuspage" },
+  { id: "global_e", name: "Global-e", tags: ["e-commerce", "cross-border", "global-payments", "localization", "saas"], status_url: "https://status.global-e.com/api/v2/status.json", page_url: "https://status.global-e.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4630,7 +4645,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.55.0" },
+  { name: "statuscraft", version: "2.56.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -4665,7 +4680,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2242 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2256 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4703,7 +4718,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2242 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2256 services.",
           },
         },
         required: [],

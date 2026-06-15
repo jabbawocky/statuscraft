@@ -4074,6 +4074,33 @@ const SERVICES = [
     { id: "fareharbor", name: "FareHarbor", tags: ["booking", "activities", "tours", "experiences", "saas"], status_url: "https://status.fareharbor.com/api/v2/status.json", page_url: "https://status.fareharbor.com", type: "statuspage" },
     { id: "rxnt", name: "RXNT", tags: ["healthcare", "ehr", "pharmacy", "billing", "saas"], status_url: "https://status.rxnt.com/api/v2/status.json", page_url: "https://status.rxnt.com", type: "statuspage" },
     { id: "regiondo", name: "Regiondo", tags: ["booking", "tours", "activities", "experiences", "europe"], status_url: "https://status.regiondo.com/api/v2/status.json", page_url: "https://status.regiondo.com", type: "statuspage" },
+    // Tick 227 additions — 11 new live-verified services
+    { id: "recharge", name: "Recharge Payments", tags: ["ecommerce", "subscriptions", "recurring-billing", "payments", "shopify"], status_url: "https://status.rechargepayments.com/api/v2/status.json", page_url: "https://status.rechargepayments.com", type: "statuspage" },
+    { id: "loqate", name: "Loqate", tags: ["address-verification", "geocoding", "data-quality", "global", "api"], status_url: "https://status.loqate.com/api/v2/status.json", page_url: "https://status.loqate.com", type: "statuspage" },
+    { id: "moveworks", name: "Moveworks", tags: ["ai", "enterprise", "helpdesk", "automation", "it-support"], status_url: "https://status.moveworks.com/api/v2/status.json", page_url: "https://status.moveworks.com", type: "statuspage" },
+    { id: "splunk_cloud", name: "Splunk Cloud", tags: ["siem", "observability", "security", "log-management", "enterprise"], status_url: "https://status.splunkcloud.com/api/v2/status.json", page_url: "https://status.splunkcloud.com", type: "statuspage" },
+    { id: "qgenda", name: "QGenda", tags: ["healthcare", "scheduling", "workforce", "physician", "saas"], status_url: "https://status.qgenda.com/api/v2/status.json", page_url: "https://status.qgenda.com", type: "statuspage" },
+    { id: "grasshopper", name: "Grasshopper", tags: ["voip", "business-phone", "sms", "virtual-phone", "smb"], status_url: "https://status.grasshopper.com/api/v2/status.json", page_url: "https://status.grasshopper.com", type: "statuspage" },
+    { id: "ideon_api", name: "Ideon", tags: ["insurance", "benefits", "health-insurance", "api", "fintech"], status_url: "https://status.ideonapi.com/api/v2/status.json", page_url: "https://status.ideonapi.com", type: "statuspage" },
+    { id: "1up_health", name: "1upHealth", tags: ["healthcare", "fhir", "health-data", "interoperability", "api"], status_url: "https://status.1up.health/api/v2/status.json", page_url: "https://status.1up.health", type: "statuspage" },
+    { id: "health_gorilla", name: "Health Gorilla", tags: ["healthcare", "health-data", "lab-results", "fhir", "api"], status_url: "https://status.healthgorilla.com/api/v2/status.json", page_url: "https://status.healthgorilla.com", type: "statuspage" },
+    { id: "deliverect", name: "Deliverect", tags: ["food-delivery", "restaurant", "pos-integration", "ecommerce", "saas"], status_url: "https://status.deliverect.com/api/v2/status.json", page_url: "https://status.deliverect.com", type: "statuspage" },
+    { id: "thoughtspot", name: "ThoughtSpot", tags: ["analytics", "bi", "search-analytics", "ai", "enterprise"], status_url: "https://status.thoughtspot.cloud/api/v2/status.json", page_url: "https://status.thoughtspot.cloud", type: "statuspage" },
+    // Tick 228 additions — 14 new live-verified services
+    { id: "whiparound", name: "Whip Around", tags: ["fleet-management", "vehicle-inspection", "maintenance", "field-service", "saas"], status_url: "https://status.whip-around.com/api/v2/status.json", page_url: "https://status.whip-around.com", type: "statuspage" },
+    { id: "apivideo", name: "api.video", tags: ["video", "streaming", "transcoding", "media", "api"], status_url: "https://status.api.video/api/v2/status.json", page_url: "https://status.api.video", type: "statuspage" },
+    { id: "smugmug", name: "SmugMug", tags: ["photo-hosting", "photography", "media", "storage", "consumer"], status_url: "https://status.smugmug.com/api/v2/status.json", page_url: "https://status.smugmug.com", type: "statuspage" },
+    { id: "nshift", name: "nShift", tags: ["shipping", "logistics", "delivery", "e-commerce", "enterprise"], status_url: "https://status.nshift.com/api/v2/status.json", page_url: "https://status.nshift.com", type: "statuspage" },
+    { id: "goshippo", name: "Shippo", tags: ["shipping", "logistics", "labels", "rates", "api"], status_url: "https://status.goshippo.com/api/v2/status.json", page_url: "https://status.goshippo.com", type: "statuspage" },
+    { id: "name_com", name: "Name.com", tags: ["domains", "registrar", "dns", "hosting", "ssl"], status_url: "https://status.name.com/api/v2/status.json", page_url: "https://status.name.com", type: "statuspage" },
+    { id: "rho", name: "Rho", tags: ["fintech", "business-banking", "corporate-cards", "ap-automation", "saas"], status_url: "https://status.rho.co/api/v2/status.json", page_url: "https://status.rho.co", type: "statuspage" },
+    { id: "oyster", name: "Oyster HR", tags: ["hr", "employer-of-record", "global-hiring", "payroll", "saas"], status_url: "https://status.oysterhr.com/api/v2/status.json", page_url: "https://status.oysterhr.com", type: "statuspage" },
+    { id: "tidelift", name: "Tidelift", tags: ["open-source", "supply-chain", "security", "dependencies", "developer-tools"], status_url: "https://status.tidelift.com/api/v2/status.json", page_url: "https://status.tidelift.com", type: "statuspage" },
+    { id: "hawkai", name: "Hawk AI", tags: ["aml", "fraud-detection", "financial-crime", "compliance", "fintech"], status_url: "https://status.hawk.ai/api/v2/status.json", page_url: "https://status.hawk.ai", type: "statuspage" },
+    { id: "clearpay", name: "Clearpay", tags: ["bnpl", "payments", "buy-now-pay-later", "fintech", "uk"], status_url: "https://status.clearpay.co.uk/api/v2/status.json", page_url: "https://status.clearpay.co.uk", type: "statuspage" },
+    { id: "peakon", name: "Peakon", tags: ["employee-engagement", "hr", "surveys", "analytics", "saas"], status_url: "https://status.peakon.com/api/v2/status.json", page_url: "https://status.peakon.com", type: "statuspage" },
+    { id: "schoox", name: "Schoox", tags: ["lms", "learning-management", "training", "enterprise", "saas"], status_url: "https://status.schoox.com/api/v2/status.json", page_url: "https://status.schoox.com", type: "statuspage" },
+    { id: "global_e", name: "Global-e", tags: ["e-commerce", "cross-border", "global-payments", "localization", "saas"], status_url: "https://status.global-e.com/api/v2/status.json", page_url: "https://status.global-e.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4503,7 +4530,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.55.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.56.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -4531,7 +4558,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2231 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2256 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -4566,7 +4593,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2188 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2256 services.",
                     },
                 },
                 required: [],
