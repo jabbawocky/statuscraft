@@ -4269,6 +4269,17 @@ const SERVICES: ServiceConfig[] = [
   { id: "coreview", name: "CoreView", tags: ["microsoft-365", "saas-management", "governance", "it", "enterprise"], status_url: "https://status.coreview.com/api/v2/status.json", page_url: "https://status.coreview.com", type: "statuspage" },
   { id: "crexi", name: "Crexi", tags: ["commercial-real-estate", "marketplace", "cre", "listings", "analytics"], status_url: "https://status.crexi.com/api/v2/status.json", page_url: "https://status.crexi.com", type: "statuspage" },
   { id: "tackle_io", name: "Tackle.io", tags: ["cloud-marketplace", "aws-marketplace", "saas", "revenue", "b2b"], status_url: "https://status.tackle.io/api/v2/status.json", page_url: "https://status.tackle.io", type: "statuspage" },
+  { id: "iadvize", name: "iAdvize", tags: ["live-chat", "customer-engagement", "saas", "messaging", "support"], status_url: "https://status.iadvize.com/api/v2/status.json", page_url: "https://status.iadvize.com", type: "statuspage" },
+  { id: "channable", name: "Channable", tags: ["feed-management", "ecommerce", "marketing", "product-feeds", "automation"], status_url: "https://channable.statuspage.io/api/v2/status.json", page_url: "https://www.channablestatus.com", type: "statuspage" },
+  { id: "flxpoint", name: "Flxpoint", tags: ["dropship", "supply-chain", "ecommerce", "inventory", "automation"], status_url: "https://status.flxpoint.com/api/v2/status.json", page_url: "https://status.flxpoint.com", type: "statuspage" },
+  { id: "datahub_io", name: "DataHub", tags: ["data-catalog", "metadata", "data-governance", "analytics", "developer-tools"], status_url: "https://status.datahub.com/api/v2/status.json", page_url: "https://status.datahub.com", type: "statuspage" },
+  { id: "giphy", name: "GIPHY", tags: ["media", "gifs", "api", "content", "developer-tools"], status_url: "https://status.giphy.com/api/v2/status.json", page_url: "https://status.giphy.com", type: "statuspage" },
+  { id: "imgur", name: "Imgur", tags: ["media", "image-hosting", "content", "social"], status_url: "https://status.imgur.com/api/v2/status.json", page_url: "https://status.imgur.com", type: "statuspage" },
+  { id: "nomic_ai", name: "Nomic AI", tags: ["ai", "embeddings", "data-visualization", "llm", "developer-tools"], status_url: "https://status.nomic.ai/api/v2/status.json", page_url: "https://status.nomic.ai", type: "statuspage" },
+  { id: "gearset", name: "Gearset", tags: ["salesforce", "devops", "ci-cd", "deployment", "developer-tools"], status_url: "https://status.gearset.com/api/v2/status.json", page_url: "https://status.gearset.com", type: "statuspage" },
+  { id: "copado", name: "Copado", tags: ["salesforce", "devops", "release-management", "ci-cd", "enterprise"], status_url: "https://status.copado.com/api/v2/status.json", page_url: "https://status.copado.com", type: "statuspage" },
+  { id: "rydoo", name: "Rydoo", tags: ["expense-management", "travel", "finance", "hr", "saas"], status_url: "https://status.rydoo.com/api/v2/status.json", page_url: "https://status.rydoo.com", type: "statuspage" },
+  { id: "soldo", name: "Soldo", tags: ["spend-management", "corporate-cards", "finance", "expense", "fintech"], status_url: "https://soldo.statuspage.io/api/v2/status.json", page_url: "https://soldo.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4671,7 +4682,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.56.0" },
+  { name: "statuscraft", version: "2.57.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -4706,7 +4717,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2281 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2292 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4744,7 +4755,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2281 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2292 services.",
           },
         },
         required: [],
