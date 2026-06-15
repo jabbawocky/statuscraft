@@ -3897,6 +3897,35 @@ const SERVICES: ServiceConfig[] = [
   { id: "unify", name: "Unify", tags: ["gtm", "crm", "data", "sales-intelligence", "saas"], status_url: "https://unify.statuspage.io/api/v2/status.json", page_url: "https://unify.statuspage.io", type: "statuspage" },
   { id: "halon", name: "Halon", tags: ["email", "mta", "security", "deliverability", "saas"], status_url: "https://halon.statuspage.io/api/v2/status.json", page_url: "https://halon.statuspage.io", type: "statuspage" },
   { id: "metadata_io", name: "Metadata", tags: ["marketing", "abm", "paid-media", "b2b", "saas"], status_url: "https://metadata.statuspage.io/api/v2/status.json", page_url: "https://metadata.statuspage.io", type: "statuspage" },
+  // Tick 207 additions
+  // Chroma — open-source vector database for AI/ML embeddings (BetterStack)
+  { id: "chroma", name: "Chroma", tags: ["vector-database", "ai", "ml", "embeddings", "developer-tools"], status_url: "https://status.trychroma.com/api/v2/summary.json", page_url: "https://status.trychroma.com", type: "betterstack" },
+  // name.com — domain registrar & DNS management
+  { id: "namecom", name: "name.com", tags: ["domain", "dns", "registrar", "hosting"], status_url: "https://status.name.com/api/v2/status.json", page_url: "https://status.name.com", type: "statuspage" },
+  // NuGet — .NET package manager & registry
+  { id: "nuget", name: "NuGet", tags: ["package-manager", "dotnet", "csharp", "developer-tools"], status_url: "https://nuget.statuspage.io/api/v2/status.json", page_url: "https://nuget.statuspage.io", type: "statuspage" },
+  // Goldsky — real-time blockchain data indexing & subgraph infrastructure (BetterStack)
+  { id: "goldsky", name: "Goldsky", tags: ["blockchain", "web3", "data-indexing", "subgraph", "infrastructure"], status_url: "https://status.goldsky.com/api/v2/summary.json", page_url: "https://status.goldsky.com", type: "betterstack" },
+  // 1upHealth — FHIR-native healthcare data aggregation API (BetterStack)
+  { id: "health_1up", name: "1upHealth", tags: ["healthcare", "fhir", "api", "data-aggregation", "health-tech"], status_url: "https://status.1up.health/api/v2/summary.json", page_url: "https://status.1up.health", type: "betterstack" },
+  // Datavant — healthcare data de-identification & tokenization platform (BetterStack)
+  { id: "datavant", name: "Datavant", tags: ["healthcare", "data", "privacy", "de-identification", "enterprise"], status_url: "https://status.datavant.com/api/v2/summary.json", page_url: "https://status.datavant.com", type: "betterstack" },
+  // Medallion — healthcare provider credentialing & enrollment automation (BetterStack)
+  { id: "medallion", name: "Medallion", tags: ["healthcare", "credentialing", "provider-management", "health-tech", "saas"], status_url: "https://status.medallion.co/api/v2/summary.json", page_url: "https://status.medallion.co", type: "betterstack" },
+  // Canvas Medical — EHR & care workflow platform for virtual-first health companies (BetterStack)
+  { id: "canvas_medical", name: "Canvas Medical", tags: ["healthcare", "ehr", "clinical", "health-tech", "saas"], status_url: "https://status.canvasmedical.com/api/v2/summary.json", page_url: "https://status.canvasmedical.com", type: "betterstack" },
+  // CodeRabbit — AI-powered automated code review platform (BetterStack)
+  { id: "coderabbit", name: "CodeRabbit", tags: ["ai", "code-review", "developer-tools", "ci-cd", "saas"], status_url: "https://status.coderabbit.ai/api/v2/summary.json", page_url: "https://status.coderabbit.ai", type: "betterstack" },
+  // Zed — high-performance multiplayer code editor (BetterStack)
+  { id: "zed", name: "Zed", tags: ["editor", "developer-tools", "collaboration", "ide", "saas"], status_url: "https://status.zed.dev/api/v2/summary.json", page_url: "https://status.zed.dev", type: "betterstack" },
+  // Bolt.new — AI-powered full-stack web app builder by StackBlitz
+  { id: "bolt_new", name: "Bolt.new", tags: ["ai", "developer-tools", "web-builder", "no-code", "saas"], status_url: "https://status.bolt.new/api/v2/status.json", page_url: "https://status.bolt.new", type: "statuspage" },
+  // Dynamic — web3 authentication & user management platform (BetterStack)
+  { id: "dynamic_xyz", name: "Dynamic", tags: ["web3", "auth", "identity", "wallet", "developer-tools"], status_url: "https://status.dynamic.xyz/api/v2/summary.json", page_url: "https://status.dynamic.xyz", type: "betterstack" },
+  // Particle Network — web3 infrastructure: AA wallet, BTC re-staking, chain abstraction
+  { id: "particle_network", name: "Particle Network", tags: ["web3", "blockchain", "wallet", "account-abstraction", "infrastructure"], status_url: "https://status.particle.network/api/v2/status.json", page_url: "https://status.particle.network", type: "statuspage" },
+  // Pimlico — ERC-4337 bundler & paymaster infrastructure for account abstraction (BetterStack)
+  { id: "pimlico", name: "Pimlico", tags: ["web3", "erc4337", "account-abstraction", "bundler", "infrastructure"], status_url: "https://status.pimlico.io/api/v2/summary.json", page_url: "https://status.pimlico.io", type: "betterstack" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4299,7 +4328,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.52.0" },
+  { name: "statuscraft", version: "2.53.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -4334,7 +4363,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2002 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2016 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4372,7 +4401,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2002 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2016 services.",
           },
         },
         required: [],
