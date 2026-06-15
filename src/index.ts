@@ -3993,6 +3993,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "formant", name: "Formant", tags: ["robotics", "iot", "observability", "cloud", "operations"], status_url: "https://status.formant.io/api/v2/status.json", page_url: "https://status.formant.io", type: "statuspage" },
   // Monogoto — IoT SIM connectivity and private cellular network platform
   { id: "monogoto", name: "Monogoto", tags: ["iot", "connectivity", "cellular", "sim", "infrastructure"], status_url: "https://status.monogoto.io/api/v2/status.json", page_url: "https://status.monogoto.io", type: "statuspage" },
+  // Orum — AI-powered parallel dialer for sales teams
+  { id: "orum", name: "Orum", tags: ["sales", "dialer", "ai", "revenue", "saas"], status_url: "https://status.orum.com/api/v2/status.json", page_url: "https://status.orum.com", type: "statuspage" },
+  // Plane.so — open-source project management and issue tracking platform
+  { id: "plane_so", name: "Plane", tags: ["project-management", "open-source", "issue-tracking", "saas", "productivity"], status_url: "https://status.plane.so/api/v2/status.json", page_url: "https://status.plane.so", type: "statuspage" },
+  // DoiT — cloud cost optimization and engineering platform for GCP/AWS/Azure
+  { id: "doit", name: "DoiT", tags: ["cloud", "finops", "cost-optimization", "aws", "gcp"], status_url: "https://status.doit.com/api/v2/status.json", page_url: "https://status.doit.com", type: "statuspage" },
+  // Shipwell — cloud-based transportation management system (TMS)
+  { id: "shipwell", name: "Shipwell", tags: ["logistics", "tms", "supply-chain", "freight", "saas"], status_url: "https://status.shipwell.com/api/v2/status.json", page_url: "https://status.shipwell.com", type: "statuspage" },
+  // Close CRM — sales CRM built for inside sales teams
+  { id: "close_crm", name: "Close CRM", tags: ["crm", "sales", "email", "calling", "saas"], status_url: "https://status.close.com/api/v2/status.json", page_url: "https://status.close.com", type: "statuspage" },
+  // GoodTime — hiring intelligence and interview scheduling automation platform
+  { id: "goodtime", name: "GoodTime", tags: ["recruiting", "interview-scheduling", "hr", "automation", "saas"], status_url: "https://status.goodtime.io/api/v2/status.json", page_url: "https://status.goodtime.io", type: "statuspage" },
+  // Spotnana — modern corporate travel management and booking platform
+  { id: "spotnana", name: "Spotnana", tags: ["travel", "corporate-travel", "expense", "saas", "enterprise"], status_url: "https://status.spotnana.com/api/v2/status.json", page_url: "https://status.spotnana.com", type: "statuspage" },
+  // Meraki — Cisco cloud-managed networking platform (WiFi, switches, security)
+  { id: "meraki", name: "Cisco Meraki", tags: ["networking", "wifi", "cloud", "enterprise", "cisco"], status_url: "https://status.meraki.net/api/v2/status.json", page_url: "https://status.meraki.net", type: "statuspage" },
+  // Ecamm Live — professional live streaming software for Mac creators
+  { id: "ecamm", name: "Ecamm Live", tags: ["streaming", "video", "live-streaming", "mac", "saas"], status_url: "https://status.ecamm.com/api/v2/status.json", page_url: "https://status.ecamm.com", type: "statuspage" },
+  // Sketch — vector design tool for UI/UX and icon design
+  { id: "sketch", name: "Sketch", tags: ["design", "ui-ux", "vector", "mac", "collaboration"], status_url: "https://status.sketch.com/api/v2/summary.json", page_url: "https://status.sketch.com", type: "betterstack" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4430,7 +4450,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2049 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2059 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4468,7 +4488,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2049 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2059 services.",
           },
         },
         required: [],
