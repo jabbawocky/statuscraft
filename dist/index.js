@@ -3784,6 +3784,29 @@ const SERVICES = [
     { id: "particle_network", name: "Particle Network", tags: ["web3", "blockchain", "wallet", "account-abstraction", "infrastructure"], status_url: "https://status.particle.network/api/v2/status.json", page_url: "https://status.particle.network", type: "statuspage" },
     // Pimlico — ERC-4337 bundler & paymaster infrastructure for account abstraction (BetterStack)
     { id: "pimlico", name: "Pimlico", tags: ["web3", "erc4337", "account-abstraction", "bundler", "infrastructure"], status_url: "https://status.pimlico.io/api/v2/summary.json", page_url: "https://status.pimlico.io", type: "betterstack" },
+    // Tick 208 additions
+    // Weights & Biases — ML experiment tracking, model monitoring & collaborative AI development platform
+    { id: "weights_biases", name: "Weights & Biases", tags: ["ai", "ml", "experiment-tracking", "monitoring", "developer-tools"], status_url: "https://status.wandb.com/api/v2/status.json", page_url: "https://status.wandb.com", type: "statuspage" },
+    // Bubble — no-code full-stack web app builder
+    { id: "bubble_io", name: "Bubble", tags: ["no-code", "low-code", "web-builder", "saas", "developer-tools"], status_url: "https://status.bubble.io/api/v2/status.json", page_url: "https://status.bubble.io", type: "statuspage" },
+    // Semaphore CI — fast cloud CI/CD for modern engineering teams
+    { id: "semaphore", name: "Semaphore CI", tags: ["ci-cd", "devtools", "automation", "cloud", "developer-tools"], status_url: "https://status.semaphoreci.com/api/v2/status.json", page_url: "https://status.semaphoreci.com", type: "statuspage" },
+    // Split.io — feature flags, experimentation & data-driven delivery platform
+    { id: "split_io", name: "Split.io", tags: ["feature-flags", "experimentation", "developer-tools", "saas", "testing"], status_url: "https://status.split.io/api/v2/status.json", page_url: "https://status.split.io", type: "statuspage" },
+    // Linode / Akamai Cloud — managed cloud computing (VMs, Kubernetes, object storage, databases)
+    { id: "linode_akamai", name: "Linode / Akamai Cloud", tags: ["cloud", "infrastructure", "iaas", "hosting", "cdn"], status_url: "https://status.linode.com/api/v2/status.json", page_url: "https://status.linode.com", type: "statuspage" },
+    // Yuno — global payments orchestration platform for Latin America & emerging markets
+    { id: "yuno", name: "Yuno Payments", tags: ["payments", "fintech", "orchestration", "latam", "api"], status_url: "https://status.y.uno/api/v2/status.json", page_url: "https://status.y.uno", type: "statuspage" },
+    // Sigma Computing — cloud-native BI & analytics on top of cloud data warehouses
+    { id: "sigma_computing", name: "Sigma Computing", tags: ["bi", "analytics", "data", "cloud", "saas"], status_url: "https://status.sigmacomputing.com/api/v2/status.json", page_url: "https://status.sigmacomputing.com", type: "statuspage" },
+    // Stream — scalable chat & activity feed APIs for in-app messaging
+    { id: "stream_io", name: "Stream", tags: ["chat", "messaging", "realtime", "api", "developer-tools"], status_url: "https://status.getstream.io/api/v2/status.json", page_url: "https://status.getstream.io", type: "statuspage" },
+    // Bunny.net — global CDN, edge storage, video streaming & DNS platform
+    { id: "bunnynet", name: "Bunny.net", tags: ["cdn", "edge", "storage", "video", "infrastructure"], status_url: "https://status.bunny.net/api/v2/status.json", page_url: "https://status.bunny.net", type: "statuspage" },
+    // Aha! Roadmaps — product roadmap, strategy & release planning platform
+    { id: "aha_io", name: "Aha! Roadmaps", tags: ["product-management", "roadmap", "planning", "saas", "productivity"], status_url: "https://status.aha.io/api/v2/status.json", page_url: "https://status.aha.io", type: "statuspage" },
+    // HashiCorp Cloud Platform — managed Vault, Terraform, Consul & Packer on multi-cloud
+    { id: "vault_hashicorp", name: "HashiCorp Cloud Platform", tags: ["secrets", "infrastructure", "security", "developer-tools", "cloud"], status_url: "https://status.hashicorp.com/api/v2/status.json", page_url: "https://status.hashicorp.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4213,7 +4236,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.53.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.54.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -4241,7 +4264,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2016 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2027 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -4276,7 +4299,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2016 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2027 services.",
                     },
                 },
                 required: [],
