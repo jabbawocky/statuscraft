@@ -4040,6 +4040,17 @@ const SERVICES = [
     { id: "xandr", name: "Xandr", tags: ["advertising", "adtech", "programmatic", "microsoft", "marketplace"], status_url: "https://status.xandr.com/api/v2/status.json", page_url: "https://status.xandr.com", type: "statuspage" },
     { id: "triplelift", name: "TripleLift", tags: ["advertising", "adtech", "programmatic", "native", "marketplace"], status_url: "https://status.triplelift.com/api/v2/status.json", page_url: "https://status.triplelift.com", type: "statuspage" },
     { id: "payplug", name: "Payplug", tags: ["payments", "fintech", "europe", "gateway", "ecommerce"], status_url: "https://status.payplug.com/api/v2/status.json", page_url: "https://status.payplug.com", type: "statuspage" },
+    { id: "shogun", name: "Shogun", tags: ["ecommerce", "page-builder", "landing-pages", "shopify", "saas"], status_url: "https://status.getshogun.com/api/v2/status.json", page_url: "https://status.getshogun.com", type: "statuspage" },
+    { id: "sticky_io", name: "Sticky.io", tags: ["ecommerce", "subscriptions", "recurring-billing", "crm", "saas"], status_url: "https://status.sticky.io/api/v2/status.json", page_url: "https://status.sticky.io", type: "statuspage" },
+    { id: "mirakl", name: "Mirakl", tags: ["marketplace", "b2b", "ecommerce", "platform", "saas"], status_url: "https://status.mirakl.com/api/v2/status.json", page_url: "https://status.mirakl.com", type: "statuspage" },
+    { id: "beyond_identity", name: "Beyond Identity", tags: ["security", "authentication", "zero-trust", "mfa", "identity"], status_url: "https://status.beyondidentity.com/api/v2/status.json", page_url: "https://status.beyondidentity.com", type: "statuspage" },
+    { id: "ping_identity", name: "Ping Identity", tags: ["identity", "iam", "sso", "authentication", "enterprise"], status_url: "https://status.pingidentity.com/api/v2/status.json", page_url: "https://status.pingidentity.com", type: "statuspage" },
+    { id: "alviere", name: "Alviere", tags: ["fintech", "embedded-finance", "banking", "payments", "api"], status_url: "https://status.alviere.com/api/v2/status.json", page_url: "https://status.alviere.com", type: "statuspage" },
+    { id: "alfresco", name: "Alfresco", tags: ["ecm", "content-management", "document-management", "enterprise", "cloud"], status_url: "https://alfresco.statuspage.io/api/v2/status.json", page_url: "https://alfresco.statuspage.io", type: "statuspage" },
+    { id: "uberall", name: "Uberall", tags: ["local-marketing", "listings", "seo", "reputation", "saas"], status_url: "https://status.uberall.com/api/v2/status.json", page_url: "https://status.uberall.com", type: "statuspage" },
+    { id: "fourth", name: "Fourth", tags: ["hospitality", "workforce-management", "scheduling", "hr", "saas"], status_url: "https://status.fourth.com/api/v2/status.json", page_url: "https://status.fourth.com", type: "statuspage" },
+    { id: "ionic", name: "Ionic", tags: ["mobile", "cross-platform", "developer-tools", "framework", "saas"], status_url: "https://status.ionicframework.com/api/v2/status.json", page_url: "https://status.ionicframework.com", type: "statuspage" },
+    { id: "meister", name: "Meister", tags: ["productivity", "mind-mapping", "task-management", "collaboration", "saas"], status_url: "https://status.meisterlabs.com/api/v2/status.json", page_url: "https://status.meisterlabs.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4497,7 +4508,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2197 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2208 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
