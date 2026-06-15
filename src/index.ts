@@ -3354,6 +3354,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "quantum_workplace", name: "Quantum Workplace", tags: ["hr", "employee-engagement", "performance-management", "surveys", "saas"], status_url: "https://status.quantumworkplace.com/api/v2/status.json", page_url: "https://status.quantumworkplace.com", type: "statuspage" },
   // Small Improvements — continuous performance feedback & OKR platform
   { id: "small_improvements", name: "Small Improvements", tags: ["hr", "performance-management", "okr", "feedback", "saas"], status_url: "https://status.small-improvements.com/api/v2/status.json", page_url: "https://status.small-improvements.com", type: "statuspage" },
+  // Cover Genius — global embedded insurance platform
+  { id: "covergenius", name: "Cover Genius", tags: ["insurance", "insurtech", "embedded-insurance", "fintech", "api"], status_url: "https://status.covergenius.com/api/v2/status.json", page_url: "https://status.covergenius.com", type: "statuspage" },
+  // 7shifts — restaurant employee scheduling & workforce management
+  { id: "7shifts", name: "7shifts", tags: ["restaurant", "workforce-management", "scheduling", "hospitality", "saas"], status_url: "https://status.7shifts.com/api/v2/status.json", page_url: "https://status.7shifts.com", type: "statuspage" },
+  // CalAmp — IoT/telematics platform for fleet & asset tracking
+  { id: "calamp", name: "CalAmp", tags: ["iot", "telematics", "fleet", "asset-tracking", "saas"], status_url: "https://status.calamp.com/api/v2/status.json", page_url: "https://status.calamp.com", type: "statuspage" },
+  // Pinterest — visual discovery & social commerce platform
+  { id: "pinterest", name: "Pinterest", tags: ["social-media", "visual-discovery", "e-commerce", "advertising", "consumer"], status_url: "https://status.pinterest.com/api/v2/status.json", page_url: "https://status.pinterest.com", type: "statuspage" },
+  // Elastic Path — headless commerce platform for complex B2C/B2B
+  { id: "elasticpath", name: "Elastic Path", tags: ["e-commerce", "headless-commerce", "saas", "api", "b2b"], status_url: "https://status.elasticpath.com/api/v2/status.json", page_url: "https://status.elasticpath.com", type: "statuspage" },
+  // Saleor — open-source headless e-commerce platform
+  { id: "saleor", name: "Saleor", tags: ["e-commerce", "headless-commerce", "open-source", "saas", "graphql"], status_url: "https://status.saleor.io/api/v2/status.json", page_url: "https://status.saleor.io", type: "statuspage" },
+  // Crystal Commerce — specialty/collectible retail & marketplace management
+  { id: "crystalcommerce", name: "Crystal Commerce", tags: ["e-commerce", "marketplace", "retail", "collectibles", "saas"], status_url: "https://status.crystalcommerce.com/api/v2/status.json", page_url: "https://status.crystalcommerce.com", type: "statuspage" },
+  // TravelPerk — business travel management platform
+  { id: "travelperk", name: "TravelPerk", tags: ["travel", "business-travel", "expense", "saas", "hr"], status_url: "https://status.travelperk.com/api/v2/status.json", page_url: "https://status.travelperk.com", type: "statuspage" },
+  // Vanilla Forums — enterprise community forum & discussion platform
+  { id: "vanillaforums", name: "Vanilla Forums", tags: ["community", "forum", "support", "engagement", "saas"], status_url: "https://status.vanillaforums.com/api/v2/status.json", page_url: "https://status.vanillaforums.com", type: "statuspage" },
+  // CardConnect — omnichannel payment processing & merchant services
+  { id: "cardconnect", name: "CardConnect", tags: ["payments", "merchant-services", "processing", "fintech", "api"], status_url: "https://status.cardconnect.com/api/v2/status.json", page_url: "https://status.cardconnect.com", type: "statuspage" },
+  // Shift4 — integrated payment processing for hospitality & retail
+  { id: "shift4", name: "Shift4", tags: ["payments", "payment-processing", "hospitality", "retail", "fintech"], status_url: "https://status.shift4.com/api/v2/status.json", page_url: "https://status.shift4.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3723,7 +3745,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.48.0" },
+  { name: "statuscraft", version: "2.49.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -3758,7 +3780,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1703 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1714 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3796,7 +3818,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1703 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1714 services.",
           },
         },
         required: [],
