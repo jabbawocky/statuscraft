@@ -3621,6 +3621,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "devto", name: "DEV Community", tags: ["community", "blogging", "developer-tools", "social", "content"], status_url: "https://status.dev.to/api/v2/status.json", page_url: "https://status.dev.to", type: "statuspage" },
   // Aerospike — high-performance NoSQL database for real-time workloads
   { id: "aerospike", name: "Aerospike", tags: ["database", "nosql", "real-time", "cloud", "infrastructure"], status_url: "https://status.aerospike.com/api/v2/status.json", page_url: "https://status.aerospike.com", type: "statuspage" },
+  // Restate Cloud — durable workflow orchestration and serverless functions platform
+  { id: "restate", name: "Restate Cloud", tags: ["workflow", "orchestration", "serverless", "developer-tools", "cloud"], status_url: "https://status.restate.dev/api/v2/status.json", page_url: "https://status.restate.dev", type: "statuspage" },
+  // Sana AI — AI-powered enterprise search and learning platform
+  { id: "sana_ai", name: "Sana", tags: ["ai", "enterprise-search", "learning", "knowledge-management", "saas"], status_url: "https://status.sana.ai/api/v2/status.json", page_url: "https://status.sana.ai", type: "statuspage" },
+  // Lambda GPU Cloud — on-demand GPU cloud compute for AI/ML workloads
+  { id: "lambda_labs", name: "Lambda GPU Cloud", tags: ["gpu", "cloud", "ai", "ml", "compute"], status_url: "https://status.lambda.ai/api/v2/status.json", page_url: "https://status.lambda.ai", type: "statuspage" },
+  // Chord Commerce — headless commerce platform for DTC brands
+  { id: "chord_commerce", name: "Chord Commerce", tags: ["ecommerce", "headless", "commerce", "dtc", "saas"], status_url: "https://status.chord.co/api/v2/status.json", page_url: "https://status.chord.co", type: "statuspage" },
+  // Lucidworks — AI-powered enterprise search and discovery platform
+  { id: "lucidworks", name: "Lucidworks", tags: ["search", "enterprise-search", "ai", "analytics", "saas"], status_url: "https://status.lucidworks.com/api/v2/status.json", page_url: "https://status.lucidworks.com", type: "statuspage" },
+  // SearchStax — managed Solr and OpenSearch cloud service
+  { id: "searchstax", name: "SearchStax", tags: ["search", "solr", "opensearch", "cloud", "managed-services"], status_url: "https://status.searchstax.com/api/v2/status.json", page_url: "https://status.searchstax.com", type: "statuspage" },
+  // Dolby.io — audio and video processing/enhancement APIs for developers
+  { id: "dolby_io", name: "Dolby.io", tags: ["audio", "video", "media", "api", "developer-tools"], status_url: "https://status.dolby.io/api/v2/status.json", page_url: "https://status.dolby.io", type: "statuspage" },
+  // Incognia — location-based fraud prevention and device fingerprinting
+  { id: "incognia", name: "Incognia", tags: ["fraud-prevention", "identity", "location", "security", "api"], status_url: "https://status.incognia.com/api/v2/status.json", page_url: "https://status.incognia.com", type: "statuspage" },
+  // Sardine AI — fraud prevention and anti-money laundering compliance platform
+  { id: "sardine_ai", name: "Sardine AI", tags: ["fraud-prevention", "aml", "compliance", "fintech", "security"], status_url: "https://status.sardine.ai/api/v2/status.json", page_url: "https://status.sardine.ai", type: "statuspage" },
+  // NeuroID — behavioral analytics for fraud detection and identity verification
+  { id: "neuroid", name: "NeuroID", tags: ["fraud-detection", "behavioral-analytics", "identity", "security", "api"], status_url: "https://status.neuro-id.com/api/v2/status.json", page_url: "https://status.neuro-id.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4058,7 +4078,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1835 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1845 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4096,7 +4116,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1835 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1845 services.",
           },
         },
         required: [],
