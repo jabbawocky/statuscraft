@@ -4091,6 +4091,24 @@ const SERVICES: ServiceConfig[] = [
   { id: "passage", name: "Passage", tags: ["auth", "passwordless", "identity", "developer-tools", "api"], status_url: "https://passage.statuspage.io/api/v2/status.json", page_url: "https://passage.statuspage.io", type: "statuspage" },
   // AI image generation platform
   { id: "midjourney", name: "Midjourney", tags: ["ai", "image-generation", "creative", "generative-ai", "saas"], status_url: "https://midjourney.statuspage.io/api/v2/status.json", page_url: "https://midjourney.statuspage.io", type: "statuspage" },
+  // Tick 216 additions
+  { id: "together_ai", name: "Together AI", tags: ["ai", "llm", "inference", "api", "developer-tools"], status_url: "https://together.statuspage.io/api/v2/status.json", page_url: "https://together.statuspage.io", type: "statuspage" },
+  { id: "customer_io", name: "Customer.io", tags: ["email", "messaging", "automation", "marketing", "api"], status_url: "https://customerio.statuspage.io/api/v2/status.json", page_url: "https://customerio.statuspage.io", type: "statuspage" },
+  { id: "polar", name: "Polar", tags: ["fitness", "wearable", "health", "consumer", "saas"], status_url: "https://polar.statuspage.io/api/v2/status.json", page_url: "https://polar.statuspage.io", type: "statuspage" },
+  { id: "launchnotes", name: "LaunchNotes", tags: ["product", "changelog", "release-notes", "saas", "developer-tools"], status_url: "https://launchnotes.statuspage.io/api/v2/status.json", page_url: "https://launchnotes.statuspage.io", type: "statuspage" },
+  { id: "iterate", name: "Iterate", tags: ["surveys", "feedback", "mobile", "product", "saas"], status_url: "https://iterate.statuspage.io/api/v2/status.json", page_url: "https://iterate.statuspage.io", type: "statuspage" },
+  { id: "questionpro", name: "QuestionPro", tags: ["surveys", "analytics", "research", "enterprise", "saas"], status_url: "https://questionpro.statuspage.io/api/v2/status.json", page_url: "https://questionpro.statuspage.io", type: "statuspage" },
+  { id: "salsa", name: "Salsa Labs", tags: ["crm", "nonprofit", "advocacy", "fundraising", "saas"], status_url: "https://salsa.statuspage.io/api/v2/status.json", page_url: "https://salsa.statuspage.io", type: "statuspage" },
+  { id: "clientsuccess", name: "ClientSuccess", tags: ["customer-success", "crm", "saas", "enterprise", "analytics"], status_url: "https://clientsuccess.statuspage.io/api/v2/status.json", page_url: "https://clientsuccess.statuspage.io", type: "statuspage" },
+  { id: "mailprotector", name: "Mailprotector", tags: ["email", "security", "spam-filtering", "saas", "enterprise"], status_url: "https://mailprotector.statuspage.io/api/v2/status.json", page_url: "https://mailprotector.statuspage.io", type: "statuspage" },
+  { id: "threatlocker", name: "ThreatLocker", tags: ["security", "zero-trust", "endpoint", "cybersecurity", "enterprise"], status_url: "https://threatlocker.statuspage.io/api/v2/status.json", page_url: "https://threatlocker.statuspage.io", type: "statuspage" },
+  { id: "forcepoint", name: "Forcepoint", tags: ["security", "data-security", "dlp", "cloud", "enterprise"], status_url: "https://forcepoint.statuspage.io/api/v2/status.json", page_url: "https://forcepoint.statuspage.io", type: "statuspage" },
+  { id: "abnormalsecurity", name: "Abnormal AI", tags: ["email", "security", "ai", "phishing", "enterprise"], status_url: "https://abnormalsecurity.statuspage.io/api/v2/status.json", page_url: "https://abnormalsecurity.statuspage.io", type: "statuspage" },
+  { id: "pinpoint", name: "Pinpoint", tags: ["recruiting", "ats", "hr", "talent", "saas"], status_url: "https://pinpoint.statuspage.io/api/v2/status.json", page_url: "https://pinpoint.statuspage.io", type: "statuspage" },
+  { id: "rescuetime", name: "RescueTime", tags: ["productivity", "time-tracking", "analytics", "saas", "personal"], status_url: "https://rescuetime.statuspage.io/api/v2/status.json", page_url: "https://rescuetime.statuspage.io", type: "statuspage" },
+  { id: "timely", name: "Timely", tags: ["time-tracking", "ai", "productivity", "saas", "enterprise"], status_url: "https://timely.statuspage.io/api/v2/status.json", page_url: "https://timely.statuspage.io", type: "statuspage" },
+  { id: "connecteam", name: "Connecteam", tags: ["workforce", "hr", "scheduling", "employee-management", "saas"], status_url: "https://connecteam.statuspage.io/api/v2/status.json", page_url: "https://connecteam.statuspage.io", type: "statuspage" },
+  { id: "agendrix", name: "Agendrix", tags: ["scheduling", "workforce", "hr", "employee-management", "saas"], status_url: "https://agendrix.statuspage.io/api/v2/status.json", page_url: "https://agendrix.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4528,7 +4546,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2108 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2124 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4566,7 +4584,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2108 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2124 services.",
           },
         },
         required: [],
