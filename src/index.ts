@@ -3330,6 +3330,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "nearpod", name: "Nearpod", tags: ["edtech", "education", "k12", "interactive", "saas"], status_url: "https://status.nearpod.com/api/v2/status.json", page_url: "https://status.nearpod.com", type: "statuspage" },
   // Interactive slides & formative assessment for classrooms
   { id: "peardeck", name: "Pear Deck", tags: ["edtech", "education", "k12", "interactive-slides", "saas"], status_url: "https://status.peardeck.com/api/v2/status.json", page_url: "https://status.peardeck.com", type: "statuspage" },
+  // Fintech banking-as-a-service: ACH/digital payments API
+  { id: "sila", name: "Sila", tags: ["fintech", "payments", "ach", "banking-as-a-service", "api"], status_url: "https://status.silamoney.com/api/v2/status.json", page_url: "https://status.silamoney.com", type: "statuspage" },
+  // Australian payments & financial infrastructure platform
+  { id: "zai", name: "Zai", tags: ["fintech", "payments", "australia", "banking-as-a-service", "api"], status_url: "https://status.hellozai.com/api/v2/status.json", page_url: "https://status.hellozai.com", type: "statuspage" },
+  // Stax — flat-rate merchant processing & payment gateway
+  { id: "stax_payments", name: "Stax Payments", tags: ["payments", "merchant-processing", "payment-gateway", "fintech", "saas"], status_url: "https://status.staxpayments.com/api/v2/status.json", page_url: "https://status.staxpayments.com", type: "statuspage" },
+  // Poshmark — social commerce / peer-to-peer fashion marketplace
+  { id: "poshmark", name: "Poshmark", tags: ["marketplace", "e-commerce", "fashion", "resale", "consumer"], status_url: "https://status.poshmark.com/api/v2/status.json", page_url: "https://status.poshmark.com", type: "statuspage" },
+  // Polar — fitness tracking hardware & cloud platform
+  { id: "polar_fitness", name: "Polar", tags: ["fitness", "wearables", "health", "tracking", "consumer"], status_url: "https://status.polar.com/api/v2/status.json", page_url: "https://status.polar.com", type: "statuspage" },
+  // Skai (formerly Kenshoo) — omnichannel marketing intelligence platform
+  { id: "skai", name: "Skai", tags: ["marketing", "advertising", "analytics", "omnichannel", "saas"], status_url: "https://status.kenshoo.com/api/v2/status.json", page_url: "https://status.kenshoo.com", type: "statuspage" },
+  // Treasure Data — enterprise customer data platform (CDP)
+  { id: "treasure_data", name: "Treasure Data", tags: ["cdp", "data", "analytics", "customer-data", "enterprise"], status_url: "https://status.treasuredata.com/api/v2/status.json", page_url: "https://status.treasuredata.com", type: "statuspage" },
+  // NextRoll (AdRoll) — performance marketing and retargeting
+  { id: "nextroll", name: "NextRoll", tags: ["marketing", "advertising", "retargeting", "performance-marketing", "saas"], status_url: "https://status.adroll.com/api/v2/status.json", page_url: "https://status.adroll.com", type: "statuspage" },
+  // Emplifi (formerly Socialbakers) — unified social media & CX platform
+  { id: "emplifi", name: "Emplifi", tags: ["social-media", "customer-experience", "marketing", "analytics", "saas"], status_url: "https://status.emplifi.io/api/v2/status.json", page_url: "https://status.emplifi.io", type: "statuspage" },
+  // Sprout Social — social media management & analytics platform
+  { id: "sprout_social", name: "Sprout Social", tags: ["social-media", "marketing", "analytics", "scheduling", "saas"], status_url: "https://status.sproutsocial.com/api/v2/status.json", page_url: "https://status.sproutsocial.com", type: "statuspage" },
+  // Quantum Workplace — employee engagement & performance management
+  { id: "quantum_workplace", name: "Quantum Workplace", tags: ["hr", "employee-engagement", "performance-management", "surveys", "saas"], status_url: "https://status.quantumworkplace.com/api/v2/status.json", page_url: "https://status.quantumworkplace.com", type: "statuspage" },
+  // Small Improvements — continuous performance feedback & OKR platform
+  { id: "small_improvements", name: "Small Improvements", tags: ["hr", "performance-management", "okr", "feedback", "saas"], status_url: "https://status.small-improvements.com/api/v2/status.json", page_url: "https://status.small-improvements.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3734,7 +3758,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1691 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1703 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3772,7 +3796,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1691 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1703 services.",
           },
         },
         required: [],
