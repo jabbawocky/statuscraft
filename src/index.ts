@@ -3665,6 +3665,42 @@ const SERVICES: ServiceConfig[] = [
   { id: "appen", name: "Appen", tags: ["ai", "data-labeling", "training-data", "annotation", "enterprise"], status_url: "https://status.appen.com/api/v2/status.json", page_url: "https://status.appen.com", type: "statuspage" },
   // Cloudera — enterprise data cloud platform for analytics and ML
   { id: "cloudera", name: "Cloudera", tags: ["data-platform", "cloud", "analytics", "ml", "enterprise"], status_url: "https://status.cloudera.com/api/v2/status.json", page_url: "https://status.cloudera.com", type: "statuspage" },
+  // Stream.io (GetStream) — real-time activity feeds, chat, and messaging infrastructure
+  { id: "getstream", name: "Stream", tags: ["messaging", "chat", "activity-feeds", "api", "developer-tools"], status_url: "https://status.getstream.io/api/v2/status.json", page_url: "https://status.getstream.io", type: "statuspage" },
+  // Incorta Cloud — augmented analytics and data warehouse platform
+  { id: "incorta", name: "Incorta Cloud", tags: ["analytics", "bi", "data-warehouse", "enterprise", "saas"], status_url: "https://status.incorta.com/api/v2/status.json", page_url: "https://status.incorta.com", type: "statuspage" },
+  // FortiCloud — Fortinet cloud security services hub
+  { id: "forticloud", name: "FortiCloud", tags: ["security", "cloud-security", "enterprise", "networking", "fortinet"], status_url: "https://status.forticloud.com/api/v2/status.json", page_url: "https://status.forticloud.com", type: "statuspage" },
+  // CData Cloud — data connectivity and integration platform
+  { id: "cdata_cloud", name: "CData Cloud", tags: ["data-connectivity", "integration", "etl", "saas", "enterprise"], status_url: "https://status.cdata.com/api/v2/status.json", page_url: "https://status.cdata.com", type: "statuspage" },
+  // Memfault — IoT and embedded device monitoring and OTA update platform
+  { id: "memfault", name: "Memfault", tags: ["iot", "embedded", "monitoring", "ota", "developer-tools"], status_url: "https://status.memfault.com/api/v2/status.json", page_url: "https://status.memfault.com", type: "statuspage" },
+  // Pirate Ship — discount shipping rates and postage platform
+  { id: "pirate_ship", name: "Pirate Ship", tags: ["shipping", "logistics", "e-commerce", "postage", "saas"], status_url: "https://status.pirateship.com/api/v2/status.json", page_url: "https://status.pirateship.com", type: "statuspage" },
+  // Beautiful.ai — AI-powered presentation design platform
+  { id: "beautiful_ai", name: "Beautiful.ai", tags: ["presentations", "design", "ai", "productivity", "saas"], status_url: "https://status.beautiful.ai/api/v2/status.json", page_url: "https://status.beautiful.ai", type: "statuspage" },
+  // Chameleon — user onboarding and in-app product tours platform
+  { id: "chameleon_io", name: "Chameleon", tags: ["user-onboarding", "product-tours", "saas", "growth", "developer-tools"], status_url: "https://status.chameleon.io/api/v2/status.json", page_url: "https://status.chameleon.io", type: "statuspage" },
+  // Walnut — interactive product demo platform for sales teams
+  { id: "walnut_io", name: "Walnut", tags: ["sales-demos", "product-tours", "saas", "sales", "enablement"], status_url: "https://status.walnut.io/api/v2/status.json", page_url: "https://status.walnut.io", type: "statuspage" },
+  // Zluri — SaaS management and spend optimization platform
+  { id: "zluri", name: "Zluri", tags: ["saas-management", "spend-optimization", "it", "enterprise", "saas"], status_url: "https://status.zluri.com/api/v2/status.json", page_url: "https://status.zluri.com", type: "statuspage" },
+  // Vendr — SaaS purchasing and vendor management platform
+  { id: "vendr", name: "Vendr", tags: ["saas-purchasing", "procurement", "vendor-management", "enterprise", "saas"], status_url: "https://status.vendr.com/api/v2/status.json", page_url: "https://status.vendr.com", type: "statuspage" },
+  // HungerRush — restaurant management and POS platform
+  { id: "hungerrush", name: "HungerRush", tags: ["restaurant", "pos", "hospitality", "saas", "enterprise"], status_url: "https://status.hungerrush.com/api/v2/status.json", page_url: "https://status.hungerrush.com", type: "statuspage" },
+  // Omise — Southeast Asia payment gateway and processing platform
+  { id: "omise", name: "Omise", tags: ["payments", "payment-gateway", "fintech", "api", "southeast-asia"], status_url: "https://status.omise.co/api/v2/status.json", page_url: "https://status.omise.co", type: "statuspage" },
+  // Toss Payments — Korean digital payments platform
+  { id: "tosspayments", name: "Toss Payments", tags: ["payments", "fintech", "payment-gateway", "korea", "api"], status_url: "https://status.tosspayments.com/api/v2/status.json", page_url: "https://status.tosspayments.com", type: "statuspage" },
+  // Visma Cloud Services — Scandinavian enterprise business software cloud
+  { id: "visma", name: "Visma Cloud Services", tags: ["erp", "accounting", "enterprise", "cloud", "saas"], status_url: "https://status.visma.com/api/v2/status.json", page_url: "https://status.visma.com", type: "statuspage" },
+  // Starling Bank — UK challenger bank and banking infrastructure
+  { id: "starling_bank", name: "Starling Bank", tags: ["banking", "fintech", "neobank", "uk", "payments"], status_url: "https://starlingbank.statuspage.io/api/v2/status.json", page_url: "https://starlingbank.statuspage.io", type: "statuspage" },
+  // Monese — European digital banking and international money transfer
+  { id: "monese", name: "Monese", tags: ["banking", "fintech", "neobank", "europe", "payments"], status_url: "https://status.monese.com/api/v2/status.json", page_url: "https://status.monese.com", type: "statuspage" },
+  // Immutable — Web3 gaming blockchain platform (ImmutableX / Immutable zkEVM)
+  { id: "immutable", name: "Immutable", tags: ["web3", "blockchain", "gaming", "nft", "layer2"], status_url: "https://status.immutable.com/api/v2/status.json", page_url: "https://status.immutable.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4102,7 +4138,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1857 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1875 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4140,7 +4176,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1857 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1875 services.",
           },
         },
         required: [],
