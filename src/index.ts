@@ -3949,6 +3949,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "aha_io", name: "Aha! Roadmaps", tags: ["product-management", "roadmap", "planning", "saas", "productivity"], status_url: "https://status.aha.io/api/v2/status.json", page_url: "https://status.aha.io", type: "statuspage" },
   // HashiCorp Cloud Platform — managed Vault, Terraform, Consul & Packer on multi-cloud
   { id: "vault_hashicorp", name: "HashiCorp Cloud Platform", tags: ["secrets", "infrastructure", "security", "developer-tools", "cloud"], status_url: "https://status.hashicorp.com/api/v2/status.json", page_url: "https://status.hashicorp.com", type: "statuspage" },
+  // BitGo — institutional-grade crypto custody, trading & staking infrastructure
+  { id: "bitgo", name: "BitGo", tags: ["crypto", "custody", "fintech", "blockchain", "institutional"], status_url: "https://status.bitgo.com/api/v2/status.json", page_url: "https://status.bitgo.com", type: "statuspage" },
+  // Faros AI — engineering intelligence & metrics platform (DORA, sprint health, etc.)
+  { id: "faros_ai", name: "Faros AI", tags: ["engineering-analytics", "developer-tools", "metrics", "dora", "ai"], status_url: "https://status.faros.ai/api/v2/status.json", page_url: "https://status.faros.ai", type: "statuspage" },
+  // MadKudu — predictive lead scoring & pipeline intelligence for B2B SaaS
+  { id: "madkudu", name: "MadKudu", tags: ["sales", "lead-scoring", "analytics", "b2b", "saas"], status_url: "https://status.madkudu.com/api/v2/status.json", page_url: "https://status.madkudu.com", type: "statuspage" },
+  // YugabyteDB Aeon — distributed SQL database cloud service (PostgreSQL-compatible)
+  { id: "yugabyte", name: "YugabyteDB Aeon", tags: ["database", "distributed-sql", "cloud", "postgresql", "developer-tools"], status_url: "https://status.yugabyte.cloud/api/v2/status.json", page_url: "https://status.yugabyte.cloud", type: "statuspage" },
+  // Instaclustr — managed open-source database & streaming (Cassandra, Kafka, OpenSearch, etc.)
+  { id: "instaclustr", name: "Instaclustr", tags: ["database", "managed", "cassandra", "kafka", "cloud"], status_url: "https://status.instaclustr.com/api/v2/status.json", page_url: "https://status.instaclustr.com", type: "statuspage" },
+  // PeopleDataLabs — B2B contact & company data enrichment API
+  { id: "people_data_labs", name: "PeopleDataLabs", tags: ["data-enrichment", "b2b", "contact-data", "api", "sales-intelligence"], status_url: "https://status.peopledatalabs.com/api/v2/status.json", page_url: "https://status.peopledatalabs.com", type: "statuspage" },
+  // Dropcontact — GDPR-compliant email finding & enrichment (no database, real-time)
+  { id: "dropcontact", name: "Dropcontact", tags: ["email-enrichment", "gdpr", "sales", "b2b", "crm"], status_url: "https://status.dropcontact.com/api/v2/status.json", page_url: "https://status.dropcontact.com", type: "statuspage" },
+  // Pipl — deep people-data search & identity verification platform
+  { id: "pipl", name: "Pipl", tags: ["identity", "people-data", "verification", "search", "api"], status_url: "https://status.pipl.com/api/v2/status.json", page_url: "https://status.pipl.com", type: "statuspage" },
+  // Superthread — fast, modern team communication & project threads platform
+  { id: "superthread", name: "Superthread", tags: ["collaboration", "team-communication", "project-management", "saas", "productivity"], status_url: "https://status.superthread.com/api/v2/status.json", page_url: "https://status.superthread.com", type: "statuspage" },
+  // OneWelcome — customer identity & access management (CIAM) platform (Thales)
+  { id: "onewelcome", name: "OneWelcome", tags: ["identity", "ciam", "auth", "enterprise", "security"], status_url: "https://status.onewelcome.com/api/v2/status.json", page_url: "https://status.onewelcome.com", type: "statuspage" },
+  // LoginRadius — cloud-native customer identity & access management (CIAM)
+  { id: "loginradius", name: "LoginRadius", tags: ["identity", "ciam", "auth", "customer-identity", "saas"], status_url: "https://status.loginradius.com/api/v2/status.json", page_url: "https://status.loginradius.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4386,7 +4408,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2027 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2038 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4424,7 +4446,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2027 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2038 services.",
           },
         },
         required: [],
