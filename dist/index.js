@@ -3990,6 +3990,16 @@ const SERVICES = [
     { id: "pfl", name: "PFL", tags: ["direct-mail", "gifting", "marketing", "printing", "saas"], status_url: "https://status.pfl.com/api/v2/status.json", page_url: "https://status.pfl.com", type: "statuspage" },
     { id: "avid", name: "Avid", tags: ["media-production", "audio", "video", "broadcast", "enterprise"], status_url: "https://status.avid.com/api/v2/status.json", page_url: "https://status.avid.com", type: "statuspage" },
     { id: "telestream", name: "Telestream", tags: ["video", "encoding", "streaming", "broadcast", "media"], status_url: "https://status.telestream.net/api/v2/status.json", page_url: "https://status.telestream.net", type: "statuspage" },
+    { id: "samsara", name: "Samsara", tags: ["fleet", "iot", "telematics", "logistics", "saas"], status_url: "https://www.samsarastatus.com/api/v2/status.json", page_url: "https://www.samsarastatus.com", type: "statuspage" },
+    { id: "catalyst_io", name: "Catalyst", tags: ["customer-success", "crm", "saas", "revenue", "enterprise"], status_url: "https://status.catalyst.io/api/v2/status.json", page_url: "https://status.catalyst.io", type: "statuspage" },
+    { id: "optum", name: "Optum", tags: ["healthcare", "pharmacy", "insurance", "health-services", "enterprise"], status_url: "https://status.optum.com/api/v2/status.json", page_url: "https://status.optum.com", type: "statuspage" },
+    { id: "perfecto", name: "Perfecto", tags: ["testing", "mobile", "cloud", "qa", "devtools"], status_url: "https://status.perfecto.io/api/v2/status.json", page_url: "https://status.perfecto.io", type: "statuspage" },
+    { id: "messagemedia", name: "MessageMedia (Sinch)", tags: ["sms", "messaging", "communications", "marketing", "api"], status_url: "https://status.messagemedia.com/api/v2/status.json", page_url: "https://status.messagemedia.com", type: "statuspage" },
+    { id: "stayntouch", name: "StayNTouch", tags: ["hospitality", "hotel", "pms", "property-management", "saas"], status_url: "https://status.stayntouch.com/api/v2/status.json", page_url: "https://status.stayntouch.com", type: "statuspage" },
+    { id: "starling_bank", name: "Starling Bank", tags: ["banking", "fintech", "neobank", "payments", "uk"], status_url: "https://starlingbank.statuspage.io/api/v2/status.json", page_url: "https://starlingbank.statuspage.io", type: "statuspage" },
+    { id: "sofi", name: "SoFi", tags: ["fintech", "banking", "lending", "investing", "consumer"], status_url: "https://sofi.statuspage.io/api/v2/status.json", page_url: "https://sofi.statuspage.io", type: "statuspage" },
+    { id: "float", name: "Float", tags: ["resource-planning", "scheduling", "project-management", "capacity", "saas"], status_url: "https://status.float.com/api/v2/status.json", page_url: "https://status.float.com", type: "statuspage" },
+    { id: "planful", name: "Planful", tags: ["financial-planning", "budgeting", "analytics", "finance", "saas"], status_url: "https://planful.statuspage.io/api/v2/status.json", page_url: "https://planful.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4447,7 +4457,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2147 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2157 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -4482,7 +4492,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2147 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2157 services.",
                     },
                 },
                 required: [],
