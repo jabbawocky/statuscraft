@@ -3557,6 +3557,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "cloudinary", name: "Cloudinary", tags: ["cdn", "media", "image", "video", "cloud"], status_url: "https://status.cloudinary.com/api/v2/status.json", page_url: "https://status.cloudinary.com", type: "statuspage" },
   // npm — JavaScript package registry & package manager (Node.js ecosystem)
   { id: "npm", name: "npm", tags: ["package-registry", "javascript", "nodejs", "developer-tools", "open-source"], status_url: "https://status.npmjs.org/api/v2/status.json", page_url: "https://status.npmjs.org", type: "statuspage" },
+  // OpenAI — AI research lab and API provider (GPT-4, DALL-E, Whisper)
+  { id: "openai", name: "OpenAI", tags: ["ai", "llm", "api", "developer-tools", "gpt"], status_url: "https://status.openai.com/api/v2/status.json", page_url: "https://status.openai.com", type: "statuspage" },
+  // Anthropic — AI safety company and Claude API provider
+  { id: "anthropic", name: "Anthropic", tags: ["ai", "llm", "api", "developer-tools", "claude"], status_url: "https://status.anthropic.com/api/v2/status.json", page_url: "https://status.anthropic.com", type: "statuspage" },
+  // Miro — collaborative online whiteboard platform
+  { id: "miro", name: "Miro", tags: ["collaboration", "whiteboard", "design", "productivity", "saas"], status_url: "https://status.miro.com/api/v2/status.json", page_url: "https://status.miro.com", type: "statuspage" },
+  // Iterable — cross-channel marketing automation platform
+  { id: "iterable", name: "Iterable", tags: ["marketing", "email", "automation", "notifications", "saas"], status_url: "https://status.iterable.com/api/v2/status.json", page_url: "https://status.iterable.com", type: "statuspage" },
+  // Shopify — e-commerce platform for online stores and retail POS
+  { id: "shopify", name: "Shopify", tags: ["e-commerce", "saas", "payments", "retail", "platform"], status_url: "https://status.shopify.com/api/v2/status.json", page_url: "https://status.shopify.com", type: "statuspage" },
+  // SendGrid — cloud-based email delivery service (Twilio)
+  { id: "sendgrid", name: "SendGrid", tags: ["email", "api", "transactional", "marketing", "communications"], status_url: "https://status.sendgrid.com/api/v2/status.json", page_url: "https://status.sendgrid.com", type: "statuspage" },
+  // Mailgun — email API service for developers
+  { id: "mailgun", name: "Mailgun", tags: ["email", "api", "transactional", "developer-tools", "communications"], status_url: "https://status.mailgun.com/api/v2/status.json", page_url: "https://status.mailgun.com", type: "statuspage" },
+  // Contentful — headless CMS and content platform
+  { id: "contentful", name: "Contentful", tags: ["cms", "headless", "content", "api", "saas"], status_url: "https://status.contentful.com/api/v2/status.json", page_url: "https://status.contentful.com", type: "statuspage" },
+  // Elastic — search, observability & security platform (Elasticsearch, Kibana)
+  { id: "elastic", name: "Elastic", tags: ["search", "observability", "security", "analytics", "cloud"], status_url: "https://status.elastic.co/api/v2/status.json", page_url: "https://status.elastic.co", type: "statuspage" },
+  // GitHub — code hosting platform and developer collaboration hub
+  { id: "github", name: "GitHub", tags: ["devtools", "git", "code-hosting", "ci-cd", "collaboration"], status_url: "https://www.githubstatus.com/api/v2/status.json", page_url: "https://www.githubstatus.com", type: "statuspage" },
+  // Atlassian — maker of Jira, Confluence, Bitbucket, Trello
+  { id: "atlassian", name: "Atlassian", tags: ["devtools", "project-management", "collaboration", "saas", "enterprise"], status_url: "https://status.atlassian.com/api/v2/status.json", page_url: "https://status.atlassian.com", type: "statuspage" },
+  // HashiCorp — infrastructure automation tools (Terraform, Vault, Consul, Nomad)
+  { id: "hashicorp", name: "HashiCorp", tags: ["infrastructure", "devops", "cloud", "security", "developer-tools"], status_url: "https://status.hashicorp.com/api/v2/status.json", page_url: "https://status.hashicorp.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3959,7 +3983,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.50.0" },
+  { name: "statuscraft", version: "2.51.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -3994,7 +4018,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1803 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1815 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4032,7 +4056,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1803 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1815 services.",
           },
         },
         required: [],
