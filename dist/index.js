@@ -3967,6 +3967,29 @@ const SERVICES = [
     { id: "timely", name: "Timely", tags: ["time-tracking", "ai", "productivity", "saas", "enterprise"], status_url: "https://timely.statuspage.io/api/v2/status.json", page_url: "https://timely.statuspage.io", type: "statuspage" },
     { id: "connecteam", name: "Connecteam", tags: ["workforce", "hr", "scheduling", "employee-management", "saas"], status_url: "https://connecteam.statuspage.io/api/v2/status.json", page_url: "https://connecteam.statuspage.io", type: "statuspage" },
     { id: "agendrix", name: "Agendrix", tags: ["scheduling", "workforce", "hr", "employee-management", "saas"], status_url: "https://agendrix.statuspage.io/api/v2/status.json", page_url: "https://agendrix.statuspage.io", type: "statuspage" },
+    { id: "blink", name: "Blink", tags: ["employee-communication", "frontline", "workforce", "mobile", "saas"], status_url: "https://blink.statuspage.io/api/v2/status.json", page_url: "https://blink.statuspage.io", type: "statuspage" },
+    { id: "responsive", name: "Responsive", tags: ["rfp", "proposals", "sales", "content", "saas"], status_url: "https://status.rfpio.com/api/v2/status.json", page_url: "https://status.rfpio.com", type: "statuspage" },
+    { id: "rezdy", name: "Rezdy", tags: ["tours", "activities", "booking", "travel", "saas"], status_url: "https://status.rezdy.com/api/v2/status.json", page_url: "https://status.rezdy.com", type: "statuspage" },
+    { id: "dealhub", name: "DealHub", tags: ["cpq", "revenue-operations", "sales", "billing", "saas"], status_url: "https://dealhub.statuspage.io/api/v2/status.json", page_url: "https://dealhub.statuspage.io", type: "statuspage" },
+    { id: "intralinks", name: "Intralinks", tags: ["data-room", "m&a", "finance", "due-diligence", "enterprise"], status_url: "https://status.intralinks.com/api/v2/status.json", page_url: "https://status.intralinks.com", type: "statuspage" },
+    { id: "datasite", name: "Datasite", tags: ["data-room", "m&a", "due-diligence", "finance", "enterprise"], status_url: "https://status.datasite.com/api/v2/status.json", page_url: "https://status.datasite.com", type: "statuspage" },
+    { id: "ansarada", name: "Ansarada", tags: ["data-room", "m&a", "ai", "due-diligence", "enterprise"], status_url: "https://status.ansarada.com/api/v2/status.json", page_url: "https://status.ansarada.com", type: "statuspage" },
+    { id: "rewardgateway", name: "Reward Gateway", tags: ["employee-engagement", "recognition", "rewards", "hr", "saas"], status_url: "https://rewardgateway.statuspage.io/api/v2/status.json", page_url: "https://status.rewardgateway.net", type: "statuspage" },
+    { id: "smsmagic", name: "SMS-Magic", tags: ["sms", "messaging", "crm", "communications", "saas"], status_url: "https://status.sms-magic.com/api/v2/status.json", page_url: "https://status.sms-magic.com", type: "statuspage" },
+    { id: "staffbase", name: "Staffbase", tags: ["employee-communication", "intranet", "hr", "engagement", "saas"], status_url: "https://status.staffbase.com/api/v2/status.json", page_url: "https://status.staffbase.com", type: "statuspage" },
+    { id: "simpplr", name: "Simpplr", tags: ["intranet", "employee-experience", "hr", "collaboration", "saas"], status_url: "https://status.simpplr.com/api/v2/status.json", page_url: "https://status.simpplr.com", type: "statuspage" },
+    { id: "workvivo", name: "Workvivo", tags: ["employee-engagement", "communications", "hr", "social", "saas"], status_url: "https://status.workvivo.com/api/v2/status.json", page_url: "https://status.workvivo.com", type: "statuspage" },
+    { id: "firstup", name: "Firstup", tags: ["employee-communication", "engagement", "hr", "digital-workplace", "saas"], status_url: "https://status.firstup.io/api/v2/status.json", page_url: "https://status.firstup.io", type: "statuspage" },
+    { id: "totalexpert", name: "Total Expert", tags: ["fintech", "mortgage", "lending", "crm", "saas"], status_url: "https://status.totalexpert.com/api/v2/status.json", page_url: "https://status.totalexpert.com", type: "statuspage" },
+    { id: "realgeeks", name: "Real Geeks", tags: ["real-estate", "crm", "proptech", "lead-gen", "saas"], status_url: "https://status.realgeeks.com/api/v2/status.json", page_url: "https://status.realgeeks.com", type: "statuspage" },
+    { id: "precisionlims", name: "PrecisionLIMS", tags: ["laboratory", "lims", "life-sciences", "healthcare", "saas"], status_url: "https://lims.statuspage.io/api/v2/status.json", page_url: "https://lims.statuspage.io", type: "statuspage" },
+    { id: "spire_maritime", name: "Spire Maritime", tags: ["maritime", "geospatial", "data", "analytics", "saas"], status_url: "https://status.spire.com/api/v2/status.json", page_url: "https://status.spire.com", type: "statuspage" },
+    { id: "appspace", name: "Appspace", tags: ["digital-signage", "employee-communications", "workplace", "enterprise", "saas"], status_url: "https://status.appspace.com/api/v2/status.json", page_url: "https://status.appspace.com", type: "statuspage" },
+    { id: "density", name: "Density", tags: ["workplace", "space-management", "analytics", "iot", "saas"], status_url: "https://status.density.io/api/v2/status.json", page_url: "https://status.density.io", type: "statuspage" },
+    { id: "veritone", name: "Veritone", tags: ["ai", "media", "video", "entertainment", "saas"], status_url: "https://status.veritone.com/api/v2/status.json", page_url: "https://status.veritone.com", type: "statuspage" },
+    { id: "pfl", name: "PFL", tags: ["direct-mail", "gifting", "marketing", "printing", "saas"], status_url: "https://status.pfl.com/api/v2/status.json", page_url: "https://status.pfl.com", type: "statuspage" },
+    { id: "avid", name: "Avid", tags: ["media-production", "audio", "video", "broadcast", "enterprise"], status_url: "https://status.avid.com/api/v2/status.json", page_url: "https://status.avid.com", type: "statuspage" },
+    { id: "telestream", name: "Telestream", tags: ["video", "encoding", "streaming", "broadcast", "media"], status_url: "https://status.telestream.net/api/v2/status.json", page_url: "https://status.telestream.net", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4424,7 +4447,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2124 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2147 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -4459,7 +4482,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2124 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2147 services.",
                     },
                 },
                 required: [],

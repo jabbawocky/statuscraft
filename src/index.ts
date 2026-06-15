@@ -4122,6 +4122,16 @@ const SERVICES: ServiceConfig[] = [
   { id: "simpplr", name: "Simpplr", tags: ["intranet", "employee-experience", "hr", "collaboration", "saas"], status_url: "https://status.simpplr.com/api/v2/status.json", page_url: "https://status.simpplr.com", type: "statuspage" },
   { id: "workvivo", name: "Workvivo", tags: ["employee-engagement", "communications", "hr", "social", "saas"], status_url: "https://status.workvivo.com/api/v2/status.json", page_url: "https://status.workvivo.com", type: "statuspage" },
   { id: "firstup", name: "Firstup", tags: ["employee-communication", "engagement", "hr", "digital-workplace", "saas"], status_url: "https://status.firstup.io/api/v2/status.json", page_url: "https://status.firstup.io", type: "statuspage" },
+  { id: "totalexpert", name: "Total Expert", tags: ["fintech", "mortgage", "lending", "crm", "saas"], status_url: "https://status.totalexpert.com/api/v2/status.json", page_url: "https://status.totalexpert.com", type: "statuspage" },
+  { id: "realgeeks", name: "Real Geeks", tags: ["real-estate", "crm", "proptech", "lead-gen", "saas"], status_url: "https://status.realgeeks.com/api/v2/status.json", page_url: "https://status.realgeeks.com", type: "statuspage" },
+  { id: "precisionlims", name: "PrecisionLIMS", tags: ["laboratory", "lims", "life-sciences", "healthcare", "saas"], status_url: "https://lims.statuspage.io/api/v2/status.json", page_url: "https://lims.statuspage.io", type: "statuspage" },
+  { id: "spire_maritime", name: "Spire Maritime", tags: ["maritime", "geospatial", "data", "analytics", "saas"], status_url: "https://status.spire.com/api/v2/status.json", page_url: "https://status.spire.com", type: "statuspage" },
+  { id: "appspace", name: "Appspace", tags: ["digital-signage", "employee-communications", "workplace", "enterprise", "saas"], status_url: "https://status.appspace.com/api/v2/status.json", page_url: "https://status.appspace.com", type: "statuspage" },
+  { id: "density", name: "Density", tags: ["workplace", "space-management", "analytics", "iot", "saas"], status_url: "https://status.density.io/api/v2/status.json", page_url: "https://status.density.io", type: "statuspage" },
+  { id: "veritone", name: "Veritone", tags: ["ai", "media", "video", "entertainment", "saas"], status_url: "https://status.veritone.com/api/v2/status.json", page_url: "https://status.veritone.com", type: "statuspage" },
+  { id: "pfl", name: "PFL", tags: ["direct-mail", "gifting", "marketing", "printing", "saas"], status_url: "https://status.pfl.com/api/v2/status.json", page_url: "https://status.pfl.com", type: "statuspage" },
+  { id: "avid", name: "Avid", tags: ["media-production", "audio", "video", "broadcast", "enterprise"], status_url: "https://status.avid.com/api/v2/status.json", page_url: "https://status.avid.com", type: "statuspage" },
+  { id: "telestream", name: "Telestream", tags: ["video", "encoding", "streaming", "broadcast", "media"], status_url: "https://status.telestream.net/api/v2/status.json", page_url: "https://status.telestream.net", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4559,7 +4569,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2137 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2147 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4597,7 +4607,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2137 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2147 services.",
           },
         },
         required: [],
