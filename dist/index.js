@@ -3609,6 +3609,26 @@ const SERVICES = [
     { id: "mindee", name: "Mindee", tags: ["document-ai", "ocr", "parsing", "api", "developer-tools"], status_url: "https://status.mindee.com/api/v2/status.json", page_url: "https://status.mindee.com", type: "statuspage" },
     // Affinda — AI-powered resume and document parsing API
     { id: "affinda", name: "Affinda", tags: ["document-ai", "resume-parsing", "ocr", "api", "hr"], status_url: "https://status.affinda.com/api/v2/status.json", page_url: "https://status.affinda.com", type: "statuspage" },
+    // Incode — AI-powered biometric identity verification platform
+    { id: "incode", name: "Incode", tags: ["identity", "biometrics", "kyc", "verification", "ai"], status_url: "https://status.incode.com/api/v2/status.json", page_url: "https://status.incode.com", type: "statuspage" },
+    // PayGate — South African payment gateway for online businesses
+    { id: "paygate_za", name: "PayGate", tags: ["payments", "gateway", "south-africa", "ecommerce", "fintech"], status_url: "https://status.paygate.co.za/api/v2/status.json", page_url: "https://status.paygate.co.za", type: "statuspage" },
+    // Peach Payments — African online payments infrastructure
+    { id: "peach_payments", name: "Peach Payments", tags: ["payments", "africa", "gateway", "ecommerce", "fintech"], status_url: "https://status.peachpayments.com/api/v2/status.json", page_url: "https://status.peachpayments.com", type: "statuspage" },
+    // Yoco — South African payments and POS for small businesses
+    { id: "yoco", name: "Yoco", tags: ["payments", "pos", "south-africa", "smb", "fintech"], status_url: "https://status.yoco.com/api/v2/status.json", page_url: "https://status.yoco.com", type: "statuspage" },
+    // Kuda — Nigerian digital bank and neobank
+    { id: "kuda", name: "Kuda", tags: ["neobank", "fintech", "nigeria", "banking", "africa"], status_url: "https://status.kuda.com/api/v2/status.json", page_url: "https://status.kuda.com", type: "statuspage" },
+    // BluePay — payment processing and merchant services
+    { id: "bluepay", name: "BluePay", tags: ["payments", "processing", "merchant", "fintech", "api"], status_url: "https://status.bluepay.com/api/v2/status.json", page_url: "https://status.bluepay.com", type: "statuspage" },
+    // Griffin — UK Banking as a Service platform for fintechs
+    { id: "griffin", name: "Griffin", tags: ["banking", "baas", "fintech", "uk", "api"], status_url: "https://status.griffin.com/api/v2/status.json", page_url: "https://status.griffin.com", type: "statuspage" },
+    // LeadSquared — CRM and marketing automation for high-velocity sales
+    { id: "leadsquared", name: "LeadSquared", tags: ["crm", "marketing-automation", "sales", "saas", "india"], status_url: "https://status.leadsquared.com/api/v2/status.json", page_url: "https://status.leadsquared.com", type: "statuspage" },
+    // Sendcloud — multi-carrier shipping and returns platform for e-commerce
+    { id: "sendcloud", name: "Sendcloud", tags: ["shipping", "logistics", "ecommerce", "returns", "europe"], status_url: "https://status.sendcloud.com/api/v2/status.json", page_url: "https://status.sendcloud.com", type: "statuspage" },
+    // Click (ClickSoftware) — Salesforce field service management platform
+    { id: "clicksoftware", name: "Click (ClickSoftware)", tags: ["field-service", "workforce", "scheduling", "salesforce", "enterprise"], status_url: "https://status.clicksoftware.com/api/v2/status.json", page_url: "https://status.clicksoftware.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4066,7 +4086,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1900 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1911 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -4101,7 +4121,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1900 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1911 services.",
                     },
                 },
                 required: [],
