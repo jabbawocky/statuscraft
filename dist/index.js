@@ -3697,6 +3697,26 @@ const SERVICES = [
     { id: "insightful", name: "Insightful", tags: ["workforce-analytics", "productivity", "employee-monitoring", "remote-work", "saas"], status_url: "https://insightful.statuspage.io/api/v2/status.json", page_url: "https://insightful.statuspage.io", type: "statuspage" },
     // Treasury Prime — banking-as-a-service API platform
     { id: "treasuryprime", name: "Treasury Prime", tags: ["banking-as-a-service", "baas", "fintech", "api", "banking"], status_url: "https://treasuryprime.statuspage.io/api/v2/status.json", page_url: "https://treasuryprime.statuspage.io", type: "statuspage" },
+    { id: "benchmark", name: "Benchmark Email", tags: ["email-marketing", "email", "campaigns", "marketing", "saas"], status_url: "https://benchmark.statuspage.io/api/v2/status.json", page_url: "https://benchmark.statuspage.io", type: "statuspage" },
+    { id: "cloudmailin", name: "CloudMailin", tags: ["email", "inbound-email", "smtp", "developer-tools", "api"], status_url: "https://cloudmailin.statuspage.io/api/v2/status.json", page_url: "https://cloudmailin.statuspage.io", type: "statuspage" },
+    { id: "elasticemail", name: "Elastic Email", tags: ["email", "email-delivery", "smtp", "marketing", "api"], status_url: "https://elasticemail.statuspage.io/api/v2/status.json", page_url: "https://elasticemail.statuspage.io", type: "statuspage" },
+    { id: "givebutter", name: "Givebutter", tags: ["fundraising", "nonprofit", "donations", "events", "saas"], status_url: "https://givebutter.statuspage.io/api/v2/status.json", page_url: "https://givebutter.statuspage.io", type: "statuspage" },
+    { id: "hcaptcha", name: "hCaptcha", tags: ["security", "captcha", "bot-protection", "privacy", "api"], status_url: "https://hcaptcha.statuspage.io/api/v2/status.json", page_url: "https://hcaptcha.statuspage.io", type: "statuspage" },
+    { id: "ordoro", name: "Ordoro", tags: ["inventory", "order-management", "ecommerce", "shipping", "saas"], status_url: "https://ordoro.statuspage.io/api/v2/status.json", page_url: "https://ordoro.statuspage.io", type: "statuspage" },
+    { id: "reform", name: "Reform", tags: ["forms", "data-collection", "developer-tools", "api", "saas"], status_url: "https://reform.statuspage.io/api/v2/status.json", page_url: "https://reform.statuspage.io", type: "statuspage" },
+    { id: "skool", name: "Skool", tags: ["community", "education", "courses", "membership", "saas"], status_url: "https://skool.statuspage.io/api/v2/status.json", page_url: "https://skool.statuspage.io", type: "statuspage" },
+    { id: "smile", name: "Smile.io", tags: ["loyalty", "rewards", "ecommerce", "retention", "saas"], status_url: "https://smile.statuspage.io/api/v2/status.json", page_url: "https://smile.statuspage.io", type: "statuspage" },
+    { id: "spinnaker", name: "Spinnaker", tags: ["ci-cd", "deployment", "devops", "open-source", "netflix"], status_url: "https://spinnaker.statuspage.io/api/v2/status.json", page_url: "https://spinnaker.statuspage.io", type: "statuspage" },
+    { id: "springboard_au", name: "Springboard", tags: ["education", "edtech", "online-learning", "saas"], status_url: "https://springboard.statuspage.io/api/v2/status.json", page_url: "https://springboard.statuspage.io", type: "statuspage" },
+    { id: "tilt", name: "Tilt", tags: ["developer-tools", "kubernetes", "local-dev", "devops", "saas"], status_url: "https://tilt.statuspage.io/api/v2/status.json", page_url: "https://tilt.statuspage.io", type: "statuspage" },
+    { id: "zeffy", name: "Zeffy", tags: ["fundraising", "nonprofit", "donations", "free", "saas"], status_url: "https://zeffy.statuspage.io/api/v2/status.json", page_url: "https://zeffy.statuspage.io", type: "statuspage" },
+    { id: "bootstrapcdn", name: "BootstrapCDN", tags: ["cdn", "bootstrap", "css", "open-source", "frontend"], status_url: "https://bootstrapcdn.statuspage.io/api/v2/status.json", page_url: "https://bootstrapcdn.statuspage.io", type: "statuspage" },
+    { id: "jimdo", name: "Jimdo", tags: ["website-builder", "ecommerce", "hosting", "small-business", "saas"], status_url: "https://jimdo.statuspage.io/api/v2/status.json", page_url: "https://jimdo.statuspage.io", type: "statuspage" },
+    { id: "lepton_ai", name: "Lepton AI", tags: ["ai", "llm", "inference", "cloud", "api"], status_url: "https://lepton.statuspage.io/api/v2/status.json", page_url: "https://lepton.statuspage.io", type: "statuspage" },
+    { id: "nameeu", name: "Name.eu", tags: ["domains", "dns", "registrar", "europe", "saas"], status_url: "https://name.statuspage.io/api/v2/status.json", page_url: "https://name.statuspage.io", type: "statuspage" },
+    { id: "octoai", name: "OctoAI", tags: ["ai", "llm", "inference", "models", "api"], status_url: "https://octoai.statuspage.io/api/v2/status.json", page_url: "https://octoai.statuspage.io", type: "statuspage" },
+    { id: "statically", name: "Statically", tags: ["cdn", "open-source", "static-assets", "github", "free"], status_url: "https://statically.statuspage.io/api/v2/status.json", page_url: "https://statically.statuspage.io", type: "statuspage" },
+    { id: "unsplash", name: "Unsplash", tags: ["photos", "images", "free", "creative", "api"], status_url: "https://unsplash.statuspage.io/api/v2/status.json", page_url: "https://unsplash.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4154,7 +4174,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1945 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1964 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -4189,7 +4209,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1945 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1964 services.",
                     },
                 },
                 required: [],
