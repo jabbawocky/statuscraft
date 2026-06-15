@@ -3971,6 +3971,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "onewelcome", name: "OneWelcome", tags: ["identity", "ciam", "auth", "enterprise", "security"], status_url: "https://status.onewelcome.com/api/v2/status.json", page_url: "https://status.onewelcome.com", type: "statuspage" },
   // LoginRadius — cloud-native customer identity & access management (CIAM)
   { id: "loginradius", name: "LoginRadius", tags: ["identity", "ciam", "auth", "customer-identity", "saas"], status_url: "https://status.loginradius.com/api/v2/status.json", page_url: "https://status.loginradius.com", type: "statuspage" },
+  // Modulr — UK-based embedded banking and payments-as-a-service platform
+  { id: "modulr", name: "Modulr", tags: ["fintech", "banking", "payments", "embedded-finance", "api"], status_url: "https://status.modulrfinance.com/api/v2/status.json", page_url: "https://status.modulrfinance.com", type: "statuspage" },
+  // Verkada — cloud-managed physical security (cameras, access control, alarms)
+  { id: "verkada", name: "Verkada", tags: ["security", "iot", "physical-security", "cloud", "enterprise"], status_url: "https://status.verkada.com/api/v2/status.json", page_url: "https://status.verkada.com", type: "statuspage" },
+  // Chord Commerce — headless ecommerce platform for DTC brands
+  { id: "chord_commerce", name: "Chord Commerce", tags: ["ecommerce", "headless", "dtc", "saas", "retail"], status_url: "https://status.chord.co/api/v2/status.json", page_url: "https://status.chord.co", type: "statuspage" },
+  // Skylight — Ruby on Rails performance monitoring and profiling
+  { id: "skylight", name: "Skylight", tags: ["monitoring", "performance", "ruby", "rails", "apm"], status_url: "https://status.skylight.io/api/v2/status.json", page_url: "https://status.skylight.io", type: "statuspage" },
+  // kiwi.com — online travel agency and flight search/booking platform
+  { id: "kiwi_com", name: "kiwi.com", tags: ["travel", "flights", "booking", "saas", "consumer"], status_url: "https://status.kiwi.com/api/v2/status.json", page_url: "https://status.kiwi.com", type: "statuspage" },
+  // BIMcollab — BIM issue management and collaboration platform for construction
+  { id: "bimcollab", name: "BIMcollab", tags: ["construction", "bim", "collaboration", "aec", "saas"], status_url: "https://status.bimcollab.com/api/v2/status.json", page_url: "https://status.bimcollab.com", type: "statuspage" },
+  // Atomic — payroll connectivity API for direct deposit switching and income verification
+  { id: "atomic_financial", name: "Atomic", tags: ["fintech", "payroll", "api", "direct-deposit", "income-verification"], status_url: "https://status.atomic.financial/api/v2/status.json", page_url: "https://status.atomic.financial", type: "statuspage" },
+  // Telerik — enterprise UI component library and developer tools (Progress Software)
+  { id: "telerik", name: "Telerik", tags: ["developer-tools", "ui-components", "dotnet", "enterprise", "saas"], status_url: "https://status.telerik.com/api/v2/status.json", page_url: "https://status.telerik.com", type: "statuspage" },
+  // Zulip Cloud — open-source team messaging platform with threaded conversations
+  { id: "zulip", name: "Zulip Cloud", tags: ["messaging", "collaboration", "team-chat", "open-source", "saas"], status_url: "https://status.zulip.com/api/v2/status.json", page_url: "https://status.zulip.com", type: "statuspage" },
+  // Formant — cloud robotics observability and operations platform
+  { id: "formant", name: "Formant", tags: ["robotics", "iot", "observability", "cloud", "operations"], status_url: "https://status.formant.io/api/v2/status.json", page_url: "https://status.formant.io", type: "statuspage" },
+  // Monogoto — IoT SIM connectivity and private cellular network platform
+  { id: "monogoto", name: "Monogoto", tags: ["iot", "connectivity", "cellular", "sim", "infrastructure"], status_url: "https://status.monogoto.io/api/v2/status.json", page_url: "https://status.monogoto.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4408,7 +4430,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2038 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2049 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4446,7 +4468,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2038 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2049 services.",
           },
         },
         required: [],
