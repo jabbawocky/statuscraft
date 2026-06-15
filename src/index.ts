@@ -3725,6 +3725,32 @@ const SERVICES: ServiceConfig[] = [
   { id: "basiq", name: "Basiq", tags: ["open-banking", "fintech", "financial-data", "api", "australia"], status_url: "https://status.basiq.io/api/v2/status.json", page_url: "https://status.basiq.io", type: "statuspage" },
   // Volt — open banking payment infrastructure for Europe
   { id: "volt_io", name: "Volt", tags: ["open-banking", "payments", "fintech", "europe", "api"], status_url: "https://status.volt.io/api/v2/status.json", page_url: "https://status.volt.io", type: "statuspage" },
+  // LocalStack — AWS cloud emulator for local development and testing
+  { id: "localstack", name: "LocalStack", tags: ["developer-tools", "cloud", "aws", "testing", "emulation"], status_url: "https://status.localstack.cloud/api/v2/status.json", page_url: "https://status.localstack.cloud", type: "statuspage" },
+  // Productsup — product content management and syndication platform
+  { id: "productsup", name: "Productsup", tags: ["ecommerce", "product-data", "feeds", "syndication", "saas"], status_url: "https://status.productsup.io/api/v2/status.json", page_url: "https://status.productsup.io", type: "statuspage" },
+  // ChannelEngine — marketplace management and order routing platform
+  { id: "channelengine", name: "ChannelEngine", tags: ["ecommerce", "marketplace", "feeds", "orders", "saas"], status_url: "https://status.channelengine.com/api/v2/status.json", page_url: "https://status.channelengine.com", type: "statuspage" },
+  // Functionize — AI-powered autonomous test automation platform
+  { id: "functionize", name: "Functionize", tags: ["testing", "ai", "automation", "qa", "developer-tools"], status_url: "https://status.functionize.com/api/v2/status.json", page_url: "https://status.functionize.com", type: "statuspage" },
+  // MemberSpace — membership and subscription management for websites
+  { id: "memberspace", name: "MemberSpace", tags: ["membership", "subscriptions", "payments", "content", "saas"], status_url: "https://status.memberspace.com/api/v2/status.json", page_url: "https://status.memberspace.com", type: "statuspage" },
+  // Clinically AI — AI clinical documentation and note generation
+  { id: "clinically_ai", name: "Clinically AI", tags: ["healthcare", "ai", "clinical-notes", "documentation", "saas"], status_url: "https://status.clinicalnotes.ai/api/v2/status.json", page_url: "https://status.clinicalnotes.ai", type: "statuspage" },
+  // Kudos — employee recognition and rewards platform
+  { id: "kudos", name: "Kudos", tags: ["hr", "employee-recognition", "rewards", "engagement", "saas"], status_url: "https://status.kudos.com/api/v2/status.json", page_url: "https://status.kudos.com", type: "statuspage" },
+  // Targetprocess — agile project and portfolio management tool
+  { id: "targetprocess", name: "Targetprocess", tags: ["project-management", "agile", "planning", "developer-tools", "saas"], status_url: "https://status.targetprocess.com/api/v2/status.json", page_url: "https://status.targetprocess.com", type: "statuspage" },
+  // OpenNode — Bitcoin payment processing API for businesses
+  { id: "opennode", name: "OpenNode", tags: ["crypto", "bitcoin", "payments", "api", "fintech"], status_url: "https://status.opennode.com/api/v2/status.json", page_url: "https://status.opennode.com", type: "statuspage" },
+  // Banxa — crypto on/off ramp infrastructure for exchanges and wallets
+  { id: "banxa", name: "Banxa", tags: ["crypto", "on-ramp", "off-ramp", "payments", "fintech"], status_url: "https://status.banxa.com/api/v2/status.json", page_url: "https://status.banxa.com", type: "statuspage" },
+  // Inkit — direct mail automation and generation platform
+  { id: "inkit", name: "Inkit", tags: ["direct-mail", "print", "automation", "marketing", "api"], status_url: "https://status.inkit.com/api/v2/status.json", page_url: "https://status.inkit.com", type: "statuspage" },
+  // Mindee — document parsing and data extraction API
+  { id: "mindee", name: "Mindee", tags: ["document-ai", "ocr", "parsing", "api", "developer-tools"], status_url: "https://status.mindee.com/api/v2/status.json", page_url: "https://status.mindee.com", type: "statuspage" },
+  // Affinda — AI-powered resume and document parsing API
+  { id: "affinda", name: "Affinda", tags: ["document-ai", "resume-parsing", "ocr", "api", "hr"], status_url: "https://status.affinda.com/api/v2/status.json", page_url: "https://status.affinda.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4162,7 +4188,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1887 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1900 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4200,7 +4226,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1887 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1900 services.",
           },
         },
         required: [],
