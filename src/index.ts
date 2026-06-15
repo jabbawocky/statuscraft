@@ -4035,6 +4035,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "umbraco", name: "Umbraco", tags: ["cms", "open-source", "dotnet", "content-management", "hosting"], status_url: "https://status.umbraco.io/api/v2/status.json", page_url: "https://status.umbraco.io", type: "statuspage" },
   { id: "managewp", name: "ManageWP", tags: ["wordpress", "cms", "hosting", "saas", "management"], status_url: "https://status.managewp.com/api/v2/status.json", page_url: "https://status.managewp.com", type: "statuspage" },
   { id: "ubiquiti", name: "Ubiquiti", tags: ["networking", "wifi", "hardware", "enterprise", "iot"], status_url: "https://status.ui.com/api/v2/status.json", page_url: "https://status.ui.com", type: "statuspage" },
+  // Sales conversation intelligence
+  { id: "jiminny", name: "Jiminny", tags: ["sales", "conversation-intelligence", "coaching", "analytics", "saas"], status_url: "https://status.jiminny.com/api/v2/status.json", page_url: "https://status.jiminny.com", type: "statuspage" },
+  // Revenue intelligence / forecasting
+  { id: "boostup", name: "BoostUp", tags: ["sales", "revenue-intelligence", "forecasting", "analytics", "saas"], status_url: "https://status.boostup.ai/api/v2/status.json", page_url: "https://status.boostup.ai", type: "statuspage" },
+  // Background screening
+  { id: "asurint", name: "Asurint", tags: ["background-check", "screening", "hr", "compliance", "saas"], status_url: "https://status.asurint.com/api/v2/status.json", page_url: "https://status.asurint.com", type: "statuspage" },
+  // Employee benefits platform
+  { id: "benify", name: "Benifex", tags: ["employee-benefits", "hr", "perks", "saas", "enterprise"], status_url: "https://status.benify.com/api/v2/status.json", page_url: "https://status.benify.com", type: "statuspage" },
+  // Employee perks and recognition
+  { id: "perkbox", name: "Perkbox", tags: ["employee-benefits", "perks", "recognition", "hr", "saas"], status_url: "https://status.perkbox.com/api/v2/status.json", page_url: "https://status.perkbox.com", type: "statuspage" },
+  // SMS marketing
+  { id: "eztexting", name: "EZ Texting", tags: ["sms", "messaging", "marketing", "communications", "saas"], status_url: "https://status.eztexting.com/api/v2/status.json", page_url: "https://status.eztexting.com", type: "statuspage" },
+  // Payment orchestration
+  { id: "paydock", name: "Paydock", tags: ["payments", "payment-orchestration", "fintech", "api", "saas"], status_url: "https://paydock.statuspage.io/api/v2/status.json", page_url: "https://paydock.statuspage.io", type: "statuspage" },
+  // Dutch ERP / accounting
+  { id: "exact_online", name: "Exact", tags: ["erp", "accounting", "finance", "saas", "cloud"], status_url: "https://status.exact.com/api/v2/status.json", page_url: "https://status.exact.com", type: "statuspage" },
+  // Cloud deployment platform
+  { id: "divio", name: "Divio", tags: ["cloud", "deployment", "hosting", "cms", "developer-tools"], status_url: "https://status.divio.com/api/v2/status.json", page_url: "https://status.divio.com", type: "statuspage" },
+  // Church management software
+  { id: "breezechms", name: "Breeze ChMS", tags: ["church", "nonprofit", "crm", "management", "saas"], status_url: "https://status.breezechms.com/api/v2/status.json", page_url: "https://status.breezechms.com", type: "statuspage" },
+  // Marketplace platform
+  { id: "sharetribe", name: "Sharetribe", tags: ["marketplace", "ecommerce", "platform", "saas", "sharing-economy"], status_url: "https://status.sharetribe.com/api/v2/status.json", page_url: "https://status.sharetribe.com", type: "statuspage" },
+  // Funnel / page builder
+  { id: "bucket_io", name: "Bucket.io", tags: ["funnel", "page-builder", "marketing", "saas", "no-code"], status_url: "https://status.bucket.io/api/v2/status.json", page_url: "https://status.bucket.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4472,7 +4496,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2079 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2092 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4510,7 +4534,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2079 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2092 services.",
           },
         },
         required: [],
