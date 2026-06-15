@@ -3208,6 +3208,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "radar", name: "Radar", tags: ["location", "geofencing", "geocoding", "api", "saas"], status_url: "https://status.radar.com/api/v2/status.json", page_url: "https://status.radar.com", type: "statuspage" },
   // Podcast hosting / ad platform (Spotify)
   { id: "megaphone", name: "Megaphone", tags: ["podcast", "hosting", "advertising", "media", "saas"], status_url: "https://status.megaphone.fm/api/v2/status.json", page_url: "https://status.megaphone.fm", type: "statuspage" },
+  // DNS/privacy protection (AdGuard)
+  { id: "adguard", name: "AdGuard", tags: ["security", "dns", "privacy", "ad-blocking", "saas"], status_url: "https://status.adguard.com/api/v2/status.json", page_url: "https://status.adguard.com", type: "statuspage" },
+  // Cloud voice / SIP trunking
+  { id: "flowroute", name: "Flowroute", tags: ["voice", "sip", "telecom", "api", "communications"], status_url: "https://status.flowroute.com/api/v2/status.json", page_url: "https://status.flowroute.com", type: "statuspage" },
+  // Open-source session replay / error monitoring (oss)
+  { id: "highlight_io", name: "Highlight.io", tags: ["observability", "error-tracking", "session-replay", "open-source", "developer-tools"], status_url: "https://status.highlight.io/api/v2/status.json", page_url: "https://status.highlight.io", type: "statuspage" },
+  // Open-source billing / usage-based pricing engine
+  { id: "getlago", name: "Lago", tags: ["billing", "usage-based-pricing", "fintech", "open-source", "saas"], status_url: "https://status.getlago.com/api/v2/status.json", page_url: "https://status.getlago.com", type: "statuspage" },
+  // Canadian open banking data API
+  { id: "flinks", name: "Flinks", tags: ["open-banking", "fintech", "financial-data", "api", "canada"], status_url: "https://status.flinks.com/api/v2/status.json", page_url: "https://status.flinks.com", type: "statuspage" },
+  // Global HR / talent management
+  { id: "cezannehr", name: "Cezanne HR", tags: ["hr", "talent-management", "enterprise", "saas"], status_url: "https://status.cezannehr.com/api/v2/status.json", page_url: "https://status.cezannehr.com", type: "statuspage" },
+  // Interactive prototyping tool
+  { id: "protopie", name: "ProtoPie", tags: ["design", "prototyping", "ux", "developer-tools", "saas"], status_url: "https://status.protopie.io/api/v2/status.json", page_url: "https://status.protopie.io", type: "statuspage" },
+  // Wireframing / mockup tool
+  { id: "balsamiq", name: "Balsamiq", tags: ["design", "wireframing", "mockups", "ux", "saas"], status_url: "https://status.balsamiq.com/api/v2/status.json", page_url: "https://status.balsamiq.com", type: "statuspage" },
+  // Diagram / flowchart tool (Atlassian)
+  { id: "gliffy", name: "Gliffy", tags: ["diagrams", "flowcharts", "design", "collaboration", "saas"], status_url: "https://status.gliffy.com/api/v2/status.json", page_url: "https://status.gliffy.com", type: "statuspage" },
+  // Technical skills assessment platform
+  { id: "codesignal", name: "CodeSignal", tags: ["hr-tech", "assessment", "developer-skills", "hiring", "saas"], status_url: "https://status.codesignal.com/api/v2/status.json", page_url: "https://status.codesignal.com", type: "statuspage" },
+  // Psychometric / talent assessment
+  { id: "thomas_international", name: "Thomas International", tags: ["hr-tech", "assessment", "psychometric", "talent", "saas"], status_url: "https://status.thomas.co/api/v2/status.json", page_url: "https://status.thomas.co", type: "statuspage" },
+  // Interactive quiz / classroom assessment
+  { id: "classtime", name: "Classtime", tags: ["edtech", "assessment", "classroom", "quiz", "saas"], status_url: "https://status.classtime.com/api/v2/status.json", page_url: "https://status.classtime.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3612,7 +3636,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1631 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1643 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3650,7 +3674,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1631 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1643 services.",
           },
         },
         required: [],
