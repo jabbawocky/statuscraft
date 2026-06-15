@@ -4243,6 +4243,21 @@ const SERVICES: ServiceConfig[] = [
   { id: "peakon", name: "Peakon", tags: ["employee-engagement", "hr", "surveys", "analytics", "saas"], status_url: "https://status.peakon.com/api/v2/status.json", page_url: "https://status.peakon.com", type: "statuspage" },
   { id: "schoox", name: "Schoox", tags: ["lms", "learning-management", "training", "enterprise", "saas"], status_url: "https://status.schoox.com/api/v2/status.json", page_url: "https://status.schoox.com", type: "statuspage" },
   { id: "global_e", name: "Global-e", tags: ["e-commerce", "cross-border", "global-payments", "localization", "saas"], status_url: "https://status.global-e.com/api/v2/status.json", page_url: "https://status.global-e.com", type: "statuspage" },
+  { id: "widen", name: "Widen", tags: ["dam", "digital-asset-management", "content", "media", "enterprise"], status_url: "https://status.widen.com/api/v2/status.json", page_url: "https://status.widen.com", type: "statuspage" },
+  { id: "genetec", name: "Genetec", tags: ["physical-security", "access-control", "video-surveillance", "enterprise", "saas"], status_url: "https://status.genetec.com/api/v2/status.json", page_url: "https://status.genetec.com", type: "statuspage" },
+  { id: "permutive", name: "Permutive", tags: ["audience-data", "publisher", "privacy", "adtech", "saas"], status_url: "https://status.permutive.com/api/v2/status.json", page_url: "https://status.permutive.com", type: "statuspage" },
+  { id: "intentiq", name: "IntentIQ", tags: ["identity-resolution", "adtech", "advertising", "first-party-data", "api"], status_url: "https://status.intentiq.com/api/v2/status.json", page_url: "https://status.intentiq.com", type: "statuspage" },
+  { id: "lojaintegrada", name: "Loja Integrada", tags: ["e-commerce", "brazil", "latam", "saas", "smb"], status_url: "https://status.lojaintegrada.com.br/api/v2/status.json", page_url: "https://status.lojaintegrada.com.br", type: "statuspage" },
+  { id: "nuvemshop", name: "Nuvemshop", tags: ["e-commerce", "latam", "brazil", "argentina", "saas"], status_url: "https://status.nuvemshop.com.br/api/v2/status.json", page_url: "https://status.nuvemshop.com.br", type: "statuspage" },
+  { id: "yampi", name: "Yampi", tags: ["e-commerce", "headless", "brazil", "checkout", "saas"], status_url: "https://status.yampi.com.br/api/v2/status.json", page_url: "https://status.yampi.com.br", type: "statuspage" },
+  { id: "rdstation", name: "RD Station", tags: ["crm", "marketing-automation", "brazil", "latam", "saas"], status_url: "https://status.rdstation.com/api/v2/status.json", page_url: "https://status.rdstation.com", type: "statuspage" },
+  { id: "recordedfuture", name: "Recorded Future", tags: ["threat-intelligence", "security", "cyber", "api", "enterprise"], status_url: "https://status.recordedfuture.com/api/v2/status.json", page_url: "https://status.recordedfuture.com", type: "statuspage" },
+  { id: "observeai", name: "Observe.AI", tags: ["contact-center", "ai", "conversation-intelligence", "saas", "enterprise"], status_url: "https://status.observe.ai/api/v2/status.json", page_url: "https://status.observe.ai", type: "statuspage" },
+  { id: "alkira", name: "Alkira", tags: ["cloud-networking", "network-as-a-service", "security", "infrastructure", "enterprise"], status_url: "https://status.alkira.com/api/v2/status.json", page_url: "https://status.alkira.com", type: "statuspage" },
+  { id: "boost_ai", name: "boost.ai", tags: ["conversational-ai", "chatbot", "virtual-agent", "enterprise", "nlp"], status_url: "https://status.boost.ai/api/v2/status.json", page_url: "https://status.boost.ai", type: "statuspage" },
+  { id: "justt_ai", name: "Justt", tags: ["chargeback", "dispute-management", "payments", "fintech", "ai"], status_url: "https://status.justt.ai/api/v2/status.json", page_url: "https://status.justt.ai", type: "statuspage" },
+  { id: "workyard", name: "Workyard", tags: ["workforce-management", "construction", "field-service", "time-tracking", "saas"], status_url: "https://status.workyard.com/api/v2/status.json", page_url: "https://status.workyard.com", type: "statuspage" },
+  { id: "twelve_twenty", name: "12twenty", tags: ["recruiting", "talent-acquisition", "campus-recruiting", "hr", "saas"], status_url: "https://status.12twenty.com/api/v2/status.json", page_url: "https://status.12twenty.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4680,7 +4695,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2256 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2271 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4718,7 +4733,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2256 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2271 services.",
           },
         },
         required: [],
