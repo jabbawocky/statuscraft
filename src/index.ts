@@ -3701,6 +3701,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "monese", name: "Monese", tags: ["banking", "fintech", "neobank", "europe", "payments"], status_url: "https://status.monese.com/api/v2/status.json", page_url: "https://status.monese.com", type: "statuspage" },
   // Immutable — Web3 gaming blockchain platform (ImmutableX / Immutable zkEVM)
   { id: "immutable", name: "Immutable", tags: ["web3", "blockchain", "gaming", "nft", "layer2"], status_url: "https://status.immutable.com/api/v2/status.json", page_url: "https://status.immutable.com", type: "statuspage" },
+  // Perplexity — AI-powered search engine and answer engine
+  { id: "perplexity", name: "Perplexity", tags: ["ai", "search", "llm", "saas"], status_url: "https://perplexity.instatus.com/api/v2/summary.json", page_url: "https://status.perplexity.com", type: "betterstack" },
+  // Talon.One — promotion engine for loyalty, vouchers, and gamification
+  { id: "talon_one", name: "Talon.One", tags: ["promotions", "loyalty", "ecommerce", "marketing", "api"], status_url: "https://status.talon.one/api/v2/status.json", page_url: "https://status.talon.one", type: "statuspage" },
+  // Voucherify — API-first promotions and loyalty platform
+  { id: "voucherify", name: "Voucherify", tags: ["promotions", "loyalty", "vouchers", "ecommerce", "api"], status_url: "https://status.voucherify.io/api/v2/status.json", page_url: "https://status.voucherify.io", type: "statuspage" },
+  // Giftbit — digital gift card and rewards delivery platform
+  { id: "giftbit", name: "Giftbit", tags: ["gifting", "rewards", "digital-cards", "fintech", "api"], status_url: "https://status.giftbit.com/api/v2/status.json", page_url: "https://status.giftbit.com", type: "statuspage" },
+  // Tango Card — digital rewards and incentive delivery platform
+  { id: "tango_card", name: "Tango Card", tags: ["rewards", "gifting", "incentives", "digital-cards", "saas"], status_url: "https://status.tangocard.com/api/v2/status.json", page_url: "https://status.tangocard.com", type: "statuspage" },
+  // Assembled — customer support workforce management and scheduling
+  { id: "assembled", name: "Assembled", tags: ["workforce-management", "customer-support", "scheduling", "saas"], status_url: "https://status.assembled.com/api/v2/status.json", page_url: "https://status.assembled.com", type: "statuspage" },
+  // Planday — employee scheduling and workforce management platform
+  { id: "planday", name: "Planday", tags: ["workforce", "scheduling", "hr", "shift-management", "saas"], status_url: "https://status.planday.com/api/v2/status.json", page_url: "https://status.planday.com", type: "statuspage" },
+  // Handshake — early talent recruiting and career platform
+  { id: "handshake", name: "Handshake", tags: ["recruiting", "hr", "early-talent", "campus", "saas"], status_url: "https://status.joinhandshake.com/api/v2/status.json", page_url: "https://status.joinhandshake.com", type: "statuspage" },
+  // Practice Better — all-in-one health coaching and client management platform
+  { id: "practice_better", name: "Practice Better", tags: ["healthcare", "coaching", "wellness", "telehealth", "saas"], status_url: "https://status.practicebetter.io/api/v2/status.json", page_url: "https://status.practicebetter.io", type: "statuspage" },
+  // GPS Insight — fleet tracking and telematics for enterprise fleets
+  { id: "gps_insight", name: "GPS Insight", tags: ["fleet", "telematics", "gps", "iot", "saas"], status_url: "https://status.gpsinsight.com/api/v2/status.json", page_url: "https://status.gpsinsight.com", type: "statuspage" },
+  // Basiq — open banking API for Australia and New Zealand
+  { id: "basiq", name: "Basiq", tags: ["open-banking", "fintech", "financial-data", "api", "australia"], status_url: "https://status.basiq.io/api/v2/status.json", page_url: "https://status.basiq.io", type: "statuspage" },
+  // Volt — open banking payment infrastructure for Europe
+  { id: "volt_io", name: "Volt", tags: ["open-banking", "payments", "fintech", "europe", "api"], status_url: "https://status.volt.io/api/v2/status.json", page_url: "https://status.volt.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4138,7 +4162,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1875 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1887 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4176,7 +4200,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1875 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1887 services.",
           },
         },
         required: [],
