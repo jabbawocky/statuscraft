@@ -3771,6 +3771,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "sendcloud", name: "Sendcloud", tags: ["shipping", "logistics", "ecommerce", "returns", "europe"], status_url: "https://status.sendcloud.com/api/v2/status.json", page_url: "https://status.sendcloud.com", type: "statuspage" },
   // Click (ClickSoftware) — Salesforce field service management platform
   { id: "clicksoftware", name: "Click (ClickSoftware)", tags: ["field-service", "workforce", "scheduling", "salesforce", "enterprise"], status_url: "https://status.clicksoftware.com/api/v2/status.json", page_url: "https://status.clicksoftware.com", type: "statuspage" },
+  // Zettle — PayPal's mobile POS and card payment solution for SMBs
+  { id: "zettle", name: "Zettle", tags: ["payments", "pos", "mobile", "smb", "fintech"], status_url: "https://status.zettle.com/api/v2/status.json", page_url: "https://status.zettle.com", type: "statuspage" },
+  // Textline — business texting and SMS communication platform
+  { id: "textline", name: "Textline", tags: ["sms", "messaging", "customer-support", "business", "saas"], status_url: "https://status.textline.com/api/v2/status.json", page_url: "https://status.textline.com", type: "statuspage" },
+  // Cuboh — restaurant online ordering integration hub
+  { id: "cuboh", name: "Cuboh", tags: ["restaurant", "online-ordering", "pos-integration", "delivery", "saas"], status_url: "https://status.cuboh.com/api/v2/status.json", page_url: "https://status.cuboh.com", type: "statuspage" },
+  // Anthology — education technology platform (Blackboard + Campus Management)
+  { id: "anthology", name: "Anthology", tags: ["edtech", "lms", "higher-education", "student-success", "saas"], status_url: "https://status.anthology.com/api/v2/status.json", page_url: "https://status.anthology.com", type: "statuspage" },
+  // Veracross — K-12 school information and management system
+  { id: "veracross", name: "Veracross", tags: ["edtech", "k12", "sis", "school-management", "saas"], status_url: "https://status.veracross.com/api/v2/status.json", page_url: "https://status.veracross.com", type: "statuspage" },
+  // NextGen Healthcare — EHR and practice management for ambulatory care
+  { id: "nextgen_healthcare", name: "NextGen Healthcare", tags: ["healthcare", "ehr", "practice-management", "clinical", "saas"], status_url: "https://nextgen.statuspage.io/api/v2/status.json", page_url: "https://nextgen.statuspage.io", type: "statuspage" },
+  // dLocal — cross-border payments infrastructure for emerging markets (LatAm, Africa, Asia)
+  { id: "dlocal", name: "dLocal", tags: ["payments", "fintech", "emerging-markets", "latam", "africa"], status_url: "https://dlocal.statuspage.io/api/v2/status.json", page_url: "https://dlocal.statuspage.io", type: "statuspage" },
+  // NetDocuments — cloud document management and collaboration for legal and compliance
+  { id: "netdocuments", name: "NetDocuments", tags: ["document-management", "legal", "cloud", "collaboration", "enterprise"], status_url: "https://netdocuments.statuspage.io/api/v2/status.json", page_url: "https://netdocuments.statuspage.io", type: "statuspage" },
+  // MachineMetrics — industrial IoT platform for manufacturing equipment monitoring
+  { id: "machinemetrics", name: "MachineMetrics", tags: ["manufacturing", "iot", "oee", "industrial", "saas"], status_url: "https://status.machinemetrics.com/api/v2/status.json", page_url: "https://status.machinemetrics.com", type: "statuspage" },
+  // Cority — EHS (environmental, health & safety) management platform
+  { id: "cority", name: "Cority", tags: ["ehs", "health-safety", "environmental", "compliance", "enterprise"], status_url: "https://status.cority.com/api/v2/status.json", page_url: "https://status.cority.com", type: "statuspage" },
+  // Bonusly — employee recognition and rewards platform
+  { id: "bonusly", name: "Bonusly", tags: ["hr", "employee-recognition", "rewards", "engagement", "saas"], status_url: "https://bonusly.statuspage.io/api/v2/status.json", page_url: "https://bonusly.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4208,7 +4230,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1911 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1922 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4246,7 +4268,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1911 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1922 services.",
           },
         },
         required: [],
