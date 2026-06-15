@@ -3729,6 +3729,19 @@ const SERVICES = [
     { id: "agencyanalytics", name: "AgencyAnalytics", tags: ["marketing", "reporting", "analytics", "agencies", "saas"], status_url: "https://agencyanalytics.statuspage.io/api/v2/status.json", page_url: "https://agencyanalytics.statuspage.io", type: "statuspage" },
     { id: "meisterplan", name: "Meisterplan", tags: ["project-management", "portfolio", "resource-management", "enterprise", "saas"], status_url: "https://meisterplan.statuspage.io/api/v2/status.json", page_url: "https://meisterplan.statuspage.io", type: "statuspage" },
     { id: "forecast_app", name: "Forecast", tags: ["project-management", "resource-planning", "ai", "agency", "saas"], status_url: "https://forecast.statuspage.io/api/v2/status.json", page_url: "https://forecast.statuspage.io", type: "statuspage" },
+    { id: "hint_health", name: "Hint Health", tags: ["healthcare", "direct-primary-care", "membership", "practice-management", "saas"], status_url: "https://status.hint.com/api/v2/status.json", page_url: "https://status.hint.com", type: "statuspage" },
+    { id: "cratejoy", name: "Cratejoy", tags: ["ecommerce", "subscriptions", "marketplace", "subscription-box", "saas"], status_url: "https://status.cratejoy.com/api/v2/status.json", page_url: "https://status.cratejoy.com", type: "statuspage" },
+    { id: "blaze_cannabis", name: "Blaze", tags: ["cannabis", "retail", "pos", "dispensary", "saas"], status_url: "https://blaze.statuspage.io/api/v2/status.json", page_url: "https://blaze.statuspage.io", type: "statuspage" },
+    { id: "meadow", name: "Meadow", tags: ["cannabis", "dispensary", "pos", "compliance", "saas"], status_url: "https://meadow.statuspage.io/api/v2/status.json", page_url: "https://meadow.statuspage.io", type: "statuspage" },
+    { id: "leafly", name: "Leafly", tags: ["cannabis", "marketplace", "dispensary", "consumer", "saas"], status_url: "https://leafly.statuspage.io/api/v2/status.json", page_url: "https://leafly.statuspage.io", type: "statuspage" },
+    { id: "lofty", name: "Lofty", tags: ["real-estate", "crm", "proptech", "agents", "saas"], status_url: "https://lofty.statuspage.io/api/v2/status.json", page_url: "https://lofty.statuspage.io", type: "statuspage" },
+    { id: "epos_now", name: "Epos Now", tags: ["pos", "retail", "hospitality", "cloud", "saas"], status_url: "https://eposnow.statuspage.io/api/v2/status.json", page_url: "https://eposnow.statuspage.io", type: "statuspage" },
+    { id: "incentivio", name: "Incentivio", tags: ["restaurant", "loyalty", "online-ordering", "hospitality", "saas"], status_url: "https://incentivio.statuspage.io/api/v2/status.json", page_url: "https://incentivio.statuspage.io", type: "statuspage" },
+    { id: "caseware", name: "Caseware Cloud", tags: ["accounting", "audit", "compliance", "finance", "enterprise"], status_url: "https://caseware.statuspage.io/api/v2/status.json", page_url: "https://caseware.statuspage.io", type: "statuspage" },
+    { id: "drake_software", name: "Drake Software", tags: ["tax", "accounting", "cpa", "tax-preparation", "saas"], status_url: "https://drake.statuspage.io/api/v2/status.json", page_url: "https://drake.statuspage.io", type: "statuspage" },
+    { id: "tiphaus", name: "TipHaus", tags: ["restaurant", "tip-management", "payroll", "hospitality", "saas"], status_url: "https://tiphaus.statuspage.io/api/v2/status.json", page_url: "https://tiphaus.statuspage.io", type: "statuspage" },
+    { id: "vetspire", name: "Vetspire", tags: ["veterinary", "ehr", "practice-management", "healthcare", "saas"], status_url: "https://vetspire.statuspage.io/api/v2/status.json", page_url: "https://vetspire.statuspage.io", type: "statuspage" },
+    { id: "kentro", name: "Kentro", tags: ["inventory", "order-management", "ecommerce", "fulfillment", "saas"], status_url: "https://kentro.statuspage.io/api/v2/status.json", page_url: "https://kentro.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4186,7 +4199,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1976 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1989 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -4221,7 +4234,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1976 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1989 services.",
                     },
                 },
                 required: [],
