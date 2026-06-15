@@ -3344,6 +3344,31 @@ const SERVICES = [
     { id: "superwall", name: "Superwall", tags: ["mobile", "paywall", "subscriptions", "a-b-testing", "saas"], status_url: "https://superwall.statuspage.io/api/v2/status.json", page_url: "https://superwall.statuspage.io", type: "statuspage" },
     // Purchasely — no-code mobile subscription & paywall platform
     { id: "purchasely", name: "Purchasely", tags: ["mobile", "subscriptions", "paywall", "no-code", "saas"], status_url: "https://purchasely.statuspage.io/api/v2/status.json", page_url: "https://purchasely.statuspage.io", type: "statuspage" },
+    // Tick 188 additions
+    // Elastic Cloud — managed Elasticsearch, Kibana & observability platform
+    { id: "elastic_cloud", name: "Elastic Cloud", tags: ["search", "database", "observability", "logging", "cloud"], status_url: "https://status.elastic.co/api/v2/status.json", page_url: "https://status.elastic.co", type: "statuspage" },
+    // Observe — cloud observability & log analytics platform (AWS-native)
+    { id: "observe_inc", name: "Observe", tags: ["observability", "logging", "analytics", "cloud", "devops"], status_url: "https://status.observeinc.com/api/v2/status.json", page_url: "https://status.observeinc.com", type: "statuspage" },
+    // Tray.ai — low-code automation & iPaaS integration platform
+    { id: "tray_io", name: "Tray.ai", tags: ["automation", "ipaas", "integration", "low-code", "saas"], status_url: "https://status.tray.io/api/v2/status.json", page_url: "https://status.tray.io", type: "statuspage" },
+    // Jira Service Management — ITSM & service desk platform (Atlassian)
+    { id: "jira_service_management", name: "Jira Service Management", tags: ["itsm", "service-desk", "atlassian", "enterprise", "saas"], status_url: "https://jira-service-management.status.atlassian.com/api/v2/status.json", page_url: "https://jira-service-management.status.atlassian.com", type: "statuspage" },
+    // Atlassian Statuspage — incident communication & status page platform
+    { id: "statuspage_io", name: "Atlassian Statuspage", tags: ["incident-management", "status-page", "atlassian", "saas", "developer-tools"], status_url: "https://metastatuspage.com/api/v2/status.json", page_url: "https://metastatuspage.com", type: "statuspage" },
+    // bunny.net — CDN, video streaming & edge storage platform
+    { id: "bunny_cdn", name: "bunny.net", tags: ["cdn", "video", "edge", "storage", "cloud"], status_url: "https://status.bunny.net/api/v2/status.json", page_url: "https://status.bunny.net", type: "statuspage" },
+    // Gainsight PX — product experience & user onboarding analytics platform
+    { id: "gainsight_px", name: "Gainsight PX", tags: ["product-analytics", "user-onboarding", "customer-success", "saas", "analytics"], status_url: "https://status.aptrinsic.com/api/v2/status.json", page_url: "https://status.aptrinsic.com", type: "statuspage" },
+    // Mend.io — open-source security & SCA vulnerability platform (formerly WhiteSource)
+    { id: "mend_io", name: "Mend.io", tags: ["security", "sca", "open-source", "vulnerabilities", "developer-tools"], status_url: "https://status.mend.io/api/v2/status.json", page_url: "https://status.mend.io", type: "statuspage" },
+    // Aqua Cloud — cloud-native & container security platform
+    { id: "aquasecurity", name: "Aqua Cloud", tags: ["security", "container", "cloud-native", "kubernetes", "devsecops"], status_url: "https://status.aquasec.com/api/v2/status.json", page_url: "https://status.aquasec.com", type: "statuspage" },
+    // Wiz — cloud security posture management (CSPM) platform
+    { id: "wiz_io", name: "Wiz", tags: ["security", "cspm", "cloud", "devsecops", "enterprise"], status_url: "https://status.wiz.io/api/v2/status.json", page_url: "https://status.wiz.io", type: "statuspage" },
+    // Code Climate — automated code review & engineering analytics platform
+    { id: "code_climate", name: "Code Climate", tags: ["code-quality", "developer-tools", "ci", "analytics", "saas"], status_url: "https://status.codeclimate.com/api/v2/status.json", page_url: "https://status.codeclimate.com", type: "statuspage" },
+    // Sleuth — DORA metrics & deployment tracking platform for engineering teams
+    { id: "sleuth", name: "Sleuth", tags: ["dora-metrics", "deployments", "developer-tools", "devops", "analytics"], status_url: "https://status.sleuth.io/api/v2/status.json", page_url: "https://status.sleuth.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3801,7 +3826,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1768 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1780 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3836,7 +3861,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1768 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1780 services.",
                     },
                 },
                 required: [],
