@@ -3232,6 +3232,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "thomas_international", name: "Thomas International", tags: ["hr-tech", "assessment", "psychometric", "talent", "saas"], status_url: "https://status.thomas.co/api/v2/status.json", page_url: "https://status.thomas.co", type: "statuspage" },
   // Interactive quiz / classroom assessment
   { id: "classtime", name: "Classtime", tags: ["edtech", "assessment", "classroom", "quiz", "saas"], status_url: "https://status.classtime.com/api/v2/status.json", page_url: "https://status.classtime.com", type: "statuspage" },
+  // CRM — SMB / team-focused
+  { id: "teamleader", name: "Teamleader", tags: ["crm", "project-management", "invoicing", "smb", "saas"], status_url: "https://status.teamleader.eu/api/v2/status.json", page_url: "https://status.teamleader.eu", type: "statuspage" },
+  // Email marketing
+  { id: "verticalresponse", name: "VerticalResponse", tags: ["email-marketing", "campaigns", "smb", "saas"], status_url: "https://status.verticalresponse.com/api/v2/status.json", page_url: "https://status.verticalresponse.com", type: "statuspage" },
+  // Crypto exchange
+  { id: "bitmex", name: "BitMEX", tags: ["crypto", "exchange", "trading", "derivatives", "fintech"], status_url: "https://status.bitmex.com/api/v2/status.json", page_url: "https://status.bitmex.com", type: "statuspage" },
+  // Time tracking / Jira plugin
+  { id: "tempo", name: "Tempo", tags: ["time-tracking", "jira", "project-management", "productivity", "saas"], status_url: "https://status.tempo.io/api/v2/status.json", page_url: "https://status.tempo.io", type: "statuspage" },
+  // Payment processing (Visa)
+  { id: "cybersource", name: "CyberSource", tags: ["payments", "payment-gateway", "fraud", "visa", "fintech"], status_url: "https://status.cybersource.com/api/v2/status.json", page_url: "https://status.cybersource.com", type: "statuspage" },
+  // Global B2B payments
+  { id: "veem", name: "Veem", tags: ["payments", "b2b", "international", "fintech", "saas"], status_url: "https://status.veem.com/api/v2/status.json", page_url: "https://status.veem.com", type: "statuspage" },
+  // Email parsing / automation
+  { id: "mailparser", name: "Mailparser", tags: ["email", "parsing", "automation", "data-extraction", "saas"], status_url: "https://status.mailparser.io/api/v2/status.json", page_url: "https://status.mailparser.io", type: "statuspage" },
+  // Customer feedback (SurveyMonkey product)
+  { id: "getfeedback", name: "GetFeedback", tags: ["feedback", "survey", "cx", "customer-experience", "saas"], status_url: "https://status.getfeedback.com/api/v2/status.json", page_url: "https://status.getfeedback.com", type: "statuspage" },
+  // E-signature (UK)
+  { id: "signable", name: "Signable", tags: ["e-signature", "documents", "legal", "uk", "saas"], status_url: "https://status.signable.co.uk/api/v2/status.json", page_url: "https://status.signable.co.uk", type: "statuspage" },
+  // Session replay / CX analytics
+  { id: "auryc", name: "Auryc", tags: ["session-replay", "analytics", "cx", "user-experience", "saas"], status_url: "https://status.auryc.com/api/v2/status.json", page_url: "https://status.auryc.com", type: "statuspage" },
+  // Audience / advertising measurement
+  { id: "quantcast", name: "Quantcast", tags: ["analytics", "advertising", "audience", "measurement", "adtech"], status_url: "https://status.quantcast.com/api/v2/status.json", page_url: "https://status.quantcast.com", type: "statuspage" },
+  // Data privacy / governance platform
+  { id: "securiti", name: "Securiti", tags: ["privacy", "data-governance", "compliance", "security", "saas"], status_url: "https://status.securiti.ai/api/v2/status.json", page_url: "https://status.securiti.ai", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3601,7 +3625,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.47.0" },
+  { name: "statuscraft", version: "2.48.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -3636,7 +3660,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1643 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1655 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3674,7 +3698,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1643 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1655 services.",
           },
         },
         required: [],
