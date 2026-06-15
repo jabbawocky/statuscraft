@@ -3188,6 +3188,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "nimble", name: "Nimble CRM", tags: ["crm", "sales", "contacts", "social-crm", "saas"], status_url: "https://nimble.statuspage.io/api/v2/status.json", page_url: "https://nimble.statuspage.io", type: "statuspage" },
   // Payments / ISO
   { id: "sola_payments", name: "Sola Payments", tags: ["payments", "card-processing", "pos", "iso", "fintech"], status_url: "https://status.solapayments.com/api/v2/status.json", page_url: "https://status.solapayments.com", type: "statuspage" },
+  // AI video generation
+  { id: "runwayml", name: "Runway", tags: ["ai", "video-generation", "generative-ai", "creative", "ml"], status_url: "https://status.runwayml.com/api/v2/status.json", page_url: "https://status.runwayml.com", type: "statuspage" },
+  // AI voice / empathic AI
+  { id: "hume", name: "Hume AI", tags: ["ai", "voice", "emotion-ai", "api", "llm"], status_url: "https://status.hume.ai/api/v2/status.json", page_url: "https://status.hume.ai", type: "statuspage" },
+  // Vector database cloud (Milvus / Zilliz Cloud)
+  { id: "zilliz", name: "Zilliz Cloud", tags: ["vector-database", "ai", "ml", "database", "cloud"], status_url: "https://status.zilliz.com/api/v2/status.json", page_url: "https://status.zilliz.com", type: "statuspage" },
+  // Live chat widget
+  { id: "tawk", name: "Tawk.to", tags: ["live-chat", "customer-support", "saas", "free"], status_url: "https://status.tawk.to/api/v2/status.json", page_url: "https://status.tawk.to", type: "statuspage" },
+  // Rust package registry
+  { id: "crates_io", name: "crates.io", tags: ["package-registry", "rust", "developer-tools", "open-source"], status_url: "https://status.crates.io/api/v2/status.json", page_url: "https://status.crates.io", type: "statuspage" },
+  // Java package registry
+  { id: "maven_central", name: "Maven Central", tags: ["package-registry", "java", "developer-tools", "open-source"], status_url: "https://status.maven.org/api/v2/status.json", page_url: "https://status.maven.org", type: "statuspage" },
+  // Telecom / SMS — Africa
+  { id: "africastalking", name: "Africa's Talking", tags: ["sms", "voice", "api", "africa", "communications"], status_url: "https://status.africastalking.com/api/v2/status.json", page_url: "https://status.africastalking.com", type: "statuspage" },
+  // Aerial imagery / geospatial
+  { id: "nearmap", name: "Nearmap", tags: ["geospatial", "aerial-imagery", "mapping", "api", "saas"], status_url: "https://status.nearmap.com/api/v2/status.json", page_url: "https://status.nearmap.com", type: "statuspage" },
+  // Location data platform
+  { id: "radar", name: "Radar", tags: ["location", "geofencing", "geocoding", "api", "saas"], status_url: "https://status.radar.com/api/v2/status.json", page_url: "https://status.radar.com", type: "statuspage" },
+  // Podcast hosting / ad platform (Spotify)
+  { id: "megaphone", name: "Megaphone", tags: ["podcast", "hosting", "advertising", "media", "saas"], status_url: "https://status.megaphone.fm/api/v2/status.json", page_url: "https://status.megaphone.fm", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3592,7 +3612,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1621 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1631 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3630,7 +3650,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1621 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1631 services.",
           },
         },
         required: [],
