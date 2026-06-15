@@ -3276,6 +3276,38 @@ const SERVICES: ServiceConfig[] = [
   { id: "inteliquent", name: "Inteliquent", tags: ["voice", "sip", "telecom", "carrier", "api"], status_url: "https://status.inteliquent.com/api/v2/status.json", page_url: "https://status.inteliquent.com", type: "statuspage" },
   // Cloud voice & SMS carrier (Commio)
   { id: "commio", name: "Commio", tags: ["voice", "sms", "cpaas", "telecom", "api"], status_url: "https://status.commio.com/api/v2/status.json", page_url: "https://status.commio.com", type: "statuspage" },
+  // EV charging network
+  { id: "chargepoint", name: "ChargePoint", tags: ["ev-charging", "iot", "energy", "mobility", "saas"], status_url: "https://status.chargepoint.com/api/v2/status.json", page_url: "https://status.chargepoint.com", type: "statuspage" },
+  // Client collaboration / digital interaction portal
+  { id: "moxo", name: "Moxo", tags: ["collaboration", "client-portal", "workflow", "saas"], status_url: "https://status.moxo.com/api/v2/status.json", page_url: "https://status.moxo.com", type: "statuspage" },
+  // EDI / supply-chain integration network
+  { id: "orderful", name: "Orderful", tags: ["edi", "supply-chain", "integration", "b2b", "api"], status_url: "https://status.orderful.com/api/v2/status.json", page_url: "https://status.orderful.com", type: "statuspage" },
+  // Healthcare provider data API
+  { id: "ribbon_health", name: "Ribbon Health", tags: ["healthcare", "provider-data", "api", "health-tech"], status_url: "https://status.ribbonhealth.com/api/v2/status.json", page_url: "https://status.ribbonhealth.com", type: "statuspage" },
+  // Benefits administration platform
+  { id: "ease", name: "Ease", tags: ["benefits", "hr", "insurance", "saas", "brokers"], status_url: "https://status.ease.com/api/v2/status.json", page_url: "https://status.ease.com", type: "statuspage" },
+  // PDF productivity & e-signature (Nitro)
+  { id: "nitro", name: "Nitro", tags: ["pdf", "e-signature", "documents", "productivity", "saas"], status_url: "https://status.gonitro.com/api/v2/status.json", page_url: "https://status.gonitro.com", type: "statuspage" },
+  // Cloud-based load testing (LoadNinja)
+  { id: "loadninja", name: "LoadNinja", tags: ["load-testing", "performance-testing", "qa", "devtools", "saas"], status_url: "https://status.loadninja.com/api/v2/status.json", page_url: "https://status.loadninja.com", type: "statuspage" },
+  // Enterprise load & performance testing (BlazeMeter)
+  { id: "blazemeter", name: "BlazeMeter", tags: ["load-testing", "performance-testing", "qa", "devtools", "saas"], status_url: "https://status.blazemeter.com/api/v2/status.json", page_url: "https://status.blazemeter.com", type: "statuspage" },
+  // Multi-chain NFT marketplace
+  { id: "magic_eden", name: "Magic Eden", tags: ["nft", "marketplace", "web3", "crypto", "multi-chain"], status_url: "https://status.magiceden.io/api/v2/status.json", page_url: "https://status.magiceden.io", type: "statuspage" },
+  // Vehicle allowance & mileage reimbursement platform
+  { id: "motus", name: "Motus", tags: ["vehicle-allowance", "mileage", "hr", "fleet", "saas"], status_url: "https://status.motus.com/api/v2/status.json", page_url: "https://status.motus.com", type: "statuspage" },
+  // ATS for small-to-mid businesses (JazzHR)
+  { id: "jazz_hr", name: "JazzHR", tags: ["ats", "recruiting", "hr", "saas", "smb"], status_url: "https://status.jazzhr.com/api/v2/status.json", page_url: "https://status.jazzhr.com", type: "statuspage" },
+  // Conversational recruiting AI / Olivia chatbot
+  { id: "paradox_ai", name: "Paradox", tags: ["recruiting", "ai", "chatbot", "hr", "saas"], status_url: "https://status.paradox.ai/api/v2/status.json", page_url: "https://status.paradox.ai", type: "statuspage" },
+  // Recruiting CRM & talent sourcing platform
+  { id: "gem", name: "Gem", tags: ["recruiting", "crm", "sourcing", "hr", "saas"], status_url: "https://status.gem.com/api/v2/status.json", page_url: "https://status.gem.com", type: "statuspage" },
+  // Base L2 blockchain (by Coinbase)
+  { id: "base_network", name: "Base", tags: ["blockchain", "l2", "ethereum", "web3", "coinbase"], status_url: "https://status.base.org/api/v2/status.json", page_url: "https://status.base.org", type: "statuspage" },
+  // StarkNet ZK rollup L2
+  { id: "starknet", name: "StarkNet", tags: ["blockchain", "l2", "zk-rollup", "ethereum", "web3"], status_url: "https://status.starknet.io/api/v2/status.json", page_url: "https://status.starknet.io", type: "statuspage" },
+  // Next-gen spreadsheet with live data connections
+  { id: "equals", name: "Equals", tags: ["spreadsheet", "analytics", "data", "productivity", "saas"], status_url: "https://status.equals.com/api/v2/status.json", page_url: "https://status.equals.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3680,7 +3712,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1664 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1680 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3718,7 +3750,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1664 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1680 services.",
           },
         },
         required: [],
