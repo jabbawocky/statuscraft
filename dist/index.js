@@ -3651,6 +3651,30 @@ const SERVICES = [
     { id: "cority", name: "Cority", tags: ["ehs", "health-safety", "environmental", "compliance", "enterprise"], status_url: "https://status.cority.com/api/v2/status.json", page_url: "https://status.cority.com", type: "statuspage" },
     // Bonusly — employee recognition and rewards platform
     { id: "bonusly", name: "Bonusly", tags: ["hr", "employee-recognition", "rewards", "engagement", "saas"], status_url: "https://bonusly.statuspage.io/api/v2/status.json", page_url: "https://bonusly.statuspage.io", type: "statuspage" },
+    // Relay — business banking platform for SMBs (relay.fi)
+    { id: "relay", name: "Relay", tags: ["banking", "fintech", "smb", "business-banking", "saas"], status_url: "https://relay.statuspage.io/api/v2/status.json", page_url: "https://relay.statuspage.io", type: "statuspage" },
+    // Arize AI — ML observability and model monitoring platform
+    { id: "arize", name: "Arize AI", tags: ["ai", "ml", "observability", "model-monitoring", "mlops"], status_url: "https://arize.statuspage.io/api/v2/status.json", page_url: "https://arize.statuspage.io", type: "statuspage" },
+    // OptimoRoute — route planning and optimization for delivery and field service
+    { id: "optimoroute", name: "OptimoRoute", tags: ["logistics", "route-optimization", "delivery", "field-service", "saas"], status_url: "https://optimoroute.statuspage.io/api/v2/status.json", page_url: "https://optimoroute.statuspage.io", type: "statuspage" },
+    // HawkSoft — cloud-based insurance agency management system
+    { id: "hawksoft", name: "HawkSoft", tags: ["insurance", "agency-management", "ams", "independent-agents", "saas"], status_url: "https://hawksoft.statuspage.io/api/v2/status.json", page_url: "https://hawksoft.statuspage.io", type: "statuspage" },
+    // EZLynx — insurance technology platform (rater, CRM, policy management)
+    { id: "ezlynx", name: "EZLynx", tags: ["insurance", "insurtech", "rater", "crm", "policy-management"], status_url: "https://ezlynx.statuspage.io/api/v2/status.json", page_url: "https://ezlynx.statuspage.io", type: "statuspage" },
+    // Dispatch — contractor network management for enterprise field service
+    { id: "dispatch", name: "Dispatch", tags: ["field-service", "contractor-management", "enterprise", "home-services", "saas"], status_url: "https://dispatch.statuspage.io/api/v2/status.json", page_url: "https://dispatch.statuspage.io", type: "statuspage" },
+    // Fern — SDK generation and API documentation from OpenAPI specs
+    { id: "fern", name: "Fern", tags: ["developer-tools", "sdk-generation", "api-docs", "openapi", "saas"], status_url: "https://fern.statuspage.io/api/v2/status.json", page_url: "https://fern.statuspage.io", type: "statuspage" },
+    // Konnectify — iPaaS for HR, payroll, and recruiting integrations
+    { id: "konnectify", name: "Konnectify", tags: ["ipaas", "integration", "hr", "payroll", "automation"], status_url: "https://konnectify.statuspage.io/api/v2/status.json", page_url: "https://konnectify.statuspage.io", type: "statuspage" },
+    // Slope — B2B buy now pay later platform for business purchases
+    { id: "slope", name: "Slope", tags: ["payments", "bnpl", "b2b", "fintech", "ecommerce"], status_url: "https://slope.statuspage.io/api/v2/status.json", page_url: "https://slope.statuspage.io", type: "statuspage" },
+    // Capchase — revenue-based financing and growth capital for SaaS companies
+    { id: "capchase", name: "Capchase", tags: ["fintech", "financing", "saas", "revenue-based-financing", "growth"], status_url: "https://capchase.statuspage.io/api/v2/status.json", page_url: "https://capchase.statuspage.io", type: "statuspage" },
+    // Empower — personal finance management platform (budgeting, cash advance)
+    { id: "empower", name: "Empower", tags: ["fintech", "personal-finance", "banking", "consumer", "saas"], status_url: "https://empower.statuspage.io/api/v2/status.json", page_url: "https://empower.statuspage.io", type: "statuspage" },
+    // Notch — customer experience and CX platform
+    { id: "notch_cx", name: "Notch CX", tags: ["cx", "customer-experience", "saas"], status_url: "https://notch.statuspage.io/api/v2/status.json", page_url: "https://notch.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4108,7 +4132,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1922 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1934 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -4143,7 +4167,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1922 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1934 services.",
                     },
                 },
                 required: [],
