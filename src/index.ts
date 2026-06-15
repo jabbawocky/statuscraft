@@ -4152,6 +4152,16 @@ const SERVICES: ServiceConfig[] = [
   { id: "victoria_metrics", name: "VictoriaMetrics", tags: ["monitoring", "metrics", "observability", "time-series", "cloud"], status_url: "https://status.victoriametrics.com/api/v2/status.json", page_url: "https://status.victoriametrics.com", type: "statuspage" },
   { id: "betterstack", name: "Better Stack", tags: ["monitoring", "uptime", "logging", "observability", "devtools"], status_url: "https://betteruptime.statuspage.io/api/v2/status.json", page_url: "https://betteruptime.statuspage.io", type: "statuspage" },
   { id: "knock_app", name: "Knock", tags: ["notifications", "messaging", "developer-tools", "api", "saas"], status_url: "https://status.knock.app/api/v2/status.json", page_url: "https://status.knock.app", type: "statuspage" },
+  { id: "zerotier", name: "ZeroTier", tags: ["networking", "vpn", "overlay-network", "devtools", "connectivity"], status_url: "https://zerotier.statuspage.io/api/v2/status.json", page_url: "https://zerotier.statuspage.io", type: "statuspage" },
+  { id: "laravel_forge", name: "Laravel Forge", tags: ["devtools", "deployment", "php", "server-management", "paas"], status_url: "https://laravelforge.statuspage.io/api/v2/status.json", page_url: "https://laravelforge.statuspage.io", type: "statuspage" },
+  { id: "resmo", name: "Resmo", tags: ["security", "cloud-visibility", "asset-inventory", "compliance", "devops"], status_url: "https://resmo.statuspage.io/api/v2/status.json", page_url: "https://resmo.statuspage.io", type: "statuspage" },
+  { id: "nextdns", name: "NextDNS", tags: ["dns", "security", "privacy", "networking", "filtering"], status_url: "https://nextdns.statuspage.io/api/v2/status.json", page_url: "https://nextdns.statuspage.io", type: "statuspage" },
+  { id: "roadie", name: "Roadie", tags: ["developer-portal", "backstage", "devtools", "saas", "platform-engineering"], status_url: "https://roadie.statuspage.io/api/v2/status.json", page_url: "https://roadie.statuspage.io", type: "statuspage" },
+  { id: "k6_cloud", name: "Grafana k6", tags: ["testing", "load-testing", "performance", "devtools", "ci-cd"], status_url: "https://k6.statuspage.io/api/v2/status.json", page_url: "https://k6.statuspage.io", type: "statuspage" },
+  { id: "helpscout", name: "Help Scout", tags: ["customer-support", "helpdesk", "crm", "email", "saas"], status_url: "https://helpscout.statuspage.io/api/v2/status.json", page_url: "https://helpscout.statuspage.io", type: "statuspage" },
+  { id: "shortio", name: "Short.io", tags: ["url-shortener", "links", "analytics", "marketing", "saas"], status_url: "https://shortio.statuspage.io/api/v2/status.json", page_url: "https://shortio.statuspage.io", type: "statuspage" },
+  { id: "atatus", name: "Atatus", tags: ["apm", "monitoring", "error-tracking", "observability", "devtools"], status_url: "https://atatus.statuspage.io/api/v2/status.json", page_url: "https://atatus.statuspage.io", type: "statuspage" },
+  { id: "alertops", name: "AlertOps", tags: ["incident-management", "on-call", "alerting", "ops", "monitoring"], status_url: "https://status.alertops.com/api/v2/status.json", page_url: "https://status.alertops.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4554,7 +4564,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.54.0" },
+  { name: "statuscraft", version: "2.55.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -4589,7 +4599,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2167 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2177 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4627,7 +4637,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2167 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2177 services.",
           },
         },
         required: [],
