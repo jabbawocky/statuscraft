@@ -4063,6 +4063,17 @@ const SERVICES = [
     { id: "sauce_labs", name: "Sauce Labs", tags: ["testing", "browser-testing", "qa", "selenium", "developer-tools"], status_url: "https://status.saucelabs.com/api/v2/status.json", page_url: "https://status.saucelabs.com", type: "statuspage" },
     { id: "doxy", name: "Doxy.me", tags: ["telehealth", "telemedicine", "healthcare", "video-call", "saas"], status_url: "https://status.doxy.me/api/v2/status.json", page_url: "https://status.doxy.me", type: "statuspage" },
     { id: "spruce", name: "Spruce Health", tags: ["healthcare", "messaging", "patient-communication", "hipaa", "saas"], status_url: "https://status.sprucehealth.com/api/v2/status.json", page_url: "https://status.sprucehealth.com", type: "statuspage" },
+    { id: "black_forest_labs", name: "Black Forest Labs", tags: ["ai", "image-generation", "flux", "diffusion", "api"], status_url: "https://status.bfl.ml/api/v2/status.json", page_url: "https://status.bfl.ml", type: "statuspage" },
+    { id: "mercado_pago", name: "Mercado Pago", tags: ["payments", "fintech", "latam", "argentina", "ecommerce"], status_url: "https://status.mercadopago.com/api/v2/status.json", page_url: "https://status.mercadopago.com", type: "statuspage" },
+    { id: "ixopay", name: "IXOPAY", tags: ["payments", "payment-orchestration", "gateway", "fintech", "api"], status_url: "https://status.ixopay.com/api/v2/status.json", page_url: "https://status.ixopay.com", type: "statuspage" },
+    { id: "daon", name: "Daon", tags: ["identity", "biometrics", "authentication", "security", "enterprise"], status_url: "https://status.daon.com/api/v2/status.json", page_url: "https://status.daon.com", type: "statuspage" },
+    { id: "sheerid", name: "SheerID", tags: ["identity-verification", "discounts", "gating", "military", "students"], status_url: "https://status.sheerid.com/api/v2/status.json", page_url: "https://status.sheerid.com", type: "statuspage" },
+    { id: "coinmarketcap", name: "CoinMarketCap", tags: ["crypto", "market-data", "cryptocurrency", "api", "analytics"], status_url: "https://status.coinmarketcap.com/api/v2/status.json", page_url: "https://status.coinmarketcap.com", type: "statuspage" },
+    { id: "ambassador_labs", name: "Ambassador Labs", tags: ["api-gateway", "service-mesh", "kubernetes", "edge", "developer-tools"], status_url: "https://status.getambassador.io/api/v2/status.json", page_url: "https://status.getambassador.io", type: "statuspage" },
+    { id: "datagrail", name: "DataGrail", tags: ["privacy", "dsr", "gdpr", "data-rights", "compliance"], status_url: "https://status.datagrail.io/api/v2/status.json", page_url: "https://status.datagrail.io", type: "statuspage" },
+    { id: "fareharbor", name: "FareHarbor", tags: ["booking", "activities", "tours", "experiences", "saas"], status_url: "https://status.fareharbor.com/api/v2/status.json", page_url: "https://status.fareharbor.com", type: "statuspage" },
+    { id: "rxnt", name: "RXNT", tags: ["healthcare", "ehr", "pharmacy", "billing", "saas"], status_url: "https://status.rxnt.com/api/v2/status.json", page_url: "https://status.rxnt.com", type: "statuspage" },
+    { id: "regiondo", name: "Regiondo", tags: ["booking", "tours", "activities", "experiences", "europe"], status_url: "https://status.regiondo.com/api/v2/status.json", page_url: "https://status.regiondo.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4520,7 +4531,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2220 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2231 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
