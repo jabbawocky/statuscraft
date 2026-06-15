@@ -4162,6 +4162,16 @@ const SERVICES: ServiceConfig[] = [
   { id: "shortio", name: "Short.io", tags: ["url-shortener", "links", "analytics", "marketing", "saas"], status_url: "https://shortio.statuspage.io/api/v2/status.json", page_url: "https://shortio.statuspage.io", type: "statuspage" },
   { id: "atatus", name: "Atatus", tags: ["apm", "monitoring", "error-tracking", "observability", "devtools"], status_url: "https://atatus.statuspage.io/api/v2/status.json", page_url: "https://atatus.statuspage.io", type: "statuspage" },
   { id: "alertops", name: "AlertOps", tags: ["incident-management", "on-call", "alerting", "ops", "monitoring"], status_url: "https://status.alertops.com/api/v2/status.json", page_url: "https://status.alertops.com", type: "statuspage" },
+  { id: "unkey", name: "Unkey", tags: ["api-keys", "developer-tools", "auth", "infrastructure"], status_url: "https://status.unkey.com/api/v2/summary.json", page_url: "https://status.unkey.com", type: "betterstack" },
+  { id: "oci", name: "Oracle Cloud Infrastructure", tags: ["cloud", "iaas", "enterprise", "oracle", "infrastructure"], status_url: "https://ocistatus.oraclecloud.com/api/v2/status.json", page_url: "https://ocistatus.oraclecloud.com", type: "statuspage" },
+  { id: "iex_cloud", name: "IEX Cloud", tags: ["financial-data", "market-data", "api", "fintech"], status_url: "https://status.iexapis.com/api/v2/status.json", page_url: "https://status.iexapis.com", type: "statuspage" },
+  { id: "globalsign", name: "GlobalSign", tags: ["ssl", "pki", "certificates", "security", "identity"], status_url: "https://status.globalsign.com/api/v2/status.json", page_url: "https://status.globalsign.com", type: "statuspage" },
+  { id: "plex", name: "Plex", tags: ["media", "streaming", "entertainment", "consumer"], status_url: "https://status.plex.tv/api/v2/status.json", page_url: "https://status.plex.tv", type: "statuspage" },
+  { id: "linkedin_api", name: "LinkedIn API", tags: ["social", "professional-network", "api", "developer-tools"], status_url: "https://linkedin.statuspage.io/api/v2/status.json", page_url: "https://linkedin.statuspage.io", type: "statuspage" },
+  { id: "absolute_security", name: "Absolute Security", tags: ["security", "endpoint", "device-management", "firmware"], status_url: "https://status.absolute.com/api/v2/status.json", page_url: "https://status.absolute.com", type: "statuspage" },
+  { id: "abnormal_security", name: "Abnormal Security", tags: ["security", "email-security", "ai", "phishing"], status_url: "https://status.abnormalsecurity.com/api/v2/status.json", page_url: "https://status.abnormalsecurity.com", type: "statuspage" },
+  { id: "mindbridge", name: "MindBridge", tags: ["ai", "auditing", "finance", "risk", "analytics"], status_url: "https://status.mindbridge.ai/api/v2/status.json", page_url: "https://status.mindbridge.ai", type: "statuspage" },
+  { id: "lightning_ai", name: "Lightning AI", tags: ["ml", "ai", "training", "gpu", "developer-tools"], status_url: "https://status.lightning.ai/api/v2/status.json", page_url: "https://status.lightning.ai", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4599,7 +4609,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2177 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2188 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4637,7 +4647,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2177 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2188 services.",
           },
         },
         required: [],
