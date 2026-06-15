@@ -3278,6 +3278,27 @@ const SERVICES = [
     { id: "accredible", name: "Accredible", tags: ["credentials", "certificates", "education", "hr", "saas"], status_url: "https://status.accredible.com/api/v2/status.json", page_url: "https://status.accredible.com", type: "statuspage" },
     // Badgr — open digital badges & micro-credentials platform
     { id: "badgr", name: "Badgr", tags: ["credentials", "badges", "education", "open-badges", "saas"], status_url: "https://status.badgr.com/api/v2/status.json", page_url: "https://status.badgr.com", type: "statuspage" },
+    // Tick 185 additions
+    // Check Point — network security & cybersecurity platform
+    { id: "checkpoint", name: "Check Point", tags: ["security", "network-security", "firewall", "enterprise", "cybersecurity"], status_url: "https://status.checkpoint.com/api/v2/status.json", page_url: "https://status.checkpoint.com", type: "statuspage" },
+    // Infoblox — DNS, DHCP & IP address management (DDI) + network security
+    { id: "infoblox", name: "Infoblox", tags: ["dns", "networking", "security", "ddi", "enterprise"], status_url: "https://status.infoblox.com/api/v2/status.json", page_url: "https://status.infoblox.com", type: "statuspage" },
+    // Nutanix — hyperconverged infrastructure & cloud platform
+    { id: "nutanix", name: "Nutanix", tags: ["cloud", "iaas", "hyperconverged", "virtualization", "enterprise"], status_url: "https://status.nutanix.com/api/v2/status.json", page_url: "https://status.nutanix.com", type: "statuspage" },
+    // Unit — banking-as-a-service / embedded finance platform
+    { id: "unit", name: "Unit", tags: ["banking", "fintech", "baas", "embedded-finance", "api"], status_url: "https://status.unit.co/api/v2/status.json", page_url: "https://status.unit.co", type: "statuspage" },
+    // BentoML — ML model serving & deployment platform
+    { id: "bentoml", name: "BentoML", tags: ["ml", "ai", "model-serving", "inference", "mlops"], status_url: "https://status.bentoml.com/api/v2/status.json", page_url: "https://status.bentoml.com", type: "statuspage" },
+    // Stardog — enterprise knowledge graph & graph database platform
+    { id: "stardog", name: "Stardog", tags: ["database", "knowledge-graph", "graph", "enterprise", "data"], status_url: "https://status.stardog.com/api/v2/status.json", page_url: "https://status.stardog.com", type: "statuspage" },
+    // Loop — returns management platform for e-commerce (Shopify ecosystem)
+    { id: "loop_returns", name: "Loop Returns", tags: ["e-commerce", "returns", "shopify", "retail", "saas"], status_url: "https://status.loop.com/api/v2/status.json", page_url: "https://status.loop.com", type: "statuspage" },
+    // Nhost — open-source BaaS (Postgres + Hasura + Auth + Storage)
+    { id: "nhost", name: "Nhost", tags: ["baas", "database", "auth", "storage", "developer-tools"], status_url: "https://status.nhost.io/api/v2/summary.json", page_url: "https://status.nhost.io", type: "betterstack" },
+    // PropelAuth — hosted auth & user management for B2B SaaS
+    { id: "propelauth", name: "PropelAuth", tags: ["auth", "identity", "b2b", "sso", "developer-tools"], status_url: "https://status.propelauth.com/api/v2/summary.json", page_url: "https://status.propelauth.com", type: "betterstack" },
+    // Kinde — modern auth & user management platform
+    { id: "kinde", name: "Kinde", tags: ["auth", "identity", "sso", "developer-tools", "api"], status_url: "https://status.kinde.com/api/v2/summary.json", page_url: "https://status.kinde.com", type: "betterstack" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3735,7 +3756,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1736 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1746 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3770,7 +3791,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1736 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1746 services.",
                     },
                 },
                 required: [],
