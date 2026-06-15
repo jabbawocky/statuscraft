@@ -268,8 +268,8 @@ const SERVICES: ServiceConfig[] = [
     id: "linear",
     name: "Linear",
     tags: ["project-management", "devtools", "productivity"],
-    status_url: "https://www.linearstatus.com/api/v2/status.json",
-    page_url: "https://www.linearstatus.com",
+    status_url: "https://linearstatus.com/api/v2/status.json",
+    page_url: "https://linearstatus.com",
     type: "statuspage",
   },
   {
@@ -2949,7 +2949,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "airtable", name: "Airtable", tags: ["database", "nocode", "collaboration", "saas"], status_url: "https://status.airtable.com/api/v2/status.json", page_url: "https://status.airtable.com", type: "statuspage" },
   // Project management / issue tracking
   { id: "asana", name: "Asana", tags: ["project-management", "task-management", "collaboration", "saas"], status_url: "https://status.asana.com/api/v2/status.json", page_url: "https://status.asana.com", type: "statuspage" },
-  { id: "linear", name: "Linear", tags: ["project-management", "issue-tracking", "devtools", "saas"], status_url: "https://www.linearstatus.com/api/v2/status.json", page_url: "https://www.linearstatus.com", type: "statuspage" },
   // Automation / integration
   { id: "zapier", name: "Zapier", tags: ["automation", "integration", "nocode", "saas"], status_url: "https://status.zapier.com/api/v2/status.json", page_url: "https://status.zapier.com", type: "statuspage" },
   { id: "make", name: "Make", tags: ["automation", "integration", "nocode", "saas"], status_url: "https://status.make.com/api/v2/status.json", page_url: "https://status.make.com", type: "statuspage" },
@@ -4024,6 +4023,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "guru_app", name: "Guru", tags: ["knowledge-management", "wiki", "collaboration", "ai", "saas"], status_url: "https://status.getguru.com/api/v2/status.json", page_url: "https://status.getguru.com", type: "statuspage" },
   { id: "shelf_io", name: "Shelf", tags: ["knowledge-management", "content", "search", "ai", "enterprise"], status_url: "https://status.shelf.io/api/v2/status.json", page_url: "https://status.shelf.io", type: "statuspage" },
   { id: "finch_api", name: "Finch", tags: ["hr", "payroll", "employment-data", "api", "developer-tools"], status_url: "https://status.tryfinch.com/api/v2/status.json", page_url: "https://status.tryfinch.com", type: "statuspage" },
+  // Tick 213 additions — 11 new live-verified services
+  { id: "mariana_tek", name: "Mariana Tek", tags: ["fitness", "boutique-fitness", "scheduling", "pos", "saas"], status_url: "https://status.marianatek.com/api/v2/status.json", page_url: "https://status.marianatek.com", type: "statuspage" },
+  { id: "mortech", name: "Mortech", tags: ["fintech", "mortgage", "pricing", "api", "analytics"], status_url: "https://status.mortech.com/api/v2/status.json", page_url: "https://status.mortech.com", type: "statuspage" },
+  { id: "taxamo", name: "Taxamo", tags: ["tax", "vat", "compliance", "e-commerce", "digital-goods"], status_url: "https://status.taxamo.com/api/v2/status.json", page_url: "https://status.taxamo.com", type: "statuspage" },
+  { id: "iplicit", name: "Iplicit", tags: ["accounting", "erp", "finance", "saas", "cloud"], status_url: "https://status.iplicit.com/api/v2/status.json", page_url: "https://status.iplicit.com", type: "statuspage" },
+  { id: "seomonitor", name: "SEOmonitor", tags: ["seo", "rank-tracking", "analytics", "marketing", "saas"], status_url: "https://status.seomonitor.com/api/v2/status.json", page_url: "https://status.seomonitor.com", type: "statuspage" },
+  { id: "advanced_web_ranking", name: "Advanced Web Ranking", tags: ["seo", "rank-tracking", "analytics", "marketing", "saas"], status_url: "https://status.advancedwebranking.com/api/v2/status.json", page_url: "https://status.advancedwebranking.com", type: "statuspage" },
+  { id: "etherscan", name: "Etherscan", tags: ["blockchain", "web3", "ethereum", "explorer", "crypto"], status_url: "https://status.etherscan.io/api/v2/status.json", page_url: "https://status.etherscan.io", type: "statuspage" },
+  { id: "northflank", name: "Northflank", tags: ["cloud", "deployment", "kubernetes", "serverless", "developer-tools"], status_url: "https://status.northflank.com/api/v2/summary.json", page_url: "https://status.northflank.com", type: "betterstack" },
+  { id: "umbraco", name: "Umbraco", tags: ["cms", "open-source", "dotnet", "content-management", "hosting"], status_url: "https://status.umbraco.io/api/v2/status.json", page_url: "https://status.umbraco.io", type: "statuspage" },
+  { id: "managewp", name: "ManageWP", tags: ["wordpress", "cms", "hosting", "saas", "management"], status_url: "https://status.managewp.com/api/v2/status.json", page_url: "https://status.managewp.com", type: "statuspage" },
+  { id: "ubiquiti", name: "Ubiquiti", tags: ["networking", "wifi", "hardware", "enterprise", "iot"], status_url: "https://status.ui.com/api/v2/status.json", page_url: "https://status.ui.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4461,7 +4472,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2069 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2079 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4499,7 +4510,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2069 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2079 services.",
           },
         },
         required: [],
