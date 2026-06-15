@@ -222,8 +222,8 @@ const SERVICES = [
         id: "linear",
         name: "Linear",
         tags: ["project-management", "devtools", "productivity"],
-        status_url: "https://linearstatus.com/api/v2/status.json",
-        page_url: "https://linearstatus.com",
+        status_url: "https://www.linearstatus.com/api/v2/status.json",
+        page_url: "https://www.linearstatus.com",
         type: "statuspage",
     },
     {
@@ -2807,7 +2807,7 @@ const SERVICES = [
     { id: "airtable", name: "Airtable", tags: ["database", "nocode", "collaboration", "saas"], status_url: "https://status.airtable.com/api/v2/status.json", page_url: "https://status.airtable.com", type: "statuspage" },
     // Project management / issue tracking
     { id: "asana", name: "Asana", tags: ["project-management", "task-management", "collaboration", "saas"], status_url: "https://status.asana.com/api/v2/status.json", page_url: "https://status.asana.com", type: "statuspage" },
-    { id: "linear", name: "Linear", tags: ["project-management", "issue-tracking", "devtools", "saas"], status_url: "https://linearstatus.com/api/v2/status.json", page_url: "https://linearstatus.com", type: "statuspage" },
+    { id: "linear", name: "Linear", tags: ["project-management", "issue-tracking", "devtools", "saas"], status_url: "https://www.linearstatus.com/api/v2/status.json", page_url: "https://www.linearstatus.com", type: "statuspage" },
     // Automation / integration
     { id: "zapier", name: "Zapier", tags: ["automation", "integration", "nocode", "saas"], status_url: "https://status.zapier.com/api/v2/status.json", page_url: "https://status.zapier.com", type: "statuspage" },
     { id: "make", name: "Make", tags: ["automation", "integration", "nocode", "saas"], status_url: "https://status.make.com/api/v2/status.json", page_url: "https://status.make.com", type: "statuspage" },
@@ -3871,6 +3871,17 @@ const SERVICES = [
     { id: "ecamm", name: "Ecamm Live", tags: ["streaming", "video", "live-streaming", "mac", "saas"], status_url: "https://status.ecamm.com/api/v2/status.json", page_url: "https://status.ecamm.com", type: "statuspage" },
     // Sketch — vector design tool for UI/UX and icon design
     { id: "sketch", name: "Sketch", tags: ["design", "ui-ux", "vector", "mac", "collaboration"], status_url: "https://status.sketch.com/api/v2/summary.json", page_url: "https://status.sketch.com", type: "betterstack" },
+    // Tick 212 additions — 10 new live-verified services
+    { id: "corrigo", name: "Corrigo", tags: ["facility-management", "cmms", "maintenance", "iot", "enterprise"], status_url: "https://status.corrigo.com/api/v2/status.json", page_url: "https://status.corrigo.com", type: "statuspage" },
+    { id: "eptura", name: "Eptura", tags: ["asset-management", "workplace", "facility-management", "enterprise", "saas"], status_url: "https://status.eptura.com/api/v2/status.json", page_url: "https://status.eptura.com", type: "statuspage" },
+    { id: "particle_io", name: "Particle", tags: ["iot", "embedded", "connectivity", "hardware", "developer-tools"], status_url: "https://status.particle.io/api/v2/status.json", page_url: "https://status.particle.io", type: "statuspage" },
+    { id: "aqua_security", name: "Aqua Security", tags: ["security", "container", "cloud-native", "devsecops", "enterprise"], status_url: "https://status.aquasec.com/api/v2/status.json", page_url: "https://status.aquasec.com", type: "statuspage" },
+    { id: "boulevard", name: "Boulevard", tags: ["salon", "spa", "booking", "scheduling", "retail"], status_url: "https://status.joinblvd.com/api/v2/status.json", page_url: "https://status.joinblvd.com", type: "statuspage" },
+    { id: "ovatu", name: "Ovatu", tags: ["booking", "scheduling", "appointments", "beauty", "saas"], status_url: "https://status.ovatu.com/api/v2/status.json", page_url: "https://status.ovatu.com", type: "statuspage" },
+    { id: "cloud_academy", name: "Cloud Academy", tags: ["edtech", "cloud-training", "certification", "learning", "saas"], status_url: "https://status.cloudacademy.com/api/v2/status.json", page_url: "https://status.cloudacademy.com", type: "statuspage" },
+    { id: "guru_app", name: "Guru", tags: ["knowledge-management", "wiki", "collaboration", "ai", "saas"], status_url: "https://status.getguru.com/api/v2/status.json", page_url: "https://status.getguru.com", type: "statuspage" },
+    { id: "shelf_io", name: "Shelf", tags: ["knowledge-management", "content", "search", "ai", "enterprise"], status_url: "https://status.shelf.io/api/v2/status.json", page_url: "https://status.shelf.io", type: "statuspage" },
+    { id: "finch_api", name: "Finch", tags: ["hr", "payroll", "employment-data", "api", "developer-tools"], status_url: "https://status.tryfinch.com/api/v2/status.json", page_url: "https://status.tryfinch.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4328,7 +4339,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2059 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2069 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -4363,7 +4374,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2059 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2069 services.",
                     },
                 },
                 required: [],
