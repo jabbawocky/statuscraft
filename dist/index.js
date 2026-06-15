@@ -3026,6 +3026,26 @@ const SERVICES = [
     { id: "coderpad", name: "CoderPad", tags: ["recruiting", "technical-interview", "developer-tools", "saas"], status_url: "https://coderpad.statuspage.io/api/v2/status.json", page_url: "https://status.coderpad.io", type: "statuspage" },
     // Hetzner Cloud
     { id: "hetzner_cloud", name: "Hetzner Cloud", tags: ["cloud", "iaas", "vps", "european", "hosting"], status_url: "https://hcloud.statuspage.io/api/v2/status.json", page_url: "https://hcloud.statuspage.io", type: "statuspage" },
+    // Headless CMS
+    { id: "kontent_ai", name: "Kontent.ai", tags: ["cms", "headless", "content-management", "saas"], status_url: "https://status.kontent.ai/api/v2/status.json", page_url: "https://status.kontent.ai", type: "statuspage" },
+    // CI/CD
+    { id: "travis_ci", name: "Travis CI", tags: ["ci-cd", "devtools", "testing", "open-source"], status_url: "https://www.traviscistatus.com/api/v2/status.json", page_url: "https://www.traviscistatus.com", type: "statuspage" },
+    // Geocoding / mapping API
+    { id: "locationiq", name: "LocationIQ", tags: ["geocoding", "mapping", "api", "gis", "developer-tools"], status_url: "https://locationiq.statuspage.io/api/v2/status.json", page_url: "https://locationiq.statuspage.io", type: "statuspage" },
+    // Legal practice management
+    { id: "actionstep", name: "Actionstep", tags: ["legal", "case-management", "law-firm", "practice-management", "saas"], status_url: "https://status.actionstep.com/api/v2/status.json", page_url: "https://pm.actionstep-status.com", type: "statuspage" },
+    // Home services marketplace
+    { id: "taskrabbit", name: "TaskRabbit", tags: ["marketplace", "home-services", "gig-economy", "consumer"], status_url: "https://status.taskrabbit.com/api/v2/status.json", page_url: "https://status.taskrabbit.com", type: "statuspage" },
+    // Freelance marketplace
+    { id: "fiverr", name: "Fiverr", tags: ["marketplace", "freelance", "gig-economy", "consumer"], status_url: "https://fiverr.statuspage.io/api/v2/status.json", page_url: "https://fiverr.statuspage.io", type: "statuspage" },
+    // Digital asset marketplace
+    { id: "envato", name: "Envato", tags: ["marketplace", "digital-assets", "themes", "creative", "developer"], status_url: "https://status.envato.com/api/v2/status.json", page_url: "https://status.envato.com", type: "statuspage" },
+    // Tax compliance / invoicing API
+    { id: "quaderno", name: "Quaderno", tags: ["tax", "billing", "invoicing", "api", "fintech"], status_url: "https://quaderno.statuspage.io/api/v2/status.json", page_url: "https://quaderno.statuspage.io", type: "statuspage" },
+    // CRM
+    { id: "nimble", name: "Nimble CRM", tags: ["crm", "sales", "contacts", "social-crm", "saas"], status_url: "https://nimble.statuspage.io/api/v2/status.json", page_url: "https://nimble.statuspage.io", type: "statuspage" },
+    // Payments / ISO
+    { id: "sola_payments", name: "Sola Payments", tags: ["payments", "card-processing", "pos", "iso", "fintech"], status_url: "https://status.solapayments.com/api/v2/status.json", page_url: "https://status.solapayments.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3441,7 +3461,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1610 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1621 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3476,7 +3496,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1610 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1621 services.",
                     },
                 },
                 required: [],
