@@ -3581,6 +3581,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "atlassian", name: "Atlassian", tags: ["devtools", "project-management", "collaboration", "saas", "enterprise"], status_url: "https://status.atlassian.com/api/v2/status.json", page_url: "https://status.atlassian.com", type: "statuspage" },
   // HashiCorp — infrastructure automation tools (Terraform, Vault, Consul, Nomad)
   { id: "hashicorp", name: "HashiCorp", tags: ["infrastructure", "devops", "cloud", "security", "developer-tools"], status_url: "https://status.hashicorp.com/api/v2/status.json", page_url: "https://status.hashicorp.com", type: "statuspage" },
+  // Monzo — UK neobank / digital bank
+  { id: "monzo", name: "Monzo", tags: ["fintech", "banking", "neobank", "payments", "uk"], status_url: "https://status.monzo.com/api/v2/status.json", page_url: "https://status.monzo.com", type: "statuspage" },
+  // Curve — all-in-one card that connects multiple bank cards (UK fintech)
+  { id: "curve", name: "Curve", tags: ["fintech", "payments", "card", "uk"], status_url: "https://status.curve.com/api/v2/status.json", page_url: "https://status.curve.com", type: "statuspage" },
+  // CoinList — cryptocurrency exchange and token launch platform
+  { id: "coinlist", name: "CoinList", tags: ["crypto", "exchange", "web3", "fintech"], status_url: "https://status.coinlist.co/api/v2/status.json", page_url: "https://status.coinlist.co", type: "statuspage" },
+  // Bitso — Latin American cryptocurrency exchange
+  { id: "bitso", name: "Bitso", tags: ["crypto", "exchange", "latam", "fintech"], status_url: "https://status.bitso.com/api/v2/status.json", page_url: "https://status.bitso.com", type: "statuspage" },
+  // eToro — social trading and multi-asset investment platform
+  { id: "etoro", name: "eToro", tags: ["fintech", "trading", "investments", "social", "crypto"], status_url: "https://status.etoro.com/api/v2/status.json", page_url: "https://status.etoro.com", type: "statuspage" },
+  // Sync.com — encrypted cloud storage and file sharing platform
+  { id: "sync_com", name: "Sync.com", tags: ["storage", "cloud", "privacy", "encryption", "file-sharing"], status_url: "https://status.sync.com/api/v2/status.json", page_url: "https://status.sync.com", type: "statuspage" },
+  // Ravelin — fraud detection and prevention platform for e-commerce
+  { id: "ravelin", name: "Ravelin", tags: ["fraud-prevention", "security", "payments", "ecommerce", "api"], status_url: "https://status.ravelin.com/api/v2/status.json", page_url: "https://status.ravelin.com", type: "statuspage" },
+  // Remind — K-12 education communication platform for teachers, students, and parents
+  { id: "remind", name: "Remind", tags: ["education", "communication", "k12", "saas"], status_url: "https://status.remind.com/api/v2/status.json", page_url: "https://status.remind.com", type: "statuspage" },
+  // Fellow — meeting management and employee feedback platform
+  { id: "fellow", name: "Fellow", tags: ["productivity", "meetings", "hr", "collaboration", "saas"], status_url: "https://status.fellow.app/api/v2/status.json", page_url: "https://status.fellow.app", type: "statuspage" },
+  // Churnkey — subscription cancellation flow and churn prevention tool
+  { id: "churnkey", name: "Churnkey", tags: ["saas", "churn", "subscriptions", "retention", "payments"], status_url: "https://status.churnkey.co/api/v2/status.json", page_url: "https://status.churnkey.co", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4018,7 +4038,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1815 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1825 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4056,7 +4076,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1815 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1825 services.",
           },
         },
         required: [],
