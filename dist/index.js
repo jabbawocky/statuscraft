@@ -3499,6 +3499,30 @@ const SERVICES = [
     { id: "sardine_ai", name: "Sardine AI", tags: ["fraud-prevention", "aml", "compliance", "fintech", "security"], status_url: "https://status.sardine.ai/api/v2/status.json", page_url: "https://status.sardine.ai", type: "statuspage" },
     // NeuroID — behavioral analytics for fraud detection and identity verification
     { id: "neuroid", name: "NeuroID", tags: ["fraud-detection", "behavioral-analytics", "identity", "security", "api"], status_url: "https://status.neuro-id.com/api/v2/status.json", page_url: "https://status.neuro-id.com", type: "statuspage" },
+    // Reducto AI — AI-powered document parsing and extraction API
+    { id: "reducto_ai", name: "Reducto AI", tags: ["ai", "document-parsing", "ocr", "developer-tools", "api"], status_url: "https://status.reducto.ai/api/v2/status.json", page_url: "https://status.reducto.ai", type: "statuspage" },
+    // Vectorize — managed vector search and AI retrieval infrastructure
+    { id: "vectorize", name: "Vectorize", tags: ["vector-search", "ai", "retrieval", "developer-tools", "api"], status_url: "https://status.vectorize.io/api/v2/status.json", page_url: "https://status.vectorize.io", type: "statuspage" },
+    // Fairwinds — Kubernetes reliability and security policy enforcement
+    { id: "fairwinds", name: "Fairwinds", tags: ["kubernetes", "k8s", "security", "reliability", "devops"], status_url: "https://status.fairwinds.com/api/v2/status.json", page_url: "https://status.fairwinds.com", type: "statuspage" },
+    // Cast AI — Kubernetes cost optimization and autoscaling platform
+    { id: "cast_ai", name: "Cast AI", tags: ["kubernetes", "k8s", "cloud-cost", "optimization", "devops"], status_url: "https://status.cast.ai/api/v2/status.json", page_url: "https://status.cast.ai", type: "statuspage" },
+    // BigID — data intelligence for privacy, security, and governance
+    { id: "bigid", name: "BigID", tags: ["data-privacy", "governance", "security", "compliance", "enterprise"], status_url: "https://status.bigid.com/api/v2/status.json", page_url: "https://status.bigid.com", type: "statuspage" },
+    // Nanonets — AI-powered document processing and intelligent automation
+    { id: "nanonets", name: "Nanonets", tags: ["ai", "document-ai", "ocr", "automation", "api"], status_url: "https://status.nanonets.com/api/v2/status.json", page_url: "https://status.nanonets.com", type: "statuspage" },
+    // Rossum — AI-native document processing for AP automation and data extraction
+    { id: "rossum", name: "Rossum", tags: ["document-ai", "ap-automation", "ocr", "enterprise", "saas"], status_url: "https://status.rossum.ai/api/v2/status.json", page_url: "https://status.rossum.ai", type: "statuspage" },
+    // Pandium — embedded integration marketplace platform for SaaS companies
+    { id: "pandium", name: "Pandium", tags: ["integration", "embedded-integration", "marketplace", "developer-tools", "saas"], status_url: "https://status.pandium.com/api/v2/status.json", page_url: "https://status.pandium.com", type: "statuspage" },
+    // PowerSync — real-time offline-first sync engine for mobile and web apps
+    { id: "powersync", name: "PowerSync", tags: ["sync", "offline-first", "database", "mobile", "developer-tools"], status_url: "https://status.powersync.com/api/v2/status.json", page_url: "https://status.powersync.com", type: "statuspage" },
+    // Gather — virtual office and spatial video platform for remote teams
+    { id: "gather_town", name: "Gather", tags: ["virtual-office", "video", "collaboration", "remote-work", "saas"], status_url: "https://status.gather.town/api/v2/status.json", page_url: "https://status.gather.town", type: "statuspage" },
+    // Appen — human-annotated training data and AI model evaluation platform
+    { id: "appen", name: "Appen", tags: ["ai", "data-labeling", "training-data", "annotation", "enterprise"], status_url: "https://status.appen.com/api/v2/status.json", page_url: "https://status.appen.com", type: "statuspage" },
+    // Cloudera — enterprise data cloud platform for analytics and ML
+    { id: "cloudera", name: "Cloudera", tags: ["data-platform", "cloud", "analytics", "ml", "enterprise"], status_url: "https://status.cloudera.com/api/v2/status.json", page_url: "https://status.cloudera.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3956,7 +3980,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1845 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1857 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3991,7 +4015,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1845 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1857 services.",
                     },
                 },
                 required: [],
