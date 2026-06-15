@@ -3299,6 +3299,51 @@ const SERVICES = [
     { id: "propelauth", name: "PropelAuth", tags: ["auth", "identity", "b2b", "sso", "developer-tools"], status_url: "https://status.propelauth.com/api/v2/summary.json", page_url: "https://status.propelauth.com", type: "betterstack" },
     // Kinde — modern auth & user management platform
     { id: "kinde", name: "Kinde", tags: ["auth", "identity", "sso", "developer-tools", "api"], status_url: "https://status.kinde.com/api/v2/summary.json", page_url: "https://status.kinde.com", type: "betterstack" },
+    // Tick 186 additions
+    // Cribl — data observability & stream processing platform (log/metric/trace routing)
+    { id: "cribl", name: "Cribl", tags: ["observability", "logging", "data", "devops", "streaming"], status_url: "https://status.cribl.cloud/api/v2/status.json", page_url: "https://status.cribl.cloud", type: "statuspage" },
+    // Airbyte — open-source data integration & ELT pipeline platform
+    { id: "airbyte", name: "Airbyte", tags: ["data", "etl", "elt", "integration", "developer-tools"], status_url: "https://status.airbyte.com/api/v2/summary.json", page_url: "https://status.airbyte.com", type: "betterstack" },
+    // Wistia — video hosting & marketing platform for businesses
+    { id: "wistia", name: "Wistia", tags: ["video", "media", "marketing", "analytics", "saas"], status_url: "https://status.wistia.com/api/v2/summary.json", page_url: "https://status.wistia.com", type: "betterstack" },
+    // Modern Treasury — payment operations & money-movement API platform
+    { id: "modern_treasury", name: "Modern Treasury", tags: ["payments", "banking", "api", "fintech", "money-movement"], status_url: "https://status.moderntreasury.com/api/v2/summary.json", page_url: "https://status.moderntreasury.com", type: "betterstack" },
+    // Templafy — enterprise document template & brand management platform
+    { id: "templafy", name: "Templafy", tags: ["documents", "templates", "enterprise", "brand", "productivity"], status_url: "https://status.templafy.com/api/v2/status.json", page_url: "https://status.templafy.com", type: "statuspage" },
+    // Deadline Funnel — countdown timer & email deadline marketing platform
+    { id: "deadline_funnel", name: "Deadline Funnel", tags: ["marketing", "email", "conversion", "saas"], status_url: "https://status.deadlinefunnel.com/api/v2/status.json", page_url: "https://status.deadlinefunnel.com", type: "statuspage" },
+    // Payrails — enterprise payment orchestration & routing platform
+    { id: "payrails", name: "Payrails", tags: ["payments", "fintech", "orchestration", "enterprise", "api"], status_url: "https://status.payrails.com/api/v2/status.json", page_url: "https://status.payrails.com", type: "statuspage" },
+    // Numeral — automated payment reconciliation & accounting API platform
+    { id: "numeral", name: "Numeral", tags: ["payments", "fintech", "reconciliation", "accounting", "api"], status_url: "https://status.numeral.io/api/v2/status.json", page_url: "https://status.numeral.io", type: "statuspage" },
+    // Formance — open-source financial ledger & money-movement infrastructure
+    { id: "formance", name: "Formance", tags: ["fintech", "ledger", "payments", "open-source", "api"], status_url: "https://status.formance.com/api/v2/status.json", page_url: "https://status.formance.com", type: "statuspage" },
+    // Pangea — security-as-a-service API platform (AuthN, AuthZ, audit, vault, intel)
+    { id: "pangea", name: "Pangea", tags: ["security", "api", "auth", "developer-tools", "saas"], status_url: "https://status.pangea.cloud/api/v2/status.json", page_url: "https://status.pangea.cloud", type: "statuspage" },
+    // Convercent — ethics & compliance management platform (now NAVEX)
+    { id: "convercent", name: "Convercent", tags: ["compliance", "ethics", "risk", "enterprise", "saas"], status_url: "https://status.convercent.com/api/v2/status.json", page_url: "https://status.convercent.com", type: "statuspage" },
+    // Paystack — African payments platform (Nigeria, Ghana, Kenya, South Africa)
+    { id: "paystack", name: "Paystack", tags: ["payments", "fintech", "africa", "api"], status_url: "https://paystack.statuspage.io/api/v2/status.json", page_url: "https://paystack.statuspage.io", type: "statuspage" },
+    // WellSaid Labs — AI voice synthesis / text-to-speech for enterprise
+    { id: "wellsaid", name: "WellSaid Labs", tags: ["ai", "voice", "tts", "text-to-speech", "saas"], status_url: "https://status.wellsaidlabs.com/api/v2/status.json", page_url: "https://status.wellsaidlabs.com", type: "statuspage" },
+    // Hume AI — empathic AI voice & emotion intelligence API
+    { id: "hume_ai", name: "Hume AI", tags: ["ai", "voice", "emotion", "api", "developer-tools"], status_url: "https://status.hume.ai/api/v2/status.json", page_url: "https://status.hume.ai", type: "statuspage" },
+    // Retell AI — conversational AI voice agent platform
+    { id: "retell_ai", name: "Retell AI", tags: ["ai", "voice", "conversational-ai", "api", "developer-tools"], status_url: "https://status.retellai.com/api/v2/status.json", page_url: "https://status.retellai.com", type: "statuspage" },
+    // Spike.sh — on-call alerting & incident management
+    { id: "spike_sh", name: "Spike.sh", tags: ["monitoring", "alerting", "incident-management", "on-call", "devops"], status_url: "https://spike.statuspage.io/api/v2/status.json", page_url: "https://spike.statuspage.io", type: "statuspage" },
+    // InfluxDB Cloud — time-series database & observability platform
+    { id: "influxdb", name: "InfluxDB Cloud", tags: ["database", "time-series", "observability", "monitoring", "cloud"], status_url: "https://status.influxdata.com/api/v2/status.json", page_url: "https://status.influxdata.com", type: "statuspage" },
+    // Rutter — universal commerce API (ERP, accounting, e-commerce integrations)
+    { id: "rutter", name: "Rutter", tags: ["api", "integration", "ecommerce", "accounting", "developer-tools"], status_url: "https://rutter.statuspage.io/api/v2/status.json", page_url: "https://rutter.statuspage.io", type: "statuspage" },
+    // Nami ML — mobile paywall & subscription monetization SDK
+    { id: "namiml", name: "Nami ML", tags: ["mobile", "subscriptions", "payments", "monetization", "sdk"], status_url: "https://status.namiml.com/api/v2/status.json", page_url: "https://status.namiml.com", type: "statuspage" },
+    // Glassfy — in-app purchase & subscription SDK for mobile apps
+    { id: "glassfy", name: "Glassfy", tags: ["mobile", "subscriptions", "in-app-purchase", "sdk", "saas"], status_url: "https://glassfy.statuspage.io/api/v2/status.json", page_url: "https://glassfy.statuspage.io", type: "statuspage" },
+    // Superwall — mobile paywall infrastructure & A/B testing
+    { id: "superwall", name: "Superwall", tags: ["mobile", "paywall", "subscriptions", "a-b-testing", "saas"], status_url: "https://superwall.statuspage.io/api/v2/status.json", page_url: "https://superwall.statuspage.io", type: "statuspage" },
+    // Purchasely — no-code mobile subscription & paywall platform
+    { id: "purchasely", name: "Purchasely", tags: ["mobile", "subscriptions", "paywall", "no-code", "saas"], status_url: "https://purchasely.statuspage.io/api/v2/status.json", page_url: "https://purchasely.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3756,7 +3801,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1746 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1768 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3791,7 +3836,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1746 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1768 services.",
                     },
                 },
                 required: [],
