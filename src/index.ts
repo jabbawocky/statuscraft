@@ -3256,6 +3256,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "quantcast", name: "Quantcast", tags: ["analytics", "advertising", "audience", "measurement", "adtech"], status_url: "https://status.quantcast.com/api/v2/status.json", page_url: "https://status.quantcast.com", type: "statuspage" },
   // Data privacy / governance platform
   { id: "securiti", name: "Securiti", tags: ["privacy", "data-governance", "compliance", "security", "saas"], status_url: "https://status.securiti.ai/api/v2/status.json", page_url: "https://status.securiti.ai", type: "statuspage" },
+  // Integration / workflow automation platform
+  { id: "appmixer", name: "Appmixer", tags: ["integration", "automation", "workflows", "ipaas", "saas"], status_url: "https://status.appmixer.com/api/v2/status.json", page_url: "https://status.appmixer.com", type: "statuspage" },
+  // Healthcare IT — health plans & payers
+  { id: "veradigm", name: "Veradigm", tags: ["healthcare", "health-plans", "ehr", "data", "enterprise"], status_url: "https://status.veradigm.com/api/v2/status.json", page_url: "https://status.veradigm.com", type: "statuspage" },
+  // USDC / crypto payments infrastructure (Circle)
+  { id: "circle", name: "Circle", tags: ["crypto", "stablecoin", "usdc", "payments", "fintech"], status_url: "https://status.circle.com/api/v2/status.json", page_url: "https://status.circle.com", type: "statuspage" },
+  // Shipping API (Shippo)
+  { id: "shippo", name: "Shippo", tags: ["shipping", "logistics", "ecommerce", "api"], status_url: "https://status.goshippo.com/api/v2/status.json", page_url: "https://status.goshippo.com", type: "statuspage" },
+  // Employment & income data API
+  { id: "argyle", name: "Argyle", tags: ["employment-data", "payroll", "fintech", "api", "open-banking"], status_url: "https://status.argyle.com/api/v2/status.json", page_url: "https://status.argyle.com", type: "statuspage" },
+  // Smart home / proptech OS for multifamily
+  { id: "smartrent", name: "SmartRent", tags: ["proptech", "smart-home", "iot", "multifamily", "saas"], status_url: "https://status.smartrent.com/api/v2/status.json", page_url: "https://status.smartrent.com", type: "statuspage" },
+  // Mobile marketing & engagement (SMS/push)
+  { id: "vibes", name: "Vibes", tags: ["mobile-marketing", "sms", "push", "loyalty", "engagement"], status_url: "https://status.vibes.com/api/v2/status.json", page_url: "https://status.vibes.com", type: "statuspage" },
+  // Marketing cloud — email, SMS, loyalty
+  { id: "maropost", name: "Maropost", tags: ["email-marketing", "sms", "loyalty", "automation", "saas"], status_url: "https://status.maropost.com/api/v2/status.json", page_url: "https://status.maropost.com", type: "statuspage" },
+  // Voice / SIP carrier (Inteliquent)
+  { id: "inteliquent", name: "Inteliquent", tags: ["voice", "sip", "telecom", "carrier", "api"], status_url: "https://status.inteliquent.com/api/v2/status.json", page_url: "https://status.inteliquent.com", type: "statuspage" },
+  // Cloud voice & SMS carrier (Commio)
+  { id: "commio", name: "Commio", tags: ["voice", "sms", "cpaas", "telecom", "api"], status_url: "https://status.commio.com/api/v2/status.json", page_url: "https://status.commio.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3660,7 +3680,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1655 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1664 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3698,7 +3718,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1655 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1664 services.",
           },
         },
         required: [],
