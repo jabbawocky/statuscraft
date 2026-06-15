@@ -3675,6 +3675,28 @@ const SERVICES = [
     { id: "empower", name: "Empower", tags: ["fintech", "personal-finance", "banking", "consumer", "saas"], status_url: "https://empower.statuspage.io/api/v2/status.json", page_url: "https://empower.statuspage.io", type: "statuspage" },
     // Notch — customer experience and CX platform
     { id: "notch_cx", name: "Notch CX", tags: ["cx", "customer-experience", "saas"], status_url: "https://notch.statuspage.io/api/v2/status.json", page_url: "https://notch.statuspage.io", type: "statuspage" },
+    // OpenTelemetry — open-source observability framework (CNCF)
+    { id: "opentelemetry", name: "OpenTelemetry", tags: ["observability", "tracing", "metrics", "logs", "open-source", "cncf"], status_url: "https://opentelemetry.statuspage.io/api/v2/status.json", page_url: "https://opentelemetry.statuspage.io", type: "statuspage" },
+    // Smartlook — behavioral analytics and session recording platform
+    { id: "smartlook", name: "Smartlook", tags: ["analytics", "session-recording", "ux", "heatmaps", "saas"], status_url: "https://smartlook.statuspage.io/api/v2/status.json", page_url: "https://smartlook.statuspage.io", type: "statuspage" },
+    // Chartbeat — real-time content analytics for publishers and media
+    { id: "chartbeat", name: "Chartbeat", tags: ["analytics", "content", "media", "publishing", "real-time"], status_url: "https://chartbeat.statuspage.io/api/v2/status.json", page_url: "https://chartbeat.statuspage.io", type: "statuspage" },
+    // Fireflies — AI meeting transcription and note-taking platform
+    { id: "fireflies", name: "Fireflies", tags: ["ai", "meeting", "transcription", "notes", "productivity"], status_url: "https://fireflies.statuspage.io/api/v2/status.json", page_url: "https://fireflies.statuspage.io", type: "statuspage" },
+    // Obsidian — popular local-first note-taking and knowledge management app
+    { id: "obsidian", name: "Obsidian", tags: ["notes", "knowledge-management", "productivity", "pkm", "local-first"], status_url: "https://obsidian.statuspage.io/api/v2/status.json", page_url: "https://obsidian.statuspage.io", type: "statuspage" },
+    // Video SDK — video and audio API platform for real-time communication
+    { id: "videosdk", name: "Video SDK", tags: ["video", "audio", "webrtc", "real-time", "api"], status_url: "https://videosdk.statuspage.io/api/v2/status.json", page_url: "https://videosdk.statuspage.io", type: "statuspage" },
+    // Engagelab — mobile push notification and marketing platform by NetEase
+    { id: "engagelab", name: "Engagelab", tags: ["push-notifications", "mobile-marketing", "messaging", "engagement", "api"], status_url: "https://engagelab.statuspage.io/api/v2/status.json", page_url: "https://engagelab.statuspage.io", type: "statuspage" },
+    // DeskTime — time tracking and productivity analytics for teams
+    { id: "desktime", name: "DeskTime", tags: ["time-tracking", "productivity", "employee-monitoring", "analytics", "saas"], status_url: "https://desktime.statuspage.io/api/v2/status.json", page_url: "https://desktime.statuspage.io", type: "statuspage" },
+    // Teramind — employee monitoring and insider threat detection platform
+    { id: "teramind", name: "Teramind", tags: ["employee-monitoring", "security", "insider-threat", "dlp", "enterprise"], status_url: "https://teramind.statuspage.io/api/v2/status.json", page_url: "https://teramind.statuspage.io", type: "statuspage" },
+    // Insightful — workforce analytics and employee productivity platform
+    { id: "insightful", name: "Insightful", tags: ["workforce-analytics", "productivity", "employee-monitoring", "remote-work", "saas"], status_url: "https://insightful.statuspage.io/api/v2/status.json", page_url: "https://insightful.statuspage.io", type: "statuspage" },
+    // Treasury Prime — banking-as-a-service API platform
+    { id: "treasuryprime", name: "Treasury Prime", tags: ["banking-as-a-service", "baas", "fintech", "api", "banking"], status_url: "https://treasuryprime.statuspage.io/api/v2/status.json", page_url: "https://treasuryprime.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4132,7 +4154,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1934 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1945 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -4167,7 +4189,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1934 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1945 services.",
                     },
                 },
                 required: [],
