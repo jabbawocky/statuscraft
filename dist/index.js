@@ -3459,6 +3459,26 @@ const SERVICES = [
     { id: "fellow", name: "Fellow", tags: ["productivity", "meetings", "hr", "collaboration", "saas"], status_url: "https://status.fellow.app/api/v2/status.json", page_url: "https://status.fellow.app", type: "statuspage" },
     // Churnkey — subscription cancellation flow and churn prevention tool
     { id: "churnkey", name: "Churnkey", tags: ["saas", "churn", "subscriptions", "retention", "payments"], status_url: "https://status.churnkey.co/api/v2/status.json", page_url: "https://status.churnkey.co", type: "statuspage" },
+    // Aderant — legal practice management software for law firms
+    { id: "aderant", name: "Aderant", tags: ["legal", "law-firm", "practice-management", "enterprise", "saas"], status_url: "https://status.aderant.com/api/v2/status.json", page_url: "https://status.aderant.com", type: "statuspage" },
+    // Nuix — legal e-discovery and digital investigation platform
+    { id: "nuix", name: "Nuix", tags: ["legal", "ediscovery", "investigation", "forensics", "enterprise"], status_url: "https://status.nuix.com/api/v2/status.json", page_url: "https://status.nuix.com", type: "statuspage" },
+    // ClassLink — education SSO and identity management for K-12 and higher ed
+    { id: "classlink", name: "ClassLink", tags: ["education", "sso", "identity", "k12", "saas"], status_url: "https://status.classlink.com/api/v2/status.json", page_url: "https://status.classlink.com", type: "statuspage" },
+    // Clever — education SSO and rostering platform for K-12 schools
+    { id: "clever", name: "Clever", tags: ["education", "sso", "rostering", "k12", "saas"], status_url: "https://status.clever.com/api/v2/status.json", page_url: "https://status.clever.com", type: "statuspage" },
+    // PTC Atlas (Windchill) — product lifecycle management and CAD platform
+    { id: "ptc_atlas", name: "PTC Atlas", tags: ["cad", "plm", "manufacturing", "engineering", "enterprise"], status_url: "https://status.ptc.com/api/v2/status.json", page_url: "https://status.ptc.com", type: "statuspage" },
+    // Onshape — cloud-native CAD and product development platform
+    { id: "onshape", name: "Onshape", tags: ["cad", "design", "engineering", "cloud", "saas"], status_url: "https://status.onshape.com/api/v2/status.json", page_url: "https://status.onshape.com", type: "statuspage" },
+    // Polly — AI-powered mortgage pricing and analytics platform
+    { id: "polly_ai", name: "Polly", tags: ["mortgage", "fintech", "pricing", "analytics", "api"], status_url: "https://status.polly.ai/api/v2/status.json", page_url: "https://status.polly.ai", type: "statuspage" },
+    // Optimal Blue — mortgage pricing engine, secondary market, and hedge analytics
+    { id: "optimal_blue", name: "Optimal Blue", tags: ["mortgage", "fintech", "pricing", "secondary-market", "enterprise"], status_url: "https://status.optimalblue.com/api/v2/status.json", page_url: "https://status.optimalblue.com", type: "statuspage" },
+    // DEV Community (dev.to) — developer blogging and community platform
+    { id: "devto", name: "DEV Community", tags: ["community", "blogging", "developer-tools", "social", "content"], status_url: "https://status.dev.to/api/v2/status.json", page_url: "https://status.dev.to", type: "statuspage" },
+    // Aerospike — high-performance NoSQL database for real-time workloads
+    { id: "aerospike", name: "Aerospike", tags: ["database", "nosql", "real-time", "cloud", "infrastructure"], status_url: "https://status.aerospike.com/api/v2/status.json", page_url: "https://status.aerospike.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -3888,7 +3908,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.51.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.52.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -3916,7 +3936,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1825 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1835 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -3951,7 +3971,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1825 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1835 services.",
                     },
                 },
                 required: [],
