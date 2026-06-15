@@ -4051,6 +4051,18 @@ const SERVICES = [
     { id: "fourth", name: "Fourth", tags: ["hospitality", "workforce-management", "scheduling", "hr", "saas"], status_url: "https://status.fourth.com/api/v2/status.json", page_url: "https://status.fourth.com", type: "statuspage" },
     { id: "ionic", name: "Ionic", tags: ["mobile", "cross-platform", "developer-tools", "framework", "saas"], status_url: "https://status.ionicframework.com/api/v2/status.json", page_url: "https://status.ionicframework.com", type: "statuspage" },
     { id: "meister", name: "Meister", tags: ["productivity", "mind-mapping", "task-management", "collaboration", "saas"], status_url: "https://status.meisterlabs.com/api/v2/status.json", page_url: "https://status.meisterlabs.com", type: "statuspage" },
+    { id: "canvas", name: "Canvas (Instructure)", tags: ["education", "lms", "e-learning", "higher-ed", "saas"], status_url: "https://status.instructure.com/api/v2/status.json", page_url: "https://status.instructure.com", type: "statuspage" },
+    { id: "section", name: "Section.io", tags: ["cdn", "edge", "web-performance", "caching", "developer-tools"], status_url: "https://status.section.io/api/v2/status.json", page_url: "https://status.section.io", type: "statuspage" },
+    { id: "fga", name: "Auth0 FGA", tags: ["authorization", "identity", "security", "access-control", "api"], status_url: "https://status.fga.dev/api/v2/status.json", page_url: "https://status.fga.dev", type: "statuspage" },
+    { id: "doctolib", name: "Doctolib", tags: ["healthcare", "telemedicine", "appointment-booking", "patient", "saas"], status_url: "https://status.doctolib.com/api/v2/status.json", page_url: "https://status.doctolib.com", type: "statuspage" },
+    { id: "catalyst", name: "Catalyst", tags: ["customer-success", "crm", "saas", "account-management", "b2b"], status_url: "https://status.catalyst.io/api/v2/status.json", page_url: "https://status.catalyst.io", type: "statuspage" },
+    { id: "housecall_pro", name: "Housecall Pro", tags: ["field-service", "home-services", "scheduling", "dispatch", "saas"], status_url: "https://status.housecallpro.com/api/v2/status.json", page_url: "https://status.housecallpro.com", type: "statuspage" },
+    { id: "circle_co", name: "Circle", tags: ["community", "online-community", "course", "membership", "saas"], status_url: "https://status.circle.so/api/v2/status.json", page_url: "https://status.circle.so", type: "statuspage" },
+    { id: "vanilla_forums", name: "Vanilla Forums", tags: ["community", "forum", "discussion", "support", "saas"], status_url: "https://status.vanillaforums.com/api/v2/status.json", page_url: "https://status.vanillaforums.com", type: "statuspage" },
+    { id: "sardine", name: "Sardine", tags: ["fraud-prevention", "risk", "fintech", "compliance", "api"], status_url: "https://status.sardine.ai/api/v2/status.json", page_url: "https://status.sardine.ai", type: "statuspage" },
+    { id: "sauce_labs", name: "Sauce Labs", tags: ["testing", "browser-testing", "qa", "selenium", "developer-tools"], status_url: "https://status.saucelabs.com/api/v2/status.json", page_url: "https://status.saucelabs.com", type: "statuspage" },
+    { id: "doxy", name: "Doxy.me", tags: ["telehealth", "telemedicine", "healthcare", "video-call", "saas"], status_url: "https://status.doxy.me/api/v2/status.json", page_url: "https://status.doxy.me", type: "statuspage" },
+    { id: "spruce", name: "Spruce Health", tags: ["healthcare", "messaging", "patient-communication", "hipaa", "saas"], status_url: "https://status.sprucehealth.com/api/v2/status.json", page_url: "https://status.sprucehealth.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4508,7 +4520,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2208 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2220 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
