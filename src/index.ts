@@ -3308,6 +3308,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "starknet", name: "StarkNet", tags: ["blockchain", "l2", "zk-rollup", "ethereum", "web3"], status_url: "https://status.starknet.io/api/v2/status.json", page_url: "https://status.starknet.io", type: "statuspage" },
   // Next-gen spreadsheet with live data connections
   { id: "equals", name: "Equals", tags: ["spreadsheet", "analytics", "data", "productivity", "saas"], status_url: "https://status.equals.com/api/v2/status.json", page_url: "https://status.equals.com", type: "statuspage" },
+  // Generative video AI (avatar & talking head)
+  { id: "hedra", name: "Hedra", tags: ["ai", "video", "generative", "avatar", "saas"], status_url: "https://status.hedra.com/api/v2/status.json", page_url: "https://status.hedra.com", type: "statuspage" },
+  // LLM application development & evaluation platform
+  { id: "vellum", name: "Vellum", tags: ["ai", "llm", "developer-tools", "evaluation", "saas"], status_url: "https://status.vellum.ai/api/v2/status.json", page_url: "https://status.vellum.ai", type: "statuspage" },
+  // Multi-agent AI orchestration (enterprise)
+  { id: "crewai", name: "CrewAI", tags: ["ai", "agents", "multi-agent", "llm", "saas"], status_url: "https://status.crewai.com/api/v2/status.json", page_url: "https://status.crewai.com", type: "statuspage" },
+  // Open-source publishing platform / headless CMS
+  { id: "ghost", name: "Ghost", tags: ["publishing", "blogging", "cms", "newsletter", "saas"], status_url: "https://status.ghost.org", page_url: "https://status.ghost.org", type: "incidentio" },
+  // Carbon accounting & sustainability reporting
+  { id: "normative", name: "Normative", tags: ["sustainability", "carbon-accounting", "esg", "climate-tech", "saas"], status_url: "https://status.normative.io/api/v2/status.json", page_url: "https://status.normative.io", type: "statuspage" },
+  // Cisco Umbrella DNS-layer cloud security
+  { id: "cisco_umbrella", name: "Cisco Umbrella", tags: ["security", "dns", "cloud-security", "networking", "enterprise"], status_url: "https://status.umbrella.com/api/v2/status.json", page_url: "https://status.umbrella.com", type: "statuspage" },
+  // AI-powered developer tool (context & snippet manager)
+  { id: "pieces", name: "Pieces", tags: ["developer-tools", "ai", "productivity", "code-snippets", "saas"], status_url: "https://status.pieces.app/api/v2/status.json", page_url: "https://status.pieces.app", type: "statuspage" },
+  // Generative AI legal research assistant
+  { id: "harvey", name: "Harvey AI", tags: ["legal", "ai", "llm", "legal-tech", "saas"], status_url: "https://status.harvey.ai/api/v2/status.json", page_url: "https://status.harvey.ai", type: "statuspage" },
+  // Legal case management for plaintiff law firms
+  { id: "casepeer", name: "CASEpeer", tags: ["legal", "case-management", "law-firm", "legal-tech", "saas"], status_url: "https://status.casepeer.com/api/v2/status.json", page_url: "https://status.casepeer.com", type: "statuspage" },
+  // Interactive lesson platform for K-12 education
+  { id: "nearpod", name: "Nearpod", tags: ["edtech", "education", "k12", "interactive", "saas"], status_url: "https://status.nearpod.com/api/v2/status.json", page_url: "https://status.nearpod.com", type: "statuspage" },
+  // Interactive slides & formative assessment for classrooms
+  { id: "peardeck", name: "Pear Deck", tags: ["edtech", "education", "k12", "interactive-slides", "saas"], status_url: "https://status.peardeck.com/api/v2/status.json", page_url: "https://status.peardeck.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3712,7 +3734,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1680 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1691 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3750,7 +3772,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1680 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1691 services.",
           },
         },
         required: [],
