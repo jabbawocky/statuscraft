@@ -3109,6 +3109,25 @@ const SERVICES: ServiceConfig[] = [
   { id: "evinced", name: "Evinced", tags: ["accessibility", "testing", "devtools"], status_url: "https://status.evinced.com/api/v2/status.json", page_url: "https://status.evinced.com", type: "statuspage" },
   // Transactional email templates
   { id: "sendwithus", name: "Sendwithus", tags: ["email", "transactional", "templates", "api"], status_url: "https://status.sendwithus.com/api/v2/status.json", page_url: "https://status.sendwithus.com", type: "statuspage" },
+  // Workflow automation
+  { id: "pipefy", name: "Pipefy", tags: ["workflow", "automation", "no-code", "process-management", "saas"], status_url: "https://status.pipefy.com/api/v2/status.json", page_url: "https://status.pipefy.com", type: "statuspage" },
+  // Scheduling
+  { id: "doodle", name: "Doodle", tags: ["scheduling", "calendar", "productivity", "saas"], status_url: "https://doodle.statuspage.io/api/v2/status.json", page_url: "https://doodle.statuspage.io", type: "statuspage" },
+  // File transfer
+  { id: "wetransfer", name: "WeTransfer", tags: ["file-sharing", "cloud-storage", "collaboration"], status_url: "https://status.wetransfer.com/api/v2/status.json", page_url: "https://status.wetransfer.com", type: "statuspage" },
+  // Package registries
+  { id: "pypi", name: "PyPI", tags: ["package-registry", "python", "devtools", "open-source"], status_url: "https://status.python.org/api/v2/status.json", page_url: "https://status.python.org", type: "statuspage" },
+  { id: "hex_pm", name: "Hex.pm", tags: ["package-registry", "elixir", "erlang", "devtools", "open-source"], status_url: "https://hex.statuspage.io/api/v2/status.json", page_url: "https://hex.statuspage.io", type: "statuspage" },
+  { id: "cocoapods", name: "CocoaPods", tags: ["package-registry", "ios", "macos", "swift", "devtools", "open-source"], status_url: "https://cocoapods.statuspage.io/api/v2/status.json", page_url: "https://cocoapods.statuspage.io", type: "statuspage" },
+  // Gaming
+  { id: "geforce_now", name: "NVIDIA GeForce NOW", tags: ["gaming", "cloud-gaming", "streaming", "nvidia"], status_url: "https://status.geforcenow.com/api/v2/status.json", page_url: "https://status.geforcenow.com", type: "statuspage" },
+  { id: "psn", name: "PlayStation Network", tags: ["gaming", "platform", "consumer", "sony"], status_url: "https://psn.statuspage.io/api/v2/status.json", page_url: "https://psn.statuspage.io", type: "statuspage" },
+  // Web3 / blockchain infrastructure
+  { id: "alchemy", name: "Alchemy", tags: ["web3", "blockchain", "api", "developer-tools", "ethereum"], status_url: "https://alchemyapi.statuspage.io/api/v2/status.json", page_url: "https://alchemyapi.statuspage.io", type: "statuspage" },
+  // DNS
+  { id: "dnssimple", name: "DNSimple", tags: ["dns", "domains", "infrastructure", "api"], status_url: "https://dnsimplestatus.com/api/v2/status.json", page_url: "https://dnsimplestatus.com", type: "statuspage" },
+  // Payments
+  { id: "authorizenet", name: "Authorize.Net", tags: ["payments", "payment-processing", "fintech", "api"], status_url: "https://status.authorize.net/api/v2/status.json", page_url: "https://status.authorize.net", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -3513,7 +3532,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 1577 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 1588 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -3551,7 +3570,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1577 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1588 services.",
           },
         },
         required: [],
