@@ -3717,6 +3717,18 @@ const SERVICES = [
     { id: "octoai", name: "OctoAI", tags: ["ai", "llm", "inference", "models", "api"], status_url: "https://octoai.statuspage.io/api/v2/status.json", page_url: "https://octoai.statuspage.io", type: "statuspage" },
     { id: "statically", name: "Statically", tags: ["cdn", "open-source", "static-assets", "github", "free"], status_url: "https://statically.statuspage.io/api/v2/status.json", page_url: "https://statically.statuspage.io", type: "statuspage" },
     { id: "unsplash", name: "Unsplash", tags: ["photos", "images", "free", "creative", "api"], status_url: "https://unsplash.statuspage.io/api/v2/status.json", page_url: "https://unsplash.statuspage.io", type: "statuspage" },
+    { id: "exabeam", name: "Exabeam", tags: ["security", "siem", "ueba", "threat-detection", "enterprise"], status_url: "https://exabeam.statuspage.io/api/v2/status.json", page_url: "https://exabeam.statuspage.io", type: "statuspage" },
+    { id: "terrateam", name: "Terrateam", tags: ["terraform", "iac", "gitops", "devops", "developer-tools"], status_url: "https://terrateam.statuspage.io/api/v2/status.json", page_url: "https://terrateam.statuspage.io", type: "statuspage" },
+    { id: "liveswitch", name: "LiveSwitch Cloud", tags: ["video", "webrtc", "real-time", "streaming", "api"], status_url: "https://liveswitch.statuspage.io/api/v2/status.json", page_url: "https://liveswitch.statuspage.io", type: "statuspage" },
+    { id: "donut", name: "Donut", tags: ["employee-engagement", "hr", "workplace", "culture", "saas"], status_url: "https://donut.statuspage.io/api/v2/status.json", page_url: "https://donut.statuspage.io", type: "statuspage" },
+    { id: "xactly", name: "Xactly", tags: ["sales", "compensation", "incentives", "revenue", "enterprise"], status_url: "https://xactly.statuspage.io/api/v2/status.json", page_url: "https://xactly.statuspage.io", type: "statuspage" },
+    { id: "spiff", name: "Spiff", tags: ["sales", "commissions", "compensation", "finance", "saas"], status_url: "https://spiff.statuspage.io/api/v2/status.json", page_url: "https://spiff.statuspage.io", type: "statuspage" },
+    { id: "keka", name: "Keka", tags: ["hr", "payroll", "people-management", "india", "saas"], status_url: "https://keka.statuspage.io/api/v2/status.json", page_url: "https://keka.statuspage.io", type: "statuspage" },
+    { id: "yokoy", name: "Yokoy", tags: ["expense-management", "finance", "ai", "corporate-cards", "saas"], status_url: "https://yokoy.statuspage.io/api/v2/status.json", page_url: "https://yokoy.statuspage.io", type: "statuspage" },
+    { id: "everlance", name: "Everlance", tags: ["mileage-tracking", "expense-management", "gig-economy", "tax", "saas"], status_url: "https://everlance.statuspage.io/api/v2/status.json", page_url: "https://everlance.statuspage.io", type: "statuspage" },
+    { id: "agencyanalytics", name: "AgencyAnalytics", tags: ["marketing", "reporting", "analytics", "agencies", "saas"], status_url: "https://agencyanalytics.statuspage.io/api/v2/status.json", page_url: "https://agencyanalytics.statuspage.io", type: "statuspage" },
+    { id: "meisterplan", name: "Meisterplan", tags: ["project-management", "portfolio", "resource-management", "enterprise", "saas"], status_url: "https://meisterplan.statuspage.io/api/v2/status.json", page_url: "https://meisterplan.statuspage.io", type: "statuspage" },
+    { id: "forecast_app", name: "Forecast", tags: ["project-management", "resource-planning", "ai", "agency", "saas"], status_url: "https://forecast.statuspage.io/api/v2/status.json", page_url: "https://forecast.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4174,7 +4186,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 1964 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 1976 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -4209,7 +4221,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1964 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 1976 services.",
                     },
                 },
                 required: [],
