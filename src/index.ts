@@ -4527,6 +4527,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "blockchain_com", name: "Blockchain.com", tags: ["crypto", "bitcoin", "web3", "exchange", "wallet"], status_url: "https://status.blockchain.com/api/v2/status.json", page_url: "https://status.blockchain.com", type: "statuspage" },
   // Productboard — product management platform for roadmapping and prioritization
   { id: "productboard", name: "Productboard", tags: ["product-management", "roadmap", "saas", "enterprise", "feedback"], status_url: "https://status.productboard.com/api/v2/status.json", page_url: "https://status.productboard.com", type: "statuspage" },
+  // Bird — cloud communications platform for SMS, email, voice and WhatsApp (formerly MessageBird)
+  { id: "bird", name: "Bird", tags: ["sms", "email", "voice", "communications", "cpaas", "api"], status_url: "https://status.bird.com/api/v2/status.json", page_url: "https://status.bird.com", type: "statuspage" },
+  // Threekit — 3D product visualization and augmented reality platform for e-commerce
+  { id: "threekit", name: "Threekit", tags: ["3d", "ar", "visualization", "ecommerce", "saas"], status_url: "https://status.threekit.com/api/v2/status.json", page_url: "https://status.threekit.com", type: "statuspage" },
+  // Clumio — SaaS-based cloud backup and data protection for AWS and Microsoft 365
+  { id: "clumio", name: "Clumio", tags: ["backup", "cloud", "data-protection", "aws", "saas"], status_url: "https://status.clumio.com/api/v2/status.json", page_url: "https://status.clumio.com", type: "statuspage" },
+  // Keepit — cloud-to-cloud backup for Microsoft 365, Google Workspace, Salesforce, and more
+  { id: "keepit", name: "Keepit", tags: ["backup", "cloud", "microsoft365", "saas", "data-protection"], status_url: "https://status.keepit.com/api/v2/status.json", page_url: "https://status.keepit.com", type: "statuspage" },
+  // Agno — AI agent platform for building and deploying intelligent agents
+  { id: "agno", name: "Agno", tags: ["ai", "agents", "llm", "platform", "api"], status_url: "https://status.agno.com/api/v2/status.json", page_url: "https://status.agno.com", type: "statuspage" },
+  // Datadog EU — Datadog monitoring platform status for EU region customers
+  { id: "datadog_eu", name: "Datadog EU", tags: ["monitoring", "observability", "apm", "metrics", "europe"], status_url: "https://status.datadoghq.eu/api/v2/status.json", page_url: "https://status.datadoghq.eu", type: "statuspage" },
+  // Chili Piper — intelligent meeting scheduling and lead routing for revenue teams
+  { id: "chilipiper", name: "Chili Piper", tags: ["scheduling", "sales", "crm", "meetings", "lead-routing"], status_url: "https://status.chilipiper.com/api/v2/status.json", page_url: "https://status.chilipiper.com", type: "statuspage" },
+  // Stash — micro-investing and banking app for personal finance and wealth building
+  { id: "stash", name: "Stash", tags: ["investing", "fintech", "banking", "personal-finance", "mobile"], status_url: "https://status.stash.com/api/v2/status.json", page_url: "https://status.stash.com", type: "statuspage" },
+  // Swrve — mobile marketing automation platform for in-app messaging and push notifications
+  { id: "swrve", name: "Swrve", tags: ["mobile-marketing", "push-notifications", "in-app-messaging", "saas", "engagement"], status_url: "https://status.swrve.com/api/v2/status.json", page_url: "https://status.swrve.com", type: "statuspage" },
+  // Sessionboard — conference and event content management platform for speakers and sessions
+  { id: "sessionboard", name: "Sessionboard", tags: ["events", "conferences", "content-management", "speakers", "saas"], status_url: "https://status.sessionboard.com/api/v2/status.json", page_url: "https://status.sessionboard.com", type: "statuspage" },
+  // Ambassador Software — referral and affiliate marketing platform for SaaS and B2B companies
+  { id: "ambassador_software", name: "Ambassador Software", tags: ["referral", "affiliate", "marketing", "saas", "partnerships"], status_url: "https://status.getambassador.com/api/v2/status.json", page_url: "https://status.getambassador.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4964,7 +4986,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2421 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2432 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5002,7 +5024,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2421 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2432 services.",
           },
         },
         required: [],
