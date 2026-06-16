@@ -4541,6 +4541,26 @@ const SERVICES = [
     { id: "rocketlane", name: "Rocketlane", tags: ["onboarding", "project-management", "customer-success", "saas"], status_url: "https://status.rocketlane.com/api/v2/status.json", page_url: "https://status.rocketlane.com", type: "statuspage" },
     // Stonly — interactive knowledge base and customer support platform
     { id: "stonly", name: "Stonly", tags: ["knowledge-base", "customer-support", "self-service", "saas"], status_url: "https://status.stonly.com/api/v2/status.json", page_url: "https://status.stonly.com", type: "statuspage" },
+    // Fireworks AI — fast AI inference platform for open-source models
+    { id: "fireworks_ai", name: "Fireworks AI", tags: ["ai", "llm", "inference", "api", "developer-tools"], status_url: "https://fireworks.statuspage.io/api/v2/status.json", page_url: "https://fireworks.statuspage.io", type: "statuspage" },
+    // Lucid — visual collaboration suite including Lucidchart, Lucidspark, and Lucidscale
+    { id: "lucid", name: "Lucid", tags: ["diagramming", "visual-collaboration", "productivity", "saas"], status_url: "https://status.lucid.co/api/v2/status.json", page_url: "https://status.lucid.co", type: "statuspage" },
+    // Jina AI — neural search and multimodal AI embedding platform
+    { id: "jina_ai", name: "Jina AI", tags: ["ai", "embeddings", "neural-search", "multimodal", "api"], status_url: "https://status.jina.ai/api/v2/status.json", page_url: "https://status.jina.ai", type: "statuspage" },
+    // Stamps.com — online postage and shipping label platform
+    { id: "stamps_com", name: "Stamps.com", tags: ["shipping", "postage", "logistics", "ecommerce", "saas"], status_url: "https://status.stamps.com/api/v2/status.json", page_url: "https://status.stamps.com", type: "statuspage" },
+    // MoodleCloud — hosted Moodle LMS for online learning and course delivery
+    { id: "moodle_cloud", name: "MoodleCloud", tags: ["lms", "education", "e-learning", "courses", "saas"], status_url: "https://moodle.statuspage.io/api/v2/status.json", page_url: "https://moodle.statuspage.io", type: "statuspage" },
+    // Copper CRM — CRM built natively for Google Workspace
+    { id: "copper_crm", name: "Copper CRM", tags: ["crm", "sales", "google-workspace", "saas"], status_url: "https://status.copper.com/api/v2/status.json", page_url: "https://status.copper.com", type: "statuspage" },
+    // Jotform — online form builder and data collection platform
+    { id: "jotform", name: "Jotform", tags: ["forms", "surveys", "data-collection", "saas", "no-code"], status_url: "https://status.jotform.com/api/v2/status.json", page_url: "https://status.jotform.com", type: "statuspage" },
+    // Toast — restaurant point-of-sale and management platform
+    { id: "toast_pos", name: "Toast POS", tags: ["pos", "restaurant", "payments", "hospitality", "saas"], status_url: "https://status.toasttab.com/api/v2/status.json", page_url: "https://status.toasttab.com", type: "statuspage" },
+    // Revel Systems — iPad-based POS platform for retail and restaurants
+    { id: "revel_systems", name: "Revel Systems", tags: ["pos", "retail", "restaurant", "payments", "saas"], status_url: "https://status.revelsystems.com/api/v2/status.json", page_url: "https://status.revelsystems.com", type: "statuspage" },
+    // Axiom — log management and analytics platform for modern engineering teams
+    { id: "axiom", name: "Axiom", tags: ["logging", "observability", "analytics", "developer-tools", "saas"], status_url: "https://status.axiom.co/api/v2/status.json", page_url: "https://status.axiom.co", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4998,7 +5018,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2498 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2508 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -5033,7 +5053,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2498 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2508 services.",
                     },
                 },
                 required: [],
