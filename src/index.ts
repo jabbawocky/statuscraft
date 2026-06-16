@@ -4615,6 +4615,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "ryver", name: "Ryver", tags: ["messaging", "collaboration", "task-management", "workflow", "saas"], status_url: "https://status.ryver.com/api/v2/status.json", page_url: "https://status.ryver.com", type: "statuspage" },
   // Feature.fm — music marketing platform for smart links, pre-save, and streaming analytics
   { id: "feature_fm", name: "Feature.fm", tags: ["music", "marketing", "streaming", "analytics", "creator-tools"], status_url: "https://status.feature.fm/api/v2/status.json", page_url: "https://status.feature.fm", type: "statuspage" },
+  // Make — no-code automation platform (formerly Integromat) for connecting apps and workflows
+  { id: "make_com", name: "Make", tags: ["automation", "no-code", "integration", "workflow", "saas"], status_url: "https://status.make.com/api/v2/status.json", page_url: "https://status.make.com", type: "statuspage" },
+  // IFTTT — automation platform for connecting apps, devices, and services
+  { id: "ifttt", name: "IFTTT", tags: ["automation", "integration", "iot", "workflow", "consumer"], status_url: "https://status.ifttt.com/api/v2/status.json", page_url: "https://status.ifttt.com", type: "statuspage" },
+  // Particle — IoT platform for connecting and managing connected devices at scale
+  { id: "particle_io", name: "Particle", tags: ["iot", "embedded", "hardware", "cloud", "developer-tools"], status_url: "https://status.particle.io/api/v2/status.json", page_url: "https://status.particle.io", type: "statuspage" },
+  // JW Player — video platform for streaming, monetization, and player technology
+  { id: "jwplayer", name: "JW Player", tags: ["video", "streaming", "media", "cdn", "api"], status_url: "https://status.jwplayer.com/api/v2/status.json", page_url: "https://status.jwplayer.com", type: "statuspage" },
+  // Help Scout — customer support platform with shared inbox, knowledge base, and live chat
+  { id: "helpscout", name: "Help Scout", tags: ["customer-support", "help-desk", "email", "knowledge-base", "saas"], status_url: "https://status.helpscout.com/api/v2/status.json", page_url: "https://status.helpscout.com", type: "statuspage" },
+  // impact.com — partnership management platform for affiliate, influencer, and B2B programs
+  { id: "impact_com", name: "impact.com", tags: ["affiliate", "partnerships", "marketing", "performance", "saas"], status_url: "https://status.impact.com/api/v2/status.json", page_url: "https://status.impact.com", type: "statuspage" },
+  // Hex — collaborative data workspace for notebooks, dashboards, and data apps
+  { id: "hex", name: "Hex", tags: ["data", "analytics", "notebooks", "bi", "collaboration"], status_url: "https://status.hex.tech/api/v2/status.json", page_url: "https://status.hex.tech", type: "statuspage" },
+  // Circle — community platform for creators, entrepreneurs, and brands
+  { id: "circle_so", name: "Circle", tags: ["community", "creators", "membership", "courses", "saas"], status_url: "https://status.circle.so/api/v2/status.json", page_url: "https://status.circle.so", type: "statuspage" },
+  // Higher Logic — community and engagement platform for associations and B2B companies
+  { id: "higherlogic", name: "Higher Logic", tags: ["community", "associations", "engagement", "marketing", "saas"], status_url: "https://status.higherlogic.com/api/v2/status.json", page_url: "https://status.higherlogic.com", type: "statuspage" },
+  // Smartly — AI-powered social advertising and creative automation platform
+  { id: "smartly_io", name: "Smartly", tags: ["advertising", "social-media", "ai", "creative", "automation"], status_url: "https://status.smartly.io/api/v2/status.json", page_url: "https://status.smartly.io", type: "statuspage" },
+  // NextRoll (AdRoll) — B2B and B2C marketing platform for retargeting and programmatic ads
+  { id: "nextroll", name: "NextRoll (AdRoll)", tags: ["advertising", "retargeting", "programmatic", "b2b", "marketing"], status_url: "https://status.adroll.com/api/v2/status.json", page_url: "https://status.nextroll.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5052,7 +5074,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2464 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2475 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5090,7 +5112,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2464 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2475 services.",
           },
         },
         required: [],
