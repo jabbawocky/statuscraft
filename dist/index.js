@@ -4169,6 +4169,28 @@ const SERVICES = [
     { id: "brightwheel", name: "Brightwheel", tags: ["edtech", "childcare", "early-childhood", "daycare", "saas"], status_url: "https://brightwheel.statuspage.io/api/v2/status.json", page_url: "https://brightwheel.statuspage.io", type: "statuspage" },
     // K-12 educational content
     { id: "savvas", name: "Savvas Learning", tags: ["edtech", "k12", "curriculum", "publishing", "education"], status_url: "https://savvas.statuspage.io/api/v2/status.json", page_url: "https://status.savvas.com", type: "statuspage" },
+    // Nscale — UK-based AI GPU cloud compute platform
+    { id: "nscale", name: "Nscale", tags: ["ai", "gpu", "cloud", "infrastructure", "compute"], status_url: "https://status.nscale.com/api/v2/status.json", page_url: "https://status.nscale.com", type: "statuspage" },
+    // Devin — AI software engineer (Cognition AI)
+    { id: "devin", name: "Devin", tags: ["ai", "coding", "developer-tools", "agent", "automation"], status_url: "https://status.devin.ai/api/v2/status.json", page_url: "https://status.devin.ai", type: "statuspage" },
+    // Nmbrs — Dutch HR & payroll SaaS platform
+    { id: "nmbrs", name: "Nmbrs", tags: ["hr", "payroll", "saas", "enterprise", "europe"], status_url: "https://status.nmbrs.com/api/v2/status.json", page_url: "https://status.nmbrs.com", type: "statuspage" },
+    // Exact — Dutch ERP and accounting software for SMBs
+    { id: "exact", name: "Exact", tags: ["erp", "accounting", "finance", "saas", "europe"], status_url: "https://status.exact.com/api/v2/status.json", page_url: "https://status.exact.com", type: "statuspage" },
+    // ZENSAI — HR performance and learning management platform
+    { id: "zensai", name: "ZENSAI", tags: ["hr", "learning", "performance", "lms", "saas"], status_url: "https://status.zensai.com/api/v2/status.json", page_url: "https://status.zensai.com", type: "statuspage" },
+    // Cloud 66 — DevOps-as-a-Service, deploy any stack to any cloud
+    { id: "cloud66", name: "Cloud 66", tags: ["devops", "paas", "deployment", "infrastructure", "developer-tools"], status_url: "https://status.cloud66.com/api/v2/status.json", page_url: "https://status.cloud66.com", type: "statuspage" },
+    // NFT.Storage — free decentralized storage for NFT data via IPFS & Filecoin
+    { id: "nft_storage", name: "NFT.Storage", tags: ["web3", "nft", "ipfs", "storage", "blockchain"], status_url: "https://status.nft.storage/api/v2/status.json", page_url: "https://status.nft.storage", type: "statuspage" },
+    // Filecoin — decentralized storage blockchain network
+    { id: "filecoin", name: "Filecoin", tags: ["blockchain", "web3", "storage", "decentralized", "crypto"], status_url: "https://status.filecoin.io/api/v2/status.json", page_url: "https://status.filecoin.io", type: "statuspage" },
+    // Platform9 — managed Kubernetes & OpenStack cloud platform
+    { id: "platform9", name: "Platform9", tags: ["kubernetes", "openstack", "cloud", "infrastructure", "managed"], status_url: "https://status.platform9.com/api/v2/status.json", page_url: "https://status.platform9.com", type: "statuspage" },
+    // HUMAN Security — bot defense & fraud prevention platform (formerly PerimeterX)
+    { id: "human_security", name: "HUMAN Security", tags: ["security", "bot-defense", "fraud", "api", "enterprise"], status_url: "https://status.perimeterx.com/api/v2/status.json", page_url: "https://status.perimeterx.com", type: "statuspage" },
+    // Channel.io — all-in-one customer chat & CRM platform (popular in Asia)
+    { id: "channel_io", name: "Channel.io", tags: ["customer-support", "chat", "crm", "messaging", "saas"], status_url: "https://status.channel.io/api/v2/status.json", page_url: "https://status.channel.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4598,7 +4620,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.57.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.58.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -4626,7 +4648,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2313 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2324 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -4661,7 +4683,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2313 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2324 services.",
                     },
                 },
                 required: [],
