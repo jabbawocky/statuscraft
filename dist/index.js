@@ -4589,6 +4589,83 @@ const SERVICES = [
     { id: "opsgenie", name: "Opsgenie", tags: ["monitoring", "on-call", "alerting", "devops", "atlassian", "saas"], status_url: "https://opsgenie.statuspage.io/api/v2/status.json", page_url: "https://opsgenie.statuspage.io", type: "statuspage" },
     // Splunk On Call (formerly VictorOps) — on-call and incident response platform
     { id: "victorops", name: "Splunk On Call", tags: ["monitoring", "on-call", "alerting", "incident-management", "saas"], status_url: "https://status.victorops.com/api/v2/status.json", page_url: "https://status.victorops.com", type: "statuspage" },
+    // Supabase — open-source Firebase alternative: Postgres, auth, storage, edge functions
+    { id: "supabase", name: "Supabase", tags: ["database", "baas", "postgres", "developer-tools", "saas"], status_url: "https://status.supabase.com/api/v2/status.json", page_url: "https://status.supabase.com", type: "statuspage" },
+    // Neon — serverless Postgres with branching and autoscaling
+    { id: "neon", name: "Neon", tags: ["database", "postgres", "serverless", "developer-tools", "saas"], status_url: "https://neondb.statuspage.io/api/v2/status.json", page_url: "https://neondb.statuspage.io", type: "statuspage" },
+    // Linear — modern project management and issue tracking for engineering teams
+    { id: "linear", name: "Linear", tags: ["project-management", "developer-tools", "productivity", "saas"], status_url: "https://linearstatus.com/api/v2/status.json", page_url: "https://linearstatus.com", type: "statuspage" },
+    // Clerk — authentication and user management platform for web applications
+    { id: "clerk", name: "Clerk", tags: ["auth", "identity", "developer-tools", "api", "saas"], status_url: "https://status.clerk.com/api/v2/status.json", page_url: "https://status.clerk.com", type: "statuspage" },
+    // LaunchDarkly — feature flag management and experimentation platform
+    { id: "launchdarkly", name: "LaunchDarkly", tags: ["feature-flags", "developer-tools", "experimentation", "saas"], status_url: "https://status.launchdarkly.com/api/v2/status.json", page_url: "https://status.launchdarkly.com", type: "statuspage" },
+    // Contentful — headless CMS and content platform for digital experiences
+    { id: "contentful", name: "Contentful", tags: ["cms", "content", "api", "saas"], status_url: "https://www.contentfulstatus.com/api/v2/status.json", page_url: "https://www.contentfulstatus.com", type: "statuspage" },
+    // MailerSend — transactional email and SMS API platform
+    { id: "mailersend", name: "MailerSend", tags: ["email", "sms", "api", "developer-tools", "saas"], status_url: "https://status.mailersend.com/api/v2/status.json", page_url: "https://status.mailersend.com", type: "statuspage" },
+    // Temporal — durable workflow execution engine for distributed applications
+    { id: "temporal", name: "Temporal Cloud", tags: ["workflow", "developer-tools", "api", "saas"], status_url: "https://status.temporal.io/api/v2/status.json", page_url: "https://status.temporal.io", type: "statuspage" },
+    // Drata — continuous security and compliance automation platform (SOC 2, ISO 27001)
+    { id: "drata", name: "Drata", tags: ["compliance", "security", "saas", "governance"], status_url: "https://status.drata.com/api/v2/status.json", page_url: "https://status.drata.com", type: "statuspage" },
+    // Vanta — automated security compliance platform (SOC 2, HIPAA, GDPR)
+    { id: "vanta", name: "Vanta", tags: ["compliance", "security", "saas", "governance"], status_url: "https://status.vanta.com/api/v2/status.json", page_url: "https://status.vanta.com", type: "statuspage" },
+    // WorkOS — enterprise SSO, SCIM provisioning, and directory sync APIs
+    { id: "workos", name: "WorkOS", tags: ["auth", "identity", "sso", "enterprise", "api", "saas"], status_url: "https://status.workos.com/api/v2/status.json", page_url: "https://status.workos.com", type: "statuspage" },
+    // Prismic — headless CMS with visual slice builder for marketing and web teams
+    { id: "prismic", name: "Prismic", tags: ["cms", "content", "api", "saas"], status_url: "https://status.prismic.io/api/v2/status.json", page_url: "https://status.prismic.io", type: "statuspage" },
+    // Inngest — event-driven background jobs and workflow orchestration for serverless
+    { id: "inngest", name: "Inngest", tags: ["workflow", "background-jobs", "developer-tools", "saas"], status_url: "https://status.inngest.com/api/v2/status.json", page_url: "https://status.inngest.com", type: "statuspage" },
+    // Harness — developer operations platform: CI/CD, feature flags, cloud cost management
+    { id: "harness", name: "Harness", tags: ["ci-cd", "devops", "feature-flags", "developer-tools", "saas"], status_url: "https://status.harness.io/api/v2/status.json", page_url: "https://status.harness.io", type: "statuspage" },
+    // CircleCI — continuous integration and continuous delivery platform
+    { id: "circleci", name: "CircleCI", tags: ["ci-cd", "devops", "developer-tools", "saas"], status_url: "https://status.circleci.com/api/v2/status.json", page_url: "https://status.circleci.com", type: "statuspage" },
+    // Sanity — structured content platform and headless CMS with real-time collaboration
+    { id: "sanity", name: "Sanity", tags: ["cms", "content", "api", "developer-tools", "saas"], status_url: "https://status.sanity.io/api/v2/status.json", page_url: "https://status.sanity.io", type: "statuspage" },
+    // Metronome — usage-based billing infrastructure for SaaS companies
+    { id: "metronome", name: "Metronome", tags: ["billing", "fintech", "api", "saas"], status_url: "https://status.metronome.com/api/v2/status.json", page_url: "https://status.metronome.com", type: "statuspage" },
+    // Lago — open-source metering and usage-based billing engine
+    { id: "lago", name: "Lago", tags: ["billing", "metering", "api", "saas", "open-source"], status_url: "https://status.getlago.com/api/v2/status.json", page_url: "https://status.getlago.com", type: "statuspage" },
+    // Orb — usage-based billing platform for modern SaaS products
+    { id: "orb", name: "Orb", tags: ["billing", "fintech", "api", "saas"], status_url: "https://status.withorb.com/api/v2/status.json", page_url: "https://status.withorb.com", type: "statuspage" },
+    // Mixpanel — product analytics platform for user behavior and event tracking
+    { id: "mixpanel", name: "Mixpanel", tags: ["analytics", "product-analytics", "saas"], status_url: "https://status.mixpanel.com/api/v2/status.json", page_url: "https://status.mixpanel.com", type: "statuspage" },
+    // Heap — automatic digital insights and session replay platform
+    { id: "heap", name: "Heap", tags: ["analytics", "product-analytics", "session-replay", "saas"], status_url: "https://status.heap.io/api/v2/status.json", page_url: "https://status.heap.io", type: "statuspage" },
+    // FullStory — digital experience intelligence: session replay, heatmaps, product analytics
+    { id: "fullstory", name: "FullStory", tags: ["analytics", "session-replay", "product-analytics", "saas"], status_url: "https://status.fullstory.com/api/v2/status.json", page_url: "https://status.fullstory.com", type: "statuspage" },
+    // Hotjar — heatmaps, session recordings, and user feedback for websites
+    { id: "hotjar", name: "Hotjar", tags: ["analytics", "session-replay", "ux", "saas"], status_url: "https://status.hotjar.com/api/v2/status.json", page_url: "https://status.hotjar.com", type: "statuspage" },
+    // LogRocket — session replay, performance monitoring, and product analytics
+    { id: "logrocket", name: "LogRocket", tags: ["monitoring", "session-replay", "analytics", "developer-tools", "saas"], status_url: "https://status.logrocket.com/api/v2/status.json", page_url: "https://status.logrocket.com", type: "statuspage" },
+    // Survicate — customer survey and feedback platform (NPS, CSAT, CES)
+    { id: "survicate", name: "Survicate", tags: ["surveys", "feedback", "analytics", "saas"], status_url: "https://status.survicate.com/api/v2/status.json", page_url: "https://status.survicate.com", type: "statuspage" },
+    // Typeform — conversational forms and surveys with beautiful UX
+    { id: "typeform", name: "Typeform", tags: ["forms", "surveys", "saas"], status_url: "https://status.typeform.com/api/v2/status.json", page_url: "https://status.typeform.com", type: "statuspage" },
+    // Tally — simple, free-form builder with Notion-like experience
+    { id: "tally", name: "Tally", tags: ["forms", "surveys", "saas", "developer-tools"], status_url: "https://tally.statuspage.io/api/v2/status.json", page_url: "https://tally.statuspage.io", type: "statuspage" },
+    // tick 252 additions
+    { id: "mercadopago", name: "Mercado Pago", tags: ["payments", "fintech", "latam", "saas"], status_url: "https://status.mercadopago.com/api/v2/status.json", page_url: "https://status.mercadopago.com", type: "statuspage" },
+    { id: "placester", name: "Placester", tags: ["real-estate", "website-builder", "crm", "saas"], status_url: "https://status.placester.com/api/v2/status.json", page_url: "https://status.placester.com", type: "statuspage" },
+    { id: "booqable", name: "Booqable", tags: ["rental", "inventory", "ecommerce", "saas"], status_url: "https://status.booqable.com/api/v2/status.json", page_url: "https://status.booqable.com", type: "statuspage" },
+    { id: "cumulocity", name: "Cumulocity", tags: ["iot", "platform", "saas", "sap"], status_url: "https://status.cumulocity.com/api/v2/status.json", page_url: "https://status.cumulocity.com", type: "statuspage" },
+    { id: "paloalto_networks", name: "Palo Alto Networks", tags: ["security", "sase", "firewall", "cloud-security", "networking", "saas"], status_url: "https://status.paloaltonetworks.com/api/v2/status.json", page_url: "https://status.paloaltonetworks.com", type: "statuspage" },
+    { id: "hypr", name: "HYPR", tags: ["auth", "passwordless", "identity", "security", "saas"], status_url: "https://status.hypr.com/api/v2/status.json", page_url: "https://status.hypr.com", type: "statuspage" },
+    { id: "yubico", name: "Yubico", tags: ["auth", "security", "hardware", "mfa", "saas"], status_url: "https://status.yubico.com/api/v2/status.json", page_url: "https://status.yubico.com", type: "statuspage" },
+    { id: "securityscorecard", name: "SecurityScorecard", tags: ["security", "risk", "compliance", "saas"], status_url: "https://status.securityscorecard.com/api/v2/status.json", page_url: "https://status.securityscorecard.com", type: "statuspage" },
+    { id: "blast", name: "Blast", tags: ["blockchain", "ethereum", "layer2", "web3"], status_url: "https://status.blast.io/api/v2/status.json", page_url: "https://status.blast.io", type: "statuspage" },
+    { id: "veza", name: "Veza", tags: ["security", "identity", "governance", "access", "saas"], status_url: "https://status.veza.com/api/v2/status.json", page_url: "https://status.veza.com", type: "statuspage" },
+    // tick 253 additions — 11 new live-verified services
+    { id: "zoom", name: "Zoom", tags: ["video", "conferencing", "collaboration", "communication", "saas"], status_url: "https://status.zoom.us/api/v2/status.json", page_url: "https://status.zoom.us", type: "statuspage" },
+    { id: "sprucehealth", name: "Spruce Health", tags: ["healthcare", "messaging", "telemedicine", "saas"], status_url: "https://status.sprucehealth.com/api/v2/status.json", page_url: "https://status.sprucehealth.com", type: "statuspage" },
+    { id: "escapia", name: "Escapia", tags: ["vacation-rental", "property-management", "hospitality", "saas"], status_url: "https://status.escapia.com/api/v2/status.json", page_url: "https://status.escapia.com", type: "statuspage" },
+    { id: "postman", name: "Postman", tags: ["api", "testing", "developer-tools", "collaboration", "saas"], status_url: "https://status.postman.com/api/v2/status.json", page_url: "https://status.postman.com", type: "statuspage" },
+    { id: "tenderly", name: "Tenderly", tags: ["blockchain", "ethereum", "developer-tools", "web3", "devops"], status_url: "https://status.tenderly.co/api/v2/status.json", page_url: "https://status.tenderly.co", type: "statuspage" },
+    { id: "iwantmyname", name: "iwantmyname", tags: ["dns", "domain", "registrar", "hosting"], status_url: "https://status.iwantmyname.com/api/v2/status.json", page_url: "https://status.iwantmyname.com", type: "statuspage" },
+    { id: "multisafepay", name: "MultiSafepay", tags: ["payments", "fintech", "europe", "processing", "api"], status_url: "https://status.multisafepay.com/api/v2/status.json", page_url: "https://status.multisafepay.com", type: "statuspage" },
+    { id: "sierra_interactive", name: "Sierra Interactive", tags: ["real-estate", "crm", "website-builder", "saas"], status_url: "https://status.sierrainteractive.com/api/v2/status.json", page_url: "https://status.sierrainteractive.com", type: "statuspage" },
+    { id: "dochub", name: "DocHub", tags: ["pdf", "e-signature", "document-management", "saas"], status_url: "https://status.dochub.com/api/v2/status.json", page_url: "https://status.dochub.com", type: "statuspage" },
+    { id: "checkmate", name: "Checkmate", tags: ["restaurant", "online-ordering", "aggregator", "food-tech", "saas"], status_url: "https://status.itsacheckmate.com/api/v2/status.json", page_url: "https://status.itsacheckmate.com", type: "statuspage" },
+    { id: "donorperfect", name: "DonorPerfect", tags: ["nonprofit", "fundraising", "crm", "saas"], status_url: "https://status.donorperfect.com/api/v2/status.json", page_url: "https://status.donorperfect.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -5018,7 +5095,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.60.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.61.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -5046,7 +5123,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2522 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2570 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -5081,7 +5158,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2522 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2570 services.",
                     },
                 },
                 required: [],

@@ -4796,6 +4796,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "securityscorecard", name: "SecurityScorecard", tags: ["security", "risk", "compliance", "saas"], status_url: "https://status.securityscorecard.com/api/v2/status.json", page_url: "https://status.securityscorecard.com", type: "statuspage" },
   { id: "blast", name: "Blast", tags: ["blockchain", "ethereum", "layer2", "web3"], status_url: "https://status.blast.io/api/v2/status.json", page_url: "https://status.blast.io", type: "statuspage" },
   { id: "veza", name: "Veza", tags: ["security", "identity", "governance", "access", "saas"], status_url: "https://status.veza.com/api/v2/status.json", page_url: "https://status.veza.com", type: "statuspage" },
+  // tick 253 additions — 11 new live-verified services
+  { id: "zoom", name: "Zoom", tags: ["video", "conferencing", "collaboration", "communication", "saas"], status_url: "https://status.zoom.us/api/v2/status.json", page_url: "https://status.zoom.us", type: "statuspage" },
+  { id: "sprucehealth", name: "Spruce Health", tags: ["healthcare", "messaging", "telemedicine", "saas"], status_url: "https://status.sprucehealth.com/api/v2/status.json", page_url: "https://status.sprucehealth.com", type: "statuspage" },
+  { id: "escapia", name: "Escapia", tags: ["vacation-rental", "property-management", "hospitality", "saas"], status_url: "https://status.escapia.com/api/v2/status.json", page_url: "https://status.escapia.com", type: "statuspage" },
+  { id: "postman", name: "Postman", tags: ["api", "testing", "developer-tools", "collaboration", "saas"], status_url: "https://status.postman.com/api/v2/status.json", page_url: "https://status.postman.com", type: "statuspage" },
+  { id: "tenderly", name: "Tenderly", tags: ["blockchain", "ethereum", "developer-tools", "web3", "devops"], status_url: "https://status.tenderly.co/api/v2/status.json", page_url: "https://status.tenderly.co", type: "statuspage" },
+  { id: "iwantmyname", name: "iwantmyname", tags: ["dns", "domain", "registrar", "hosting"], status_url: "https://status.iwantmyname.com/api/v2/status.json", page_url: "https://status.iwantmyname.com", type: "statuspage" },
+  { id: "multisafepay", name: "MultiSafepay", tags: ["payments", "fintech", "europe", "processing", "api"], status_url: "https://status.multisafepay.com/api/v2/status.json", page_url: "https://status.multisafepay.com", type: "statuspage" },
+  { id: "sierra_interactive", name: "Sierra Interactive", tags: ["real-estate", "crm", "website-builder", "saas"], status_url: "https://status.sierrainteractive.com/api/v2/status.json", page_url: "https://status.sierrainteractive.com", type: "statuspage" },
+  { id: "dochub", name: "DocHub", tags: ["pdf", "e-signature", "document-management", "saas"], status_url: "https://status.dochub.com/api/v2/status.json", page_url: "https://status.dochub.com", type: "statuspage" },
+  { id: "checkmate", name: "Checkmate", tags: ["restaurant", "online-ordering", "aggregator", "food-tech", "saas"], status_url: "https://status.itsacheckmate.com/api/v2/status.json", page_url: "https://status.itsacheckmate.com", type: "statuspage" },
+  { id: "donorperfect", name: "DonorPerfect", tags: ["nonprofit", "fundraising", "crm", "saas"], status_url: "https://status.donorperfect.com/api/v2/status.json", page_url: "https://status.donorperfect.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5198,7 +5210,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.60.0" },
+  { name: "statuscraft", version: "2.61.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -5233,7 +5245,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2559 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2570 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5271,7 +5283,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2559 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2570 services.",
           },
         },
         required: [],
