@@ -4571,6 +4571,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "edge_delta", name: "Edge Delta", tags: ["observability", "logging", "streaming", "monitoring", "devops"], status_url: "https://status.edgedelta.com/api/v2/status.json", page_url: "https://status.edgedelta.com", type: "statuspage" },
   // Scratchpad — AI-powered sales workspace for Salesforce pipeline management
   { id: "scratchpad", name: "Scratchpad", tags: ["sales", "crm", "salesforce", "pipeline", "productivity"], status_url: "https://status.scratchpad.com/api/v2/status.json", page_url: "https://status.scratchpad.com", type: "statuspage" },
+  // Phrase — translation management platform for localization workflows
+  { id: "phrase", name: "Phrase", tags: ["localization", "translation", "i18n", "developer-tools", "saas"], status_url: "https://status.phrase.com/api/v2/status.json", page_url: "https://status.phrase.com", type: "statuspage" },
+  // Later — social media scheduling and visual content planning platform
+  { id: "later", name: "Later", tags: ["social-media", "scheduling", "marketing", "content", "saas"], status_url: "https://status.later.com/api/v2/status.json", page_url: "https://status.later.com", type: "statuspage" },
+  // Wiz — cloud security platform for vulnerability and misconfiguration detection
+  { id: "wiz", name: "Wiz", tags: ["security", "cloud", "vulnerability", "cspm", "enterprise"], status_url: "https://status.wiz.io/api/v2/status.json", page_url: "https://status.wiz.io", type: "statuspage" },
+  // CloudConvert — online file conversion API supporting 200+ formats (BetterStack)
+  { id: "cloudconvert", name: "CloudConvert", tags: ["file-conversion", "api", "developer-tools", "saas", "media"], status_url: "https://cloudconvert.instatus.com/api/v2/summary.json", page_url: "https://status.cloudconvert.com", type: "betterstack" },
+  // Deque — web accessibility testing tools and axe-core DevTools platform
+  { id: "deque", name: "Deque", tags: ["accessibility", "a11y", "testing", "developer-tools", "compliance"], status_url: "https://status.deque.com/api/v2/status.json", page_url: "https://status.deque.com", type: "statuspage" },
+  // Genially — interactive presentation and visual content creation platform
+  { id: "genially", name: "Genially", tags: ["presentations", "interactive", "content", "education", "saas"], status_url: "https://status.genially.com/api/v2/status.json", page_url: "https://status.genially.com", type: "statuspage" },
+  // Workforce.com — employee scheduling and workforce management platform
+  { id: "workforce_com", name: "Workforce.com", tags: ["workforce-management", "scheduling", "hr", "time-tracking", "saas"], status_url: "https://status.workforce.com/api/v2/status.json", page_url: "https://status.workforce.com", type: "statuspage" },
+  // CustomerGauge — NPS and B2B customer experience management platform
+  { id: "customergauge", name: "CustomerGauge", tags: ["nps", "customer-experience", "analytics", "b2b", "saas"], status_url: "https://status.customergauge.com/api/v2/status.json", page_url: "https://status.customergauge.com", type: "statuspage" },
+  // Invoiced — accounts receivable automation and billing platform
+  { id: "invoiced", name: "Invoiced", tags: ["accounts-receivable", "billing", "payments", "fintech", "saas"], status_url: "https://status.invoiced.com/api/v2/status.json", page_url: "https://status.invoiced.com", type: "statuspage" },
+  // PayWhirl — subscription billing and recurring payments management platform
+  { id: "paywhirl", name: "PayWhirl", tags: ["subscriptions", "billing", "payments", "ecommerce", "saas"], status_url: "https://status.paywhirl.com/api/v2/status.json", page_url: "https://status.paywhirl.com", type: "statuspage" },
+  // Swile — employee benefits and meal voucher platform (France/Europe)
+  { id: "swile", name: "Swile", tags: ["employee-benefits", "hr", "fintech", "europe", "saas"], status_url: "https://status.swile.co/api/v2/status.json", page_url: "https://status.swile.co", type: "statuspage" },
+  // Retention Science — AI-powered lifecycle marketing and customer retention platform
+  { id: "retention_science", name: "Retention Science", tags: ["marketing", "retention", "ai", "email", "ecommerce"], status_url: "https://status.retentionscience.com/api/v2/status.json", page_url: "https://status.retentionscience.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5008,7 +5032,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2443 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2454 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5046,7 +5070,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2443 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2454 services.",
           },
         },
         required: [],
