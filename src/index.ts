@@ -4480,6 +4480,27 @@ const SERVICES: ServiceConfig[] = [
   { id: "qodo", name: "Qodo", tags: ["ai", "code-quality", "testing", "developer-tools", "llm"], status_url: "https://status.qodo.ai/api/v2/status.json", page_url: "https://status.qodo.ai", type: "statuspage" },
   // Poolside — AI foundation models for software engineering
   { id: "poolside", name: "Poolside", tags: ["ai", "llm", "software-engineering", "coding", "enterprise"], status_url: "https://status.poolside.ai/api/v2/status.json", page_url: "https://status.poolside.ai", type: "statuspage" },
+  // Tick 241 additions — 10 new live-verified services
+  // LoyaltyLion — loyalty and rewards program platform for ecommerce
+  { id: "loyalty_lion", name: "LoyaltyLion", tags: ["loyalty", "rewards", "ecommerce", "retention", "saas"], status_url: "https://status.loyaltylion.com/api/v2/status.json", page_url: "https://status.loyaltylion.com", type: "statuspage" },
+  // Salt Edge — open banking / PSD2 data aggregation and payment initiation API
+  { id: "saltedge", name: "Salt Edge", tags: ["open-banking", "fintech", "api", "psd2", "europe"], status_url: "https://status.saltedge.com/api/v2/status.json", page_url: "https://www.saltedgestatus.com", type: "statuspage" },
+  // Yapily — open banking API platform for account data and payment initiation
+  { id: "yapily", name: "Yapily", tags: ["open-banking", "fintech", "api", "payments", "europe"], status_url: "https://status.yapily.com/api/v2/status.json", page_url: "https://status.yapily.com", type: "statuspage" },
+  // Authorize.net — payment gateway and merchant services platform (Visa company)
+  { id: "authorize_net", name: "Authorize.net", tags: ["payments", "gateway", "merchant", "fintech", "saas"], status_url: "https://status.authorize.net/api/v2/status.json", page_url: "https://status.authorize.net", type: "statuspage" },
+  // Moneris — Canadian payment processing and point-of-sale solutions
+  { id: "moneris", name: "Moneris", tags: ["payments", "pos", "canada", "fintech", "merchant"], status_url: "https://status.moneris.com/api/v2/status.json", page_url: "https://status.moneris.com", type: "statuspage" },
+  // ConanCenter — Conan C/C++ package manager and repository index
+  { id: "conan_center", name: "ConanCenter", tags: ["package-manager", "c++", "developer-tools", "open-source", "registry"], status_url: "https://status.conan.io/api/v2/status.json", page_url: "https://status.conan.io", type: "statuspage" },
+  // Userlane — digital adoption platform and in-app employee onboarding / training
+  { id: "userlane", name: "Userlane", tags: ["digital-adoption", "onboarding", "training", "saas", "enterprise"], status_url: "https://status.userlane.com/api/v2/status.json", page_url: "https://status.userlane.com", type: "statuspage" },
+  // Qualified — pipeline acceleration and revenue platform with AI sales agents
+  { id: "qualified", name: "Qualified", tags: ["sales", "pipeline", "ai", "revenue", "saas"], status_url: "https://status.qualified.com/api/v2/status.json", page_url: "https://status.qualified.com", type: "statuspage" },
+  // Rainforest QA — AI-powered automated QA testing platform for web applications
+  { id: "rainforest", name: "Rainforest QA", tags: ["testing", "qa", "automation", "developer-tools", "saas"], status_url: "https://status.rainforestqa.com/api/v2/status.json", page_url: "https://status.rainforestqa.com", type: "statuspage" },
+  // HetrixTools — uptime monitoring, blacklist monitoring, and server monitoring platform
+  { id: "hetrix_tools", name: "HetrixTools", tags: ["monitoring", "uptime", "blacklist", "server", "developer-tools"], status_url: "https://status.hetrixtools.com/api/v2/status.json", page_url: "https://status.hetrixtools.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4917,7 +4938,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2397 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2407 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4955,7 +4976,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2397 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2407 services.",
           },
         },
         required: [],
