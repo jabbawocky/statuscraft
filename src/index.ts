@@ -4430,6 +4430,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "nofraud", name: "NoFraud", tags: ["fraud-prevention", "ecommerce", "payments", "risk", "saas"], status_url: "https://status.nofraud.com/api/v2/status.json", page_url: "https://status.nofraud.com", type: "statuspage" },
   // ClearSale — fraud prevention and chargeback protection for ecommerce
   { id: "clearsale", name: "ClearSale", tags: ["fraud-prevention", "ecommerce", "payments", "risk", "latin-america"], status_url: "https://status.clearsale.com.br/api/v2/status.json", page_url: "https://status.clearsale.com.br", type: "statuspage" },
+  // PetDesk — veterinary practice management and pet care appointment platform
+  { id: "petdesk", name: "PetDesk", tags: ["veterinary", "pet-care", "appointments", "healthcare", "saas"], status_url: "https://status.petdesk.com/api/v2/status.json", page_url: "https://status.petdesk.com", type: "statuspage" },
+  // Dock — sales room and deal acceleration platform for B2B revenue teams
+  { id: "dock", name: "Dock", tags: ["sales", "deal-room", "revenue", "b2b", "saas"], status_url: "https://status.dock.us/api/v2/status.json", page_url: "https://status.dock.us", type: "statuspage" },
+  // Virtuagym — gym and fitness club management software and member engagement platform
+  { id: "virtuagym", name: "Virtuagym", tags: ["fitness", "gym-management", "health", "member-engagement", "saas"], status_url: "https://status.virtuagym.com/api/v2/status.json", page_url: "https://status.virtuagym.com", type: "statuspage" },
+  // Lakera — AI security and guardrails platform protecting LLM-powered applications
+  { id: "lakera", name: "Lakera", tags: ["ai", "security", "llm", "guardrails", "api"], status_url: "https://status.lakera.ai/api/v2/status.json", page_url: "https://status.lakera.ai", type: "statuspage" },
+  // Wipster — video review and approval collaboration platform for creative teams
+  { id: "wipster", name: "Wipster", tags: ["video", "review", "collaboration", "creative", "saas"], status_url: "https://status.wipster.io/api/v2/status.json", page_url: "https://status.wipster.io", type: "statuspage" },
+  // Eligible — healthcare eligibility verification and claims processing API platform
+  { id: "eligible", name: "Eligible", tags: ["healthcare", "eligibility", "claims", "api", "insurance"], status_url: "https://status.eligible.com/api/v2/status.json", page_url: "https://status.eligible.com", type: "statuspage" },
+  // Change Healthcare — healthcare data exchange, payment processing, and clinical intelligence platform
+  { id: "change_healthcare", name: "Change Healthcare", tags: ["healthcare", "data-exchange", "claims", "payments", "enterprise"], status_url: "https://status.changehealthcare.com/api/v2/status.json", page_url: "https://status.changehealthcare.com", type: "statuspage" },
+  // Wavy — Sinch LatAm CPaaS platform for SMS, WhatsApp, and conversational messaging in Brazil/LatAm
+  { id: "wavy", name: "Wavy", tags: ["sms", "messaging", "cpaas", "latin-america", "api"], status_url: "https://status.wavy.global/api/v2/status.json", page_url: "https://status.wavy.global", type: "statuspage" },
+  // Webexpenses — cloud-based expense management and employee spending platform (UK/Europe)
+  { id: "webexpenses", name: "Webexpenses", tags: ["expense-management", "finance", "saas", "europe", "enterprise"], status_url: "https://status.webexpenses.com/api/v2/status.json", page_url: "https://status.webexpenses.com", type: "statuspage" },
+  // Sharebite — employee meal benefits and food ordering platform for corporate teams
+  { id: "sharebite", name: "Sharebite", tags: ["employee-benefits", "food", "hr", "workplace", "saas"], status_url: "https://status.sharebite.com/api/v2/status.json", page_url: "https://status.sharebite.com", type: "statuspage" },
+  // Uniqode — QR code generation and proximity marketing platform (formerly Beaconstac)
+  { id: "uniqode", name: "Uniqode", tags: ["qr-codes", "proximity-marketing", "digital-signage", "saas", "retail"], status_url: "https://status.beaconstac.com/api/v2/status.json", page_url: "https://status.beaconstac.com", type: "statuspage" },
+  // Spot by NetApp — cloud cost optimization, Spot instance management, and cloud infrastructure platform
+  { id: "spot_by_netapp", name: "Spot by NetApp", tags: ["cloud", "cost-optimization", "infrastructure", "kubernetes", "devops"], status_url: "https://status.spot.io/api/v2/status.json", page_url: "https://status.spot.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4867,7 +4891,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2372 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2384 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4905,7 +4929,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2372 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2384 services.",
           },
         },
         required: [],
