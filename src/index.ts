@@ -4501,6 +4501,32 @@ const SERVICES: ServiceConfig[] = [
   { id: "rainforest", name: "Rainforest QA", tags: ["testing", "qa", "automation", "developer-tools", "saas"], status_url: "https://status.rainforestqa.com/api/v2/status.json", page_url: "https://status.rainforestqa.com", type: "statuspage" },
   // HetrixTools — uptime monitoring, blacklist monitoring, and server monitoring platform
   { id: "hetrix_tools", name: "HetrixTools", tags: ["monitoring", "uptime", "blacklist", "server", "developer-tools"], status_url: "https://status.hetrixtools.com/api/v2/status.json", page_url: "https://status.hetrixtools.com", type: "statuspage" },
+  // HashiCorp — cloud infrastructure automation platform (Terraform, Vault, Consul, Nomad)
+  { id: "hashicorp", name: "HashiCorp", tags: ["devtools", "infrastructure", "terraform", "vault", "cloud"], status_url: "https://status.hashicorp.com/api/v2/status.json", page_url: "https://status.hashicorp.com", type: "statuspage" },
+  // Snyk — developer security platform for finding and fixing vulnerabilities
+  { id: "snyk", name: "Snyk", tags: ["security", "devtools", "vulnerability", "devsecops", "open-source"], status_url: "https://status.snyk.io/api/v2/status.json", page_url: "https://status.snyk.io", type: "statuspage" },
+  // Sauce Labs — cloud-based automated testing platform for web and mobile apps
+  { id: "saucelabs", name: "Sauce Labs", tags: ["testing", "qa", "browser-testing", "devtools", "automation"], status_url: "https://status.saucelabs.com/api/v2/status.json", page_url: "https://status.saucelabs.com", type: "statuspage" },
+  // BrowserStack — browser and app testing platform with real devices in the cloud
+  { id: "browserstack", name: "BrowserStack", tags: ["testing", "qa", "browser-testing", "devtools", "mobile"], status_url: "https://status.browserstack.com/api/v2/status.json", page_url: "https://status.browserstack.com", type: "statuspage" },
+  // LiveKit — open-source WebRTC infrastructure for real-time video and audio
+  { id: "livekit", name: "LiveKit", tags: ["video", "realtime", "webrtc", "api", "communication"], status_url: "https://status.livekit.io/api/v2/status.json", page_url: "https://status.livekit.io", type: "statuspage" },
+  // Daily.co — embeddable video infrastructure APIs for real-time communication
+  { id: "daily", name: "Daily", tags: ["video", "realtime", "webrtc", "api", "communication"], status_url: "https://status.daily.co/api/v2/status.json", page_url: "https://status.daily.co", type: "statuspage" },
+  // Cloudflare — global CDN, DDoS protection, DNS, and security platform
+  { id: "cloudflare", name: "Cloudflare", tags: ["cdn", "dns", "security", "network", "infrastructure"], status_url: "https://www.cloudflarestatus.com/api/v2/status.json", page_url: "https://www.cloudflarestatus.com", type: "statuspage" },
+  // Linear — issue tracking and project management for software teams
+  { id: "linear", name: "Linear", tags: ["project-management", "issue-tracking", "devtools", "saas", "productivity"], status_url: "https://linearstatus.com/api/v2/status.json", page_url: "https://linearstatus.com", type: "statuspage" },
+  // DocuSign — electronic signature and agreement cloud platform
+  { id: "docusign", name: "DocuSign", tags: ["esign", "legal", "documents", "saas", "enterprise"], status_url: "https://status.docusign.com/api/v2/status.json", page_url: "https://status.docusign.com", type: "statuspage" },
+  // Plivo — cloud communication platform for voice and SMS APIs
+  { id: "plivo", name: "Plivo", tags: ["sms", "voice", "api", "communications", "cpaas"], status_url: "https://status.plivo.com/api/v2/status.json", page_url: "https://status.plivo.com", type: "statuspage" },
+  // Xero — cloud-based accounting software for small businesses
+  { id: "xero", name: "Xero", tags: ["accounting", "finance", "saas", "small-business", "bookkeeping"], status_url: "https://status.xero.com/api/v2/status.json", page_url: "https://status.xero.com", type: "statuspage" },
+  // Blockchain.com — cryptocurrency exchange, wallet, and data platform
+  { id: "blockchain_com", name: "Blockchain.com", tags: ["crypto", "bitcoin", "web3", "exchange", "wallet"], status_url: "https://status.blockchain.com/api/v2/status.json", page_url: "https://status.blockchain.com", type: "statuspage" },
+  // Productboard — product management platform for roadmapping and prioritization
+  { id: "productboard", name: "Productboard", tags: ["product-management", "roadmap", "saas", "enterprise", "feedback"], status_url: "https://status.productboard.com/api/v2/status.json", page_url: "https://status.productboard.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4938,7 +4964,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2407 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2421 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4976,7 +5002,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2407 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2421 services.",
           },
         },
         required: [],
