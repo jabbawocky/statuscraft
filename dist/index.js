@@ -4725,6 +4725,26 @@ const SERVICES = [
     { id: "conductorone", name: "ConductorOne", tags: ["security", "access-management", "identity", "iam", "saas"], status_url: "https://conductorone.statuspage.io/api/v2/status.json", page_url: "https://conductorone.statuspage.io", type: "statuspage" },
     // Indent — just-in-time cloud access & privilege escalation management
     { id: "indent", name: "Indent", tags: ["security", "access-management", "jit", "iam", "saas"], status_url: "https://status.indent.com/api/v2/status.json", page_url: "https://status.indent.com", type: "statuspage" },
+    // Starburst Data — Trino-powered SQL analytics engine for data lakehouse & cloud analytics
+    { id: "starburst", name: "Starburst Data", tags: ["analytics", "database", "trino", "data-lakehouse", "saas"], status_url: "https://starburstdata.statuspage.io/api/v2/status.json", page_url: "https://starburstdata.statuspage.io", type: "statuspage" },
+    // Veed.io — online video editing, subtitles, and screen recording platform
+    { id: "veed", name: "Veed.io", tags: ["video", "editing", "subtitles", "screen-recording", "saas"], status_url: "https://status.veed.io/api/v2/status.json", page_url: "https://status.veed.io", type: "statuspage" },
+    // Zight — screen capture, GIF, and screenshot sharing tool (formerly CloudApp)
+    { id: "zight", name: "Zight", tags: ["screen-recording", "screenshot", "gif", "productivity", "saas"], status_url: "https://status.zight.com/api/v2/status.json", page_url: "https://status.zight.com", type: "statuspage" },
+    // Pinata — IPFS pinning service for Web3 and NFT file storage
+    { id: "pinata", name: "Pinata", tags: ["web3", "ipfs", "storage", "nft", "developer-tools"], status_url: "https://pinata.statuspage.io/api/v2/status.json", page_url: "https://pinata.statuspage.io", type: "statuspage" },
+    // EBANX — Brazilian and Latin American payment processing platform
+    { id: "ebanx", name: "EBANX", tags: ["payments", "fintech", "latam", "brazil", "processing"], status_url: "https://status.ebanx.com/api/v2/status.json", page_url: "https://status.ebanx.com", type: "statuspage" },
+    // Polygon.io — real-time and historical financial market data API (stocks, options, forex, crypto)
+    { id: "polygon_io", name: "Polygon.io", tags: ["financial-data", "market-data", "api", "stocks", "crypto"], status_url: "https://polygonio.statuspage.io/api/v2/status.json", page_url: "https://polygonio.statuspage.io", type: "statuspage" },
+    // tastytrade — derivatives and options trading platform
+    { id: "tastytrade", name: "tastytrade", tags: ["fintech", "trading", "options", "derivatives", "saas"], status_url: "https://status.tastytrade.com/api/v2/status.json", page_url: "https://status.tastytrade.com", type: "statuspage" },
+    // DriveWealth — fractional investing and brokerage-as-a-service API
+    { id: "drivewealth", name: "DriveWealth", tags: ["fintech", "investing", "brokerage", "api", "fractional"], status_url: "https://status.drivewealth.com/api/v2/status.json", page_url: "https://status.drivewealth.com", type: "statuspage" },
+    // Replicated — enterprise on-premises software delivery and management platform
+    { id: "replicated", name: "Replicated", tags: ["enterprise", "software-delivery", "on-premises", "kubernetes", "saas"], status_url: "https://status.replicated.com/api/v2/status.json", page_url: "https://status.replicated.com", type: "statuspage" },
+    // Kameleoon — A/B testing, personalization, and experimentation platform
+    { id: "kameleoon", name: "Kameleoon", tags: ["ab-testing", "personalization", "experimentation", "feature-flags", "saas"], status_url: "https://kameleoon.statuspage.io/api/v2/status.json", page_url: "https://kameleoon.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -5182,7 +5202,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2615 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2625 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -5217,7 +5237,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2615 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2625 services.",
                     },
                 },
                 required: [],
