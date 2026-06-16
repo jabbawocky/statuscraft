@@ -4745,6 +4745,31 @@ const SERVICES = [
     { id: "replicated", name: "Replicated", tags: ["enterprise", "software-delivery", "on-premises", "kubernetes", "saas"], status_url: "https://status.replicated.com/api/v2/status.json", page_url: "https://status.replicated.com", type: "statuspage" },
     // Kameleoon — A/B testing, personalization, and experimentation platform
     { id: "kameleoon", name: "Kameleoon", tags: ["ab-testing", "personalization", "experimentation", "feature-flags", "saas"], status_url: "https://kameleoon.statuspage.io/api/v2/status.json", page_url: "https://kameleoon.statuspage.io", type: "statuspage" },
+    // Tick 260 additions
+    // Lookback — user research platform for remote usability testing and UX interviews
+    { id: "lookback", name: "Lookback", tags: ["ux-research", "user-testing", "usability", "video", "saas"], status_url: "https://lookback.statuspage.io/api/v2/status.json", page_url: "https://lookback.statuspage.io", type: "statuspage" },
+    // Extole — referral marketing and customer advocacy platform
+    { id: "extole", name: "Extole", tags: ["referral-marketing", "advocacy", "loyalty", "saas", "marketing"], status_url: "https://status.extole.com/api/v2/status.json", page_url: "https://status.extole.com", type: "statuspage" },
+    // Optimal Blue — mortgage pricing engine and secondary market automation
+    { id: "optimalblue", name: "Optimal Blue", tags: ["mortgage", "fintech", "pricing-engine", "secondary-market", "saas"], status_url: "https://status.optimalblue.com/api/v2/status.json", page_url: "https://status.optimalblue.com", type: "statuspage" },
+    // Brandfolder — digital asset management (DAM) platform for brand assets
+    { id: "brandfolder", name: "Brandfolder", tags: ["dam", "digital-assets", "brand-management", "saas", "marketing"], status_url: "https://brandfolder.statuspage.io/api/v2/status.json", page_url: "https://brandfolder.statuspage.io", type: "statuspage" },
+    // AlertMedia — mass notification and emergency communications platform
+    { id: "alertmedia", name: "AlertMedia", tags: ["emergency-notifications", "mass-communications", "safety", "enterprise", "saas"], status_url: "https://status.alertmedia.com/api/v2/status.json", page_url: "https://status.alertmedia.com", type: "statuspage" },
+    // Checkbook.io — digital check and B2B payment disbursement platform
+    { id: "checkbook_io", name: "Checkbook.io", tags: ["payments", "fintech", "b2b", "disbursements", "api"], status_url: "https://checkbook.statuspage.io/api/v2/status.json", page_url: "https://checkbook.statuspage.io", type: "statuspage" },
+    // Ginger — on-demand behavioral health coaching and therapy platform
+    { id: "ginger_health", name: "Ginger", tags: ["mental-health", "telehealth", "wellness", "coaching", "saas"], status_url: "https://status.ginger.io/api/v2/status.json", page_url: "https://status.ginger.io", type: "statuspage" },
+    // Fundraise Up — AI-powered nonprofit fundraising and donation optimization platform
+    { id: "fundraiseup", name: "Fundraise Up", tags: ["nonprofit", "fundraising", "donations", "ai", "saas"], status_url: "https://status.fundraiseup.com/api/v2/status.json", page_url: "https://status.fundraiseup.com", type: "statuspage" },
+    // Zentail — multichannel e-commerce listing and catalog management platform
+    { id: "zentail", name: "Zentail", tags: ["ecommerce", "multichannel", "catalog-management", "listing", "saas"], status_url: "https://status.zentail.com/api/v2/status.json", page_url: "https://status.zentail.com", type: "statuspage" },
+    // Shopping Feed — product feed management and multichannel e-commerce platform
+    { id: "shoppingfeed", name: "Shopping Feed", tags: ["ecommerce", "product-feed", "multichannel", "marketplace", "saas"], status_url: "https://shoppingfeed.statuspage.io/api/v2/status.json", page_url: "https://shoppingfeed.statuspage.io", type: "statuspage" },
+    // H2O.ai — AI cloud platform for automated machine learning and data science
+    { id: "h2o_ai", name: "H2O.ai", tags: ["ai", "mlops", "automl", "data-science", "saas"], status_url: "https://h2oai.statuspage.io/api/v2/status.json", page_url: "https://h2oai.statuspage.io", type: "statuspage" },
+    // Reviews.io — product reviews and UGC platform for e-commerce
+    { id: "reviews_io", name: "Reviews.io", tags: ["reviews", "ugc", "ecommerce", "trust", "saas"], status_url: "https://reviewsio.statuspage.io/api/v2/status.json", page_url: "https://reviewsio.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -5202,7 +5227,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2625 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2637 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -5237,7 +5262,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2625 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2637 services.",
                     },
                 },
                 required: [],
