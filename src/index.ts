@@ -4333,6 +4333,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "human_security", name: "HUMAN Security", tags: ["security", "bot-defense", "fraud", "api", "enterprise"], status_url: "https://status.perimeterx.com/api/v2/status.json", page_url: "https://status.perimeterx.com", type: "statuspage" },
   // Channel.io — all-in-one customer chat & CRM platform (popular in Asia)
   { id: "channel_io", name: "Channel.io", tags: ["customer-support", "chat", "crm", "messaging", "saas"], status_url: "https://status.channel.io/api/v2/status.json", page_url: "https://status.channel.io", type: "statuspage" },
+  // Mollie — European payment service provider (Netherlands)
+  { id: "mollie", name: "Mollie", tags: ["payments", "fintech", "api", "europe", "ecommerce"], status_url: "https://status.mollie.com/api/v2/summary.json", page_url: "https://status.mollie.com", type: "betterstack" },
+  // Signicat — European digital identity & eSign platform (Nordic)
+  { id: "signicat", name: "Signicat", tags: ["identity", "esign", "kyc", "europe", "security"], status_url: "https://status.signicat.com/api/v2/status.json", page_url: "https://status.signicat.com", type: "statuspage" },
+  // Nx — smart monorepo build system & CI (Nrwl)
+  { id: "nx", name: "Nx", tags: ["developer-tools", "monorepo", "build", "ci-cd", "open-source"], status_url: "https://status.nx.app/api/v2/status.json", page_url: "https://status.nx.app", type: "statuspage" },
+  // BankID — Swedish digital identity & authentication system
+  { id: "bankid", name: "BankID", tags: ["identity", "authentication", "sweden", "fintech", "government"], status_url: "https://status.bankid.com/api/v2/status.json", page_url: "https://status.bankid.com", type: "statuspage" },
+  // Swish — Swedish mobile payment system
+  { id: "swish", name: "Swish", tags: ["payments", "mobile", "sweden", "fintech", "p2p"], status_url: "https://status.swish.nu/api/v2/status.json", page_url: "https://status.swish.nu", type: "statuspage" },
+  // Nimble — web scraping & data collection platform (nimbleway.com)
+  { id: "nimble_way", name: "Nimble", tags: ["web-scraping", "data", "proxy", "api", "developer-tools"], status_url: "https://status.nimbleway.com/api/v2/summary.json", page_url: "https://status.nimbleway.com", type: "betterstack" },
+  // Mia-Platform — cloud-native platform engineering & developer portal (Italy)
+  { id: "mia_platform", name: "Mia-Platform", tags: ["developer-portal", "platform-engineering", "kubernetes", "paas", "enterprise"], status_url: "https://status.mia-platform.eu/api/v2/status.json", page_url: "https://status.mia-platform.eu", type: "statuspage" },
+  // env0 — Terraform/OpenTofu cloud infrastructure automation platform
+  { id: "env0", name: "env0", tags: ["iac", "terraform", "devops", "infrastructure", "cloud"], status_url: "https://status.env0.com/api/v2/summary.json", page_url: "https://status.env0.com", type: "betterstack" },
+  // Smarkets — UK sports betting exchange & trading platform
+  { id: "smarkets", name: "Smarkets", tags: ["betting", "sports", "exchange", "fintech", "uk"], status_url: "https://status.smarkets.com/api/v2/status.json", page_url: "https://status.smarkets.com", type: "statuspage" },
+  // e-conomic — Danish cloud accounting software (Visma)
+  { id: "e_conomic", name: "e-conomic", tags: ["accounting", "fintech", "smb", "saas", "europe"], status_url: "https://status.e-conomic.com/api/v2/status.json", page_url: "https://status.e-conomic.com", type: "statuspage" },
+  // Lunar — Scandinavian digital bank (Denmark/Sweden/Norway)
+  { id: "lunar", name: "Lunar", tags: ["banking", "neobank", "fintech", "scandinavia", "payments"], status_url: "https://status.lunar.app/api/v2/status.json", page_url: "https://status.lunar.app", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4770,7 +4792,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2324 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2335 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4808,7 +4830,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2324 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2335 services.",
           },
         },
         required: [],
