@@ -4912,6 +4912,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "h2o_ai", name: "H2O.ai", tags: ["ai", "mlops", "automl", "data-science", "saas"], status_url: "https://h2oai.statuspage.io/api/v2/status.json", page_url: "https://h2oai.statuspage.io", type: "statuspage" },
   // Reviews.io — product reviews and UGC platform for e-commerce
   { id: "reviews_io", name: "Reviews.io", tags: ["reviews", "ugc", "ecommerce", "trust", "saas"], status_url: "https://reviewsio.statuspage.io/api/v2/status.json", page_url: "https://reviewsio.statuspage.io", type: "statuspage" },
+  // Trackunit — IoT telematics platform for construction and rental equipment fleet management
+  { id: "trackunit", name: "Trackunit", tags: ["iot", "telematics", "construction", "fleet", "saas"], status_url: "https://status.trackunit.com/api/v2/status.json", page_url: "https://status.trackunit.com", type: "statuspage" },
+  // Rask AI — AI-powered video dubbing, translation, and localization platform
+  { id: "rask", name: "Rask AI", tags: ["ai", "video", "dubbing", "translation", "localization"], status_url: "https://status.rask.ai/api/v2/status.json", page_url: "https://status.rask.ai", type: "statuspage" },
+  // Predibase — serverless LLM fine-tuning and inference deployment platform
+  { id: "predibase", name: "Predibase", tags: ["ai", "llm", "fine-tuning", "mlops", "developer-tools"], status_url: "https://predibase.statuspage.io/api/v2/status.json", page_url: "https://predibase.statuspage.io", type: "statuspage" },
+  // Nebius — AI cloud platform for GPU compute, inference, and ML infrastructure
+  { id: "nebius", name: "Nebius", tags: ["ai", "cloud", "gpu", "compute", "infrastructure"], status_url: "https://nebius.statuspage.io/api/v2/status.json", page_url: "https://nebius.statuspage.io", type: "statuspage" },
+  // Sevalla — cloud hosting platform for containerized applications (by Kinsta)
+  { id: "sevalla", name: "Sevalla", tags: ["cloud", "hosting", "containers", "deployment", "saas"], status_url: "https://status.sevalla.com/api/v2/status.json", page_url: "https://status.sevalla.com", type: "statuspage" },
+  // Twelve Data — real-time and historical stock, forex, and crypto market data API
+  { id: "twelvedata", name: "Twelve Data", tags: ["financial-data", "market-data", "stocks", "forex", "api"], status_url: "https://twelvedata.statuspage.io/api/v2/status.json", page_url: "https://twelvedata.statuspage.io", type: "statuspage" },
+  // Finnhub — real-time financial market data, fundamentals, and news API
+  { id: "finnhub", name: "Finnhub", tags: ["financial-data", "market-data", "api", "stocks", "fundamentals"], status_url: "https://finnhub.statuspage.io/api/v2/status.json", page_url: "https://finnhub.statuspage.io", type: "statuspage" },
+  // Barchart — market data APIs for equities, futures, options, forex, and digital solutions
+  { id: "barchart", name: "Barchart", tags: ["financial-data", "market-data", "equities", "futures", "api"], status_url: "https://status.barchart.com/api/v2/status.json", page_url: "https://status.barchart.com", type: "statuspage" },
+  // Granola — AI-powered meeting notes and intelligence platform
+  { id: "granola", name: "Granola", tags: ["ai", "meetings", "notes", "productivity", "saas"], status_url: "https://status.granola.ai/api/v2/status.json", page_url: "https://status.granola.ai", type: "statuspage" },
+  // Read AI — AI meeting intelligence for real-time summaries, transcripts, and coaching
+  { id: "read_ai", name: "Read AI", tags: ["ai", "meetings", "transcription", "intelligence", "productivity"], status_url: "https://status.read.ai/api/v2/status.json", page_url: "https://status.read.ai", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5349,7 +5369,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2637 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2647 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5387,7 +5407,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2637 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2647 services.",
           },
         },
         required: [],
