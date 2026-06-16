@@ -4288,6 +4288,56 @@ const SERVICES = [
     { id: "nofraud", name: "NoFraud", tags: ["fraud-prevention", "ecommerce", "payments", "risk", "saas"], status_url: "https://status.nofraud.com/api/v2/status.json", page_url: "https://status.nofraud.com", type: "statuspage" },
     // ClearSale — fraud prevention and chargeback protection for ecommerce
     { id: "clearsale", name: "ClearSale", tags: ["fraud-prevention", "ecommerce", "payments", "risk", "latin-america"], status_url: "https://status.clearsale.com.br/api/v2/status.json", page_url: "https://status.clearsale.com.br", type: "statuspage" },
+    // PetDesk — veterinary practice management and pet care appointment platform
+    { id: "petdesk", name: "PetDesk", tags: ["veterinary", "pet-care", "appointments", "healthcare", "saas"], status_url: "https://status.petdesk.com/api/v2/status.json", page_url: "https://status.petdesk.com", type: "statuspage" },
+    // Dock — sales room and deal acceleration platform for B2B revenue teams
+    { id: "dock", name: "Dock", tags: ["sales", "deal-room", "revenue", "b2b", "saas"], status_url: "https://status.dock.us/api/v2/status.json", page_url: "https://status.dock.us", type: "statuspage" },
+    // Virtuagym — gym and fitness club management software and member engagement platform
+    { id: "virtuagym", name: "Virtuagym", tags: ["fitness", "gym-management", "health", "member-engagement", "saas"], status_url: "https://status.virtuagym.com/api/v2/status.json", page_url: "https://status.virtuagym.com", type: "statuspage" },
+    // Lakera — AI security and guardrails platform protecting LLM-powered applications
+    { id: "lakera", name: "Lakera", tags: ["ai", "security", "llm", "guardrails", "api"], status_url: "https://status.lakera.ai/api/v2/status.json", page_url: "https://status.lakera.ai", type: "statuspage" },
+    // Wipster — video review and approval collaboration platform for creative teams
+    { id: "wipster", name: "Wipster", tags: ["video", "review", "collaboration", "creative", "saas"], status_url: "https://status.wipster.io/api/v2/status.json", page_url: "https://status.wipster.io", type: "statuspage" },
+    // Eligible — healthcare eligibility verification and claims processing API platform
+    { id: "eligible", name: "Eligible", tags: ["healthcare", "eligibility", "claims", "api", "insurance"], status_url: "https://status.eligible.com/api/v2/status.json", page_url: "https://status.eligible.com", type: "statuspage" },
+    // Change Healthcare — healthcare data exchange, payment processing, and clinical intelligence platform
+    { id: "change_healthcare", name: "Change Healthcare", tags: ["healthcare", "data-exchange", "claims", "payments", "enterprise"], status_url: "https://status.changehealthcare.com/api/v2/status.json", page_url: "https://status.changehealthcare.com", type: "statuspage" },
+    // Wavy — Sinch LatAm CPaaS platform for SMS, WhatsApp, and conversational messaging in Brazil/LatAm
+    { id: "wavy", name: "Wavy", tags: ["sms", "messaging", "cpaas", "latin-america", "api"], status_url: "https://status.wavy.global/api/v2/status.json", page_url: "https://status.wavy.global", type: "statuspage" },
+    // Webexpenses — cloud-based expense management and employee spending platform (UK/Europe)
+    { id: "webexpenses", name: "Webexpenses", tags: ["expense-management", "finance", "saas", "europe", "enterprise"], status_url: "https://status.webexpenses.com/api/v2/status.json", page_url: "https://status.webexpenses.com", type: "statuspage" },
+    // Sharebite — employee meal benefits and food ordering platform for corporate teams
+    { id: "sharebite", name: "Sharebite", tags: ["employee-benefits", "food", "hr", "workplace", "saas"], status_url: "https://status.sharebite.com/api/v2/status.json", page_url: "https://status.sharebite.com", type: "statuspage" },
+    // Uniqode — QR code generation and proximity marketing platform (formerly Beaconstac)
+    { id: "uniqode", name: "Uniqode", tags: ["qr-codes", "proximity-marketing", "digital-signage", "saas", "retail"], status_url: "https://status.beaconstac.com/api/v2/status.json", page_url: "https://status.beaconstac.com", type: "statuspage" },
+    // Spot by NetApp — cloud cost optimization, Spot instance management, and cloud infrastructure platform
+    { id: "spot_by_netapp", name: "Spot by NetApp", tags: ["cloud", "cost-optimization", "infrastructure", "kubernetes", "devops"], status_url: "https://status.spot.io/api/v2/status.json", page_url: "https://status.spot.io", type: "statuspage" },
+    // Hevo Data — no-code ETL / ELT data pipeline platform
+    { id: "hevo_data", name: "Hevo Data", tags: ["data", "etl", "integration", "pipeline", "analytics"], status_url: "https://status.hevodata.com/api/v2/status.json", page_url: "https://status.hevodata.com", type: "statuspage" },
+    // TwicPics — real-time image and video optimization CDN
+    { id: "twicpics", name: "TwicPics", tags: ["cdn", "image-processing", "media", "optimization", "api"], status_url: "https://status.twicpics.com/api/v2/status.json", page_url: "https://status.twicpics.com", type: "statuspage" },
+    // Quip — collaborative documents and spreadsheets platform (by Salesforce)
+    { id: "quip", name: "Quip", tags: ["collaboration", "documents", "productivity", "saas", "enterprise"], status_url: "https://status.quip.com/api/v2/status.json", page_url: "https://status.quip.com", type: "statuspage" },
+    // Voximplant — cloud communications platform for voice, video, and messaging APIs
+    { id: "voximplant", name: "Voximplant", tags: ["communications", "voice", "video", "api", "cloud"], status_url: "https://status.voximplant.com/api/v2/status.json", page_url: "https://status.voximplant.com", type: "statuspage" },
+    // Deskpro — multi-channel helpdesk and customer support platform
+    { id: "deskpro", name: "Deskpro", tags: ["customer-support", "helpdesk", "ticketing", "saas", "enterprise"], status_url: "https://deskprostatus.com/api/v2/status.json", page_url: "https://deskprostatus.com", type: "statuspage" },
+    // ESET — cybersecurity products including antivirus, endpoint protection, and threat intelligence
+    { id: "eset", name: "ESET", tags: ["security", "antivirus", "endpoint-protection", "cybersecurity", "enterprise"], status_url: "https://status.eset.com/api/v2/status.json", page_url: "https://status.eset.com", type: "statuspage" },
+    // WithSecure — enterprise cybersecurity platform (formerly F-Secure Business)
+    { id: "withsecure", name: "WithSecure", tags: ["security", "endpoint-protection", "cybersecurity", "enterprise", "cloud"], status_url: "https://status.withsecure.com/api/v2/status.json", page_url: "https://status.withsecure.com", type: "statuspage" },
+    // F-Secure — consumer and SMB cybersecurity and privacy products
+    { id: "f_secure", name: "F-Secure", tags: ["security", "antivirus", "privacy", "cybersecurity", "consumer"], status_url: "https://status.f-secure.com/api/v2/status.json", page_url: "https://status.f-secure.com", type: "statuspage" },
+    // Ivanti Cloud — unified endpoint and IT service management platform (formerly MobileIron)
+    { id: "ivanti_cloud", name: "Ivanti Cloud", tags: ["mdm", "endpoint-management", "itsm", "enterprise", "security"], status_url: "https://status.ivanticloud.com/api/v2/status.json", page_url: "https://status.ivanticloud.com", type: "statuspage" },
+    // Amplience — headless content management and digital experience platform
+    { id: "amplience", name: "Amplience", tags: ["cms", "headless", "content", "ecommerce", "enterprise"], status_url: "https://status.amplience.com/api/v2/status.json", page_url: "https://status.amplience.com", type: "statuspage" },
+    // Factory.ai — AI software engineering and autonomous coding platform
+    { id: "factory_ai", name: "Factory", tags: ["ai", "coding", "developer-tools", "automation", "software-engineering"], status_url: "https://status.factory.ai/api/v2/status.json", page_url: "https://status.factory.ai", type: "statuspage" },
+    // Qodo — AI-powered code quality and test generation platform
+    { id: "qodo", name: "Qodo", tags: ["ai", "code-quality", "testing", "developer-tools", "llm"], status_url: "https://status.qodo.ai/api/v2/status.json", page_url: "https://status.qodo.ai", type: "statuspage" },
+    // Poolside — AI foundation models for software engineering
+    { id: "poolside", name: "Poolside", tags: ["ai", "llm", "software-engineering", "coding", "enterprise"], status_url: "https://status.poolside.ai/api/v2/status.json", page_url: "https://status.poolside.ai", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4745,7 +4795,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2372 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2397 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -4780,7 +4830,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2372 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2397 services.",
                     },
                 },
                 required: [],
