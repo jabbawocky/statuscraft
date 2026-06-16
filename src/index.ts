@@ -4595,6 +4595,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "swile", name: "Swile", tags: ["employee-benefits", "hr", "fintech", "europe", "saas"], status_url: "https://status.swile.co/api/v2/status.json", page_url: "https://status.swile.co", type: "statuspage" },
   // Retention Science — AI-powered lifecycle marketing and customer retention platform
   { id: "retention_science", name: "Retention Science", tags: ["marketing", "retention", "ai", "email", "ecommerce"], status_url: "https://status.retentionscience.com/api/v2/status.json", page_url: "https://status.retentionscience.com", type: "statuspage" },
+  // PortSwigger — maker of Burp Suite, the industry-leading web security testing toolkit
+  { id: "portswigger", name: "PortSwigger", tags: ["security", "appsec", "devtools", "testing"], status_url: "https://status.portswigger.net/api/v2/status.json", page_url: "https://status.portswigger.net", type: "statuspage" },
+  // Netomi — AI-powered customer service automation platform
+  { id: "netomi", name: "Netomi", tags: ["ai", "customer-service", "chatbot", "automation", "saas"], status_url: "https://status.netomi.com/api/v2/status.json", page_url: "https://status.netomi.com", type: "statuspage" },
+  // Creovai (formerly Tethr) — AI conversation intelligence and contact center analytics
+  { id: "creovai", name: "Creovai", tags: ["ai", "conversation-intelligence", "contact-center", "analytics", "saas"], status_url: "https://status.tethr.com/api/v2/status.json", page_url: "https://status.tethr.com", type: "statuspage" },
+  // EvaluAgent — quality assurance and agent evaluation platform for contact centers
+  { id: "evaluagent", name: "EvaluAgent", tags: ["qa", "contact-center", "quality-assurance", "workforce-management", "saas"], status_url: "https://status.evaluagent.com/api/v2/status.json", page_url: "https://status.evaluagent.com", type: "statuspage" },
+  // Splunk On Call (formerly VictorOps) — incident management and on-call scheduling platform
+  { id: "splunk_on_call", name: "Splunk On Call", tags: ["incident-management", "on-call", "alerting", "devops", "monitoring"], status_url: "https://status.victorops.com/api/v2/status.json", page_url: "https://status.victorops.com", type: "statuspage" },
+  // Airtame — wireless presentation and screen-sharing hardware and cloud platform
+  { id: "airtame", name: "Airtame", tags: ["presentation", "screen-sharing", "cloud", "hardware", "collaboration"], status_url: "https://status.airtame.com/api/v2/status.json", page_url: "https://status.airtame.com", type: "statuspage" },
+  // Greenlight Guru — quality management system (QMS) for medical device companies
+  { id: "greenlight_guru", name: "Greenlight Guru", tags: ["qms", "medical-device", "quality-management", "compliance", "healthtech"], status_url: "https://status.greenlight.guru/api/v2/status.json", page_url: "https://status.greenlight.guru", type: "statuspage" },
+  // Flock — team messaging and collaboration platform
+  { id: "flock", name: "Flock", tags: ["messaging", "collaboration", "productivity", "team-communication", "saas"], status_url: "https://status.flock.com/api/v2/status.json", page_url: "https://status.flock.com", type: "statuspage" },
+  // Ryver — team messaging, task management, and workflow automation platform
+  { id: "ryver", name: "Ryver", tags: ["messaging", "collaboration", "task-management", "workflow", "saas"], status_url: "https://status.ryver.com/api/v2/status.json", page_url: "https://status.ryver.com", type: "statuspage" },
+  // Feature.fm — music marketing platform for smart links, pre-save, and streaming analytics
+  { id: "feature_fm", name: "Feature.fm", tags: ["music", "marketing", "streaming", "analytics", "creator-tools"], status_url: "https://status.feature.fm/api/v2/status.json", page_url: "https://status.feature.fm", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5032,7 +5052,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2454 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2464 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5070,7 +5090,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2454 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2464 services.",
           },
         },
         required: [],
