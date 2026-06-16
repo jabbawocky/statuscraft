@@ -4637,6 +4637,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "smartly_io", name: "Smartly", tags: ["advertising", "social-media", "ai", "creative", "automation"], status_url: "https://status.smartly.io/api/v2/status.json", page_url: "https://status.smartly.io", type: "statuspage" },
   // NextRoll (AdRoll) — B2B and B2C marketing platform for retargeting and programmatic ads
   { id: "nextroll", name: "NextRoll (AdRoll)", tags: ["advertising", "retargeting", "programmatic", "b2b", "marketing"], status_url: "https://status.adroll.com/api/v2/status.json", page_url: "https://status.nextroll.com", type: "statuspage" },
+  // Loops — email marketing platform for SaaS products with behavioral targeting
+  { id: "loops_so", name: "Loops", tags: ["email", "marketing", "saas", "automation", "notifications"], status_url: "https://status.loops.so/api/v2/status.json", page_url: "https://status.loops.so", type: "statuspage" },
+  // Alpaca — commission-free trading API for stocks, ETFs, and crypto
+  { id: "alpaca_markets", name: "Alpaca", tags: ["fintech", "trading", "api", "stocks", "broker"], status_url: "https://status.alpaca.markets/api/v2/status.json", page_url: "https://status.alpaca.markets", type: "statuspage" },
+  // Endicia — postage and shipping label solution for e-commerce businesses
+  { id: "endicia", name: "Endicia", tags: ["shipping", "postage", "ecommerce", "logistics", "usps"], status_url: "https://status.endicia.com/api/v2/status.json", page_url: "https://status.endicia.com", type: "statuspage" },
+  // Conviva — streaming intelligence and real-time analytics for video platforms
+  { id: "conviva", name: "Conviva", tags: ["streaming", "video", "analytics", "media", "monitoring"], status_url: "https://status.conviva.com/api/v2/status.json", page_url: "https://status.conviva.com", type: "statuspage" },
+  // Mindbody — booking and management platform for fitness, wellness, and beauty businesses
+  { id: "mindbodyonline", name: "Mindbody", tags: ["booking", "fitness", "wellness", "scheduling", "saas"], status_url: "https://status.mindbodyonline.com/api/v2/status.json", page_url: "https://status.mindbodyonline.com", type: "statuspage" },
+  // CrashPlan — cloud backup and data protection for businesses and individuals
+  { id: "crashplan", name: "CrashPlan", tags: ["backup", "cloud", "data-protection", "disaster-recovery", "saas"], status_url: "https://status.crashplan.com/api/v2/status.json", page_url: "https://status.crashplan.com", type: "statuspage" },
+  // Signhost — verified electronic signing platform with legal compliance
+  { id: "signhost", name: "Signhost", tags: ["e-signature", "digital-signing", "legal", "compliance", "saas"], status_url: "https://status.signhost.com/api/v2/status.json", page_url: "https://status.signhost.com", type: "statuspage" },
+  // TestingBot — cross-browser and mobile testing cloud platform
+  { id: "testingbot", name: "TestingBot", tags: ["testing", "qa", "browser-testing", "mobile", "developer-tools"], status_url: "https://status.testingbot.com/api/v2/status.json", page_url: "https://status.testingbot.com", type: "statuspage" },
+  // Audioboom — podcast hosting and monetization platform for creators and publishers
+  { id: "audioboom", name: "Audioboom", tags: ["podcast", "audio", "media", "hosting", "monetization"], status_url: "https://status.audioboom.com/api/v2/status.json", page_url: "https://status.audioboom.com", type: "statuspage" },
+  // ipdata — IP intelligence API for geolocation, threat data, and network information
+  { id: "ipdata", name: "ipdata", tags: ["ip-geolocation", "api", "security", "network", "developer-tools"], status_url: "https://status.ipdata.co/api/v2/status.json", page_url: "https://status.ipdata.co", type: "statuspage" },
+  // Dotcom Monitor — web performance and uptime monitoring with global network
+  { id: "dotcom_monitor", name: "Dotcom Monitor", tags: ["uptime-monitoring", "performance", "web-monitoring", "alerting", "saas"], status_url: "https://status.dotcom-monitor.com/api/v2/status.json", page_url: "https://status.dotcom-monitor.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5039,7 +5061,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.58.0" },
+  { name: "statuscraft", version: "2.59.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -5074,7 +5096,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2475 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2486 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5112,7 +5134,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2475 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2486 services.",
           },
         },
         required: [],
