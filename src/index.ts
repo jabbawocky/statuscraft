@@ -4932,6 +4932,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "granola", name: "Granola", tags: ["ai", "meetings", "notes", "productivity", "saas"], status_url: "https://status.granola.ai/api/v2/status.json", page_url: "https://status.granola.ai", type: "statuspage" },
   // Read AI — AI meeting intelligence for real-time summaries, transcripts, and coaching
   { id: "read_ai", name: "Read AI", tags: ["ai", "meetings", "transcription", "intelligence", "productivity"], status_url: "https://status.read.ai/api/v2/status.json", page_url: "https://status.read.ai", type: "statuspage" },
+  // New services added tick 264
+  { id: "ro_health", name: "Ro Health", tags: ["healthcare", "telehealth", "direct-to-consumer", "saas"], status_url: "https://status.ro.co/api/v2/status.json", page_url: "https://status.ro.co", type: "statuspage" },
+  { id: "ecobee", name: "Ecobee", tags: ["iot", "smart-home", "hvac", "thermostat", "hardware"], status_url: "https://status.ecobee.com/api/v2/status.json", page_url: "https://status.ecobee.com", type: "statuspage" },
+  { id: "fulfil_io", name: "Fulfil.IO", tags: ["erp", "inventory", "ecommerce", "manufacturing", "saas"], status_url: "https://status.fulfil.io/api/v2/status.json", page_url: "https://status.fulfil.io", type: "statuspage" },
+  { id: "recruit_crm", name: "Recruit CRM", tags: ["recruiting", "ats", "crm", "hr", "saas"], status_url: "https://recruitcrm.statuspage.io/api/v2/status.json", page_url: "https://recruitcrm.statuspage.io", type: "statuspage" },
+  { id: "clearblade", name: "ClearBlade", tags: ["iot", "edge-computing", "platform", "enterprise", "saas"], status_url: "https://status.clearblade.com/api/v2/status.json", page_url: "https://status.clearblade.com", type: "statuspage" },
+  { id: "noloco", name: "Noloco", tags: ["no-code", "internal-tools", "app-builder", "saas"], status_url: "https://noloco.statuspage.io/api/v2/status.json", page_url: "https://noloco.statuspage.io", type: "statuspage" },
+  { id: "soundcharts", name: "Soundcharts", tags: ["music", "analytics", "streaming", "data", "saas"], status_url: "https://status.soundcharts.com/api/v2/status.json", page_url: "https://status.soundcharts.com", type: "statuspage" },
+  { id: "bamboo_health", name: "Bamboo Health", tags: ["healthcare", "data-exchange", "interoperability", "hie", "saas"], status_url: "https://bamboo.statuspage.io/api/v2/status.json", page_url: "https://bamboo.statuspage.io", type: "statuspage" },
+  { id: "contra", name: "Contra", tags: ["freelance", "marketplace", "independent-work", "creators", "saas"], status_url: "https://contra.statuspage.io/api/v2/status.json", page_url: "https://contra.statuspage.io", type: "statuspage" },
+  { id: "castor_edc", name: "Castor EDC", tags: ["clinical-trials", "edc", "healthcare", "research", "saas"], status_url: "https://castor.statuspage.io/api/v2/status.json", page_url: "https://castor.statuspage.io", type: "statuspage" },
+  { id: "viedoc", name: "Viedoc", tags: ["clinical-trials", "edc", "healthcare", "research", "saas"], status_url: "https://status.viedoc.com/api/v2/status.json", page_url: "https://status.viedoc.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5369,7 +5381,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2647 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2658 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5407,7 +5419,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2647 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2658 services.",
           },
         },
         required: [],

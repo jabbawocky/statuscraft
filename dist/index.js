@@ -4770,6 +4770,38 @@ const SERVICES = [
     { id: "h2o_ai", name: "H2O.ai", tags: ["ai", "mlops", "automl", "data-science", "saas"], status_url: "https://h2oai.statuspage.io/api/v2/status.json", page_url: "https://h2oai.statuspage.io", type: "statuspage" },
     // Reviews.io — product reviews and UGC platform for e-commerce
     { id: "reviews_io", name: "Reviews.io", tags: ["reviews", "ugc", "ecommerce", "trust", "saas"], status_url: "https://reviewsio.statuspage.io/api/v2/status.json", page_url: "https://reviewsio.statuspage.io", type: "statuspage" },
+    // Trackunit — IoT telematics platform for construction and rental equipment fleet management
+    { id: "trackunit", name: "Trackunit", tags: ["iot", "telematics", "construction", "fleet", "saas"], status_url: "https://status.trackunit.com/api/v2/status.json", page_url: "https://status.trackunit.com", type: "statuspage" },
+    // Rask AI — AI-powered video dubbing, translation, and localization platform
+    { id: "rask", name: "Rask AI", tags: ["ai", "video", "dubbing", "translation", "localization"], status_url: "https://status.rask.ai/api/v2/status.json", page_url: "https://status.rask.ai", type: "statuspage" },
+    // Predibase — serverless LLM fine-tuning and inference deployment platform
+    { id: "predibase", name: "Predibase", tags: ["ai", "llm", "fine-tuning", "mlops", "developer-tools"], status_url: "https://predibase.statuspage.io/api/v2/status.json", page_url: "https://predibase.statuspage.io", type: "statuspage" },
+    // Nebius — AI cloud platform for GPU compute, inference, and ML infrastructure
+    { id: "nebius", name: "Nebius", tags: ["ai", "cloud", "gpu", "compute", "infrastructure"], status_url: "https://nebius.statuspage.io/api/v2/status.json", page_url: "https://nebius.statuspage.io", type: "statuspage" },
+    // Sevalla — cloud hosting platform for containerized applications (by Kinsta)
+    { id: "sevalla", name: "Sevalla", tags: ["cloud", "hosting", "containers", "deployment", "saas"], status_url: "https://status.sevalla.com/api/v2/status.json", page_url: "https://status.sevalla.com", type: "statuspage" },
+    // Twelve Data — real-time and historical stock, forex, and crypto market data API
+    { id: "twelvedata", name: "Twelve Data", tags: ["financial-data", "market-data", "stocks", "forex", "api"], status_url: "https://twelvedata.statuspage.io/api/v2/status.json", page_url: "https://twelvedata.statuspage.io", type: "statuspage" },
+    // Finnhub — real-time financial market data, fundamentals, and news API
+    { id: "finnhub", name: "Finnhub", tags: ["financial-data", "market-data", "api", "stocks", "fundamentals"], status_url: "https://finnhub.statuspage.io/api/v2/status.json", page_url: "https://finnhub.statuspage.io", type: "statuspage" },
+    // Barchart — market data APIs for equities, futures, options, forex, and digital solutions
+    { id: "barchart", name: "Barchart", tags: ["financial-data", "market-data", "equities", "futures", "api"], status_url: "https://status.barchart.com/api/v2/status.json", page_url: "https://status.barchart.com", type: "statuspage" },
+    // Granola — AI-powered meeting notes and intelligence platform
+    { id: "granola", name: "Granola", tags: ["ai", "meetings", "notes", "productivity", "saas"], status_url: "https://status.granola.ai/api/v2/status.json", page_url: "https://status.granola.ai", type: "statuspage" },
+    // Read AI — AI meeting intelligence for real-time summaries, transcripts, and coaching
+    { id: "read_ai", name: "Read AI", tags: ["ai", "meetings", "transcription", "intelligence", "productivity"], status_url: "https://status.read.ai/api/v2/status.json", page_url: "https://status.read.ai", type: "statuspage" },
+    // New services added tick 264
+    { id: "ro_health", name: "Ro Health", tags: ["healthcare", "telehealth", "direct-to-consumer", "saas"], status_url: "https://status.ro.co/api/v2/status.json", page_url: "https://status.ro.co", type: "statuspage" },
+    { id: "ecobee", name: "Ecobee", tags: ["iot", "smart-home", "hvac", "thermostat", "hardware"], status_url: "https://status.ecobee.com/api/v2/status.json", page_url: "https://status.ecobee.com", type: "statuspage" },
+    { id: "fulfil_io", name: "Fulfil.IO", tags: ["erp", "inventory", "ecommerce", "manufacturing", "saas"], status_url: "https://status.fulfil.io/api/v2/status.json", page_url: "https://status.fulfil.io", type: "statuspage" },
+    { id: "recruit_crm", name: "Recruit CRM", tags: ["recruiting", "ats", "crm", "hr", "saas"], status_url: "https://recruitcrm.statuspage.io/api/v2/status.json", page_url: "https://recruitcrm.statuspage.io", type: "statuspage" },
+    { id: "clearblade", name: "ClearBlade", tags: ["iot", "edge-computing", "platform", "enterprise", "saas"], status_url: "https://status.clearblade.com/api/v2/status.json", page_url: "https://status.clearblade.com", type: "statuspage" },
+    { id: "noloco", name: "Noloco", tags: ["no-code", "internal-tools", "app-builder", "saas"], status_url: "https://noloco.statuspage.io/api/v2/status.json", page_url: "https://noloco.statuspage.io", type: "statuspage" },
+    { id: "soundcharts", name: "Soundcharts", tags: ["music", "analytics", "streaming", "data", "saas"], status_url: "https://status.soundcharts.com/api/v2/status.json", page_url: "https://status.soundcharts.com", type: "statuspage" },
+    { id: "bamboo_health", name: "Bamboo Health", tags: ["healthcare", "data-exchange", "interoperability", "hie", "saas"], status_url: "https://bamboo.statuspage.io/api/v2/status.json", page_url: "https://bamboo.statuspage.io", type: "statuspage" },
+    { id: "contra", name: "Contra", tags: ["freelance", "marketplace", "independent-work", "creators", "saas"], status_url: "https://contra.statuspage.io/api/v2/status.json", page_url: "https://contra.statuspage.io", type: "statuspage" },
+    { id: "castor_edc", name: "Castor EDC", tags: ["clinical-trials", "edc", "healthcare", "research", "saas"], status_url: "https://castor.statuspage.io/api/v2/status.json", page_url: "https://castor.statuspage.io", type: "statuspage" },
+    { id: "viedoc", name: "Viedoc", tags: ["clinical-trials", "edc", "healthcare", "research", "saas"], status_url: "https://status.viedoc.com/api/v2/status.json", page_url: "https://status.viedoc.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -5227,7 +5259,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2637 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2658 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -5262,7 +5294,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2637 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2658 services.",
                     },
                 },
                 required: [],
