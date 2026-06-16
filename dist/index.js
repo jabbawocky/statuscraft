@@ -4517,6 +4517,30 @@ const SERVICES = [
     { id: "ipdata", name: "ipdata", tags: ["ip-geolocation", "api", "security", "network", "developer-tools"], status_url: "https://status.ipdata.co/api/v2/status.json", page_url: "https://status.ipdata.co", type: "statuspage" },
     // Dotcom Monitor — web performance and uptime monitoring with global network
     { id: "dotcom_monitor", name: "Dotcom Monitor", tags: ["uptime-monitoring", "performance", "web-monitoring", "alerting", "saas"], status_url: "https://status.dotcom-monitor.com/api/v2/status.json", page_url: "https://status.dotcom-monitor.com", type: "statuspage" },
+    // Tines — no-code security orchestration and automation platform
+    { id: "tines", name: "Tines", tags: ["security", "soar", "automation", "no-code", "developer-tools"], status_url: "https://tines.statuspage.io/api/v2/status.json", page_url: "https://tines.statuspage.io", type: "statuspage" },
+    // Ortto — marketing automation and customer data platform
+    { id: "ortto", name: "Ortto", tags: ["marketing", "automation", "cdp", "email", "saas"], status_url: "https://ortto.statuspage.io/api/v2/status.json", page_url: "https://www.orttostatus.com", type: "statuspage" },
+    // Workiz — field service management for home service businesses
+    { id: "workiz", name: "Workiz", tags: ["field-service", "scheduling", "operations", "service-management", "saas"], status_url: "https://workiz.statuspage.io/api/v2/status.json", page_url: "https://workiz.statuspage.io", type: "statuspage" },
+    // Dagster Cloud — data orchestration and pipeline platform
+    { id: "dagster", name: "Dagster Cloud", tags: ["data", "orchestration", "pipelines", "etl", "developer-tools"], status_url: "https://dagstercloud.statuspage.io/api/v2/status.json", page_url: "https://dagstercloud.statuspage.io", type: "statuspage" },
+    // Cypress — end-to-end testing framework and cloud
+    { id: "cypress", name: "Cypress", tags: ["testing", "qa", "e2e", "browser-testing", "developer-tools"], status_url: "https://cypress.statuspage.io/api/v2/status.json", page_url: "https://www.cypressstatus.com", type: "statuspage" },
+    // Simon AI — AI-powered customer data platform
+    { id: "simon_ai", name: "Simon AI", tags: ["cdp", "marketing", "ai", "personalization", "saas"], status_url: "https://status.simondata.com/api/v2/status.json", page_url: "https://status.simondata.com", type: "statuspage" },
+    // k6 — open-source load and performance testing tool
+    { id: "k6", name: "k6", tags: ["testing", "load-testing", "performance", "developer-tools", "open-source"], status_url: "https://k6.statuspage.io/api/v2/status.json", page_url: "http://status.k6.io", type: "statuspage" },
+    // WHOOP — wearable health and fitness tracker platform
+    { id: "whoop", name: "WHOOP", tags: ["health", "fitness", "wearable", "iot", "consumer"], status_url: "https://status.whoop.com/api/v2/status.json", page_url: "https://status.whoop.com", type: "statuspage" },
+    // MyFitnessPal — calorie tracking and nutrition logging platform
+    { id: "myfitnesspal", name: "MyFitnessPal", tags: ["health", "fitness", "nutrition", "tracking", "consumer"], status_url: "https://status.myfitnesspal.com/api/v2/status.json", page_url: "https://status.myfitnesspal.com", type: "statuspage" },
+    // LeanData — revenue operations and lead routing platform
+    { id: "leandata", name: "LeanData", tags: ["revenue-ops", "lead-routing", "crm", "marketing", "saas"], status_url: "https://status.leandata.com/api/v2/status.json", page_url: "https://status.leandata.com", type: "statuspage" },
+    // Rocketlane — customer onboarding and project management platform
+    { id: "rocketlane", name: "Rocketlane", tags: ["onboarding", "project-management", "customer-success", "saas"], status_url: "https://status.rocketlane.com/api/v2/status.json", page_url: "https://status.rocketlane.com", type: "statuspage" },
+    // Stonly — interactive knowledge base and customer support platform
+    { id: "stonly", name: "Stonly", tags: ["knowledge-base", "customer-support", "self-service", "saas"], status_url: "https://status.stonly.com/api/v2/status.json", page_url: "https://status.stonly.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4974,7 +4998,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2486 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2498 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -5009,7 +5033,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2486 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2498 services.",
                     },
                 },
                 required: [],
