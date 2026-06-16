@@ -4808,6 +4808,17 @@ const SERVICES: ServiceConfig[] = [
   { id: "dochub", name: "DocHub", tags: ["pdf", "e-signature", "document-management", "saas"], status_url: "https://status.dochub.com/api/v2/status.json", page_url: "https://status.dochub.com", type: "statuspage" },
   { id: "checkmate", name: "Checkmate", tags: ["restaurant", "online-ordering", "aggregator", "food-tech", "saas"], status_url: "https://status.itsacheckmate.com/api/v2/status.json", page_url: "https://status.itsacheckmate.com", type: "statuspage" },
   { id: "donorperfect", name: "DonorPerfect", tags: ["nonprofit", "fundraising", "crm", "saas"], status_url: "https://status.donorperfect.com/api/v2/status.json", page_url: "https://status.donorperfect.com", type: "statuspage" },
+  // tick 254 additions — 10 new live-verified services
+  { id: "castle", name: "Castle", tags: ["security", "fraud-detection", "auth", "api", "saas"], status_url: "https://status.castle.io/api/v2/status.json", page_url: "https://status.castle.io", type: "statuspage" },
+  { id: "iugu", name: "IUGU", tags: ["payments", "fintech", "brazil", "billing", "saas"], status_url: "https://status.iugu.com/api/v2/status.json", page_url: "https://status.iugu.com", type: "statuspage" },
+  { id: "ytel", name: "Ytel", tags: ["telephony", "sms", "voice", "cpaas", "api"], status_url: "https://status.ytel.com/api/v2/status.json", page_url: "https://status.ytel.com", type: "statuspage" },
+  { id: "callfire", name: "CallFire", tags: ["telephony", "sms", "voice", "marketing", "cpaas"], status_url: "https://status.callfire.com/api/v2/status.json", page_url: "https://status.callfire.com", type: "statuspage" },
+  { id: "sms_broadcast", name: "SMS Broadcast", tags: ["sms", "messaging", "australia", "cpaas"], status_url: "https://status.smsbroadcast.com.au/api/v2/status.json", page_url: "https://status.smsbroadcast.com.au", type: "statuspage" },
+  { id: "sign_in_scheduling", name: "Sign In Scheduling", tags: ["scheduling", "appointments", "saas", "healthcare"], status_url: "https://status.10to8.com/api/v2/status.json", page_url: "https://status.10to8.com", type: "statuspage" },
+  { id: "dlthub", name: "dltHub", tags: ["data", "etl", "pipelines", "developer-tools", "open-source"], status_url: "https://status.dlthub.com/api/v2/status.json", page_url: "https://status.dlthub.com", type: "statuspage" },
+  { id: "punchh", name: "Punchh", tags: ["loyalty", "restaurant", "rewards", "marketing", "saas"], status_url: "https://status.punchh.com/api/v2/status.json", page_url: "https://status.punchh.com", type: "statuspage" },
+  { id: "fivestars", name: "FiveStars", tags: ["loyalty", "local-business", "rewards", "marketing", "saas"], status_url: "https://status.fivestars.com/api/v2/status.json", page_url: "https://status.fivestars.com", type: "statuspage" },
+  { id: "invoice_simple", name: "Invoice Simple", tags: ["invoicing", "billing", "small-business", "saas"], status_url: "https://status.invoicesimple.com/api/v2/status.json", page_url: "https://status.invoicesimple.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5245,7 +5256,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2570 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2580 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5283,7 +5294,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2570 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2580 services.",
           },
         },
         required: [],
