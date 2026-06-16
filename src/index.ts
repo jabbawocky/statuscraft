@@ -4408,6 +4408,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "ironclad", name: "Ironclad", tags: ["legal", "contracts", "clm", "enterprise", "saas"], status_url: "https://status.ironcladapp.com/api/v2/status.json", page_url: "https://status.ironcladapp.com", type: "statuspage" },
   // Heap — product analytics platform with retroactive event capture
   { id: "heap", name: "Heap", tags: ["analytics", "product-analytics", "ux", "saas", "developer-tools"], status_url: "https://status.heap.io/api/v2/status.json", page_url: "https://status.heap.io", type: "statuspage" },
+  // IONOS — European web hosting, cloud, and domain registrar
+  { id: "ionos", name: "IONOS", tags: ["hosting", "cloud", "domains", "web-hosting", "infrastructure"], status_url: "https://status.ionos.com/api/v2/status.json", page_url: "https://www.ionos-status.com", type: "statuspage" },
+  // Act CRM — customer relationship management and contact management platform
+  { id: "act", name: "Act CRM", tags: ["crm", "sales", "contact-management", "saas", "small-business"], status_url: "https://status.act.com/api/v2/status.json", page_url: "https://status.act.com", type: "statuspage" },
+  // ExpensePoint — cloud-based expense management and reporting platform
+  { id: "expensepoint", name: "ExpensePoint", tags: ["expense-management", "finance", "saas", "enterprise", "accounting"], status_url: "https://status.expensepoint.com/api/v2/status.json", page_url: "https://status.expensepoint.com", type: "statuspage" },
+  // RightSignature — electronic signature platform (Citrix product)
+  { id: "rightsignature", name: "RightSignature", tags: ["esign", "documents", "legal", "saas", "workflows"], status_url: "https://status.rightsignature.com/api/v2/status.json", page_url: "https://status.rightsignature.com", type: "statuspage" },
+  // Coveo — AI-powered search and relevance platform
+  { id: "coveo", name: "Coveo", tags: ["search", "ai", "relevance", "enterprise", "saas"], status_url: "https://status.coveo.com/api/v2/status.json", page_url: "https://status.cloud.coveo.com", type: "statuspage" },
+  // 6sense — AI-driven account engagement and revenue intelligence platform
+  { id: "6sense", name: "6sense", tags: ["abm", "sales-intelligence", "ai", "marketing", "enterprise"], status_url: "https://status.6sense.com/api/v2/status.json", page_url: "https://status.6sense.com", type: "statuspage" },
+  // 123FormBuilder — online form and survey builder platform
+  { id: "123formbuilder", name: "123FormBuilder", tags: ["forms", "surveys", "saas", "no-code", "data-collection"], status_url: "https://status.123formbuilder.com/api/v2/status.json", page_url: "https://status.123formbuilder.com", type: "statuspage" },
+  // TextUs — business text messaging and SMS platform for sales and recruiting
+  { id: "textus", name: "TextUs", tags: ["sms", "messaging", "sales", "recruiting", "communication"], status_url: "https://status.textus.com/api/v2/status.json", page_url: "https://status.next.textus.com", type: "statuspage" },
+  // Pennylane — French accounting and financial management SaaS for SMEs
+  { id: "pennylane", name: "Pennylane", tags: ["accounting", "finance", "saas", "smb", "europe"], status_url: "https://status.pennylane.com/api/v2/status.json", page_url: "https://status.pennylane.com", type: "statuspage" },
+  // NoFraud — real-time ecommerce fraud prevention platform
+  { id: "nofraud", name: "NoFraud", tags: ["fraud-prevention", "ecommerce", "payments", "risk", "saas"], status_url: "https://status.nofraud.com/api/v2/status.json", page_url: "https://status.nofraud.com", type: "statuspage" },
+  // ClearSale — fraud prevention and chargeback protection for ecommerce
+  { id: "clearsale", name: "ClearSale", tags: ["fraud-prevention", "ecommerce", "payments", "risk", "latin-america"], status_url: "https://status.clearsale.com.br/api/v2/status.json", page_url: "https://status.clearsale.com.br", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4845,7 +4867,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2361 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2372 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4883,7 +4905,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2361 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2372 services.",
           },
         },
         required: [],
