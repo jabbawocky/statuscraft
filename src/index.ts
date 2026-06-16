@@ -4549,6 +4549,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "sessionboard", name: "Sessionboard", tags: ["events", "conferences", "content-management", "speakers", "saas"], status_url: "https://status.sessionboard.com/api/v2/status.json", page_url: "https://status.sessionboard.com", type: "statuspage" },
   // Ambassador Software — referral and affiliate marketing platform for SaaS and B2B companies
   { id: "ambassador_software", name: "Ambassador Software", tags: ["referral", "affiliate", "marketing", "saas", "partnerships"], status_url: "https://status.getambassador.com/api/v2/status.json", page_url: "https://status.getambassador.com", type: "statuspage" },
+  // Tribe — community engagement and customer community platform for SaaS companies
+  { id: "tribe", name: "Tribe", tags: ["community", "engagement", "saas", "forum", "customer-success"], status_url: "https://status.tribe.so/api/v2/status.json", page_url: "https://status.tribe.so", type: "statuspage" },
+  // Heartbeat Community — community platform for creators, coaches, and online courses
+  { id: "heartbeat_community", name: "Heartbeat Community", tags: ["community", "creators", "courses", "coaching", "saas"], status_url: "https://status.heartbeat.chat/api/v2/status.json", page_url: "https://status.heartbeat.chat", type: "statuspage" },
+  // Palo Alto Networks — enterprise network security, firewall, and SASE platform
+  { id: "palo_alto", name: "Palo Alto Networks", tags: ["security", "firewall", "network-security", "sase", "enterprise"], status_url: "https://status.paloaltonetworks.com/api/v2/status.json", page_url: "https://status.paloaltonetworks.com", type: "statuspage" },
+  // Agility CMS — cloud-native headless CMS for omnichannel content delivery
+  { id: "agility_cms", name: "Agility CMS", tags: ["cms", "headless", "content-management", "jamstack", "api"], status_url: "https://status.agilitycms.com/api/v2/status.json", page_url: "https://status.agilitycms.com", type: "statuspage" },
+  // CloudCannon — Git-based CMS and static site hosting platform for web agencies
+  { id: "cloudcannon", name: "CloudCannon", tags: ["cms", "static-sites", "git", "hosting", "jamstack"], status_url: "https://status.cloudcannon.com/api/v2/status.json", page_url: "https://status.cloudcannon.com", type: "statuspage" },
+  // Grow — business intelligence and KPI dashboard platform for SMBs
+  { id: "grow_com", name: "Grow", tags: ["bi", "dashboards", "analytics", "kpi", "saas"], status_url: "https://status.grow.com/api/v2/status.json", page_url: "https://status.grow.com", type: "statuspage" },
+  // Lucca — French HR software suite covering payroll, expenses, and workforce management
+  { id: "lucca", name: "Lucca", tags: ["hr", "payroll", "expenses", "workforce", "saas"], status_url: "https://status.lucca.fr/api/v2/status.json", page_url: "https://status.lucca.fr", type: "statuspage" },
+  // NeverBounce — real-time email verification and list cleaning service
+  { id: "neverbounce", name: "NeverBounce", tags: ["email-verification", "deliverability", "api", "list-cleaning", "saas"], status_url: "https://status.neverbounce.com/api/v2/status.json", page_url: "https://status.neverbounce.com", type: "statuspage" },
+  // Popmenu — restaurant marketing platform for menus, online ordering, and digital presence
+  { id: "popmenu", name: "Popmenu", tags: ["restaurant", "marketing", "menus", "online-ordering", "saas"], status_url: "https://status.popmenu.com/api/v2/status.json", page_url: "https://status.popmenu.com", type: "statuspage" },
+  // Edge Delta — distributed log management and streaming observability platform
+  { id: "edge_delta", name: "Edge Delta", tags: ["observability", "logging", "streaming", "monitoring", "devops"], status_url: "https://status.edgedelta.com/api/v2/status.json", page_url: "https://status.edgedelta.com", type: "statuspage" },
+  // Scratchpad — AI-powered sales workspace for Salesforce pipeline management
+  { id: "scratchpad", name: "Scratchpad", tags: ["sales", "crm", "salesforce", "pipeline", "productivity"], status_url: "https://status.scratchpad.com/api/v2/status.json", page_url: "https://status.scratchpad.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4986,7 +5008,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2432 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2443 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5024,7 +5046,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2432 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2443 services.",
           },
         },
         required: [],
