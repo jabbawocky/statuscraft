@@ -4382,6 +4382,32 @@ const SERVICES: ServiceConfig[] = [
   { id: "scrapfly", name: "Scrapfly", tags: ["web-scraping", "data", "api", "proxy", "developer-tools"], status_url: "https://scrapfly.statuspage.io/api/v2/status.json", page_url: "https://scrapfly.statuspage.io", type: "statuspage" },
   // SnapLogic — enterprise iPaaS integration and data pipeline platform
   { id: "snaplogic", name: "SnapLogic", tags: ["integration", "ipaas", "etl", "data-pipeline", "enterprise"], status_url: "https://snaplogic.statuspage.io/api/v2/status.json", page_url: "https://snaplogic.statuspage.io", type: "statuspage" },
+  // Groq — AI inference API with LPU chips for ultra-fast LLM serving
+  { id: "groq", name: "Groq", tags: ["ai", "llm", "inference", "api", "developer-tools"], status_url: "https://groqstatus.com/api/v2/status.json", page_url: "https://groqstatus.com", type: "statuspage" },
+  // PlanetScale — serverless MySQL-compatible database platform
+  { id: "planetscale", name: "PlanetScale", tags: ["database", "mysql", "serverless", "developer-tools", "cloud"], status_url: "https://www.planetscalestatus.com/api/v2/status.json", page_url: "https://www.planetscalestatus.com", type: "statuspage" },
+  // Travis CI — hosted continuous integration and deployment service
+  { id: "travis_ci", name: "Travis CI", tags: ["ci-cd", "devtools", "testing", "automation", "open-source"], status_url: "https://www.traviscistatus.com/api/v2/status.json", page_url: "https://www.traviscistatus.com", type: "statuspage" },
+  // BigCommerce — enterprise e-commerce platform for online stores
+  { id: "bigcommerce", name: "BigCommerce", tags: ["ecommerce", "saas", "retail", "enterprise", "shopping-cart"], status_url: "https://status.bigcommerce.com/api/v2/status.json", page_url: "https://status.bigcommerce.com", type: "statuspage" },
+  // SentinelOne — AI-powered endpoint security and XDR platform
+  { id: "sentinelone", name: "SentinelOne", tags: ["security", "endpoint", "xdr", "edr", "enterprise"], status_url: "https://status.sentinelone.com/api/v2/status.json", page_url: "https://status.sentinelone.com", type: "statuspage" },
+  // Affirm — buy-now-pay-later and consumer lending platform
+  { id: "affirm", name: "Affirm", tags: ["payments", "bnpl", "fintech", "consumer-lending", "ecommerce"], status_url: "https://status.affirm.com/api/v2/status.json", page_url: "https://status.affirm.com", type: "statuspage" },
+  // Klarna — buy-now-pay-later and global payments bank
+  { id: "klarna", name: "Klarna", tags: ["payments", "bnpl", "fintech", "europe", "ecommerce"], status_url: "https://status.klarna.com/api/v2/status.json", page_url: "https://status.klarna.com", type: "statuspage" },
+  // Chargebee — subscription billing and revenue management platform
+  { id: "chargebee", name: "Chargebee", tags: ["billing", "subscriptions", "payments", "saas", "revenue-management"], status_url: "https://status.chargebee.com/api/v2/status.json", page_url: "https://status.chargebee.com", type: "statuspage" },
+  // FullStory — digital experience analytics and session replay platform
+  { id: "fullstory", name: "FullStory", tags: ["analytics", "session-replay", "ux", "product-analytics", "saas"], status_url: "https://status.fullstory.com/api/v2/status.json", page_url: "https://status.fullstory.com", type: "statuspage" },
+  // Gong — revenue intelligence and sales conversation analytics platform
+  { id: "gong", name: "Gong", tags: ["sales", "revenue-intelligence", "crm", "analytics", "enterprise"], status_url: "https://status.gong.io/api/v2/status.json", page_url: "https://status.gong.io", type: "statuspage" },
+  // Grammarly — AI-powered writing assistant and grammar checker
+  { id: "grammarly", name: "Grammarly", tags: ["ai", "writing", "productivity", "saas", "browser-extension"], status_url: "https://status.grammarly.com/api/v2/status.json", page_url: "https://status.grammarly.com", type: "statuspage" },
+  // Ironclad — digital contracting and contract lifecycle management platform
+  { id: "ironclad", name: "Ironclad", tags: ["legal", "contracts", "clm", "enterprise", "saas"], status_url: "https://status.ironcladapp.com/api/v2/status.json", page_url: "https://status.ironcladapp.com", type: "statuspage" },
+  // Heap — product analytics platform with retroactive event capture
+  { id: "heap", name: "Heap", tags: ["analytics", "product-analytics", "ux", "saas", "developer-tools"], status_url: "https://status.heap.io/api/v2/status.json", page_url: "https://status.heap.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -4819,7 +4845,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2348 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2361 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -4857,7 +4883,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2348 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2361 services.",
           },
         },
         required: [],
