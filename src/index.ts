@@ -4842,6 +4842,31 @@ const SERVICES: ServiceConfig[] = [
   { id: "invoca", name: "Invoca", tags: ["call-intelligence", "ai", "marketing", "analytics", "saas"], status_url: "https://status.invoca.com/api/v2/status.json", page_url: "https://status.invoca.com", type: "statuspage" },
   { id: "skyslope", name: "SkySlope", tags: ["real-estate", "transaction-management", "compliance", "saas"], status_url: "https://skyslope.statuspage.io/api/v2/status.json", page_url: "https://skyslope.statuspage.io", type: "statuspage" },
   { id: "followupboss", name: "Follow Up Boss", tags: ["real-estate", "crm", "sales", "saas"], status_url: "https://followupboss.statuspage.io/api/v2/status.json", page_url: "https://followupboss.statuspage.io", type: "statuspage" },
+  // Tick 257 additions
+  // Synctera — banking-as-a-service platform (sponsor banks + fintechs)
+  { id: "synctera", name: "Synctera", tags: ["banking", "fintech", "baas", "api", "payments"], status_url: "https://status.synctera.com/api/v2/status.json", page_url: "https://status.synctera.com", type: "statuspage" },
+  // Top Hat — active learning & student engagement platform (EdTech)
+  { id: "tophat", name: "Top Hat", tags: ["edtech", "education", "engagement", "lms", "saas"], status_url: "https://status.tophat.com/api/v2/status.json", page_url: "https://status.tophat.com", type: "statuspage" },
+  // Learnosity — assessment & analytics platform for EdTech builders
+  { id: "learnosity", name: "Learnosity", tags: ["edtech", "assessment", "education", "api", "saas"], status_url: "https://status.learnosity.com/api/v2/status.json", page_url: "https://status.learnosity.com", type: "statuspage" },
+  // YellowDig — social community learning platform (EdTech)
+  { id: "yellowdig", name: "YellowDig", tags: ["edtech", "community", "engagement", "lms", "saas"], status_url: "https://status.yellowdig.com/api/v2/status.json", page_url: "https://status.yellowdig.com", type: "statuspage" },
+  // Edmentum — K-12 digital curriculum & personalized learning platform
+  { id: "edmentum", name: "Edmentum", tags: ["edtech", "k12", "curriculum", "personalized-learning", "saas"], status_url: "https://status.edmentum.com/api/v2/status.json", page_url: "https://status.edmentum.com", type: "statuspage" },
+  // Vivi — wireless classroom display & EdTech collaboration platform (Australia/global)
+  { id: "vivi", name: "Vivi", tags: ["edtech", "classroom", "display", "collaboration", "saas"], status_url: "https://status.vivi.io/api/v2/status.json", page_url: "https://status.vivi.io", type: "statuspage" },
+  // M1 Finance — automated investing & banking platform
+  { id: "m1finance", name: "M1 Finance", tags: ["fintech", "investing", "portfolio", "banking", "saas"], status_url: "https://m1finance.statuspage.io/api/v2/status.json", page_url: "https://m1finance.statuspage.io", type: "statuspage" },
+  // Webull — commission-free stock & options trading platform
+  { id: "webull", name: "Webull", tags: ["fintech", "trading", "stocks", "options", "saas"], status_url: "https://webull.statuspage.io/api/v2/status.json", page_url: "https://webull.statuspage.io", type: "statuspage" },
+  // PlayFab (Microsoft) — game backend platform (multiplayer, leaderboards, analytics)
+  { id: "playfab", name: "PlayFab", tags: ["gaming", "backend", "microsoft", "multiplayer", "saas"], status_url: "https://status.playfab.com/api/v2/status.json", page_url: "https://status.playfab.com", type: "statuspage" },
+  // ServiceMax — field service management platform (Salesforce ecosystem)
+  { id: "servicemax", name: "ServiceMax", tags: ["field-service", "saas", "iot", "manufacturing", "enterprise"], status_url: "https://servicemax.statuspage.io/api/v2/status.json", page_url: "https://servicemax.statuspage.io", type: "statuspage" },
+  // ConductorOne — cloud access management & identity governance platform
+  { id: "conductorone", name: "ConductorOne", tags: ["security", "access-management", "identity", "iam", "saas"], status_url: "https://conductorone.statuspage.io/api/v2/status.json", page_url: "https://conductorone.statuspage.io", type: "statuspage" },
+  // Indent — just-in-time cloud access & privilege escalation management
+  { id: "indent", name: "Indent", tags: ["security", "access-management", "jit", "iam", "saas"], status_url: "https://status.indent.com/api/v2/status.json", page_url: "https://status.indent.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5279,7 +5304,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2603 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2615 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5317,7 +5342,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2603 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2615 services.",
           },
         },
         required: [],
