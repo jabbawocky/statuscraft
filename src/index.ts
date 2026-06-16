@@ -4785,6 +4785,17 @@ const SERVICES: ServiceConfig[] = [
   { id: "typeform", name: "Typeform", tags: ["forms", "surveys", "saas"], status_url: "https://status.typeform.com/api/v2/status.json", page_url: "https://status.typeform.com", type: "statuspage" },
   // Tally — simple, free-form builder with Notion-like experience
   { id: "tally", name: "Tally", tags: ["forms", "surveys", "saas", "developer-tools"], status_url: "https://tally.statuspage.io/api/v2/status.json", page_url: "https://tally.statuspage.io", type: "statuspage" },
+  // tick 252 additions
+  { id: "mercadopago", name: "Mercado Pago", tags: ["payments", "fintech", "latam", "saas"], status_url: "https://status.mercadopago.com/api/v2/status.json", page_url: "https://status.mercadopago.com", type: "statuspage" },
+  { id: "placester", name: "Placester", tags: ["real-estate", "website-builder", "crm", "saas"], status_url: "https://status.placester.com/api/v2/status.json", page_url: "https://status.placester.com", type: "statuspage" },
+  { id: "booqable", name: "Booqable", tags: ["rental", "inventory", "ecommerce", "saas"], status_url: "https://status.booqable.com/api/v2/status.json", page_url: "https://status.booqable.com", type: "statuspage" },
+  { id: "cumulocity", name: "Cumulocity", tags: ["iot", "platform", "saas", "sap"], status_url: "https://status.cumulocity.com/api/v2/status.json", page_url: "https://status.cumulocity.com", type: "statuspage" },
+  { id: "paloalto_networks", name: "Palo Alto Networks", tags: ["security", "sase", "firewall", "cloud-security", "networking", "saas"], status_url: "https://status.paloaltonetworks.com/api/v2/status.json", page_url: "https://status.paloaltonetworks.com", type: "statuspage" },
+  { id: "hypr", name: "HYPR", tags: ["auth", "passwordless", "identity", "security", "saas"], status_url: "https://status.hypr.com/api/v2/status.json", page_url: "https://status.hypr.com", type: "statuspage" },
+  { id: "yubico", name: "Yubico", tags: ["auth", "security", "hardware", "mfa", "saas"], status_url: "https://status.yubico.com/api/v2/status.json", page_url: "https://status.yubico.com", type: "statuspage" },
+  { id: "securityscorecard", name: "SecurityScorecard", tags: ["security", "risk", "compliance", "saas"], status_url: "https://status.securityscorecard.com/api/v2/status.json", page_url: "https://status.securityscorecard.com", type: "statuspage" },
+  { id: "blast", name: "Blast", tags: ["blockchain", "ethereum", "layer2", "web3"], status_url: "https://status.blast.io/api/v2/status.json", page_url: "https://status.blast.io", type: "statuspage" },
+  { id: "veza", name: "Veza", tags: ["security", "identity", "governance", "access", "saas"], status_url: "https://status.veza.com/api/v2/status.json", page_url: "https://status.veza.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5222,7 +5233,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2549 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2559 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5260,7 +5271,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2549 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2559 services.",
           },
         },
         required: [],
