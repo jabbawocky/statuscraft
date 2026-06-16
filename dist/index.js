@@ -4213,6 +4213,33 @@ const SERVICES = [
     { id: "e_conomic", name: "e-conomic", tags: ["accounting", "fintech", "smb", "saas", "europe"], status_url: "https://status.e-conomic.com/api/v2/status.json", page_url: "https://status.e-conomic.com", type: "statuspage" },
     // Lunar — Scandinavian digital bank (Denmark/Sweden/Norway)
     { id: "lunar", name: "Lunar", tags: ["banking", "neobank", "fintech", "scandinavia", "payments"], status_url: "https://status.lunar.app/api/v2/status.json", page_url: "https://status.lunar.app", type: "statuspage" },
+    // Tick 236 additions
+    // CloudZero — cloud cost intelligence / FinOps platform
+    { id: "cloudzero", name: "CloudZero", tags: ["finops", "cloud-cost", "cost-management", "observability", "saas"], status_url: "https://cloudzero.statuspage.io/api/v2/status.json", page_url: "https://cloudzero.statuspage.io", type: "statuspage" },
+    // Humanitec — Internal Developer Platform (IDP) / platform engineering
+    { id: "humanitec", name: "Humanitec", tags: ["developer-platform", "platform-engineering", "idp", "devops", "kubernetes"], status_url: "https://humanitec.statuspage.io/api/v2/status.json", page_url: "https://humanitec.statuspage.io", type: "statuspage" },
+    // Akuity — managed Argo CD / GitOps cloud platform (by Argo creators)
+    { id: "akuity", name: "Akuity", tags: ["gitops", "argocd", "kubernetes", "devops", "cloud"], status_url: "https://status.akuity.io/api/v2/status.json", page_url: "https://status.akuity.io", type: "statuspage" },
+    // Unqork — no-code enterprise application development platform
+    { id: "unqork", name: "Unqork", tags: ["no-code", "enterprise", "low-code", "saas", "platform"], status_url: "https://status.unqork.com/api/v2/status.json", page_url: "https://status.unqork.com", type: "statuspage" },
+    // Writer — enterprise AI writing and LLM platform
+    { id: "writer", name: "Writer", tags: ["ai", "llm", "writing", "enterprise", "saas"], status_url: "https://writer.statuspage.io/api/v2/status.json", page_url: "https://writer.statuspage.io", type: "statuspage" },
+    // Sitecore — digital experience platform / enterprise CMS
+    { id: "sitecore", name: "Sitecore", tags: ["cms", "digital-experience", "enterprise", "marketing", "saas"], status_url: "https://sitecore.statuspage.io/api/v2/status.json", page_url: "https://sitecore.statuspage.io", type: "statuspage" },
+    // Yoast — WordPress SEO plugin and services
+    { id: "yoast", name: "Yoast", tags: ["seo", "wordpress", "marketing", "plugins", "saas"], status_url: "https://status.yoast.com/api/v2/status.json", page_url: "https://status.yoast.com", type: "statuspage" },
+    // EventMobi — event management and event app platform
+    { id: "eventmobi", name: "EventMobi", tags: ["events", "event-management", "conference", "mobile-app", "saas"], status_url: "https://eventmobi.statuspage.io/api/v2/status.json", page_url: "https://eventmobi.statuspage.io", type: "statuspage" },
+    // Loyverse — cloud-based POS system for retail and restaurants
+    { id: "loyverse", name: "Loyverse", tags: ["pos", "retail", "restaurant", "point-of-sale", "saas"], status_url: "https://loyverse.statuspage.io/api/v2/status.json", page_url: "https://loyverse.statuspage.io", type: "statuspage" },
+    // DroneDeploy — drone mapping, aerial intelligence and photogrammetry platform
+    { id: "dronedeploy", name: "DroneDeploy", tags: ["drone", "mapping", "aerial", "photogrammetry", "saas"], status_url: "https://status.dronedeploy.com/api/v2/status.json", page_url: "https://status.dronedeploy.com", type: "statuspage" },
+    // Murf — AI voice synthesis and text-to-speech platform
+    { id: "murf", name: "Murf", tags: ["ai", "voice", "text-to-speech", "audio", "saas"], status_url: "https://murf.statuspage.io/api/v2/status.json", page_url: "https://murf.statuspage.io", type: "statuspage" },
+    // Scrapfly — web scraping API and data extraction platform
+    { id: "scrapfly", name: "Scrapfly", tags: ["web-scraping", "data", "api", "proxy", "developer-tools"], status_url: "https://scrapfly.statuspage.io/api/v2/status.json", page_url: "https://scrapfly.statuspage.io", type: "statuspage" },
+    // SnapLogic — enterprise iPaaS integration and data pipeline platform
+    { id: "snaplogic", name: "SnapLogic", tags: ["integration", "ipaas", "etl", "data-pipeline", "enterprise"], status_url: "https://snaplogic.statuspage.io/api/v2/status.json", page_url: "https://snaplogic.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4670,7 +4697,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2335 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2348 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -4705,7 +4732,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2335 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2348 services.",
                     },
                 },
                 required: [],
