@@ -4561,6 +4561,34 @@ const SERVICES = [
     { id: "revel_systems", name: "Revel Systems", tags: ["pos", "retail", "restaurant", "payments", "saas"], status_url: "https://status.revelsystems.com/api/v2/status.json", page_url: "https://status.revelsystems.com", type: "statuspage" },
     // Axiom — log management and analytics platform for modern engineering teams
     { id: "axiom", name: "Axiom", tags: ["logging", "observability", "analytics", "developer-tools", "saas"], status_url: "https://status.axiom.co/api/v2/status.json", page_url: "https://status.axiom.co", type: "statuspage" },
+    // Brex — business credit cards and spend management for startups and enterprises
+    { id: "brex", name: "Brex", tags: ["fintech", "payments", "banking", "saas", "corporate-cards"], status_url: "https://status.brex.com/api/v2/status.json", page_url: "https://status.brex.com", type: "statuspage" },
+    // Highnote — modern card issuing and payment infrastructure platform
+    { id: "highnote", name: "Highnote", tags: ["fintech", "payments", "card-issuing", "api", "saas"], status_url: "https://status.highnote.com/api/v2/status.json", page_url: "https://status.highnote.com", type: "statuspage" },
+    // Knock — notifications infrastructure platform for product and engineering teams
+    { id: "knock", name: "Knock", tags: ["notifications", "api", "developer-tools", "saas"], status_url: "https://status.knock.app/api/v2/status.json", page_url: "https://status.knock.app", type: "statuspage" },
+    // Finix — payments infrastructure and card processing for software platforms
+    { id: "finix", name: "Finix", tags: ["fintech", "payments", "api", "saas"], status_url: "https://status.finix.com/api/v2/status.json", page_url: "https://status.finix.com", type: "statuspage" },
+    // Courier — multi-channel notification delivery API (email, SMS, push, Slack, etc.)
+    { id: "courier", name: "Courier", tags: ["notifications", "email", "sms", "api", "developer-tools", "saas"], status_url: "https://status.courier.com/api/v2/status.json", page_url: "https://status.courier.com", type: "statuspage" },
+    // Alchemy — blockchain developer platform for Ethereum, Polygon, and other chains
+    { id: "alchemy", name: "Alchemy", tags: ["blockchain", "web3", "api", "developer-tools"], status_url: "https://status.alchemy.com/api/v2/status.json", page_url: "https://status.alchemy.com", type: "statuspage" },
+    // incident.io — incident management and on-call platform for engineering teams
+    { id: "incident_io", name: "incident.io", tags: ["incident-management", "on-call", "monitoring", "devops", "saas"], status_url: "https://status.incident.io/api/v2/status.json", page_url: "https://status.incident.io", type: "statuspage" },
+    // Cortex — internal developer portal and software catalog platform
+    { id: "cortex", name: "Cortex", tags: ["developer-tools", "devops", "platform-engineering", "saas"], status_url: "https://status.cortex.io/api/v2/status.json", page_url: "https://status.cortex.io", type: "statuspage" },
+    // QuickNode — blockchain node infrastructure for Ethereum, Solana, and 25+ chains
+    { id: "quicknode", name: "QuickNode", tags: ["blockchain", "web3", "api", "developer-tools", "infrastructure"], status_url: "https://status.quicknode.com/api/v2/status.json", page_url: "https://status.quicknode.com", type: "statuspage" },
+    // Infura — Ethereum and IPFS API infrastructure by ConsenSys
+    { id: "infura", name: "Infura", tags: ["blockchain", "web3", "api", "ethereum", "ipfs", "developer-tools"], status_url: "https://status.infura.io/api/v2/status.json", page_url: "https://status.infura.io", type: "statuspage" },
+    // Grafana Cloud — managed observability platform for metrics, logs, and traces
+    { id: "grafana_cloud", name: "Grafana Cloud", tags: ["monitoring", "observability", "metrics", "logging", "saas"], status_url: "https://status.grafana.com/api/v2/status.json", page_url: "https://status.grafana.com", type: "statuspage" },
+    // Metabase — self-service business intelligence and analytics platform (cloud)
+    { id: "metabase", name: "Metabase Cloud", tags: ["analytics", "bi", "saas", "data"], status_url: "https://status.metabase.com/api/v2/status.json", page_url: "https://status.metabase.com", type: "statuspage" },
+    // Opsgenie — on-call scheduling and alerting platform by Atlassian
+    { id: "opsgenie", name: "Opsgenie", tags: ["monitoring", "on-call", "alerting", "devops", "atlassian", "saas"], status_url: "https://opsgenie.statuspage.io/api/v2/status.json", page_url: "https://opsgenie.statuspage.io", type: "statuspage" },
+    // Splunk On Call (formerly VictorOps) — on-call and incident response platform
+    { id: "victorops", name: "Splunk On Call", tags: ["monitoring", "on-call", "alerting", "incident-management", "saas"], status_url: "https://status.victorops.com/api/v2/status.json", page_url: "https://status.victorops.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -4990,7 +5018,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.59.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.60.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -5018,7 +5046,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2508 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2522 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -5053,7 +5081,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2508 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2522 services.",
                     },
                 },
                 required: [],
