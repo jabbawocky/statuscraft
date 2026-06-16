@@ -4819,6 +4819,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "punchh", name: "Punchh", tags: ["loyalty", "restaurant", "rewards", "marketing", "saas"], status_url: "https://status.punchh.com/api/v2/status.json", page_url: "https://status.punchh.com", type: "statuspage" },
   { id: "fivestars", name: "FiveStars", tags: ["loyalty", "local-business", "rewards", "marketing", "saas"], status_url: "https://status.fivestars.com/api/v2/status.json", page_url: "https://status.fivestars.com", type: "statuspage" },
   { id: "invoice_simple", name: "Invoice Simple", tags: ["invoicing", "billing", "small-business", "saas"], status_url: "https://status.invoicesimple.com/api/v2/status.json", page_url: "https://status.invoicesimple.com", type: "statuspage" },
+  { id: "lucky_orange", name: "Lucky Orange", tags: ["analytics", "heatmaps", "session-replay", "ux", "saas"], status_url: "https://status.luckyorange.com/api/v2/status.json", page_url: "https://status.luckyorange.com", type: "statuspage" },
+  { id: "bouncer_email", name: "Bouncer", tags: ["email-verification", "deliverability", "email", "api", "saas"], status_url: "https://status.usebouncer.com/api/v2/status.json", page_url: "https://status.usebouncer.com", type: "statuspage" },
+  { id: "proxyclick", name: "Proxyclick", tags: ["visitor-management", "workplace", "access-control", "security", "saas"], status_url: "https://status.proxyclick.com/api/v2/status.json", page_url: "https://status.proxyclick.com", type: "statuspage" },
+  { id: "officernd", name: "OfficeRnD", tags: ["coworking", "flex-space", "workplace-management", "saas"], status_url: "https://status.officernd.com/api/v2/status.json", page_url: "https://status.officernd.com", type: "statuspage" },
+  { id: "guidebook", name: "Guidebook", tags: ["events", "mobile-app", "conference", "event-management", "saas"], status_url: "https://status.guidebook.com/api/v2/status.json", page_url: "https://status.guidebook.com", type: "statuspage" },
+  { id: "pawapay", name: "PawaPay", tags: ["payments", "africa", "mobile-money", "fintech", "api"], status_url: "https://status.pawapay.io/api/v2/status.json", page_url: "https://status.pawapay.io", type: "statuspage" },
+  { id: "stavvy", name: "Stavvy", tags: ["mortgage", "e-notarization", "real-estate", "legal", "fintech"], status_url: "https://status.stavvy.com/api/v2/status.json", page_url: "https://status.stavvy.com", type: "statuspage" },
+  { id: "swatio", name: "Swat.io", tags: ["social-media", "scheduling", "inbox", "marketing", "saas"], status_url: "https://status.swat.io/api/v2/status.json", page_url: "https://status.swat.io", type: "statuspage" },
+  { id: "chronotrack", name: "ChronoTrack", tags: ["sports", "timing", "race-management", "events", "saas"], status_url: "https://status.chronotrack.com/api/v2/status.json", page_url: "https://status.chronotrack.com", type: "statuspage" },
+  { id: "revolutionehr", name: "RevolutionEHR", tags: ["healthcare", "optometry", "ehr", "practice-management", "saas"], status_url: "https://status.revolutionehr.com/api/v2/status.json", page_url: "https://status.revolutionehr.com", type: "statuspage" },
+  { id: "fusionwebclinic", name: "Fusion Web Clinic", tags: ["healthcare", "pediatric-therapy", "ehr", "practice-management", "saas"], status_url: "https://status.fusionwebclinic.com/api/v2/status.json", page_url: "https://status.fusionwebclinic.com", type: "statuspage" },
+  { id: "welligent", name: "Welligent", tags: ["healthcare", "behavioral-health", "ehr", "mental-health", "saas"], status_url: "https://status.welligent.com/api/v2/status.json", page_url: "https://status.welligent.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5256,7 +5268,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2580 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2592 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5294,7 +5306,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2580 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2592 services.",
           },
         },
         required: [],
