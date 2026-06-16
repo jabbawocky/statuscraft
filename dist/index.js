@@ -4689,6 +4689,17 @@ const SERVICES = [
     { id: "revolutionehr", name: "RevolutionEHR", tags: ["healthcare", "optometry", "ehr", "practice-management", "saas"], status_url: "https://status.revolutionehr.com/api/v2/status.json", page_url: "https://status.revolutionehr.com", type: "statuspage" },
     { id: "fusionwebclinic", name: "Fusion Web Clinic", tags: ["healthcare", "pediatric-therapy", "ehr", "practice-management", "saas"], status_url: "https://status.fusionwebclinic.com/api/v2/status.json", page_url: "https://status.fusionwebclinic.com", type: "statuspage" },
     { id: "welligent", name: "Welligent", tags: ["healthcare", "behavioral-health", "ehr", "mental-health", "saas"], status_url: "https://status.welligent.com/api/v2/status.json", page_url: "https://status.welligent.com", type: "statuspage" },
+    { id: "strongdm", name: "StrongDM", tags: ["security", "access-management", "infrastructure", "devtools", "saas"], status_url: "https://strongdm.statuspage.io/api/v2/status.json", page_url: "https://strongdm.statuspage.io", type: "statuspage" },
+    { id: "onomondo", name: "Onomondo", tags: ["iot", "connectivity", "sim", "mobile", "network"], status_url: "https://status.onomondo.com/api/v2/status.json", page_url: "https://status.onomondo.com", type: "statuspage" },
+    { id: "lawpay", name: "LawPay", tags: ["payments", "legal", "fintech", "saas"], status_url: "https://lawpay.statuspage.io/api/v2/status.json", page_url: "https://lawpay.statuspage.io", type: "statuspage" },
+    { id: "movingimage", name: "movingimage", tags: ["video", "enterprise", "media", "streaming", "saas"], status_url: "https://status.movingimage.com/api/v2/status.json", page_url: "https://status.movingimage.com", type: "statuspage" },
+    { id: "bombora", name: "Bombora", tags: ["b2b", "intent-data", "marketing", "analytics", "saas"], status_url: "https://bombora.statuspage.io/api/v2/status.json", page_url: "https://bombora.statuspage.io", type: "statuspage" },
+    { id: "hazelcast", name: "Hazelcast Cloud", tags: ["database", "cache", "distributed-computing", "cloud", "saas"], status_url: "https://hazelcast.statuspage.io/api/v2/status.json", page_url: "https://hazelcast.statuspage.io", type: "statuspage" },
+    { id: "ringba", name: "Ringba", tags: ["call-tracking", "routing", "performance-marketing", "analytics", "saas"], status_url: "https://status.ringba.com/api/v2/status.json", page_url: "https://status.ringba.com", type: "statuspage" },
+    { id: "retreaver", name: "Retreaver", tags: ["call-tracking", "routing", "marketing", "analytics", "saas"], status_url: "https://status.retreaver.com/api/v2/status.json", page_url: "https://status.retreaver.com", type: "statuspage" },
+    { id: "invoca", name: "Invoca", tags: ["call-intelligence", "ai", "marketing", "analytics", "saas"], status_url: "https://status.invoca.com/api/v2/status.json", page_url: "https://status.invoca.com", type: "statuspage" },
+    { id: "skyslope", name: "SkySlope", tags: ["real-estate", "transaction-management", "compliance", "saas"], status_url: "https://skyslope.statuspage.io/api/v2/status.json", page_url: "https://skyslope.statuspage.io", type: "statuspage" },
+    { id: "followupboss", name: "Follow Up Boss", tags: ["real-estate", "crm", "sales", "saas"], status_url: "https://followupboss.statuspage.io/api/v2/status.json", page_url: "https://followupboss.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -5146,7 +5157,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2592 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2603 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -5181,7 +5192,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2592 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2603 services.",
                     },
                 },
                 required: [],
