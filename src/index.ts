@@ -4944,6 +4944,22 @@ const SERVICES: ServiceConfig[] = [
   { id: "contra", name: "Contra", tags: ["freelance", "marketplace", "independent-work", "creators", "saas"], status_url: "https://contra.statuspage.io/api/v2/status.json", page_url: "https://contra.statuspage.io", type: "statuspage" },
   { id: "castor_edc", name: "Castor EDC", tags: ["clinical-trials", "edc", "healthcare", "research", "saas"], status_url: "https://castor.statuspage.io/api/v2/status.json", page_url: "https://castor.statuspage.io", type: "statuspage" },
   { id: "viedoc", name: "Viedoc", tags: ["clinical-trials", "edc", "healthcare", "research", "saas"], status_url: "https://status.viedoc.com/api/v2/status.json", page_url: "https://status.viedoc.com", type: "statuspage" },
+  { id: "nabla", name: "Nabla", tags: ["ai", "healthcare", "clinical-documentation", "ambient-ai", "saas"], status_url: "https://status.nabla.com/api/v2/status.json", page_url: "https://status.nabla.com", type: "statuspage" },
+  { id: "pomelo", name: "Pomelo", tags: ["fintech", "payments", "prepaid-cards", "latin-america", "api"], status_url: "https://status.pomelo.la/api/v2/status.json", page_url: "https://status.pomelo.la", type: "statuspage" },
+  { id: "thriveglobal", name: "Thrive Global", tags: ["wellness", "employee-wellbeing", "productivity", "hr", "saas"], status_url: "https://thriveglobal.statuspage.io/api/v2/status.json", page_url: "https://thriveglobal.statuspage.io", type: "statuspage" },
+  { id: "coherence", name: "Coherence", tags: ["devtools", "cloud-deployment", "infrastructure", "saas"], status_url: "https://coherence.statuspage.io/api/v2/status.json", page_url: "https://coherence.statuspage.io", type: "statuspage" },
+  { id: "indica_online", name: "IndicaOnline", tags: ["cannabis", "dispensary", "pos", "retail", "saas"], status_url: "https://indicaonline.statuspage.io/api/v2/status.json", page_url: "https://indicaonline.statuspage.io", type: "statuspage" },
+  { id: "billie", name: "Billie", tags: ["payments", "bnpl", "b2b", "fintech", "europe"], status_url: "https://status.billie.io/api/v2/status.json", page_url: "https://status.billie.io", type: "statuspage" },
+  { id: "qliro", name: "Qliro", tags: ["fintech", "payments", "checkout", "buy-now-pay-later", "nordics"], status_url: "https://status.qliro.com/api/v2/status.json", page_url: "https://status.qliro.com", type: "statuspage" },
+  { id: "chowly", name: "Chowly", tags: ["restaurant-tech", "online-ordering", "pos-integration", "food-delivery", "saas"], status_url: "https://chowly.statuspage.io/api/v2/status.json", page_url: "https://chowly.statuspage.io", type: "statuspage" },
+  { id: "rex", name: "Rex", tags: ["crm", "real-estate", "sales", "saas", "proptech"], status_url: "https://rex.statuspage.io/api/v2/status.json", page_url: "https://rex.statuspage.io", type: "statuspage" },
+  { id: "sisu", name: "Sisu", tags: ["real-estate", "analytics", "sales-intelligence", "proptech", "saas"], status_url: "https://sisu.statuspage.io/api/v2/status.json", page_url: "https://sisu.statuspage.io", type: "statuspage" },
+  { id: "checkfront", name: "Checkfront", tags: ["booking", "activities", "tours", "hospitality", "saas"], status_url: "https://checkfront.statuspage.io/api/v2/status.json", page_url: "https://checkfront.statuspage.io", type: "statuspage" },
+  { id: "landr", name: "LANDR", tags: ["music", "mastering", "distribution", "ai", "saas"], status_url: "https://landr.statuspage.io/api/v2/status.json", page_url: "https://landr.statuspage.io", type: "statuspage" },
+  { id: "bandlab", name: "BandLab", tags: ["music", "creation", "collaboration", "social", "platform"], status_url: "https://status.bandlab.com/api/v2/status.json", page_url: "https://status.bandlab.com", type: "statuspage" },
+  { id: "splice", name: "Splice", tags: ["music", "samples", "sounds", "production", "saas"], status_url: "https://status.splice.com/api/v2/status.json", page_url: "https://status.splice.com", type: "statuspage" },
+  { id: "axle", name: "Axle", tags: ["telematics", "vehicle-data", "api", "iot", "developer-tools"], status_url: "https://axle.statuspage.io/api/v2/status.json", page_url: "https://axle.statuspage.io", type: "statuspage" },
+  { id: "platform_science", name: "Platform Science", tags: ["fleet-management", "telematics", "transportation", "iot", "saas"], status_url: "https://platformscience.statuspage.io/api/v2/status.json", page_url: "https://platformscience.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5381,7 +5397,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2658 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2674 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5419,7 +5435,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2658 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2674 services.",
           },
         },
         required: [],
