@@ -5050,6 +5050,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "addevent", name: "AddEvent", tags: ["calendar", "events", "scheduling", "productivity", "saas"], status_url: "https://addevent.statuspage.io/api/v2/status.json", page_url: "https://addevent.statuspage.io", type: "statuspage" },
   // Apache Superset — open-source BI and data visualization platform cloud service
   { id: "superset_cloud", name: "Superset", tags: ["bi", "analytics", "data-visualization", "open-source", "saas"], status_url: "https://superset.statuspage.io/api/v2/status.json", page_url: "https://superset.statuspage.io", type: "statuspage" },
+  // VTEX — enterprise e-commerce platform powering LATAM and global retailers (BetterStack)
+  { id: "vtex", name: "VTEX", tags: ["e-commerce", "retail", "platform", "latam", "saas"], status_url: "https://status.vtex.com/api/v2/summary.json", page_url: "https://status.vtex.com", type: "betterstack" },
+  // Payfast — South African online payment gateway
+  { id: "payfast", name: "Payfast", tags: ["payments", "fintech", "south-africa", "payment-gateway", "api"], status_url: "https://status.payfast.io/api/v2/status.json", page_url: "https://status.payfast.io", type: "statuspage" },
+  // Pin Payments — Australian payment gateway for online businesses
+  { id: "pin_payments", name: "Pin Payments", tags: ["payments", "fintech", "australia", "payment-gateway", "api"], status_url: "https://status.pinpayments.com/api/v2/status.json", page_url: "https://status.pinpayments.com", type: "statuspage" },
+  // Peach Payments — African payment gateway (South Africa, Kenya, Nigeria)
+  { id: "peach_payments", name: "Peach Payments", tags: ["payments", "fintech", "africa", "south-africa", "payment-gateway"], status_url: "https://status.peachpayments.com/api/v2/status.json", page_url: "https://status.peachpayments.com", type: "statuspage" },
+  // Flipside Crypto — on-chain blockchain analytics and data platform
+  { id: "flipside_crypto", name: "Flipside Crypto", tags: ["blockchain", "analytics", "web3", "data", "crypto"], status_url: "https://flipside.statuspage.io/api/v2/status.json", page_url: "https://flipside.statuspage.io", type: "statuspage" },
+  // Santiment — crypto market intelligence, on-chain metrics, and social data
+  { id: "santiment", name: "Santiment", tags: ["crypto", "market-data", "analytics", "blockchain", "on-chain"], status_url: "https://santiment.statuspage.io/api/v2/status.json", page_url: "https://santiment.statuspage.io", type: "statuspage" },
+  // ZeroFOX — digital risk protection platform (social media, dark web, brand threats)
+  { id: "zerofox", name: "ZeroFOX", tags: ["security", "digital-risk", "threat-intelligence", "brand-protection", "saas"], status_url: "https://zerofox.statuspage.io/api/v2/status.json", page_url: "https://zerofox.statuspage.io", type: "statuspage" },
+  // Thales — data security, cloud protection, and identity platform
+  { id: "thales", name: "Thales", tags: ["security", "data-security", "identity", "encryption", "enterprise"], status_url: "https://thales.statuspage.io/api/v2/status.json", page_url: "https://thales.statuspage.io", type: "statuspage" },
+  // LogRhythm Axon — cloud-native SIEM and security analytics platform
+  { id: "logrhythm", name: "LogRhythm Axon", tags: ["security", "siem", "analytics", "log-management", "enterprise"], status_url: "https://logrhythm.statuspage.io/api/v2/status.json", page_url: "https://logrhythm.statuspage.io", type: "statuspage" },
+  // Dexcom — continuous glucose monitoring (CGM) platform and apps
+  { id: "dexcom", name: "Dexcom", tags: ["healthcare", "glucose-monitoring", "diabetes", "medical-device", "consumer"], status_url: "https://status.dexcom.com/api/v2/status.json", page_url: "https://status.dexcom.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5487,7 +5507,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2736 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2746 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5525,7 +5545,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2736 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2746 services.",
           },
         },
         required: [],
