@@ -5014,6 +5014,42 @@ const SERVICES: ServiceConfig[] = [
   { id: "botify", name: "Botify", tags: ["seo", "analytics", "enterprise", "search", "saas"], status_url: "https://botify.statuspage.io/api/v2/status.json", page_url: "https://botify.statuspage.io", type: "statuspage" },
   // HyperTrack — live location tracking and movement API for logistics and mobility apps
   { id: "hypertrack", name: "HyperTrack", tags: ["location-tracking", "logistics", "mobility", "api", "developer-tools"], status_url: "https://status.hypertrack.com/api/v2/status.json", page_url: "https://status.hypertrack.com", type: "statuspage" },
+  // Dropbox Sign — e-signature and fax API platform (formerly HelloSign)
+  { id: "dropboxsign", name: "Dropbox Sign", tags: ["e-signature", "documents", "api", "productivity", "legal"], status_url: "https://hellosign.statuspage.io/api/v2/status.json", page_url: "https://hellosign.statuspage.io", type: "statuspage" },
+  // Redox — healthcare data exchange and interoperability platform
+  { id: "redox_engine", name: "Redox", tags: ["healthcare", "interoperability", "hl7", "fhir", "api"], status_url: "https://redoxengine.statuspage.io/api/v2/status.json", page_url: "https://status.redoxengine.com", type: "statuspage" },
+  // RSA ID Plus — enterprise identity and access management (SecurID platform)
+  { id: "rsa_id_plus", name: "RSA ID Plus", tags: ["identity", "mfa", "security", "enterprise", "iam"], status_url: "https://rsasecurity.statuspage.io/api/v2/status.json", page_url: "https://status.securid.com", type: "statuspage" },
+  // Zip (formerly Quadpay) — buy-now-pay-later installment payment platform
+  { id: "zip_pay", name: "Zip", tags: ["bnpl", "payments", "fintech", "consumer", "installments"], status_url: "https://zip.statuspage.io/api/v2/status.json", page_url: "https://zip.statuspage.io", type: "statuspage" },
+  // QuadPay — buy-now-pay-later payment solution for US consumers
+  { id: "quadpay", name: "QuadPay", tags: ["bnpl", "payments", "fintech", "consumer", "installments"], status_url: "https://quadpay.statuspage.io/api/v2/status.json", page_url: "http://status.quadpay.com", type: "statuspage" },
+  // DocRaptor — HTML-to-PDF and HTML-to-Excel document generation API
+  { id: "docraptor", name: "DocRaptor", tags: ["pdf", "documents", "api", "developer-tools", "printing"], status_url: "https://docraptor.statuspage.io/api/v2/status.json", page_url: "https://status.docraptor.com", type: "statuspage" },
+  // Happo — cross-browser screenshot testing and visual regression service
+  { id: "happo", name: "Happo", tags: ["testing", "visual-regression", "screenshots", "developer-tools", "qa"], status_url: "https://happo.statuspage.io/api/v2/status.json", page_url: "https://happo.statuspage.io", type: "statuspage" },
+  // Cognito Forms — online form builder and data collection platform
+  { id: "cognitoforms", name: "Cognito Forms", tags: ["forms", "data-collection", "productivity", "saas", "no-code"], status_url: "https://cognitoforms.statuspage.io/api/v2/status.json", page_url: "https://status.cognitoforms.com", type: "statuspage" },
+  // Involve.me — interactive content and lead generation platform
+  { id: "involve", name: "Involve.me", tags: ["interactive-content", "lead-generation", "forms", "marketing", "saas"], status_url: "https://involve.statuspage.io/api/v2/status.json", page_url: "https://involve.statuspage.io", type: "statuspage" },
+  // Socio — event management and engagement platform for conferences and trade shows
+  { id: "socio", name: "Socio", tags: ["events", "event-management", "conferences", "engagement", "saas"], status_url: "https://socio.statuspage.io/api/v2/status.json", page_url: "https://status.socio.events", type: "statuspage" },
+  // Swapcard — AI-powered event platform for networking and matchmaking
+  { id: "swapcard", name: "Swapcard", tags: ["events", "networking", "event-management", "ai", "saas"], status_url: "https://swapcard.statuspage.io/api/v2/status.json", page_url: "https://swapcard.statuspage.io", type: "statuspage" },
+  // Grip — AI event networking platform for B2B conferences and trade shows
+  { id: "grip", name: "Grip", tags: ["events", "networking", "b2b", "ai", "event-management"], status_url: "https://grip.statuspage.io/api/v2/status.json", page_url: "https://status.grip.events", type: "statuspage" },
+  // Motion — AI-powered calendar and task scheduling app
+  { id: "motion_app", name: "Motion", tags: ["calendar", "productivity", "ai", "scheduling", "task-management"], status_url: "https://motionapp.statuspage.io/api/v2/status.json", page_url: "https://status.motionapp.com", type: "statuspage" },
+  // ProjectManager — cloud-based project management and planning tool
+  { id: "projectmanager", name: "ProjectManager", tags: ["project-management", "planning", "productivity", "saas", "gantt"], status_url: "https://projectmanager.statuspage.io/api/v2/status.json", page_url: "https://projectmanager.statuspage.io", type: "statuspage" },
+  // Boundless — employer of record (EOR) and global HR platform
+  { id: "boundless", name: "Boundless", tags: ["hr", "eor", "global-payroll", "remote-work", "saas"], status_url: "https://boundless.statuspage.io/api/v2/status.json", page_url: "http://status.boundless.com", type: "statuspage" },
+  // UPS — global package delivery and supply chain management services
+  { id: "ups", name: "UPS", tags: ["shipping", "logistics", "delivery", "supply-chain", "enterprise"], status_url: "https://ups.statuspage.io/api/v2/status.json", page_url: "https://ups.statuspage.io", type: "statuspage" },
+  // AddEvent — add-to-calendar buttons, event landing pages and RSVP tools
+  { id: "addevent", name: "AddEvent", tags: ["calendar", "events", "scheduling", "productivity", "saas"], status_url: "https://addevent.statuspage.io/api/v2/status.json", page_url: "https://addevent.statuspage.io", type: "statuspage" },
+  // Apache Superset — open-source BI and data visualization platform cloud service
+  { id: "superset_cloud", name: "Superset", tags: ["bi", "analytics", "data-visualization", "open-source", "saas"], status_url: "https://superset.statuspage.io/api/v2/status.json", page_url: "https://superset.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5416,7 +5452,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.61.0" },
+  { name: "statuscraft", version: "2.62.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -5451,7 +5487,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2718 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2736 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5489,7 +5525,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2718 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2736 services.",
           },
         },
         required: [],
