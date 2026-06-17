@@ -5479,6 +5479,19 @@ const SERVICES: ServiceConfig[] = [
   { id: "iubenda", name: "Iubenda", tags: ["privacy", "consent-management", "compliance", "gdpr", "saas"], status_url: "https://status.iubenda.com/api/v2/status.json", page_url: "https://status.iubenda.com", type: "statuspage" },
   { id: "cookieyes", name: "CookieYes", tags: ["privacy", "consent-management", "cookies", "gdpr", "saas"], status_url: "https://status.cookieyes.com/api/v2/status.json", page_url: "https://status.cookieyes.com", type: "statuspage" },
   { id: "cookiepro", name: "CookiePro by OneTrust", tags: ["privacy", "consent-management", "cookies", "gdpr", "saas"], status_url: "https://status.cookiepro.com/api/v2/status.json", page_url: "https://status.cookiepro.com", type: "statuspage" },
+  // Batch added tick 295 — 12 new live-verified services
+  { id: "elementor", name: "Elementor", tags: ["wordpress", "page-builder", "website", "saas"], status_url: "https://status.elementor.com/api/v2/status.json", page_url: "https://status.elementor.com", type: "statuspage" },
+  { id: "globalmeet", name: "GlobalMeet", tags: ["video-conferencing", "webinar", "meetings", "saas"], status_url: "https://status.globalmeet.com/api/v2/status.json", page_url: "https://status.globalmeet.com", type: "statuspage" },
+  { id: "encompass_scs", name: "Encompass Supply Chain Solutions", tags: ["supply-chain", "logistics", "enterprise", "saas"], status_url: "https://status.encompass.com/api/v2/status.json", page_url: "https://status.encompass.com", type: "statuspage" },
+  { id: "nobl9", name: "Nobl9", tags: ["slo", "observability", "sre", "monitoring", "saas"], status_url: "https://status.nobl9.com/api/v2/status.json", page_url: "https://status.nobl9.com", type: "statuspage" },
+  { id: "observe_ai", name: "Observe.AI", tags: ["contact-center", "ai", "voice-analytics", "enterprise", "saas"], status_url: "https://status.observe.ai/api/v2/status.json", page_url: "https://status.observe.ai", type: "statuspage" },
+  { id: "ptc_atlas", name: "PTC (Atlas)", tags: ["plm", "industrial-iot", "enterprise", "manufacturing", "saas"], status_url: "https://status.ptc.com/api/v2/status.json", page_url: "https://status.ptc.com", type: "statuspage" },
+  { id: "prodly", name: "Prodly", tags: ["salesforce", "devops", "data-management", "release-management", "saas"], status_url: "https://status.prodly.co/api/v2/status.json", page_url: "https://status.prodly.co", type: "statuspage" },
+  { id: "sequoia_benefits", name: "Sequoia", tags: ["hr", "benefits", "compensation", "enterprise", "saas"], status_url: "https://status.sequoia.com/api/v2/status.json", page_url: "https://status.sequoia.com", type: "statuspage" },
+  { id: "alex_benefits", name: "Alex AI", tags: ["hr", "benefits", "ai", "decision-support", "saas"], status_url: "https://status.alex.com/api/v2/status.json", page_url: "https://status.alex.com", type: "statuspage" },
+  { id: "ease_hcm", name: "Ease", tags: ["hr", "benefits", "administration", "smb", "saas"], status_url: "https://status.ease.com/api/v2/status.json", page_url: "https://status.ease.com", type: "statuspage" },
+  { id: "pave_comp", name: "Pave", tags: ["compensation", "hr", "benchmarking", "planning", "saas"], status_url: "https://status.pave.com/api/v2/status.json", page_url: "https://status.pave.com", type: "statuspage" },
+  { id: "monitaur", name: "Monitaur", tags: ["ai-governance", "mlops", "compliance", "enterprise", "saas"], status_url: "https://status.monitaur.ai/api/v2/status.json", page_url: "https://status.monitaur.ai", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5916,7 +5929,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2825 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 3015 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5954,7 +5967,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2825 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3015 services.",
           },
         },
         required: [],
