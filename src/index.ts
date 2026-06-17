@@ -5579,6 +5579,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "gorgias", name: "Gorgias", tags: ["customer-support", "helpdesk", "e-commerce", "saas"], status_url: "https://status.gorgias.com/api/v2/status.json", page_url: "https://status.gorgias.com", type: "statuspage" },
   { id: "okendo", name: "Okendo", tags: ["reviews", "e-commerce", "shopify", "saas", "marketing"], status_url: "https://status.okendo.io/api/v2/status.json", page_url: "https://status.okendo.io", type: "statuspage" },
   { id: "yotpo", name: "Yotpo", tags: ["reviews", "loyalty", "e-commerce", "marketing", "saas"], status_url: "https://status.yotpo.com/api/v2/status.json", page_url: "https://status.yotpo.com", type: "statuspage" },
+  // Batch added tick 305 — 11 new live-verified services
+  { id: "fluxx", name: "Fluxx", tags: ["grants", "nonprofit", "philanthropy", "saas", "enterprise"], status_url: "https://status.fluxx.io/api/v2/status.json", page_url: "https://status.fluxx.io", type: "statuspage" },
+  { id: "ebsco", name: "EBSCO", tags: ["research", "academic", "library", "databases", "information-services"], status_url: "https://status.ebsco.com/api/v2/status.json", page_url: "https://status.ebsco.com", type: "statuspage" },
+  { id: "engagebay", name: "EngageBay", tags: ["crm", "marketing", "email", "automation", "saas"], status_url: "https://engagebay.statuspage.io/api/v2/status.json", page_url: "https://engagebay.statuspage.io", type: "statuspage" },
+  { id: "lifesize", name: "Lifesize", tags: ["video-conferencing", "collaboration", "communication", "enterprise", "saas"], status_url: "https://lifesize.statuspage.io/api/v2/status.json", page_url: "https://status.lifesizecloud.com", type: "statuspage" },
+  { id: "planetdds", name: "Planet DDS", tags: ["dental", "healthcare", "practice-management", "saas", "enterprise"], status_url: "https://status.planetdds.com/api/v2/status.json", page_url: "https://status.planetdds.com", type: "statuspage" },
+  { id: "veson", name: "Veson", tags: ["maritime", "shipping", "logistics", "freight", "saas"], status_url: "https://status.veson.com/api/v2/status.json", page_url: "https://status.veson.com", type: "statuspage" },
+  { id: "transporeon", name: "Transporeon", tags: ["freight", "logistics", "supply-chain", "transportation", "saas"], status_url: "https://transporeon.statuspage.io/api/v2/status.json", page_url: "https://transporeon.statuspage.io", type: "statuspage" },
+  { id: "dimensions_ai", name: "Dimensions", tags: ["research", "academic", "analytics", "publications", "saas"], status_url: "https://status.dimensions.ai/api/v2/status.json", page_url: "https://status.dimensions.ai", type: "statuspage" },
+  { id: "anaconda", name: "Anaconda", tags: ["data-science", "python", "machine-learning", "developer-tools", "saas"], status_url: "https://anaconda.statuspage.io/api/v2/status.json", page_url: "https://anaconda.statuspage.io", type: "statuspage" },
+  { id: "xmpie", name: "XMPie", tags: ["print", "publishing", "cross-media", "marketing", "enterprise"], status_url: "https://status.xmpie.com/api/v2/status.json", page_url: "https://status.xmpie.com", type: "statuspage" },
+  { id: "readcube", name: "ReadCube", tags: ["research", "reference-management", "citations", "academic", "saas"], status_url: "https://readcube.statuspage.io/api/v2/status.json", page_url: "https://readcube.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6016,7 +6028,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 3098 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 3109 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -6054,7 +6066,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3098 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3109 services.",
           },
         },
         required: [],
