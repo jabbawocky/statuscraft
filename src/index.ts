@@ -5187,6 +5187,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "phoneburner", name: "PhoneBurner", tags: ["sales", "dialer", "outbound-calling", "crm", "saas"], status_url: "https://status.phoneburner.com/api/v2/status.json", page_url: "https://status.phoneburner.com", type: "statuspage" },
   // MightyCall — virtual phone system for small businesses with call routing and IVR
   { id: "mightycall", name: "MightyCall", tags: ["voip", "phone-system", "business-phone", "ivr", "saas"], status_url: "https://status.mightycall.com/api/v2/status.json", page_url: "https://status.mightycall.com", type: "statuspage" },
+  // Pipe17 — order management and commerce operations hub connecting e-commerce platforms, ERPs, and 3PLs
+  { id: "pipe17", name: "Pipe17", tags: ["ecommerce", "order-management", "integration", "logistics", "saas"], status_url: "https://status.pipe17.com/api/v2/status.json", page_url: "https://status.pipe17.com", type: "statuspage" },
+  // TeamSupport — B2B customer support helpdesk and ticket management platform
+  { id: "teamsupport", name: "TeamSupport", tags: ["customer-support", "helpdesk", "ticketing", "b2b", "saas"], status_url: "https://status.teamsupport.com/api/v2/status.json", page_url: "https://status.teamsupport.com", type: "statuspage" },
+  // Sonos — cloud services for Sonos smart speakers and home audio systems
+  { id: "sonos", name: "Sonos", tags: ["audio", "iot", "smart-home", "streaming", "consumer"], status_url: "https://status.sonos.com/api/v2/status.json", page_url: "https://status.sonos.com", type: "statuspage" },
+  // Knock CRM — apartment leasing CRM and lead management platform for property management
+  { id: "knockcrm", name: "Knock CRM", tags: ["real-estate", "crm", "property-management", "leasing", "saas"], status_url: "https://status.knockcrm.com/api/v2/status.json", page_url: "https://status.knockcrm.com", type: "statuspage" },
+  // Ticket Tailor — self-service event ticketing platform for event organizers
+  { id: "tickettailor", name: "Ticket Tailor", tags: ["events", "ticketing", "event-management", "saas"], status_url: "https://status.tickettailor.com/api/v2/status.json", page_url: "https://status.tickettailor.com", type: "statuspage" },
+  // ActiveProspect — consent-based marketing, lead verification, and TrustedForm certification platform
+  { id: "activeprospect", name: "ActiveProspect", tags: ["marketing", "lead-generation", "compliance", "consent", "saas"], status_url: "https://status.activeprospect.com/api/v2/status.json", page_url: "https://status.activeprospect.com", type: "statuspage" },
+  // Ocrolus — AI-powered document analysis and cash flow analytics for financial services
+  { id: "ocrolus", name: "Ocrolus", tags: ["fintech", "ai", "document-analysis", "lending", "saas"], status_url: "https://status.ocrolus.com/api/v2/status.json", page_url: "https://status.ocrolus.com", type: "statuspage" },
+  // Fulcrum — mobile data collection and field operations management platform
+  { id: "fulcrum", name: "Fulcrum", tags: ["field-operations", "data-collection", "mobile", "gis", "saas"], status_url: "https://status.fulcrumapp.com/api/v2/status.json", page_url: "https://status.fulcrumapp.com", type: "statuspage" },
+  // Inscribe — AI-powered document fraud detection and financial document analysis platform
+  { id: "inscribe", name: "Inscribe", tags: ["fintech", "ai", "fraud-detection", "document-analysis", "saas"], status_url: "https://status.inscribe.ai/api/v2/status.json", page_url: "https://status.inscribe.ai", type: "statuspage" },
+  // Patriot Software — small business payroll processing and accounting software
+  { id: "patriot_software", name: "Patriot Software", tags: ["payroll", "accounting", "small-business", "hr", "saas"], status_url: "https://status.patriotsoftware.com/api/v2/status.json", page_url: "https://status.patriotsoftware.com", type: "statuspage" },
+  // Juniper Square — private markets investment management platform for real estate and private equity
+  { id: "juniper_square", name: "Juniper Square", tags: ["fintech", "investment-management", "private-markets", "real-estate", "saas"], status_url: "https://status.junipersquare.com/api/v2/status.json", page_url: "https://status.junipersquare.com", type: "statuspage" },
+  // Visible — investor relations and portfolio company reporting platform for startups and VCs
+  { id: "visible_vc", name: "Visible", tags: ["investor-relations", "reporting", "startups", "venture-capital", "saas"], status_url: "https://status.visible.vc/api/v2/status.json", page_url: "https://status.visible.vc", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5624,7 +5648,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2803 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2815 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5662,7 +5686,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2803 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2815 services.",
           },
         },
         required: [],
