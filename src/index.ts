@@ -5614,6 +5614,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "sellbrite", name: "Sellbrite", tags: ["e-commerce", "multichannel", "inventory", "amazon", "saas"], status_url: "https://status.sellbrite.com/api/v2/status.json", page_url: "https://status.sellbrite.com", type: "statuspage" },
   { id: "finale_inventory", name: "Finale Inventory", tags: ["inventory", "warehouse", "e-commerce", "smb", "saas"], status_url: "https://status.finaleinventory.com/api/v2/status.json", page_url: "https://status.finaleinventory.com", type: "statuspage" },
   { id: "cloud_elements", name: "Cloud Elements", tags: ["api-integration", "ipaas", "middleware", "developer-tools", "saas"], status_url: "https://status.cloud-elements.com/api/v2/status.json", page_url: "https://status.cloud-elements.com", type: "statuspage" },
+  // Batch added tick 312 — 11 new live-verified services
+  { id: "wave_mobile", name: "Wave Mobile Money", tags: ["payments", "mobile-money", "africa", "fintech", "saas"], status_url: "https://status.wave.com/api/v2/status.json", page_url: "https://status.wave.com", type: "statuspage" },
+  { id: "upvest", name: "Upvest", tags: ["fintech", "investment-api", "securities", "europe", "api"], status_url: "https://status.upvest.co/api/v2/status.json", page_url: "https://status.upvest.co", type: "statuspage" },
+  { id: "figshare", name: "Figshare", tags: ["research", "data-repository", "academic", "open-science", "saas"], status_url: "https://status.figshare.com/api/v2/status.json", page_url: "https://status.figshare.com", type: "statuspage" },
+  { id: "quartzy", name: "Quartzy", tags: ["lab-management", "life-sciences", "procurement", "research", "saas"], status_url: "https://status.quartzy.com/api/v2/status.json", page_url: "https://status.quartzy.com", type: "statuspage" },
+  { id: "zenler", name: "Zenler", tags: ["online-courses", "lms", "e-learning", "course-creation", "saas"], status_url: "https://status.newzenler.com/api/v2/status.json", page_url: "https://status.newzenler.com", type: "statuspage" },
+  { id: "asaas", name: "Asaas", tags: ["payments", "fintech", "brazil", "billing", "saas"], status_url: "https://status.asaas.com/api/v2/status.json", page_url: "https://status.asaas.com", type: "statuspage" },
+  { id: "confiant", name: "Confiant", tags: ["ad-security", "brand-safety", "advertising", "malware", "saas"], status_url: "https://status.confiant.com/api/v2/status.json", page_url: "https://status.confiant.com", type: "statuspage" },
+  { id: "brightidea", name: "Brightidea", tags: ["innovation-management", "ideation", "enterprise", "collaboration", "saas"], status_url: "https://status.brightidea.com/api/v2/status.json", page_url: "https://status.brightidea.com", type: "statuspage" },
+  { id: "linq", name: "Linq", tags: ["digital-business-cards", "networking", "crm", "contact-management", "saas"], status_url: "https://status.linqapp.com/api/v2/status.json", page_url: "https://status.linqapp.com", type: "statuspage" },
+  { id: "castai", name: "CAST AI", tags: ["kubernetes", "cloud-cost", "optimization", "devops", "saas"], status_url: "https://status.cast.ai/api/v2/status.json", page_url: "https://status.cast.ai", type: "statuspage" },
+  { id: "anodot", name: "Anodot", tags: ["analytics", "revenue", "anomaly-detection", "monitoring", "saas"], status_url: "https://status.anodot.com/api/v2/status.json", page_url: "https://status.anodot.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6051,7 +6063,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 3131 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 3142 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -6089,7 +6101,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3131 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3142 services.",
           },
         },
         required: [],
