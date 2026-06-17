@@ -4960,6 +4960,20 @@ const SERVICES: ServiceConfig[] = [
   { id: "splice", name: "Splice", tags: ["music", "samples", "sounds", "production", "saas"], status_url: "https://status.splice.com/api/v2/status.json", page_url: "https://status.splice.com", type: "statuspage" },
   { id: "axle", name: "Axle", tags: ["telematics", "vehicle-data", "api", "iot", "developer-tools"], status_url: "https://axle.statuspage.io/api/v2/status.json", page_url: "https://axle.statuspage.io", type: "statuspage" },
   { id: "platform_science", name: "Platform Science", tags: ["fleet-management", "telematics", "transportation", "iot", "saas"], status_url: "https://platformscience.statuspage.io/api/v2/status.json", page_url: "https://platformscience.statuspage.io", type: "statuspage" },
+  { id: "sapling", name: "Sapling Intelligence", tags: ["ai", "writing-assistant", "customer-support", "nlp", "saas"], status_url: "https://sapling.statuspage.io/api/v2/status.json", page_url: "https://sapling.statuspage.io", type: "statuspage" },
+  { id: "oso_cloud", name: "Oso Cloud", tags: ["authorization", "security", "developer-tools", "access-control", "api"], status_url: "https://oso.statuspage.io/api/v2/status.json", page_url: "https://oso.statuspage.io", type: "statuspage" },
+  { id: "raindrop_io", name: "Raindrop.io", tags: ["bookmarks", "read-later", "productivity", "browser", "saas"], status_url: "https://raindrop.statuspage.io/api/v2/status.json", page_url: "https://raindrop.statuspage.io", type: "statuspage" },
+  { id: "brainbase", name: "Brainbase", tags: ["ai", "agents", "ai-platform", "automation", "saas"], status_url: "https://brainbase.statuspage.io/api/v2/status.json", page_url: "https://brainbase.statuspage.io", type: "statuspage" },
+  { id: "cleavr", name: "Cleavr", tags: ["devtools", "server-management", "deployment", "cloud", "hosting"], status_url: "https://cleavr.statuspage.io/api/v2/status.json", page_url: "https://cleavr.statuspage.io", type: "statuspage" },
+  { id: "amboss", name: "AMBOSS", tags: ["healthcare", "medical-education", "clinical-knowledge", "saas", "consumer"], status_url: "https://amboss.statuspage.io/api/v2/status.json", page_url: "https://amboss.statuspage.io", type: "statuspage" },
+  { id: "suki", name: "Suki AI", tags: ["ai", "healthcare", "clinical-documentation", "ambient-ai", "saas"], status_url: "https://suki.statuspage.io/api/v2/status.json", page_url: "https://suki.statuspage.io", type: "statuspage" },
+  { id: "solvhealth", name: "Solv Health", tags: ["healthcare", "telehealth", "urgent-care", "patient-booking", "saas"], status_url: "https://solvhealth.statuspage.io/api/v2/status.json", page_url: "https://solvhealth.statuspage.io", type: "statuspage" },
+  { id: "skulabs", name: "SKULabs", tags: ["ecommerce", "inventory-management", "shipping", "fulfillment", "saas"], status_url: "https://skulabs.statuspage.io/api/v2/status.json", page_url: "https://skulabs.statuspage.io", type: "statuspage" },
+  { id: "rydership", name: "RyderShip", tags: ["ecommerce", "fulfillment", "3pl", "shipping", "saas"], status_url: "https://whiplash.statuspage.io/api/v2/status.json", page_url: "https://whiplash.statuspage.io", type: "statuspage" },
+  { id: "spheron", name: "Spheron", tags: ["web3", "compute", "decentralized", "cloud", "infrastructure"], status_url: "https://spheron.statuspage.io/api/v2/status.json", page_url: "https://spheron.statuspage.io", type: "statuspage" },
+  { id: "reputation_com", name: "Reputation.com", tags: ["reputation-management", "reviews", "local-marketing", "enterprise", "saas"], status_url: "https://reputation.statuspage.io/api/v2/status.json", page_url: "https://reputation.statuspage.io", type: "statuspage" },
+  { id: "aisera", name: "AISera", tags: ["ai", "itsm", "service-management", "conversational-ai", "enterprise"], status_url: "https://aisera.statuspage.io/api/v2/status.json", page_url: "https://aisera.statuspage.io", type: "statuspage" },
+  { id: "rezolve_ai", name: "Rezolve.ai", tags: ["ai", "itsm", "service-desk", "automation", "saas"], status_url: "https://rezolve.statuspage.io/api/v2/status.json", page_url: "https://rezolve.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5397,7 +5411,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2674 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2688 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5435,7 +5449,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2674 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2688 services.",
           },
         },
         required: [],
