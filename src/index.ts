@@ -5117,6 +5117,31 @@ const SERVICES: ServiceConfig[] = [
   { id: "coconut", name: "Coconut", tags: ["video", "transcoding", "media", "api", "developer-tools"], status_url: "https://coconut.statuspage.io/api/v2/status.json", page_url: "https://coconut.statuspage.io", type: "statuspage" },
   // Weedmaps — cannabis marketplace and discovery platform for dispensaries and brands
   { id: "weedmaps", name: "Weedmaps", tags: ["cannabis", "marketplace", "dispensary", "consumer", "saas"], status_url: "https://status.weedmaps.com/api/v2/status.json", page_url: "https://status.weedmaps.com", type: "statuspage" },
+  // New services added tick 284
+  // Anyword — AI writing platform for marketing copy and content optimization
+  { id: "anyword", name: "Anyword", tags: ["ai", "writing", "marketing", "content", "saas"], status_url: "https://anyword.statuspage.io/api/v2/status.json", page_url: "https://anyword.statuspage.io", type: "statuspage" },
+  // Thunder Client — lightweight REST API client extension for VS Code
+  { id: "thunderclient", name: "Thunder Client", tags: ["api-testing", "developer-tools", "rest", "vscode", "saas"], status_url: "https://thunderclient.statuspage.io/api/v2/status.json", page_url: "https://thunderclient.statuspage.io", type: "statuspage" },
+  // QuillBot — AI paraphrasing and writing tool for content rewriting and summarization
+  { id: "quillbot", name: "QuillBot", tags: ["ai", "writing", "paraphrasing", "nlp", "saas"], status_url: "https://quillbot.statuspage.io/api/v2/status.json", page_url: "https://quillbot.statuspage.io", type: "statuspage" },
+  // RankMath — WordPress SEO plugin for on-page SEO optimization and schema markup
+  { id: "rankmath", name: "RankMath", tags: ["seo", "wordpress", "content", "marketing", "saas"], status_url: "https://rankmath.statuspage.io/api/v2/status.json", page_url: "https://rankmath.statuspage.io", type: "statuspage" },
+  // Ekata — identity verification and fraud prevention API (Mastercard subsidiary)
+  { id: "ekata", name: "Ekata", tags: ["identity", "fraud-prevention", "verification", "fintech", "api"], status_url: "https://ekata.statuspage.io/api/v2/status.json", page_url: "https://ekata.statuspage.io", type: "statuspage" },
+  // Sapiens International — insurance core software platform for P&C, life, and reinsurance
+  { id: "sapiens", name: "Sapiens", tags: ["insurance", "core-software", "enterprise", "financial-services", "saas"], status_url: "https://sapiens.statuspage.io/api/v2/status.json", page_url: "https://sapiens.statuspage.io", type: "statuspage" },
+  // Folloze — buyer experience platform for B2B sales and account-based marketing
+  { id: "folloze", name: "Folloze", tags: ["sales-enablement", "b2b", "marketing", "abm", "saas"], status_url: "https://folloze.statuspage.io/api/v2/status.json", page_url: "https://folloze.statuspage.io", type: "statuspage" },
+  // Allego — sales enablement and learning platform for revenue teams
+  { id: "allego", name: "Allego", tags: ["sales-enablement", "learning", "coaching", "revenue", "saas"], status_url: "https://allego.statuspage.io/api/v2/status.json", page_url: "https://allego.statuspage.io", type: "statuspage" },
+  // Vivantio — ITSM and service management platform for enterprise help desks
+  { id: "vivantio", name: "Vivantio", tags: ["itsm", "helpdesk", "service-management", "enterprise", "saas"], status_url: "https://vivantio.statuspage.io/api/v2/status.json", page_url: "https://vivantio.statuspage.io", type: "statuspage" },
+  // SkydropX — shipping and logistics platform for e-commerce in Mexico/LATAM
+  { id: "skydropx", name: "SkydropX", tags: ["shipping", "logistics", "e-commerce", "latam", "saas"], status_url: "https://skydropx.statuspage.io/api/v2/status.json", page_url: "https://skydropx.statuspage.io", type: "statuspage" },
+  // Chatra — live chat and chatbot platform for customer support and sales
+  { id: "chatra", name: "Chatra", tags: ["live-chat", "customer-support", "messaging", "chatbot", "saas"], status_url: "https://chatra.statuspage.io/api/v2/status.json", page_url: "https://chatra.statuspage.io", type: "statuspage" },
+  // Trustmary — video testimonial and review collection platform for social proof marketing
+  { id: "trustmary", name: "Trustmary", tags: ["reviews", "testimonials", "social-proof", "marketing", "saas"], status_url: "https://trustmary.statuspage.io/api/v2/status.json", page_url: "https://trustmary.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5554,7 +5579,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2769 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2781 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5592,7 +5617,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2769 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2781 services.",
           },
         },
         required: [],
