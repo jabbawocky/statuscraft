@@ -4950,6 +4950,31 @@ const SERVICES = [
     { id: "stellar", name: "Stellar", tags: ["blockchain", "payments", "crypto", "web3", "fintech"], status_url: "https://status.stellar.org/api/v2/status.json", page_url: "https://status.stellar.org", type: "statuspage" },
     // Osmosis — decentralized exchange (DEX) and AMM built on the Cosmos ecosystem
     { id: "osmosis", name: "Osmosis", tags: ["defi", "blockchain", "cosmos", "dex", "web3"], status_url: "https://osmosis.statuspage.io/api/v2/status.json", page_url: "https://osmosis.statuspage.io", type: "statuspage" },
+    // New services added tick 282
+    // Scroll — Ethereum zkEVM Layer 2 for scaling Ethereum with zero-knowledge proofs
+    { id: "scroll", name: "Scroll", tags: ["blockchain", "ethereum", "layer2", "zkevm", "web3"], status_url: "https://scroll.statuspage.io/api/v2/status.json", page_url: "https://scroll.statuspage.io", type: "statuspage" },
+    // Base — Ethereum Layer 2 by Coinbase built on the OP Stack
+    { id: "base", name: "Base", tags: ["blockchain", "ethereum", "layer2", "web3", "coinbase"], status_url: "https://base.statuspage.io/api/v2/status.json", page_url: "https://base.statuspage.io", type: "statuspage" },
+    // Morph — Ethereum Layer 2 with hybrid architecture combining optimistic and zk rollup
+    { id: "morph", name: "Morph", tags: ["blockchain", "ethereum", "layer2", "zk-rollup", "web3"], status_url: "https://morph.statuspage.io/api/v2/status.json", page_url: "https://morph.statuspage.io", type: "statuspage" },
+    // Mantle — Ethereum Layer 2 network with modular architecture and data availability layer
+    { id: "mantle", name: "Mantle", tags: ["blockchain", "ethereum", "layer2", "web3", "modular"], status_url: "https://mantle.statuspage.io/api/v2/status.json", page_url: "https://mantle.statuspage.io", type: "statuspage" },
+    // Sui — high-performance Layer 1 blockchain with object-centric model and Move language
+    { id: "sui", name: "Sui", tags: ["blockchain", "layer1", "web3", "move-lang", "l1"], status_url: "https://sui.statuspage.io/api/v2/status.json", page_url: "https://sui.statuspage.io", type: "statuspage" },
+    // Merlin Chain — Bitcoin Layer 2 network with EVM compatibility and ZK-rollup technology
+    { id: "merlin", name: "Merlin Chain", tags: ["blockchain", "bitcoin", "layer2", "evm", "web3"], status_url: "https://merlin.statuspage.io/api/v2/status.json", page_url: "https://merlin.statuspage.io", type: "statuspage" },
+    // Hyperliquid — fully on-chain perpetuals DEX and Layer 1 blockchain
+    { id: "hyperliquid", name: "Hyperliquid", tags: ["defi", "dex", "perpetuals", "blockchain", "web3"], status_url: "https://hyperliquid.statuspage.io/api/v2/status.json", page_url: "https://hyperliquid.statuspage.io", type: "statuspage" },
+    // dYdX — decentralized perpetuals trading exchange on its own Cosmos-based chain
+    { id: "dydx", name: "dYdX", tags: ["defi", "dex", "perpetuals", "blockchain", "web3"], status_url: "https://dydx.statuspage.io/api/v2/status.json", page_url: "https://dydx.statuspage.io", type: "statuspage" },
+    // Blur — NFT marketplace and aggregator on Ethereum focused on professional traders
+    { id: "blur", name: "Blur", tags: ["nft", "marketplace", "ethereum", "web3", "defi"], status_url: "https://blur.statuspage.io/api/v2/status.json", page_url: "https://blur.statuspage.io", type: "statuspage" },
+    // Compound — decentralized lending and borrowing protocol on Ethereum
+    { id: "compound", name: "Compound", tags: ["defi", "lending", "ethereum", "protocol", "web3"], status_url: "https://compound.statuspage.io/api/v2/status.json", page_url: "https://compound.statuspage.io", type: "statuspage" },
+    // Coconut.co — cloud video transcoding and media processing API
+    { id: "coconut", name: "Coconut", tags: ["video", "transcoding", "media", "api", "developer-tools"], status_url: "https://coconut.statuspage.io/api/v2/status.json", page_url: "https://coconut.statuspage.io", type: "statuspage" },
+    // Weedmaps — cannabis marketplace and discovery platform for dispensaries and brands
+    { id: "weedmaps", name: "Weedmaps", tags: ["cannabis", "marketplace", "dispensary", "consumer", "saas"], status_url: "https://status.weedmaps.com/api/v2/status.json", page_url: "https://status.weedmaps.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -5407,7 +5432,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2757 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2769 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -5442,7 +5467,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2757 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2769 services.",
                     },
                 },
                 required: [],
