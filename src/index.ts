@@ -5211,6 +5211,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "juniper_square", name: "Juniper Square", tags: ["fintech", "investment-management", "private-markets", "real-estate", "saas"], status_url: "https://status.junipersquare.com/api/v2/status.json", page_url: "https://status.junipersquare.com", type: "statuspage" },
   // Visible — investor relations and portfolio company reporting platform for startups and VCs
   { id: "visible_vc", name: "Visible", tags: ["investor-relations", "reporting", "startups", "venture-capital", "saas"], status_url: "https://status.visible.vc/api/v2/status.json", page_url: "https://status.visible.vc", type: "statuspage" },
+  // Census — reverse ETL / data activation platform syncing warehouse data to business tools
+  { id: "census", name: "Census", tags: ["data", "reverse-etl", "data-sync", "integration", "saas"], status_url: "https://status.getcensus.com/api/v2/status.json", page_url: "https://status.getcensus.com", type: "statuspage" },
+  // Wave — free accounting, invoicing, and payroll software for small businesses
+  { id: "wave_accounting", name: "Wave", tags: ["accounting", "invoicing", "payroll", "small-business", "saas"], status_url: "https://status.waveapps.com/api/v2/status.json", page_url: "https://status.waveapps.com", type: "statuspage" },
+  // Speakap — employee communications and social intranet platform for deskless workers
+  { id: "speakap", name: "Speakap", tags: ["internal-communications", "employee-engagement", "intranet", "mobile", "saas"], status_url: "https://speakap.statuspage.io/api/v2/status.json", page_url: "https://speakap.statuspage.io", type: "statuspage" },
+  // Igloo Software — digital workplace / intranet platform for employee communication and collaboration
+  { id: "igloo_software", name: "Igloo Software", tags: ["intranet", "digital-workplace", "employee-engagement", "collaboration", "saas"], status_url: "https://igloo.statuspage.io/api/v2/status.json", page_url: "https://igloo.statuspage.io", type: "statuspage" },
+  // Qminder — queue management and customer flow platform for service businesses and clinics
+  { id: "qminder", name: "Qminder", tags: ["queue-management", "customer-flow", "healthcare", "retail", "saas"], status_url: "https://status.qminder.com/api/v2/status.json", page_url: "https://status.qminder.com", type: "statuspage" },
+  // Weave — patient and customer communication platform for healthcare SMBs (dental, optometry, etc.)
+  { id: "weave", name: "Weave", tags: ["healthcare", "patient-communication", "voip", "sms", "saas"], status_url: "https://status.getweave.com/api/v2/status.json", page_url: "https://status.getweave.com", type: "statuspage" },
+  // Airplane — internal tools and admin panel builder for engineering teams
+  { id: "airplane", name: "Airplane", tags: ["internal-tools", "developer-tools", "admin-panel", "workflow", "saas"], status_url: "https://airplane.statuspage.io/api/v2/status.json", page_url: "https://airplane.statuspage.io", type: "statuspage" },
+  // Clutch — B2B ratings and reviews marketplace connecting buyers with service providers
+  { id: "clutch_reviews", name: "Clutch", tags: ["b2b", "marketplace", "reviews", "lead-generation", "saas"], status_url: "https://clutch.statuspage.io/api/v2/status.json", page_url: "https://status.clutch.com", type: "statuspage" },
+  // Screenly — digital signage platform for managing screen content at scale (cloud-based, Pi-powered)
+  { id: "screenly", name: "Screenly", tags: ["digital-signage", "iot", "display", "media", "saas"], status_url: "https://screenly.statuspage.io/api/v2/status.json", page_url: "https://status.screenly.io", type: "statuspage" },
+  // ZenHR — cloud-based HR and payroll platform for companies in the MENA region
+  { id: "zenhr", name: "ZenHR", tags: ["hr", "payroll", "hrms", "mena", "saas"], status_url: "https://zenhr.statuspage.io/api/v2/status.json", page_url: "https://zenhr.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5648,7 +5668,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2815 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2825 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5686,7 +5706,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2815 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2825 services.",
           },
         },
         required: [],
