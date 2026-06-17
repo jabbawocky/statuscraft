@@ -4974,6 +4974,16 @@ const SERVICES: ServiceConfig[] = [
   { id: "reputation_com", name: "Reputation.com", tags: ["reputation-management", "reviews", "local-marketing", "enterprise", "saas"], status_url: "https://reputation.statuspage.io/api/v2/status.json", page_url: "https://reputation.statuspage.io", type: "statuspage" },
   { id: "aisera", name: "AISera", tags: ["ai", "itsm", "service-management", "conversational-ai", "enterprise"], status_url: "https://aisera.statuspage.io/api/v2/status.json", page_url: "https://aisera.statuspage.io", type: "statuspage" },
   { id: "rezolve_ai", name: "Rezolve.ai", tags: ["ai", "itsm", "service-desk", "automation", "saas"], status_url: "https://rezolve.statuspage.io/api/v2/status.json", page_url: "https://rezolve.statuspage.io", type: "statuspage" },
+  { id: "rainforest_qa", name: "Rainforest QA", tags: ["testing", "qa", "automation", "web-testing", "saas"], status_url: "https://status.rainforestqa.com/api/v2/status.json", page_url: "https://status.rainforestqa.com", type: "statuspage" },
+  { id: "beam_cloud", name: "Beam", tags: ["ml", "machine-learning", "gpu", "serverless", "developer-tools"], status_url: "https://status.beam.cloud/api/v2/status.json", page_url: "https://status.beam.cloud", type: "statuspage" },
+  { id: "atomic_financial", name: "Atomic Financial", tags: ["fintech", "payroll-connectivity", "open-finance", "api", "saas"], status_url: "https://status.atomic.financial/api/v2/status.json", page_url: "https://status.atomic.financial", type: "statuspage" },
+  { id: "assignar", name: "Assignar", tags: ["construction", "workforce-management", "scheduling", "field-service", "saas"], status_url: "https://status.assignar.com/api/v2/status.json", page_url: "https://status.assignar.com", type: "statuspage" },
+  { id: "heartbeat_chat", name: "Heartbeat", tags: ["community", "collaboration", "messaging", "saas"], status_url: "https://status.heartbeat.chat/api/v2/status.json", page_url: "https://status.heartbeat.chat", type: "statuspage" },
+  { id: "neon_one", name: "Neon One", tags: ["nonprofit", "crm", "fundraising", "donor-management", "saas"], status_url: "https://status.neonone.com/api/v2/status.json", page_url: "https://status.neonone.com", type: "statuspage" },
+  { id: "trustero", name: "Trustero", tags: ["compliance", "grc", "security", "audit", "saas"], status_url: "https://status.trustero.com/api/v2/status.json", page_url: "https://status.trustero.com", type: "statuspage" },
+  { id: "supercast", name: "Supercast", tags: ["podcast", "subscription", "content", "creator-economy", "saas"], status_url: "https://status.supercast.com/api/v2/status.json", page_url: "https://status.supercast.com", type: "statuspage" },
+  { id: "trekksoft", name: "TrekkSoft", tags: ["travel", "tours", "booking", "activities", "saas"], status_url: "https://status.trekksoft.com/api/v2/status.json", page_url: "https://status.trekksoft.com", type: "statuspage" },
+  { id: "saleo", name: "Saleo", tags: ["sales", "demo", "product-demo", "sales-enablement", "saas"], status_url: "https://status.saleo.io/api/v2/status.json", page_url: "https://status.saleo.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5411,7 +5421,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2688 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2698 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5449,7 +5459,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2688 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2698 services.",
           },
         },
         required: [],
