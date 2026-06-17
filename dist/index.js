@@ -5000,6 +5000,30 @@ const SERVICES = [
     { id: "chatra", name: "Chatra", tags: ["live-chat", "customer-support", "messaging", "chatbot", "saas"], status_url: "https://chatra.statuspage.io/api/v2/status.json", page_url: "https://chatra.statuspage.io", type: "statuspage" },
     // Trustmary — video testimonial and review collection platform for social proof marketing
     { id: "trustmary", name: "Trustmary", tags: ["reviews", "testimonials", "social-proof", "marketing", "saas"], status_url: "https://trustmary.statuspage.io/api/v2/status.json", page_url: "https://trustmary.statuspage.io", type: "statuspage" },
+    // ReadMe — developer hub and API documentation platform
+    { id: "readme_io", name: "ReadMe", tags: ["documentation", "developer-hub", "api-docs", "developer-tools", "saas"], status_url: "https://readme.statuspage.io/api/v2/status.json", page_url: "https://www.readmestatus.com", type: "statuspage" },
+    // Cluvio — SQL-based BI and data analytics platform for SaaS companies
+    { id: "cluvio", name: "Cluvio", tags: ["bi", "analytics", "data-visualization", "sql", "saas"], status_url: "https://status.cluvio.com/api/v2/status.json", page_url: "https://status.cluvio.com", type: "statuspage" },
+    // Runscope — API monitoring and testing (now part of Datadog)
+    { id: "runscope", name: "Runscope", tags: ["api-testing", "monitoring", "developer-tools", "qa", "api"], status_url: "https://runscope.statuspage.io/api/v2/status.json", page_url: "https://runscope.statuspage.io", type: "statuspage" },
+    // TravelNet Solutions (formerly Track) — hospitality management platform for vacation rentals and hotels
+    { id: "track_hospitality", name: "TravelNet Solutions", tags: ["hospitality", "hotel", "property-management", "vacation-rental", "saas"], status_url: "https://status.trackhs.com/api/v2/status.json", page_url: "https://status.trackhs.com", type: "statuspage" },
+    // RMS Cloud — property management system for hotels, resorts, and campgrounds
+    { id: "rms_cloud", name: "RMS Cloud", tags: ["hospitality", "hotel", "property-management", "reservations", "saas"], status_url: "https://status.rmscloud.com/api/v2/status.json", page_url: "https://status.rmscloud.com", type: "statuspage" },
+    // Stay — vacation rental and channel management platform
+    { id: "stay", name: "Stay", tags: ["hospitality", "vacation-rental", "channel-manager", "property-management", "saas"], status_url: "https://stay.statuspage.io/api/v2/status.json", page_url: "https://stay.statuspage.io", type: "statuspage" },
+    // Asite — cloud-based construction and engineering collaboration platform
+    { id: "asite", name: "Asite", tags: ["construction", "project-management", "bim", "engineering", "saas"], status_url: "https://status.asite.com/api/v2/status.json", page_url: "https://status.asite.com", type: "statuspage" },
+    // Assemble — construction quantity takeoff and cost estimating from BIM
+    { id: "assemble", name: "Assemble", tags: ["construction", "estimating", "bim", "takeoff", "saas"], status_url: "https://assemble.statuspage.io/api/v2/status.json", page_url: "https://assemble.statuspage.io", type: "statuspage" },
+    // Leap — field sales and project management software for contractors (roofing, windows, siding)
+    { id: "leap", name: "Leap", tags: ["construction", "contractor", "field-service", "sales", "saas"], status_url: "https://status.leaptodigital.com/api/v2/status.json", page_url: "https://status.leaptodigital.com", type: "statuspage" },
+    // ServiceChannel — facilities and maintenance management platform for multi-site businesses
+    { id: "servicechannel", name: "ServiceChannel", tags: ["facilities-management", "maintenance", "vendor-management", "enterprise", "saas"], status_url: "https://status.servicechannel.com/api/v2/status.json", page_url: "https://status.servicechannel.com", type: "statuspage" },
+    // Archibus by Eptura — integrated workplace management system (IWMS) for real estate and facilities
+    { id: "archibus", name: "Archibus", tags: ["facilities-management", "iwms", "real-estate", "workplace", "enterprise"], status_url: "https://archibus.statuspage.io/api/v2/status.json", page_url: "https://archibus.statuspage.io", type: "statuspage" },
+    // Nemetschek — AEC software group (Vectorworks, Allplan, Archicad parent company)
+    { id: "nemetschek", name: "Nemetschek", tags: ["construction", "architecture", "engineering", "bim", "software"], status_url: "https://nemetschek.statuspage.io/api/v2/status.json", page_url: "https://status.nemetschek.bg", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -5457,7 +5481,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2781 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2793 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -5492,7 +5516,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2781 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2793 services.",
                     },
                 },
                 required: [],
