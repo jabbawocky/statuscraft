@@ -5492,6 +5492,20 @@ const SERVICES: ServiceConfig[] = [
   { id: "ease_hcm", name: "Ease", tags: ["hr", "benefits", "administration", "smb", "saas"], status_url: "https://status.ease.com/api/v2/status.json", page_url: "https://status.ease.com", type: "statuspage" },
   { id: "pave_comp", name: "Pave", tags: ["compensation", "hr", "benchmarking", "planning", "saas"], status_url: "https://status.pave.com/api/v2/status.json", page_url: "https://status.pave.com", type: "statuspage" },
   { id: "monitaur", name: "Monitaur", tags: ["ai-governance", "mlops", "compliance", "enterprise", "saas"], status_url: "https://status.monitaur.ai/api/v2/status.json", page_url: "https://status.monitaur.ai", type: "statuspage" },
+  // Batch added tick 297 — 13 new live-verified services
+  { id: "sync", name: "Sync.com", tags: ["cloud-storage", "file-sync", "privacy", "backup"], status_url: "https://status.sync.com/api/v2/status.json", page_url: "https://status.sync.com", type: "statuspage" },
+  { id: "jottacloud", name: "Jottacloud", tags: ["cloud-storage", "file-sync", "backup", "norway"], status_url: "https://status.jottacloud.com/api/v2/status.json", page_url: "https://status.jottacloud.com", type: "statuspage" },
+  { id: "firetext", name: "FireText", tags: ["sms", "messaging", "uk", "communications"], status_url: "https://status.firetext.co.uk/api/v2/status.json", page_url: "https://status.firetext.co.uk", type: "statuspage" },
+  { id: "textlocal", name: "Textlocal", tags: ["sms", "messaging", "uk", "communications"], status_url: "https://status.textlocal.com/api/v2/status.json", page_url: "https://status.textlocal.com", type: "statuspage" },
+  { id: "komodor", name: "Komodor", tags: ["kubernetes", "devops", "troubleshooting", "k8s"], status_url: "https://status.komodor.com/api/v2/status.json", page_url: "https://status.komodor.com", type: "statuspage" },
+  { id: "opslevel", name: "OpsLevel", tags: ["service-catalog", "developer-portal", "devops", "engineering-productivity"], status_url: "https://status.opslevel.com/api/v2/status.json", page_url: "https://status.opslevel.com", type: "statuspage" },
+  { id: "iproyal", name: "IPRoyal", tags: ["proxy", "residential-proxy", "datacenter-proxy", "networking"], status_url: "https://status.iproyal.com/api/v2/status.json", page_url: "https://status.iproyal.com", type: "statuspage" },
+  { id: "webshare", name: "Webshare", tags: ["proxy", "residential-proxy", "datacenter-proxy", "networking"], status_url: "https://status.webshare.io/api/v2/status.json", page_url: "https://status.webshare.io", type: "statuspage" },
+  { id: "swat_io", name: "Swat.io", tags: ["social-media", "marketing", "scheduling", "analytics"], status_url: "https://status.swat.io/api/v2/status.json", page_url: "https://status.swat.io", type: "statuspage" },
+  { id: "insightsoftware", name: "insightsoftware", tags: ["analytics", "bi", "reporting", "enterprise"], status_url: "https://status.insightsoftware.com/api/v2/status.json", page_url: "https://status.insightsoftware.com", type: "statuspage" },
+  { id: "employmenthero", name: "Employment Hero", tags: ["hr", "payroll", "employee-management", "australia"], status_url: "https://status.employmenthero.com/api/v2/status.json", page_url: "https://status.employmenthero.com", type: "statuspage" },
+  { id: "truecontext", name: "TrueContext", tags: ["field-service", "mobile-forms", "operations", "saas"], status_url: "https://status.truecontext.com/api/v2/status.json", page_url: "https://status.truecontext.com", type: "statuspage" },
+  { id: "avionte", name: "Avionte", tags: ["staffing", "recruiting", "ats", "hr"], status_url: "https://status.avionte.com/api/v2/status.json", page_url: "https://status.avionte.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5929,7 +5943,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 3015 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 3028 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5967,7 +5981,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3015 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3028 services.",
           },
         },
         required: [],
