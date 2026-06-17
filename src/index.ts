@@ -4994,6 +4994,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "buildinglink", name: "BuildingLink", tags: ["property-management", "residential", "tenant-communication", "saas", "real-estate"], status_url: "https://status.buildinglink.com/api/v2/status.json", page_url: "https://status.buildinglink.com", type: "statuspage" },
   { id: "goodrx", name: "GoodRx", tags: ["healthcare", "pharmacy", "drug-pricing", "api", "consumer"], status_url: "https://status.goodrx.com/api/v2/status.json", page_url: "https://status.goodrx.com", type: "statuspage" },
   { id: "overdrive", name: "OverDrive", tags: ["library", "ebooks", "digital-lending", "education", "consumer"], status_url: "https://status.overdrive.com/api/v2/status.json", page_url: "https://status.overdrive.com", type: "statuspage" },
+  // CockroachDB — distributed SQL cloud database
+  { id: "cockroachlabs", name: "CockroachDB", tags: ["database", "distributed-sql", "cloud", "postgres", "saas"], status_url: "https://cockroachlabs.statuspage.io/api/v2/status.json", page_url: "https://cockroachlabs.statuspage.io", type: "statuspage" },
+  // ClubOS — fitness club management and member engagement platform
+  { id: "clubos", name: "ClubOS", tags: ["fitness", "club-management", "pos", "member-experience", "saas"], status_url: "https://clubos.statuspage.io/api/v2/status.json", page_url: "https://clubos.statuspage.io", type: "statuspage" },
+  // MX Technologies — open banking and financial data connectivity platform
+  { id: "mx_technologies", name: "MX Technologies", tags: ["fintech", "open-banking", "financial-data", "data-connectivity", "api"], status_url: "https://mx.statuspage.io/api/v2/status.json", page_url: "https://mx.statuspage.io", type: "statuspage" },
+  // IEX Cloud — financial data platform for market data and fundamentals
+  { id: "iexcloud", name: "IEX Cloud", tags: ["financial-data", "market-data", "stocks", "api", "fintech"], status_url: "https://iexcloud.statuspage.io/api/v2/status.json", page_url: "https://iexcloud.statuspage.io", type: "statuspage" },
+  // Max (HBO Max) — Warner Bros. Discovery streaming video platform
+  { id: "max_stream", name: "Max", tags: ["streaming", "entertainment", "video", "consumer", "media"], status_url: "https://max.statuspage.io/api/v2/status.json", page_url: "https://max.statuspage.io", type: "statuspage" },
+  // LinkedIn API — professional social network developer platform
+  { id: "linkedin_api", name: "LinkedIn API", tags: ["social", "professional-network", "developer-tools", "api", "b2b"], status_url: "https://linkedin.statuspage.io/api/v2/status.json", page_url: "https://www.linkedin-apistatus.com", type: "statuspage" },
+  // Revel Systems — iPad point-of-sale and business management platform for restaurants and retail
+  { id: "revel_systems", name: "Revel Systems", tags: ["pos", "restaurant", "retail", "ipad-pos", "saas"], status_url: "https://revelsystems.statuspage.io/api/v2/status.json", page_url: "https://status.revelsystems.com", type: "statuspage" },
+  // SerpAPI — search engine results page data API for web scraping and SEO
+  { id: "serpapi", name: "SerpAPI", tags: ["search", "seo", "api", "developer-tools", "web-data"], status_url: "https://status.serpapi.com/api/v2/status.json", page_url: "https://status.serpapi.com", type: "statuspage" },
+  // Botify — enterprise SEO analytics and technical SEO automation platform
+  { id: "botify", name: "Botify", tags: ["seo", "analytics", "enterprise", "search", "saas"], status_url: "https://botify.statuspage.io/api/v2/status.json", page_url: "https://botify.statuspage.io", type: "statuspage" },
+  // HyperTrack — live location tracking and movement API for logistics and mobility apps
+  { id: "hypertrack", name: "HyperTrack", tags: ["location-tracking", "logistics", "mobility", "api", "developer-tools"], status_url: "https://status.hypertrack.com/api/v2/status.json", page_url: "https://status.hypertrack.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5431,7 +5451,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2708 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2718 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5469,7 +5489,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2708 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2718 services.",
           },
         },
         required: [],
