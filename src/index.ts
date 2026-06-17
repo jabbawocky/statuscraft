@@ -5506,6 +5506,19 @@ const SERVICES: ServiceConfig[] = [
   { id: "employmenthero", name: "Employment Hero", tags: ["hr", "payroll", "employee-management", "australia"], status_url: "https://status.employmenthero.com/api/v2/status.json", page_url: "https://status.employmenthero.com", type: "statuspage" },
   { id: "truecontext", name: "TrueContext", tags: ["field-service", "mobile-forms", "operations", "saas"], status_url: "https://status.truecontext.com/api/v2/status.json", page_url: "https://status.truecontext.com", type: "statuspage" },
   { id: "avionte", name: "Avionte", tags: ["staffing", "recruiting", "ats", "hr"], status_url: "https://status.avionte.com/api/v2/status.json", page_url: "https://status.avionte.com", type: "statuspage" },
+  // Batch added tick 299 — 12 new live-verified services
+  { id: "examsoft", name: "ExamSoft", tags: ["edtech", "assessment", "exam", "education", "saas"], status_url: "https://status.examsoft.com/api/v2/status.json", page_url: "https://status.examsoft.com", type: "statuspage" },
+  { id: "pixieset", name: "Pixieset", tags: ["photography", "gallery", "portfolio", "creative", "saas"], status_url: "https://status.pixieset.com/api/v2/status.json", page_url: "https://status.pixieset.com", type: "statuspage" },
+  { id: "ada_support", name: "Ada", tags: ["ai", "customer-support", "chatbot", "automation", "saas"], status_url: "https://status.ada.support/api/v2/status.json", page_url: "https://status.ada.support", type: "statuspage" },
+  { id: "jwx", name: "JW Player", tags: ["video", "streaming", "media", "cdn", "developer-tools"], status_url: "https://status.jwplayer.com/api/v2/status.json", page_url: "https://status.jwplayer.com", type: "statuspage" },
+  { id: "bettercloud", name: "BetterCloud", tags: ["saas-management", "it", "automation", "security", "enterprise"], status_url: "https://status.bettercloud.com/api/v2/status.json", page_url: "https://status.bettercloud.com", type: "statuspage" },
+  { id: "percolate", name: "Percolate", tags: ["content-marketing", "marketing", "publishing", "enterprise"], status_url: "https://status.percolate.com/api/v2/status.json", page_url: "https://status.percolate.com", type: "statuspage" },
+  { id: "coschedule", name: "CoSchedule", tags: ["marketing", "content", "calendar", "social-media", "saas"], status_url: "https://status.coschedule.com/api/v2/status.json", page_url: "https://status.coschedule.com", type: "statuspage" },
+  { id: "pitcher_ag", name: "Pitcher", tags: ["sales-enablement", "crm", "mobile", "field-sales", "saas"], status_url: "https://status.pitcher.com/api/v2/status.json", page_url: "https://status.pitcher.com", type: "statuspage" },
+  { id: "turnitin", name: "Turnitin", tags: ["edtech", "plagiarism", "academic-integrity", "education", "saas"], status_url: "https://turnitin.statuspage.io/api/v2/status.json", page_url: "https://turnitin.statuspage.io", type: "statuspage" },
+  { id: "campspot", name: "Campspot", tags: ["camping", "outdoor", "reservation", "hospitality", "saas"], status_url: "https://status.campspot.com/api/v2/status.json", page_url: "https://status.campspot.com", type: "statuspage" },
+  { id: "parkwhiz", name: "ParkWhiz", tags: ["parking", "mobility", "reservations", "saas"], status_url: "https://status.parkwhiz.com/api/v2/status.json", page_url: "https://status.parkwhiz.com", type: "statuspage" },
+  { id: "parkmobile", name: "ParkMobile", tags: ["parking", "mobility", "payments", "saas"], status_url: "https://status.parkmobile.io/api/v2/status.json", page_url: "https://status.parkmobile.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5943,7 +5956,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 3028 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 3040 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5981,7 +5994,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3028 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3040 services.",
           },
         },
         required: [],
