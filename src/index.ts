@@ -5626,6 +5626,17 @@ const SERVICES: ServiceConfig[] = [
   { id: "linq", name: "Linq", tags: ["digital-business-cards", "networking", "crm", "contact-management", "saas"], status_url: "https://status.linqapp.com/api/v2/status.json", page_url: "https://status.linqapp.com", type: "statuspage" },
   { id: "castai", name: "CAST AI", tags: ["kubernetes", "cloud-cost", "optimization", "devops", "saas"], status_url: "https://status.cast.ai/api/v2/status.json", page_url: "https://status.cast.ai", type: "statuspage" },
   { id: "anodot", name: "Anodot", tags: ["analytics", "revenue", "anomaly-detection", "monitoring", "saas"], status_url: "https://status.anodot.com/api/v2/status.json", page_url: "https://status.anodot.com", type: "statuspage" },
+  { id: "searchpilot", name: "SearchPilot", tags: ["seo", "a-b-testing", "search", "experimentation", "saas"], status_url: "https://status.searchpilot.com/api/v2/status.json", page_url: "https://status.searchpilot.com", type: "statuspage" },
+  { id: "ceros", name: "Ceros", tags: ["interactive-content", "design", "marketing", "no-code", "saas"], status_url: "https://status.ceros.com/api/v2/status.json", page_url: "https://status.ceros.com", type: "statuspage" },
+  { id: "tryinteract", name: "Interact", tags: ["quiz", "lead-generation", "forms", "marketing", "saas"], status_url: "https://status.tryinteract.com/api/v2/status.json", page_url: "https://status.tryinteract.com", type: "statuspage" },
+  { id: "portchain", name: "Portchain", tags: ["maritime", "port-operations", "shipping", "logistics", "saas"], status_url: "https://status.portchain.com/api/v2/status.json", page_url: "https://status.portchain.com", type: "statuspage" },
+  { id: "findify", name: "Findify", tags: ["ecommerce", "search", "personalization", "merchandising", "saas"], status_url: "https://status.findify.io/api/v2/status.json", page_url: "https://status.findify.io", type: "statuspage" },
+  { id: "p2p_org", name: "P2P.org", tags: ["crypto", "staking", "blockchain", "institutional", "web3"], status_url: "https://status.p2p.org/api/v2/status.json", page_url: "https://status.p2p.org", type: "statuspage" },
+  { id: "kiln_fi", name: "Kiln", tags: ["crypto", "staking", "blockchain", "enterprise", "web3"], status_url: "https://status.kiln.fi/api/v2/status.json", page_url: "https://status.kiln.fi", type: "statuspage" },
+  { id: "figment", name: "Figment", tags: ["crypto", "staking", "blockchain", "data", "web3"], status_url: "https://figment.statuspage.io/api/v2/status.json", page_url: "https://figment.statuspage.io", type: "statuspage" },
+  { id: "ziflow", name: "Ziflow", tags: ["creative-review", "approval", "proofing", "marketing", "saas"], status_url: "https://status.ziflow.com/api/v2/status.json", page_url: "https://status.ziflow.com", type: "statuspage" },
+  { id: "lytho", name: "Lytho", tags: ["creative-ops", "brand-management", "dam", "marketing", "saas"], status_url: "https://status.lytho.com/api/v2/status.json", page_url: "https://status.lytho.com", type: "statuspage" },
+  { id: "perion", name: "Perion Network", tags: ["adtech", "advertising", "digital-media", "publisher", "saas"], status_url: "https://status.perion.com/api/v2/status.json", page_url: "https://status.perion.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6063,7 +6074,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 3142 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 3153 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -6101,7 +6112,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3142 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3153 services.",
           },
         },
         required: [],
