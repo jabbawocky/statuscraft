@@ -5166,6 +5166,27 @@ const SERVICES: ServiceConfig[] = [
   { id: "archibus", name: "Archibus", tags: ["facilities-management", "iwms", "real-estate", "workplace", "enterprise"], status_url: "https://archibus.statuspage.io/api/v2/status.json", page_url: "https://archibus.statuspage.io", type: "statuspage" },
   // Nemetschek — AEC software group (Vectorworks, Allplan, Archicad parent company)
   { id: "nemetschek", name: "Nemetschek", tags: ["construction", "architecture", "engineering", "bim", "software"], status_url: "https://nemetschek.statuspage.io/api/v2/status.json", page_url: "https://status.nemetschek.bg", type: "statuspage" },
+  // New services added tick 288
+  // DEV Community — developer blogging platform and community (dev.to)
+  { id: "dev_to", name: "DEV Community", tags: ["developer-community", "blogging", "content", "developer-tools", "saas"], status_url: "https://status.dev.to/api/v2/status.json", page_url: "https://status.dev.to", type: "statuspage" },
+  // Hint Health — direct primary care (DPC) practice management platform
+  { id: "hint_health", name: "Hint Health", tags: ["healthcare", "primary-care", "practice-management", "dpc", "saas"], status_url: "https://status.hint.com/api/v2/status.json", page_url: "https://status.hint.com", type: "statuspage" },
+  // Sequel — virtual event and webinar platform for audience engagement
+  { id: "sequel_io", name: "Sequel", tags: ["virtual-events", "webinars", "events", "engagement", "saas"], status_url: "https://status.sequel.io/api/v2/status.json", page_url: "https://status.sequel.io", type: "statuspage" },
+  // itslearning — cloud-based learning management system (LMS) for K-12 and higher education
+  { id: "itslearning", name: "itslearning", tags: ["lms", "education", "e-learning", "k12", "saas"], status_url: "https://status.itslearning.com/api/v2/status.json", page_url: "https://status.itslearning.com", type: "statuspage" },
+  // Apptegy — school district communication and branding platform
+  { id: "apptegy", name: "Apptegy", tags: ["education", "k12", "school-communication", "branding", "saas"], status_url: "https://status.apptegy.com/api/v2/status.json", page_url: "https://status.apptegy.com", type: "statuspage" },
+  // Responsive (formerly RFPIO) — RFP response and proposal automation platform
+  { id: "responsive", name: "Responsive", tags: ["rfp", "proposals", "sales-enablement", "content-management", "saas"], status_url: "https://status.rfpio.com/api/v2/status.json", page_url: "https://status.rfpio.com", type: "statuspage" },
+  // ContactMonkey — internal employee email communication and analytics platform
+  { id: "contactmonkey", name: "ContactMonkey", tags: ["internal-communications", "email", "hr", "employee-engagement", "saas"], status_url: "https://status.contactmonkey.com/api/v2/status.json", page_url: "https://status.contactmonkey.com", type: "statuspage" },
+  // Certain — enterprise event management and attendee engagement platform
+  { id: "certain", name: "Certain", tags: ["events", "event-management", "enterprise", "attendee-engagement", "saas"], status_url: "https://status.certain.com/api/v2/status.json", page_url: "https://status.certain.com", type: "statuspage" },
+  // PhoneBurner — power dialing and outbound sales call automation platform
+  { id: "phoneburner", name: "PhoneBurner", tags: ["sales", "dialer", "outbound-calling", "crm", "saas"], status_url: "https://status.phoneburner.com/api/v2/status.json", page_url: "https://status.phoneburner.com", type: "statuspage" },
+  // MightyCall — virtual phone system for small businesses with call routing and IVR
+  { id: "mightycall", name: "MightyCall", tags: ["voip", "phone-system", "business-phone", "ivr", "saas"], status_url: "https://status.mightycall.com/api/v2/status.json", page_url: "https://status.mightycall.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5603,7 +5624,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2793 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2803 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5641,7 +5662,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2793 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2803 services.",
           },
         },
         required: [],
