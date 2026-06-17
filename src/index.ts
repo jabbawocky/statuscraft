@@ -5070,6 +5070,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "logrhythm", name: "LogRhythm Axon", tags: ["security", "siem", "analytics", "log-management", "enterprise"], status_url: "https://logrhythm.statuspage.io/api/v2/status.json", page_url: "https://logrhythm.statuspage.io", type: "statuspage" },
   // Dexcom — continuous glucose monitoring (CGM) platform and apps
   { id: "dexcom", name: "Dexcom", tags: ["healthcare", "glucose-monitoring", "diabetes", "medical-device", "consumer"], status_url: "https://status.dexcom.com/api/v2/status.json", page_url: "https://status.dexcom.com", type: "statuspage" },
+  // Mercari — Japanese-origin C2C marketplace platform (US, Japan, UK)
+  { id: "mercari", name: "Mercari", tags: ["marketplace", "e-commerce", "consumer", "japan", "resale"], status_url: "https://mercari.statuspage.io/api/v2/status.json", page_url: "https://status.mercari.com", type: "statuspage" },
+  // Hive Moderation — AI-powered content moderation and trust & safety API
+  { id: "hive_moderation", name: "Hive Moderation", tags: ["ai", "content-moderation", "trust-safety", "api", "developer-tools"], status_url: "https://hivemoderation.statuspage.io/api/v2/status.json", page_url: "https://status.hivemoderation.com", type: "statuspage" },
+  // Helius — Solana blockchain developer infrastructure (RPC, webhooks, APIs)
+  { id: "helius", name: "Helius", tags: ["blockchain", "solana", "web3", "api", "developer-tools"], status_url: "https://helius.statuspage.io/api/v2/status.json", page_url: "https://helius.statuspage.io", type: "statuspage" },
+  // Raise — gift card marketplace and rewards platform
+  { id: "raise", name: "Raise", tags: ["marketplace", "gift-cards", "rewards", "consumer", "fintech"], status_url: "https://raise.statuspage.io/api/v2/status.json", page_url: "https://raise.statuspage.io", type: "statuspage" },
+  // ZenML — open-source MLOps framework with managed cloud services
+  { id: "zenml", name: "ZenML", tags: ["mlops", "ml", "ai", "pipelines", "developer-tools"], status_url: "https://zenml.statuspage.io/api/v2/status.json", page_url: "https://status.zenml.io", type: "statuspage" },
+  // Celestia — modular blockchain data availability layer (L1)
+  { id: "celestia", name: "Celestia", tags: ["blockchain", "web3", "data-availability", "modular", "l1"], status_url: "https://status.celestia.org/api/v2/status.json", page_url: "https://status.celestia.org", type: "statuspage" },
+  // Contrast Security — runtime application self-protection (RASP) and AppSec platform
+  { id: "contrast_security", name: "Contrast Security", tags: ["security", "appsec", "rasp", "sast", "enterprise"], status_url: "https://contrast.statuspage.io/api/v2/status.json", page_url: "https://contrast.statuspage.io", type: "statuspage" },
+  // CrateDB Cloud — distributed SQL + time-series database-as-a-service
+  { id: "cratedb", name: "CrateDB Cloud", tags: ["database", "sql", "time-series", "distributed", "cloud"], status_url: "https://status.cratedb.com/api/v2/status.json", page_url: "https://status.cratedb.com", type: "statuspage" },
+  // Linea — Ethereum L2 zkEVM by ConsenSys
+  { id: "linea", name: "Linea", tags: ["blockchain", "ethereum", "layer2", "web3", "zk-rollup"], status_url: "https://linea.statuspage.io/api/v2/status.json", page_url: "https://linea.statuspage.io", type: "statuspage" },
+  // Stellar — open-source blockchain network for cross-border payments and asset issuance
+  { id: "stellar", name: "Stellar", tags: ["blockchain", "payments", "crypto", "web3", "fintech"], status_url: "https://status.stellar.org/api/v2/status.json", page_url: "https://status.stellar.org", type: "statuspage" },
+  // Osmosis — decentralized exchange (DEX) and AMM built on the Cosmos ecosystem
+  { id: "osmosis", name: "Osmosis", tags: ["defi", "blockchain", "cosmos", "dex", "web3"], status_url: "https://osmosis.statuspage.io/api/v2/status.json", page_url: "https://osmosis.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5507,7 +5529,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 2746 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 2757 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5545,7 +5567,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2746 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2757 services.",
           },
         },
         required: [],
