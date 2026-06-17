@@ -5591,6 +5591,18 @@ const SERVICES: ServiceConfig[] = [
   { id: "anaconda", name: "Anaconda", tags: ["data-science", "python", "machine-learning", "developer-tools", "saas"], status_url: "https://anaconda.statuspage.io/api/v2/status.json", page_url: "https://anaconda.statuspage.io", type: "statuspage" },
   { id: "xmpie", name: "XMPie", tags: ["print", "publishing", "cross-media", "marketing", "enterprise"], status_url: "https://status.xmpie.com/api/v2/status.json", page_url: "https://status.xmpie.com", type: "statuspage" },
   { id: "readcube", name: "ReadCube", tags: ["research", "reference-management", "citations", "academic", "saas"], status_url: "https://readcube.statuspage.io/api/v2/status.json", page_url: "https://readcube.statuspage.io", type: "statuspage" },
+  { id: "integrate_io", name: "Integrate.io", tags: ["data-integration", "etl", "pipeline", "analytics", "saas"], status_url: "https://status.xplenty.com/api/v2/status.json", page_url: "https://status.xplenty.com", type: "statuspage" },
+  { id: "pixelcut", name: "Pixelcut", tags: ["ai", "image-editing", "background-removal", "design", "saas"], status_url: "https://status.pixelcut.ai/api/v2/status.json", page_url: "https://status.pixelcut.ai", type: "statuspage" },
+  { id: "palo_alto_networks", name: "Palo Alto Networks", tags: ["security", "firewall", "network-security", "cloud-security", "enterprise"], status_url: "https://status.paloaltonetworks.com/api/v2/status.json", page_url: "https://status.paloaltonetworks.com", type: "statuspage" },
+  { id: "vertical_response", name: "Vertical Response", tags: ["email-marketing", "marketing", "campaigns", "saas", "smb"], status_url: "https://status.verticalresponse.com/api/v2/status.json", page_url: "https://status.verticalresponse.com", type: "statuspage" },
+  { id: "stitch_money", name: "Stitch Money", tags: ["payments", "open-banking", "africa", "fintech", "api"], status_url: "https://status.stitch.money/api/v2/status.json", page_url: "https://status.stitch.money", type: "statuspage" },
+  { id: "buddyboss", name: "BuddyBoss", tags: ["community", "social-learning", "lms", "wordpress", "saas"], status_url: "https://status.buddyboss.com/api/v2/status.json", page_url: "https://status.buddyboss.com", type: "statuspage" },
+  { id: "skydio", name: "Skydio", tags: ["drones", "autonomous-flight", "enterprise", "security", "iot"], status_url: "https://status.skydio.com/api/v2/status.json", page_url: "https://status.skydio.com", type: "statuspage" },
+  { id: "palmetto", name: "Palmetto", tags: ["solar", "energy", "clean-energy", "residential", "saas"], status_url: "https://status.palmetto.com/api/v2/status.json", page_url: "https://status.palmetto.com", type: "statuspage" },
+  { id: "exasol", name: "Exasol", tags: ["analytics", "database", "data-warehouse", "cloud", "saas"], status_url: "https://status.exasol.com/api/v2/status.json", page_url: "https://status.exasol.com", type: "statuspage" },
+  { id: "qubole", name: "Qubole", tags: ["big-data", "cloud-data-platform", "analytics", "ai", "saas"], status_url: "https://status.qubole.com/api/v2/status.json", page_url: "https://status.qubole.com", type: "statuspage" },
+  { id: "xe", name: "XE", tags: ["currency", "forex", "exchange-rates", "finance", "api"], status_url: "https://status.xe.com/api/v2/status.json", page_url: "https://status.xe.com", type: "statuspage" },
+  { id: "openexchangerates", name: "Open Exchange Rates", tags: ["currency", "forex", "exchange-rates", "api", "finance"], status_url: "https://status.openexchangerates.org/api/v2/status.json", page_url: "https://status.openexchangerates.org", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6028,7 +6040,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 3109 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 3121 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -6066,7 +6078,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3109 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3121 services.",
           },
         },
         required: [],
