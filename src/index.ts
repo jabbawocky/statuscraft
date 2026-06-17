@@ -5519,6 +5519,19 @@ const SERVICES: ServiceConfig[] = [
   { id: "campspot", name: "Campspot", tags: ["camping", "outdoor", "reservation", "hospitality", "saas"], status_url: "https://status.campspot.com/api/v2/status.json", page_url: "https://status.campspot.com", type: "statuspage" },
   { id: "parkwhiz", name: "ParkWhiz", tags: ["parking", "mobility", "reservations", "saas"], status_url: "https://status.parkwhiz.com/api/v2/status.json", page_url: "https://status.parkwhiz.com", type: "statuspage" },
   { id: "parkmobile", name: "ParkMobile", tags: ["parking", "mobility", "payments", "saas"], status_url: "https://status.parkmobile.io/api/v2/status.json", page_url: "https://status.parkmobile.io", type: "statuspage" },
+  // Batch added tick 301 — 12 new live-verified services
+  { id: "heymarket", name: "Heymarket", tags: ["sms", "business-texting", "messaging", "crm", "saas"], status_url: "https://status.heymarket.com/api/v2/status.json", page_url: "https://status.heymarket.com", type: "statuspage" },
+  { id: "fortnox", name: "Fortnox", tags: ["accounting", "finance", "erp", "sweden", "smb"], status_url: "https://status.fortnox.se/api/v2/status.json", page_url: "https://status.fortnox.se", type: "statuspage" },
+  { id: "zid_sa", name: "Zid", tags: ["e-commerce", "retail", "saudi-arabia", "mena", "saas"], status_url: "https://status.zid.sa/api/v2/status.json", page_url: "https://status.zid.sa", type: "statuspage" },
+  { id: "thoughtindustries", name: "Thought Industries", tags: ["lms", "customer-education", "e-learning", "saas", "enterprise"], status_url: "https://status.thoughtindustries.com/api/v2/status.json", page_url: "https://status.thoughtindustries.com", type: "statuspage" },
+  { id: "activtrak", name: "ActivTrak", tags: ["workforce-analytics", "employee-monitoring", "productivity", "saas", "enterprise"], status_url: "https://status.activtrak.com/api/v2/status.json", page_url: "https://status.activtrak.com", type: "statuspage" },
+  { id: "dispatch_me", name: "Dispatch", tags: ["field-service", "home-services", "scheduling", "crm", "saas"], status_url: "https://status.dispatch.me/api/v2/status.json", page_url: "https://status.dispatch.me", type: "statuspage" },
+  { id: "artera", name: "Artera", tags: ["patient-communication", "healthcare", "messaging", "engagement", "saas"], status_url: "https://status.artera.io/api/v2/status.json", page_url: "https://status.artera.io", type: "statuspage" },
+  { id: "maze_co", name: "Maze", tags: ["ux-research", "usability-testing", "product-research", "design", "saas"], status_url: "https://status.maze.co/api/v2/status.json", page_url: "https://status.maze.co", type: "statuspage" },
+  { id: "datarails", name: "DataRails", tags: ["fpa", "financial-planning", "budgeting", "excel", "saas"], status_url: "https://datarails.statuspage.io/api/v2/status.json", page_url: "https://datarails.statuspage.io", type: "statuspage" },
+  { id: "podscribe", name: "Podscribe", tags: ["podcast", "analytics", "attribution", "advertising", "saas"], status_url: "https://status.podscribe.com/api/v2/status.json", page_url: "https://status.podscribe.com", type: "statuspage" },
+  { id: "explo", name: "Explo", tags: ["analytics", "embedded-analytics", "dashboards", "developer-tools", "saas"], status_url: "https://status.explo.co/api/v2/status.json", page_url: "https://status.explo.co", type: "statuspage" },
+  { id: "notability", name: "Notability", tags: ["note-taking", "productivity", "ios", "education", "saas"], status_url: "https://status.notability.com/api/v2/status.json", page_url: "https://status.notability.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -5956,7 +5969,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 3040 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 3052 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -5994,7 +6007,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3040 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3052 services.",
           },
         },
         required: [],

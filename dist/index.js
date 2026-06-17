@@ -5315,6 +5315,46 @@ const SERVICES = [
     { id: "ease_hcm", name: "Ease", tags: ["hr", "benefits", "administration", "smb", "saas"], status_url: "https://status.ease.com/api/v2/status.json", page_url: "https://status.ease.com", type: "statuspage" },
     { id: "pave_comp", name: "Pave", tags: ["compensation", "hr", "benchmarking", "planning", "saas"], status_url: "https://status.pave.com/api/v2/status.json", page_url: "https://status.pave.com", type: "statuspage" },
     { id: "monitaur", name: "Monitaur", tags: ["ai-governance", "mlops", "compliance", "enterprise", "saas"], status_url: "https://status.monitaur.ai/api/v2/status.json", page_url: "https://status.monitaur.ai", type: "statuspage" },
+    // Batch added tick 297 — 13 new live-verified services
+    { id: "sync", name: "Sync.com", tags: ["cloud-storage", "file-sync", "privacy", "backup"], status_url: "https://status.sync.com/api/v2/status.json", page_url: "https://status.sync.com", type: "statuspage" },
+    { id: "jottacloud", name: "Jottacloud", tags: ["cloud-storage", "file-sync", "backup", "norway"], status_url: "https://status.jottacloud.com/api/v2/status.json", page_url: "https://status.jottacloud.com", type: "statuspage" },
+    { id: "firetext", name: "FireText", tags: ["sms", "messaging", "uk", "communications"], status_url: "https://status.firetext.co.uk/api/v2/status.json", page_url: "https://status.firetext.co.uk", type: "statuspage" },
+    { id: "textlocal", name: "Textlocal", tags: ["sms", "messaging", "uk", "communications"], status_url: "https://status.textlocal.com/api/v2/status.json", page_url: "https://status.textlocal.com", type: "statuspage" },
+    { id: "komodor", name: "Komodor", tags: ["kubernetes", "devops", "troubleshooting", "k8s"], status_url: "https://status.komodor.com/api/v2/status.json", page_url: "https://status.komodor.com", type: "statuspage" },
+    { id: "opslevel", name: "OpsLevel", tags: ["service-catalog", "developer-portal", "devops", "engineering-productivity"], status_url: "https://status.opslevel.com/api/v2/status.json", page_url: "https://status.opslevel.com", type: "statuspage" },
+    { id: "iproyal", name: "IPRoyal", tags: ["proxy", "residential-proxy", "datacenter-proxy", "networking"], status_url: "https://status.iproyal.com/api/v2/status.json", page_url: "https://status.iproyal.com", type: "statuspage" },
+    { id: "webshare", name: "Webshare", tags: ["proxy", "residential-proxy", "datacenter-proxy", "networking"], status_url: "https://status.webshare.io/api/v2/status.json", page_url: "https://status.webshare.io", type: "statuspage" },
+    { id: "swat_io", name: "Swat.io", tags: ["social-media", "marketing", "scheduling", "analytics"], status_url: "https://status.swat.io/api/v2/status.json", page_url: "https://status.swat.io", type: "statuspage" },
+    { id: "insightsoftware", name: "insightsoftware", tags: ["analytics", "bi", "reporting", "enterprise"], status_url: "https://status.insightsoftware.com/api/v2/status.json", page_url: "https://status.insightsoftware.com", type: "statuspage" },
+    { id: "employmenthero", name: "Employment Hero", tags: ["hr", "payroll", "employee-management", "australia"], status_url: "https://status.employmenthero.com/api/v2/status.json", page_url: "https://status.employmenthero.com", type: "statuspage" },
+    { id: "truecontext", name: "TrueContext", tags: ["field-service", "mobile-forms", "operations", "saas"], status_url: "https://status.truecontext.com/api/v2/status.json", page_url: "https://status.truecontext.com", type: "statuspage" },
+    { id: "avionte", name: "Avionte", tags: ["staffing", "recruiting", "ats", "hr"], status_url: "https://status.avionte.com/api/v2/status.json", page_url: "https://status.avionte.com", type: "statuspage" },
+    // Batch added tick 299 — 12 new live-verified services
+    { id: "examsoft", name: "ExamSoft", tags: ["edtech", "assessment", "exam", "education", "saas"], status_url: "https://status.examsoft.com/api/v2/status.json", page_url: "https://status.examsoft.com", type: "statuspage" },
+    { id: "pixieset", name: "Pixieset", tags: ["photography", "gallery", "portfolio", "creative", "saas"], status_url: "https://status.pixieset.com/api/v2/status.json", page_url: "https://status.pixieset.com", type: "statuspage" },
+    { id: "ada_support", name: "Ada", tags: ["ai", "customer-support", "chatbot", "automation", "saas"], status_url: "https://status.ada.support/api/v2/status.json", page_url: "https://status.ada.support", type: "statuspage" },
+    { id: "jwx", name: "JW Player", tags: ["video", "streaming", "media", "cdn", "developer-tools"], status_url: "https://status.jwplayer.com/api/v2/status.json", page_url: "https://status.jwplayer.com", type: "statuspage" },
+    { id: "bettercloud", name: "BetterCloud", tags: ["saas-management", "it", "automation", "security", "enterprise"], status_url: "https://status.bettercloud.com/api/v2/status.json", page_url: "https://status.bettercloud.com", type: "statuspage" },
+    { id: "percolate", name: "Percolate", tags: ["content-marketing", "marketing", "publishing", "enterprise"], status_url: "https://status.percolate.com/api/v2/status.json", page_url: "https://status.percolate.com", type: "statuspage" },
+    { id: "coschedule", name: "CoSchedule", tags: ["marketing", "content", "calendar", "social-media", "saas"], status_url: "https://status.coschedule.com/api/v2/status.json", page_url: "https://status.coschedule.com", type: "statuspage" },
+    { id: "pitcher_ag", name: "Pitcher", tags: ["sales-enablement", "crm", "mobile", "field-sales", "saas"], status_url: "https://status.pitcher.com/api/v2/status.json", page_url: "https://status.pitcher.com", type: "statuspage" },
+    { id: "turnitin", name: "Turnitin", tags: ["edtech", "plagiarism", "academic-integrity", "education", "saas"], status_url: "https://turnitin.statuspage.io/api/v2/status.json", page_url: "https://turnitin.statuspage.io", type: "statuspage" },
+    { id: "campspot", name: "Campspot", tags: ["camping", "outdoor", "reservation", "hospitality", "saas"], status_url: "https://status.campspot.com/api/v2/status.json", page_url: "https://status.campspot.com", type: "statuspage" },
+    { id: "parkwhiz", name: "ParkWhiz", tags: ["parking", "mobility", "reservations", "saas"], status_url: "https://status.parkwhiz.com/api/v2/status.json", page_url: "https://status.parkwhiz.com", type: "statuspage" },
+    { id: "parkmobile", name: "ParkMobile", tags: ["parking", "mobility", "payments", "saas"], status_url: "https://status.parkmobile.io/api/v2/status.json", page_url: "https://status.parkmobile.io", type: "statuspage" },
+    // Batch added tick 301 — 12 new live-verified services
+    { id: "heymarket", name: "Heymarket", tags: ["sms", "business-texting", "messaging", "crm", "saas"], status_url: "https://status.heymarket.com/api/v2/status.json", page_url: "https://status.heymarket.com", type: "statuspage" },
+    { id: "fortnox", name: "Fortnox", tags: ["accounting", "finance", "erp", "sweden", "smb"], status_url: "https://status.fortnox.se/api/v2/status.json", page_url: "https://status.fortnox.se", type: "statuspage" },
+    { id: "zid_sa", name: "Zid", tags: ["e-commerce", "retail", "saudi-arabia", "mena", "saas"], status_url: "https://status.zid.sa/api/v2/status.json", page_url: "https://status.zid.sa", type: "statuspage" },
+    { id: "thoughtindustries", name: "Thought Industries", tags: ["lms", "customer-education", "e-learning", "saas", "enterprise"], status_url: "https://status.thoughtindustries.com/api/v2/status.json", page_url: "https://status.thoughtindustries.com", type: "statuspage" },
+    { id: "activtrak", name: "ActivTrak", tags: ["workforce-analytics", "employee-monitoring", "productivity", "saas", "enterprise"], status_url: "https://status.activtrak.com/api/v2/status.json", page_url: "https://status.activtrak.com", type: "statuspage" },
+    { id: "dispatch_me", name: "Dispatch", tags: ["field-service", "home-services", "scheduling", "crm", "saas"], status_url: "https://status.dispatch.me/api/v2/status.json", page_url: "https://status.dispatch.me", type: "statuspage" },
+    { id: "artera", name: "Artera", tags: ["patient-communication", "healthcare", "messaging", "engagement", "saas"], status_url: "https://status.artera.io/api/v2/status.json", page_url: "https://status.artera.io", type: "statuspage" },
+    { id: "maze_co", name: "Maze", tags: ["ux-research", "usability-testing", "product-research", "design", "saas"], status_url: "https://status.maze.co/api/v2/status.json", page_url: "https://status.maze.co", type: "statuspage" },
+    { id: "datarails", name: "DataRails", tags: ["fpa", "financial-planning", "budgeting", "excel", "saas"], status_url: "https://datarails.statuspage.io/api/v2/status.json", page_url: "https://datarails.statuspage.io", type: "statuspage" },
+    { id: "podscribe", name: "Podscribe", tags: ["podcast", "analytics", "attribution", "advertising", "saas"], status_url: "https://status.podscribe.com/api/v2/status.json", page_url: "https://status.podscribe.com", type: "statuspage" },
+    { id: "explo", name: "Explo", tags: ["analytics", "embedded-analytics", "dashboards", "developer-tools", "saas"], status_url: "https://status.explo.co/api/v2/status.json", page_url: "https://status.explo.co", type: "statuspage" },
+    { id: "notability", name: "Notability", tags: ["note-taking", "productivity", "ios", "education", "saas"], status_url: "https://status.notability.com/api/v2/status.json", page_url: "https://status.notability.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -5772,7 +5812,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 3015 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 3052 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -5807,7 +5847,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3015 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3052 services.",
                     },
                 },
                 required: [],
