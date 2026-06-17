@@ -4832,6 +4832,26 @@ const SERVICES = [
     { id: "reputation_com", name: "Reputation.com", tags: ["reputation-management", "reviews", "local-marketing", "enterprise", "saas"], status_url: "https://reputation.statuspage.io/api/v2/status.json", page_url: "https://reputation.statuspage.io", type: "statuspage" },
     { id: "aisera", name: "AISera", tags: ["ai", "itsm", "service-management", "conversational-ai", "enterprise"], status_url: "https://aisera.statuspage.io/api/v2/status.json", page_url: "https://aisera.statuspage.io", type: "statuspage" },
     { id: "rezolve_ai", name: "Rezolve.ai", tags: ["ai", "itsm", "service-desk", "automation", "saas"], status_url: "https://rezolve.statuspage.io/api/v2/status.json", page_url: "https://rezolve.statuspage.io", type: "statuspage" },
+    { id: "rainforest_qa", name: "Rainforest QA", tags: ["testing", "qa", "automation", "web-testing", "saas"], status_url: "https://status.rainforestqa.com/api/v2/status.json", page_url: "https://status.rainforestqa.com", type: "statuspage" },
+    { id: "beam_cloud", name: "Beam", tags: ["ml", "machine-learning", "gpu", "serverless", "developer-tools"], status_url: "https://status.beam.cloud/api/v2/status.json", page_url: "https://status.beam.cloud", type: "statuspage" },
+    { id: "atomic_financial", name: "Atomic Financial", tags: ["fintech", "payroll-connectivity", "open-finance", "api", "saas"], status_url: "https://status.atomic.financial/api/v2/status.json", page_url: "https://status.atomic.financial", type: "statuspage" },
+    { id: "assignar", name: "Assignar", tags: ["construction", "workforce-management", "scheduling", "field-service", "saas"], status_url: "https://status.assignar.com/api/v2/status.json", page_url: "https://status.assignar.com", type: "statuspage" },
+    { id: "heartbeat_chat", name: "Heartbeat", tags: ["community", "collaboration", "messaging", "saas"], status_url: "https://status.heartbeat.chat/api/v2/status.json", page_url: "https://status.heartbeat.chat", type: "statuspage" },
+    { id: "neon_one", name: "Neon One", tags: ["nonprofit", "crm", "fundraising", "donor-management", "saas"], status_url: "https://status.neonone.com/api/v2/status.json", page_url: "https://status.neonone.com", type: "statuspage" },
+    { id: "trustero", name: "Trustero", tags: ["compliance", "grc", "security", "audit", "saas"], status_url: "https://status.trustero.com/api/v2/status.json", page_url: "https://status.trustero.com", type: "statuspage" },
+    { id: "supercast", name: "Supercast", tags: ["podcast", "subscription", "content", "creator-economy", "saas"], status_url: "https://status.supercast.com/api/v2/status.json", page_url: "https://status.supercast.com", type: "statuspage" },
+    { id: "trekksoft", name: "TrekkSoft", tags: ["travel", "tours", "booking", "activities", "saas"], status_url: "https://status.trekksoft.com/api/v2/status.json", page_url: "https://status.trekksoft.com", type: "statuspage" },
+    { id: "saleo", name: "Saleo", tags: ["sales", "demo", "product-demo", "sales-enablement", "saas"], status_url: "https://status.saleo.io/api/v2/status.json", page_url: "https://status.saleo.io", type: "statuspage" },
+    { id: "siteleaf", name: "Siteleaf", tags: ["cms", "static-site", "web-publishing", "hosting", "saas"], status_url: "https://status.siteleaf.com/api/v2/status.json", page_url: "https://status.siteleaf.com", type: "statuspage" },
+    { id: "headway", name: "Headway", tags: ["healthcare", "mental-health", "therapy", "telehealth", "saas"], status_url: "https://status.headway.co/api/v2/status.json", page_url: "https://status.headway.co", type: "statuspage" },
+    { id: "telerivet", name: "Telerivet", tags: ["sms", "messaging", "mobile", "communication", "api"], status_url: "https://status.telerivet.com/api/v2/status.json", page_url: "https://status.telerivet.com", type: "statuspage" },
+    { id: "schoolmint", name: "SchoolMint", tags: ["education", "enrollment", "school-management", "k12", "saas"], status_url: "https://status.schoolmint.com/api/v2/status.json", page_url: "https://status.schoolmint.com", type: "statuspage" },
+    { id: "finalsite", name: "Finalsite", tags: ["education", "school-website", "k12", "cms", "saas"], status_url: "https://status.finalsite.com/api/v2/status.json", page_url: "https://status.finalsite.com", type: "statuspage" },
+    { id: "trimble_viewpoint", name: "Trimble Viewpoint", tags: ["construction", "erp", "project-management", "accounting", "saas"], status_url: "https://status.viewpoint.com/api/v2/status.json", page_url: "https://status.viewpoint.com", type: "statuspage" },
+    { id: "menufy", name: "Menufy", tags: ["restaurant", "online-ordering", "food-delivery", "pos", "saas"], status_url: "https://status.menufy.com/api/v2/status.json", page_url: "https://status.menufy.com", type: "statuspage" },
+    { id: "buildinglink", name: "BuildingLink", tags: ["property-management", "residential", "tenant-communication", "saas", "real-estate"], status_url: "https://status.buildinglink.com/api/v2/status.json", page_url: "https://status.buildinglink.com", type: "statuspage" },
+    { id: "goodrx", name: "GoodRx", tags: ["healthcare", "pharmacy", "drug-pricing", "api", "consumer"], status_url: "https://status.goodrx.com/api/v2/status.json", page_url: "https://status.goodrx.com", type: "statuspage" },
+    { id: "overdrive", name: "OverDrive", tags: ["library", "ebooks", "digital-lending", "education", "consumer"], status_url: "https://status.overdrive.com/api/v2/status.json", page_url: "https://status.overdrive.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -5289,7 +5309,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 2688 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 2708 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -5324,7 +5344,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2688 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 2708 services.",
                     },
                 },
                 required: [],
