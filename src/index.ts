@@ -5603,6 +5603,17 @@ const SERVICES: ServiceConfig[] = [
   { id: "qubole", name: "Qubole", tags: ["big-data", "cloud-data-platform", "analytics", "ai", "saas"], status_url: "https://status.qubole.com/api/v2/status.json", page_url: "https://status.qubole.com", type: "statuspage" },
   { id: "xe", name: "XE", tags: ["currency", "forex", "exchange-rates", "finance", "api"], status_url: "https://status.xe.com/api/v2/status.json", page_url: "https://status.xe.com", type: "statuspage" },
   { id: "openexchangerates", name: "Open Exchange Rates", tags: ["currency", "forex", "exchange-rates", "api", "finance"], status_url: "https://status.openexchangerates.org/api/v2/status.json", page_url: "https://status.openexchangerates.org", type: "statuspage" },
+  // Batch added tick 309 — 10 new live-verified services
+  { id: "practice_panther", name: "PracticePanther", tags: ["legal", "law-practice", "case-management", "billing", "saas"], status_url: "https://status.practicepanther.com/api/v2/status.json", page_url: "https://status.practicepanther.com", type: "statuspage" },
+  { id: "viant", name: "Viant", tags: ["adtech", "dsp", "programmatic", "advertising", "saas"], status_url: "https://status.viantinc.com/api/v2/status.json", page_url: "https://status.viantinc.com", type: "statuspage" },
+  { id: "shootproof", name: "ShootProof", tags: ["photography", "gallery", "client-portal", "contracts", "saas"], status_url: "https://status.shootproof.com/api/v2/status.json", page_url: "https://status.shootproof.com", type: "statuspage" },
+  { id: "zenfolio", name: "Zenfolio", tags: ["photography", "gallery", "portfolio", "website-builder", "saas"], status_url: "https://status.zenfolio.com/api/v2/status.json", page_url: "https://status.zenfolio.com", type: "statuspage" },
+  { id: "format", name: "Format", tags: ["photography", "portfolio", "website-builder", "creative", "saas"], status_url: "https://status.format.com/api/v2/status.json", page_url: "https://status.format.com", type: "statuspage" },
+  { id: "exposure", name: "Exposure", tags: ["photography", "storytelling", "publishing", "portfolio", "saas"], status_url: "https://status.exposure.co/api/v2/status.json", page_url: "https://status.exposure.co", type: "statuspage" },
+  { id: "cayenne", name: "Cayenne", tags: ["iot", "dashboard", "sensors", "mobile", "developer-tools"], status_url: "https://status.mydevices.com/api/v2/status.json", page_url: "https://status.mydevices.com", type: "statuspage" },
+  { id: "sellbrite", name: "Sellbrite", tags: ["e-commerce", "multichannel", "inventory", "amazon", "saas"], status_url: "https://status.sellbrite.com/api/v2/status.json", page_url: "https://status.sellbrite.com", type: "statuspage" },
+  { id: "finale_inventory", name: "Finale Inventory", tags: ["inventory", "warehouse", "e-commerce", "smb", "saas"], status_url: "https://status.finaleinventory.com/api/v2/status.json", page_url: "https://status.finaleinventory.com", type: "statuspage" },
+  { id: "cloud_elements", name: "Cloud Elements", tags: ["api-integration", "ipaas", "middleware", "developer-tools", "saas"], status_url: "https://status.cloud-elements.com/api/v2/status.json", page_url: "https://status.cloud-elements.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6040,7 +6051,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 3121 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 3131 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -6078,7 +6089,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3121 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3131 services.",
           },
         },
         required: [],
