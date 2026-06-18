@@ -5680,6 +5680,24 @@ const SERVICES = [
     { id: "lyssna", name: "Lyssna", tags: ["ux-research", "usability-testing", "design", "user-research", "saas"], status_url: "https://status.lyssna.com/api/v2/status.json", page_url: "https://status.lyssna.com", type: "statuspage" },
     { id: "metoro", name: "Metoro", tags: ["observability", "monitoring", "kubernetes", "cloud", "developer-tools"], status_url: "https://status.metoro.io/api/v2/status.json", page_url: "https://status.metoro.io", type: "statuspage" },
     { id: "assently", name: "Assently", tags: ["e-signature", "documents", "nordic", "compliance", "saas"], status_url: "https://status.assently.com/api/v2/status.json", page_url: "https://status.assently.com", type: "statuspage" },
+    // Tick 342 additions
+    { id: "koyeb", name: "Koyeb", tags: ["hosting", "paas", "serverless", "deployment", "cloud"], status_url: "https://koyeb.instatus.com/api/v2/summary.json", page_url: "https://status.koyeb.com", type: "betterstack" },
+    { id: "typesense", name: "Typesense", tags: ["search", "database", "open-source", "developer-tools", "saas"], status_url: "https://typesense.instatus.com/api/v2/summary.json", page_url: "https://cloud.typesense.org", type: "betterstack" },
+    { id: "grafbase", name: "Grafbase", tags: ["graphql", "edge", "api", "caching", "developer-tools"], status_url: "https://grafbase.instatus.com/api/v2/summary.json", page_url: "https://grafbase.com", type: "betterstack" },
+    { id: "nile_db", name: "Nile", tags: ["database", "postgres", "multitenant", "saas", "developer-tools"], status_url: "https://nile.instatus.com/api/v2/summary.json", page_url: "https://www.thenile.dev", type: "betterstack" },
+    { id: "hyperdx", name: "HyperDX", tags: ["observability", "monitoring", "logging", "tracing", "open-source"], status_url: "https://hyperdx.statuspage.io/api/v2/status.json", page_url: "https://hyperdx.statuspage.io", type: "statuspage" },
+    { id: "deepsource", name: "DeepSource", tags: ["code-quality", "static-analysis", "devtools", "security", "ci-cd"], status_url: "https://deepsource.instatus.com/api/v2/summary.json", page_url: "https://deepsource.com", type: "betterstack" },
+    { id: "supertokens", name: "SuperTokens", tags: ["auth", "identity", "open-source", "developer-tools", "saas"], status_url: "https://supertokens.instatus.com/api/v2/summary.json", page_url: "https://supertokens.com", type: "betterstack" },
+    { id: "planable", name: "Planable", tags: ["social-media", "content", "collaboration", "marketing", "saas"], status_url: "https://planable.instatus.com/api/v2/summary.json", page_url: "https://planable.io", type: "betterstack" },
+    { id: "permit_io", name: "Permit.io", tags: ["authorization", "permissions", "rbac", "developer-tools", "security"], status_url: "https://permit-io.instatus.com/api/v2/summary.json", page_url: "https://permit.io", type: "betterstack" },
+    { id: "cerbos", name: "Cerbos Cloud", tags: ["authorization", "permissions", "policy", "developer-tools", "security"], status_url: "https://cerbos.instatus.com/api/v2/summary.json", page_url: "https://status.cerbos.cloud", type: "betterstack" },
+    { id: "hopsworks", name: "Hopsworks", tags: ["ml", "feature-store", "mlops", "data", "saas"], status_url: "https://hopsworks.statuspage.io/api/v2/status.json", page_url: "https://hopsworks.statuspage.io", type: "statuspage" },
+    { id: "umami", name: "Umami Cloud", tags: ["analytics", "privacy", "open-source", "web", "saas"], status_url: "https://umami.statuspage.io/api/v2/status.json", page_url: "https://umami.statuspage.io", type: "statuspage" },
+    { id: "exa_ai", name: "Exa", tags: ["search", "ai", "api", "developer-tools", "web"], status_url: "https://exa.instatus.com/api/v2/summary.json", page_url: "https://exa.ai", type: "betterstack" },
+    { id: "serper", name: "Serper", tags: ["search", "google", "api", "developer-tools", "ai"], status_url: "https://serper.instatus.com/api/v2/summary.json", page_url: "https://serper.dev", type: "betterstack" },
+    { id: "coder", name: "Coder", tags: ["developer-tools", "cloud-ide", "remote-dev", "kubernetes", "saas"], status_url: "https://coder.instatus.com/api/v2/summary.json", page_url: "https://coder.com", type: "betterstack" },
+    { id: "codestory", name: "CodeStory (Aide)", tags: ["ai", "ide", "developer-tools", "coding-assistant", "saas"], status_url: "https://codestory.statuspage.io/api/v2/status.json", page_url: "https://codestory.statuspage.io", type: "statuspage" },
+    { id: "atlantis_tf", name: "Atlantis", tags: ["terraform", "infrastructure", "gitops", "devops", "open-source"], status_url: "https://atlantis.instatus.com/api/v2/summary.json", page_url: "https://www.runatlantis.io", type: "betterstack" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6037,15 +6055,21 @@ async function fetchBetterStackStatus(svc) {
         let status;
         switch (pageStatus.toUpperCase()) {
             case "UP":
+            case "ALLGOOD":
                 status = "operational";
                 break;
             case "DEGRADED":
+            case "ALLDEGRADEDPERFORMANCE":
+            case "HASISSUES":
+            case "ONEPARTIALOUTAGE":
                 status = "degraded";
                 break;
             case "DOWN":
+            case "SOMEMAJOROUTAGE":
                 status = "major_outage";
                 break;
             case "MAINTENANCE":
+            case "UNDERMAINTENANCE":
                 status = "maintenance";
                 break;
             default: status = "unknown";
@@ -6180,7 +6204,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3291 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3308 services.",
                     },
                 },
                 required: [],
