@@ -5818,6 +5818,28 @@ const SERVICES = [
     { id: "atlas_md", name: "Atlas.md", tags: ["healthcare", "ehr", "direct-primary-care", "practice-management", "saas"], status_url: "https://status.atlas.md/api/v2/status.json", page_url: "https://status.atlas.md", type: "statuspage" },
     // WorkMarket — enterprise freelancer and contractor workforce management platform (ADP)
     { id: "workmarket", name: "WorkMarket", tags: ["freelance", "workforce", "contractors", "hr", "enterprise"], status_url: "https://status.workmarket.com/api/v2/status.json", page_url: "https://status.workmarket.com", type: "statuspage" },
+    // Qualio — life sciences quality management system (QMS) for pharma, biotech, and MedTech
+    { id: "qualio", name: "Qualio", tags: ["life-sciences", "quality-management", "pharma", "compliance", "saas"], status_url: "https://status.qualio.com/api/v2/status.json", page_url: "https://status.qualio.com", type: "statuspage" },
+    // Neuphonic — ultra-low-latency AI text-to-speech and voice API
+    { id: "neuphonic", name: "Neuphonic", tags: ["ai", "tts", "voice", "text-to-speech", "api"], status_url: "https://status.neuphonic.com/api/v2/status.json", page_url: "https://status.neuphonic.com", type: "statuspage" },
+    // PracticeQ — healthcare intake, scheduling, and practice management platform
+    { id: "practiceq", name: "PracticeQ", tags: ["healthcare", "practice-management", "ehr", "scheduling", "saas"], status_url: "https://status.practiceq.com/api/v2/status.json", page_url: "https://status.practiceq.com", type: "statuspage" },
+    // iClassPro — class management software for gymnastics, swim, dance, and activity centers
+    { id: "iclasspro", name: "iClassPro", tags: ["scheduling", "class-management", "fitness", "recreation", "saas"], status_url: "https://status.iclasspro.com/api/v2/status.json", page_url: "https://status.iclasspro.com", type: "statuspage" },
+    // Briostack — pest control business management and CRM platform
+    { id: "briostack", name: "Briostack", tags: ["pest-control", "field-service", "scheduling", "crm", "saas"], status_url: "https://status.briostack.com/api/v2/status.json", page_url: "https://status.briostack.com", type: "statuspage" },
+    // ServiceCore — waste hauling and roll-off container management software
+    { id: "servicecore", name: "ServiceCore", tags: ["waste-management", "field-service", "rolloff", "hauling", "saas"], status_url: "https://status.servicecore.com/api/v2/status.json", page_url: "https://status.servicecore.com", type: "statuspage" },
+    // Loc8 — field service management platform for asset maintenance and job scheduling
+    { id: "loc8", name: "Loc8", tags: ["field-service", "maintenance", "asset-management", "cmms", "saas"], status_url: "https://status.loc8.com/api/v2/status.json", page_url: "https://status.loc8.com", type: "statuspage" },
+    // isolved — cloud-based HR, payroll, benefits, and workforce management platform
+    { id: "isolved", name: "isolved", tags: ["hr", "payroll", "benefits", "workforce", "saas"], status_url: "https://status.isolvedhcm.com/api/v2/status.json", page_url: "https://status.isolvedhcm.com", type: "statuspage" },
+    // GoHighLevel — all-in-one CRM, marketing automation, and sales funnel platform for agencies
+    { id: "gohighlevel", name: "GoHighLevel", tags: ["crm", "marketing", "automation", "agency", "saas"], status_url: "https://gohighlevel.statuspage.io/api/v2/status.json", page_url: "https://gohighlevel.statuspage.io", type: "statuspage" },
+    // Autify — no-code AI-powered test automation for web and mobile apps
+    { id: "autify", name: "Autify", tags: ["testing", "qa", "automation", "no-code", "developer-tools"], status_url: "https://status.autify.com/api/v2/status.json", page_url: "https://status.autify.com", type: "statuspage" },
+    // Lofty (formerly Chime CRM) — AI-powered real estate CRM and lead generation platform
+    { id: "lofty_crm", name: "Lofty", tags: ["crm", "real-estate", "lead-generation", "marketing", "saas"], status_url: "https://status.chime.me/api/v2/status.json", page_url: "https://status.lofty.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6325,7 +6347,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3384 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3395 services.",
                     },
                 },
                 required: [],
