@@ -5667,6 +5667,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "drift", name: "Drift", tags: ["chat", "marketing", "sales", "conversational", "saas"], status_url: "https://drift.instatus.com/api/v2/summary.json", page_url: "https://drift.instatus.com", type: "betterstack" },
   // Descope — no-code customer identity and authentication platform
   { id: "descope", name: "Descope", tags: ["auth", "identity", "ciam", "no-code", "developer-tools"], status_url: "https://descope.instatus.com/api/v2/summary.json", page_url: "https://descope.instatus.com", type: "betterstack" },
+  // Poe — AI chat platform by Quora with access to multiple LLM models
+  { id: "poe", name: "Poe", tags: ["ai", "llm", "chat", "saas"], status_url: "https://status.poe.com/api/v2/status.json", page_url: "https://status.poe.com", type: "statuspage" },
+  // Socket — open-source supply chain security for npm and other package ecosystems
+  { id: "socket_dev", name: "Socket", tags: ["security", "supply-chain", "developer-tools", "api"], status_url: "https://status.socket.dev/api/v2/status.json", page_url: "https://status.socket.dev", type: "statuspage" },
+  // Apiiro — code risk platform for application security posture management
+  { id: "apiiro", name: "Apiiro", tags: ["security", "appsec", "code-risk", "developer-tools"], status_url: "https://status.apiiro.com/api/v2/status.json", page_url: "https://status.apiiro.com", type: "statuspage" },
+  // AutoFi — embedded vehicle financing platform for dealerships
+  { id: "autofi", name: "AutoFi", tags: ["fintech", "automotive", "financing", "saas"], status_url: "https://status.autofi.com/api/v2/status.json", page_url: "https://status.autofi.com", type: "statuspage" },
+  // Justuno — e-commerce conversion optimization and pop-up marketing platform
+  { id: "justuno", name: "Justuno", tags: ["e-commerce", "marketing", "conversion", "saas"], status_url: "https://justuno.statuspage.io/api/v2/status.json", page_url: "https://justuno.statuspage.io", type: "statuspage" },
+  // Latch — smart access control and building entry system for residential and commercial
+  { id: "latch", name: "Latch", tags: ["iot", "access-control", "smart-building", "saas"], status_url: "https://status.latch.com/api/v2/status.json", page_url: "https://status.latch.com", type: "statuspage" },
+  // Castlight Health — employee health benefits navigation and transparency platform
+  { id: "castlight_health", name: "Castlight Health", tags: ["healthcare", "benefits", "hr", "saas"], status_url: "https://status.castlighthealth.com/api/v2/status.json", page_url: "https://status.castlighthealth.com", type: "statuspage" },
+  // Crusoe Cloud — sustainable AI cloud computing powered by flared natural gas energy
+  { id: "crusoe_cloud", name: "Crusoe Cloud", tags: ["cloud", "ai", "gpu", "infrastructure", "iaas"], status_url: "https://status.crusoecloud.com/api/v2/status.json", page_url: "https://status.crusoecloud.com", type: "statuspage" },
+  // ArcSite — field service and construction drawing/estimation mobile platform
+  { id: "arcsite", name: "ArcSite", tags: ["construction", "field-service", "mobile", "saas"], status_url: "https://status.arcsite.com/api/v2/status.json", page_url: "https://status.arcsite.com", type: "statuspage" },
+  // Super — publish Notion pages as websites with custom domains and SEO
+  { id: "super_so", name: "Super", tags: ["website-builder", "notion", "hosting", "saas"], status_url: "https://super.instatus.com/api/v2/summary.json", page_url: "https://super.instatus.com", type: "betterstack" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6104,7 +6124,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 3168 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 3178 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -6142,7 +6162,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3168 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3178 services.",
           },
         },
         required: [],
