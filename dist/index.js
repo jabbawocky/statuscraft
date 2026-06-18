@@ -5532,6 +5532,28 @@ const SERVICES = [
     { id: "govuk_pay", name: "GOV.UK Pay", tags: ["government", "uk", "payments", "digital-services"], status_url: "https://payments.statuspage.io/api/v2/status.json", page_url: "https://payments.statuspage.io", type: "statuspage" },
     // StoreFeeder — UK-based multichannel e-commerce management and inventory platform
     { id: "storefeeder", name: "StoreFeeder", tags: ["e-commerce", "multichannel", "inventory", "uk", "saas"], status_url: "https://status.storefeeder.com/api/v2/status.json", page_url: "https://status.storefeeder.com", type: "statuspage" },
+    // Fathom Analytics — privacy-first web analytics platform (GDPR/CCPA compliant, no cookie banners)
+    { id: "fathom_analytics", name: "Fathom Analytics", tags: ["analytics", "web-analytics", "privacy", "saas"], status_url: "https://status.fathomhq.com/api/v2/status.json", page_url: "https://status.fathomhq.com", type: "statuspage" },
+    // Woopra — customer analytics and journey tracking platform for product and marketing teams
+    { id: "woopra", name: "Woopra", tags: ["analytics", "customer-analytics", "product-analytics", "saas"], status_url: "https://status.woopra.com/api/v2/status.json", page_url: "https://status.woopra.com", type: "statuspage" },
+    // Marsello — loyalty, marketing and analytics platform for retail and e-commerce brands
+    { id: "marsello", name: "Marsello", tags: ["loyalty", "e-commerce", "marketing", "retail", "saas"], status_url: "https://status.marsello.com/api/v2/status.json", page_url: "https://status.marsello.com", type: "statuspage" },
+    // Convoso — cloud contact center platform with predictive dialer for sales and collections teams
+    { id: "convoso", name: "Convoso", tags: ["contact-center", "dialer", "sales", "telephony", "saas"], status_url: "https://status.convoso.com/api/v2/status.json", page_url: "https://status.convoso.com", type: "statuspage" },
+    // Luma Health — patient communication and engagement platform for healthcare providers
+    { id: "luma_health", name: "Luma Health", tags: ["healthcare", "patient-communication", "telehealth", "saas"], status_url: "https://status.lumahealth.io/api/v2/status.json", page_url: "https://status.lumahealth.io", type: "statuspage" },
+    // Helpwise — shared inbox platform for customer support via email, SMS, WhatsApp, and live chat
+    { id: "helpwise", name: "Helpwise", tags: ["customer-support", "shared-inbox", "help-desk", "saas"], status_url: "https://status.helpwise.io/api/v2/status.json", page_url: "https://status.helpwise.io", type: "statuspage" },
+    // Pylon — B2B customer support platform with Slack-native support for post-sales teams
+    { id: "pylon_support", name: "Pylon", tags: ["customer-support", "b2b", "saas", "slack"], status_url: "https://status.usepylon.com/api/v2/status.json", page_url: "https://status.usepylon.com", type: "statuspage" },
+    // OnlineOrNot — website and API uptime monitoring with public status pages
+    { id: "onlineornot", name: "OnlineOrNot", tags: ["monitoring", "uptime", "status-page", "saas"], status_url: "https://status.onlineornot.com/api/v2/status.json", page_url: "https://status.onlineornot.com", type: "statuspage" },
+    // Aplos — cloud-based accounting and fund accounting software for nonprofits and churches
+    { id: "aplos", name: "Aplos", tags: ["accounting", "nonprofit", "fund-accounting", "saas"], status_url: "https://status.aplos.com/api/v2/status.json", page_url: "https://status.aplos.com", type: "statuspage" },
+    // Propel Software — product lifecycle management (PLM) and quality management platform built on Salesforce
+    { id: "propel_software", name: "Propel Software", tags: ["plm", "quality-management", "manufacturing", "salesforce", "saas"], status_url: "https://status.propelsoftware.com/api/v2/status.json", page_url: "https://status.propelsoftware.com", type: "statuspage" },
+    // Plecto — real-time sales performance dashboard and gamification platform for revenue teams
+    { id: "plecto", name: "Plecto", tags: ["sales", "dashboard", "gamification", "analytics", "saas"], status_url: "https://status.plecto.com/api/v2/status.json", page_url: "https://status.plecto.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -5989,7 +6011,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 3190 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 3200 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -6024,7 +6046,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3190 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3200 services.",
                     },
                 },
                 required: [],
