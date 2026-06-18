@@ -6060,6 +6060,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "rms_cloud", name: "RMS Cloud", tags: ["hospitality", "property-management", "reservations", "hotel", "saas"], status_url: "https://status.rmscloud.com/api/v2/status.json", page_url: "https://status.rmscloud.com", type: "statuspage" },
   // Palo Alto Networks — cloud security, SASE, CASB, and threat prevention services
   { id: "palo_alto_networks", name: "Palo Alto Networks", tags: ["security", "cloud-security", "sase", "firewall", "enterprise"], status_url: "https://status.paloaltonetworks.com/api/v2/status.json", page_url: "https://status.paloaltonetworks.com", type: "statuspage" },
+  // Axonize — enterprise IoT management and connectivity platform
+  { id: "axonize", name: "Axonize", tags: ["iot", "enterprise", "connectivity", "saas"], status_url: "https://status.axonize.com/api/v2/status.json", page_url: "https://status.axonize.com", type: "statuspage" },
+  // Greenphire — clinical trial payment and financial management platform
+  { id: "greenphire", name: "Greenphire", tags: ["clinical-trials", "payments", "healthcare", "finance", "saas"], status_url: "https://status.greenphire.com/api/v2/status.json", page_url: "https://status.greenphire.com", type: "statuspage" },
+  // DrFirst — e-prescribing, medication management, and pharmacy services
+  { id: "drfirst", name: "DrFirst", tags: ["healthcare", "eprescribing", "pharmacy", "medication", "saas"], status_url: "https://status.drfirst.com/api/v2/status.json", page_url: "https://status.drfirst.com", type: "statuspage" },
+  // Continu — learning management system for corporate training and onboarding
+  { id: "continu", name: "Continu", tags: ["lms", "learning", "training", "hr", "saas"], status_url: "https://status.continu.co/api/v2/status.json", page_url: "https://status.continu.co", type: "statuspage" },
+  // Learn Amp — people development, LMS, and performance platform
+  { id: "learn_amp", name: "Learn Amp", tags: ["lms", "learning", "people-development", "hr", "saas"], status_url: "https://status.learnamp.com/api/v2/status.json", page_url: "https://status.learnamp.com", type: "statuspage" },
+  // BQE Core — project management, billing, and accounting for AEC firms
+  { id: "bqe_core", name: "BQE Core", tags: ["aec", "project-management", "billing", "accounting", "saas"], status_url: "https://status.bqe.com/api/v2/status.json", page_url: "https://status.bqe.com", type: "statuspage" },
+  // ShiftCare — home care, disability support, and NDIS scheduling platform
+  { id: "shiftcare", name: "ShiftCare", tags: ["homecare", "disability", "ndis", "scheduling", "saas"], status_url: "https://status.shiftcare.com/api/v2/status.json", page_url: "https://status.shiftcare.com", type: "statuspage" },
+  // Shepherd Vet — cloud-based practice management software for veterinary clinics
+  { id: "shepherd_vet", name: "Shepherd Vet", tags: ["veterinary", "pims", "practice-management", "healthcare", "saas"], status_url: "https://status.shepherd.vet/api/v2/status.json", page_url: "https://status.shepherd.vet", type: "statuspage" },
+  // FLASH Parking — parking operations management and enforcement platform
+  { id: "flash_parking", name: "FLASH Parking", tags: ["parking", "operations", "smart-city", "saas"], status_url: "https://status.flashparking.com/api/v2/status.json", page_url: "https://status.flashparking.com", type: "statuspage" },
+  // Campus Labs — higher education student success, assessment, and engagement platform
+  { id: "campus_labs", name: "Campus Labs", tags: ["edtech", "higher-education", "student-success", "assessment", "saas"], status_url: "https://status.campuslabs.com/api/v2/status.json", page_url: "https://status.campuslabs.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6551,7 +6571,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3416 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3426 services.",
           },
         },
         required: [],
