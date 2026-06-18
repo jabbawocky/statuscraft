@@ -6065,10 +6065,14 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status. Results are paginated (100 per page) — pass page to get more.",
+            description: "List services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status. Supports name/ID search and tag filtering. Results are paginated (100 per page) — pass page to get more.",
             inputSchema: {
                 type: "object",
                 properties: {
+                    search: {
+                        type: "string",
+                        description: "Optional name/ID search query. Filters services whose name or ID contains this string (case-insensitive). E.g. 'stripe', 'amazon', 'cloud'. Use this to find a service when you don't know its exact ID.",
+                    },
                     filter_tag: {
                         type: "string",
                         description: "Optional tag filter. E.g. 'ai', 'payments', 'hosting', 'monitoring', 'communication'. Returns only services matching this tag.",
@@ -6116,17 +6120,20 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     const { name, arguments: args } = request.params;
     if (name === "list_services") {
         const filterTag = args?.filter_tag ? String(args.filter_tag).toLowerCase() : null;
-        const filtered = filterTag
-            ? SERVICES.filter((s) => s.tags.includes(filterTag))
-            : SERVICES;
+        const searchQuery = args?.search ? String(args.search).toLowerCase().trim() : null;
+        let filtered = SERVICES;
+        if (searchQuery) {
+            filtered = filtered.filter((s) => s.id.includes(searchQuery) || s.name.toLowerCase().includes(searchQuery));
+        }
+        if (filterTag) {
+            filtered = filtered.filter((s) => s.tags.includes(filterTag));
+        }
         if (filtered.length === 0) {
+            const hint = searchQuery
+                ? `No services found matching "${searchQuery}"${filterTag ? ` with tag "${filterTag}"` : ""}. Try a shorter or different query.`
+                : `No services found with tag "${filterTag}". Available tags: ai, payments, hosting, monitoring, communication, devtools, cdn, infrastructure, ops, api, fintech, email, paas, cloud.`;
             return {
-                content: [
-                    {
-                        type: "text",
-                        text: `No services found with tag "${filterTag}". Available tags: ai, payments, hosting, monitoring, communication, devtools, cdn, infrastructure, ops, api, fintech, email, paas, cloud.`,
-                    },
-                ],
+                content: [{ type: "text", text: hint }],
             };
         }
         const PAGE_SIZE = 100;
@@ -6134,8 +6141,13 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
         const pageSlice = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
         const lines = pageSlice.map((s) => `• **${s.name}** (id: \`${s.id}\`) — tags: ${s.tags.join(", ")}`);
-        const header = filterTag
-            ? `Services tagged "${filterTag}" (${filtered.length} total, page ${page}/${totalPages}):`
+        const headerParts = [];
+        if (searchQuery)
+            headerParts.push(`matching "${searchQuery}"`);
+        if (filterTag)
+            headerParts.push(`tagged "${filterTag}"`);
+        const header = headerParts.length
+            ? `Services ${headerParts.join(", ")} (${filtered.length} total, page ${page}/${totalPages}):`
             : `All tracked services (${filtered.length} total, page ${page}/${totalPages}):`;
         const footer = page < totalPages ? `\n\n_Pass page=${page + 1} for more._` : "";
         return {
