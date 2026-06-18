@@ -5554,6 +5554,30 @@ const SERVICES = [
     { id: "propel_software", name: "Propel Software", tags: ["plm", "quality-management", "manufacturing", "salesforce", "saas"], status_url: "https://status.propelsoftware.com/api/v2/status.json", page_url: "https://status.propelsoftware.com", type: "statuspage" },
     // Plecto — real-time sales performance dashboard and gamification platform for revenue teams
     { id: "plecto", name: "Plecto", tags: ["sales", "dashboard", "gamification", "analytics", "saas"], status_url: "https://status.plecto.com/api/v2/status.json", page_url: "https://status.plecto.com", type: "statuspage" },
+    // Riverside.fm — professional remote podcast and video recording studio
+    { id: "riverside_fm", name: "Riverside.fm", tags: ["podcast", "recording", "video", "media", "saas"], status_url: "https://status.riverside.fm/api/v2/status.json", page_url: "https://status.riverside.fm", type: "statuspage" },
+    // Crossref — scholarly metadata infrastructure and DOI registration agency
+    { id: "crossref", name: "Crossref", tags: ["academic", "research", "metadata", "doi", "open-science"], status_url: "https://status.crossref.org/api/v2/status.json", page_url: "https://status.crossref.org", type: "statuspage" },
+    // Phrase — localization and translation management platform
+    { id: "phrase_com", name: "Phrase", tags: ["localization", "translation", "l10n", "i18n", "saas"], status_url: "https://status.phrase.com/api/v2/status.json", page_url: "https://status.phrase.com", type: "statuspage" },
+    // VTS — commercial real estate leasing and asset management platform
+    { id: "vts", name: "VTS", tags: ["real-estate", "commercial", "leasing", "asset-management", "saas"], status_url: "https://status.vts.com/api/v2/status.json", page_url: "https://status.vts.com", type: "statuspage" },
+    // ParentSquare — unified school-home communication platform for K-12 districts
+    { id: "parentsquare", name: "ParentSquare", tags: ["edtech", "k12", "school-communication", "parent-engagement", "saas"], status_url: "https://status.parentsquare.com/api/v2/status.json", page_url: "https://status.parentsquare.com", type: "statuspage" },
+    // Postscript — SMS and MMS marketing automation platform for e-commerce
+    { id: "postscript_io", name: "Postscript", tags: ["sms-marketing", "e-commerce", "marketing-automation", "shopify", "saas"], status_url: "https://status.postscript.io/api/v2/status.json", page_url: "https://status.postscript.io", type: "statuspage" },
+    // Ring — Amazon smart home security cameras and doorbells cloud platform
+    { id: "ring", name: "Ring", tags: ["smart-home", "security", "iot", "amazon", "consumer"], status_url: "https://status.ring.com/api/v2/status.json", page_url: "https://status.ring.com", type: "statuspage" },
+    // Sense — home energy monitoring platform (real-time electricity usage)
+    { id: "sense", name: "Sense", tags: ["energy", "smart-home", "iot", "monitoring", "consumer"], status_url: "https://status.sense.com/api/v2/status.json", page_url: "https://status.sense.com", type: "statuspage" },
+    // BigTime Software — time tracking and project management for professional services firms
+    { id: "bigtime", name: "BigTime Software", tags: ["time-tracking", "project-management", "professional-services", "billing", "saas"], status_url: "https://status.bigtime.net/api/v2/status.json", page_url: "https://status.bigtime.net", type: "statuspage" },
+    // People Data Labs — B2B data enrichment API for person and company data
+    { id: "peopledatalabs", name: "People Data Labs", tags: ["data-enrichment", "b2b-data", "person-data", "api", "developer-tools"], status_url: "https://status.peopledatalabs.com/api/v2/status.json", page_url: "https://status.peopledatalabs.com", type: "statuspage" },
+    // Goldcast — video-first B2B event and webinar platform
+    { id: "goldcast_io", name: "Goldcast", tags: ["webinar", "virtual-events", "b2b", "video", "saas"], status_url: "https://status.goldcast.io/api/v2/status.json", page_url: "https://status.goldcast.io", type: "statuspage" },
+    // Storylane — interactive product demo and sales enablement platform
+    { id: "storylane_io", name: "Storylane", tags: ["sales-enablement", "product-demo", "interactive", "b2b", "saas"], status_url: "https://status.storylane.io/api/v2/status.json", page_url: "https://status.storylane.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6011,7 +6035,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 3200 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List all 3212 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
             inputSchema: {
                 type: "object",
                 properties: {
@@ -6046,7 +6070,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3200 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3212 services.",
                     },
                 },
                 required: [],
