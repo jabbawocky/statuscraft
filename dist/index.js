@@ -5722,6 +5722,16 @@ const SERVICES = [
     { id: "lexisnexis_risk", name: "LexisNexis Risk Solutions", tags: ["data-analytics", "risk", "identity", "compliance", "enterprise"], status_url: "https://status.lexisnexisrisk.com/api/v2/status.json", page_url: "https://status.lexisnexisrisk.com", type: "statuspage" },
     { id: "limble_cmms", name: "Limble CMMS", tags: ["maintenance", "cmms", "facilities", "asset-management", "saas"], status_url: "https://status.limblecmms.com/api/v2/status.json", page_url: "https://status.limblecmms.com", type: "statuspage" },
     { id: "fiix_software", name: "Fiix Software", tags: ["maintenance", "cmms", "asset-management", "facilities", "saas"], status_url: "https://status.fiixsoftware.com/api/v2/status.json", page_url: "https://status.fiixsoftware.com", type: "statuspage" },
+    { id: "periscope_data", name: "Periscope Data", tags: ["analytics", "bi", "data", "sql", "saas"], status_url: "https://status.periscopedata.com/api/v2/status.json", page_url: "https://status.periscopedata.com", type: "statuspage" },
+    { id: "coterie_insurance", name: "Coterie Insurance", tags: ["insurance", "insurtech", "smb", "api", "saas"], status_url: "https://status.coterieinsurance.com/api/v2/status.json", page_url: "https://status.coterieinsurance.com", type: "statuspage" },
+    { id: "dashlane", name: "Dashlane", tags: ["security", "password-manager", "identity", "saas", "enterprise"], status_url: "https://dashlane.instatus.com/api/v2/summary.json", page_url: "https://dashlane.com", type: "betterstack" },
+    { id: "idomoo", name: "Idomoo", tags: ["video", "personalization", "marketing", "saas"], status_url: "https://status.idomoo.com/api/v2/status.json", page_url: "https://status.idomoo.com", type: "statuspage" },
+    { id: "safebase", name: "SafeBase", tags: ["security", "compliance", "trust", "vendor-risk", "saas"], status_url: "https://status.safebase.io/api/v2/status.json", page_url: "https://status.safebase.io", type: "statuspage" },
+    { id: "talkwalker", name: "Talkwalker", tags: ["social-listening", "analytics", "marketing", "enterprise", "saas"], status_url: "https://status.talkwalker.com/api/v2/status.json", page_url: "https://status.talkwalker.com", type: "statuspage" },
+    { id: "alert_logic", name: "Alert Logic", tags: ["security", "mdr", "managed-detection", "siem", "enterprise"], status_url: "https://status.alertlogic.com/api/v2/status.json", page_url: "https://status.alertlogic.com", type: "statuspage" },
+    { id: "armorcode", name: "ArmorCode", tags: ["security", "aspm", "devsecops", "appsec", "saas"], status_url: "https://status.armorcode.com/api/v2/status.json", page_url: "https://status.armorcode.com", type: "statuspage" },
+    { id: "velocity_global", name: "Velocity Global", tags: ["hr", "eor", "employer-of-record", "global-payroll", "saas"], status_url: "https://status.velocityglobal.com/api/v2/status.json", page_url: "https://status.velocityglobal.com", type: "statuspage" },
+    { id: "capdesk", name: "Capdesk (Carta Europe)", tags: ["fintech", "cap-table", "equity", "europe", "saas"], status_url: "https://status.capdesk.com/api/v2/status.json", page_url: "https://status.capdesk.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
