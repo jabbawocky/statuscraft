@@ -6038,6 +6038,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "teesnap", name: "Teesnap", tags: ["golf", "pos", "tee-sheet", "club-management", "saas"], status_url: "https://status.teesnap.com/api/v2/status.json", page_url: "https://status.teesnap.com", type: "statuspage" },
   // Overhaul — supply chain visibility, risk management, and cargo security platform
   { id: "overhaul", name: "Overhaul", tags: ["supply-chain", "logistics", "cargo-security", "risk-management", "saas"], status_url: "https://status.over-haul.com/api/v2/status.json", page_url: "https://status.over-haul.com", type: "statuspage" },
+  // Swell — headless e-commerce backend API platform for building custom storefronts
+  { id: "swell", name: "Swell", tags: ["ecommerce", "headless", "api", "developer-tools", "saas"], status_url: "https://status.swell.store/api/v2/status.json", page_url: "https://status.swell.store", type: "statuspage" },
+  // fal.ai — serverless AI inference platform for running and scaling ML models
+  { id: "fal_ai", name: "fal.ai", tags: ["ai", "ml", "inference", "serverless", "developer-tools"], status_url: "https://status.fal.ai/api/v2/summary.json", page_url: "https://status.fal.ai", type: "betterstack" },
+  // Darwin — global HR and employee benefits management platform
+  { id: "darwin", name: "Darwin", tags: ["hr", "benefits", "employee-experience", "enterprise", "saas"], status_url: "https://status.darwin.com/api/v2/status.json", page_url: "https://status.darwin.com", type: "statuspage" },
+  // Bold Penguin — commercial insurance quoting and marketplace platform for agents and carriers
+  { id: "bold_penguin", name: "Bold Penguin", tags: ["insurance", "insurtech", "commercial", "marketplace", "api"], status_url: "https://status.boldpenguin.com/api/v2/status.json", page_url: "https://status.boldpenguin.com", type: "statuspage" },
+  // Pitney Bowes — shipping, mailing, e-commerce, and financial services platform
+  { id: "pitney_bowes", name: "Pitney Bowes", tags: ["shipping", "mailing", "ecommerce", "fintech", "enterprise"], status_url: "https://status.pitneybowes.com/api/v2/status.json", page_url: "https://status.pitneybowes.com", type: "statuspage" },
+  // Matrix — open standard for decentralized, real-time communication and messaging
+  { id: "matrix", name: "Matrix", tags: ["messaging", "communication", "open-source", "decentralized", "protocol"], status_url: "https://status.matrix.org/api/v2/status.json", page_url: "https://status.matrix.org", type: "statuspage" },
+  // TuneIn — live radio, sports, news, music, and podcast audio streaming platform
+  { id: "tunein", name: "TuneIn", tags: ["audio", "streaming", "radio", "podcasts", "media"], status_url: "https://status.tunein.com/api/v2/status.json", page_url: "https://status.tunein.com", type: "statuspage" },
+  // Tithe.ly — church giving, ChMS, website, and ministry management platform
+  { id: "tithe_ly", name: "Tithe.ly", tags: ["church", "nonprofit", "giving", "chms", "saas"], status_url: "https://status.tithe.ly/api/v2/status.json", page_url: "https://status.tithe.ly", type: "statuspage" },
+  // Populi — all-in-one higher education student information and learning management system
+  { id: "populi", name: "Populi", tags: ["edtech", "higher-education", "sis", "lms", "saas"], status_url: "https://status.populi.co/api/v2/status.json", page_url: "https://status.populi.co", type: "statuspage" },
+  // RMS Cloud — property management, central reservations, and revenue management for hospitality
+  { id: "rms_cloud", name: "RMS Cloud", tags: ["hospitality", "property-management", "reservations", "hotel", "saas"], status_url: "https://status.rmscloud.com/api/v2/status.json", page_url: "https://status.rmscloud.com", type: "statuspage" },
+  // Palo Alto Networks — cloud security, SASE, CASB, and threat prevention services
+  { id: "palo_alto_networks", name: "Palo Alto Networks", tags: ["security", "cloud-security", "sase", "firewall", "enterprise"], status_url: "https://status.paloaltonetworks.com/api/v2/status.json", page_url: "https://status.paloaltonetworks.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6529,7 +6551,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3405 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3416 services.",
           },
         },
         required: [],
