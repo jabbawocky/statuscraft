@@ -4,6 +4,16 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { CallToolRequestSchema, ListToolsRequestSchema, } from "@modelcontextprotocol/sdk/types.js";
 const CACHE_TTL_MS = 60_000; // 60-second TTL
 const statusCache = new Map();
+// Limit concurrent outbound HTTP fetches to avoid fd exhaustion and rate-limiting at 3000+ services.
+const FETCH_CONCURRENCY = 50;
+async function batchedFetch(services, fn) {
+    const results = [];
+    for (let i = 0; i < services.length; i += FETCH_CONCURRENCY) {
+        const batch = services.slice(i, i + FETCH_CONCURRENCY);
+        results.push(...await Promise.all(batch.map(fn)));
+    }
+    return results;
+}
 function getCached(id) {
     const entry = statusCache.get(id);
     if (!entry)
@@ -6035,13 +6045,17 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         },
         {
             name: "list_services",
-            description: "List all 3212 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+            description: "List services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status. Results are paginated (100 per page) — pass page to get more.",
             inputSchema: {
                 type: "object",
                 properties: {
                     filter_tag: {
                         type: "string",
                         description: "Optional tag filter. E.g. 'ai', 'payments', 'hosting', 'monitoring', 'communication'. Returns only services matching this tag.",
+                    },
+                    page: {
+                        type: "number",
+                        description: "Page number (1-based, default 1). Each page returns up to 100 services.",
                     },
                 },
                 required: [],
@@ -6095,12 +6109,17 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
                 ],
             };
         }
-        const lines = filtered.map((s) => `• **${s.name}** (id: \`${s.id}\`) — tags: ${s.tags.join(", ")}\n  Status page: ${s.page_url}`);
+        const PAGE_SIZE = 100;
+        const page = Math.max(1, Math.floor(Number(args?.page ?? 1)));
+        const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+        const pageSlice = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+        const lines = pageSlice.map((s) => `• **${s.name}** (id: \`${s.id}\`) — tags: ${s.tags.join(", ")}`);
         const header = filterTag
-            ? `Services tagged "${filterTag}" (${filtered.length}):`
-            : `All tracked services (${filtered.length}):`;
+            ? `Services tagged "${filterTag}" (${filtered.length} total, page ${page}/${totalPages}):`
+            : `All tracked services (${filtered.length} total, page ${page}/${totalPages}):`;
+        const footer = page < totalPages ? `\n\n_Pass page=${page + 1} for more._` : "";
         return {
-            content: [{ type: "text", text: `${header}\n\n${lines.join("\n\n")}` }],
+            content: [{ type: "text", text: `${header}\n\n${lines.join("\n")}${footer}` }],
         };
     }
     if (name === "get_status") {
@@ -6124,7 +6143,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         };
     }
     if (name === "get_all_status") {
-        const results = await Promise.all(SERVICES.map((s) => getServiceStatus(s)));
+        const results = await batchedFetch(SERVICES, getServiceStatus);
         const grouped = {
             major_outage: [],
             partial_outage: [],
@@ -6173,7 +6192,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         });
         const unknown = resolved.filter((r) => !r.svc).map((r) => r.id);
         const toFetch = resolved.filter((r) => r.svc);
-        const results = await Promise.all(toFetch.map((r) => getServiceStatus(r.svc)));
+        const results = await batchedFetch(toFetch.map((r) => r.svc), getServiceStatus);
         const lines = results.map(formatServiceStatus);
         if (unknown.length > 0) {
             lines.push(`\n⚠️ Unrecognized service ID(s): ${unknown.join(", ")}. Use list_services to see available IDs.`);
@@ -6199,12 +6218,19 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
                 content: [{ type: "text", text: `Cache cleared and refreshed.\n\n${formatServiceStatus(result)}` }],
             };
         }
-        // Refresh all
+        // Refresh all — return summary only (full dump would overflow context at 3000+ services)
         statusCache.clear();
-        const results = await Promise.all(SERVICES.map((s) => getServiceStatus(s)));
-        const lines = results.map(formatServiceStatus);
+        const results = await batchedFetch(SERVICES, getServiceStatus);
+        const issues = results.filter((r) => r.status !== "operational");
+        const opCount = results.length - issues.length;
+        const summaryLines = issues.length > 0
+            ? issues.map((r) => `• ${r.name}: ${r.status.replace(/_/g, " ")} — ${r.description}`)
+            : [];
+        const summary = issues.length > 0
+            ? `${opCount}/${results.length} operational. Issues:\n${summaryLines.join("\n")}`
+            : `All ${results.length} services operational.`;
         return {
-            content: [{ type: "text", text: `All ${SERVICES.length} services refreshed from live sources.\n\n${lines.join("\n\n")}` }],
+            content: [{ type: "text", text: `All ${SERVICES.length} services refreshed from live sources.\n\n${summary}` }],
         };
     }
     throw new Error(`Unknown tool: ${name}`);
