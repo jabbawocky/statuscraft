@@ -5709,6 +5709,19 @@ const SERVICES = [
     { id: "zabbix", name: "Zabbix", tags: ["monitoring", "open-source", "infrastructure", "observability", "network"], status_url: "https://zabbix.statuspage.io/api/v2/status.json", page_url: "https://zabbix.statuspage.io", type: "statuspage" },
     { id: "outreach_io", name: "Outreach", tags: ["sales", "sales-engagement", "crm", "email", "saas"], status_url: "https://outreach.instatus.com/api/v2/summary.json", page_url: "https://outreach.io", type: "betterstack" },
     { id: "bambootech", name: "Bamboo", tags: ["hospitality", "hotel", "revenue-management", "ai", "saas"], status_url: "https://bamboo.statuspage.io/api/v2/status.json", page_url: "https://status.bambootech.ai", type: "statuspage" },
+    // Tick 349 additions
+    { id: "marvel_app", name: "Marvel App", tags: ["design", "prototyping", "wireframing", "ux", "developer-tools"], status_url: "https://marvelapp.statuspage.io/api/v2/status.json", page_url: "https://marvelapp.statuspage.io", type: "statuspage" },
+    { id: "lucid_software", name: "Lucid Software", tags: ["diagramming", "visual-collaboration", "design", "productivity", "saas"], status_url: "https://status.lucid.co/api/v2/status.json", page_url: "https://status.lucid.co", type: "statuspage" },
+    { id: "magic_eden", name: "Magic Eden", tags: ["nft", "marketplace", "solana", "web3", "crypto"], status_url: "https://status.magiceden.io/api/v2/status.json", page_url: "https://status.magiceden.io", type: "statuspage" },
+    { id: "papercut_software", name: "PaperCut Software", tags: ["print-management", "printing", "enterprise", "saas"], status_url: "https://status.papercut.com/api/v2/status.json", page_url: "https://status.papercut.com", type: "statuspage" },
+    { id: "spire_maritime", name: "Spire Maritime", tags: ["satellite", "maritime", "ais", "data", "analytics"], status_url: "https://status.spire.com/api/v2/status.json", page_url: "https://status.spire.com", type: "statuspage" },
+    { id: "pitney_bowes", name: "Pitney Bowes", tags: ["shipping", "mailing", "e-commerce", "data", "enterprise"], status_url: "https://status.pitneybowes.com/api/v2/status.json", page_url: "https://status.pitneybowes.com", type: "statuspage" },
+    { id: "agility_cms", name: "Agility CMS", tags: ["cms", "headless-cms", "content-management", "saas", "api"], status_url: "https://status.agilitycms.com/api/v2/status.json", page_url: "https://status.agilitycms.com", type: "statuspage" },
+    { id: "butter_cms", name: "ButterCMS", tags: ["cms", "headless-cms", "content-management", "api", "saas"], status_url: "https://status.buttercms.com/api/v2/status.json", page_url: "https://status.buttercms.com", type: "statuspage" },
+    { id: "beatstars", name: "BeatStars", tags: ["music", "marketplace", "beats", "producers", "creator-economy"], status_url: "https://status.beatstars.com/api/v2/status.json", page_url: "https://status.beatstars.com", type: "statuspage" },
+    { id: "lexisnexis_risk", name: "LexisNexis Risk Solutions", tags: ["data-analytics", "risk", "identity", "compliance", "enterprise"], status_url: "https://status.lexisnexisrisk.com/api/v2/status.json", page_url: "https://status.lexisnexisrisk.com", type: "statuspage" },
+    { id: "limble_cmms", name: "Limble CMMS", tags: ["maintenance", "cmms", "facilities", "asset-management", "saas"], status_url: "https://status.limblecmms.com/api/v2/status.json", page_url: "https://status.limblecmms.com", type: "statuspage" },
+    { id: "fiix_software", name: "Fiix Software", tags: ["maintenance", "cmms", "asset-management", "facilities", "saas"], status_url: "https://status.fiixsoftware.com/api/v2/status.json", page_url: "https://status.fiixsoftware.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6145,7 +6158,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.63.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.68.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -6216,7 +6229,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3318 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3330 services.",
                     },
                 },
                 required: [],
