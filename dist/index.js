@@ -5798,6 +5798,26 @@ const SERVICES = [
     { id: "rive_app", name: "Rive", tags: ["animation", "motion-design", "interactive", "design", "developer-tools"], status_url: "https://status.rive.app/api/v2/summary.json", page_url: "https://status.rive.app", type: "betterstack" },
     // Askable — user research recruitment and participant management platform
     { id: "askable", name: "Askable", tags: ["user-research", "ux-research", "participant-recruitment", "testing", "saas"], status_url: "https://status.askable.com/api/v2/status.json", page_url: "https://status.askable.com", type: "statuspage" },
+    // Ikeono — SMS/text messaging platform for auto dealerships and service centers
+    { id: "ikeono", name: "Ikeono", tags: ["sms", "messaging", "automotive", "dealership", "saas"], status_url: "https://status.ikeono.com/api/v2/status.json", page_url: "https://status.ikeono.com", type: "statuspage" },
+    // CompanyCam — photo documentation and visual communication platform for contractors
+    { id: "companycam", name: "CompanyCam", tags: ["construction", "field-service", "photos", "documentation", "saas"], status_url: "https://status.companycam.com/api/v2/status.json", page_url: "https://status.companycam.com", type: "statuspage" },
+    // Courier — multi-channel notification routing and delivery API platform
+    { id: "courier", name: "Courier", tags: ["notifications", "messaging", "api", "multi-channel", "developer-tools"], status_url: "https://status.courier.com/api/v2/status.json", page_url: "https://status.courier.com", type: "statuspage" },
+    // Knock — developer-first notification infrastructure for product teams
+    { id: "knock", name: "Knock", tags: ["notifications", "infrastructure", "api", "developer-tools", "saas"], status_url: "https://status.knock.app/api/v2/status.json", page_url: "https://status.knock.app", type: "statuspage" },
+    // Batch — mobile engagement platform for push notifications, in-app messaging, and CRM
+    { id: "batch", name: "Batch", tags: ["push-notifications", "mobile", "engagement", "crm", "marketing"], status_url: "https://status.batch.com/api/v2/status.json", page_url: "https://status.batch.com", type: "statuspage" },
+    // Samepage — team collaboration platform combining chat, tasks, and file sharing
+    { id: "samepage_io", name: "Samepage", tags: ["collaboration", "team-chat", "project-management", "productivity", "saas"], status_url: "https://status.samepage.io/api/v2/status.json", page_url: "https://status.samepage.io", type: "statuspage" },
+    // Port — internal developer portal and platform engineering service catalog
+    { id: "getport_io", name: "Port", tags: ["developer-portal", "platform-engineering", "service-catalog", "devtools", "saas"], status_url: "https://status.getport.io/api/v2/status.json", page_url: "https://status.getport.io", type: "statuspage" },
+    // Peach Payments — African-focused online payment gateway and commerce platform
+    { id: "peach_payments", name: "Peach Payments", tags: ["payments", "fintech", "africa", "ecommerce", "api"], status_url: "https://status.peachpayments.com/api/v2/status.json", page_url: "https://status.peachpayments.com", type: "statuspage" },
+    // Atlas.md — direct primary care (DPC) practice management platform
+    { id: "atlas_md", name: "Atlas.md", tags: ["healthcare", "ehr", "direct-primary-care", "practice-management", "saas"], status_url: "https://status.atlas.md/api/v2/status.json", page_url: "https://status.atlas.md", type: "statuspage" },
+    // WorkMarket — enterprise freelancer and contractor workforce management platform (ADP)
+    { id: "workmarket", name: "WorkMarket", tags: ["freelance", "workforce", "contractors", "hr", "enterprise"], status_url: "https://status.workmarket.com/api/v2/status.json", page_url: "https://status.workmarket.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6305,7 +6325,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3374 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3384 services.",
                     },
                 },
                 required: [],
