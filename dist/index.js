@@ -5588,6 +5588,26 @@ const SERVICES = [
     { id: "goldcast_io", name: "Goldcast", tags: ["webinar", "virtual-events", "b2b", "video", "saas"], status_url: "https://status.goldcast.io/api/v2/status.json", page_url: "https://status.goldcast.io", type: "statuspage" },
     // Storylane — interactive product demo and sales enablement platform
     { id: "storylane_io", name: "Storylane", tags: ["sales-enablement", "product-demo", "interactive", "b2b", "saas"], status_url: "https://status.storylane.io/api/v2/status.json", page_url: "https://status.storylane.io", type: "statuspage" },
+    // Fathom Video — AI meeting recorder and note-taking assistant (distinct from Fathom Analytics)
+    { id: "fathom_video", name: "Fathom Video", tags: ["ai", "meeting", "recording", "transcription", "productivity", "saas"], status_url: "https://status.fathom.video/api/v2/status.json", page_url: "https://status.fathom.video", type: "statuspage" },
+    // Exa AI — AI-powered neural search API for web and enterprise data
+    { id: "exa_ai", name: "Exa AI", tags: ["ai", "search", "api", "developer-tools", "llm"], status_url: "https://status.exa.ai/api/v2/summary.json", page_url: "https://status.exa.ai", type: "betterstack" },
+    // DataCite — persistent identifier (DOI) registration and metadata infrastructure for research
+    { id: "datacite", name: "DataCite", tags: ["academic", "research", "doi", "metadata", "open-science"], status_url: "https://status.datacite.org/api/v2/status.json", page_url: "https://status.datacite.org", type: "statuspage" },
+    // Bonterra — nonprofit technology platform (merged EveryAction, NGP VAN, and others)
+    { id: "bonterra", name: "Bonterra", tags: ["nonprofit", "crm", "fundraising", "political", "saas"], status_url: "https://status.bonterratech.com/api/v2/status.json", page_url: "https://status.bonterratech.com", type: "statuspage" },
+    // IVANS — insurance industry connectivity and data exchange platform
+    { id: "ivans", name: "IVANS", tags: ["insurance", "connectivity", "data-exchange", "fintech", "enterprise"], status_url: "https://status.ivans.com/api/v2/status.json", page_url: "https://status.ivans.com", type: "statuspage" },
+    // SalesRabbit — door-to-door and field sales platform with route optimization
+    { id: "salesrabbit", name: "SalesRabbit", tags: ["sales", "field-sales", "crm", "mobile", "saas"], status_url: "https://status.salesrabbit.com/api/v2/status.json", page_url: "https://status.salesrabbit.com", type: "statuspage" },
+    // fraud.net — enterprise AI-powered fraud detection and prevention platform
+    { id: "fraud_net", name: "fraud.net", tags: ["fraud", "security", "ai", "fintech", "enterprise"], status_url: "https://status.fraud.net/api/v2/status.json", page_url: "https://status.fraud.net", type: "statuspage" },
+    // Conekta — Mexican payment gateway and fintech platform for LATAM
+    { id: "conekta", name: "Conekta", tags: ["payments", "fintech", "latam", "mexico", "api"], status_url: "https://status.conekta.com/api/v2/status.json", page_url: "https://status.conekta.com", type: "statuspage" },
+    // TapClicks — unified marketing analytics and reporting platform
+    { id: "tapclicks", name: "TapClicks", tags: ["analytics", "marketing", "reporting", "data", "saas"], status_url: "https://status.tapclicks.com/api/v2/status.json", page_url: "https://status.tapclicks.com", type: "statuspage" },
+    // SuperOffice — Scandinavian CRM platform for B2B sales, marketing, and customer service
+    { id: "superoffice", name: "SuperOffice", tags: ["crm", "sales", "marketing", "b2b", "nordic", "saas"], status_url: "https://status.superoffice.com/api/v2/status.json", page_url: "https://status.superoffice.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6084,7 +6104,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3212 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3222 services.",
                     },
                 },
                 required: [],
