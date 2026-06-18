@@ -5637,6 +5637,36 @@ const SERVICES: ServiceConfig[] = [
   { id: "ziflow", name: "Ziflow", tags: ["creative-review", "approval", "proofing", "marketing", "saas"], status_url: "https://status.ziflow.com/api/v2/status.json", page_url: "https://status.ziflow.com", type: "statuspage" },
   { id: "lytho", name: "Lytho", tags: ["creative-ops", "brand-management", "dam", "marketing", "saas"], status_url: "https://status.lytho.com/api/v2/status.json", page_url: "https://status.lytho.com", type: "statuspage" },
   { id: "perion", name: "Perion Network", tags: ["adtech", "advertising", "digital-media", "publisher", "saas"], status_url: "https://status.perion.com/api/v2/status.json", page_url: "https://status.perion.com", type: "statuspage" },
+  // FastPix — video infrastructure API platform for building streaming applications
+  { id: "fastpix", name: "FastPix", tags: ["video", "streaming", "media", "api", "developer-tools"], status_url: "https://fastpix.statuspage.io/api/v2/status.json", page_url: "https://fastpix.statuspage.io", type: "statuspage" },
+  // Neptune.ai — ML experiment tracking and model registry platform
+  { id: "neptune_ai", name: "Neptune.ai", tags: ["mlops", "ml", "experiment-tracking", "ai", "developer-tools"], status_url: "https://neptune.statuspage.io/api/v2/status.json", page_url: "https://neptune.statuspage.io", type: "statuspage" },
+  // Agora — real-time voice, video, and live interactive streaming API
+  { id: "agora", name: "Agora", tags: ["video", "voice", "rtc", "streaming", "api"], status_url: "https://agora.instatus.com/api/v2/summary.json", page_url: "https://agora.instatus.com", type: "betterstack" },
+  // Zeabur — cloud PaaS for deploying and scaling applications
+  { id: "zeabur", name: "Zeabur", tags: ["hosting", "paas", "deployment", "cloud", "developer-tools"], status_url: "https://zeabur.instatus.com/api/v2/summary.json", page_url: "https://zeabur.instatus.com", type: "betterstack" },
+  // Mercury — banking platform built for startups and tech companies
+  { id: "mercury", name: "Mercury", tags: ["banking", "fintech", "startup", "payments", "saas"], status_url: "https://mercury.instatus.com/api/v2/summary.json", page_url: "https://mercury.instatus.com", type: "betterstack" },
+  // Oracle Cloud — enterprise cloud infrastructure and SaaS from Oracle
+  { id: "oracle_cloud", name: "Oracle Cloud", tags: ["cloud", "infrastructure", "enterprise", "database", "saas"], status_url: "https://oracle.instatus.com/api/v2/summary.json", page_url: "https://oracle.instatus.com", type: "betterstack" },
+  // DreamHost — web hosting and domain services provider
+  { id: "dreamhost", name: "DreamHost", tags: ["hosting", "web-hosting", "domain", "cloud", "saas"], status_url: "https://dreamhost.instatus.com/api/v2/summary.json", page_url: "https://dreamhost.instatus.com", type: "betterstack" },
+  // Namecheap — domain registrar and web hosting services
+  { id: "namecheap", name: "Namecheap", tags: ["domain", "hosting", "dns", "ssl", "registrar"], status_url: "https://namecheap.instatus.com/api/v2/summary.json", page_url: "https://namecheap.instatus.com", type: "betterstack" },
+  // jsDelivr — free CDN for open-source npm and GitHub packages
+  { id: "jsdelivr", name: "jsDelivr", tags: ["cdn", "open-source", "javascript", "npm", "developer-tools"], status_url: "https://jsdelivr.instatus.com/api/v2/summary.json", page_url: "https://jsdelivr.instatus.com", type: "betterstack" },
+  // Hetzner — German cloud and dedicated server provider
+  { id: "hetzner", name: "Hetzner", tags: ["cloud", "hosting", "servers", "infrastructure", "iaas"], status_url: "https://hetzner.instatus.com/api/v2/summary.json", page_url: "https://hetzner.instatus.com", type: "betterstack" },
+  // Replit — online IDE and collaborative coding environment with AI coding assistant
+  { id: "replit", name: "Replit", tags: ["ide", "cloud", "developer-tools", "coding", "education"], status_url: "https://replit.instatus.com/api/v2/summary.json", page_url: "https://replit.instatus.com", type: "betterstack" },
+  // Glitch — collaborative web app coding and hosting platform
+  { id: "glitch", name: "Glitch", tags: ["hosting", "developer-tools", "coding", "collaboration", "saas"], status_url: "https://glitch.instatus.com/api/v2/summary.json", page_url: "https://glitch.instatus.com", type: "betterstack" },
+  // Windmill — open-source developer platform for workflows, scripts, and internal tools
+  { id: "windmill", name: "Windmill", tags: ["workflow", "automation", "developer-tools", "internal-tools", "saas"], status_url: "https://windmill.instatus.com/api/v2/summary.json", page_url: "https://windmill.instatus.com", type: "betterstack" },
+  // Drift — conversational marketing and sales platform (acquired by Salesloft)
+  { id: "drift", name: "Drift", tags: ["chat", "marketing", "sales", "conversational", "saas"], status_url: "https://drift.instatus.com/api/v2/summary.json", page_url: "https://drift.instatus.com", type: "betterstack" },
+  // Descope — no-code customer identity and authentication platform
+  { id: "descope", name: "Descope", tags: ["auth", "identity", "ciam", "no-code", "developer-tools"], status_url: "https://descope.instatus.com/api/v2/summary.json", page_url: "https://descope.instatus.com", type: "betterstack" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6074,7 +6104,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 3153 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 3168 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -6112,7 +6142,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3153 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3168 services.",
           },
         },
         required: [],
