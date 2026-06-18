@@ -3427,7 +3427,7 @@ const SERVICES = [
     // OpenAI — AI research lab and API provider (GPT-4, DALL-E, Whisper)
     { id: "openai", name: "OpenAI", tags: ["ai", "llm", "api", "developer-tools", "gpt"], status_url: "https://status.openai.com/api/v2/status.json", page_url: "https://status.openai.com", type: "statuspage" },
     // Anthropic — AI safety company and Claude API provider
-    { id: "anthropic", name: "Anthropic", tags: ["ai", "llm", "api", "developer-tools", "claude"], status_url: "https://status.anthropic.com/api/v2/status.json", page_url: "https://status.anthropic.com", type: "statuspage" },
+    { id: "anthropic", name: "Anthropic", tags: ["ai", "llm", "api", "developer-tools", "claude"], status_url: "https://status.claude.com/api/v2/status.json", page_url: "https://status.claude.com", type: "statuspage" },
     // Miro — collaborative online whiteboard platform
     { id: "miro", name: "Miro", tags: ["collaboration", "whiteboard", "design", "productivity", "saas"], status_url: "https://status.miro.com/api/v2/status.json", page_url: "https://status.miro.com", type: "statuspage" },
     // Iterable — cross-channel marketing automation platform
@@ -5698,6 +5698,17 @@ const SERVICES = [
     { id: "coder", name: "Coder", tags: ["developer-tools", "cloud-ide", "remote-dev", "kubernetes", "saas"], status_url: "https://coder.instatus.com/api/v2/summary.json", page_url: "https://coder.com", type: "betterstack" },
     { id: "codestory", name: "CodeStory (Aide)", tags: ["ai", "ide", "developer-tools", "coding-assistant", "saas"], status_url: "https://codestory.statuspage.io/api/v2/status.json", page_url: "https://codestory.statuspage.io", type: "statuspage" },
     { id: "atlantis_tf", name: "Atlantis", tags: ["terraform", "infrastructure", "gitops", "devops", "open-source"], status_url: "https://atlantis.instatus.com/api/v2/summary.json", page_url: "https://www.runatlantis.io", type: "betterstack" },
+    // Tick 346 additions
+    { id: "razorpay", name: "Razorpay", tags: ["payments", "fintech", "india", "api", "gateway"], status_url: "https://razorpay.instatus.com/api/v2/summary.json", page_url: "https://razorpay.com", type: "betterstack" },
+    { id: "gcore", name: "Gcore", tags: ["cdn", "cloud", "infrastructure", "networking", "edge"], status_url: "https://gcore.instatus.com/api/v2/summary.json", page_url: "https://gcore.com", type: "betterstack" },
+    { id: "porkbun", name: "Porkbun", tags: ["dns", "domains", "registrar", "hosting", "saas"], status_url: "https://porkbun.instatus.com/api/v2/summary.json", page_url: "https://porkbun.com", type: "betterstack" },
+    { id: "epik", name: "Epik", tags: ["dns", "domains", "registrar", "hosting", "saas"], status_url: "https://epik.statuspage.io/api/v2/status.json", page_url: "https://epik.statuspage.io", type: "statuspage" },
+    { id: "reg_123", name: "123 Reg", tags: ["dns", "domains", "registrar", "uk", "hosting"], status_url: "https://123reg.statuspage.io/api/v2/status.json", page_url: "https://123reg.statuspage.io", type: "statuspage" },
+    { id: "plastiq", name: "Plastiq", tags: ["payments", "b2b", "fintech", "ap-automation", "saas"], status_url: "https://plastiq.statuspage.io/api/v2/status.json", page_url: "https://plastiq.statuspage.io", type: "statuspage" },
+    { id: "jitterbit", name: "Jitterbit", tags: ["integration", "etl", "ipaas", "enterprise", "automation"], status_url: "https://jitterbit.statuspage.io/api/v2/status.json", page_url: "https://trust.jitterbit.com", type: "statuspage" },
+    { id: "zabbix", name: "Zabbix", tags: ["monitoring", "open-source", "infrastructure", "observability", "network"], status_url: "https://zabbix.statuspage.io/api/v2/status.json", page_url: "https://zabbix.statuspage.io", type: "statuspage" },
+    { id: "outreach_io", name: "Outreach", tags: ["sales", "sales-engagement", "crm", "email", "saas"], status_url: "https://outreach.instatus.com/api/v2/summary.json", page_url: "https://outreach.io", type: "betterstack" },
+    { id: "bambootech", name: "Bamboo", tags: ["hospitality", "hotel", "revenue-management", "ai", "saas"], status_url: "https://bamboo.statuspage.io/api/v2/status.json", page_url: "https://status.bambootech.ai", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6070,6 +6081,7 @@ async function fetchBetterStackStatus(svc) {
                 break;
             case "MAINTENANCE":
             case "UNDERMAINTENANCE":
+            case "SOMEUNDERMAINTENANCE":
                 status = "maintenance";
                 break;
             default: status = "unknown";
@@ -6204,7 +6216,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3308 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3318 services.",
                     },
                 },
                 required: [],
