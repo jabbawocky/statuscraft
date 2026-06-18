@@ -5954,6 +5954,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "prisma_cloud", name: "Palo Alto Networks", tags: ["security", "cloud-security", "ngfw", "prisma", "enterprise"], status_url: "https://status.paloaltonetworks.com/api/v2/status.json", page_url: "https://status.paloaltonetworks.com", type: "statuspage" },
   // Cortex XDR — Palo Alto Networks extended detection and response (XDR) platform
   { id: "cortex_xdr", name: "Cortex XDR", tags: ["security", "xdr", "endpoint", "detection-response", "enterprise"], status_url: "https://cortex.statuspage.io/api/v2/status.json", page_url: "https://cortex.statuspage.io", type: "statuspage" },
+  // Lumen5 — AI-powered video content creation platform for marketing
+  { id: "lumen5", name: "Lumen5", tags: ["video", "content-creation", "ai", "marketing", "saas"], status_url: "https://status.lumen5.com/api/v2/status.json", page_url: "https://status.lumen5.com", type: "statuspage" },
+  // Gupshup — conversational messaging API platform for WhatsApp, SMS, and chatbots
+  { id: "gupshup", name: "Gupshup", tags: ["messaging", "whatsapp", "sms", "chatbot", "api"], status_url: "https://gupshup.statuspage.io/api/v2/status.json", page_url: "https://gupshup.statuspage.io", type: "statuspage" },
+  // Podium — customer interaction platform for reviews, messaging, and payments
+  { id: "podium", name: "Podium", tags: ["reviews", "messaging", "customer-experience", "reputation", "saas"], status_url: "https://status.podium.com/api/v2/summary.json", page_url: "https://status.podium.com", type: "betterstack" },
+  // Fibery — connected work platform combining project management, knowledge base, and automation
+  { id: "fibery", name: "Fibery", tags: ["project-management", "collaboration", "knowledge-base", "automation", "saas"], status_url: "https://status.fibery.io/api/v2/summary.json", page_url: "https://status.fibery.io", type: "betterstack" },
+  // Embrace — mobile observability and crash reporting platform for iOS and Android
+  { id: "embrace_io", name: "Embrace", tags: ["mobile", "observability", "crash-reporting", "performance", "developer-tools"], status_url: "https://status.embrace.io/api/v2/status.json", page_url: "https://status.embrace.io", type: "statuspage" },
+  // Codemagic — CI/CD platform purpose-built for mobile apps (Flutter, iOS, Android, React Native)
+  { id: "codemagic", name: "Codemagic", tags: ["ci-cd", "mobile", "flutter", "ios", "android"], status_url: "https://status.codemagic.io/api/v2/summary.json", page_url: "https://status.codemagic.io", type: "betterstack" },
+  // Appcircle — mobile CI/CD and testing platform for iOS and Android teams
+  { id: "appcircle", name: "Appcircle", tags: ["ci-cd", "mobile", "ios", "android", "developer-tools"], status_url: "https://status.appcircle.io/api/v2/summary.json", page_url: "https://status.appcircle.io", type: "betterstack" },
+  // Restream — multistreaming platform for live broadcasting to multiple platforms simultaneously
+  { id: "restream", name: "Restream", tags: ["live-streaming", "multistream", "video", "broadcast", "saas"], status_url: "https://status.restream.io/api/v2/summary.json", page_url: "https://status.restream.io", type: "betterstack" },
+  // Retrium — retrospective meeting and team health tool for agile teams
+  { id: "retrium", name: "Retrium", tags: ["retrospectives", "agile", "team-collaboration", "meetings", "saas"], status_url: "https://status.retrium.com/api/v2/status.json", page_url: "https://status.retrium.com", type: "statuspage" },
+  // Rive — interactive animation and motion design platform for apps and games
+  { id: "rive_app", name: "Rive", tags: ["animation", "motion-design", "interactive", "design", "developer-tools"], status_url: "https://status.rive.app/api/v2/summary.json", page_url: "https://status.rive.app", type: "betterstack" },
+  // Askable — user research recruitment and participant management platform
+  { id: "askable", name: "Askable", tags: ["user-research", "ux-research", "participant-recruitment", "testing", "saas"], status_url: "https://status.askable.com/api/v2/status.json", page_url: "https://status.askable.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6363,7 +6385,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.70.0" },
+  { name: "statuscraft", version: "2.71.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -6445,7 +6467,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3363 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3374 services.",
           },
         },
         required: [],
