@@ -5687,6 +5687,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "arcsite", name: "ArcSite", tags: ["construction", "field-service", "mobile", "saas"], status_url: "https://status.arcsite.com/api/v2/status.json", page_url: "https://status.arcsite.com", type: "statuspage" },
   // Super — publish Notion pages as websites with custom domains and SEO
   { id: "super_so", name: "Super", tags: ["website-builder", "notion", "hosting", "saas"], status_url: "https://super.instatus.com/api/v2/summary.json", page_url: "https://super.instatus.com", type: "betterstack" },
+  // Flatfile — data import and onboarding platform for SaaS products
+  { id: "flatfile", name: "Flatfile", tags: ["data-import", "etl", "developer-tools", "saas"], status_url: "https://status.flatfile.com/api/v2/status.json", page_url: "https://status.flatfile.com", type: "statuspage" },
+  // OneSchema — AI-powered CSV import and data onboarding for SaaS
+  { id: "oneschema", name: "OneSchema", tags: ["data-import", "csv", "developer-tools", "saas"], status_url: "https://status.oneschema.co/api/v2/status.json", page_url: "https://status.oneschema.co", type: "statuspage" },
+  // NetBird — open-source WireGuard-based secure peer-to-peer overlay network
+  { id: "netbird", name: "NetBird", tags: ["vpn", "networking", "security", "zero-trust", "infrastructure"], status_url: "https://status.netbird.io/api/v2/status.json", page_url: "https://status.netbird.io", type: "statuspage" },
+  // Novu — open-source notification infrastructure for developers (email, SMS, push, chat)
+  { id: "novu", name: "Novu", tags: ["notifications", "email", "sms", "push", "developer-tools"], status_url: "https://novu.instatus.com/api/v2/summary.json", page_url: "https://novu.instatus.com", type: "betterstack" },
+  // Laravel Cloud — official managed cloud hosting platform for Laravel PHP applications
+  { id: "laravel_cloud", name: "Laravel Cloud", tags: ["hosting", "php", "paas", "laravel", "developer-tools"], status_url: "https://status.laravel.cloud/api/v2/status.json", page_url: "https://status.laravel.cloud", type: "statuspage" },
+  // Qualified.io — technical assessment and coding interview platform for engineering teams
+  { id: "qualified_io", name: "Qualified.io", tags: ["recruiting", "technical-interview", "assessment", "developer-tools", "saas"], status_url: "https://status.qualified.io/api/v2/status.json", page_url: "https://status.qualified.io", type: "statuspage" },
+  // Zencoder AI — JetBrains AI coding assistant for IDEs (IntelliJ, PyCharm, etc.)
+  { id: "zencoder_ai", name: "Zencoder AI", tags: ["ai", "ide", "code-completion", "developer-tools", "jetbrains"], status_url: "https://status.zencoder.ai/api/v2/status.json", page_url: "https://status.zencoder.ai", type: "statuspage" },
+  // GOV.UK — UK government publishing platform serving official government content
+  { id: "gov_uk", name: "GOV.UK", tags: ["government", "uk", "publishing", "digital-services"], status_url: "https://status.publishing.service.gov.uk/api/v2/status.json", page_url: "https://status.publishing.service.gov.uk", type: "statuspage" },
+  // GOV.UK Notify — UK government notification service for sending emails, SMS, and letters
+  { id: "govuk_notify", name: "GOV.UK Notify", tags: ["government", "uk", "notifications", "email", "sms"], status_url: "https://status.notifications.service.gov.uk/api/v2/status.json", page_url: "https://status.notifications.service.gov.uk", type: "statuspage" },
+  // GOV.UK Pay — UK government payment service for taking online payments
+  { id: "govuk_pay", name: "GOV.UK Pay", tags: ["government", "uk", "payments", "digital-services"], status_url: "https://payments.statuspage.io/api/v2/status.json", page_url: "https://payments.statuspage.io", type: "statuspage" },
+  // StoreFeeder — UK-based multichannel e-commerce management and inventory platform
+  { id: "storefeeder", name: "StoreFeeder", tags: ["e-commerce", "multichannel", "inventory", "uk", "saas"], status_url: "https://status.storefeeder.com/api/v2/status.json", page_url: "https://status.storefeeder.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6124,7 +6146,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     {
       name: "list_services",
       description:
-        "List all 3178 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
+        "List all 3190 services tracked by StatusCraft, with their IDs and tags. Use this to discover service IDs for get_status.",
       inputSchema: {
         type: "object",
         properties: {
@@ -6162,7 +6184,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3178 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3190 services.",
           },
         },
         required: [],
