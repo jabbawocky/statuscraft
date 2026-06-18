@@ -5793,6 +5793,34 @@ const SERVICES: ServiceConfig[] = [
   { id: "patch_io", name: "Patch", tags: ["climate", "carbon-offsets", "sustainability", "api", "developer-tools"], status_url: "https://status.patch.io/api/v2/status.json", page_url: "https://status.patch.io", type: "statuspage" },
   { id: "paymentworks", name: "PaymentWorks", tags: ["payments", "fintech", "supplier-management", "vendor-verification", "b2b"], status_url: "https://status.paymentworks.com/api/v2/status.json", page_url: "https://status.paymentworks.com", type: "statuspage" },
   { id: "hotglue", name: "hotglue", tags: ["integration", "etl", "embedded-integrations", "developer-tools", "saas"], status_url: "https://status.hotglue.xyz/api/v2/status.json", page_url: "https://status.hotglue.xyz", type: "statuspage" },
+  // New services added tick 332
+  { id: "teamdynamix", name: "TeamDynamix", tags: ["itsm", "it-service-management", "enterprise-service-management", "higher-education", "saas"], status_url: "https://status.teamdynamix.com/api/v2/status.json", page_url: "https://status.teamdynamix.com", type: "statuspage" },
+  { id: "solaris_baas", name: "Solaris", tags: ["banking-as-a-service", "baas", "fintech", "europe", "api"], status_url: "https://status.solarisgroup.com/api/v2/status.json", page_url: "https://status.solarisgroup.com", type: "statuspage" },
+  { id: "balance_bnpl", name: "Balance", tags: ["b2b-payments", "bnpl", "fintech", "trade-credit", "api"], status_url: "https://status.getbalance.com/api/v2/status.json", page_url: "https://status.getbalance.com", type: "statuspage" },
+  { id: "elvanto", name: "Elvanto", tags: ["church-management", "chms", "nonprofit", "scheduling", "saas"], status_url: "https://status.elvanto.com/api/v2/status.json", page_url: "https://status.elvanto.com", type: "statuspage" },
+  { id: "growthzone", name: "GrowthZone", tags: ["association-management", "ams", "membership", "events", "saas"], status_url: "https://status.growthzone.com/api/v2/status.json", page_url: "https://status.growthzone.com", type: "statuspage" },
+  { id: "accricloud", name: "AccriCloud", tags: ["association-management", "hosting", "cloud", "nonprofit", "saas"], status_url: "https://status.accrisoft.com/api/v2/status.json", page_url: "https://status.accrisoft.com", type: "statuspage" },
+  { id: "evervault", name: "Evervault", tags: ["security", "data-encryption", "privacy", "pci", "developer-tools"], status_url: "https://status.evervault.com/api/v2/status.json", page_url: "https://status.evervault.com", type: "statuspage" },
+  { id: "lemonway", name: "Lemonway", tags: ["payments", "fintech", "europe", "marketplace", "api"], status_url: "https://status.lemonway.com/api/v2/status.json", page_url: "https://status.lemonway.com", type: "statuspage" },
+  { id: "wallarm", name: "Wallarm", tags: ["security", "waap", "api-security", "waf", "cloud"], status_url: "https://status.wallarm.com/api/v2/status.json", page_url: "https://status.wallarm.com", type: "statuspage" },
+  { id: "pandascore", name: "PandaScore", tags: ["esports", "gaming", "data", "api", "developer-tools"], status_url: "https://status.pandascore.co/api/v2/status.json", page_url: "https://status.pandascore.co", type: "statuspage" },
+  { id: "propertymeld", name: "Property Meld", tags: ["proptech", "property-management", "maintenance", "real-estate", "saas"], status_url: "https://status.propertymeld.com/api/v2/status.json", page_url: "https://status.propertymeld.com", type: "statuspage" },
+  { id: "rentspree", name: "RentSpree", tags: ["proptech", "rental", "tenant-screening", "real-estate", "saas"], status_url: "https://status.rentspree.com/api/v2/status.json", page_url: "https://status.rentspree.com", type: "statuspage" },
+  { id: "trakstar_hire", name: "Trakstar Hire", tags: ["ats", "recruiting", "hr", "applicant-tracking", "saas"], status_url: "https://status.hire.trakstar.com/api/v2/status.json", page_url: "https://status.hire.trakstar.com", type: "statuspage" },
+  { id: "spark_hire", name: "Spark Hire", tags: ["ats", "video-interviews", "recruiting", "hr", "saas"], status_url: "https://status.comeet.com/api/v2/status.json", page_url: "https://status.comeet.com", type: "statuspage" },
+  { id: "workstep", name: "WorkStep", tags: ["hr", "frontline-workers", "retention", "workforce", "saas"], status_url: "https://status.workstep.com/api/v2/status.json", page_url: "https://status.workstep.com", type: "statuspage" },
+  { id: "freckle", name: "Freckle", tags: ["time-tracking", "productivity", "team", "billing", "saas"], status_url: "https://status.freckle.com/api/v2/status.json", page_url: "https://status.freckle.com", type: "statuspage" },
+  { id: "newforma_konekt", name: "Newforma Konekt", tags: ["construction", "bim", "project-information-management", "architecture", "saas"], status_url: "https://status.bimtrack.co/api/v2/status.json", page_url: "https://status.bimtrack.co", type: "statuspage" },
+  { id: "global_e", name: "Global-e", tags: ["e-commerce", "cross-border", "international", "checkout", "saas"], status_url: "https://status.global-e.com/api/v2/status.json", page_url: "https://status.global-e.com", type: "statuspage" },
+  { id: "unlayer", name: "Unlayer", tags: ["email-editor", "drag-and-drop", "marketing", "embed", "saas"], status_url: "https://status.unlayer.com/api/v2/status.json", page_url: "https://status.unlayer.com", type: "statuspage" },
+  { id: "clara", name: "Clara", tags: ["scheduling", "ai", "meetings", "assistant", "productivity"], status_url: "https://status.clara.com/api/v2/status.json", page_url: "https://status.clara.com", type: "statuspage" },
+  { id: "lexer", name: "Lexer", tags: ["cdp", "customer-data", "retail", "analytics", "saas"], status_url: "https://status.lexer.io/api/v2/status.json", page_url: "https://status.lexer.io", type: "statuspage" },
+  { id: "daysmart", name: "DaySmart", tags: ["business-management", "appointments", "salons", "veterinary", "saas"], status_url: "https://status.daysmart.com/api/v2/status.json", page_url: "https://status.daysmart.com", type: "statuspage" },
+  { id: "testlodge", name: "TestLodge", tags: ["testing", "test-management", "qa", "developer-tools", "saas"], status_url: "https://status.testlodge.com/api/v2/status.json", page_url: "https://status.testlodge.com", type: "statuspage" },
+  { id: "secureauth", name: "SecureAuth", tags: ["identity", "authentication", "mfa", "zero-trust", "security"], status_url: "https://status.secureauth.com/api/v2/status.json", page_url: "https://status.secureauth.com", type: "statuspage" },
+  { id: "checkmate_pos", name: "Checkmate", tags: ["restaurants", "delivery", "online-ordering", "food-tech", "saas"], status_url: "https://status.itsacheckmate.com/api/v2/status.json", page_url: "https://status.itsacheckmate.com", type: "statuspage" },
+  { id: "seequent", name: "Seequent", tags: ["geology", "subsurface", "mining", "civil-engineering", "enterprise"], status_url: "https://status.seequent.com/api/v2/status.json", page_url: "https://status.seequent.com", type: "statuspage" },
+  { id: "shapr3d", name: "Shapr3D", tags: ["cad", "3d-modeling", "mobile", "design", "saas"], status_url: "https://status.shapr3d.com/api/v2/status.json", page_url: "https://status.shapr3d.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6277,7 +6305,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3228 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3255 services.",
           },
         },
         required: [],
