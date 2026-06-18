@@ -5608,6 +5608,13 @@ const SERVICES = [
     { id: "tapclicks", name: "TapClicks", tags: ["analytics", "marketing", "reporting", "data", "saas"], status_url: "https://status.tapclicks.com/api/v2/status.json", page_url: "https://status.tapclicks.com", type: "statuspage" },
     // SuperOffice — Scandinavian CRM platform for B2B sales, marketing, and customer service
     { id: "superoffice", name: "SuperOffice", tags: ["crm", "sales", "marketing", "b2b", "nordic", "saas"], status_url: "https://status.superoffice.com/api/v2/status.json", page_url: "https://status.superoffice.com", type: "statuspage" },
+    // New services added tick 330
+    { id: "homerun", name: "Homerun", tags: ["ats", "recruiting", "employer-brand", "hr", "european"], status_url: "https://status.homerun.co/api/v2/status.json", page_url: "https://status.homerun.co", type: "statuspage" },
+    { id: "commure", name: "Commure", tags: ["healthcare", "clinical-workflows", "ehr", "api", "saas"], status_url: "https://status.commure.com/api/v2/status.json", page_url: "https://status.commure.com", type: "statuspage" },
+    { id: "updox", name: "Updox", tags: ["healthcare", "messaging", "fax", "patient-communications", "saas"], status_url: "https://status.updox.com/api/v2/status.json", page_url: "https://status.updox.com", type: "statuspage" },
+    { id: "patch_io", name: "Patch", tags: ["climate", "carbon-offsets", "sustainability", "api", "developer-tools"], status_url: "https://status.patch.io/api/v2/status.json", page_url: "https://status.patch.io", type: "statuspage" },
+    { id: "paymentworks", name: "PaymentWorks", tags: ["payments", "fintech", "supplier-management", "vendor-verification", "b2b"], status_url: "https://status.paymentworks.com/api/v2/status.json", page_url: "https://status.paymentworks.com", type: "statuspage" },
+    { id: "hotglue", name: "hotglue", tags: ["integration", "etl", "embedded-integrations", "developer-tools", "saas"], status_url: "https://status.hotglue.xyz/api/v2/status.json", page_url: "https://status.hotglue.xyz", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6037,7 +6044,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.62.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.63.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -6108,7 +6115,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3222 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3228 services.",
                     },
                 },
                 required: [],
