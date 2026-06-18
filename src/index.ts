@@ -5847,6 +5847,17 @@ const SERVICES: ServiceConfig[] = [
   { id: "warrant", name: "Warrant", tags: ["authorization", "permissions", "security", "saas"], status_url: "https://warrant.statuspage.io/api/v2/status.json", page_url: "https://warrant.statuspage.io", type: "statuspage" },
   { id: "bokio", name: "Bokio", tags: ["accounting", "finance", "smb", "saas"], status_url: "https://status.bokio.se/api/v2/status.json", page_url: "https://status.bokio.se", type: "statuspage" },
   { id: "tallie", name: "Tallie", tags: ["expense-management", "finance", "travel", "enterprise"], status_url: "https://tallie.statuspage.io/api/v2/status.json", page_url: "https://tallie.statuspage.io", type: "statuspage" },
+  // New services added tick 340
+  { id: "spinupwp", name: "SpinupWP", tags: ["wordpress", "hosting", "server-management", "devtools", "saas"], status_url: "https://status.spinupwp.com/api/v2/status.json", page_url: "https://status.spinupwp.com", type: "statuspage" },
+  { id: "count_co", name: "Count", tags: ["analytics", "data", "collaboration", "bi", "saas"], status_url: "https://status.count.co/api/v2/status.json", page_url: "https://status.count.co", type: "statuspage" },
+  { id: "boxyhq", name: "BoxyHQ", tags: ["auth", "saml", "sso", "enterprise", "developer-tools"], status_url: "https://boxyhq.statuspage.io/api/v2/status.json", page_url: "https://boxyhq.statuspage.io", type: "statuspage" },
+  { id: "opensrs", name: "OpenSRS", tags: ["domain-registrar", "dns", "reseller", "hosting", "infrastructure"], status_url: "https://status.opensrs.com/api/v2/status.json", page_url: "https://status.opensrs.com", type: "statuspage" },
+  { id: "column_bank", name: "Column", tags: ["banking-as-a-service", "baas", "fintech", "payments", "api"], status_url: "https://status.column.com/api/v2/status.json", page_url: "https://status.column.com", type: "statuspage" },
+  { id: "articulate", name: "Articulate", tags: ["e-learning", "lms", "authoring", "training", "saas"], status_url: "https://articulate.statuspage.io/api/v2/status.json", page_url: "https://www.articulatestatus.com", type: "statuspage" },
+  { id: "elucidat", name: "Elucidat", tags: ["e-learning", "authoring", "training", "saas", "enterprise"], status_url: "https://status.elucidat.com/api/v2/status.json", page_url: "https://status.elucidat.com", type: "statuspage" },
+  { id: "lyssna", name: "Lyssna", tags: ["ux-research", "usability-testing", "design", "user-research", "saas"], status_url: "https://status.lyssna.com/api/v2/status.json", page_url: "https://status.lyssna.com", type: "statuspage" },
+  { id: "metoro", name: "Metoro", tags: ["observability", "monitoring", "kubernetes", "cloud", "developer-tools"], status_url: "https://status.metoro.io/api/v2/status.json", page_url: "https://status.metoro.io", type: "statuspage" },
+  { id: "assently", name: "Assently", tags: ["e-signature", "documents", "nordic", "compliance", "saas"], status_url: "https://status.assently.com/api/v2/status.json", page_url: "https://status.assently.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6331,7 +6342,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3281 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3291 services.",
           },
         },
         required: [],
