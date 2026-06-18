@@ -5732,6 +5732,50 @@ const SERVICES = [
     { id: "armorcode", name: "ArmorCode", tags: ["security", "aspm", "devsecops", "appsec", "saas"], status_url: "https://status.armorcode.com/api/v2/status.json", page_url: "https://status.armorcode.com", type: "statuspage" },
     { id: "velocity_global", name: "Velocity Global", tags: ["hr", "eor", "employer-of-record", "global-payroll", "saas"], status_url: "https://status.velocityglobal.com/api/v2/status.json", page_url: "https://status.velocityglobal.com", type: "statuspage" },
     { id: "capdesk", name: "Capdesk (Carta Europe)", tags: ["fintech", "cap-table", "equity", "europe", "saas"], status_url: "https://status.capdesk.com/api/v2/status.json", page_url: "https://status.capdesk.com", type: "statuspage" },
+    // Sylvera — carbon credit ratings, analytics, and climate risk intelligence platform
+    { id: "sylvera", name: "Sylvera", tags: ["climate", "carbon", "esg", "sustainability", "analytics"], status_url: "https://status.sylvera.com/api/v2/status.json", page_url: "https://status.sylvera.com", type: "statuspage" },
+    // TraceLink — pharmaceutical supply chain serialization and track-and-trace compliance network
+    { id: "tracelink", name: "TraceLink", tags: ["pharma", "supply-chain", "compliance", "serialization", "enterprise"], status_url: "https://tracelink.statuspage.io/api/v2/status.json", page_url: "https://tracelink.statuspage.io", type: "statuspage" },
+    // Vellum — LLM development platform for building, testing, and deploying AI workflows
+    { id: "vellum", name: "Vellum", tags: ["ai", "llm", "developer-tools", "workflows", "saas"], status_url: "https://status.vellum.ai/api/v2/status.json", page_url: "https://status.vellum.ai", type: "statuspage" },
+    // Instawork — on-demand staffing marketplace connecting businesses with hourly workers
+    { id: "instawork", name: "Instawork", tags: ["staffing", "hr", "marketplace", "gig-economy", "saas"], status_url: "https://status.instawork.com/api/v2/status.json", page_url: "https://status.instawork.com", type: "statuspage" },
+    // Heron Data — AI-powered financial transaction data enrichment and categorization API
+    { id: "heron_data", name: "Heron Data", tags: ["fintech", "ai", "data-enrichment", "banking", "api"], status_url: "https://status.herondata.io/api/v2/status.json", page_url: "https://status.herondata.io", type: "statuspage" },
+    // PocketSmith — personal finance forecasting and budgeting platform with bank feed integration
+    { id: "pocketsmith", name: "PocketSmith", tags: ["fintech", "personal-finance", "budgeting", "forecasting", "saas"], status_url: "https://status.pocketsmith.com/api/v2/status.json", page_url: "https://status.pocketsmith.com", type: "statuspage" },
+    // Castor — data catalog and data lineage platform for modern data teams (European)
+    { id: "castor_dc", name: "Castor", tags: ["data", "catalog", "lineage", "governance", "saas"], status_url: "https://www.castorstatus.com/api/v2/status.json", page_url: "https://www.castorstatus.com", type: "statuspage" },
+    // Orbit — developer community growth and engagement analytics platform
+    { id: "orbit", name: "Orbit", tags: ["community", "developer-relations", "analytics", "engagement", "saas"], status_url: "https://orbit.statuspage.io/api/v2/status.json", page_url: "https://orbit.statuspage.io", type: "statuspage" },
+    // Test IO — crowdsourced software testing platform connecting companies with global QA testers
+    { id: "test_io", name: "Test IO", tags: ["testing", "qa", "crowdtesting", "quality-assurance", "saas"], status_url: "https://testio.statuspage.io/api/v2/status.json", page_url: "https://status.test.io", type: "statuspage" },
+    // Ockam — secure communication and identity platform for distributed IoT and cloud-native apps
+    { id: "ockam", name: "Ockam", tags: ["security", "iot", "identity", "infrastructure", "open-source"], status_url: "https://ockam.statuspage.io/api/v2/status.json", page_url: "https://status.ockam.io", type: "statuspage" },
+    // Fountain — high-volume hourly worker recruiting platform for frontline hiring
+    { id: "fountain_hr", name: "Fountain", tags: ["hr", "recruiting", "hourly-workers", "frontline", "saas"], status_url: "https://status.fountain.com/api/v2/status.json", page_url: "https://status.fountain.com", type: "statuspage" },
+    // Together AI — cloud inference API for open-source LLMs (Llama, Mistral, etc.) at scale
+    { id: "togethercomputer", name: "Together AI", tags: ["ai", "llm", "inference", "open-source", "api"], status_url: "https://togethercomputer.statuspage.io/api/v2/status.json", page_url: "https://togethercomputer.statuspage.io", type: "statuspage" },
+    // AI21 Labs — enterprise NLP platform with Jurassic LLMs and Wordtune writing assistant
+    { id: "ai21labs", name: "AI21 Labs", tags: ["ai", "llm", "nlp", "api", "enterprise"], status_url: "https://status.ai21.com/api/v2/status.json", page_url: "https://status.ai21.com", type: "statuspage" },
+    // HiBob — modern HR platform (Bob) for mid-size companies with payroll, time and attendance
+    { id: "bob_hr", name: "HiBob", tags: ["hr", "hris", "payroll", "people-ops", "saas"], status_url: "https://hibob.statuspage.io/api/v2/status.json", page_url: "https://status.hibob.io", type: "statuspage" },
+    // Cortex — internal developer portal and service catalog platform for platform engineering
+    { id: "cortex_io", name: "Cortex", tags: ["devtools", "platform-engineering", "service-catalog", "developer-portal", "saas"], status_url: "https://status.cortex.io/api/v2/status.json", page_url: "https://status.cortex.io", type: "statuspage" },
+    // Mux — video infrastructure API for streaming, encoding, and data analytics at scale
+    { id: "mux_video", name: "Mux", tags: ["video", "streaming", "api", "infrastructure", "developer-tools"], status_url: "https://status.mux.com/api/v2/status.json", page_url: "https://status.mux.com", type: "statuspage" },
+    // Mapbox — mapping, navigation, and location data APIs for web and mobile applications
+    { id: "mapbox_status", name: "Mapbox", tags: ["maps", "geospatial", "location", "navigation", "api"], status_url: "https://status.mapbox.com/api/v2/status.json", page_url: "https://status.mapbox.com", type: "statuspage" },
+    // Weave — patient communications and engagement platform for dental and medical practices
+    { id: "weave_hc", name: "Weave", tags: ["healthcare", "patient-communication", "dental", "practice-management", "saas"], status_url: "https://status.getweave.com/api/v2/status.json", page_url: "https://status.getweave.com", type: "statuspage" },
+    // Arduino Cloud — IoT cloud platform for connecting, managing and monitoring Arduino devices
+    { id: "arduino_iot", name: "Arduino Cloud", tags: ["iot", "cloud", "arduino", "embedded", "maker"], status_url: "https://status.arduino.cc/api/v2/status.json", page_url: "https://status.arduino.cc", type: "statuspage" },
+    // balena — fleet management platform for deploying and managing Linux-based IoT devices
+    { id: "balena_io", name: "balena", tags: ["iot", "fleet-management", "linux", "containers", "infrastructure"], status_url: "https://status.balena.io/api/v2/status.json", page_url: "https://status.balena.io", type: "statuspage" },
+    // Palo Alto Networks Cloud Services — NGFW, Prisma Cloud, and security platform status
+    { id: "prisma_cloud", name: "Palo Alto Networks", tags: ["security", "cloud-security", "ngfw", "prisma", "enterprise"], status_url: "https://status.paloaltonetworks.com/api/v2/status.json", page_url: "https://status.paloaltonetworks.com", type: "statuspage" },
+    // Cortex XDR — Palo Alto Networks extended detection and response (XDR) platform
+    { id: "cortex_xdr", name: "Cortex XDR", tags: ["security", "xdr", "endpoint", "detection-response", "enterprise"], status_url: "https://cortex.statuspage.io/api/v2/status.json", page_url: "https://cortex.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6168,7 +6212,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.68.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.70.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -6239,7 +6283,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3330 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3363 services.",
                     },
                 },
                 required: [],
