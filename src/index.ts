@@ -6080,6 +6080,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "flash_parking", name: "FLASH Parking", tags: ["parking", "operations", "smart-city", "saas"], status_url: "https://status.flashparking.com/api/v2/status.json", page_url: "https://status.flashparking.com", type: "statuspage" },
   // Campus Labs — higher education student success, assessment, and engagement platform
   { id: "campus_labs", name: "Campus Labs", tags: ["edtech", "higher-education", "student-success", "assessment", "saas"], status_url: "https://status.campuslabs.com/api/v2/status.json", page_url: "https://status.campuslabs.com", type: "statuspage" },
+  // ScopeStack — IT procurement, SOW automation, and vendor management platform
+  { id: "scopestack", name: "ScopeStack", tags: ["it-procurement", "sow", "vendor-management", "enterprise", "saas"], status_url: "https://status.scopestack.io/api/v2/status.json", page_url: "https://status.scopestack.io", type: "statuspage" },
+  // CourtReserve — court reservation and club management for tennis, pickleball, and sports facilities
+  { id: "courtreserve", name: "CourtReserve", tags: ["sports", "court-management", "reservations", "club", "saas"], status_url: "https://status.courtreserve.com/api/v2/status.json", page_url: "https://status.courtreserve.com", type: "statuspage" },
+  // iClicker Cloud — student response and classroom engagement platform for higher education
+  { id: "iclicker", name: "iClicker Cloud", tags: ["edtech", "higher-education", "classroom", "engagement", "saas"], status_url: "https://status.iclicker.com/api/v2/status.json", page_url: "https://status.iclicker.com", type: "statuspage" },
+  // Activix — automotive dealer CRM and sales management platform (Canada/US)
+  { id: "activix", name: "Activix", tags: ["automotive", "dealer", "crm", "sales", "saas"], status_url: "https://status.activix.ca/api/v2/status.json", page_url: "https://status.activix.ca", type: "statuspage" },
+  // ZoomShift — employee scheduling, time tracking, and team communication for shift-based workforces
+  { id: "zoomshift", name: "ZoomShift", tags: ["scheduling", "time-tracking", "hr", "workforce", "saas"], status_url: "https://status.zoomshift.com/api/v2/status.json", page_url: "https://status.zoomshift.com", type: "statuspage" },
+  // Rubicon — smart waste and recycling technology platform for commercial fleets and municipalities
+  { id: "rubicon", name: "Rubicon", tags: ["waste-management", "recycling", "smart-city", "sustainability", "saas"], status_url: "https://status.rubicon.com/api/v2/status.json", page_url: "https://status.rubicon.com", type: "statuspage" },
+  // FieldRoutes — field service management and CRM for pest control and lawn care companies
+  { id: "fieldroutes", name: "FieldRoutes", tags: ["field-service", "pest-control", "lawn-care", "crm", "saas"], status_url: "https://status.fieldroutes.com/api/v2/status.json", page_url: "https://status.fieldroutes.com", type: "statuspage" },
+  // Serenova — cloud contact center and workforce optimization platform (CxEngage)
+  { id: "serenova", name: "Serenova", tags: ["contact-center", "ccaas", "workforce-optimization", "enterprise", "saas"], status_url: "https://status.serenova.com/api/v2/status.json", page_url: "https://status.serenova.com", type: "statuspage" },
+  // Swiftly — digital engagement and loyalty platform for convenience retail and fuel brands
+  { id: "swiftly", name: "Swiftly", tags: ["retail", "loyalty", "digital-engagement", "convenience", "saas"], status_url: "https://swiftly.statuspage.io/api/v2/status.json", page_url: "https://swiftly.statuspage.io", type: "statuspage" },
+  // GoGuardian — student safety, classroom management, and digital wellbeing software for K-12 schools
+  { id: "goguardian", name: "GoGuardian", tags: ["edtech", "k12", "student-safety", "classroom-management", "saas"], status_url: "https://status.goguardian.com/api/v2/status.json", page_url: "https://status.goguardian.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6489,7 +6509,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.71.0" },
+  { name: "statuscraft", version: "2.72.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -6571,7 +6591,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3426 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3436 services.",
           },
         },
         required: [],

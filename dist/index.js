@@ -5882,6 +5882,46 @@ const SERVICES = [
     { id: "rms_cloud", name: "RMS Cloud", tags: ["hospitality", "property-management", "reservations", "hotel", "saas"], status_url: "https://status.rmscloud.com/api/v2/status.json", page_url: "https://status.rmscloud.com", type: "statuspage" },
     // Palo Alto Networks — cloud security, SASE, CASB, and threat prevention services
     { id: "palo_alto_networks", name: "Palo Alto Networks", tags: ["security", "cloud-security", "sase", "firewall", "enterprise"], status_url: "https://status.paloaltonetworks.com/api/v2/status.json", page_url: "https://status.paloaltonetworks.com", type: "statuspage" },
+    // Axonize — enterprise IoT management and connectivity platform
+    { id: "axonize", name: "Axonize", tags: ["iot", "enterprise", "connectivity", "saas"], status_url: "https://status.axonize.com/api/v2/status.json", page_url: "https://status.axonize.com", type: "statuspage" },
+    // Greenphire — clinical trial payment and financial management platform
+    { id: "greenphire", name: "Greenphire", tags: ["clinical-trials", "payments", "healthcare", "finance", "saas"], status_url: "https://status.greenphire.com/api/v2/status.json", page_url: "https://status.greenphire.com", type: "statuspage" },
+    // DrFirst — e-prescribing, medication management, and pharmacy services
+    { id: "drfirst", name: "DrFirst", tags: ["healthcare", "eprescribing", "pharmacy", "medication", "saas"], status_url: "https://status.drfirst.com/api/v2/status.json", page_url: "https://status.drfirst.com", type: "statuspage" },
+    // Continu — learning management system for corporate training and onboarding
+    { id: "continu", name: "Continu", tags: ["lms", "learning", "training", "hr", "saas"], status_url: "https://status.continu.co/api/v2/status.json", page_url: "https://status.continu.co", type: "statuspage" },
+    // Learn Amp — people development, LMS, and performance platform
+    { id: "learn_amp", name: "Learn Amp", tags: ["lms", "learning", "people-development", "hr", "saas"], status_url: "https://status.learnamp.com/api/v2/status.json", page_url: "https://status.learnamp.com", type: "statuspage" },
+    // BQE Core — project management, billing, and accounting for AEC firms
+    { id: "bqe_core", name: "BQE Core", tags: ["aec", "project-management", "billing", "accounting", "saas"], status_url: "https://status.bqe.com/api/v2/status.json", page_url: "https://status.bqe.com", type: "statuspage" },
+    // ShiftCare — home care, disability support, and NDIS scheduling platform
+    { id: "shiftcare", name: "ShiftCare", tags: ["homecare", "disability", "ndis", "scheduling", "saas"], status_url: "https://status.shiftcare.com/api/v2/status.json", page_url: "https://status.shiftcare.com", type: "statuspage" },
+    // Shepherd Vet — cloud-based practice management software for veterinary clinics
+    { id: "shepherd_vet", name: "Shepherd Vet", tags: ["veterinary", "pims", "practice-management", "healthcare", "saas"], status_url: "https://status.shepherd.vet/api/v2/status.json", page_url: "https://status.shepherd.vet", type: "statuspage" },
+    // FLASH Parking — parking operations management and enforcement platform
+    { id: "flash_parking", name: "FLASH Parking", tags: ["parking", "operations", "smart-city", "saas"], status_url: "https://status.flashparking.com/api/v2/status.json", page_url: "https://status.flashparking.com", type: "statuspage" },
+    // Campus Labs — higher education student success, assessment, and engagement platform
+    { id: "campus_labs", name: "Campus Labs", tags: ["edtech", "higher-education", "student-success", "assessment", "saas"], status_url: "https://status.campuslabs.com/api/v2/status.json", page_url: "https://status.campuslabs.com", type: "statuspage" },
+    // ScopeStack — IT procurement, SOW automation, and vendor management platform
+    { id: "scopestack", name: "ScopeStack", tags: ["it-procurement", "sow", "vendor-management", "enterprise", "saas"], status_url: "https://status.scopestack.io/api/v2/status.json", page_url: "https://status.scopestack.io", type: "statuspage" },
+    // CourtReserve — court reservation and club management for tennis, pickleball, and sports facilities
+    { id: "courtreserve", name: "CourtReserve", tags: ["sports", "court-management", "reservations", "club", "saas"], status_url: "https://status.courtreserve.com/api/v2/status.json", page_url: "https://status.courtreserve.com", type: "statuspage" },
+    // iClicker Cloud — student response and classroom engagement platform for higher education
+    { id: "iclicker", name: "iClicker Cloud", tags: ["edtech", "higher-education", "classroom", "engagement", "saas"], status_url: "https://status.iclicker.com/api/v2/status.json", page_url: "https://status.iclicker.com", type: "statuspage" },
+    // Activix — automotive dealer CRM and sales management platform (Canada/US)
+    { id: "activix", name: "Activix", tags: ["automotive", "dealer", "crm", "sales", "saas"], status_url: "https://status.activix.ca/api/v2/status.json", page_url: "https://status.activix.ca", type: "statuspage" },
+    // ZoomShift — employee scheduling, time tracking, and team communication for shift-based workforces
+    { id: "zoomshift", name: "ZoomShift", tags: ["scheduling", "time-tracking", "hr", "workforce", "saas"], status_url: "https://status.zoomshift.com/api/v2/status.json", page_url: "https://status.zoomshift.com", type: "statuspage" },
+    // Rubicon — smart waste and recycling technology platform for commercial fleets and municipalities
+    { id: "rubicon", name: "Rubicon", tags: ["waste-management", "recycling", "smart-city", "sustainability", "saas"], status_url: "https://status.rubicon.com/api/v2/status.json", page_url: "https://status.rubicon.com", type: "statuspage" },
+    // FieldRoutes — field service management and CRM for pest control and lawn care companies
+    { id: "fieldroutes", name: "FieldRoutes", tags: ["field-service", "pest-control", "lawn-care", "crm", "saas"], status_url: "https://status.fieldroutes.com/api/v2/status.json", page_url: "https://status.fieldroutes.com", type: "statuspage" },
+    // Serenova — cloud contact center and workforce optimization platform (CxEngage)
+    { id: "serenova", name: "Serenova", tags: ["contact-center", "ccaas", "workforce-optimization", "enterprise", "saas"], status_url: "https://status.serenova.com/api/v2/status.json", page_url: "https://status.serenova.com", type: "statuspage" },
+    // Swiftly — digital engagement and loyalty platform for convenience retail and fuel brands
+    { id: "swiftly", name: "Swiftly", tags: ["retail", "loyalty", "digital-engagement", "convenience", "saas"], status_url: "https://swiftly.statuspage.io/api/v2/status.json", page_url: "https://swiftly.statuspage.io", type: "statuspage" },
+    // GoGuardian — student safety, classroom management, and digital wellbeing software for K-12 schools
+    { id: "goguardian", name: "GoGuardian", tags: ["edtech", "k12", "student-safety", "classroom-management", "saas"], status_url: "https://status.goguardian.com/api/v2/status.json", page_url: "https://status.goguardian.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6318,7 +6358,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.71.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.72.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -6389,7 +6429,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3416 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3436 services.",
                     },
                 },
                 required: [],
