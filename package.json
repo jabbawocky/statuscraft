@@ -1,6 +1,6 @@
 {
   "name": "statuscraft",
-  "version": "2.76.0",
+  "version": "2.77.0",
   "description": "MCP server that checks the live status of major software services",
   "type": "module",
   "bin": {

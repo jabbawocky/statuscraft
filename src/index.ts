@@ -6387,6 +6387,32 @@ const SERVICES: ServiceConfig[] = [
   { id: "resemble_ai", name: "Resemble AI", tags: ["ai", "voice", "text-to-speech", "audio", "saas"], status_url: "https://resemble-ai.statuspage.io/api/v2/status.json", page_url: "https://resemble-ai.statuspage.io", type: "statuspage" },
   // Browse AI — no-code web scraping and data extraction automation platform
   { id: "browse_ai", name: "Browse AI", tags: ["web-scraping", "automation", "data", "no-code", "saas"], status_url: "https://browseai.statuspage.io/api/v2/status.json", page_url: "https://browseai.statuspage.io", type: "statuspage" },
+  // Todyl — SASE cybersecurity platform for SMBs (SIEM, EDR, MDR, SASE)
+  { id: "todyl", name: "Todyl", tags: ["security", "sase", "siem", "edr", "cybersecurity", "smb"], status_url: "https://status.todyl.com/api/v2/status.json", page_url: "https://status.todyl.com", type: "statuspage" },
+  // Electric AI — IT management platform for SMBs (device management, help desk, security)
+  { id: "electric_ai", name: "Electric AI", tags: ["it-management", "mdm", "help-desk", "smb", "saas"], status_url: "https://status.electric.ai/api/v2/status.json", page_url: "https://status.electric.ai", type: "statuspage" },
+  // Pax8 — cloud marketplace platform for MSPs and their clients
+  { id: "pax8", name: "Pax8", tags: ["msp", "cloud-marketplace", "reseller", "it", "saas"], status_url: "https://status.pax8.com/api/v2/status.json", page_url: "https://status.pax8.com", type: "statuspage" },
+  // Cleo — integration platform for EDI, API, and MFT connectivity
+  { id: "cleo", name: "Cleo", tags: ["integration", "edi", "api", "supply-chain", "saas"], status_url: "https://status.cleo.com/api/v2/status.json", page_url: "https://status.cleo.com", type: "statuspage" },
+  // Omnissa Workspace ONE — unified endpoint management (UEM) platform (formerly VMware Workspace ONE)
+  { id: "workspace_one", name: "Omnissa Workspace ONE", tags: ["mdm", "uem", "endpoint-management", "enterprise", "saas"], status_url: "https://status.workspaceone.com/api/v2/status.json", page_url: "https://status.workspaceone.com", type: "statuspage" },
+  // Inline Manual — digital adoption platform for in-app user onboarding and guidance
+  { id: "inline_manual", name: "Inline Manual", tags: ["digital-adoption", "user-onboarding", "product-tours", "saas"], status_url: "https://inlinemanual.statuspage.io/api/v2/status.json", page_url: "https://inlinemanual.statuspage.io", type: "statuspage" },
+  // Nudge Security — SaaS security and governance platform for IT and security teams
+  { id: "nudge_security", name: "Nudge Security", tags: ["security", "saas-security", "governance", "it", "saas"], status_url: "https://nudgesecurity.statuspage.io/api/v2/status.json", page_url: "https://nudgesecurity.statuspage.io", type: "statuspage" },
+  // RealVNC — enterprise remote access and desktop control software
+  { id: "realvnc", name: "RealVNC", tags: ["remote-access", "vnc", "remote-desktop", "it", "enterprise"], status_url: "https://realvnc.statuspage.io/api/v2/status.json", page_url: "https://realvnc.statuspage.io", type: "statuspage" },
+  // Parsec — high-performance remote desktop and cloud gaming streaming platform
+  { id: "parsec", name: "Parsec", tags: ["remote-desktop", "gaming", "cloud", "streaming", "saas"], status_url: "https://parsec.statuspage.io/api/v2/status.json", page_url: "https://parsec.statuspage.io", type: "statuspage" },
+  // Yello — talent acquisition and recruiting platform for campus and early career hiring
+  { id: "yello", name: "Yello", tags: ["recruiting", "hr", "talent-acquisition", "campus-recruiting", "saas"], status_url: "https://yello.statuspage.io/api/v2/status.json", page_url: "https://yello.statuspage.io", type: "statuspage" },
+  // Montage — structured video interviewing and hiring platform
+  { id: "montage", name: "Montage", tags: ["video-interview", "hiring", "recruiting", "hr", "saas"], status_url: "https://montage.statuspage.io/api/v2/status.json", page_url: "https://montage.statuspage.io", type: "statuspage" },
+  // Karat — human-powered technical interview-as-a-service platform
+  { id: "karat", name: "Karat", tags: ["technical-interviews", "recruiting", "hr", "engineering", "saas"], status_url: "https://karat.statuspage.io/api/v2/status.json", page_url: "https://karat.statuspage.io", type: "statuspage" },
+  // Eightfold AI — AI-driven talent intelligence and workforce management platform
+  { id: "eightfold", name: "Eightfold AI", tags: ["ai", "talent-intelligence", "hr", "recruiting", "workforce"], status_url: "https://eightfold.statuspage.io/api/v2/status.json", page_url: "https://eightfold.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6878,7 +6904,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3587 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3600 services.",
           },
         },
         required: [],

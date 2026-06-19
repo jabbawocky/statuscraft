@@ -1,3 +1,12 @@
+# StatusCraft — Mission Status: June 20, 2026 (tick 406)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +13 live-verified services — 3587 → 3600** (tick 406) — Expansion tick: added 13 new real services spanning cybersecurity/SASE (Todyl), IT management for SMBs (Electric AI), MSP cloud marketplace (Pax8), EDI/integration platform (Cleo), unified endpoint management (Omnissa Workspace ONE), digital adoption (Inline Manual), SaaS security governance (Nudge Security), remote access (RealVNC, Parsec), campus recruiting (Yello), video interviews (Montage), technical interviews (Karat), and AI talent intelligence (Eightfold AI). All 13/13 live-verified before commit. Health check: Anthropic (none — status.claude.com), GitHub (none), OpenAI (minor—live), Stripe (none — stripestatus.com), Cloudflare (minor—live), Vercel (none), Datadog (none — status.datadoghq.com), Render (none), SendGrid (none), Twilio (minor—live) — all core fetchers healthy. README and tool description updated to 3600.
+
+---
+
 # StatusCraft — Mission Status: June 20, 2026 (tick 404)
 
 **Phase**: BUILD — active development
