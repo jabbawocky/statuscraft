@@ -6177,6 +6177,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "alert_media", name: "AlertMedia", tags: ["emergency-notifications", "mass-notification", "safety", "hr", "saas"], status_url: "https://status.alertmedia.com/api/v2/status.json", page_url: "https://status.alertmedia.com", type: "statuspage" },
   { id: "crisisgo", name: "CrisisGo", tags: ["safety", "emergency", "schools", "communication", "saas"], status_url: "https://crisisgo.statuspage.io/api/v2/status.json", page_url: "https://crisisgo.statuspage.io", type: "statuspage" },
   { id: "preparis", name: "Preparis", tags: ["business-continuity", "emergency-management", "compliance", "enterprise", "saas"], status_url: "https://preparis.statuspage.io/api/v2/status.json", page_url: "https://preparis.statuspage.io", type: "statuspage" },
+  // Storable — cloud platform for self-storage facility management (units, tenants, payments)
+  { id: "storable", name: "Storable", tags: ["self-storage", "property-management", "payments", "saas"], status_url: "https://status.storable.com/api/v2/status.json", page_url: "https://status.storable.com", type: "statuspage" },
+  // Smartsheet Gov — FedRAMP-authorized Smartsheet for US government agencies
+  { id: "smartsheet_gov", name: "Smartsheet Gov", tags: ["government", "fedramp", "project-management", "collaboration", "saas"], status_url: "https://status.smartsheetgov.com/api/v2/status.json", page_url: "https://status.smartsheetgov.com", type: "statuspage" },
+  // Imprivata — healthcare IT security: single sign-on, identity, and access management for clinical settings
+  { id: "imprivata", name: "Imprivata", tags: ["healthcare", "identity", "sso", "access-management", "security"], status_url: "https://status.imprivata.com/api/v2/status.json", page_url: "https://status.imprivata.com", type: "statuspage" },
+  // PropertyMe — Australian property management platform for real estate agents
+  { id: "propertyme", name: "PropertyMe", tags: ["proptech", "property-management", "australia", "real-estate", "saas"], status_url: "https://status.propertyme.com/api/v2/status.json", page_url: "https://status.propertyme.com", type: "statuspage" },
+  // Tradecloud One — European B2B supply chain collaboration and digital procurement network
+  { id: "tradecloud_one", name: "Tradecloud One", tags: ["supply-chain", "procurement", "b2b", "europe", "saas"], status_url: "https://status.tradecloud1.com/api/v2/status.json", page_url: "https://status.tradecloud1.com", type: "statuspage" },
+  // SynergySuite — restaurant back-office operations: scheduling, inventory, purchasing, HR
+  { id: "synergysuite", name: "SynergySuite", tags: ["restaurant", "operations", "scheduling", "inventory", "saas"], status_url: "https://status.synergysuite.com/api/v2/status.json", page_url: "https://status.synergysuite.com", type: "statuspage" },
+  // Paubox — HIPAA-compliant email encryption and inbound security for healthcare
+  { id: "paubox", name: "Paubox", tags: ["healthcare", "email", "hipaa", "security", "encryption"], status_url: "https://status.paubox.com/api/v2/status.json", page_url: "https://status.paubox.com", type: "statuspage" },
+  // One Inc — digital payments platform for the insurance industry (premiums + claims)
+  { id: "one_inc", name: "One Inc", tags: ["insurance", "payments", "fintech", "claims", "saas"], status_url: "https://status.oneinc.com/api/v2/status.json", page_url: "https://status.oneinc.com", type: "statuspage" },
+  // HEXONET — global domain registrar and wholesale registry services platform
+  { id: "hexonet", name: "HEXONET", tags: ["domain", "registrar", "dns", "wholesale", "registry"], status_url: "https://status.hexonet.net/api/v2/status.json", page_url: "https://status.hexonet.net", type: "statuspage" },
+  // AutoVitals — digital vehicle inspection and shop workflow management for auto repair shops
+  { id: "autovitals", name: "AutoVitals", tags: ["automotive", "vehicle-inspection", "shop-management", "saas"], status_url: "https://status.autovitals.com/api/v2/status.json", page_url: "https://status.autovitals.com", type: "statuspage" },
+  // PayByPhone — mobile parking payment app (cashless parking meters)
+  { id: "paybyphone", name: "PayByPhone", tags: ["parking", "mobility", "payments", "mobile", "saas"], status_url: "https://status.paybyphone.com/api/v2/status.json", page_url: "https://status.paybyphone.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6668,7 +6690,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3482 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3493 services.",
           },
         },
         required: [],
