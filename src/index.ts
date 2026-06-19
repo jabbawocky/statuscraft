@@ -6140,6 +6140,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "agilent", name: "Agilent", tags: ["life-sciences", "diagnostics", "laboratory", "enterprise", "saas"], status_url: "https://status.agilent.com/api/v2/status.json", page_url: "https://status.agilent.com", type: "statuspage" },
   // Recurrency — ERP and inventory management platform purpose-built for wholesale distributors
   { id: "recurrency", name: "Recurrency", tags: ["erp", "inventory", "distribution", "wholesale", "saas"], status_url: "https://status.recurrency.com/api/v2/status.json", page_url: "https://status.recurrency.com", type: "statuspage" },
+  // Suralink — audit and accounting request list collaboration platform for CPA firms
+  { id: "suralink", name: "Suralink", tags: ["accounting", "audit", "collaboration", "cpa", "saas"], status_url: "https://status.suralink.com/api/v2/status.json", page_url: "https://status.suralink.com", type: "statuspage" },
+  // Fathom HQ — financial planning, analysis, and reporting for small businesses and accountants
+  { id: "fathom_hq", name: "Fathom HQ", tags: ["finance", "reporting", "accounting", "analytics", "saas"], status_url: "https://status.fathomhq.com/api/v2/status.json", page_url: "https://status.fathomhq.com", type: "statuspage" },
+  // Chronograph — portfolio analytics and monitoring platform for private equity and venture capital
+  { id: "chronograph", name: "Chronograph", tags: ["private-equity", "venture-capital", "portfolio", "analytics", "finance"], status_url: "https://status.chronograph.pe/api/v2/status.json", page_url: "https://status.chronograph.pe", type: "statuspage" },
+  // Onehub — secure business file sharing and client portal platform
+  { id: "onehub", name: "Onehub", tags: ["file-sharing", "client-portal", "collaboration", "secure", "saas"], status_url: "https://status.onehub.com/api/v2/status.json", page_url: "https://status.onehub.com", type: "statuspage" },
+  // UpGuard — cyber risk management and vendor risk assessment platform
+  { id: "upguard", name: "UpGuard", tags: ["security", "cyber-risk", "vendor-risk", "compliance", "saas"], status_url: "https://status.upguard.com/api/v2/status.json", page_url: "https://status.upguard.com", type: "statuspage" },
+  // Traceable AI — API security platform for threat detection and protection
+  { id: "traceable_ai", name: "Traceable AI", tags: ["api-security", "security", "threat-detection", "observability", "saas"], status_url: "https://status.traceable.ai/api/v2/status.json", page_url: "https://status.traceable.ai", type: "statuspage" },
+  // ChatBot — AI-powered chatbot platform for customer service automation
+  { id: "chatbot", name: "ChatBot", tags: ["chatbot", "customer-support", "automation", "ai", "saas"], status_url: "https://status.chatbot.com/api/v2/status.json", page_url: "https://status.chatbot.com", type: "statuspage" },
+  // Happeo — intranet and employee communication platform for distributed teams
+  { id: "happeo", name: "Happeo", tags: ["intranet", "employee-communication", "collaboration", "workspace", "saas"], status_url: "https://status.happeo.com/api/v2/status.json", page_url: "https://status.happeo.com", type: "statuspage" },
+  // Finmo — Canadian mortgage origination and broker platform
+  { id: "finmo", name: "Finmo", tags: ["mortgage", "fintech", "broker", "canada", "saas"], status_url: "https://status.finmo.ca/api/v2/status.json", page_url: "https://status.finmo.ca", type: "statuspage" },
+  // Inscribe AI — AI-powered fraud detection and document verification for financial services
+  { id: "inscribe_ai", name: "Inscribe AI", tags: ["fraud-detection", "ai", "fintech", "document-verification", "security"], status_url: "https://status.inscribe.ai/api/v2/status.json", page_url: "https://status.inscribe.ai", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6549,7 +6569,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.73.0" },
+  { name: "statuscraft", version: "2.74.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -6631,7 +6651,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3455 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3465 services.",
           },
         },
         required: [],
