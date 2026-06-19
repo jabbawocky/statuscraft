@@ -6453,6 +6453,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "fleek", name: "Fleek", tags: ["web3", "edge", "hosting", "decentralized", "developer-tools"], status_url: "https://fleek.statuspage.io/api/v2/status.json", page_url: "https://status.fleek.xyz", type: "statuspage" },
   // SuprSend — multi-channel notification infrastructure API for product teams
   { id: "suprsend", name: "SuprSend", tags: ["notifications", "messaging", "api", "developer-tools", "saas"], status_url: "https://suprsend.statuspage.io/api/v2/status.json", page_url: "https://suprsend.statuspage.io", type: "statuspage" },
+  // WhenThen — payment orchestration and flow automation platform
+  { id: "whenthen", name: "WhenThen", tags: ["payments", "orchestration", "fintech", "api", "developer-tools"], status_url: "https://whenthen.statuspage.io/api/v2/status.json", page_url: "https://whenthen.statuspage.io", type: "statuspage" },
+  // Winmore — enterprise bid and proposal management platform
+  { id: "winmore", name: "Winmore", tags: ["rfp", "bid-management", "proposal", "enterprise", "saas"], status_url: "https://winmore.statuspage.io/api/v2/status.json", page_url: "https://winmore.statuspage.io", type: "statuspage" },
+  // Linkfire — music marketing link management and analytics
+  { id: "linkfire", name: "Linkfire", tags: ["music", "marketing", "analytics", "creator-economy", "saas"], status_url: "https://status.linkfire.com/api/v2/status.json", page_url: "https://status.linkfire.com", type: "statuspage" },
+  // ezyVet — cloud-based veterinary practice management software by IDEXX
+  { id: "ezyvet", name: "ezyVet", tags: ["veterinary", "practice-management", "healthcare", "cloud", "saas"], status_url: "https://status.ezyvet.com/api/v2/status.json", page_url: "https://status.ezyvet.com", type: "statuspage" },
+  // WorkRamp — all-in-one learning platform for sales enablement and employee training
+  { id: "workramp", name: "WorkRamp", tags: ["lms", "training", "sales-enablement", "enterprise", "saas"], status_url: "https://workramp.statuspage.io/api/v2/status.json", page_url: "https://workramp.statuspage.io", type: "statuspage" },
+  // Datafold — data quality and observability platform for analytics engineers
+  { id: "datafold", name: "Datafold", tags: ["data-quality", "analytics", "developer-tools", "data", "saas"], status_url: "https://datafold.statuspage.io/api/v2/status.json", page_url: "https://datafold.statuspage.io", type: "statuspage" },
+  // Talkspace — online therapy and mental health platform
+  { id: "talkspace", name: "Talkspace", tags: ["mental-health", "telehealth", "healthcare", "consumer", "b2b"], status_url: "https://talkspace.statuspage.io/api/v2/status.json", page_url: "https://talkspace.statuspage.io", type: "statuspage" },
+  // Brightpearl — retail operations platform for omnichannel inventory and fulfillment
+  { id: "brightpearl", name: "Brightpearl", tags: ["inventory", "ecommerce", "retail", "erp", "saas"], status_url: "https://status.brightpearl.com/api/v2/status.json", page_url: "https://status.brightpearl.com", type: "statuspage" },
+  // Human API — health data integration API for digital health applications
+  { id: "human_api", name: "Human API", tags: ["health", "healthcare", "medical-data", "api", "developer-tools"], status_url: "https://hapi.statuspage.io/api/v2/status.json", page_url: "https://hapi.statuspage.io", type: "statuspage" },
+  // Timeplus — real-time streaming analytics database and developer platform
+  { id: "timeplus", name: "Timeplus", tags: ["streaming", "analytics", "real-time", "developer-tools", "saas"], status_url: "https://timeplus.statuspage.io/api/v2/status.json", page_url: "https://timeplus.statuspage.io", type: "statuspage" },
+  // Sequin — data streaming and sync platform for Postgres-backed applications
+  { id: "sequin", name: "Sequin", tags: ["data", "streaming", "postgres", "developer-tools", "saas"], status_url: "https://sequin.statuspage.io/api/v2/status.json", page_url: "https://sequin.statuspage.io", type: "statuspage" },
+  // Hydra — analytical Postgres for data warehousing and real-time queries
+  { id: "hydra_db", name: "Hydra", tags: ["database", "postgres", "analytics", "developer-tools", "saas"], status_url: "https://hydra.statuspage.io/api/v2/status.json", page_url: "https://hydra.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6944,7 +6968,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3620 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3632 services.",
           },
         },
         required: [],
