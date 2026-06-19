@@ -6539,6 +6539,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "elation_health", name: "ElationHealth", tags: ["healthcare", "ehr", "primary-care", "clinical", "saas"], status_url: "https://elationhealth.statuspage.io/api/v2/status.json", page_url: "https://elationhealth.statuspage.io", type: "statuspage" },
   // MerchantSpring — multichannel marketplace analytics and management
   { id: "merchantspring", name: "MerchantSpring", tags: ["ecommerce", "marketplace", "analytics", "multichannel", "saas"], status_url: "https://status.merchantspring.io/api/v2/status.json", page_url: "https://status.merchantspring.io", type: "statuspage" },
+  // Voyage AI — embedding models and rerankers API
+  { id: "voyage_ai", name: "Voyage AI", tags: ["ai", "embeddings", "api", "search", "developer-tools"], status_url: "https://voyage.statuspage.io/api/v2/status.json", page_url: "https://voyage.statuspage.io", type: "statuspage" },
+  // Nomic AI — open source embedding models and data visualization platform
+  { id: "nomic_ai", name: "Nomic AI", tags: ["ai", "embeddings", "data", "developer-tools", "open-source"], status_url: "https://status.nomic.ai/api/v2/status.json", page_url: "https://status.nomic.ai", type: "statuspage" },
+  // Thanos — highly available Prometheus setup with long-term storage (CNCF project)
+  { id: "thanos_io", name: "Thanos", tags: ["observability", "monitoring", "open-source", "cncf", "metrics"], status_url: "https://thanos.statuspage.io/api/v2/status.json", page_url: "https://thanos.statuspage.io", type: "statuspage" },
+  // Coval — AI evaluation platform for voice and language agents
+  { id: "coval", name: "Coval", tags: ["ai", "evaluation", "llm", "voice", "developer-tools"], status_url: "https://status.coval.dev/api/v2/status.json", page_url: "https://status.coval.dev", type: "statuspage" },
+  // Posit — open source data science platform (RStudio, Quarto, Shiny)
+  { id: "posit", name: "Posit", tags: ["analytics", "data-science", "developer-tools", "r", "python"], status_url: "https://status.posit.co/api/v2/status.json", page_url: "https://status.posit.co", type: "statuspage" },
+  // Beam Cloud — serverless GPU compute for ML workloads
+  { id: "beam_cloud", name: "Beam", tags: ["serverless", "gpu", "ml", "compute", "developer-tools"], status_url: "https://status.beam.cloud/api/v2/status.json", page_url: "https://status.beam.cloud", type: "statuspage" },
+  // Lightning AI — AI development platform (PyTorch Lightning cloud)
+  { id: "lightning_ai", name: "Lightning AI", tags: ["ai", "ml", "compute", "developer-tools", "python"], status_url: "https://status.lightning.ai/api/v2/status.json", page_url: "https://status.lightning.ai", type: "statuspage" },
+  // Lepton AI — cloud platform for LLM inference and AI applications
+  { id: "lepton_ai", name: "Lepton AI", tags: ["ai", "llm", "inference", "cloud", "developer-tools"], status_url: "https://lepton.statuspage.io/api/v2/status.json", page_url: "https://lepton.statuspage.io", type: "statuspage" },
+  // Moonshot AI — Chinese AI company (Kimi chat / API provider)
+  { id: "moonshot_ai", name: "Moonshot AI", tags: ["ai", "llm", "api", "chinese"], status_url: "https://status.moonshot.cn/api/v2/status.json", page_url: "https://status.moonshot.cn", type: "statuspage" },
+  // Scaleflex (Cloudimage) — image CDN and visual experience platform
+  { id: "scaleflex", name: "Scaleflex (Cloudimage)", tags: ["cdn", "image-processing", "media", "saas"], status_url: "https://cloudimage.statuspage.io/api/v2/status.json", page_url: "https://cloudimage.statuspage.io", type: "statuspage" },
+  // Black Forest Labs — AI image generation (FLUX models)
+  { id: "black_forest_labs", name: "Black Forest Labs", tags: ["ai", "image-generation", "api", "developer-tools"], status_url: "https://status.bfl.ml/api/v2/status.json", page_url: "https://status.bfl.ml", type: "statuspage" },
+  // Neets.ai — fast and affordable TTS / voice synthesis API
+  { id: "neets_ai", name: "Neets.ai", tags: ["ai", "text-to-speech", "voice", "api", "developer-tools"], status_url: "https://neets.statuspage.io/api/v2/status.json", page_url: "https://neets.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7030,7 +7054,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3663 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3675 services.",
           },
         },
         required: [],
