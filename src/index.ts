@@ -6309,6 +6309,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "workona", name: "Workona", tags: ["productivity", "browser", "workspace", "tabs", "saas"], status_url: "https://status.workona.com/api/v2/status.json", page_url: "https://status.workona.com", type: "statuspage" },
   // WorkFlowy — minimalist outliner and note-taking app for nested lists
   { id: "workflowy", name: "WorkFlowy", tags: ["notes", "outliner", "productivity", "lists", "saas"], status_url: "https://status.workflowy.com/api/v2/status.json", page_url: "https://status.workflowy.com", type: "statuspage" },
+  // Fracttal — cloud CMMS / asset-maintenance management platform (LATAM)
+  { id: "fracttal", name: "Fracttal", tags: ["cmms", "maintenance", "asset-management", "iot", "saas"], status_url: "https://status.fracttal.com/api/v2/status.json", page_url: "https://status.fracttal.com", type: "statuspage" },
+  // AlignOps (formerly BusyBusy) — construction workforce time-tracking & management
+  { id: "alignops", name: "AlignOps", tags: ["construction", "workforce-management", "time-tracking", "field-service", "saas"], status_url: "https://status.alignops.com/api/v2/status.json", page_url: "https://status.alignops.com", type: "statuspage" },
+  // Profit.co — OKR and goal-management platform
+  { id: "profit_co", name: "Profit.co", tags: ["okr", "goal-management", "performance", "hr", "saas"], status_url: "https://status.profit.co/api/v2/status.json", page_url: "https://status.profit.co", type: "statuspage" },
+  // Knot — subscription-card-update and merchant-switch API
+  { id: "knot", name: "Knot", tags: ["fintech", "payments", "subscriptions", "api", "card-management"], status_url: "https://status.knotapi.com/api/v2/status.json", page_url: "https://status.knotapi.com", type: "statuspage" },
+  // ProsperOps — automated AWS savings (Reserved Instances / Savings Plans)
+  { id: "prosperops", name: "ProsperOps", tags: ["finops", "cloud-cost", "aws", "cost-optimization", "saas"], status_url: "https://status.prosperops.com/api/v2/status.json", page_url: "https://status.prosperops.com", type: "statuspage" },
+  // Finout — multi-cloud cost management and FinOps visibility platform
+  { id: "finout", name: "Finout", tags: ["finops", "cloud-cost", "cost-management", "multi-cloud", "saas"], status_url: "https://status.finout.io/api/v2/status.json", page_url: "https://status.finout.io", type: "statuspage" },
+  // Ternary — Google Cloud cost management and FinOps platform
+  { id: "ternary", name: "Ternary", tags: ["finops", "cloud-cost", "gcp", "cost-optimization", "saas"], status_url: "https://status.ternary.app/api/v2/status.json", page_url: "https://status.ternary.app", type: "statuspage" },
+  // Otus — K-12 instructional data and standards-aligned assessment platform
+  { id: "otus", name: "Otus", tags: ["edtech", "k12", "assessment", "lms", "saas"], status_url: "https://status.otus.com/api/v2/status.json", page_url: "https://status.otus.com", type: "statuspage" },
+  // Vetstoria — veterinary online appointment booking and digital engagement platform
+  { id: "vetstoria", name: "Vetstoria", tags: ["veterinary", "scheduling", "pet-care", "healthcare", "saas"], status_url: "https://status.vetstoria.com/api/v2/status.json", page_url: "https://status.vetstoria.com", type: "statuspage" },
+  // iQmetrix — retail management platform for wireless and consumer electronics
+  { id: "iqmetrix", name: "iQmetrix", tags: ["retail", "pos", "wireless", "telecom", "saas"], status_url: "https://status.iqmetrix.com/api/v2/status.json", page_url: "https://status.iqmetrix.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6718,7 +6738,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.74.0" },
+  { name: "statuscraft", version: "2.75.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -6800,7 +6820,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3548 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3559 services.",
           },
         },
         required: [],

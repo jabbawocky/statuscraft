@@ -6109,6 +6109,48 @@ const SERVICES = [
     { id: "cambly", name: "Cambly", tags: ["language-learning", "tutoring", "english", "edtech", "consumer"], status_url: "https://status.cambly.com/api/v2/status.json", page_url: "https://status.cambly.com", type: "statuspage" },
     // Honorlock — AI-powered online proctoring and academic integrity platform
     { id: "honorlock", name: "Honorlock", tags: ["online-proctoring", "edtech", "academic-integrity", "higher-education", "saas"], status_url: "https://status.honorlock.com/api/v2/status.json", page_url: "https://status.honorlock.com", type: "statuspage" },
+    // Springbrook — ERP/finance software for local government agencies
+    { id: "springbrook", name: "Springbrook", tags: ["government", "erp", "finance", "public-sector", "saas"], status_url: "https://status.springbrooksoftware.com/api/v2/status.json", page_url: "https://status.springbrooksoftware.com", type: "statuspage" },
+    // SafetyChain — food safety and quality management platform for food/beverage manufacturers
+    { id: "safetychain", name: "SafetyChain", tags: ["food-safety", "quality-management", "compliance", "manufacturing", "saas"], status_url: "https://status.safetychain.com/api/v2/status.json", page_url: "https://status.safetychain.com", type: "statuspage" },
+    // FoodLogiQ — food supply chain transparency and traceability platform
+    { id: "foodlogiq", name: "FoodLogiQ", tags: ["food-safety", "supply-chain", "traceability", "compliance", "saas"], status_url: "https://status.foodlogiq.com/api/v2/status.json", page_url: "https://status.foodlogiq.com", type: "statuspage" },
+    // Energage — employer branding and employee engagement/recognition platform
+    { id: "energage", name: "Energage", tags: ["employer-branding", "employee-engagement", "hr", "recognition", "saas"], status_url: "https://status.energage.com/api/v2/status.json", page_url: "https://status.energage.com", type: "statuspage" },
+    // Aurora Solar — solar design and sales software for installers and utilities
+    { id: "aurora_solar", name: "Aurora Solar", tags: ["solar", "energy", "design", "cleantech", "saas"], status_url: "https://status.aurorasolar.com/api/v2/status.json", page_url: "https://status.aurorasolar.com", type: "statuspage" },
+    // PDFfiller — online PDF editor, form builder, and e-signature platform
+    { id: "pdffiller", name: "PDFfiller", tags: ["pdf", "documents", "e-signature", "forms", "saas"], status_url: "https://status.pdffiller.com/api/v2/status.json", page_url: "https://status.pdffiller.com", type: "statuspage" },
+    // Pix4D — drone mapping and photogrammetry software for aerial data processing
+    { id: "pix4d", name: "Pix4D", tags: ["drone", "mapping", "photogrammetry", "gis", "saas"], status_url: "https://status.pix4d.com/api/v2/status.json", page_url: "https://status.pix4d.com", type: "statuspage" },
+    // MailerCheck — email verification and list cleaning service by MailerLite
+    { id: "mailercheck", name: "MailerCheck", tags: ["email-verification", "email", "list-hygiene", "marketing", "saas"], status_url: "https://status.mailercheck.com/api/v2/status.json", page_url: "https://status.mailercheck.com", type: "statuspage" },
+    // Meevo — salon, spa, and wellness business management software
+    { id: "meevo", name: "Meevo", tags: ["salon", "spa", "wellness", "scheduling", "saas"], status_url: "https://status.meevo.com/api/v2/status.json", page_url: "https://status.meevo.com", type: "statuspage" },
+    // Workona — browser tab and workspace organizer for productivity
+    { id: "workona", name: "Workona", tags: ["productivity", "browser", "workspace", "tabs", "saas"], status_url: "https://status.workona.com/api/v2/status.json", page_url: "https://status.workona.com", type: "statuspage" },
+    // WorkFlowy — minimalist outliner and note-taking app for nested lists
+    { id: "workflowy", name: "WorkFlowy", tags: ["notes", "outliner", "productivity", "lists", "saas"], status_url: "https://status.workflowy.com/api/v2/status.json", page_url: "https://status.workflowy.com", type: "statuspage" },
+    // Fracttal — cloud CMMS / asset-maintenance management platform (LATAM)
+    { id: "fracttal", name: "Fracttal", tags: ["cmms", "maintenance", "asset-management", "iot", "saas"], status_url: "https://status.fracttal.com/api/v2/status.json", page_url: "https://status.fracttal.com", type: "statuspage" },
+    // AlignOps (formerly BusyBusy) — construction workforce time-tracking & management
+    { id: "alignops", name: "AlignOps", tags: ["construction", "workforce-management", "time-tracking", "field-service", "saas"], status_url: "https://status.alignops.com/api/v2/status.json", page_url: "https://status.alignops.com", type: "statuspage" },
+    // Profit.co — OKR and goal-management platform
+    { id: "profit_co", name: "Profit.co", tags: ["okr", "goal-management", "performance", "hr", "saas"], status_url: "https://status.profit.co/api/v2/status.json", page_url: "https://status.profit.co", type: "statuspage" },
+    // Knot — subscription-card-update and merchant-switch API
+    { id: "knot", name: "Knot", tags: ["fintech", "payments", "subscriptions", "api", "card-management"], status_url: "https://status.knotapi.com/api/v2/status.json", page_url: "https://status.knotapi.com", type: "statuspage" },
+    // ProsperOps — automated AWS savings (Reserved Instances / Savings Plans)
+    { id: "prosperops", name: "ProsperOps", tags: ["finops", "cloud-cost", "aws", "cost-optimization", "saas"], status_url: "https://status.prosperops.com/api/v2/status.json", page_url: "https://status.prosperops.com", type: "statuspage" },
+    // Finout — multi-cloud cost management and FinOps visibility platform
+    { id: "finout", name: "Finout", tags: ["finops", "cloud-cost", "cost-management", "multi-cloud", "saas"], status_url: "https://status.finout.io/api/v2/status.json", page_url: "https://status.finout.io", type: "statuspage" },
+    // Ternary — Google Cloud cost management and FinOps platform
+    { id: "ternary", name: "Ternary", tags: ["finops", "cloud-cost", "gcp", "cost-optimization", "saas"], status_url: "https://status.ternary.app/api/v2/status.json", page_url: "https://status.ternary.app", type: "statuspage" },
+    // Otus — K-12 instructional data and standards-aligned assessment platform
+    { id: "otus", name: "Otus", tags: ["edtech", "k12", "assessment", "lms", "saas"], status_url: "https://status.otus.com/api/v2/status.json", page_url: "https://status.otus.com", type: "statuspage" },
+    // Vetstoria — veterinary online appointment booking and digital engagement platform
+    { id: "vetstoria", name: "Vetstoria", tags: ["veterinary", "scheduling", "pet-care", "healthcare", "saas"], status_url: "https://status.vetstoria.com/api/v2/status.json", page_url: "https://status.vetstoria.com", type: "statuspage" },
+    // iQmetrix — retail management platform for wireless and consumer electronics
+    { id: "iqmetrix", name: "iQmetrix", tags: ["retail", "pos", "wireless", "telecom", "saas"], status_url: "https://status.iqmetrix.com/api/v2/status.json", page_url: "https://status.iqmetrix.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6545,7 +6587,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.74.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.75.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -6616,7 +6658,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3537 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3559 services.",
                     },
                 },
                 required: [],
