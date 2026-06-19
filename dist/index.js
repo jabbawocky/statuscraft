@@ -5922,6 +5922,26 @@ const SERVICES = [
     { id: "swiftly", name: "Swiftly", tags: ["retail", "loyalty", "digital-engagement", "convenience", "saas"], status_url: "https://swiftly.statuspage.io/api/v2/status.json", page_url: "https://swiftly.statuspage.io", type: "statuspage" },
     // GoGuardian — student safety, classroom management, and digital wellbeing software for K-12 schools
     { id: "goguardian", name: "GoGuardian", tags: ["edtech", "k12", "student-safety", "classroom-management", "saas"], status_url: "https://status.goguardian.com/api/v2/status.json", page_url: "https://status.goguardian.com", type: "statuspage" },
+    // Udemy — online learning marketplace with courses in tech, business, and creative skills
+    { id: "udemy", name: "Udemy", tags: ["edtech", "online-learning", "courses", "marketplace", "saas"], status_url: "https://status.udemy.com/api/v2/status.json", page_url: "https://status.udemy.com", type: "statuspage" },
+    // SentinelOne — AI-powered endpoint detection and response (EDR) and cybersecurity platform
+    { id: "sentinel_one", name: "SentinelOne", tags: ["security", "edr", "endpoint-protection", "ai", "enterprise"], status_url: "https://status.sentinelone.com/api/v2/status.json", page_url: "https://status.sentinelone.com", type: "statuspage" },
+    // When I Work — employee scheduling, time tracking, and team communication for hourly workforces
+    { id: "when_i_work", name: "When I Work", tags: ["scheduling", "time-tracking", "hr", "workforce", "saas"], status_url: "https://status.wheniwork.com/api/v2/status.json", page_url: "https://status.wheniwork.com", type: "statuspage" },
+    // Polly — surveys, polls, and feedback platform integrated with Slack and Microsoft Teams
+    { id: "polly", name: "Polly", tags: ["surveys", "feedback", "slack", "teams", "collaboration"], status_url: "https://status.polly.io/api/v2/status.json", page_url: "https://status.polly.io", type: "statuspage" },
+    // ServiceTitan — cloud-based field service management software for HVAC, plumbing, and electrical
+    { id: "service_titan", name: "ServiceTitan", tags: ["field-service", "hvac", "plumbing", "scheduling", "saas"], status_url: "https://status.servicetitan.com/api/v2/status.json", page_url: "https://status.servicetitan.com", type: "statuspage" },
+    // Toast — restaurant POS, management, and digital ordering platform for food service businesses
+    { id: "toast_tab", name: "Toast", tags: ["restaurant", "pos", "hospitality", "ordering", "saas"], status_url: "https://status.toasttab.com/api/v2/status.json", page_url: "https://status.toasttab.com", type: "statuspage" },
+    // Depot — fast Docker image builds on managed infrastructure with remote layer caching
+    { id: "depot_build", name: "Depot", tags: ["ci-cd", "docker", "builds", "developer-tools", "cloud"], status_url: "https://depot.instatus.com/api/v2/summary.json", page_url: "https://depot.instatus.com", type: "betterstack" },
+    // Activeloop — deep learning data management platform and Deep Lake vector store for AI/ML
+    { id: "activeloop", name: "Activeloop", tags: ["ai", "ml", "vector-database", "data-management", "developer-tools"], status_url: "https://activeloop.instatus.com/api/v2/summary.json", page_url: "https://status.activeloop.ai", type: "betterstack" },
+    // Nayya — AI-powered employee benefits navigation and decision support platform
+    { id: "nayya", name: "Nayya", tags: ["benefits", "hr", "insurance", "employee-experience", "saas"], status_url: "https://status.nayya.com/api/v2/status.json", page_url: "https://status.nayya.com", type: "statuspage" },
+    // Milvus — open-source vector database for similarity search and unstructured data in AI applications
+    { id: "milvus", name: "Milvus", tags: ["vector-database", "ai", "ml", "open-source", "developer-tools"], status_url: "https://milvus.instatus.com/api/v2/summary.json", page_url: "https://milvus.instatus.com", type: "betterstack" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6358,7 +6378,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.72.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.73.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -6429,7 +6449,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3436 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3445 services.",
                     },
                 },
                 required: [],

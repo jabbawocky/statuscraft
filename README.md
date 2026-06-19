@@ -4,7 +4,7 @@
 [![Node: >=18](https://img.shields.io/badge/Node-%3E%3D18-brightgreen)](https://nodejs.org)
 [![MCP Compatible](https://img.shields.io/badge/MCP-compatible-blue)](https://modelcontextprotocol.io)
 
-> **MCP server that checks the live status of 3436 software services in real time.** Ask your AI agent "is GitHub down?" or "what's wrong with Sentry?" — and get a live answer pulled directly from official status pages, including full incident detail when something is broken.
+> **MCP server that checks the live status of 3445 software services in real time.** Ask your AI agent "is GitHub down?" or "what's wrong with Sentry?" — and get a live answer pulled directly from official status pages, including full incident detail when something is broken.
 
 **Install:** `npx -y github:jabbawocky/statuscraft` (no API key needed)  
 **Works with:** Claude Desktop, Claude Code, Cursor, Windsurf, any MCP-compatible client
@@ -13,7 +13,7 @@
 
 ## What it does
 
-StatusCraft gives your AI client 5 tools that fetch live status from **3436 major services**:
+StatusCraft gives your AI client 5 tools that fetch live status from **3445 major services**:
 
 | Tool | What it does |
 |---|---|
