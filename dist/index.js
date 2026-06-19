@@ -6041,6 +6041,30 @@ const SERVICES = [
     { id: "credova", name: "Credova", tags: ["bnpl", "financing", "retail", "pos", "fintech"], status_url: "https://status.credova.com/api/v2/status.json", page_url: "https://status.credova.com", type: "statuspage" },
     // Insellerate — mortgage and insurance CRM / lead management platform
     { id: "insellerate", name: "Insellerate", tags: ["mortgage", "insurance", "crm", "lead-management", "saas"], status_url: "https://status.insellerate.com/api/v2/status.json", page_url: "https://status.insellerate.com", type: "statuspage" },
+    // Linktree — link-in-bio platform for creators and brands
+    { id: "linktree", name: "Linktree", tags: ["creator", "link-in-bio", "marketing", "social", "saas"], status_url: "https://linktree.statuspage.io/api/v2/status.json", page_url: "https://linktree.statuspage.io", type: "statuspage" },
+    // FastMail — privacy-focused email hosting service
+    { id: "fastmail", name: "FastMail", tags: ["email", "hosting", "privacy", "productivity", "saas"], status_url: "https://fastmailstatus.com/api/v2/summary.json", page_url: "https://fastmailstatus.com", type: "betterstack" },
+    // Tuta (formerly Tutanota) — encrypted email and calendar service
+    { id: "tuta", name: "Tuta", tags: ["email", "privacy", "encryption", "calendar", "saas"], status_url: "https://tuta.statuspage.io/api/v2/status.json", page_url: "https://tuta.statuspage.io", type: "statuspage" },
+    // Tome — AI-powered storytelling and presentation platform
+    { id: "tome_app", name: "Tome", tags: ["ai", "presentations", "storytelling", "creative", "saas"], status_url: "https://tome.statuspage.io/api/v2/status.json", page_url: "https://tome.statuspage.io", type: "statuspage" },
+    // HackerRank — technical skills assessment and hiring platform
+    { id: "hackerrank", name: "HackerRank", tags: ["developer-tools", "hiring", "assessments", "coding", "saas"], status_url: "https://hackerrank.statuspage.io/api/v2/status.json", page_url: "https://hackerrank.statuspage.io", type: "statuspage" },
+    // Concord — contract management and e-signature platform
+    { id: "concord_contracts", name: "Concord", tags: ["contracts", "e-signature", "legal", "clm", "saas"], status_url: "https://concord.statuspage.io/api/v2/status.json", page_url: "https://concord.statuspage.io", type: "statuspage" },
+    // WorldRemit — international money transfer service
+    { id: "worldremit", name: "WorldRemit", tags: ["fintech", "money-transfer", "international", "payments", "remittance"], status_url: "https://worldremit.statuspage.io/api/v2/status.json", page_url: "https://worldremit.statuspage.io", type: "statuspage" },
+    // Cartesia AI — real-time voice AI and text-to-speech platform
+    { id: "cartesia_ai", name: "Cartesia AI", tags: ["ai", "tts", "voice", "audio", "api"], status_url: "https://status.cartesia.ai/api/v2/status.json", page_url: "https://status.cartesia.ai", type: "statuspage" },
+    // Hive — project management and team collaboration platform
+    { id: "hive_pm", name: "Hive", tags: ["project-management", "collaboration", "productivity", "tasks", "saas"], status_url: "https://status.hive.com/api/v2/status.json", page_url: "https://status.hive.com", type: "statuspage" },
+    // Reclaim — AI-powered calendar scheduling and time management
+    { id: "reclaim_ai", name: "Reclaim", tags: ["calendar", "scheduling", "ai", "productivity", "saas"], status_url: "https://status.reclaim.ai/api/v2/status.json", page_url: "https://status.reclaim.ai", type: "statuspage" },
+    // BombBomb — video email and relationship marketing platform
+    { id: "bombbomb", name: "BombBomb", tags: ["video-email", "marketing", "sales", "communication", "saas"], status_url: "https://status.bombbomb.com/api/v2/status.json", page_url: "https://status.bombbomb.com", type: "statuspage" },
+    // Arcserve — data protection, backup, and disaster recovery platform
+    { id: "arcserve", name: "Arcserve", tags: ["backup", "disaster-recovery", "data-protection", "storage", "enterprise"], status_url: "https://arcserve.statuspage.io/api/v2/status.json", page_url: "https://arcserve.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6548,7 +6572,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3503 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3515 services.",
                     },
                 },
                 required: [],
