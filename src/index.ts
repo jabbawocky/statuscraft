@@ -6363,6 +6363,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "pathfinder", name: "Pathfinder", tags: ["marketing", "automation", "customer-journey", "email", "saas"], status_url: "https://pathfinder.statuspage.io/api/v2/status.json", page_url: "https://pathfinder.statuspage.io", type: "statuspage" },
   // Vantage — cloud data analytics and AI/ML platform
   { id: "vantage_data", name: "Vantage", tags: ["analytics", "data", "ai", "ml", "cloud", "saas"], status_url: "https://vantage.statuspage.io/api/v2/status.json", page_url: "https://vantage.statuspage.io", type: "statuspage" },
+  // Dover — AI-powered recruiting automation and sourcing platform
+  { id: "dover", name: "Dover", tags: ["recruiting", "hr", "automation", "hiring", "saas"], status_url: "https://dover.statuspage.io/api/v2/status.json", page_url: "https://dover.statuspage.io", type: "statuspage" },
+  // Findem — AI talent intelligence and people data platform
+  { id: "findem", name: "Findem", tags: ["recruiting", "hr", "talent", "ai", "saas"], status_url: "https://findem.statuspage.io/api/v2/status.json", page_url: "https://findem.statuspage.io", type: "statuspage" },
+  // Bucketlist — employee recognition and rewards platform
+  { id: "bucketlist", name: "Bucketlist", tags: ["hr", "employee-recognition", "rewards", "engagement", "saas"], status_url: "https://bucketlist.statuspage.io/api/v2/status.json", page_url: "https://bucketlist.statuspage.io", type: "statuspage" },
+  // Unison — collaborative platform for the Unison programming language (Unison Share)
+  { id: "unison_lang", name: "Unison", tags: ["developer-tools", "programming-language", "collaboration", "cloud", "saas"], status_url: "https://unison.statuspage.io/api/v2/status.json", page_url: "https://unison.statuspage.io", type: "statuspage" },
+  // AgentFire — real estate agent website and lead generation platform
+  { id: "agentfire", name: "AgentFire", tags: ["real-estate", "website-builder", "crm", "proptech", "saas"], status_url: "https://agentfire.statuspage.io/api/v2/status.json", page_url: "https://agentfire.statuspage.io", type: "statuspage" },
+  // DataGuard — privacy operations and GDPR/data protection compliance platform
+  { id: "dataguard", name: "DataGuard", tags: ["privacy", "compliance", "gdpr", "data-protection", "saas"], status_url: "https://dataguard.statuspage.io/api/v2/status.json", page_url: "https://dataguard.statuspage.io", type: "statuspage" },
+  // Better Impact — volunteer management and engagement software
+  { id: "better_impact", name: "Better Impact", tags: ["volunteer-management", "nonprofit", "scheduling", "community", "saas"], status_url: "https://betterimpact.statuspage.io/api/v2/status.json", page_url: "https://betterimpact.statuspage.io", type: "statuspage" },
+  // Pay.com — payment processing and checkout platform for merchants
+  { id: "pay_com", name: "Pay.com", tags: ["payments", "fintech", "payment-gateway", "ecommerce", "saas"], status_url: "https://paycom.statuspage.io/api/v2/status.json", page_url: "https://paycom.statuspage.io", type: "statuspage" },
+  // InfoPlus — cloud warehouse management system (WMS) for 3PLs and ecommerce
+  { id: "infoplus", name: "InfoPlus", tags: ["logistics", "warehouse", "wms", "inventory", "saas"], status_url: "https://infoplus.statuspage.io/api/v2/status.json", page_url: "https://infoplus.statuspage.io", type: "statuspage" },
+  // Waymark — AI-powered video advertising creation platform for local businesses
+  { id: "waymark", name: "Waymark", tags: ["ai", "video", "advertising", "marketing", "saas"], status_url: "https://waymark.statuspage.io/api/v2/status.json", page_url: "https://waymark.statuspage.io", type: "statuspage" },
+  // Resemble AI — AI voice synthesis, cloning, and speech generation platform
+  { id: "resemble_ai", name: "Resemble AI", tags: ["ai", "voice", "text-to-speech", "audio", "saas"], status_url: "https://resemble-ai.statuspage.io/api/v2/status.json", page_url: "https://resemble-ai.statuspage.io", type: "statuspage" },
+  // Browse AI — no-code web scraping and data extraction automation platform
+  { id: "browse_ai", name: "Browse AI", tags: ["web-scraping", "automation", "data", "no-code", "saas"], status_url: "https://browseai.statuspage.io/api/v2/status.json", page_url: "https://browseai.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6772,7 +6796,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.75.0" },
+  { name: "statuscraft", version: "2.76.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -6854,7 +6878,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3575 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3587 services.",
           },
         },
         required: [],
