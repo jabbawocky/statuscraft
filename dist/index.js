@@ -6235,6 +6235,26 @@ const SERVICES = [
     { id: "karat", name: "Karat", tags: ["technical-interviews", "recruiting", "hr", "engineering", "saas"], status_url: "https://karat.statuspage.io/api/v2/status.json", page_url: "https://karat.statuspage.io", type: "statuspage" },
     // Eightfold AI — AI-driven talent intelligence and workforce management platform
     { id: "eightfold", name: "Eightfold AI", tags: ["ai", "talent-intelligence", "hr", "recruiting", "workforce"], status_url: "https://eightfold.statuspage.io/api/v2/status.json", page_url: "https://eightfold.statuspage.io", type: "statuspage" },
+    // Honeybadger — error monitoring, uptime, and cron job monitoring for developers
+    { id: "honeybadger", name: "Honeybadger", tags: ["monitoring", "error-tracking", "developer-tools", "observability", "saas"], status_url: "https://status.honeybadger.io/api/v2/status.json", page_url: "https://status.honeybadger.io", type: "statuspage" },
+    // IdeaPlace — employee idea management and innovation platform
+    { id: "ideaplace", name: "IdeaPlace", tags: ["innovation", "idea-management", "employee-engagement", "enterprise", "saas"], status_url: "https://ideaplace.statuspage.io/api/v2/status.json", page_url: "https://ideaplace.statuspage.io", type: "statuspage" },
+    // Cargo — creative website builder platform for designers and artists
+    { id: "cargo", name: "Cargo", tags: ["website-builder", "design", "creative", "portfolio", "saas"], status_url: "https://cargo.statuspage.io/api/v2/status.json", page_url: "https://cargo.statuspage.io", type: "statuspage" },
+    // Infogram — interactive infographic, chart, and data visualization creation tool
+    { id: "infogram", name: "Infogram", tags: ["data-visualization", "infographics", "charts", "marketing", "saas"], status_url: "https://infogram.statuspage.io/api/v2/status.json", page_url: "https://infogram.statuspage.io", type: "statuspage" },
+    // Pixlr — AI-powered online photo editor and design tool
+    { id: "pixlr", name: "Pixlr", tags: ["photo-editor", "design", "ai", "creative", "saas"], status_url: "https://pixlr.statuspage.io/api/v2/status.json", page_url: "https://pixlr.statuspage.io", type: "statuspage" },
+    // D-ID — AI-powered video generation platform using talking avatar technology
+    { id: "d_id", name: "D-ID", tags: ["ai", "video-generation", "avatars", "creative", "saas"], status_url: "https://status.d-id.com/api/v2/status.json", page_url: "https://status.d-id.com", type: "statuspage" },
+    // Stablecog — open-source AI image generation platform powered by Stable Diffusion
+    { id: "stablecog", name: "Stablecog", tags: ["ai", "image-generation", "stable-diffusion", "open-source", "creative"], status_url: "https://stablecog.statuspage.io/api/v2/status.json", page_url: "https://stablecog.statuspage.io", type: "statuspage" },
+    // Wordly — AI-powered real-time translation and interpretation for live events and meetings
+    { id: "wordly", name: "Wordly", tags: ["ai", "translation", "events", "meetings", "saas"], status_url: "https://wordly.statuspage.io/api/v2/status.json", page_url: "https://wordly.statuspage.io", type: "statuspage" },
+    // Interprefy — remote simultaneous interpretation platform for multilingual events and conferences
+    { id: "interprefy", name: "Interprefy", tags: ["interpretation", "translation", "events", "conference", "saas"], status_url: "https://interprefy.statuspage.io/api/v2/status.json", page_url: "https://interprefy.statuspage.io", type: "statuspage" },
+    // Cosmic — headless CMS for building modern content-driven apps and websites
+    { id: "cosmic_cms", name: "Cosmic", tags: ["headless-cms", "content-management", "developer-tools", "api", "saas"], status_url: "https://cosmicjs.statuspage.io/api/v2/status.json", page_url: "https://cosmicjs.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6671,7 +6691,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.76.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.78.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -6742,7 +6762,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3600 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3610 services.",
                     },
                 },
                 required: [],

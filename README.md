@@ -4,7 +4,7 @@
 [![Node: >=18](https://img.shields.io/badge/Node-%3E%3D18-brightgreen)](https://nodejs.org)
 [![MCP Compatible](https://img.shields.io/badge/MCP-compatible-blue)](https://modelcontextprotocol.io)
 
-> **MCP server that checks the live status of 3600 software services in real time.** Ask your AI agent "is GitHub down?" or "what's wrong with Sentry?" — and get a live answer pulled directly from official status pages, including full incident detail when something is broken.
+> **MCP server that checks the live status of 3610 software services in real time.** Ask your AI agent "is GitHub down?" or "what's wrong with Sentry?" — and get a live answer pulled directly from official status pages, including full incident detail when something is broken.
 
 **Install:** `npx -y github:jabbawocky/statuscraft` (no API key needed)  
 **Works with:** Claude Desktop, Claude Code, Cursor, Windsurf, any MCP-compatible client
@@ -13,12 +13,12 @@
 
 ## What it does
 
-StatusCraft gives your AI client 5 tools that fetch live status from **3600 major services**:
+StatusCraft gives your AI client 5 tools that fetch live status from **3610 major services**:
 
 | Tool | What it does |
 |---|---|
 | `get_status` | Check one service — returns normalized status + incident detail when non-operational |
-| `get_all_status` | Check all 3600 services at once, grouped by status (cached 60s) |
+| `get_all_status` | Check all 3610 services at once, grouped by status (cached 60s) |
 | `list_services` | List all tracked services with IDs and tags — filter by category |
 | `check_multiple` | Check a specific list of services in parallel |
 | `refresh_status` | Force a live re-fetch, bypassing the 60s cache — useful during active incidents |
@@ -50,7 +50,7 @@ No extra latency when everything is green — the incident fetch only fires for 
 
 ---
 
-## Services tracked (3600)
+## Services tracked (3610)
 
 ### AI & LLMs
 | ID | Service |
