@@ -6433,6 +6433,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "interprefy", name: "Interprefy", tags: ["interpretation", "translation", "events", "conference", "saas"], status_url: "https://interprefy.statuspage.io/api/v2/status.json", page_url: "https://interprefy.statuspage.io", type: "statuspage" },
   // Cosmic — headless CMS for building modern content-driven apps and websites
   { id: "cosmic_cms", name: "Cosmic", tags: ["headless-cms", "content-management", "developer-tools", "api", "saas"], status_url: "https://cosmicjs.statuspage.io/api/v2/status.json", page_url: "https://cosmicjs.statuspage.io", type: "statuspage" },
+  // Versapay — B2B accounts-receivable automation and payments platform
+  { id: "versapay", name: "Versapay", tags: ["accounts-receivable", "payments", "fintech", "b2b", "saas"], status_url: "https://status.versapay.com/api/v2/status.json", page_url: "https://status.versapay.com", type: "statuspage" },
+  // Illumina Cloud — genomics and life-sciences cloud sequencing platform
+  { id: "illumina", name: "Illumina Cloud", tags: ["genomics", "life-sciences", "cloud", "bioinformatics", "enterprise"], status_url: "https://status.illumina.com/api/v2/status.json", page_url: "https://status.illumina.com", type: "statuspage" },
+  // Frontline Education — K-12 HR and workforce management SaaS
+  { id: "frontline_education", name: "Frontline Education", tags: ["edtech", "k12", "hr", "education", "saas"], status_url: "https://frontlineeducation.statuspage.io/api/v2/status.json", page_url: "https://frontlineeducation.statuspage.io", type: "statuspage" },
+  // Verimatrix — streaming DRM and cybersecurity for media and entertainment
+  { id: "verimatrix", name: "Verimatrix", tags: ["streaming", "drm", "security", "media", "enterprise"], status_url: "https://status.verimatrix.com/api/v2/status.json", page_url: "https://status.verimatrix.com", type: "statuspage" },
+  // Controlant — cold-chain IoT monitoring and supply-chain visibility
+  { id: "controlant", name: "Controlant", tags: ["cold-chain", "iot", "monitoring", "logistics", "saas"], status_url: "https://status.controlant.com/api/v2/status.json", page_url: "https://status.controlant.com", type: "statuspage" },
+  // TwelveLabs — video understanding AI and multimodal search API
+  { id: "twelvelabs", name: "TwelveLabs", tags: ["ai", "video", "search", "embeddings", "developer-tools"], status_url: "https://twelvelabs.statuspage.io/api/v2/status.json", page_url: "https://status.twelvelabs.io", type: "statuspage" },
+  // Inductive Automation — Ignition SCADA and industrial IoT cloud platform
+  { id: "inductive_automation", name: "Inductive Automation", tags: ["scada", "iot", "industrial", "automation", "saas"], status_url: "https://status.inductiveautomation.com/api/v2/status.json", page_url: "https://status.inductiveautomation.com", type: "statuspage" },
+  // HumanSignal — Label Studio Enterprise annotation and ML data labeling platform
+  { id: "humansignal", name: "HumanSignal (Label Studio)", tags: ["ml", "data-labeling", "annotation", "ai", "developer-tools"], status_url: "https://humansignal.statuspage.io/api/v2/status.json", page_url: "https://status.humansignal.com", type: "statuspage" },
+  // Fleek — web3 and edge deployment platform for decentralized apps
+  { id: "fleek", name: "Fleek", tags: ["web3", "edge", "hosting", "decentralized", "developer-tools"], status_url: "https://fleek.statuspage.io/api/v2/status.json", page_url: "https://status.fleek.xyz", type: "statuspage" },
+  // SuprSend — multi-channel notification infrastructure API for product teams
+  { id: "suprsend", name: "SuprSend", tags: ["notifications", "messaging", "api", "developer-tools", "saas"], status_url: "https://suprsend.statuspage.io/api/v2/status.json", page_url: "https://suprsend.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6924,7 +6944,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3610 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3620 services.",
           },
         },
         required: [],
