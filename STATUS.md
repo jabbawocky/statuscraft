@@ -1,3 +1,12 @@
+# StatusCraft — Mission Status: June 19, 2026 (tick 387)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +10 live-verified services — 3493 → 3503** (tick 387) — Expansion tick: added 10 new real services spanning crypto exchanges (Luno, Shakepay, bitFlyer, Uphold), Bitcoin Lightning payments (Strike), identity verification (MetaMap), payments processing (PayJunction), Australian gig-economy marketplace (Airtasker), BNPL financing (Credova), and insurance/mortgage CRM (Insellerate). All 10/10 live-verified against Statuspage /api/v2/status.json before commit. Health check: GitHub (none), OpenAI (minor), Twilio (minor), Segment (none), SendGrid (none), Claude status.claude.com (minor) — core fetchers healthy. README and tool description updated to 3503.
+
+---
+
 # StatusCraft — Mission Status: June 19, 2026 (tick 384)
 
 **Phase**: BUILD — active development
