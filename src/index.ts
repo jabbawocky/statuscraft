@@ -6519,6 +6519,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "veson", name: "Veson", tags: ["maritime", "shipping", "vessel-operations", "logistics", "enterprise"], status_url: "https://status.veson.com/api/v2/status.json", page_url: "https://status.veson.com", type: "statuspage" },
   // Inveniam — private markets data and valuation intelligence platform
   { id: "inveniam", name: "Inveniam", tags: ["fintech", "private-markets", "data", "valuation", "enterprise"], status_url: "https://status.inveniam.io/api/v2/status.json", page_url: "https://status.inveniam.io", type: "statuspage" },
+  // Hint Health — direct primary care (DPC) practice management platform
+  { id: "hint_health", name: "Hint Health", tags: ["healthcare", "primary-care", "dpc", "practice-management", "saas"], status_url: "https://status.hint.com/api/v2/status.json", page_url: "https://status.hint.com", type: "statuspage" },
+  // Akana — API management and lifecycle platform
+  { id: "akana", name: "Akana", tags: ["api-management", "api-gateway", "lifecycle", "enterprise", "developer-tools"], status_url: "https://status.akana.com/api/v2/status.json", page_url: "https://status.akana.com", type: "statuspage" },
+  // Tideways — PHP application performance monitoring
+  { id: "tideways", name: "Tideways", tags: ["apm", "monitoring", "php", "performance", "developer-tools"], status_url: "https://tideways.statuspage.io/api/v2/status.json", page_url: "https://tideways.statuspage.io", type: "statuspage" },
+  // Nusii — proposal software for creative agencies and freelancers
+  { id: "nusii", name: "Nusii", tags: ["proposals", "sales", "crm", "agencies", "saas"], status_url: "https://nusii.statuspage.io/api/v2/status.json", page_url: "https://nusii.statuspage.io", type: "statuspage" },
+  // Middleware — full-stack observability and monitoring platform
+  { id: "middleware_io", name: "Middleware", tags: ["observability", "monitoring", "apm", "logs", "infrastructure"], status_url: "https://middleware.statuspage.io/api/v2/status.json", page_url: "https://middleware.statuspage.io", type: "statuspage" },
+  // Mighty Networks — community and membership platform for creators
+  { id: "mighty_networks", name: "Mighty Networks", tags: ["community", "membership", "creators", "courses", "saas"], status_url: "https://mightynetworks.statuspage.io/api/v2/status.json", page_url: "https://mightynetworks.statuspage.io", type: "statuspage" },
+  // Typeface — generative AI content platform for enterprise marketing
+  { id: "typeface", name: "Typeface", tags: ["ai", "content", "marketing", "generative-ai", "enterprise"], status_url: "https://status.typeface.ai/api/v2/status.json", page_url: "https://status.typeface.ai", type: "statuspage" },
+  // PAR POS (Brink) — enterprise restaurant point-of-sale platform
+  { id: "par_brink", name: "PAR Brink POS", tags: ["pos", "restaurants", "enterprise", "point-of-sale", "saas"], status_url: "https://brinkpos.statuspage.io/api/v2/status.json", page_url: "https://brinkpos.statuspage.io", type: "statuspage" },
+  // ElationHealth — clinical-first EHR for independent primary care physicians
+  { id: "elation_health", name: "ElationHealth", tags: ["healthcare", "ehr", "primary-care", "clinical", "saas"], status_url: "https://elationhealth.statuspage.io/api/v2/status.json", page_url: "https://elationhealth.statuspage.io", type: "statuspage" },
+  // MerchantSpring — multichannel marketplace analytics and management
+  { id: "merchantspring", name: "MerchantSpring", tags: ["ecommerce", "marketplace", "analytics", "multichannel", "saas"], status_url: "https://status.merchantspring.io/api/v2/status.json", page_url: "https://status.merchantspring.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7010,7 +7030,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3653 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3663 services.",
           },
         },
         required: [],
