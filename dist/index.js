@@ -6151,6 +6151,40 @@ const SERVICES = [
     { id: "vetstoria", name: "Vetstoria", tags: ["veterinary", "scheduling", "pet-care", "healthcare", "saas"], status_url: "https://status.vetstoria.com/api/v2/status.json", page_url: "https://status.vetstoria.com", type: "statuspage" },
     // iQmetrix — retail management platform for wireless and consumer electronics
     { id: "iqmetrix", name: "iQmetrix", tags: ["retail", "pos", "wireless", "telecom", "saas"], status_url: "https://status.iqmetrix.com/api/v2/status.json", page_url: "https://status.iqmetrix.com", type: "statuspage" },
+    // SuperOps — unified PSA and RMM platform for managed service providers
+    { id: "superops", name: "SuperOps", tags: ["msp", "itsm", "rmm", "psa", "it-management", "saas"], status_url: "https://superops.statuspage.io/api/v2/status.json", page_url: "https://superops.statuspage.io", type: "statuspage" },
+    // DoControl — automated SaaS data access governance and security platform
+    { id: "docontrol", name: "DoControl", tags: ["security", "data-governance", "saas-security", "dlp", "cloud"], status_url: "https://status.docontrol.io/api/v2/status.json", page_url: "https://status.docontrol.io", type: "statuspage" },
+    // Eway — Australian online payment gateway for businesses
+    { id: "eway", name: "Eway", tags: ["payments", "payment-gateway", "fintech", "ecommerce", "australia"], status_url: "https://eway.statuspage.io/api/v2/status.json", page_url: "https://eway.statuspage.io", type: "statuspage" },
+    // Respondus — assessment and proctoring software for higher education
+    { id: "respondus", name: "Respondus", tags: ["edtech", "proctoring", "assessment", "higher-education", "saas"], status_url: "https://status.respondus.com/api/v2/status.json", page_url: "https://status.respondus.com", type: "statuspage" },
+    // Bearer — API security and data governance observability platform
+    { id: "bearer", name: "Bearer", tags: ["security", "api-security", "data-governance", "developer-tools", "saas"], status_url: "https://bearer.statuspage.io/api/v2/status.json", page_url: "https://bearer.statuspage.io", type: "statuspage" },
+    // WorkBoard — enterprise OKR and strategy execution platform
+    { id: "workboard", name: "WorkBoard", tags: ["okr", "strategy", "performance", "enterprise", "saas"], status_url: "https://workboard.statuspage.io/api/v2/status.json", page_url: "https://workboard.statuspage.io", type: "statuspage" },
+    // Meddbase — cloud-based practice management software for healthcare providers
+    { id: "meddbase", name: "Meddbase", tags: ["healthcare", "practice-management", "clinical", "emr", "saas"], status_url: "https://meddbase.statuspage.io/api/v2/status.json", page_url: "https://meddbase.statuspage.io", type: "statuspage" },
+    // Bildr — visual no-code platform for building web applications
+    { id: "bildr", name: "Bildr", tags: ["no-code", "web-builder", "developer-tools", "paas", "saas"], status_url: "https://bildr.statuspage.io/api/v2/status.json", page_url: "https://bildr.statuspage.io", type: "statuspage" },
+    // Pory — no-code portal builder powered by Airtable and Google Sheets
+    { id: "pory", name: "Pory", tags: ["no-code", "portal", "web-builder", "airtable", "saas"], status_url: "https://pory.statuspage.io/api/v2/status.json", page_url: "https://pory.statuspage.io", type: "statuspage" },
+    // Epsio — real-time incremental view computation engine for databases
+    { id: "epsio", name: "Epsio", tags: ["database", "analytics", "real-time", "data", "developer-tools"], status_url: "https://epsio.statuspage.io/api/v2/status.json", page_url: "https://epsio.statuspage.io", type: "statuspage" },
+    // Dubsado — CRM and business management platform for creative professionals
+    { id: "dubsado", name: "Dubsado", tags: ["crm", "freelance", "business-management", "scheduling", "saas"], status_url: "https://dubsado.statuspage.io/api/v2/status.json", page_url: "https://dubsado.statuspage.io", type: "statuspage" },
+    // Interact — quiz and interactive content marketing platform
+    { id: "interact_quiz", name: "Interact", tags: ["marketing", "quiz", "interactive-content", "lead-generation", "saas"], status_url: "https://interact.statuspage.io/api/v2/status.json", page_url: "https://status.tryinteract.com", type: "statuspage" },
+    // Guidde — AI-powered video guide and how-to documentation platform
+    { id: "guidde", name: "Guidde", tags: ["ai", "video", "documentation", "knowledge-base", "saas"], status_url: "https://guidde.statuspage.io/api/v2/status.json", page_url: "https://guidde.statuspage.io", type: "statuspage" },
+    // Turnkey — embedded crypto wallet and key management infrastructure
+    { id: "turnkey", name: "Turnkey", tags: ["crypto", "wallet", "web3", "security", "infrastructure"], status_url: "https://turnkey.statuspage.io/api/v2/status.json", page_url: "https://turnkey.statuspage.io", type: "statuspage" },
+    // Aserto — cloud-native authorization as a service platform
+    { id: "aserto", name: "Aserto", tags: ["authorization", "identity", "security", "developer-tools", "saas"], status_url: "https://aserto.statuspage.io/api/v2/status.json", page_url: "https://aserto.statuspage.io", type: "statuspage" },
+    // Pathfinder — customer journey and communications automation platform
+    { id: "pathfinder", name: "Pathfinder", tags: ["marketing", "automation", "customer-journey", "email", "saas"], status_url: "https://pathfinder.statuspage.io/api/v2/status.json", page_url: "https://pathfinder.statuspage.io", type: "statuspage" },
+    // Vantage — cloud data analytics and AI/ML platform
+    { id: "vantage_data", name: "Vantage", tags: ["analytics", "data", "ai", "ml", "cloud", "saas"], status_url: "https://vantage.statuspage.io/api/v2/status.json", page_url: "https://vantage.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6658,7 +6692,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3559 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3575 services.",
                     },
                 },
                 required: [],
