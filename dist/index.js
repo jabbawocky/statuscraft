@@ -6299,6 +6299,28 @@ const SERVICES = [
     { id: "sequin", name: "Sequin", tags: ["data", "streaming", "postgres", "developer-tools", "saas"], status_url: "https://sequin.statuspage.io/api/v2/status.json", page_url: "https://sequin.statuspage.io", type: "statuspage" },
     // Hydra — analytical Postgres for data warehousing and real-time queries
     { id: "hydra_db", name: "Hydra", tags: ["database", "postgres", "analytics", "developer-tools", "saas"], status_url: "https://hydra.statuspage.io/api/v2/status.json", page_url: "https://hydra.statuspage.io", type: "statuspage" },
+    // Make (formerly Integromat) — visual no-code automation and workflow builder
+    { id: "make", name: "Make", tags: ["automation", "no-code", "workflow", "integration", "saas"], status_url: "https://status.make.com/api/v2/status.json", page_url: "https://status.make.com", type: "statuspage" },
+    // Remote — global employer of record and international payroll platform
+    { id: "remote_com", name: "Remote", tags: ["eor", "hr", "payroll", "global", "saas"], status_url: "https://remote.statuspage.io/api/v2/status.json", page_url: "https://remote.statuspage.io", type: "statuspage" },
+    // GetAccept — digital sales room and e-signing platform for B2B deals
+    { id: "getaccept", name: "GetAccept", tags: ["sales", "e-sign", "digital-sales-room", "crm", "saas"], status_url: "https://getaccept.statuspage.io/api/v2/status.json", page_url: "https://getaccept.statuspage.io", type: "statuspage" },
+    // Concord — contract lifecycle management and digital contracting platform
+    { id: "concord_clm", name: "Concord", tags: ["contract-management", "clm", "legal", "e-sign", "saas"], status_url: "https://concord.statuspage.io/api/v2/status.json", page_url: "https://concord.statuspage.io", type: "statuspage" },
+    // Treasure — embedded finance and Web3 business treasury tools
+    { id: "treasure_fi", name: "Treasure", tags: ["finance", "treasury", "web3", "embedded-finance", "saas"], status_url: "https://treasure.statuspage.io/api/v2/status.json", page_url: "https://treasure.statuspage.io", type: "statuspage" },
+    // Hint Health — direct primary care platform for independent medical practices
+    { id: "hint_health", name: "Hint Health", tags: ["healthcare", "direct-primary-care", "practice-management", "saas"], status_url: "https://status.hint.com/api/v2/status.json", page_url: "https://status.hint.com", type: "statuspage" },
+    // 1upHealth — health data aggregation and FHIR API platform for digital health
+    { id: "oneup_health", name: "1upHealth", tags: ["health", "fhir", "api", "interoperability", "developer-tools"], status_url: "https://status.1up.health/api/v2/status.json", page_url: "https://status.1up.health", type: "statuspage" },
+    // Makeswift — visual headless CMS builder for Next.js and React websites
+    { id: "makeswift", name: "Makeswift", tags: ["cms", "headless", "website-builder", "nextjs", "saas"], status_url: "https://status.makeswift.com/api/v2/status.json", page_url: "https://status.makeswift.com", type: "statuspage" },
+    // SPS Commerce — cloud-based EDI and supply chain management platform
+    { id: "sps_commerce", name: "SPS Commerce", tags: ["edi", "supply-chain", "retail", "integration", "saas"], status_url: "https://spscommerce.statuspage.io/api/v2/status.json", page_url: "https://spscommerce.statuspage.io", type: "statuspage" },
+    // ID.me — digital identity verification and authentication platform
+    { id: "idme", name: "ID.me", tags: ["identity", "verification", "authentication", "government", "saas"], status_url: "https://status.id.me/api/v2/status.json", page_url: "https://status.id.me", type: "statuspage" },
+    // PTC Atlas — industrial IoT, CAD, and connected operations cloud platform
+    { id: "ptc_atlas", name: "PTC Atlas", tags: ["iot", "industrial", "cad", "manufacturing", "enterprise"], status_url: "https://status.ptc.com/api/v2/status.json", page_url: "https://status.ptc.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6806,7 +6828,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3632 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3643 services.",
                     },
                 },
                 required: [],
