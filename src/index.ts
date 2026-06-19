@@ -6287,6 +6287,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "cambly", name: "Cambly", tags: ["language-learning", "tutoring", "english", "edtech", "consumer"], status_url: "https://status.cambly.com/api/v2/status.json", page_url: "https://status.cambly.com", type: "statuspage" },
   // Honorlock — AI-powered online proctoring and academic integrity platform
   { id: "honorlock", name: "Honorlock", tags: ["online-proctoring", "edtech", "academic-integrity", "higher-education", "saas"], status_url: "https://status.honorlock.com/api/v2/status.json", page_url: "https://status.honorlock.com", type: "statuspage" },
+  // Springbrook — ERP/finance software for local government agencies
+  { id: "springbrook", name: "Springbrook", tags: ["government", "erp", "finance", "public-sector", "saas"], status_url: "https://status.springbrooksoftware.com/api/v2/status.json", page_url: "https://status.springbrooksoftware.com", type: "statuspage" },
+  // SafetyChain — food safety and quality management platform for food/beverage manufacturers
+  { id: "safetychain", name: "SafetyChain", tags: ["food-safety", "quality-management", "compliance", "manufacturing", "saas"], status_url: "https://status.safetychain.com/api/v2/status.json", page_url: "https://status.safetychain.com", type: "statuspage" },
+  // FoodLogiQ — food supply chain transparency and traceability platform
+  { id: "foodlogiq", name: "FoodLogiQ", tags: ["food-safety", "supply-chain", "traceability", "compliance", "saas"], status_url: "https://status.foodlogiq.com/api/v2/status.json", page_url: "https://status.foodlogiq.com", type: "statuspage" },
+  // Energage — employer branding and employee engagement/recognition platform
+  { id: "energage", name: "Energage", tags: ["employer-branding", "employee-engagement", "hr", "recognition", "saas"], status_url: "https://status.energage.com/api/v2/status.json", page_url: "https://status.energage.com", type: "statuspage" },
+  // Aurora Solar — solar design and sales software for installers and utilities
+  { id: "aurora_solar", name: "Aurora Solar", tags: ["solar", "energy", "design", "cleantech", "saas"], status_url: "https://status.aurorasolar.com/api/v2/status.json", page_url: "https://status.aurorasolar.com", type: "statuspage" },
+  // PDFfiller — online PDF editor, form builder, and e-signature platform
+  { id: "pdffiller", name: "PDFfiller", tags: ["pdf", "documents", "e-signature", "forms", "saas"], status_url: "https://status.pdffiller.com/api/v2/status.json", page_url: "https://status.pdffiller.com", type: "statuspage" },
+  // Pix4D — drone mapping and photogrammetry software for aerial data processing
+  { id: "pix4d", name: "Pix4D", tags: ["drone", "mapping", "photogrammetry", "gis", "saas"], status_url: "https://status.pix4d.com/api/v2/status.json", page_url: "https://status.pix4d.com", type: "statuspage" },
+  // MailerCheck — email verification and list cleaning service by MailerLite
+  { id: "mailercheck", name: "MailerCheck", tags: ["email-verification", "email", "list-hygiene", "marketing", "saas"], status_url: "https://status.mailercheck.com/api/v2/status.json", page_url: "https://status.mailercheck.com", type: "statuspage" },
+  // Meevo — salon, spa, and wellness business management software
+  { id: "meevo", name: "Meevo", tags: ["salon", "spa", "wellness", "scheduling", "saas"], status_url: "https://status.meevo.com/api/v2/status.json", page_url: "https://status.meevo.com", type: "statuspage" },
+  // Workona — browser tab and workspace organizer for productivity
+  { id: "workona", name: "Workona", tags: ["productivity", "browser", "workspace", "tabs", "saas"], status_url: "https://status.workona.com/api/v2/status.json", page_url: "https://status.workona.com", type: "statuspage" },
+  // WorkFlowy — minimalist outliner and note-taking app for nested lists
+  { id: "workflowy", name: "WorkFlowy", tags: ["notes", "outliner", "productivity", "lists", "saas"], status_url: "https://status.workflowy.com/api/v2/status.json", page_url: "https://status.workflowy.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6778,7 +6800,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3537 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3548 services.",
           },
         },
         required: [],
