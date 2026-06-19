@@ -6120,6 +6120,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "nayya", name: "Nayya", tags: ["benefits", "hr", "insurance", "employee-experience", "saas"], status_url: "https://status.nayya.com/api/v2/status.json", page_url: "https://status.nayya.com", type: "statuspage" },
   // Milvus — open-source vector database for similarity search and unstructured data in AI applications
   { id: "milvus", name: "Milvus", tags: ["vector-database", "ai", "ml", "open-source", "developer-tools"], status_url: "https://milvus.instatus.com/api/v2/summary.json", page_url: "https://milvus.instatus.com", type: "betterstack" },
+  // Pandle — UK cloud accounting software for small businesses and sole traders
+  { id: "pandle", name: "Pandle", tags: ["accounting", "finance", "uk", "small-business", "saas"], status_url: "https://status.pandle.com/api/v2/status.json", page_url: "https://status.pandle.com", type: "statuspage" },
+  // Centage — cloud budgeting, planning, and forecasting platform for mid-market companies
+  { id: "centage", name: "Centage", tags: ["budgeting", "planning", "forecasting", "finance", "saas"], status_url: "https://status.centage.com/api/v2/status.json", page_url: "https://status.centage.com", type: "statuspage" },
+  // Engaging Networks — digital fundraising, advocacy, and peer-to-peer platform for nonprofits
+  { id: "engaging_networks", name: "Engaging Networks", tags: ["nonprofit", "fundraising", "advocacy", "digital", "saas"], status_url: "https://status.engagingnetworks.net/api/v2/status.json", page_url: "https://status.engagingnetworks.net", type: "statuspage" },
+  // SmartThings — Samsung IoT smart home platform for connected devices and automation
+  { id: "smartthings", name: "SmartThings", tags: ["iot", "smart-home", "samsung", "automation", "consumer"], status_url: "https://status.smartthings.com/api/v2/status.json", page_url: "https://status.smartthings.com", type: "statuspage" },
+  // Omnata — no-code reverse ETL and data sync connector for Snowflake and modern data stacks
+  { id: "omnata", name: "Omnata", tags: ["data", "etl", "snowflake", "reverse-etl", "developer-tools"], status_url: "https://status.omnata.com/api/v2/status.json", page_url: "https://status.omnata.com", type: "statuspage" },
+  // VaultSpeed — automated data vault generation and ELT acceleration platform
+  { id: "vaultspeed", name: "VaultSpeed", tags: ["data-vault", "etl", "data-warehousing", "automation", "enterprise"], status_url: "https://status.vaultspeed.com/api/v2/status.json", page_url: "https://status.vaultspeed.com", type: "statuspage" },
+  // Foundant Technologies — grant management software for foundations and nonprofits
+  { id: "foundant", name: "Foundant Technologies", tags: ["grant-management", "nonprofit", "foundation", "philanthropy", "saas"], status_url: "https://status.foundant.com/api/v2/status.json", page_url: "https://status.foundant.com", type: "statuspage" },
+  // Levity AI — no-code AI automation platform for document and text classification workflows
+  { id: "levity_ai", name: "Levity AI", tags: ["ai", "automation", "document-processing", "no-code", "saas"], status_url: "https://status.levity.ai/api/v2/status.json", page_url: "https://status.levity.ai", type: "statuspage" },
+  // Agilent Technologies — life sciences, diagnostics, and applied chemical analysis instruments/software
+  { id: "agilent", name: "Agilent", tags: ["life-sciences", "diagnostics", "laboratory", "enterprise", "saas"], status_url: "https://status.agilent.com/api/v2/status.json", page_url: "https://status.agilent.com", type: "statuspage" },
+  // Recurrency — ERP and inventory management platform purpose-built for wholesale distributors
+  { id: "recurrency", name: "Recurrency", tags: ["erp", "inventory", "distribution", "wholesale", "saas"], status_url: "https://status.recurrency.com/api/v2/status.json", page_url: "https://status.recurrency.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6611,7 +6631,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3445 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3455 services.",
           },
         },
         required: [],
