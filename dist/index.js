@@ -6321,6 +6321,26 @@ const SERVICES = [
     { id: "idme", name: "ID.me", tags: ["identity", "verification", "authentication", "government", "saas"], status_url: "https://status.id.me/api/v2/status.json", page_url: "https://status.id.me", type: "statuspage" },
     // PTC Atlas — industrial IoT, CAD, and connected operations cloud platform
     { id: "ptc_atlas", name: "PTC Atlas", tags: ["iot", "industrial", "cad", "manufacturing", "enterprise"], status_url: "https://status.ptc.com/api/v2/status.json", page_url: "https://status.ptc.com", type: "statuspage" },
+    // Syte — visual AI search and discovery platform for retail and ecommerce
+    { id: "syte", name: "Syte", tags: ["ai", "visual-search", "retail", "ecommerce", "saas"], status_url: "https://status.syte.ai/api/v2/status.json", page_url: "https://status.syte.ai", type: "statuspage" },
+    // Alumio — cloud-native iPaaS integration platform for connecting enterprise systems
+    { id: "alumio", name: "Alumio", tags: ["integration", "ipaas", "automation", "enterprise", "saas"], status_url: "https://status.alumio.com/api/v2/status.json", page_url: "https://status.alumio.com", type: "statuspage" },
+    // PROS — AI-powered pricing and revenue management for B2B enterprises
+    { id: "pros", name: "PROS", tags: ["pricing", "revenue-management", "b2b", "saas", "enterprise"], status_url: "https://status.pros.com/api/v2/status.json", page_url: "https://status.pros.com", type: "statuspage" },
+    // Reducto — AI document parsing and data extraction API
+    { id: "reducto", name: "Reducto", tags: ["ai", "document-parsing", "ocr", "developer-tools", "api"], status_url: "https://status.reducto.ai/api/v2/status.json", page_url: "https://status.reducto.ai", type: "statuspage" },
+    // Spacebring — coworking and shared workspace management platform
+    { id: "spacebring", name: "Spacebring", tags: ["coworking", "facility-management", "workspace", "saas"], status_url: "https://status.spacebring.com/api/v2/status.json", page_url: "https://status.spacebring.com", type: "statuspage" },
+    // Avetta — supply chain risk management and contractor compliance platform
+    { id: "avetta", name: "Avetta", tags: ["supply-chain", "compliance", "risk-management", "vendor-management", "saas"], status_url: "https://status.avetta.com/api/v2/status.json", page_url: "https://status.avetta.com", type: "statuspage" },
+    // Achilles — global supply chain risk intelligence and vendor qualification
+    { id: "achilles", name: "Achilles", tags: ["supply-chain", "risk-management", "compliance", "vendor-management", "enterprise"], status_url: "https://status.achilles.com/api/v2/status.json", page_url: "https://status.achilles.com", type: "statuspage" },
+    // Spire Maritime — AIS vessel tracking and maritime analytics (a Kpler company)
+    { id: "spire_maritime", name: "Spire Maritime", tags: ["maritime", "ais", "vessel-tracking", "analytics", "logistics"], status_url: "https://status.spire.com/api/v2/status.json", page_url: "https://status.spire.com", type: "statuspage" },
+    // Veson — commercial maritime and vessel operations software platform
+    { id: "veson", name: "Veson", tags: ["maritime", "shipping", "vessel-operations", "logistics", "enterprise"], status_url: "https://status.veson.com/api/v2/status.json", page_url: "https://status.veson.com", type: "statuspage" },
+    // Inveniam — private markets data and valuation intelligence platform
+    { id: "inveniam", name: "Inveniam", tags: ["fintech", "private-markets", "data", "valuation", "enterprise"], status_url: "https://status.inveniam.io/api/v2/status.json", page_url: "https://status.inveniam.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6828,7 +6848,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3643 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3653 services.",
                     },
                 },
                 required: [],
