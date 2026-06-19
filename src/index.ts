@@ -6160,6 +6160,23 @@ const SERVICES: ServiceConfig[] = [
   { id: "finmo", name: "Finmo", tags: ["mortgage", "fintech", "broker", "canada", "saas"], status_url: "https://status.finmo.ca/api/v2/status.json", page_url: "https://status.finmo.ca", type: "statuspage" },
   // Inscribe AI — AI-powered fraud detection and document verification for financial services
   { id: "inscribe_ai", name: "Inscribe AI", tags: ["fraud-detection", "ai", "fintech", "document-verification", "security"], status_url: "https://status.inscribe.ai/api/v2/status.json", page_url: "https://status.inscribe.ai", type: "statuspage" },
+  { id: "pitney_bowes", name: "Pitney Bowes", tags: ["shipping", "mailing", "logistics", "ecommerce", "enterprise"], status_url: "https://status.pitneybowes.com/api/v2/status.json", page_url: "https://status.pitneybowes.com", type: "statuspage" },
+  { id: "beam_cloud", name: "Beam", tags: ["ml", "ai", "cloud", "serverless", "developer-tools"], status_url: "https://status.beam.cloud/api/v2/status.json", page_url: "https://status.beam.cloud", type: "statuspage" },
+  { id: "lepton_ai", name: "Lepton AI", tags: ["ai", "llm", "cloud", "serverless", "developer-tools"], status_url: "https://lepton.statuspage.io/api/v2/status.json", page_url: "https://lepton.statuspage.io", type: "statuspage" },
+  { id: "wellfound", name: "Wellfound", tags: ["recruiting", "startups", "jobs", "talent", "saas"], status_url: "https://status.wellfound.com/api/v2/status.json", page_url: "https://status.wellfound.com", type: "statuspage" },
+  { id: "zen_planner", name: "Zen Planner", tags: ["fitness", "gym", "scheduling", "membership", "saas"], status_url: "https://zenplanner.statuspage.io/api/v2/status.json", page_url: "https://zenplanner.statuspage.io", type: "statuspage" },
+  { id: "mariana_tek", name: "Mariana Tek", tags: ["fitness", "boutique", "scheduling", "pos", "saas"], status_url: "https://status.marianatek.com/api/v2/status.json", page_url: "https://status.marianatek.com", type: "statuspage" },
+  { id: "elastic_path", name: "Elastic Path", tags: ["e-commerce", "headless", "composable", "api", "enterprise"], status_url: "https://status.elasticpath.com/api/v2/status.json", page_url: "https://status.elasticpath.com", type: "statuspage" },
+  { id: "chord_commerce", name: "Chord Commerce", tags: ["e-commerce", "dtc", "analytics", "headless", "saas"], status_url: "https://status.chord.co/api/v2/status.json", page_url: "https://status.chord.co", type: "statuspage" },
+  { id: "tripletex", name: "Tripletex", tags: ["accounting", "erp", "norway", "finance", "saas"], status_url: "https://status.tripletex.no/api/v2/status.json", page_url: "https://status.tripletex.no", type: "statuspage" },
+  { id: "continia", name: "Continia Software", tags: ["document-management", "ap-automation", "expense", "dynamics", "saas"], status_url: "https://status.continia.com/api/v2/status.json", page_url: "https://status.continia.com", type: "statuspage" },
+  { id: "dinero", name: "Dinero", tags: ["accounting", "invoicing", "denmark", "small-business", "saas"], status_url: "https://status.dinero.dk/api/v2/status.json", page_url: "https://status.dinero.dk", type: "statuspage" },
+  { id: "holded", name: "Holded", tags: ["erp", "accounting", "crm", "spain", "saas"], status_url: "https://holded.statuspage.io/api/v2/status.json", page_url: "https://holded.statuspage.io", type: "statuspage" },
+  { id: "saba_software", name: "Saba Software", tags: ["lms", "talent", "learning", "hr", "enterprise"], status_url: "https://saba.statuspage.io/api/v2/status.json", page_url: "https://saba.statuspage.io", type: "statuspage" },
+  { id: "cerkl", name: "Cerkl", tags: ["employee-communications", "intranet", "engagement", "hr", "saas"], status_url: "https://cerkl.statuspage.io/api/v2/status.json", page_url: "https://status.cerkl.com", type: "statuspage" },
+  { id: "alert_media", name: "AlertMedia", tags: ["emergency-notifications", "mass-notification", "safety", "hr", "saas"], status_url: "https://status.alertmedia.com/api/v2/status.json", page_url: "https://status.alertmedia.com", type: "statuspage" },
+  { id: "crisisgo", name: "CrisisGo", tags: ["safety", "emergency", "schools", "communication", "saas"], status_url: "https://crisisgo.statuspage.io/api/v2/status.json", page_url: "https://crisisgo.statuspage.io", type: "statuspage" },
+  { id: "preparis", name: "Preparis", tags: ["business-continuity", "emergency-management", "compliance", "enterprise", "saas"], status_url: "https://preparis.statuspage.io/api/v2/status.json", page_url: "https://preparis.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6651,7 +6668,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3465 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3482 services.",
           },
         },
         required: [],
