@@ -6021,6 +6021,26 @@ const SERVICES = [
     { id: "autovitals", name: "AutoVitals", tags: ["automotive", "vehicle-inspection", "shop-management", "saas"], status_url: "https://status.autovitals.com/api/v2/status.json", page_url: "https://status.autovitals.com", type: "statuspage" },
     // PayByPhone — mobile parking payment app (cashless parking meters)
     { id: "paybyphone", name: "PayByPhone", tags: ["parking", "mobility", "payments", "mobile", "saas"], status_url: "https://status.paybyphone.com/api/v2/status.json", page_url: "https://status.paybyphone.com", type: "statuspage" },
+    // Luno — cryptocurrency exchange serving Africa, Asia and Europe
+    { id: "luno", name: "Luno", tags: ["crypto", "exchange", "bitcoin", "fintech", "africa"], status_url: "https://luno.statuspage.io/api/v2/status.json", page_url: "https://luno.statuspage.io", type: "statuspage" },
+    // Shakepay — Canadian Bitcoin and crypto app
+    { id: "shakepay", name: "Shakepay", tags: ["crypto", "bitcoin", "canada", "fintech", "payments"], status_url: "https://status.shakepay.com/api/v2/status.json", page_url: "https://status.shakepay.com", type: "statuspage" },
+    // MetaMap — global identity verification and KYC platform
+    { id: "metamap", name: "MetaMap", tags: ["identity", "kyc", "verification", "compliance", "api"], status_url: "https://status.metamap.com/api/v2/status.json", page_url: "https://status.metamap.com", type: "statuspage" },
+    // bitFlyer — Japanese cryptocurrency exchange
+    { id: "bitflyer", name: "bitFlyer", tags: ["crypto", "exchange", "japan", "bitcoin", "fintech"], status_url: "https://bitflyer.statuspage.io/api/v2/status.json", page_url: "https://bitflyer.statuspage.io", type: "statuspage" },
+    // Uphold — multi-asset digital money platform and trading
+    { id: "uphold", name: "Uphold", tags: ["crypto", "payments", "trading", "fintech", "multi-asset"], status_url: "https://status.uphold.com/api/v2/status.json", page_url: "https://status.uphold.com", type: "statuspage" },
+    // Strike — Bitcoin Lightning payments app
+    { id: "strike", name: "Strike", tags: ["bitcoin", "lightning", "payments", "crypto", "fintech"], status_url: "https://status.strike.me/api/v2/status.json", page_url: "https://status.strike.me", type: "statuspage" },
+    // PayJunction — integrated payments platform for businesses
+    { id: "payjunction", name: "PayJunction", tags: ["payments", "pos", "processing", "fintech", "saas"], status_url: "https://status.payjunction.com/api/v2/status.json", page_url: "https://status.payjunction.com", type: "statuspage" },
+    // Airtasker — Australian online marketplace for local services and tasks
+    { id: "airtasker", name: "Airtasker", tags: ["marketplace", "gig-economy", "australia", "services", "saas"], status_url: "https://status.airtasker.com/api/v2/status.json", page_url: "https://status.airtasker.com", type: "statuspage" },
+    // Credova — point-of-sale BNPL financing for retailers
+    { id: "credova", name: "Credova", tags: ["bnpl", "financing", "retail", "pos", "fintech"], status_url: "https://status.credova.com/api/v2/status.json", page_url: "https://status.credova.com", type: "statuspage" },
+    // Insellerate — mortgage and insurance CRM / lead management platform
+    { id: "insellerate", name: "Insellerate", tags: ["mortgage", "insurance", "crm", "lead-management", "saas"], status_url: "https://status.insellerate.com/api/v2/status.json", page_url: "https://status.insellerate.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6528,7 +6548,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3493 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3503 services.",
                     },
                 },
                 required: [],
