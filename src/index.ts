@@ -6267,6 +6267,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "metarouter", name: "MetaRouter", tags: ["data", "analytics", "cdp", "tag-management", "enterprise"], status_url: "https://metarouter.statuspage.io/api/v2/status.json", page_url: "http://status.metarouter.io", type: "statuspage" },
   // Invaluable — world's largest online auction marketplace for fine art, antiques, and collectibles
   { id: "invaluable", name: "Invaluable", tags: ["marketplace", "auctions", "art", "collectibles", "ecommerce"], status_url: "https://status.invaluable.com/api/v2/status.json", page_url: "https://status.invaluable.com", type: "statuspage" },
+  // AgentSync — insurance compliance and producer licensing management platform
+  { id: "agentsync", name: "AgentSync", tags: ["insurance", "compliance", "licensing", "fintech", "saas"], status_url: "https://status.agentsync.io/api/v2/status.json", page_url: "https://status.agentsync.io", type: "statuspage" },
+  // Veratad — age verification and identity verification API for regulated industries
+  { id: "veratad", name: "Veratad", tags: ["identity-verification", "age-verification", "compliance", "api", "fintech"], status_url: "https://status.veratad.com/api/v2/status.json", page_url: "https://status.veratad.com", type: "statuspage" },
+  // Enigma — authoritative business data and intelligence platform for financial services
+  { id: "enigma", name: "Enigma", tags: ["data", "business-intelligence", "analytics", "api", "fintech"], status_url: "https://status.enigma.com/api/v2/status.json", page_url: "https://status.enigma.com", type: "statuspage" },
+  // ComplyCube — KYC, AML, and identity verification compliance platform
+  { id: "complycube", name: "ComplyCube", tags: ["kyc", "aml", "compliance", "identity-verification", "fintech"], status_url: "https://status.complycube.com/api/v2/status.json", page_url: "https://status.complycube.com", type: "statuspage" },
+  // DNAnexus — cloud platform for bioinformatics and genomics research
+  { id: "dnanexus", name: "DNAnexus", tags: ["bioinformatics", "genomics", "cloud", "healthcare", "research"], status_url: "https://status.dnanexus.com/api/v2/status.json", page_url: "https://status.dnanexus.com", type: "statuspage" },
+  // SourceDay — supply chain and purchase order management platform
+  { id: "sourceday", name: "SourceDay", tags: ["supply-chain", "procurement", "vendor-management", "manufacturing", "saas"], status_url: "https://status.sourceday.com/api/v2/status.json", page_url: "https://status.sourceday.com", type: "statuspage" },
+  // Threecolts — e-commerce software suite for Amazon and marketplace sellers
+  { id: "threecolts", name: "Threecolts", tags: ["ecommerce", "amazon", "marketplace", "seller-tools", "saas"], status_url: "https://status.threecolts.com/api/v2/status.json", page_url: "https://status.threecolts.com", type: "statuspage" },
+  // Engageli — live online learning and virtual classroom platform for higher education
+  { id: "engageli", name: "Engageli", tags: ["edtech", "virtual-classroom", "learning", "higher-education", "saas"], status_url: "https://status.engageli.com/api/v2/status.json", page_url: "https://status.engageli.com", type: "statuspage" },
+  // Cambly — English tutoring and language learning platform connecting learners with native speakers
+  { id: "cambly", name: "Cambly", tags: ["language-learning", "tutoring", "english", "edtech", "consumer"], status_url: "https://status.cambly.com/api/v2/status.json", page_url: "https://status.cambly.com", type: "statuspage" },
+  // Honorlock — AI-powered online proctoring and academic integrity platform
+  { id: "honorlock", name: "Honorlock", tags: ["online-proctoring", "edtech", "academic-integrity", "higher-education", "saas"], status_url: "https://status.honorlock.com/api/v2/status.json", page_url: "https://status.honorlock.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6758,7 +6778,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3527 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3537 services.",
           },
         },
         required: [],

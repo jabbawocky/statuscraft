@@ -6065,6 +6065,50 @@ const SERVICES = [
     { id: "bombbomb", name: "BombBomb", tags: ["video-email", "marketing", "sales", "communication", "saas"], status_url: "https://status.bombbomb.com/api/v2/status.json", page_url: "https://status.bombbomb.com", type: "statuspage" },
     // Arcserve — data protection, backup, and disaster recovery platform
     { id: "arcserve", name: "Arcserve", tags: ["backup", "disaster-recovery", "data-protection", "storage", "enterprise"], status_url: "https://arcserve.statuspage.io/api/v2/status.json", page_url: "https://arcserve.statuspage.io", type: "statuspage" },
+    // Phenom People — AI-powered talent experience platform for candidates, employees, and recruiters
+    { id: "phenom_people", name: "Phenom People", tags: ["hr", "recruiting", "talent", "ai", "saas"], status_url: "https://status.phenom.com/api/v2/status.json", page_url: "https://status.phenom.com", type: "statuspage" },
+    // Eightfold AI — AI-powered talent intelligence and workforce management platform
+    { id: "eightfold_ai", name: "Eightfold AI", tags: ["hr", "recruiting", "ai", "talent", "saas"], status_url: "https://eightfold.statuspage.io/api/v2/status.json", page_url: "https://eightfold.statuspage.io", type: "statuspage" },
+    // Sierra Interactive — real estate CRM and lead generation platform for agents and brokerages
+    { id: "sierra_interactive", name: "Sierra Interactive", tags: ["real-estate", "crm", "lead-generation", "saas"], status_url: "https://status.sierrainteractive.com/api/v2/status.json", page_url: "https://status.sierrainteractive.com", type: "statuspage" },
+    // Tenant Turner — automated leasing and tenant screening platform for property managers
+    { id: "tenant_turner", name: "Tenant Turner", tags: ["real-estate", "property-management", "leasing", "saas"], status_url: "https://status.tenantturner.com/api/v2/status.json", page_url: "https://status.tenantturner.com", type: "statuspage" },
+    // ABC Fitness Solutions — club management software for fitness studios and gyms
+    { id: "abc_fitness", name: "ABC Fitness", tags: ["fitness", "gym-management", "wellness", "saas"], status_url: "https://abcfitness.statuspage.io/api/v2/status.json", page_url: "https://systemstatus.abcfitness.com", type: "statuspage" },
+    // ForeFlight — aviation navigation and flight planning app for pilots and airlines
+    { id: "foreflight", name: "ForeFlight", tags: ["aviation", "navigation", "flight-planning", "mobile", "saas"], status_url: "https://foreflight.statuspage.io/api/v2/status.json", page_url: "http://info.foreflight-status.com", type: "statuspage" },
+    // Genesis Cloud — European GPU cloud for AI/ML workloads and high-performance computing
+    { id: "genesis_cloud", name: "Genesis Cloud", tags: ["cloud", "gpu", "ai", "ml", "iaas"], status_url: "https://genesiscloud.statuspage.io/api/v2/status.json", page_url: "https://genesiscloud.statuspage.io", type: "statuspage" },
+    // Inky — AI-powered anti-phishing email security platform for enterprises
+    { id: "inky_phish", name: "Inky", tags: ["security", "email", "anti-phishing", "ai", "enterprise"], status_url: "https://inky.statuspage.io/api/v2/status.json", page_url: "https://status.inkyphishfence.com", type: "statuspage" },
+    // MeisterLabs — suite of productivity tools including MeisterTask and MindMeister
+    { id: "meisterlabs", name: "MeisterLabs", tags: ["productivity", "project-management", "mind-mapping", "collaboration", "saas"], status_url: "https://status.meisterlabs.com/api/v2/status.json", page_url: "https://status.meisterlabs.com", type: "statuspage" },
+    // TrustGrid — network virtualization and SD-WAN platform for financial services
+    { id: "trustgrid", name: "TrustGrid", tags: ["networking", "sd-wan", "fintech", "security", "enterprise"], status_url: "https://status.trustgrid.io/api/v2/status.json", page_url: "https://status.trustgrid.io", type: "statuspage" },
+    // MetaRouter — enterprise customer data infrastructure and server-side tag management platform
+    { id: "metarouter", name: "MetaRouter", tags: ["data", "analytics", "cdp", "tag-management", "enterprise"], status_url: "https://metarouter.statuspage.io/api/v2/status.json", page_url: "http://status.metarouter.io", type: "statuspage" },
+    // Invaluable — world's largest online auction marketplace for fine art, antiques, and collectibles
+    { id: "invaluable", name: "Invaluable", tags: ["marketplace", "auctions", "art", "collectibles", "ecommerce"], status_url: "https://status.invaluable.com/api/v2/status.json", page_url: "https://status.invaluable.com", type: "statuspage" },
+    // AgentSync — insurance compliance and producer licensing management platform
+    { id: "agentsync", name: "AgentSync", tags: ["insurance", "compliance", "licensing", "fintech", "saas"], status_url: "https://status.agentsync.io/api/v2/status.json", page_url: "https://status.agentsync.io", type: "statuspage" },
+    // Veratad — age verification and identity verification API for regulated industries
+    { id: "veratad", name: "Veratad", tags: ["identity-verification", "age-verification", "compliance", "api", "fintech"], status_url: "https://status.veratad.com/api/v2/status.json", page_url: "https://status.veratad.com", type: "statuspage" },
+    // Enigma — authoritative business data and intelligence platform for financial services
+    { id: "enigma", name: "Enigma", tags: ["data", "business-intelligence", "analytics", "api", "fintech"], status_url: "https://status.enigma.com/api/v2/status.json", page_url: "https://status.enigma.com", type: "statuspage" },
+    // ComplyCube — KYC, AML, and identity verification compliance platform
+    { id: "complycube", name: "ComplyCube", tags: ["kyc", "aml", "compliance", "identity-verification", "fintech"], status_url: "https://status.complycube.com/api/v2/status.json", page_url: "https://status.complycube.com", type: "statuspage" },
+    // DNAnexus — cloud platform for bioinformatics and genomics research
+    { id: "dnanexus", name: "DNAnexus", tags: ["bioinformatics", "genomics", "cloud", "healthcare", "research"], status_url: "https://status.dnanexus.com/api/v2/status.json", page_url: "https://status.dnanexus.com", type: "statuspage" },
+    // SourceDay — supply chain and purchase order management platform
+    { id: "sourceday", name: "SourceDay", tags: ["supply-chain", "procurement", "vendor-management", "manufacturing", "saas"], status_url: "https://status.sourceday.com/api/v2/status.json", page_url: "https://status.sourceday.com", type: "statuspage" },
+    // Threecolts — e-commerce software suite for Amazon and marketplace sellers
+    { id: "threecolts", name: "Threecolts", tags: ["ecommerce", "amazon", "marketplace", "seller-tools", "saas"], status_url: "https://status.threecolts.com/api/v2/status.json", page_url: "https://status.threecolts.com", type: "statuspage" },
+    // Engageli — live online learning and virtual classroom platform for higher education
+    { id: "engageli", name: "Engageli", tags: ["edtech", "virtual-classroom", "learning", "higher-education", "saas"], status_url: "https://status.engageli.com/api/v2/status.json", page_url: "https://status.engageli.com", type: "statuspage" },
+    // Cambly — English tutoring and language learning platform connecting learners with native speakers
+    { id: "cambly", name: "Cambly", tags: ["language-learning", "tutoring", "english", "edtech", "consumer"], status_url: "https://status.cambly.com/api/v2/status.json", page_url: "https://status.cambly.com", type: "statuspage" },
+    // Honorlock — AI-powered online proctoring and academic integrity platform
+    { id: "honorlock", name: "Honorlock", tags: ["online-proctoring", "edtech", "academic-integrity", "higher-education", "saas"], status_url: "https://status.honorlock.com/api/v2/status.json", page_url: "https://status.honorlock.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6572,7 +6616,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3515 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3537 services.",
                     },
                 },
                 required: [],
