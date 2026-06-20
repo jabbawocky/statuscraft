@@ -6795,6 +6795,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "lattice", name: "Lattice", tags: ["hr", "performance-management", "okr", "engagement", "people-ops"], status_url: "https://status.lattice.com/api/v2/status.json", page_url: "https://status.lattice.com", type: "statuspage" },
   // Metabase Cloud — open-source BI and analytics platform (hosted cloud version)
   { id: "metabase_cloud", name: "Metabase Cloud", tags: ["analytics", "bi", "data-visualization", "reporting", "saas"], status_url: "https://metabase.statuspage.io/api/v2/status.json", page_url: "https://metabase.statuspage.io", type: "statuspage" },
+  // m3ter — usage-based billing and metering platform for SaaS
+  { id: "m3ter", name: "m3ter", tags: ["billing", "metering", "usage-based", "saas", "developer-tools"], status_url: "https://status.m3ter.com/api/v2/status.json", page_url: "https://status.m3ter.com", type: "statuspage" },
+  // Forma — employee benefits and spending accounts platform
+  { id: "forma", name: "Forma", tags: ["employee-benefits", "hr", "spending-accounts", "wellness", "saas"], status_url: "https://forma.statuspage.io/api/v2/status.json", page_url: "https://forma.statuspage.io", type: "statuspage" },
+  // MoeGo — pet grooming business management and scheduling software
+  { id: "moego", name: "MoeGo", tags: ["pet-grooming", "scheduling", "field-service", "saas"], status_url: "https://moego.statuspage.io/api/v2/status.json", page_url: "https://moego.statuspage.io", type: "statuspage" },
+  // Mineral — HR compliance and employment law guidance platform
+  { id: "mineral", name: "Mineral", tags: ["hr-compliance", "employment-law", "hr", "saas"], status_url: "https://mineral.statuspage.io/api/v2/status.json", page_url: "https://mineral.statuspage.io", type: "statuspage" },
+  // Chipper Cash — pan-African cross-border payments and financial services
+  { id: "chipper_cash", name: "Chipper Cash", tags: ["fintech", "payments", "africa", "cross-border", "mobile-money"], status_url: "https://chipper.statuspage.io/api/v2/status.json", page_url: "https://chipper.statuspage.io", type: "statuspage" },
+  // Fluix — mobile field workflow and paperless forms automation
+  { id: "fluix", name: "Fluix", tags: ["field-workflows", "paperless", "forms", "productivity", "saas"], status_url: "https://status.fluix.io/api/v2/status.json", page_url: "https://status.fluix.io", type: "statuspage" },
+  // JOOR — B2B wholesale fashion marketplace connecting brands and retailers
+  { id: "joor", name: "JOOR", tags: ["fashion", "wholesale", "b2b-marketplace", "retail", "saas"], status_url: "https://status.joor.com/api/v2/status.json", page_url: "https://status.joor.com", type: "statuspage" },
+  // Centra — headless e-commerce platform for fashion and lifestyle brands
+  { id: "centra", name: "Centra", tags: ["ecommerce", "fashion", "retail", "headless", "saas"], status_url: "https://centra.statuspage.io/api/v2/status.json", page_url: "https://centra.statuspage.io", type: "statuspage" },
+  // Greenway Services — healthcare IT and electronic health record solutions
+  { id: "greenway_services", name: "Greenway Services", tags: ["healthcare", "ehr", "practice-management", "saas"], status_url: "https://greenway.statuspage.io/api/v2/status.json", page_url: "https://greenway.statuspage.io", type: "statuspage" },
+  // Patientco — patient payment and financial engagement platform for healthcare
+  { id: "patientco", name: "Patientco", tags: ["healthcare", "patient-payments", "billing", "revenue-cycle", "saas"], status_url: "https://patientco.statuspage.io/api/v2/status.json", page_url: "https://status.patientco.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7286,7 +7306,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3790 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3800 services.",
           },
         },
         required: [],
