@@ -6759,6 +6759,16 @@ const SERVICES = [
     { id: "voyado", name: "Voyado", tags: ["loyalty", "customer-engagement", "retail", "ecommerce", "crm"], status_url: "https://status.voyado.com/api/v2/status.json", page_url: "https://status.voyado.com", type: "statuspage" },
     // KOMOJU — payment gateway for Japan and Asia-Pacific markets
     { id: "komoju", name: "KOMOJU", tags: ["payments", "payment-gateway", "japan", "asia-pacific", "ecommerce"], status_url: "https://status.komoju.com/api/v2/status.json", page_url: "https://status.komoju.com", type: "statuspage" },
+    { id: "pave", name: "Pave", tags: ["compensation", "hr", "salary-benchmarking", "analytics", "saas"], status_url: "https://status.pave.com/api/v2/status.json", page_url: "https://status.pave.com", type: "statuspage" },
+    { id: "watttime", name: "WattTime API", tags: ["clean-energy", "electricity-grid", "emissions", "climate-tech", "api"], status_url: "https://status.watttime.org/api/v2/status.json", page_url: "https://status.watttime.org", type: "statuspage" },
+    { id: "gather", name: "Gather", tags: ["virtual-office", "remote-work", "collaboration", "video", "saas"], status_url: "https://status.gather.town/api/v2/status.json", page_url: "https://status.gather.town", type: "statuspage" },
+    { id: "crossover", name: "Crossover", tags: ["remote-work", "talent", "staffing", "enterprise", "saas"], status_url: "https://status.crossover.com/api/v2/status.json", page_url: "https://status.crossover.com", type: "statuspage" },
+    { id: "creditcall", name: "Creditcall", tags: ["payments", "payment-processing", "pos", "card-present", "enterprise"], status_url: "https://status.creditcall.com/api/v2/status.json", page_url: "https://status.creditcall.com", type: "statuspage" },
+    { id: "givelively", name: "Give Lively", tags: ["nonprofit", "fundraising", "donations", "saas"], status_url: "https://givelively.statuspage.io/api/v2/status.json", page_url: "https://givelively.statuspage.io", type: "statuspage" },
+    { id: "nomic", name: "Nomic Platform", tags: ["ai", "embeddings", "vector", "data-visualization", "developer-tools"], status_url: "https://status.nomic.ai/api/v2/status.json", page_url: "https://status.nomic.ai", type: "statuspage" },
+    { id: "ambassador_api", name: "Ambassador", tags: ["api-gateway", "kubernetes", "developer-tools", "cloud-native", "edge"], status_url: "https://status.getambassador.io/api/v2/status.json", page_url: "https://status.getambassador.io", type: "statuspage" },
+    { id: "talis", name: "Talis", tags: ["edtech", "library", "higher-education", "reading-lists", "saas"], status_url: "https://status.talis.com/api/v2/status.json", page_url: "https://status.talis.com", type: "statuspage" },
+    { id: "mastercard_ob", name: "Mastercard Open Banking EU/UK", tags: ["open-banking", "fintech", "payments", "europe", "api"], status_url: "https://status.aiia.eu/api/v2/status.json", page_url: "https://status.aiia.eu", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -7266,7 +7276,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3861 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3871 services.",
                     },
                 },
                 required: [],
