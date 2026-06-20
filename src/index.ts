@@ -6947,6 +6947,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "ambassador_api", name: "Ambassador", tags: ["api-gateway", "kubernetes", "developer-tools", "cloud-native", "edge"], status_url: "https://status.getambassador.io/api/v2/status.json", page_url: "https://status.getambassador.io", type: "statuspage" },
   { id: "talis", name: "Talis", tags: ["edtech", "library", "higher-education", "reading-lists", "saas"], status_url: "https://status.talis.com/api/v2/status.json", page_url: "https://status.talis.com", type: "statuspage" },
   { id: "mastercard_ob", name: "Mastercard Open Banking EU/UK", tags: ["open-banking", "fintech", "payments", "europe", "api"], status_url: "https://status.aiia.eu/api/v2/status.json", page_url: "https://status.aiia.eu", type: "statuspage" },
+  // Torizon Cloud — Toradex embedded Linux and container platform for industrial IoT
+  { id: "torizon_cloud", name: "Torizon Cloud", tags: ["iot", "embedded", "linux", "industrial", "saas"], status_url: "https://status.torizon.io/api/v2/status.json", page_url: "https://status.torizon.io", type: "statuspage" },
+  // Reachfive — customer identity and access management (CIAM) platform
+  { id: "reachfive", name: "ReachFive", tags: ["ciam", "identity", "auth", "customer-identity", "saas"], status_url: "https://status.reachfive.com/api/v2/status.json", page_url: "https://status.reachfive.com", type: "statuspage" },
+  // Currenxie — multi-currency business accounts and FX payments platform
+  { id: "currenxie", name: "Currenxie", tags: ["fx", "payments", "multi-currency", "fintech", "api"], status_url: "https://status.currenxie.com/api/v2/status.json", page_url: "https://status.currenxie.com", type: "statuspage" },
+  // XMTP — decentralized messaging protocol for web3 apps
+  { id: "xmtp", name: "XMTP", tags: ["web3", "messaging", "decentralized", "protocol", "developer-tools"], status_url: "https://status.xmtp.org/api/v2/status.json", page_url: "https://status.xmtp.org", type: "statuspage" },
+  // Enchant — shared inbox and helpdesk for ecommerce customer support teams
+  { id: "enchant", name: "Enchant", tags: ["customer-support", "helpdesk", "shared-inbox", "ecommerce", "saas"], status_url: "https://status.enchant.com/api/v2/status.json", page_url: "https://status.enchant.com", type: "statuspage" },
+  // Simetrik — financial reconciliation and transaction matching platform for fintechs
+  { id: "simetrik", name: "Simetrik", tags: ["fintech", "reconciliation", "transactions", "finance", "saas"], status_url: "https://status.simetrik.com/api/v2/status.json", page_url: "https://status.simetrik.com", type: "statuspage" },
+  // Revenera — software licensing, compliance, and usage analytics platform
+  { id: "revenera", name: "Revenera", tags: ["software-licensing", "compliance", "usage-analytics", "monetization", "enterprise"], status_url: "https://status.revenera.com/api/v2/status.json", page_url: "https://status.revenera.com", type: "statuspage" },
+  // KloudMate — cloud observability and monitoring platform with APM and traces
+  { id: "kloudmate", name: "KloudMate", tags: ["observability", "monitoring", "apm", "cloud", "saas"], status_url: "https://status.kloudmate.com/api/v2/status.json", page_url: "https://status.kloudmate.com", type: "statuspage" },
+  // Aptem — apprenticeship management and work-based learning platform (UK)
+  { id: "aptem", name: "Aptem", tags: ["apprenticeship", "elearning", "workforce", "uk", "saas"], status_url: "https://status.aptem.co.uk/api/v2/status.json", page_url: "https://status.aptem.co.uk", type: "statuspage" },
+  // Tuple — remote pair programming tool for developers
+  { id: "tuple", name: "Tuple", tags: ["pair-programming", "remote-work", "developer-tools", "collaboration", "saas"], status_url: "https://status.tuple.app/api/v2/status.json", page_url: "https://status.tuple.app", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7438,7 +7458,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3871 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3881 services.",
           },
         },
         required: [],
