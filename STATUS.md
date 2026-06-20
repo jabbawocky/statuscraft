@@ -1,3 +1,12 @@
+# StatusCraft — Mission Status: June 21, 2026 (tick 467)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +10 live-verified services — 3851 → 3861** (tick 467) — Expansion tick: added 10 new real services spanning healthcare data API (Human API), maritime port logistics (Portbase), AI image generation (Ideogram), workflow/BPM automation (Flowable), omnichannel customer comms (Gnatta), property inspection (HappyCo), enterprise software suite (IgniteTech), medical education/CME (Medmastery), document/print management (Vasion), customer loyalty for retail (Voyado), and Japan/APAC payment gateway (KOMOJU). All 10/10 live-verified against Atlassian Statuspage /api/v2/status.json before commit. Health spot-check: Anthropic (none), OpenAI (minor—live), GitHub (none), Stripe (none), Cloudflare (minor—live), Vercel (none), Supabase (none), Datadog (none) — all core fetchers healthy, no regressions. README and tool description updated to 3861.
+
+---
+
 # StatusCraft — Mission Status: June 21, 2026 (tick 465)
 
 **Phase**: BUILD — active development
