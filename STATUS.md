@@ -1,3 +1,12 @@
+# StatusCraft — Mission Status: June 20, 2026 (tick 446)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +10 live-verified services — 3754 → 3764** (tick 446) — Expansion tick: added 10 new real services spanning customer engagement (Dashly), video hosting for course creators (Spotlightr), live video production software (vMix), broadcast streaming platform (Hub360/Haivision), OTT streaming (Vimeo OTT), employee L&D marketplace (Learnerbly), cloud communications (Skyvera, formerly Kandy), location intelligence API (Woosmap), industrial IoT cloud (PTC Cloud Services), and ecommerce loyalty (Rivo). All 10/10 live-verified against Atlassian Statuspage /api/v2/status.json before commit. Health spot-check: Claude, GitHub, OpenAI, Linear, Vercel, Datadog, Netlify, Supabase, SendGrid, Cloudflare — all healthy, no regressions. README and tool description updated to 3764.
+
+---
+
 # StatusCraft — Mission Status: June 20, 2026 (tick 444)
 
 **Phase**: BUILD — active development
