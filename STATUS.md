@@ -1,3 +1,21 @@
+# StatusCraft — Mission Status: June 20, 2026 (tick 442)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +10 live-verified services — 3734 → 3744** (tick 442) — Expansion tick: added 10 new real services spanning healthcare integration (Redox), push notifications (Notificare), AI TTS (WellSaid Labs), web3 wallet connections (Reown/formerly WalletConnect), blockchain analytics (Scorechain), bitcoin exchange (CoinCorner), financial close software (Adra Suite), 3D printing platform (Carbon), shipping/mailing enterprise (Pitney Bowes), and AI video ads (Creatify). All 10/10 live-verified against Atlassian Statuspage /api/v2/status.json before commit. Health spot-check: 20 services sampled — all returning valid live data, no regressions. README and tool description updated to 3744.
+
+---
+
+# StatusCraft — Mission Status: June 20, 2026 (tick 437)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +11 live-verified services — 3698 → 3709** (tick 437) — Expansion tick: added 11 new real services spanning marketing automation (Act-On), A/B testing/feature flags (GrowthBook), CRM integration (Vessel), cloud observability (Middleware.io), helpdesk (HelpSpot), customer success (Akita), operations/audit (Nimbly), fitness studio management (Zen Planner), mobile commerce (Tapcart), remote team communication (Tandem), and virtual office (Teamflow). All 11/11 live-verified before commit (mix of Atlassian Statuspage and BetterStack formats). Health spot-check: Anthropic (none), OpenAI (minor—live), GitHub (none), Stripe (none), Cloudflare (minor—live), Vercel (none), Datadog (none), Supabase (none), SendGrid (none), Twilio (minor—live) — all 10 core fetchers healthy. README and tool description updated to 3709.
+
+---
+
 # StatusCraft — Mission Status: June 20, 2026 (tick 435)
 
 **Phase**: BUILD — active development

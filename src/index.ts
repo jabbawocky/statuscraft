@@ -6683,6 +6683,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "lumen", name: "Lumen", tags: ["network", "cdn", "connectivity", "enterprise", "telecommunications"], status_url: "https://lumen.statuspage.io/api/v2/status.json", page_url: "https://lumen.statuspage.io", type: "statuspage" },
   // ZAYO — global fiber and network-as-a-service provider
   { id: "zayo", name: "ZAYO", tags: ["network", "fiber", "connectivity", "enterprise", "telecommunications"], status_url: "https://zayo.statuspage.io/api/v2/status.json", page_url: "https://zayo.statuspage.io", type: "statuspage" },
+  // Redox — healthcare data integration and interoperability platform
+  { id: "redoxengine", name: "Redox", tags: ["healthcare", "hl7", "fhir", "integration", "api", "health-tech"], status_url: "https://status.redoxengine.com/api/v2/status.json", page_url: "https://status.redoxengine.com", type: "statuspage" },
+  // Notificare — multi-channel push notification and customer engagement platform
+  { id: "notificare", name: "Notificare", tags: ["push-notifications", "mobile", "engagement", "saas", "messaging"], status_url: "https://notificare.statuspage.io/api/v2/status.json", page_url: "https://notificare.statuspage.io", type: "statuspage" },
+  // WellSaid Labs — AI-powered text-to-speech voice generation platform
+  { id: "wellsaidlabs", name: "WellSaid Labs", tags: ["ai", "tts", "voice", "speech", "saas", "audio"], status_url: "https://status.wellsaidlabs.com/api/v2/status.json", page_url: "https://status.wellsaidlabs.com", type: "statuspage" },
+  // Reown (formerly WalletConnect) — web3 wallet connection and authentication protocol
+  { id: "reown", name: "Reown", tags: ["web3", "wallet", "crypto", "blockchain", "authentication", "defi"], status_url: "https://status.reown.com/api/v2/status.json", page_url: "https://status.reown.com", type: "statuspage" },
+  // Scorechain — blockchain analytics and crypto compliance platform
+  { id: "scorechain", name: "Scorechain", tags: ["blockchain", "crypto", "analytics", "compliance", "aml", "fintech"], status_url: "https://status.scorechain.com/api/v2/status.json", page_url: "https://status.scorechain.com", type: "statuspage" },
+  // CoinCorner — UK-based bitcoin exchange and payments platform
+  { id: "coincorner", name: "CoinCorner", tags: ["bitcoin", "crypto", "exchange", "payments", "fintech"], status_url: "https://status.coincorner.com/api/v2/status.json", page_url: "https://status.coincorner.com", type: "statuspage" },
+  // Adra Suite — financial close and account reconciliation software
+  { id: "adra", name: "Adra Suite", tags: ["accounting", "finance", "close-management", "reconciliation", "saas", "erp"], status_url: "https://status.adra.com/api/v2/status.json", page_url: "https://status.adra.com", type: "statuspage" },
+  // Carbon — DLS 3D printing manufacturing platform and cloud software
+  { id: "carbon3d", name: "Carbon", tags: ["3d-printing", "manufacturing", "additive", "hardware", "saas", "production"], status_url: "https://status.carbon3d.com/api/v2/status.json", page_url: "https://status.carbon3d.com", type: "statuspage" },
+  // Pitney Bowes — global shipping, mailing, and ecommerce solutions
+  { id: "pitneybowes", name: "Pitney Bowes", tags: ["shipping", "mailing", "ecommerce", "logistics", "postage", "enterprise"], status_url: "https://status.pitneybowes.com/api/v2/status.json", page_url: "https://status.pitneybowes.com", type: "statuspage" },
+  // Creatify — AI-powered video ad creation platform
+  { id: "creatify", name: "Creatify", tags: ["ai", "video", "advertising", "marketing", "generation", "saas"], status_url: "https://status.creatify.ai/api/v2/status.json", page_url: "https://status.creatify.ai", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7174,7 +7194,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3637 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3744 services.",
           },
         },
         required: [],
