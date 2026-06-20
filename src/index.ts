@@ -6917,6 +6917,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "count", name: "Count", tags: ["analytics", "bi", "notebooks", "data", "collaboration"], status_url: "https://status.count.co/api/v2/status.json", page_url: "https://status.count.co", type: "statuspage" },
   // xMatters — intelligent incident management and on-call alerting platform
   { id: "xmatters", name: "xMatters", tags: ["incident-management", "alerting", "on-call", "devops", "saas"], status_url: "https://status.xmatters.com/api/v2/status.json", page_url: "https://status.xmatters.com", type: "statuspage" },
+  // Human API — healthcare data aggregation and interoperability API platform
+  { id: "humanapi", name: "Human API", tags: ["healthcare", "health-data", "interoperability", "api", "fhir"], status_url: "https://status.humanapi.co/api/v2/status.json", page_url: "https://status.humanapi.co", type: "statuspage" },
+  // Portbase — Dutch port community system for logistics and cargo data exchange at Rotterdam and Amsterdam
+  { id: "portbase", name: "Portbase", tags: ["logistics", "maritime", "port", "cargo", "data-exchange"], status_url: "https://status.portbase.com/api/v2/status.json", page_url: "https://status.portbase.com", type: "statuspage" },
+  // Flowable — open-source BPMN workflow and business process automation platform
+  { id: "flowable", name: "Flowable", tags: ["bpm", "workflow", "automation", "process-management", "enterprise"], status_url: "https://status.flowable.com/api/v2/status.json", page_url: "https://status.flowable.com", type: "statuspage" },
+  // Gnatta — omnichannel customer communications and engagement platform
+  { id: "gnatta", name: "Gnatta", tags: ["customer-communications", "omnichannel", "crm", "helpdesk", "saas"], status_url: "https://status.gnatta.com/api/v2/status.json", page_url: "https://status.gnatta.com", type: "statuspage" },
+  // HappyCo — property inspection and condition assessment platform for multifamily real estate
+  { id: "happyco", name: "HappyCo", tags: ["property-management", "real-estate", "inspection", "multifamily", "saas"], status_url: "https://status.happyco.com/api/v2/status.json", page_url: "https://status.happyco.com", type: "statuspage" },
+  // IgniteTech — enterprise software portfolio (Aurea, Openwave, ILOG, and others)
+  { id: "ignitetech", name: "IgniteTech", tags: ["enterprise", "software", "crm", "integration", "saas"], status_url: "https://status.ignitetech.com/api/v2/status.json", page_url: "https://status.ignitetech.com", type: "statuspage" },
+  // Medmastery — online medical education and clinical skills training for physicians
+  { id: "medmastery", name: "Medmastery", tags: ["medical-education", "cme", "healthcare", "elearning", "saas"], status_url: "https://status.medmastery.com/api/v2/status.json", page_url: "https://status.medmastery.com", type: "statuspage" },
+  // Vasion — cloud-native document management, print management, and capture automation
+  { id: "vasion", name: "Vasion", tags: ["document-management", "print-management", "capture", "automation", "enterprise"], status_url: "https://status.vasion.com/api/v2/status.json", page_url: "https://status.vasion.com", type: "statuspage" },
+  // Voyado — customer engagement and loyalty platform for retail and e-commerce
+  { id: "voyado", name: "Voyado", tags: ["loyalty", "customer-engagement", "retail", "ecommerce", "crm"], status_url: "https://status.voyado.com/api/v2/status.json", page_url: "https://status.voyado.com", type: "statuspage" },
+  // KOMOJU — payment gateway for Japan and Asia-Pacific markets
+  { id: "komoju", name: "KOMOJU", tags: ["payments", "payment-gateway", "japan", "asia-pacific", "ecommerce"], status_url: "https://status.komoju.com/api/v2/status.json", page_url: "https://status.komoju.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7326,7 +7346,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.81.0" },
+  { name: "statuscraft", version: "2.82.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -7408,7 +7428,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3851 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3861 services.",
           },
         },
         required: [],
