@@ -6637,6 +6637,46 @@ const SERVICES = [
     { id: "greenway_services", name: "Greenway Services", tags: ["healthcare", "ehr", "practice-management", "saas"], status_url: "https://greenway.statuspage.io/api/v2/status.json", page_url: "https://greenway.statuspage.io", type: "statuspage" },
     // Patientco — patient payment and financial engagement platform for healthcare
     { id: "patientco", name: "Patientco", tags: ["healthcare", "patient-payments", "billing", "revenue-cycle", "saas"], status_url: "https://patientco.statuspage.io/api/v2/status.json", page_url: "https://status.patientco.com", type: "statuspage" },
+    // Parsable — connected worker platform for manufacturing operations (tick 456)
+    { id: "parsable", name: "Parsable", tags: ["manufacturing", "operations", "connected-worker", "no-code", "saas"], status_url: "https://parsable.statuspage.io/api/v2/status.json", page_url: "https://parsable.statuspage.io", type: "statuspage" },
+    // Cornerstone OnDemand — enterprise talent management and learning management system
+    { id: "cornerstone_ondemand", name: "Cornerstone OnDemand", tags: ["lms", "hr", "talent-management", "learning", "enterprise"], status_url: "https://status.csod.com/api/v2/status.json", page_url: "https://status.csod.com", type: "statuspage" },
+    // TiDB Cloud — distributed SQL cloud database by PingCAP
+    { id: "tidb_cloud", name: "TiDB Cloud", tags: ["database", "sql", "distributed", "cloud", "developer-tools"], status_url: "https://status.tidbcloud.com/api/v2/status.json", page_url: "https://status.tidbcloud.com", type: "statuspage" },
+    // Abnormal AI — AI-native email security platform detecting advanced threats
+    { id: "abnormal_ai", name: "Abnormal AI", tags: ["security", "email-security", "ai", "saas", "enterprise"], status_url: "https://status.abnormalsecurity.com/api/v2/status.json", page_url: "https://status.abnormalsecurity.com", type: "statuspage" },
+    // Revel Digital — digital signage content management system
+    { id: "revel_digital", name: "Revel Digital", tags: ["digital-signage", "cms", "media", "saas"], status_url: "https://reveldigital.statuspage.io/api/v2/status.json", page_url: "https://reveldigital.statuspage.io", type: "statuspage" },
+    // ChartHop — people analytics and org design platform
+    { id: "charthop", name: "ChartHop", tags: ["hr", "people-analytics", "org-design", "workforce", "saas"], status_url: "https://status.charthop.com/api/v2/status.json", page_url: "https://status.charthop.com", type: "statuspage" },
+    // Board BI — integrated business planning and analytics platform
+    { id: "board_bi", name: "Board BI", tags: ["bi", "planning", "analytics", "budgeting", "enterprise"], status_url: "https://board.statuspage.io/api/v2/status.json", page_url: "https://board.statuspage.io", type: "statuspage" },
+    // Limeade — employee wellness and engagement experience platform
+    { id: "limeade", name: "Limeade", tags: ["wellness", "employee-experience", "hr", "benefits", "saas"], status_url: "https://limeade.statuspage.io/api/v2/status.json", page_url: "https://limeade.statuspage.io", type: "statuspage" },
+    // BloomBoard — professional learning and micro-credential platform for educators
+    { id: "bloomboard", name: "BloomBoard", tags: ["edtech", "professional-learning", "credentials", "k12", "saas"], status_url: "https://status.bloomboard.com/api/v2/status.json", page_url: "https://status.bloomboard.com", type: "statuspage" },
+    // Limble — cloud-based CMMS for maintenance management and asset tracking
+    { id: "limble", name: "Limble", tags: ["cmms", "maintenance", "asset-management", "operations", "saas"], status_url: "https://status.limblecmms.com/api/v2/status.json", page_url: "https://status.limblecmms.com", type: "statuspage" },
+    // Infor CloudSuite — enterprise ERP and industry cloud platform for manufacturing, healthcare, and distribution
+    { id: "infor", name: "Infor CloudSuite", tags: ["erp", "manufacturing", "enterprise", "cloud", "saas"], status_url: "https://infor.statuspage.io/api/v2/status.json", page_url: "https://infor.statuspage.io", type: "statuspage" },
+    // Continue — open-source AI coding assistant IDE extension for VS Code and JetBrains
+    { id: "continue", name: "Continue", tags: ["ai", "coding-assistant", "open-source", "ide", "developer-tools"], status_url: "https://continue.statuspage.io/api/v2/status.json", page_url: "https://continue.statuspage.io", type: "statuspage" },
+    // Chartmetric — music analytics and streaming intelligence platform for artists and labels
+    { id: "chartmetric", name: "Chartmetric", tags: ["music", "analytics", "streaming", "artist-tools", "saas"], status_url: "https://chartmetric.statuspage.io/api/v2/status.json", page_url: "https://chartmetric.statuspage.io", type: "statuspage" },
+    // Cerbo — EHR and practice management platform built for direct primary care and concierge medicine
+    { id: "cerbo", name: "Cerbo", tags: ["healthcare", "ehr", "direct-primary-care", "practice-management", "saas"], status_url: "https://cerbo.statuspage.io/api/v2/status.json", page_url: "https://cerbo.statuspage.io", type: "statuspage" },
+    // Elation Health — EHR designed for independent primary care practices
+    { id: "elationhealth", name: "Elation Health", tags: ["healthcare", "ehr", "primary-care", "practice-management", "saas"], status_url: "https://elationhealth.statuspage.io/api/v2/status.json", page_url: "https://elationhealth.statuspage.io", type: "statuspage" },
+    // Enpass — offline-first cross-platform password manager with cloud sync
+    { id: "enpass", name: "Enpass", tags: ["password-manager", "security", "offline", "cross-platform", "saas"], status_url: "https://enpass.statuspage.io/api/v2/status.json", page_url: "https://enpass.statuspage.io", type: "statuspage" },
+    // Proto.io — high-fidelity mobile and web prototyping platform
+    { id: "proto_io", name: "Proto.io", tags: ["design", "prototyping", "mobile", "ux", "saas"], status_url: "https://proto.statuspage.io/api/v2/status.json", page_url: "https://proto.statuspage.io", type: "statuspage" },
+    // Specify — design token and asset management platform bridging design and engineering
+    { id: "specify", name: "Specify", tags: ["design-tokens", "design-systems", "design-engineering", "saas"], status_url: "https://specify.statuspage.io/api/v2/status.json", page_url: "https://specify.statuspage.io", type: "statuspage" },
+    // Trezor — open-source hardware cryptocurrency wallet and key management
+    { id: "trezor", name: "Trezor", tags: ["crypto", "hardware-wallet", "security", "open-source", "web3"], status_url: "https://trezor.statuspage.io/api/v2/status.json", page_url: "https://trezor.statuspage.io", type: "statuspage" },
+    // Bybit — cryptocurrency derivatives and spot exchange
+    { id: "bybit", name: "Bybit", tags: ["crypto", "exchange", "derivatives", "trading", "fintech"], status_url: "https://bybit.statuspage.io/api/v2/status.json", page_url: "https://bybit.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -7144,7 +7184,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3800 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3820 services.",
                     },
                 },
                 required: [],
