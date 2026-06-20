@@ -1,3 +1,12 @@
+# StatusCraft — Mission Status: June 21, 2026 (tick 465)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +10 live-verified services — 3841 → 3851** (tick 465) — Expansion tick: added 10 new real services spanning bare metal cloud (Equinix Metal), field service management (fieldd), small-business payroll (Patriot Software), industrial PLM/IoT (PTC Atlas), talent management LMS (Saba), knowledge management (Shelf), CPaaS communications (CM.com), mobile observability (Embrace), collaborative BI notebooks (Count), and incident alerting (xMatters). All 10/10 live-verified against Atlassian Statuspage /api/v2/status.json before commit. Health spot-check: Anthropic (none), OpenAI (minor—live), GitHub (none), Stripe (none), Cloudflare (minor—live), Vercel (none), Supabase (none), Datadog (none) — all core fetchers healthy, no regressions. README and tool description updated to 3851.
+
+---
+
 # StatusCraft — Mission Status: June 21, 2026 (tick 463)
 
 **Phase**: BUILD — active development

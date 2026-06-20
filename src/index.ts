@@ -6897,6 +6897,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "socket", name: "Socket", tags: ["security", "supply-chain", "open-source", "dependencies", "developer-tools"], status_url: "https://status.socket.dev/api/v2/status.json", page_url: "https://status.socket.dev", type: "statuspage" },
   // Luma Health — patient engagement and scheduling platform for healthcare providers
   { id: "lumahealth", name: "Luma Health", tags: ["healthcare", "patient-engagement", "scheduling", "saas"], status_url: "https://status.lumahealth.io/api/v2/status.json", page_url: "https://status.lumahealth.io", type: "statuspage" },
+  // Equinix Metal — bare metal cloud infrastructure and colocation services
+  { id: "equinixmetal", name: "Equinix Metal", tags: ["cloud", "bare-metal", "infrastructure", "colocation", "iaas"], status_url: "https://status.equinixmetal.com/api/v2/status.json", page_url: "https://status.equinixmetal.com", type: "statuspage" },
+  // fieldd — field service management platform for mobile workforce
+  { id: "fieldd", name: "fieldd", tags: ["field-service", "workforce-management", "scheduling", "mobile", "saas"], status_url: "https://status.fieldd.co/api/v2/status.json", page_url: "https://status.fieldd.co", type: "statuspage" },
+  // Patriot Software — payroll, accounting, and HR software for small businesses
+  { id: "patriotsoftware", name: "Patriot Software", tags: ["payroll", "hr", "accounting", "small-business", "saas"], status_url: "https://status.patriotsoftware.com/api/v2/status.json", page_url: "https://status.patriotsoftware.com", type: "statuspage" },
+  // PTC — industrial IoT, PLM, and augmented reality software platform (Atlas)
+  { id: "ptc", name: "PTC", tags: ["industrial", "plm", "iot", "ar", "enterprise"], status_url: "https://status.ptc.com/api/v2/status.json", page_url: "https://status.ptc.com", type: "statuspage" },
+  // Saba — talent management and learning management system
+  { id: "saba", name: "Saba", tags: ["lms", "talent-management", "learning", "hr", "saas"], status_url: "https://saba.statuspage.io/api/v2/status.json", page_url: "https://saba.statuspage.io", type: "statuspage" },
+  // Shelf — AI-powered knowledge management and content library platform
+  { id: "shelf", name: "Shelf", tags: ["knowledge-management", "content-library", "search", "ai", "saas"], status_url: "https://status.shelf.io/api/v2/status.json", page_url: "https://status.shelf.io", type: "statuspage" },
+  // CM.com — cloud communications platform (CPaaS) for messaging, voice, and payments
+  { id: "cm_com", name: "CM.com", tags: ["cpaas", "sms", "messaging", "voice", "payments"], status_url: "https://status.cm.com/api/v2/status.json", page_url: "https://status.cm.com", type: "statuspage" },
+  // Embrace — mobile observability and crash reporting platform
+  { id: "embrace", name: "Embrace", tags: ["mobile", "observability", "crash-reporting", "monitoring", "developer-tools"], status_url: "https://status.embrace.io/api/v2/status.json", page_url: "https://status.embrace.io", type: "statuspage" },
+  // Count — collaborative data workspace and BI notebook platform
+  { id: "count", name: "Count", tags: ["analytics", "bi", "notebooks", "data", "collaboration"], status_url: "https://status.count.co/api/v2/status.json", page_url: "https://status.count.co", type: "statuspage" },
+  // xMatters — intelligent incident management and on-call alerting platform
+  { id: "xmatters", name: "xMatters", tags: ["incident-management", "alerting", "on-call", "devops", "saas"], status_url: "https://status.xmatters.com/api/v2/status.json", page_url: "https://status.xmatters.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7388,7 +7408,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3841 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3851 services.",
           },
         },
         required: [],
