@@ -6967,6 +6967,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "aptem", name: "Aptem", tags: ["apprenticeship", "elearning", "workforce", "uk", "saas"], status_url: "https://status.aptem.co.uk/api/v2/status.json", page_url: "https://status.aptem.co.uk", type: "statuspage" },
   // Tuple — remote pair programming tool for developers
   { id: "tuple", name: "Tuple", tags: ["pair-programming", "remote-work", "developer-tools", "collaboration", "saas"], status_url: "https://status.tuple.app/api/v2/status.json", page_url: "https://status.tuple.app", type: "statuspage" },
+  // DonorDrive — peer-to-peer fundraising platform for nonprofits
+  { id: "donordrive", name: "DonorDrive", tags: ["nonprofit", "fundraising", "donations", "peer-to-peer", "saas"], status_url: "https://status.donordrive.com/api/v2/status.json", page_url: "https://status.donordrive.com", type: "statuspage" },
+  // Boomy — AI music creation and publishing platform
+  { id: "boomy", name: "Boomy", tags: ["ai", "music", "audio", "creative", "saas"], status_url: "https://status.boomy.com/api/v2/status.json", page_url: "https://status.boomy.com", type: "statuspage" },
+  // ControlUp — real-time IT endpoint monitoring and troubleshooting platform
+  { id: "controlup", name: "ControlUp", tags: ["it-management", "endpoint", "monitoring", "virtual-desktop", "saas"], status_url: "https://status.controlup.com/api/v2/status.json", page_url: "https://status.controlup.com", type: "statuspage" },
+  // Help Scout — customer support and help desk platform
+  { id: "helpscout", name: "Help Scout", tags: ["customer-support", "helpdesk", "email", "live-chat", "saas"], status_url: "https://status.helpscout.com/api/v2/status.json", page_url: "https://status.helpscout.com", type: "statuspage" },
+  // Elium — knowledge management and sharing platform for enterprises
+  { id: "elium", name: "Elium", tags: ["knowledge-management", "collaboration", "intranet", "enterprise", "saas"], status_url: "https://status.elium.com/api/v2/status.json", page_url: "https://status.elium.com", type: "statuspage" },
+  // Sunbit — buy-now-pay-later financing platform for point-of-sale
+  { id: "sunbit", name: "Sunbit", tags: ["bnpl", "financing", "point-of-sale", "retail", "fintech"], status_url: "https://status.sunbit.com/api/v2/status.json", page_url: "https://status.sunbit.com", type: "statuspage" },
+  // Apicbase — food & beverage management platform for hospitality operations
+  { id: "apicbase", name: "Apicbase", tags: ["food-beverage", "hospitality", "menu-management", "operations", "saas"], status_url: "https://status.apicbase.com/api/v2/status.json", page_url: "https://status.apicbase.com", type: "statuspage" },
+  // Bitwave — crypto accounting, tax, and DeFi finance operations platform
+  { id: "bitwave", name: "Bitwave", tags: ["crypto", "accounting", "tax", "defi", "fintech"], status_url: "https://status.bitwave.io/api/v2/status.json", page_url: "https://status.bitwave.io", type: "statuspage" },
+  // Glassix — AI-powered unified customer communications platform
+  { id: "glassix", name: "Glassix", tags: ["customer-support", "communications", "ai", "messaging", "saas"], status_url: "https://status.glassix.com/api/v2/status.json", page_url: "https://status.glassix.com", type: "statuspage" },
+  // Sherpany — board and leadership meeting management platform
+  { id: "sherpany", name: "Sherpany", tags: ["meeting-management", "board", "governance", "enterprise", "saas"], status_url: "https://status.sherpany.com/api/v2/status.json", page_url: "https://status.sherpany.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7376,7 +7396,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.82.0" },
+  { name: "statuscraft", version: "2.83.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -7458,7 +7478,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3881 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3891 services.",
           },
         },
         required: [],
