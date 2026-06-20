@@ -6809,6 +6809,26 @@ const SERVICES = [
     { id: "glassix", name: "Glassix", tags: ["customer-support", "communications", "ai", "messaging", "saas"], status_url: "https://status.glassix.com/api/v2/status.json", page_url: "https://status.glassix.com", type: "statuspage" },
     // Sherpany — board and leadership meeting management platform
     { id: "sherpany", name: "Sherpany", tags: ["meeting-management", "board", "governance", "enterprise", "saas"], status_url: "https://status.sherpany.com/api/v2/status.json", page_url: "https://status.sherpany.com", type: "statuspage" },
+    // Solidgate — European payment processing platform for digital goods and subscriptions
+    { id: "solidgate", name: "Solidgate", tags: ["payments", "fintech", "europe", "subscriptions", "api"], status_url: "https://status.solidgate.com/api/v2/status.json", page_url: "https://status.solidgate.com", type: "statuspage" },
+    // Stax Payments — subscription-based payment processing platform for US SMBs
+    { id: "stax_payments", name: "Stax Payments", tags: ["payments", "fintech", "smb", "subscriptions", "saas"], status_url: "https://status.staxpayments.com/api/v2/status.json", page_url: "https://status.staxpayments.com", type: "statuspage" },
+    // Beam Cloud — serverless GPU cloud platform for Python/ML inference workloads
+    { id: "beam_cloud", name: "Beam Cloud", tags: ["gpu", "cloud", "ai", "ml", "inference", "developer-tools"], status_url: "https://status.beam.cloud/api/v2/status.json", page_url: "https://status.beam.cloud", type: "statuspage" },
+    // Built — construction lending, payments, and draw management platform
+    { id: "built", name: "Built", tags: ["construction", "fintech", "lending", "payments", "proptech"], status_url: "https://status.getbuilt.com/api/v2/status.json", page_url: "https://status.getbuilt.com", type: "statuspage" },
+    // Arborgold — field service and business management software for landscaping and arborist companies
+    { id: "arborgold", name: "Arborgold", tags: ["field-service", "landscaping", "arboriculture", "scheduling", "saas"], status_url: "https://status.arborgold.com/api/v2/status.json", page_url: "https://status.arborgold.com", type: "statuspage" },
+    // Asset Panda — cloud-based asset tracking and management platform
+    { id: "asset_panda", name: "Asset Panda", tags: ["asset-management", "tracking", "inventory", "enterprise", "saas"], status_url: "https://status.assetpanda.com/api/v2/status.json", page_url: "https://status.assetpanda.com", type: "statuspage" },
+    // AirData UAV — drone flight data management, analysis, and compliance platform
+    { id: "airdata_uav", name: "AirData UAV", tags: ["drones", "uav", "uas", "aviation", "fleet-management"], status_url: "https://status.airdata.com/api/v2/status.json", page_url: "https://status.airdata.com", type: "statuspage" },
+    // Kushki — Latin American payment processing gateway (Ecuador, Colombia, Mexico, Peru, Chile)
+    { id: "kushki", name: "Kushki", tags: ["payments", "fintech", "latam", "payment-gateway", "api"], status_url: "https://status.kushkipagos.com/api/v2/status.json", page_url: "https://status.kushkipagos.com", type: "statuspage" },
+    // Homey — Dutch smart home automation platform supporting 50,000+ apps and devices
+    { id: "homey", name: "Homey", tags: ["smart-home", "iot", "automation", "consumer", "saas"], status_url: "https://status.homey.app/api/v2/status.json", page_url: "https://status.homey.app", type: "statuspage" },
+    // Snap One (Control4) — smart home AV integration and control platform for installers
+    { id: "snap_one", name: "Snap One", tags: ["smart-home", "av", "control4", "integration", "iot"], status_url: "https://status.control4.com/api/v2/status.json", page_url: "https://status.control4.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -7316,7 +7336,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3891 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3901 services.",
                     },
                 },
                 required: [],

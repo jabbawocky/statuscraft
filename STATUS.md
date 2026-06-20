@@ -1,3 +1,12 @@
+# StatusCraft — Mission Status: June 21, 2026 (tick 477)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +10 live-verified services — 3891 → 3901** (tick 477) — Expansion tick: added Solidgate (European payment processing), Stax Payments (US SMB payment processing), Beam Cloud (serverless GPU/ML inference), Built/getbuilt.com (construction lending & payments), Arborgold (landscaping/arboriculture field service), Asset Panda (asset tracking & management), AirData UAV (drone data management), Kushki (LatAm payment gateway), Homey (Dutch smart home automation), Snap One/Control4 (smart home AV integration). All 10/10 live-verified against Atlassian Statuspage /api/v2/status.json. Health spot-check: GitHub (none), OpenAI (minor—live), Stripe (none), Cloudflare (minor—live), Twilio (minor—live), Datadog (none), Atlassian (none), Slack (active), Heroku (green), PagerDuty (web—live) — all core fetchers healthy, no regressions. README and tool description updated to 3901.
+
+---
+
 # StatusCraft — Mission Status: June 21, 2026 (tick 470)
 
 **Phase**: BUILD — active development
