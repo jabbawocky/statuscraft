@@ -6763,6 +6763,38 @@ const SERVICES: ServiceConfig[] = [
   { id: "signing_order", name: "Signing Order", tags: ["notary", "real-estate", "closing", "esign", "fintech"], status_url: "https://status.signingorder.com/api/v2/status.json", page_url: "https://status.signingorder.com", type: "statuspage" },
   // Cradlepoint — enterprise cellular networking and NetCloud platform (Ericsson)
   { id: "cradlepoint", name: "Cradlepoint", tags: ["networking", "cellular", "enterprise", "iot", "wan"], status_url: "https://status.cradlepoint.com/api/v2/status.json", page_url: "https://status.cradlepoint.com", type: "statuspage" },
+  // Pagerly — on-call and incident management platform (Slack-native)
+  { id: "pagerly", name: "Pagerly", tags: ["on-call", "incident-management", "monitoring", "devops", "alerting"], status_url: "https://pagerly.statuspage.io/api/v2/status.json", page_url: "https://pagerly.statuspage.io", type: "statuspage" },
+  // ServiceNow Cloud Observability — (formerly Lightstep) distributed tracing and APM platform
+  { id: "servicenow_cloud_observability", name: "ServiceNow Cloud Observability", tags: ["observability", "tracing", "apm", "monitoring", "devops"], status_url: "https://lightstep.statuspage.io/api/v2/status.json", page_url: "https://lightstep.statuspage.io", type: "statuspage" },
+  // JumpCloud — cloud directory platform for unified device and identity management
+  { id: "jumpcloud", name: "JumpCloud", tags: ["identity", "directory", "mdm", "sso", "security"], status_url: "https://jumpcloud.statuspage.io/api/v2/status.json", page_url: "https://jumpcloud.statuspage.io", type: "statuspage" },
+  // Kandji — Apple device management (MDM) platform for macOS, iOS, and iPadOS
+  { id: "kandji", name: "Kandji", tags: ["mdm", "apple", "macos", "ios", "device-management"], status_url: "https://kandji.statuspage.io/api/v2/status.json", page_url: "https://kandji.statuspage.io", type: "statuspage" },
+  // Filestack — file upload, transform, and delivery API platform
+  { id: "filestack", name: "Filestack", tags: ["file-upload", "cdn", "media", "api", "developer-tools"], status_url: "https://filestack.statuspage.io/api/v2/status.json", page_url: "https://filestack.statuspage.io", type: "statuspage" },
+  // Bandwidth — enterprise cloud communications platform (voice, messaging, 911)
+  { id: "bandwidth", name: "Bandwidth", tags: ["communications", "voip", "sms", "voice", "telecom"], status_url: "https://bandwidth.statuspage.io/api/v2/status.json", page_url: "https://bandwidth.statuspage.io", type: "statuspage" },
+  // Telnyx — cloud communications platform for voice, SMS, and fax APIs
+  { id: "telnyx", name: "Telnyx", tags: ["communications", "voip", "sms", "api", "telecom"], status_url: "https://telnyx.statuspage.io/api/v2/status.json", page_url: "https://telnyx.statuspage.io", type: "statuspage" },
+  // Bird (formerly MessageBird) — omnichannel customer communications platform
+  { id: "bird", name: "Bird (MessageBird)", tags: ["communications", "sms", "messaging", "omnichannel", "api"], status_url: "https://messagebird.statuspage.io/api/v2/status.json", page_url: "https://messagebird.statuspage.io", type: "statuspage" },
+  // Plivo — cloud communications platform for voice and SMS APIs
+  { id: "plivo", name: "Plivo", tags: ["communications", "voip", "sms", "api", "telecom"], status_url: "https://plivo.statuspage.io/api/v2/status.json", page_url: "https://plivo.statuspage.io", type: "statuspage" },
+  // Telerivet — cloud messaging platform for SMS and mobile messaging in emerging markets
+  { id: "telerivet", name: "Telerivet", tags: ["sms", "messaging", "mobile", "api", "communications"], status_url: "https://telerivet.statuspage.io/api/v2/status.json", page_url: "https://telerivet.statuspage.io", type: "statuspage" },
+  // Sinch — cloud communications platform for SMS, voice, email, and WhatsApp
+  { id: "sinch", name: "Sinch", tags: ["communications", "sms", "voice", "messaging", "api"], status_url: "https://sinch.statuspage.io/api/v2/status.json", page_url: "https://sinch.statuspage.io", type: "statuspage" },
+  // Fivetran — automated data integration and ELT pipeline platform
+  { id: "fivetran", name: "Fivetran", tags: ["data-integration", "etl", "elt", "analytics", "data"], status_url: "https://fivetran.statuspage.io/api/v2/status.json", page_url: "https://fivetran.statuspage.io", type: "statuspage" },
+  // Segment — customer data platform (CDP) for collecting, unifying, and routing user data
+  { id: "segment", name: "Segment", tags: ["cdp", "analytics", "data", "marketing", "api"], status_url: "https://segment.statuspage.io/api/v2/status.json", page_url: "https://segment.statuspage.io", type: "statuspage" },
+  // LiveChat — customer service platform for live chat and helpdesk support
+  { id: "livechat", name: "LiveChat", tags: ["customer-support", "live-chat", "helpdesk", "saas", "communication"], status_url: "https://status.livechat.com/api/v2/status.json", page_url: "https://status.livechat.com", type: "statuspage" },
+  // Lattice — people management platform for performance reviews, OKRs, and engagement
+  { id: "lattice", name: "Lattice", tags: ["hr", "performance-management", "okr", "engagement", "people-ops"], status_url: "https://status.lattice.com/api/v2/status.json", page_url: "https://status.lattice.com", type: "statuspage" },
+  // Metabase Cloud — open-source BI and analytics platform (hosted cloud version)
+  { id: "metabase_cloud", name: "Metabase Cloud", tags: ["analytics", "bi", "data-visualization", "reporting", "saas"], status_url: "https://metabase.statuspage.io/api/v2/status.json", page_url: "https://metabase.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7254,7 +7286,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3774 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3790 services.",
           },
         },
         required: [],
