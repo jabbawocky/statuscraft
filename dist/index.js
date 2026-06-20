@@ -6385,6 +6385,52 @@ const SERVICES = [
     { id: "black_forest_labs", name: "Black Forest Labs", tags: ["ai", "image-generation", "api", "developer-tools"], status_url: "https://status.bfl.ml/api/v2/status.json", page_url: "https://status.bfl.ml", type: "statuspage" },
     // Neets.ai — fast and affordable TTS / voice synthesis API
     { id: "neets_ai", name: "Neets.ai", tags: ["ai", "text-to-speech", "voice", "api", "developer-tools"], status_url: "https://neets.statuspage.io/api/v2/status.json", page_url: "https://neets.statuspage.io", type: "statuspage" },
+    // GoTo (GoToMeeting) — video conferencing and collaboration platform by GoTo (formerly LogMeIn)
+    { id: "goto", name: "GoTo (GoToMeeting)", tags: ["video-conferencing", "collaboration", "meetings", "webinars", "saas"], status_url: "https://status.gotomeeting.com/api/v2/status.json", page_url: "https://status.gotomeeting.com", type: "statuspage" },
+    // Demodesk — AI-powered sales meeting platform with real-time coaching
+    { id: "demodesk", name: "Demodesk", tags: ["sales", "video-conferencing", "ai", "coaching", "saas"], status_url: "https://status.demodesk.com/api/v2/status.json", page_url: "https://status.demodesk.com", type: "statuspage" },
+    // Zowie — AI customer service automation for e-commerce brands
+    { id: "zowie", name: "Zowie", tags: ["ai", "customer-service", "chatbot", "ecommerce", "automation"], status_url: "https://zowie.statuspage.io/api/v2/status.json", page_url: "https://zowie.statuspage.io", type: "statuspage" },
+    // Yuma — AI-powered customer support automation for Shopify merchants
+    { id: "yuma", name: "Yuma AI", tags: ["ai", "customer-service", "ecommerce", "shopify", "automation"], status_url: "https://yuma.statuspage.io/api/v2/status.json", page_url: "https://yuma.statuspage.io", type: "statuspage" },
+    // Xref — automated reference checking and candidate verification platform for HR
+    { id: "xref", name: "Xref", tags: ["hr", "recruiting", "reference-checking", "talent-acquisition", "saas"], status_url: "https://status.xref.com/api/v2/status.json", page_url: "https://status.xref.com", type: "statuspage" },
+    // Exalate — bi-directional issue tracker sync (Jira, GitHub, Zendesk, ServiceNow)
+    { id: "exalate", name: "Exalate", tags: ["integration", "jira", "issue-tracking", "developer-tools", "saas"], status_url: "https://status.exalate.com/api/v2/status.json", page_url: "https://status.exalate.com", type: "statuspage" },
+    // Calix — cloud platform and managed services for broadband service providers (BSPs)
+    { id: "calix", name: "Calix", tags: ["broadband", "isp", "cloud", "networking", "enterprise"], status_url: "https://calix.statuspage.io/api/v2/status.json", page_url: "https://calix.statuspage.io", type: "statuspage" },
+    // Ovation — restaurant customer feedback and reputation management platform
+    { id: "ovation", name: "Ovation", tags: ["restaurants", "feedback", "customer-experience", "reputation", "saas"], status_url: "https://ovation.statuspage.io/api/v2/status.json", page_url: "https://ovation.statuspage.io", type: "statuspage" },
+    // Tilda — no-code website builder popular with designers and media companies
+    { id: "tilda", name: "Tilda", tags: ["website-builder", "no-code", "design", "publishing", "saas"], status_url: "https://tilda.statuspage.io/api/v2/status.json", page_url: "https://tilda.statuspage.io", type: "statuspage" },
+    // Lumin — collaborative PDF platform for teams and education
+    { id: "lumin", name: "Lumin", tags: ["pdf", "documents", "collaboration", "edtech", "saas"], status_url: "https://lumin.statuspage.io/api/v2/status.json", page_url: "https://lumin.statuspage.io", type: "statuspage" },
+    // Mutiny — B2B website personalization and conversion rate optimization platform
+    { id: "mutiny", name: "Mutiny", tags: ["cro", "personalization", "abm", "b2b", "marketing", "saas"], status_url: "https://mutiny.statuspage.io/api/v2/status.json", page_url: "https://mutiny.statuspage.io", type: "statuspage" },
+    // Steadybit — chaos engineering and reliability testing platform for cloud-native apps
+    { id: "steadybit", name: "Steadybit", tags: ["chaos-engineering", "reliability", "devops", "kubernetes", "testing"], status_url: "https://steadybit.statuspage.io/api/v2/status.json", page_url: "https://steadybit.statuspage.io", type: "statuspage" },
+    // Devo — cloud-native SIEM and security analytics platform for real-time threat detection
+    { id: "devo", name: "Devo", tags: ["siem", "security-analytics", "threat-detection", "log-management", "cybersecurity"], status_url: "https://devo.statuspage.io/api/v2/status.json", page_url: "https://devo.statuspage.io", type: "statuspage" },
+    // Mandiant — threat intelligence and incident response platform (Google Cloud)
+    { id: "mandiant", name: "Mandiant", tags: ["threat-intelligence", "incident-response", "cybersecurity", "security", "google"], status_url: "https://mandiant.statuspage.io/api/v2/status.json", page_url: "https://mandiant.statuspage.io", type: "statuspage" },
+    // Cybersixgill — automated dark web and cyber threat intelligence platform
+    { id: "cybersixgill", name: "Cybersixgill", tags: ["threat-intelligence", "dark-web", "cybersecurity", "cti", "api"], status_url: "https://cybersixgill.statuspage.io/api/v2/status.json", page_url: "https://cybersixgill.statuspage.io", type: "statuspage" },
+    // IntSights (Rapid7) — external threat intelligence and digital risk protection
+    { id: "intsights", name: "IntSights", tags: ["threat-intelligence", "digital-risk", "cybersecurity", "rapid7", "cti"], status_url: "https://intsights.statuspage.io/api/v2/status.json", page_url: "https://intsights.statuspage.io", type: "statuspage" },
+    // Successware — field service management software for HVAC, plumbing, and electrical contractors
+    { id: "successware", name: "Successware", tags: ["field-service", "hvac", "plumbing", "fsm", "saas"], status_url: "https://successware.statuspage.io/api/v2/status.json", page_url: "https://successware.statuspage.io", type: "statuspage" },
+    // GroundTruth — location-based mobile advertising and audience intelligence platform
+    { id: "groundtruth", name: "GroundTruth", tags: ["advertising", "location-data", "mobile-ads", "audience", "adtech"], status_url: "https://groundtruth.statuspage.io/api/v2/status.json", page_url: "https://groundtruth.statuspage.io", type: "statuspage" },
+    // D7 Networks — global SMS, WhatsApp, and messaging API provider
+    { id: "d7networks", name: "D7 Networks", tags: ["sms", "messaging", "whatsapp", "api", "communications"], status_url: "https://d7networks.statuspage.io/api/v2/status.json", page_url: "https://d7networks.statuspage.io", type: "statuspage" },
+    // Fastly — edge cloud platform for CDN, security, and serverless compute
+    { id: "fastly", name: "Fastly", tags: ["cdn", "edge-cloud", "waf", "ddos", "infrastructure"], status_url: "https://fastly-inc.statuspage.io/api/v2/status.json", page_url: "https://fastly-inc.statuspage.io", type: "statuspage" },
+    // Panoply — automated cloud data warehouse and ETL platform built on Redshift/BigQuery
+    { id: "panoply", name: "Panoply", tags: ["data-warehouse", "etl", "analytics", "redshift", "saas"], status_url: "https://panoply.statuspage.io/api/v2/status.json", page_url: "https://panoply.statuspage.io", type: "statuspage" },
+    // Select Star — automated data discovery, lineage, and catalog platform
+    { id: "selectstar", name: "Select Star", tags: ["data-catalog", "data-lineage", "data-discovery", "analytics", "saas"], status_url: "https://selectstar.statuspage.io/api/v2/status.json", page_url: "https://selectstar.statuspage.io", type: "statuspage" },
+    // data.world — cloud-native data catalog and collaboration platform
+    { id: "dataworld", name: "data.world", tags: ["data-catalog", "data-collaboration", "knowledge-graph", "governance", "saas"], status_url: "https://dataworld.statuspage.io/api/v2/status.json", page_url: "https://dataworld.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6821,7 +6867,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.78.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.79.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -6892,7 +6938,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3675 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3698 services.",
                     },
                 },
                 required: [],

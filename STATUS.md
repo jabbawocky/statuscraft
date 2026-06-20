@@ -1,3 +1,12 @@
+# StatusCraft — Mission Status: June 20, 2026 (tick 435)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +13 live-verified services — 3685 → 3698** (tick 435) — Expansion tick: added 13 new real services spanning B2B CRO/personalization (Mutiny), chaos engineering (Steadybit), security SIEM (Devo), threat intelligence (Mandiant, Cybersixgill, IntSights/Rapid7), field service management (Successware), location-based adtech (GroundTruth), SMS/messaging API (D7 Networks), edge CDN (Fastly), data warehouse automation (Panoply), data catalog/lineage (Select Star), and data collaboration (data.world). All 13/13 live-verified against Atlassian Statuspage /api/v2/status.json before commit. Health spot-check: Claude (none), OpenAI (minor—live), GitHub (none), Stripe (none), Cloudflare (minor—live), Vercel (none), Datadog (none), Supabase (none), SendGrid (none), Twilio (minor—live) — all 10 core fetchers healthy. README and tool description updated to 3698.
+
+---
+
 # StatusCraft — Mission Status: June 20, 2026 (tick 432)
 
 **Phase**: BUILD — active development
