@@ -6723,6 +6723,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "salesbricks", name: "Salesbricks", tags: ["b2b", "saas", "deals", "revenue-operations", "checkout", "sales"], status_url: "https://salesbricks.statuspage.io/api/v2/status.json", page_url: "https://salesbricks.statuspage.io", type: "statuspage" },
   // Scalefast — international ecommerce and subscription management platform
   { id: "scalefast", name: "Scalefast", tags: ["ecommerce", "international", "saas", "subscriptions", "payments", "d2c"], status_url: "https://scalefast.statuspage.io/api/v2/status.json", page_url: "https://scalefast.statuspage.io", type: "statuspage" },
+  // Dashly — customer engagement and live chat platform for SaaS
+  { id: "dashly", name: "Dashly", tags: ["customer-engagement", "live-chat", "crm", "saas", "marketing", "messaging"], status_url: "https://status.dashly.io/api/v2/status.json", page_url: "https://status.dashly.io", type: "statuspage" },
+  // Spotlightr — video hosting platform for online course creators and educators
+  { id: "spotlightr", name: "Spotlightr", tags: ["video", "elearning", "hosting", "saas", "content", "education"], status_url: "https://status.spotlightr.com/api/v2/status.json", page_url: "https://status.spotlightr.com", type: "statuspage" },
+  // vMix — live video production and streaming software platform
+  { id: "vmix", name: "vMix", tags: ["video", "live-streaming", "production", "broadcast", "saas", "software"], status_url: "https://status.vmix.com/api/v2/status.json", page_url: "https://status.vmix.com", type: "statuspage" },
+  // Hub360 (Haivision) — live video streaming and broadcast management platform
+  { id: "hub360", name: "Hub360", tags: ["video", "broadcast", "live-streaming", "enterprise", "saas", "media"], status_url: "https://status.haivision.com/api/v2/status.json", page_url: "https://status.haivision.com", type: "statuspage" },
+  // Vimeo OTT (formerly VHX) — white-label OTT streaming and video monetization platform
+  { id: "vimeo_ott", name: "Vimeo OTT", tags: ["video", "ott", "streaming", "monetization", "saas", "media"], status_url: "https://status.vhx.tv/api/v2/status.json", page_url: "https://status.vhx.tv", type: "statuspage" },
+  // Learnerbly — employee L&D marketplace for curated learning resources
+  { id: "learnerbly", name: "Learnerbly", tags: ["elearning", "hr", "l-and-d", "marketplace", "saas", "training"], status_url: "https://status.learnerbly.com/api/v2/status.json", page_url: "https://status.learnerbly.com", type: "statuspage" },
+  // Skyvera (formerly Kandy) — cloud communications and CPaaS platform
+  { id: "skyvera", name: "Skyvera", tags: ["communications", "cpaas", "voip", "api", "enterprise", "cloud"], status_url: "https://status.kandy.io/api/v2/status.json", page_url: "https://status.kandy.io", type: "statuspage" },
+  // Woosmap — location intelligence and mapping API platform
+  { id: "woosmap", name: "Woosmap", tags: ["maps", "location", "api", "geolocation", "saas", "developer-tools"], status_url: "https://status.woosmap.com/api/v2/status.json", page_url: "https://status.woosmap.com", type: "statuspage" },
+  // PTC Cloud Services — industrial IoT and PLM cloud services platform (distinct from PTC Atlas)
+  { id: "ptc_cloud", name: "PTC Cloud Services", tags: ["industrial-iot", "plm", "enterprise", "manufacturing", "cloud", "saas"], status_url: "https://status.ptc.io/api/v2/status.json", page_url: "https://status.ptc.io", type: "statuspage" },
+  // Rivo — loyalty and rewards platform for Shopify merchants and ecommerce brands
+  { id: "rivo", name: "Rivo", tags: ["loyalty", "rewards", "ecommerce", "shopify", "saas", "marketing"], status_url: "https://status.rivo.io/api/v2/status.json", page_url: "https://status.rivo.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7214,7 +7234,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3754 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3764 services.",
           },
         },
         required: [],

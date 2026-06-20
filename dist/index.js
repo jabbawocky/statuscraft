@@ -6525,6 +6525,46 @@ const SERVICES = [
     { id: "pitneybowes", name: "Pitney Bowes", tags: ["shipping", "mailing", "ecommerce", "logistics", "postage", "enterprise"], status_url: "https://status.pitneybowes.com/api/v2/status.json", page_url: "https://status.pitneybowes.com", type: "statuspage" },
     // Creatify — AI-powered video ad creation platform
     { id: "creatify", name: "Creatify", tags: ["ai", "video", "advertising", "marketing", "generation", "saas"], status_url: "https://status.creatify.ai/api/v2/status.json", page_url: "https://status.creatify.ai", type: "statuspage" },
+    // EnergyCAP — energy management and utility bill tracking software
+    { id: "energycap", name: "EnergyCAP", tags: ["energy", "management", "utilities", "sustainability", "saas", "software"], status_url: "https://status.energycap.com/api/v2/status.json", page_url: "https://status.energycap.com", type: "statuspage" },
+    // Teamgo — visitor management and sign-in system
+    { id: "teamgo", name: "Teamgo", tags: ["visitor-management", "security", "sign-in", "facilities", "saas"], status_url: "https://status.teamgo.co/api/v2/status.json", page_url: "https://status.teamgo.co", type: "statuspage" },
+    // Service Fusion — field service management and CRM platform
+    { id: "service_fusion", name: "Service Fusion", tags: ["field-service", "saas", "crm", "scheduling", "dispatch", "hvac"], status_url: "https://status.servicefusion.com/api/v2/status.json", page_url: "https://status.servicefusion.com", type: "statuspage" },
+    // Acenda — omnichannel ecommerce platform
+    { id: "acenda", name: "Acenda", tags: ["ecommerce", "retail", "saas", "omnichannel", "shopping-cart", "marketplace"], status_url: "https://status.acenda.com/api/v2/status.json", page_url: "https://status.acenda.com", type: "statuspage" },
+    // tamigo — employee scheduling and workforce management platform
+    { id: "tamigo", name: "tamigo", tags: ["workforce-management", "scheduling", "hr", "saas", "time-tracking", "retail"], status_url: "https://tamigo.statuspage.io/api/v2/status.json", page_url: "https://tamigo.statuspage.io", type: "statuspage" },
+    // Tapdesk — CRM and lead intelligence platform
+    { id: "tapdesk", name: "Tapdesk", tags: ["crm", "sales", "lead-generation", "prospecting", "saas", "b2b"], status_url: "https://tapdesk.statuspage.io/api/v2/status.json", page_url: "https://tapdesk.statuspage.io", type: "statuspage" },
+    // EDNA — omnichannel customer communications and CRM platform
+    { id: "edna", name: "EDNA", tags: ["crm", "omnichannel", "helpdesk", "messaging", "saas", "customer-communications"], status_url: "https://edna.statuspage.io/api/v2/status.json", page_url: "https://edna.statuspage.io", type: "statuspage" },
+    // Saildrone — autonomous ocean data collection and maritime intelligence platform
+    { id: "saildrone", name: "Saildrone", tags: ["ocean-data", "iot", "maritime", "autonomous", "api", "saas"], status_url: "https://saildrone.statuspage.io/api/v2/status.json", page_url: "https://saildrone.statuspage.io", type: "statuspage" },
+    // Salesbricks — B2B deal workflow and buyer checkout platform
+    { id: "salesbricks", name: "Salesbricks", tags: ["b2b", "saas", "deals", "revenue-operations", "checkout", "sales"], status_url: "https://salesbricks.statuspage.io/api/v2/status.json", page_url: "https://salesbricks.statuspage.io", type: "statuspage" },
+    // Scalefast — international ecommerce and subscription management platform
+    { id: "scalefast", name: "Scalefast", tags: ["ecommerce", "international", "saas", "subscriptions", "payments", "d2c"], status_url: "https://scalefast.statuspage.io/api/v2/status.json", page_url: "https://scalefast.statuspage.io", type: "statuspage" },
+    // Dashly — customer engagement and live chat platform for SaaS
+    { id: "dashly", name: "Dashly", tags: ["customer-engagement", "live-chat", "crm", "saas", "marketing", "messaging"], status_url: "https://status.dashly.io/api/v2/status.json", page_url: "https://status.dashly.io", type: "statuspage" },
+    // Spotlightr — video hosting platform for online course creators and educators
+    { id: "spotlightr", name: "Spotlightr", tags: ["video", "elearning", "hosting", "saas", "content", "education"], status_url: "https://status.spotlightr.com/api/v2/status.json", page_url: "https://status.spotlightr.com", type: "statuspage" },
+    // vMix — live video production and streaming software platform
+    { id: "vmix", name: "vMix", tags: ["video", "live-streaming", "production", "broadcast", "saas", "software"], status_url: "https://status.vmix.com/api/v2/status.json", page_url: "https://status.vmix.com", type: "statuspage" },
+    // Hub360 (Haivision) — live video streaming and broadcast management platform
+    { id: "hub360", name: "Hub360", tags: ["video", "broadcast", "live-streaming", "enterprise", "saas", "media"], status_url: "https://status.haivision.com/api/v2/status.json", page_url: "https://status.haivision.com", type: "statuspage" },
+    // Vimeo OTT (formerly VHX) — white-label OTT streaming and video monetization platform
+    { id: "vimeo_ott", name: "Vimeo OTT", tags: ["video", "ott", "streaming", "monetization", "saas", "media"], status_url: "https://status.vhx.tv/api/v2/status.json", page_url: "https://status.vhx.tv", type: "statuspage" },
+    // Learnerbly — employee L&D marketplace for curated learning resources
+    { id: "learnerbly", name: "Learnerbly", tags: ["elearning", "hr", "l-and-d", "marketplace", "saas", "training"], status_url: "https://status.learnerbly.com/api/v2/status.json", page_url: "https://status.learnerbly.com", type: "statuspage" },
+    // Skyvera (formerly Kandy) — cloud communications and CPaaS platform
+    { id: "skyvera", name: "Skyvera", tags: ["communications", "cpaas", "voip", "api", "enterprise", "cloud"], status_url: "https://status.kandy.io/api/v2/status.json", page_url: "https://status.kandy.io", type: "statuspage" },
+    // Woosmap — location intelligence and mapping API platform
+    { id: "woosmap", name: "Woosmap", tags: ["maps", "location", "api", "geolocation", "saas", "developer-tools"], status_url: "https://status.woosmap.com/api/v2/status.json", page_url: "https://status.woosmap.com", type: "statuspage" },
+    // PTC Cloud Services — industrial IoT and PLM cloud services platform (distinct from PTC Atlas)
+    { id: "ptc_cloud", name: "PTC Cloud Services", tags: ["industrial-iot", "plm", "enterprise", "manufacturing", "cloud", "saas"], status_url: "https://status.ptc.io/api/v2/status.json", page_url: "https://status.ptc.io", type: "statuspage" },
+    // Rivo — loyalty and rewards platform for Shopify merchants and ecommerce brands
+    { id: "rivo", name: "Rivo", tags: ["loyalty", "rewards", "ecommerce", "shopify", "saas", "marketing"], status_url: "https://status.rivo.io/api/v2/status.json", page_url: "https://status.rivo.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -6961,7 +7001,7 @@ function formatServiceStatus(s) {
         `   Checked: ${s.last_checked}\n` +
         `   Source: ${s.source_url}`);
 }
-const server = new Server({ name: "statuscraft", version: "2.79.0" }, { capabilities: { tools: {} } });
+const server = new Server({ name: "statuscraft", version: "2.80.0" }, { capabilities: { tools: {} } });
 server.setRequestHandler(ListToolsRequestSchema, async () => ({
     tools: [
         {
@@ -7032,7 +7072,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3744 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3764 services.",
                     },
                 },
                 required: [],
