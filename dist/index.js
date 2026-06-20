@@ -6677,6 +6677,28 @@ const SERVICES = [
     { id: "trezor", name: "Trezor", tags: ["crypto", "hardware-wallet", "security", "open-source", "web3"], status_url: "https://trezor.statuspage.io/api/v2/status.json", page_url: "https://trezor.statuspage.io", type: "statuspage" },
     // Bybit — cryptocurrency derivatives and spot exchange
     { id: "bybit", name: "Bybit", tags: ["crypto", "exchange", "derivatives", "trading", "fintech"], status_url: "https://bybit.statuspage.io/api/v2/status.json", page_url: "https://bybit.statuspage.io", type: "statuspage" },
+    // Prevalent — third-party risk management and vendor assessment platform (tick 458)
+    { id: "prevalent", name: "Prevalent", tags: ["security", "risk-management", "vendor-management", "compliance", "saas"], status_url: "https://prevalent.statuspage.io/api/v2/status.json", page_url: "https://prevalent.statuspage.io", type: "statuspage" },
+    // Veremark — employment background screening and reference checking platform
+    { id: "veremark", name: "Veremark", tags: ["background-screening", "hr", "compliance", "identity", "saas"], status_url: "https://status.veremark.com/api/v2/status.json", page_url: "https://status.veremark.com", type: "statuspage" },
+    // Alert Logic — managed detection and response (MDR) and cloud security platform
+    { id: "alert_logic", name: "Alert Logic", tags: ["security", "mdr", "monitoring", "threat-detection", "saas"], status_url: "https://status.alertlogic.com/api/v2/status.json", page_url: "https://status.alertlogic.com", type: "statuspage" },
+    // Condeco (Eptura Engage) — workplace and desk booking management platform
+    { id: "condeco", name: "Condeco", tags: ["workspace", "desk-booking", "facilities", "hybrid-work", "saas"], status_url: "https://condeco.statuspage.io/api/v2/status.json", page_url: "https://condeco.statuspage.io", type: "statuspage" },
+    // Solink — cloud video surveillance and loss prevention platform for retail and restaurants
+    { id: "solink", name: "Solink", tags: ["video-surveillance", "security", "retail", "loss-prevention", "saas"], status_url: "https://solink.statuspage.io/api/v2/status.json", page_url: "https://solink.statuspage.io", type: "statuspage" },
+    // Coram AI — AI-powered video security and physical security platform
+    { id: "coram_ai", name: "Coram AI", tags: ["security", "video-surveillance", "ai", "physical-security", "saas"], status_url: "https://status.coram.ai/api/v2/status.json", page_url: "https://status.coram.ai", type: "statuspage" },
+    // Vestd — equity management and employee share scheme platform (UK-focused)
+    { id: "vestd", name: "Vestd", tags: ["equity-management", "share-schemes", "hr", "fintech", "saas"], status_url: "https://vestd.statuspage.io/api/v2/status.json", page_url: "https://vestd.statuspage.io", type: "statuspage" },
+    // Jackrabbit Class — class management software for youth activity businesses (gymnastics, dance, swim)
+    { id: "jackrabbit_class", name: "Jackrabbit Class", tags: ["class-management", "youth", "scheduling", "gym", "saas"], status_url: "https://jackrabbitclass.statuspage.io/api/v2/status.json", page_url: "https://jackrabbitclass.statuspage.io", type: "statuspage" },
+    // Bókun — travel and activities booking platform (TripAdvisor Group)
+    { id: "bokun", name: "Bókun", tags: ["travel", "booking", "activities", "tours", "saas"], status_url: "https://bokun.statuspage.io/api/v2/status.json", page_url: "https://bokun.statuspage.io", type: "statuspage" },
+    // Altium 365 — cloud-based PCB design and electronics engineering collaboration platform
+    { id: "altium365", name: "Altium 365", tags: ["pcb", "eda", "electronics", "engineering", "cloud"], status_url: "https://status.altium.com/api/v2/status.json", page_url: "https://status.altium.com", type: "statuspage" },
+    // Truevo — payment processing and acquiring platform for European merchants
+    { id: "truevo", name: "Truevo", tags: ["payments", "acquiring", "fintech", "merchant-services", "saas"], status_url: "https://status.truevo.com/api/v2/status.json", page_url: "https://status.truevo.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -7184,7 +7206,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3820 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3831 services.",
                     },
                 },
                 required: [],

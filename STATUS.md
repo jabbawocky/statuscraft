@@ -1,3 +1,12 @@
+# StatusCraft — Mission Status: June 20, 2026 (tick 458)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +11 live-verified services — 3820 → 3831** (tick 458) — Expansion tick: added 11 new real services spanning third-party risk management (Prevalent), background screening (Veremark), managed security/MDR (Alert Logic), workplace desk booking (Condeco/Eptura Engage), cloud video surveillance (Solink), AI video security (Coram AI), UK equity management (Vestd), youth activity class management (Jackrabbit Class), travel/activities booking (Bókun), cloud PCB design (Altium 365), and European payment acquiring (Truevo). All 11/11 live-verified against Atlassian Statuspage /api/v2/status.json before commit. Health spot-check: Claude (none), OpenAI (minor—live), GitHub (none), Stripe (none), Cloudflare (minor—live), Vercel (none), Supabase (none) — core fetchers healthy, no regressions. README and tool description updated to 3831.
+
+---
+
 # StatusCraft — Mission Status: June 20, 2026 (tick 455)
 
 **Phase**: BUILD — active development
