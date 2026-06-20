@@ -7007,6 +7007,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "homey", name: "Homey", tags: ["smart-home", "iot", "automation", "consumer", "saas"], status_url: "https://status.homey.app/api/v2/status.json", page_url: "https://status.homey.app", type: "statuspage" },
   // Snap One (Control4) — smart home AV integration and control platform for installers
   { id: "snap_one", name: "Snap One", tags: ["smart-home", "av", "control4", "integration", "iot"], status_url: "https://status.control4.com/api/v2/status.json", page_url: "https://status.control4.com", type: "statuspage" },
+  // Briza — commercial insurance marketplace connecting brokers and carriers
+  { id: "briza", name: "Briza", tags: ["insurance", "insurtech", "commercial", "marketplace", "saas"], status_url: "https://status.briza.com/api/v2/status.json", page_url: "https://status.briza.com", type: "statuspage" },
+  // Nuvei Australia and New Zealand — payment processing (formerly Till Payments)
+  { id: "nuvei_au_nz", name: "Nuvei Australia and New Zealand", tags: ["payments", "fintech", "australia", "new-zealand", "smb"], status_url: "https://status.tillpayments.com/api/v2/status.json", page_url: "https://status.tillpayments.com", type: "statuspage" },
+  // Vimeo OTT (formerly VHX) — white-label streaming and video-on-demand platform
+  { id: "vimeo_ott", name: "Vimeo OTT", tags: ["video", "streaming", "ott", "vod", "media"], status_url: "https://status.vhx.tv/api/v2/status.json", page_url: "https://status.vhx.tv", type: "statuspage" },
+  // Peopleware — workforce management and scheduling for contact centres
+  { id: "peopleware", name: "Peopleware", tags: ["workforce-management", "contact-center", "scheduling", "wfm", "saas"], status_url: "https://injixo.statuspage.io/api/v2/status.json", page_url: "https://injixo.statuspage.io", type: "statuspage" },
+  // Aivo — conversational AI platform for customer service (LATAM-focused)
+  { id: "aivo", name: "Aivo", tags: ["ai", "chatbot", "customer-service", "conversational-ai", "latam"], status_url: "https://aivo.statuspage.io/api/v2/status.json", page_url: "https://aivo.statuspage.io", type: "statuspage" },
+  // rasa.io — AI-powered newsletter automation for membership organisations
+  { id: "rasa_io", name: "rasa.io", tags: ["email", "newsletter", "ai", "associations", "membership"], status_url: "https://rasa-io.statuspage.io/api/v2/status.json", page_url: "https://rasa-io.statuspage.io", type: "statuspage" },
+  // Touchwork — field workforce management and mobile task-dispatch platform
+  { id: "touchwork", name: "Touchwork", tags: ["field-service", "workforce-management", "mobile", "scheduling", "saas"], status_url: "https://touchwork.statuspage.io/api/v2/status.json", page_url: "https://touchwork.statuspage.io", type: "statuspage" },
+  // Apptega — cybersecurity programme management and GRC platform
+  { id: "apptega", name: "Apptega", tags: ["grc", "cybersecurity", "compliance", "risk", "saas"], status_url: "https://apptega.statuspage.io/api/v2/status.json", page_url: "https://apptega.statuspage.io", type: "statuspage" },
+  // Dentally — cloud-based dental practice management software (UK/Europe)
+  { id: "dentally", name: "Dentally", tags: ["dental", "practice-management", "healthcare", "uk", "saas"], status_url: "https://dentally.statuspage.io/api/v2/status.json", page_url: "https://dentally.statuspage.io", type: "statuspage" },
+  // ARAS — enterprise PLM (product lifecycle management) software platform
+  { id: "aras_plm", name: "ARAS", tags: ["plm", "manufacturing", "enterprise", "product-lifecycle", "saas"], status_url: "https://aras.statuspage.io/api/v2/status.json", page_url: "https://aras.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7498,7 +7518,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3901 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3911 services.",
           },
         },
         required: [],
