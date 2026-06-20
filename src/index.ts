@@ -5246,7 +5246,7 @@ const SERVICES: ServiceConfig[] = [
   // === BATCH EXPANSION +200: 2825 → 3025 ===
 
   // --- AI / ML ---
-  { id: "mistral_ai", name: "Mistral AI", tags: ["ai", "llm", "api", "developer-tools", "saas"], status_url: "https://status.mistral.ai/api/v2/status.json", page_url: "https://status.mistral.ai", type: "statuspage" },
+  // NOTE: Mistral AI uses a custom Nuxt status page with no machine-readable JSON API — removed until they add one
   { id: "anyscale", name: "Anyscale", tags: ["ai", "ml", "ray", "cloud", "saas"], status_url: "https://status.anyscale.com/api/v2/status.json", page_url: "https://status.anyscale.com", type: "statuspage" },
   { id: "hugging_face", name: "Hugging Face", tags: ["ai", "ml", "llm", "open-source", "saas"], status_url: "https://status.huggingface.co/api/v2/status.json", page_url: "https://status.huggingface.co", type: "statuspage" },
   { id: "weaviate_cloud", name: "Weaviate Cloud", tags: ["ai", "vector-database", "ml", "api", "saas"], status_url: "https://status.weaviate.io/api/v2/status.json", page_url: "https://status.weaviate.io", type: "statuspage" },
@@ -6631,6 +6631,58 @@ const SERVICES: ServiceConfig[] = [
   { id: "tandem", name: "Tandem", tags: ["remote-work", "communication", "virtual-office", "collaboration", "saas"], status_url: "https://tandem.statuspage.io/api/v2/status.json", page_url: "https://tandem.statuspage.io", type: "statuspage" },
   // Teamflow — virtual office for remote and hybrid teams
   { id: "teamflow", name: "Teamflow", tags: ["remote-work", "virtual-office", "collaboration", "video", "saas"], status_url: "https://teamflow.statuspage.io/api/v2/status.json", page_url: "https://teamflow.statuspage.io", type: "statuspage" },
+  // Lepton AI — AI inference and LLM deployment platform
+  { id: "lepton", name: "Lepton AI", tags: ["ai", "llm", "inference", "developer-tools", "api"], status_url: "https://lepton.statuspage.io/api/v2/status.json", page_url: "https://lepton.statuspage.io", type: "statuspage" },
+  // Sora — OpenAI's AI video generation model
+  { id: "sora", name: "Sora", tags: ["ai", "video", "generative-ai", "openai", "media"], status_url: "https://sora.statuspage.io/api/v2/status.json", page_url: "https://sora.statuspage.io", type: "statuspage" },
+  // Rev AI — automatic speech recognition and transcription API
+  { id: "revai", name: "Rev AI", tags: ["speech-to-text", "transcription", "ai", "api", "developer-tools"], status_url: "https://revai.statuspage.io/api/v2/status.json", page_url: "https://status.rev.ai", type: "statuspage" },
+  // Layer0 (Edgio) — edge CDN and performance platform
+  { id: "layer0", name: "Layer0", tags: ["cdn", "edge", "performance", "web", "infrastructure"], status_url: "https://layer0.statuspage.io/api/v2/status.json", page_url: "https://status.layer0.co", type: "statuspage" },
+  // Zenlayer — global edge cloud and CDN network
+  { id: "zenlayer", name: "Zenlayer", tags: ["cdn", "edge", "cloud", "network", "infrastructure"], status_url: "https://zenlayer.statuspage.io/api/v2/status.json", page_url: "https://zenlayer.statuspage.io", type: "statuspage" },
+  // Synapse — open-source Matrix homeserver
+  { id: "synapse", name: "Synapse", tags: ["matrix", "messaging", "open-source", "communication", "decentralized"], status_url: "https://synapse.statuspage.io/api/v2/status.json", page_url: "https://status.synapse.org", type: "statuspage" },
+  // Ginger — on-demand mental health coaching and therapy
+  { id: "ginger", name: "Ginger", tags: ["mental-health", "telehealth", "coaching", "therapy", "health-tech"], status_url: "https://ginger.statuspage.io/api/v2/status.json", page_url: "https://status.ginger.io", type: "statuspage" },
+  // Spring Health — workplace mental health platform
+  { id: "springhealth", name: "Spring Health", tags: ["mental-health", "workplace-wellness", "therapy", "health-tech", "enterprise"], status_url: "https://springhealth.statuspage.io/api/v2/status.json", page_url: "https://springhealth.statuspage.io", type: "statuspage" },
+  // Apache Superset — open-source BI and data exploration platform
+  { id: "superset", name: "Apache Superset", tags: ["bi", "data-visualization", "analytics", "open-source", "saas"], status_url: "https://superset.statuspage.io/api/v2/status.json", page_url: "https://superset.statuspage.io", type: "statuspage" },
+  // Zip — buy now pay later (BNPL) payment platform
+  { id: "zip", name: "Zip", tags: ["payments", "bnpl", "fintech", "consumer", "buy-now-pay-later"], status_url: "https://zip.statuspage.io/api/v2/status.json", page_url: "https://zip.statuspage.io", type: "statuspage" },
+  // 3dcart (Shift4Shop) — e-commerce platform
+  { id: "3dcart", name: "3dcart", tags: ["ecommerce", "shopping-cart", "payments", "saas", "online-store"], status_url: "https://3dcart.statuspage.io/api/v2/status.json", page_url: "https://3dcart.statuspage.io", type: "statuspage" },
+  // ThriveCart — high-converting checkout and cart platform
+  { id: "thrivecart", name: "ThriveCart", tags: ["ecommerce", "checkout", "payments", "affiliate", "saas"], status_url: "https://thrivecart.statuspage.io/api/v2/status.json", page_url: "https://thrivecart.statuspage.io", type: "statuspage" },
+  // Vanilla Forums — community and forum software
+  { id: "vanilla", name: "Vanilla Forums", tags: ["community", "forum", "discussion", "saas", "social"], status_url: "https://vanilla.statuspage.io/api/v2/status.json", page_url: "https://vanilla.statuspage.io", type: "statuspage" },
+  // Disqus — embedded comment and discussion platform
+  { id: "disqus", name: "Disqus", tags: ["comments", "community", "discussion", "publishing", "saas"], status_url: "https://disqus.statuspage.io/api/v2/status.json", page_url: "https://disqus.statuspage.io", type: "statuspage" },
+  // Sign In Scheduling (10to8) — appointment scheduling software
+  { id: "10to8", name: "Sign In Scheduling", tags: ["scheduling", "appointments", "calendar", "healthcare", "saas"], status_url: "https://10to8.statuspage.io/api/v2/status.json", page_url: "https://status.10to8.com", type: "statuspage" },
+  // ValueSERP — real-time search engine results page API
+  { id: "valueserp", name: "ValueSERP", tags: ["serp", "search-api", "seo", "scraping", "developer-tools"], status_url: "https://valueserp.statuspage.io/api/v2/status.json", page_url: "https://valueserp.statuspage.io", type: "statuspage" },
+  // PayTrace — payment gateway for merchants
+  { id: "paytrace", name: "PayTrace", tags: ["payments", "payment-gateway", "merchant", "fintech", "api"], status_url: "https://paytrace.statuspage.io/api/v2/status.json", page_url: "https://status.paytrace.com", type: "statuspage" },
+  // Observe Inc. — cloud observability and log analytics platform
+  { id: "observe", name: "Observe", tags: ["observability", "monitoring", "logs", "analytics", "cloud"], status_url: "https://observe.statuspage.io/api/v2/status.json", page_url: "https://status.observeinc.com", type: "statuspage" },
+  // Zenoss Cloud — AI-driven IT monitoring and observability
+  { id: "zenoss", name: "Zenoss Cloud", tags: ["monitoring", "observability", "it-ops", "aiops", "enterprise"], status_url: "https://zenoss.statuspage.io/api/v2/status.json", page_url: "https://status.zenoss.io", type: "statuspage" },
+  // Highway — trucking and freight logistics platform
+  { id: "highway", name: "Highway", tags: ["logistics", "freight", "trucking", "saas", "transportation"], status_url: "https://highway.statuspage.io/api/v2/status.json", page_url: "https://status.highway.com", type: "statuspage" },
+  // RyderShip (Whiplash) — e-commerce fulfillment and 3PL platform
+  { id: "whiplash", name: "RyderShip", tags: ["fulfillment", "3pl", "ecommerce", "logistics", "warehouse"], status_url: "https://whiplash.statuspage.io/api/v2/status.json", page_url: "https://status.getwhiplash.com", type: "statuspage" },
+  // Ringr — remote podcast recording platform
+  { id: "ringr", name: "Ringr", tags: ["podcast", "recording", "audio", "remote", "creator"], status_url: "https://ringr.statuspage.io/api/v2/status.json", page_url: "https://ringr.statuspage.io", type: "statuspage" },
+  // Ableton — music production software and online services
+  { id: "ableton", name: "Ableton", tags: ["music", "daw", "audio-production", "creator-tools", "saas"], status_url: "https://ableton.statuspage.io/api/v2/status.json", page_url: "https://status.ableton.com", type: "statuspage" },
+  // VidyoCloud — enterprise video conferencing platform
+  { id: "vidyo", name: "VidyoCloud", tags: ["video-conferencing", "enterprise", "communication", "embedded", "saas"], status_url: "https://vidyo.statuspage.io/api/v2/status.json", page_url: "https://status.vidyo.com", type: "statuspage" },
+  // Lumen — global fiber and edge networking provider
+  { id: "lumen", name: "Lumen", tags: ["network", "cdn", "connectivity", "enterprise", "telecommunications"], status_url: "https://lumen.statuspage.io/api/v2/status.json", page_url: "https://lumen.statuspage.io", type: "statuspage" },
+  // ZAYO — global fiber and network-as-a-service provider
+  { id: "zayo", name: "ZAYO", tags: ["network", "fiber", "connectivity", "enterprise", "telecommunications"], status_url: "https://zayo.statuspage.io/api/v2/status.json", page_url: "https://zayo.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7122,7 +7174,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3709 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3637 services.",
           },
         },
         required: [],
