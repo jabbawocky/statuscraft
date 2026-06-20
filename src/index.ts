@@ -6815,6 +6815,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "greenway_services", name: "Greenway Services", tags: ["healthcare", "ehr", "practice-management", "saas"], status_url: "https://greenway.statuspage.io/api/v2/status.json", page_url: "https://greenway.statuspage.io", type: "statuspage" },
   // Patientco — patient payment and financial engagement platform for healthcare
   { id: "patientco", name: "Patientco", tags: ["healthcare", "patient-payments", "billing", "revenue-cycle", "saas"], status_url: "https://patientco.statuspage.io/api/v2/status.json", page_url: "https://status.patientco.com", type: "statuspage" },
+  // Parsable — connected worker platform for manufacturing operations (tick 456)
+  { id: "parsable", name: "Parsable", tags: ["manufacturing", "operations", "connected-worker", "no-code", "saas"], status_url: "https://parsable.statuspage.io/api/v2/status.json", page_url: "https://parsable.statuspage.io", type: "statuspage" },
+  // Cornerstone OnDemand — enterprise talent management and learning management system
+  { id: "cornerstone_ondemand", name: "Cornerstone OnDemand", tags: ["lms", "hr", "talent-management", "learning", "enterprise"], status_url: "https://status.csod.com/api/v2/status.json", page_url: "https://status.csod.com", type: "statuspage" },
+  // TiDB Cloud — distributed SQL cloud database by PingCAP
+  { id: "tidb_cloud", name: "TiDB Cloud", tags: ["database", "sql", "distributed", "cloud", "developer-tools"], status_url: "https://status.tidbcloud.com/api/v2/status.json", page_url: "https://status.tidbcloud.com", type: "statuspage" },
+  // Abnormal AI — AI-native email security platform detecting advanced threats
+  { id: "abnormal_ai", name: "Abnormal AI", tags: ["security", "email-security", "ai", "saas", "enterprise"], status_url: "https://status.abnormalsecurity.com/api/v2/status.json", page_url: "https://status.abnormalsecurity.com", type: "statuspage" },
+  // Revel Digital — digital signage content management system
+  { id: "revel_digital", name: "Revel Digital", tags: ["digital-signage", "cms", "media", "saas"], status_url: "https://reveldigital.statuspage.io/api/v2/status.json", page_url: "https://reveldigital.statuspage.io", type: "statuspage" },
+  // ChartHop — people analytics and org design platform
+  { id: "charthop", name: "ChartHop", tags: ["hr", "people-analytics", "org-design", "workforce", "saas"], status_url: "https://status.charthop.com/api/v2/status.json", page_url: "https://status.charthop.com", type: "statuspage" },
+  // Board BI — integrated business planning and analytics platform
+  { id: "board_bi", name: "Board BI", tags: ["bi", "planning", "analytics", "budgeting", "enterprise"], status_url: "https://board.statuspage.io/api/v2/status.json", page_url: "https://board.statuspage.io", type: "statuspage" },
+  // Limeade — employee wellness and engagement experience platform
+  { id: "limeade", name: "Limeade", tags: ["wellness", "employee-experience", "hr", "benefits", "saas"], status_url: "https://limeade.statuspage.io/api/v2/status.json", page_url: "https://limeade.statuspage.io", type: "statuspage" },
+  // BloomBoard — professional learning and micro-credential platform for educators
+  { id: "bloomboard", name: "BloomBoard", tags: ["edtech", "professional-learning", "credentials", "k12", "saas"], status_url: "https://status.bloomboard.com/api/v2/status.json", page_url: "https://status.bloomboard.com", type: "statuspage" },
+  // Limble — cloud-based CMMS for maintenance management and asset tracking
+  { id: "limble", name: "Limble", tags: ["cmms", "maintenance", "asset-management", "operations", "saas"], status_url: "https://status.limblecmms.com/api/v2/status.json", page_url: "https://status.limblecmms.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7306,7 +7326,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3800 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3810 services.",
           },
         },
         required: [],
