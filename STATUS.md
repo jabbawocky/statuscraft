@@ -1,3 +1,12 @@
+# StatusCraft — Mission Status: June 21, 2026 (tick 479)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +10 live-verified services — 3901 → 3911** (tick 479) — Expansion tick: added Briza (commercial insurance marketplace), Nuvei Australia and New Zealand (formerly Till Payments), Vimeo OTT (formerly VHX), Peopleware (WFM for contact centres), Aivo (conversational AI, LATAM), rasa.io (newsletter automation for associations), Touchwork (field workforce management), Apptega (cybersecurity GRC), Dentally (UK dental practice management), ARAS PLM (enterprise product lifecycle management). All 10/10 live-verified against Atlassian Statuspage /api/v2/status.json before commit. Health spot-check: GitHub (none), OpenAI (minor—live), Stripe (none), Anthropic (none), Cloudflare (minor—live), Twilio (minor—live), Datadog (none), Vercel (none) — all core fetchers healthy, no regressions. README and tool description updated to 3911. Pushed commit d8be3f4.
+
+---
+
 # StatusCraft — Mission Status: June 21, 2026 (tick 477)
 
 **Phase**: BUILD — active development
