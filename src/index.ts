@@ -6563,6 +6563,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "black_forest_labs", name: "Black Forest Labs", tags: ["ai", "image-generation", "api", "developer-tools"], status_url: "https://status.bfl.ml/api/v2/status.json", page_url: "https://status.bfl.ml", type: "statuspage" },
   // Neets.ai — fast and affordable TTS / voice synthesis API
   { id: "neets_ai", name: "Neets.ai", tags: ["ai", "text-to-speech", "voice", "api", "developer-tools"], status_url: "https://neets.statuspage.io/api/v2/status.json", page_url: "https://neets.statuspage.io", type: "statuspage" },
+  // GoTo (GoToMeeting) — video conferencing and collaboration platform by GoTo (formerly LogMeIn)
+  { id: "goto", name: "GoTo (GoToMeeting)", tags: ["video-conferencing", "collaboration", "meetings", "webinars", "saas"], status_url: "https://status.gotomeeting.com/api/v2/status.json", page_url: "https://status.gotomeeting.com", type: "statuspage" },
+  // Demodesk — AI-powered sales meeting platform with real-time coaching
+  { id: "demodesk", name: "Demodesk", tags: ["sales", "video-conferencing", "ai", "coaching", "saas"], status_url: "https://status.demodesk.com/api/v2/status.json", page_url: "https://status.demodesk.com", type: "statuspage" },
+  // Zowie — AI customer service automation for e-commerce brands
+  { id: "zowie", name: "Zowie", tags: ["ai", "customer-service", "chatbot", "ecommerce", "automation"], status_url: "https://zowie.statuspage.io/api/v2/status.json", page_url: "https://zowie.statuspage.io", type: "statuspage" },
+  // Yuma — AI-powered customer support automation for Shopify merchants
+  { id: "yuma", name: "Yuma AI", tags: ["ai", "customer-service", "ecommerce", "shopify", "automation"], status_url: "https://yuma.statuspage.io/api/v2/status.json", page_url: "https://yuma.statuspage.io", type: "statuspage" },
+  // Xref — automated reference checking and candidate verification platform for HR
+  { id: "xref", name: "Xref", tags: ["hr", "recruiting", "reference-checking", "talent-acquisition", "saas"], status_url: "https://status.xref.com/api/v2/status.json", page_url: "https://status.xref.com", type: "statuspage" },
+  // Exalate — bi-directional issue tracker sync (Jira, GitHub, Zendesk, ServiceNow)
+  { id: "exalate", name: "Exalate", tags: ["integration", "jira", "issue-tracking", "developer-tools", "saas"], status_url: "https://status.exalate.com/api/v2/status.json", page_url: "https://status.exalate.com", type: "statuspage" },
+  // Calix — cloud platform and managed services for broadband service providers (BSPs)
+  { id: "calix", name: "Calix", tags: ["broadband", "isp", "cloud", "networking", "enterprise"], status_url: "https://calix.statuspage.io/api/v2/status.json", page_url: "https://calix.statuspage.io", type: "statuspage" },
+  // Ovation — restaurant customer feedback and reputation management platform
+  { id: "ovation", name: "Ovation", tags: ["restaurants", "feedback", "customer-experience", "reputation", "saas"], status_url: "https://ovation.statuspage.io/api/v2/status.json", page_url: "https://ovation.statuspage.io", type: "statuspage" },
+  // Tilda — no-code website builder popular with designers and media companies
+  { id: "tilda", name: "Tilda", tags: ["website-builder", "no-code", "design", "publishing", "saas"], status_url: "https://tilda.statuspage.io/api/v2/status.json", page_url: "https://tilda.statuspage.io", type: "statuspage" },
+  // Lumin — collaborative PDF platform for teams and education
+  { id: "lumin", name: "Lumin", tags: ["pdf", "documents", "collaboration", "edtech", "saas"], status_url: "https://lumin.statuspage.io/api/v2/status.json", page_url: "https://lumin.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -6972,7 +6992,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.78.0" },
+  { name: "statuscraft", version: "2.79.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -7054,7 +7074,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3675 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3685 services.",
           },
         },
         required: [],
