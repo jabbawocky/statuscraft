@@ -6609,6 +6609,28 @@ const SERVICES: ServiceConfig[] = [
   { id: "selectstar", name: "Select Star", tags: ["data-catalog", "data-lineage", "data-discovery", "analytics", "saas"], status_url: "https://selectstar.statuspage.io/api/v2/status.json", page_url: "https://selectstar.statuspage.io", type: "statuspage" },
   // data.world — cloud-native data catalog and collaboration platform
   { id: "dataworld", name: "data.world", tags: ["data-catalog", "data-collaboration", "knowledge-graph", "governance", "saas"], status_url: "https://dataworld.statuspage.io/api/v2/status.json", page_url: "https://dataworld.statuspage.io", type: "statuspage" },
+  // Act-On Software — marketing automation platform for demand generation and lead nurturing
+  { id: "acton", name: "Act-On", tags: ["marketing", "marketing-automation", "email", "lead-generation", "saas"], status_url: "https://acton.statuspage.io/api/v2/status.json", page_url: "https://status.act-on.com", type: "statuspage" },
+  // GrowthBook — open-source A/B testing and feature flag platform
+  { id: "growthbook", name: "GrowthBook", tags: ["feature-flags", "ab-testing", "experimentation", "developer-tools", "open-source"], status_url: "https://status.growthbook.io/api/v2/summary.json", page_url: "https://status.growthbook.io", type: "betterstack" },
+  // Vessel — native integration platform for CRM and sales tools
+  { id: "vessel", name: "Vessel", tags: ["integrations", "crm", "native-integrations", "api", "developer-tools"], status_url: "https://vessel.statuspage.io/api/v2/status.json", page_url: "https://vessel.statuspage.io", type: "statuspage" },
+  // Middleware.io — full-stack cloud observability and APM platform
+  { id: "middleware", name: "Middleware", tags: ["monitoring", "observability", "apm", "logging", "developer-tools"], status_url: "https://middleware.statuspage.io/api/v2/status.json", page_url: "https://middleware.statuspage.io", type: "statuspage" },
+  // HelpSpot — self-hosted and cloud help desk ticketing software
+  { id: "helpspot", name: "HelpSpot", tags: ["customer-support", "help-desk", "ticketing", "email", "saas"], status_url: "https://helpspot.statuspage.io/api/v2/status.json", page_url: "https://helpspot.statuspage.io", type: "statuspage" },
+  // Akita — customer success platform for health scoring and churn prevention
+  { id: "akita", name: "Akita", tags: ["customer-success", "health-scoring", "retention", "saas", "analytics"], status_url: "https://akita.statuspage.io/api/v2/status.json", page_url: "https://akita.statuspage.io", type: "statuspage" },
+  // Nimbly Technologies — operations, audit, and inspection management platform
+  { id: "nimbly", name: "Nimbly", tags: ["operations", "audit", "inspections", "retail", "saas"], status_url: "https://nimbly.statuspage.io/api/v2/status.json", page_url: "https://nimbly.statuspage.io", type: "statuspage" },
+  // Zen Planner — fitness studio and gym management software
+  { id: "zenplanner", name: "Zen Planner", tags: ["fitness", "scheduling", "studio-management", "sports", "saas"], status_url: "https://zenplanner.statuspage.io/api/v2/status.json", page_url: "https://zenplanner.statuspage.io", type: "statuspage" },
+  // Tapcart — mobile commerce app builder for Shopify brands
+  { id: "tapcart", name: "Tapcart", tags: ["ecommerce", "mobile", "shopify", "app-builder", "saas"], status_url: "https://tapcart.statuspage.io/api/v2/status.json", page_url: "https://status.tapcart.co", type: "statuspage" },
+  // Tandem — remote team communication and virtual office platform
+  { id: "tandem", name: "Tandem", tags: ["remote-work", "communication", "virtual-office", "collaboration", "saas"], status_url: "https://tandem.statuspage.io/api/v2/status.json", page_url: "https://tandem.statuspage.io", type: "statuspage" },
+  // Teamflow — virtual office for remote and hybrid teams
+  { id: "teamflow", name: "Teamflow", tags: ["remote-work", "virtual-office", "collaboration", "video", "saas"], status_url: "https://teamflow.statuspage.io/api/v2/status.json", page_url: "https://teamflow.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7100,7 +7122,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3698 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3709 services.",
           },
         },
         required: [],
