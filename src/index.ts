@@ -6703,6 +6703,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "pitneybowes", name: "Pitney Bowes", tags: ["shipping", "mailing", "ecommerce", "logistics", "postage", "enterprise"], status_url: "https://status.pitneybowes.com/api/v2/status.json", page_url: "https://status.pitneybowes.com", type: "statuspage" },
   // Creatify — AI-powered video ad creation platform
   { id: "creatify", name: "Creatify", tags: ["ai", "video", "advertising", "marketing", "generation", "saas"], status_url: "https://status.creatify.ai/api/v2/status.json", page_url: "https://status.creatify.ai", type: "statuspage" },
+  // EnergyCAP — energy management and utility bill tracking software
+  { id: "energycap", name: "EnergyCAP", tags: ["energy", "management", "utilities", "sustainability", "saas", "software"], status_url: "https://status.energycap.com/api/v2/status.json", page_url: "https://status.energycap.com", type: "statuspage" },
+  // Teamgo — visitor management and sign-in system
+  { id: "teamgo", name: "Teamgo", tags: ["visitor-management", "security", "sign-in", "facilities", "saas"], status_url: "https://status.teamgo.co/api/v2/status.json", page_url: "https://status.teamgo.co", type: "statuspage" },
+  // Service Fusion — field service management and CRM platform
+  { id: "service_fusion", name: "Service Fusion", tags: ["field-service", "saas", "crm", "scheduling", "dispatch", "hvac"], status_url: "https://status.servicefusion.com/api/v2/status.json", page_url: "https://status.servicefusion.com", type: "statuspage" },
+  // Acenda — omnichannel ecommerce platform
+  { id: "acenda", name: "Acenda", tags: ["ecommerce", "retail", "saas", "omnichannel", "shopping-cart", "marketplace"], status_url: "https://status.acenda.com/api/v2/status.json", page_url: "https://status.acenda.com", type: "statuspage" },
+  // tamigo — employee scheduling and workforce management platform
+  { id: "tamigo", name: "tamigo", tags: ["workforce-management", "scheduling", "hr", "saas", "time-tracking", "retail"], status_url: "https://tamigo.statuspage.io/api/v2/status.json", page_url: "https://tamigo.statuspage.io", type: "statuspage" },
+  // Tapdesk — CRM and lead intelligence platform
+  { id: "tapdesk", name: "Tapdesk", tags: ["crm", "sales", "lead-generation", "prospecting", "saas", "b2b"], status_url: "https://tapdesk.statuspage.io/api/v2/status.json", page_url: "https://tapdesk.statuspage.io", type: "statuspage" },
+  // EDNA — omnichannel customer communications and CRM platform
+  { id: "edna", name: "EDNA", tags: ["crm", "omnichannel", "helpdesk", "messaging", "saas", "customer-communications"], status_url: "https://edna.statuspage.io/api/v2/status.json", page_url: "https://edna.statuspage.io", type: "statuspage" },
+  // Saildrone — autonomous ocean data collection and maritime intelligence platform
+  { id: "saildrone", name: "Saildrone", tags: ["ocean-data", "iot", "maritime", "autonomous", "api", "saas"], status_url: "https://saildrone.statuspage.io/api/v2/status.json", page_url: "https://saildrone.statuspage.io", type: "statuspage" },
+  // Salesbricks — B2B deal workflow and buyer checkout platform
+  { id: "salesbricks", name: "Salesbricks", tags: ["b2b", "saas", "deals", "revenue-operations", "checkout", "sales"], status_url: "https://salesbricks.statuspage.io/api/v2/status.json", page_url: "https://salesbricks.statuspage.io", type: "statuspage" },
+  // Scalefast — international ecommerce and subscription management platform
+  { id: "scalefast", name: "Scalefast", tags: ["ecommerce", "international", "saas", "subscriptions", "payments", "d2c"], status_url: "https://scalefast.statuspage.io/api/v2/status.json", page_url: "https://scalefast.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7112,7 +7132,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.79.0" },
+  { name: "statuscraft", version: "2.80.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -7194,7 +7214,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3744 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3754 services.",
           },
         },
         required: [],
