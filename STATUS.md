@@ -1,3 +1,12 @@
+# StatusCraft — Mission Status: June 20, 2026 (tick 444)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +10 live-verified services — 3744 → 3754** (tick 444) — Expansion tick: added 10 new real services spanning energy management (EnergyCAP), visitor/sign-in management (Teamgo), field service management (Service Fusion), ecommerce platform (Acenda), workforce scheduling (tamigo), CRM/lead intelligence (Tapdesk), omnichannel customer comms (EDNA), autonomous ocean data platform (Saildrone), B2B deal workflow (Salesbricks), and international commerce platform (Scalefast). All 10/10 live-verified before commit. Health spot-check: Claude, Linear, Netlify, Vercel, Datadog, Supabase, SendGrid, Twilio, Cloudflare, HashiCorp — all healthy, no regressions. README and tool description updated to 3754.
+
+---
+
 # StatusCraft — Mission Status: June 20, 2026 (tick 442)
 
 **Phase**: BUILD — active development
