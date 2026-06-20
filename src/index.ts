@@ -6877,6 +6877,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "altium365", name: "Altium 365", tags: ["pcb", "eda", "electronics", "engineering", "cloud"], status_url: "https://status.altium.com/api/v2/status.json", page_url: "https://status.altium.com", type: "statuspage" },
   // Truevo — payment processing and acquiring platform for European merchants
   { id: "truevo", name: "Truevo", tags: ["payments", "acquiring", "fintech", "merchant-services", "saas"], status_url: "https://status.truevo.com/api/v2/status.json", page_url: "https://status.truevo.com", type: "statuspage" },
+  // Edge Delta — streaming telemetry and observability platform for log processing at the edge
+  { id: "edgedelta", name: "Edge Delta", tags: ["observability", "logging", "telemetry", "monitoring", "saas"], status_url: "https://edgedelta.statuspage.io/api/v2/status.json", page_url: "https://edgedelta.statuspage.io", type: "statuspage" },
+  // Hint Health — direct primary care (DPC) practice management software
+  { id: "hint", name: "Hint Health", tags: ["healthcare", "ehr", "direct-primary-care", "practice-management", "saas"], status_url: "https://status.hint.com/api/v2/status.json", page_url: "https://status.hint.com", type: "statuspage" },
+  // Blue Canvas — Salesforce DevOps and version control platform
+  { id: "bluecanvas", name: "Blue Canvas", tags: ["salesforce", "devops", "version-control", "deployment", "saas"], status_url: "https://status.bluecanvas.io/api/v2/status.json", page_url: "https://status.bluecanvas.io", type: "statuspage" },
+  // ElementsCloud — Salesforce metadata management and impact analysis platform
+  { id: "elements_cloud", name: "ElementsCloud", tags: ["salesforce", "metadata", "impact-analysis", "devops", "saas"], status_url: "https://status.elements.cloud/api/v2/status.json", page_url: "https://status.elements.cloud", type: "statuspage" },
+  // WatchGuard Technologies — network security, endpoint security, and multi-factor authentication
+  { id: "watchguard", name: "WatchGuard Technologies", tags: ["security", "network-security", "firewall", "mfa", "enterprise"], status_url: "https://status.watchguard.com/api/v2/status.json", page_url: "https://status.watchguard.com", type: "statuspage" },
+  // Provenir — AI-powered credit risk decisioning and data orchestration platform
+  { id: "provenir", name: "Provenir", tags: ["fintech", "credit-risk", "decisioning", "ai", "enterprise"], status_url: "https://status.provenir.com/api/v2/status.json", page_url: "https://status.provenir.com", type: "statuspage" },
+  // orderbird — iPad-based POS system for restaurants, cafes, and bars (Germany/Europe)
+  { id: "orderbird", name: "orderbird", tags: ["pos", "restaurant", "hospitality", "payments", "saas"], status_url: "https://status.orderbird.com/api/v2/status.json", page_url: "https://status.orderbird.com", type: "statuspage" },
+  // Speakeasy — API SDK generation and developer experience tooling
+  { id: "speakeasyapi", name: "Speakeasy", tags: ["api", "sdk", "developer-tools", "devex", "saas"], status_url: "https://status.speakeasyapi.dev/api/v2/status.json", page_url: "https://status.speakeasyapi.dev", type: "statuspage" },
+  // Socket — software supply chain security for open-source dependencies
+  { id: "socket", name: "Socket", tags: ["security", "supply-chain", "open-source", "dependencies", "developer-tools"], status_url: "https://status.socket.dev/api/v2/status.json", page_url: "https://status.socket.dev", type: "statuspage" },
+  // Luma Health — patient engagement and scheduling platform for healthcare providers
+  { id: "lumahealth", name: "Luma Health", tags: ["healthcare", "patient-engagement", "scheduling", "saas"], status_url: "https://status.lumahealth.io/api/v2/status.json", page_url: "https://status.lumahealth.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7286,7 +7306,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.80.0" },
+  { name: "statuscraft", version: "2.81.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -7368,7 +7388,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3831 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3841 services.",
           },
         },
         required: [],
