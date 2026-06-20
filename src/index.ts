@@ -6743,6 +6743,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "ptc_cloud", name: "PTC Cloud Services", tags: ["industrial-iot", "plm", "enterprise", "manufacturing", "cloud", "saas"], status_url: "https://status.ptc.io/api/v2/status.json", page_url: "https://status.ptc.io", type: "statuspage" },
   // Rivo — loyalty and rewards platform for Shopify merchants and ecommerce brands
   { id: "rivo", name: "Rivo", tags: ["loyalty", "rewards", "ecommerce", "shopify", "saas", "marketing"], status_url: "https://status.rivo.io/api/v2/status.json", page_url: "https://status.rivo.io", type: "statuspage" },
+  // Patch — carbon credit and climate API platform for integrating carbon offsets into products
+  { id: "patch", name: "Patch", tags: ["carbon", "climate", "api", "sustainability", "developer-tools"], status_url: "https://status.patch.io/api/v2/status.json", page_url: "https://status.patch.io", type: "statuspage" },
+  // ClearTrace — clean energy tracking and carbon reporting platform for enterprises
+  { id: "cleartrace", name: "ClearTrace", tags: ["clean-energy", "carbon", "esg", "reporting", "sustainability"], status_url: "https://status.cleartrace.io/api/v2/status.json", page_url: "https://status.cleartrace.io", type: "statuspage" },
+  // Alpine IQ — cannabis CRM, analytics, and marketing automation platform
+  { id: "alpine_iq", name: "Alpine IQ", tags: ["cannabis", "crm", "analytics", "marketing", "retail"], status_url: "https://status.alpineiq.com/api/v2/status.json", page_url: "https://status.alpineiq.com", type: "statuspage" },
+  // Welocalize — translation and localization services platform for global content
+  { id: "welocalize", name: "Welocalize", tags: ["translation", "localization", "l10n", "enterprise", "ai"], status_url: "https://status.welocalize.com/api/v2/status.json", page_url: "https://status.welocalize.com", type: "statuspage" },
+  // HireEZ — AI-powered outbound recruiting and talent sourcing platform
+  { id: "hireez", name: "HireEZ", tags: ["recruiting", "hr", "ai", "talent-acquisition", "saas"], status_url: "https://status.hireez.com/api/v2/status.json", page_url: "https://status.hireez.com", type: "statuspage" },
+  // Nooks — AI sales calling and parallel dialer platform for revenue teams
+  { id: "nooks", name: "Nooks", tags: ["sales", "calling", "ai", "dialer", "revenue"], status_url: "https://status.nooks.in/api/v2/status.json", page_url: "https://status.nooks.in", type: "statuspage" },
+  // DailyPay — earned wage access platform enabling on-demand pay for employees
+  { id: "dailypay", name: "DailyPay", tags: ["earned-wage-access", "ewa", "fintech", "payroll", "hr"], status_url: "https://status.dailypay.com/api/v2/status.json", page_url: "https://status.dailypay.com", type: "statuspage" },
+  // Rain — earned wage access and financial wellness platform for hourly workers
+  { id: "rain", name: "Rain", tags: ["earned-wage-access", "ewa", "fintech", "payroll", "financial-wellness"], status_url: "https://status.rain.com/api/v2/status.json", page_url: "https://status.rain.com", type: "statuspage" },
+  // Signing Order — notary signing platform for real estate closing coordination
+  { id: "signing_order", name: "Signing Order", tags: ["notary", "real-estate", "closing", "esign", "fintech"], status_url: "https://status.signingorder.com/api/v2/status.json", page_url: "https://status.signingorder.com", type: "statuspage" },
+  // Cradlepoint — enterprise cellular networking and NetCloud platform (Ericsson)
+  { id: "cradlepoint", name: "Cradlepoint", tags: ["networking", "cellular", "enterprise", "iot", "wan"], status_url: "https://status.cradlepoint.com/api/v2/status.json", page_url: "https://status.cradlepoint.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7234,7 +7254,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3764 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3774 services.",
           },
         },
         required: [],
