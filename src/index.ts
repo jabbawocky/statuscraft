@@ -7090,6 +7090,48 @@ const SERVICES: ServiceConfig[] = [
   { id: "codat_io", name: "Codat", tags: ["fintech", "financial-data", "accounting", "api", "integration"], status_url: "https://status.codat.io/api/v2/status.json", page_url: "https://status.codat.io", type: "statuspage" },
   // Rutter — universal commerce and ERP data API for embedded fintech and accounting integrations
   { id: "rutter_api", name: "Rutter", tags: ["fintech", "commerce", "erp", "api", "integration"], status_url: "https://status.rutterapi.com/api/v2/status.json", page_url: "https://status.rutterapi.com", type: "statuspage" },
+  // Tick 509 additions — 10 new live-verified services
+  // OnFinality — multi-chain blockchain node infrastructure and API service for Web3 developers
+  { id: "onfinality_io", name: "OnFinality", tags: ["blockchain", "web3", "node-infrastructure", "api", "multichain"], status_url: "https://status.onfinality.io/api/v2/status.json", page_url: "https://status.onfinality.io", type: "statuspage" },
+  // D-ID — AI-powered video generation and digital human avatar platform
+  { id: "d_id", name: "D-ID", tags: ["ai", "video", "avatar", "generative-ai", "saas"], status_url: "https://status.d-id.com/api/v2/status.json", page_url: "https://status.d-id.com", type: "statuspage" },
+  // Para — embedded Web3 wallet SDK for account abstraction and gasless transactions
+  { id: "para_wallet", name: "Para", tags: ["web3", "wallet", "account-abstraction", "developer-tools", "api"], status_url: "https://status.getpara.com/api/v2/status.json", page_url: "https://status.getpara.com", type: "statuspage" },
+  // Stackup — ERC-4337 account abstraction bundler and paymaster infrastructure for Web3 apps
+  { id: "stackup", name: "Stackup", tags: ["web3", "erc4337", "account-abstraction", "bundler", "infrastructure"], status_url: "https://status.stackup.sh/api/v2/status.json", page_url: "https://status.stackup.sh", type: "statuspage" },
+  // Click2Mail — cloud-based direct mail printing and mailing API for physical mail delivery
+  { id: "click2mail", name: "Click2Mail", tags: ["direct-mail", "printing", "postal", "api", "saas"], status_url: "https://status.click2mail.com/api/v2/status.json", page_url: "https://status.click2mail.com", type: "statuspage" },
+  // Sine — workplace visitor management and contractor check-in platform (Australia)
+  { id: "sine", name: "Sine", tags: ["visitor-management", "workplace", "contractor", "safety", "saas"], status_url: "https://status.sine.co/api/v2/status.json", page_url: "https://status.sine.co", type: "statuspage" },
+  // MindStudio — no-code AI app builder for creating custom AI assistants and workflows
+  { id: "mindstudio", name: "MindStudio", tags: ["ai", "no-code", "llm", "app-builder", "saas"], status_url: "https://status.mindstudio.ai/api/v2/status.json", page_url: "https://status.mindstudio.ai", type: "statuspage" },
+  // ChatBot — AI chatbot platform by Text.com for automated customer conversations
+  { id: "chatbot_com", name: "ChatBot", tags: ["chatbot", "ai", "customer-support", "automation", "saas"], status_url: "https://status.chatbot.com/api/v2/status.json", page_url: "https://status.chatbot.com", type: "statuspage" },
+  // ChatGuru — Brazilian WhatsApp Business chatbot and customer messaging platform
+  { id: "chatguru", name: "ChatGuru", tags: ["chatbot", "whatsapp", "messaging", "customer-support", "brazil"], status_url: "https://status.chatguru.com.br/api/v2/status.json", page_url: "https://status.chatguru.com.br", type: "statuspage" },
+  // ChargeHub — EV charging station network directory and routing service for electric vehicles
+  { id: "chargehub", name: "ChargeHub", tags: ["ev", "electric-vehicle", "charging", "network", "saas"], status_url: "https://status.chargehub.com/api/v2/status.json", page_url: "https://status.chargehub.com", type: "statuspage" },
+  // Tick 518 additions — 10 new live-verified services
+  // Carrot Fertility — global fertility and family-forming employee benefits platform
+  { id: "carrot_fertility", name: "Carrot Fertility", tags: ["employee-benefits", "fertility", "healthcare", "hr", "saas"], status_url: "https://status.carrot.com/api/v2/status.json", page_url: "https://status.carrot.com", type: "statuspage" },
+  // GBIF — Global Biodiversity Information Facility; open data infrastructure for biodiversity research
+  { id: "gbif", name: "GBIF", tags: ["biodiversity", "open-science", "research", "data", "api"], status_url: "https://status.gbif.org/api/v2/status.json", page_url: "https://status.gbif.org", type: "statuspage" },
+  // Gigs — embedded eSIM and mobile connectivity platform for apps and marketplaces
+  { id: "gigs", name: "Gigs", tags: ["esim", "telecom", "mobile", "connectivity", "api"], status_url: "https://status.gigs.com/api/v2/status.json", page_url: "https://status.gigs.com", type: "statuspage" },
+  // Cisco Jasper — enterprise IoT device connectivity management and control center platform
+  { id: "cisco_jasper", name: "Cisco Jasper", tags: ["iot", "connectivity", "device-management", "telecom", "enterprise"], status_url: "https://status.jasper.com/api/v2/status.json", page_url: "https://status.jasper.com", type: "statuspage" },
+  // Upstart — AI-powered consumer lending and credit decisioning platform
+  { id: "upstart", name: "Upstart", tags: ["fintech", "lending", "ai", "credit", "consumer-finance"], status_url: "https://status.upstart.com/api/v2/status.json", page_url: "https://status.upstart.com", type: "statuspage" },
+  // Accelerate Learning — K-12 science curriculum and STEMscopes digital learning platform
+  { id: "accelerate_learning", name: "Accelerate Learning", tags: ["edtech", "k12", "curriculum", "science", "saas"], status_url: "https://status.acceleratelearning.com/api/v2/status.json", page_url: "https://status.acceleratelearning.com", type: "statuspage" },
+  // Amplify — K-12 digital curriculum and assessment platform for core subjects
+  { id: "amplify_education", name: "Amplify", tags: ["edtech", "k12", "curriculum", "assessment", "literacy"], status_url: "https://status.amplify.com/api/v2/status.json", page_url: "https://status.amplify.com", type: "statuspage" },
+  // Babel Street — AI-powered data intelligence and threat analytics platform
+  { id: "babel_street", name: "Babel Street", tags: ["intelligence", "data-analytics", "security", "ai", "enterprise"], status_url: "https://status.babelstreet.com/api/v2/status.json", page_url: "https://status.babelstreet.com", type: "statuspage" },
+  // Torchbox — UK digital agency hosting platform; creators of the Wagtail open-source CMS
+  { id: "torchbox", name: "Torchbox", tags: ["digital-agency", "cms", "wagtail", "hosting", "uk"], status_url: "https://status.torchbox.com/api/v2/status.json", page_url: "https://status.torchbox.com", type: "statuspage" },
+  // Fireside — podcast hosting and creator community platform for independent podcasters
+  { id: "fireside_fm", name: "Fireside", tags: ["podcast", "hosting", "media", "community", "creator"], status_url: "https://fireside.statuspage.io/api/v2/status.json", page_url: "https://fireside.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7499,7 +7541,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.83.0" },
+  { name: "statuscraft", version: "2.84.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -7581,7 +7623,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3942 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3952 services.",
           },
         },
         required: [],
