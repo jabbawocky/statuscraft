@@ -6849,6 +6849,46 @@ const SERVICES = [
     { id: "dentally", name: "Dentally", tags: ["dental", "practice-management", "healthcare", "uk", "saas"], status_url: "https://dentally.statuspage.io/api/v2/status.json", page_url: "https://dentally.statuspage.io", type: "statuspage" },
     // ARAS — enterprise PLM (product lifecycle management) software platform
     { id: "aras_plm", name: "ARAS", tags: ["plm", "manufacturing", "enterprise", "product-lifecycle", "saas"], status_url: "https://aras.statuspage.io/api/v2/status.json", page_url: "https://aras.statuspage.io", type: "statuspage" },
+    // NationBuilder — CRM and engagement platform for political campaigns, advocacy, and nonprofits
+    { id: "nationbuilder", name: "NationBuilder", tags: ["crm", "political", "nonprofit", "campaign-management", "saas"], status_url: "https://status.nationbuilder.com/api/v2/status.json", page_url: "https://status.nationbuilder.com", type: "statuspage" },
+    // TripWorks — tour operator and activity booking management platform
+    { id: "tripworks", name: "TripWorks", tags: ["tours", "activities", "booking", "travel", "saas"], status_url: "https://status.tripworks.com/api/v2/status.json", page_url: "https://status.tripworks.com", type: "statuspage" },
+    // Skimmer — pool service and route management software for pool care companies
+    { id: "skimmer", name: "Skimmer", tags: ["pool-service", "field-service", "scheduling", "home-services", "saas"], status_url: "https://status.getskimmer.com/api/v2/status.json", page_url: "https://status.getskimmer.com", type: "statuspage" },
+    // TempWorks — staffing and temp-agency management software (ATS, payroll, billing)
+    { id: "tempworks", name: "TempWorks", tags: ["staffing", "temp-agency", "recruiting", "ats", "saas"], status_url: "https://status.tempworks.com/api/v2/status.json", page_url: "https://status.tempworks.com", type: "statuspage" },
+    // Nova Credit — international credit bureau enabling newcomers to use foreign credit history
+    { id: "nova_credit", name: "Nova Credit", tags: ["credit", "fintech", "identity", "immigration", "api"], status_url: "https://status.novacredit.com/api/v2/status.json", page_url: "https://status.novacredit.com", type: "statuspage" },
+    // Kintsugi — AI-powered sales tax compliance automation platform
+    { id: "kintsugi", name: "Kintsugi", tags: ["tax", "compliance", "saas", "fintech", "ai"], status_url: "https://kintsugi.statuspage.io/api/v2/status.json", page_url: "https://status.trykintsugi.com", type: "statuspage" },
+    // Pylon — B2B customer support platform built for Slack-first teams
+    { id: "pylon", name: "Pylon", tags: ["customer-support", "b2b", "slack", "saas", "crm"], status_url: "https://pylon.statuspage.io/api/v2/status.json", page_url: "https://status.getpylon.com", type: "statuspage" },
+    // Island — enterprise browser with built-in security controls and governance
+    { id: "island", name: "Island", tags: ["browser", "enterprise", "security", "zero-trust", "saas"], status_url: "https://island.statuspage.io/api/v2/status.json", page_url: "https://island.statuspage.io", type: "statuspage" },
+    // Legit Security — application security posture management and software supply chain security
+    { id: "legit_security", name: "Legit Security", tags: ["security", "appsec", "supply-chain", "devsecops", "saas"], status_url: "https://legitsecurity.statuspage.io/api/v2/status.json", page_url: "https://status.legitsecurity.co", type: "statuspage" },
+    // Seemplicity — security risk remediation and vulnerability management platform
+    { id: "seemplicity", name: "Seemplicity", tags: ["security", "risk-management", "vulnerability-management", "devsecops", "saas"], status_url: "https://seemplicity.statuspage.io/api/v2/status.json", page_url: "https://seemplicity.statuspage.io", type: "statuspage" },
+    // Anecdotes — AI-powered GRC and compliance evidence automation platform
+    { id: "anecdotes_ai", name: "Anecdotes", tags: ["grc", "compliance", "ai", "security", "saas"], status_url: "https://status.anecdotes.ai/api/v2/status.json", page_url: "https://status.anecdotes.ai", type: "statuspage" },
+    // D-ID — AI-powered digital human and avatar video generation platform
+    { id: "did_ai", name: "D-ID", tags: ["ai", "video", "avatar", "creative", "saas"], status_url: "https://status.d-id.com/api/v2/status.json", page_url: "https://status.d-id.com", type: "statuspage" },
+    // Hinge Health — digital musculoskeletal health and physical therapy platform
+    { id: "hinge_health", name: "Hinge Health", tags: ["healthcare", "digital-health", "msk", "physical-therapy", "saas"], status_url: "https://status.hingehealth.com/api/v2/status.json", page_url: "https://status.hingehealth.com", type: "statuspage" },
+    // Verifiable — healthcare provider credentialing and network management platform
+    { id: "verifiable", name: "Verifiable", tags: ["healthcare", "credentialing", "provider-management", "compliance", "saas"], status_url: "https://status.verifiable.com/api/v2/status.json", page_url: "https://status.verifiable.com", type: "statuspage" },
+    // Emburse Professional (formerly Certify) — enterprise expense management and travel platform
+    { id: "emburse_certify", name: "Emburse Professional", tags: ["expense-management", "travel", "finance", "enterprise", "saas"], status_url: "https://status.certify.com/api/v2/status.json", page_url: "https://status.certify.com", type: "statuspage" },
+    // Cezanne HR — cloud HR software for mid-size international organisations
+    { id: "cezanne_hr", name: "Cezanne HR", tags: ["hr", "hrms", "people-management", "saas", "international"], status_url: "https://status.cezannehr.com/api/v2/status.json", page_url: "https://status.cezannehr.com", type: "statuspage" },
+    // Kintone — no-code business application platform by Cybozu
+    { id: "kintone", name: "Kintone", tags: ["no-code", "business-apps", "workflow", "database", "saas"], status_url: "https://status.kintone.com/api/v2/status.json", page_url: "https://status.kintone.com", type: "statuspage" },
+    // Plentific — property management and maintenance operations platform
+    { id: "plentific", name: "Plentific", tags: ["property-management", "maintenance", "real-estate", "facilities", "saas"], status_url: "https://status.plentific.com/api/v2/status.json", page_url: "https://status.plentific.com", type: "statuspage" },
+    // Zenput — operations execution platform for restaurants and multi-unit operators
+    { id: "zenput", name: "Zenput", tags: ["operations", "restaurant", "multi-unit", "compliance", "saas"], status_url: "https://status.zenput.com/api/v2/status.json", page_url: "https://status.zenput.com", type: "statuspage" },
+    // Chameleon — product adoption and user onboarding tours platform
+    { id: "chameleon_so", name: "Chameleon", tags: ["product-adoption", "onboarding", "ux", "saas", "growth"], status_url: "https://status.chameleon.io/api/v2/status.json", page_url: "https://status.chameleon.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -7356,7 +7396,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3911 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3931 services.",
                     },
                 },
                 required: [],
