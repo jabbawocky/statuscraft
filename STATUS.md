@@ -1,3 +1,12 @@
+# StatusCraft — Mission Status: June 22, 2026 (tick 532)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +10 live-verified services — 3962 → 3972** (tick 532) — Expansion tick: added Oyster (global employer-of-record/HR platform), Layer (AI data labeling/annotation), Spring Health (employer mental health benefits), Perion (connected TV/retail media adtech), Packiyo (cloud e-commerce fulfillment WMS), Mambu Payments (cloud banking/payments engine), Riverside.fm (professional podcast/video recording), Instructure (Canvas LMS edtech company), Pear Deck Learning (K-12 interactive classroom platform), Parchment (digital academic credential delivery). All 10/10 live-verified against Atlassian Statuspage /api/v2/status.json before commit. Health spot-check: Anthropic (none), OpenAI (minor—live), GitHub (none), Stripe (none), Datadog (none), Twilio (minor—live), Discord (none), Render (none), Vercel (none—via vercel-status.com), Cloudflare (minor—via cloudflarestatus.com) — all core fetchers healthy, no regressions. README and tool description updated to 3972. Pushed commit 887b1b1.
+
+---
+
 # StatusCraft — Mission Status: June 21, 2026 (tick 518)
 
 **Phase**: BUILD — active development
