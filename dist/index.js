@@ -6974,6 +6974,34 @@ const SERVICES = [
     { id: "pear_deck", name: "Pear Deck Learning", tags: ["edtech", "k12", "classroom", "assessment", "presentations"], status_url: "https://status.peardeck.com/api/v2/status.json", page_url: "https://status.peardeck.com", type: "statuspage" },
     // Parchment — digital credential and academic transcript delivery platform for education institutions
     { id: "parchment", name: "Parchment", tags: ["edtech", "credentials", "transcripts", "higher-ed", "verification"], status_url: "https://status.parchment.com/api/v2/status.json", page_url: "https://status.parchment.com", type: "statuspage" },
+    // iDenfy — identity verification and KYC/AML compliance platform
+    { id: "idenfy", name: "iDenfy", tags: ["identity", "kyc", "verification", "aml", "compliance"], status_url: "https://idenfy.statuspage.io/api/v2/status.json", page_url: "https://idenfy.statuspage.io", type: "statuspage" },
+    // Medusa — open-source headless ecommerce platform for developers
+    { id: "medusa", name: "Medusa", tags: ["ecommerce", "headless", "open-source", "developer-tools", "saas"], status_url: "https://medusajs.statuspage.io/api/v2/status.json", page_url: "https://medusajs.statuspage.io", type: "statuspage" },
+    // Apsis One — APSIS email marketing and marketing automation platform
+    { id: "apsis_one", name: "Apsis One", tags: ["email", "marketing", "automation", "saas", "nordics"], status_url: "https://status.apsis.one/api/v2/status.json", page_url: "https://status.apsis.one", type: "statuspage" },
+    // Iconfinder — icon and illustration marketplace for designers
+    { id: "iconfinder", name: "Iconfinder", tags: ["icons", "design", "illustrations", "assets", "marketplace"], status_url: "https://iconfinder.statuspage.io/api/v2/status.json", page_url: "https://iconfinder.statuspage.io", type: "statuspage" },
+    // Altmetric — research impact and academic attention scoring platform
+    { id: "altmetric", name: "Altmetric", tags: ["research", "academia", "metrics", "analytics", "science"], status_url: "https://status.altmetric.com/api/v2/status.json", page_url: "https://status.altmetric.com", type: "statuspage" },
+    // Trusona — passwordless and phishing-resistant authentication platform
+    { id: "trusona", name: "Trusona", tags: ["authentication", "passwordless", "identity", "security", "saas"], status_url: "https://status.trusona.com/api/v2/status.json", page_url: "https://status.trusona.com", type: "statuspage" },
+    // Freshpaint — HIPAA-compliant data privacy and analytics routing platform
+    { id: "freshpaint", name: "Freshpaint", tags: ["analytics", "privacy", "hipaa", "data-routing", "healthcare"], status_url: "https://freshpaint.statuspage.io/api/v2/status.json", page_url: "https://freshpaint.statuspage.io", type: "statuspage" },
+    // Blotout — privacy-first analytics and data collection platform
+    { id: "blotout", name: "Blotout", tags: ["analytics", "privacy", "first-party", "data", "developer-tools"], status_url: "https://status.blotout.io/api/v2/status.json", page_url: "https://status.blotout.io", type: "statuspage" },
+    // Raidboxes — managed WordPress hosting platform
+    { id: "raidboxes", name: "Raidboxes", tags: ["hosting", "wordpress", "managed", "saas", "europe"], status_url: "https://raidboxes.statuspage.io/api/v2/status.json", page_url: "https://raidboxes.statuspage.io", type: "statuspage" },
+    // Keen — event data streaming and analytics API platform
+    { id: "keen", name: "Keen", tags: ["analytics", "event-data", "api", "streaming", "developer-tools"], status_url: "https://status.keen.io/api/v2/status.json", page_url: "https://status.keen.io", type: "statuspage" },
+    // Octadesk — customer service and CRM platform for Brazilian market
+    { id: "octadesk", name: "Octadesk", tags: ["customer-service", "crm", "chat", "saas", "brazil"], status_url: "https://status.octadesk.com/api/v2/status.json", page_url: "https://status.octadesk.com", type: "statuspage" },
+    // Emotive — SMS and conversational commerce platform for ecommerce brands
+    { id: "emotive", name: "Emotive", tags: ["sms", "ecommerce", "marketing", "conversational", "saas"], status_url: "https://status.emotive.io/api/v2/status.json", page_url: "https://status.emotive.io", type: "statuspage" },
+    // Clarivate — academic and scientific intelligence research platform
+    { id: "clarivate", name: "Clarivate", tags: ["research", "academia", "intelligence", "data", "analytics"], status_url: "https://status.clarivate.com/api/v2/status.json", page_url: "https://status.clarivate.com", type: "statuspage" },
+    // ISO — International Organization for Standardization digital services
+    { id: "iso", name: "ISO", tags: ["standards", "research", "data", "international", "organization"], status_url: "https://iso.statuspage.io/api/v2/status.json", page_url: "https://status.iso.org", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -7481,7 +7509,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3972 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3987 services.",
                     },
                 },
                 required: [],

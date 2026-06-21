@@ -1,3 +1,12 @@
+# StatusCraft — Mission Status: June 22, 2026 (tick 549)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +14 live-verified services — 3973 → 3987** (tick 549) — Expansion tick: added iDenfy (identity verification/KYC), Medusa (headless ecommerce platform), Apsis One (Nordic email marketing), Iconfinder (icon/design marketplace), Altmetric (research impact metrics), Trusona (passwordless authentication), Freshpaint (HIPAA-compliant analytics routing), Blotout (privacy-first analytics), Raidboxes (managed WordPress hosting), Keen (event data/analytics API), Octadesk (Brazilian CRM/customer service), Emotive (SMS commerce for ecommerce), Clarivate (academic intelligence platform), ISO (International Organization for Standardization). All 14/14 live-verified via Atlassian Statuspage /api/v2/status.json before commit. Health spot-check: Anthropic (operational), GitHub (operational), Stripe (operational), Twilio (minor–live), Datadog (operational), Lightspeed (operational), Kandji (operational), Lumin (minor–live) — core fetchers healthy. README and tool description updated to 3987. Pushed.
+
+---
+
 # StatusCraft — Mission Status: June 22, 2026 (tick 532)
 
 **Phase**: BUILD — active development
