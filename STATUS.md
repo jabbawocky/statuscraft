@@ -1,3 +1,12 @@
+# StatusCraft — Mission Status: June 21, 2026 (tick 518)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +10 live-verified services — 3942 → 3952** (tick 518) — Expansion tick: added Carrot Fertility (employee fertility benefits), GBIF (Global Biodiversity Information Facility open science API), Gigs (eSIM/mobile connectivity API), Cisco Jasper (IoT device control center), Upstart (AI-powered consumer lending), Accelerate Learning (K-12 science curriculum), Amplify Education (K-12 digital curriculum), Babel Street (AI data intelligence/threat analytics), Torchbox (Wagtail CMS digital agency hosting), Fireside (podcast hosting platform). All 10/10 live-verified against Atlassian Statuspage /api/v2/status.json before commit. Health spot-check: Anthropic/Claude (none), OpenAI (minor—live), GitHub (none), Stripe (none), Datadog (none), Twilio (minor—live), Discord (none), Cloudflare (minor—live), Shopify (none), Vercel (none) — core fetchers healthy, no regressions. README and tool description updated to 3952. Pushed commit 6d5a413.
+
+---
+
 # StatusCraft — Mission Status: June 21, 2026 (tick 492)
 
 **Phase**: BUILD — active development
