@@ -7067,6 +7067,29 @@ const SERVICES: ServiceConfig[] = [
   { id: "zenput", name: "Zenput", tags: ["operations", "restaurant", "multi-unit", "compliance", "saas"], status_url: "https://status.zenput.com/api/v2/status.json", page_url: "https://status.zenput.com", type: "statuspage" },
   // Chameleon — product adoption and user onboarding tours platform
   { id: "chameleon_so", name: "Chameleon", tags: ["product-adoption", "onboarding", "ux", "saas", "growth"], status_url: "https://status.chameleon.io/api/v2/status.json", page_url: "https://status.chameleon.io", type: "statuspage" },
+  // Tick 492 additions — 11 new live-verified services
+  // LangSmith — LangChain's LLMOps and AI observability platform for tracing and evaluating LLM apps
+  { id: "langchain_smith", name: "LangSmith", tags: ["ai", "llmops", "observability", "developer-tools", "llm"], status_url: "https://status.smith.langchain.com/api/v2/status.json", page_url: "https://status.smith.langchain.com", type: "statuspage" },
+  // Temporal — open-source durable workflow orchestration and microservice orchestration platform
+  { id: "temporal_io", name: "Temporal", tags: ["workflow", "orchestration", "distributed-systems", "developer-tools", "cloud"], status_url: "https://status.temporal.io/api/v2/status.json", page_url: "https://status.temporal.io", type: "statuspage" },
+  // Heap — automatic product analytics platform that captures every user interaction
+  { id: "heap_analytics", name: "Heap", tags: ["analytics", "product-analytics", "user-behavior", "saas", "developer-tools"], status_url: "https://status.heap.io/api/v2/status.json", page_url: "https://status.heap.io", type: "statuspage" },
+  // Sanity — structured content platform and headless CMS with real-time collaboration
+  { id: "sanity_io", name: "Sanity", tags: ["cms", "headless-cms", "content", "developer-tools", "saas"], status_url: "https://status.sanity.io/api/v2/status.json", page_url: "https://status.sanity.io", type: "statuspage" },
+  // Harmonic (MediaKind) — professional video encoding, transcoding, and streaming infrastructure
+  { id: "mediakind", name: "Harmonic MediaKind", tags: ["video", "streaming", "encoding", "media", "enterprise"], status_url: "https://status.harmonicinc.com/api/v2/status.json", page_url: "https://status.harmonicinc.com", type: "statuspage" },
+  // Healthwise — evidence-based patient education and clinical decision-support content platform
+  { id: "healthwise", name: "Healthwise", tags: ["healthcare", "patient-education", "clinical", "content", "saas"], status_url: "https://status.healthwise.net/api/v2/status.json", page_url: "https://status.healthwise.net", type: "statuspage" },
+  // Sila Money — ACH and digital banking API platform for embedding payments into apps
+  { id: "sila_money", name: "Sila", tags: ["payments", "fintech", "banking", "ach", "api"], status_url: "https://status.silamoney.com/api/v2/status.json", page_url: "https://status.silamoney.com", type: "statuspage" },
+  // Unit — banking-as-a-service platform for embedding financial products into software
+  { id: "unit_finance", name: "Unit", tags: ["banking", "fintech", "baas", "payments", "api"], status_url: "https://status.unit.co/api/v2/status.json", page_url: "https://status.unit.co", type: "statuspage" },
+  // Homebase — employee scheduling, time tracking, and HR tools for hourly workers and small businesses
+  { id: "homebase_app", name: "Homebase", tags: ["scheduling", "time-tracking", "hr", "workforce-management", "smb"], status_url: "https://status.joinhomebase.com/api/v2/status.json", page_url: "https://status.joinhomebase.com", type: "statuspage" },
+  // Codat — universal API for financial data — connects to accounting, banking, and commerce platforms
+  { id: "codat_io", name: "Codat", tags: ["fintech", "financial-data", "accounting", "api", "integration"], status_url: "https://status.codat.io/api/v2/status.json", page_url: "https://status.codat.io", type: "statuspage" },
+  // Rutter — universal commerce and ERP data API for embedded fintech and accounting integrations
+  { id: "rutter_api", name: "Rutter", tags: ["fintech", "commerce", "erp", "api", "integration"], status_url: "https://status.rutterapi.com/api/v2/status.json", page_url: "https://status.rutterapi.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7558,7 +7581,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3931 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3942 services.",
           },
         },
         required: [],
