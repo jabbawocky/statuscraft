@@ -6954,6 +6954,26 @@ const SERVICES = [
     { id: "torchbox", name: "Torchbox", tags: ["digital-agency", "cms", "wagtail", "hosting", "uk"], status_url: "https://status.torchbox.com/api/v2/status.json", page_url: "https://status.torchbox.com", type: "statuspage" },
     // Fireside — podcast hosting and creator community platform for independent podcasters
     { id: "fireside_fm", name: "Fireside", tags: ["podcast", "hosting", "media", "community", "creator"], status_url: "https://fireside.statuspage.io/api/v2/status.json", page_url: "https://fireside.statuspage.io", type: "statuspage" },
+    // Oyster — global employer-of-record and HR platform for distributed teams in 180+ countries
+    { id: "oyster_hr", name: "Oyster", tags: ["hr", "eor", "remote-work", "global-employment", "saas"], status_url: "https://status.oysterhr.com/api/v2/status.json", page_url: "https://status.oysterhr.com", type: "statuspage" },
+    // Layer — AI data labeling and annotation platform for training computer vision and NLP models
+    { id: "layer_ai", name: "Layer", tags: ["ai", "data-labeling", "annotation", "ml", "developer-tools"], status_url: "https://status.layer.ai/api/v2/status.json", page_url: "https://status.layer.ai", type: "statuspage" },
+    // Spring Health — employer-sponsored mental health and EAP benefits platform
+    { id: "spring_health", name: "Spring Health", tags: ["mental-health", "employee-benefits", "healthcare", "eap", "saas"], status_url: "https://springhealth.statuspage.io/api/v2/status.json", page_url: "https://springhealth.statuspage.io", type: "statuspage" },
+    // Perion — digital advertising technology platform for connected TV, retail media, and display
+    { id: "perion", name: "Perion", tags: ["adtech", "digital-advertising", "ctv", "retail-media", "saas"], status_url: "https://status.perion.com/api/v2/status.json", page_url: "https://status.perion.com", type: "statuspage" },
+    // Packiyo — cloud-based warehouse management and e-commerce fulfillment platform
+    { id: "packiyo", name: "Packiyo", tags: ["ecommerce", "fulfillment", "wms", "warehousing", "saas"], status_url: "https://status.packiyo.com/api/v2/status.json", page_url: "https://status.packiyo.com", type: "statuspage" },
+    // Mambu Payments — cloud-native banking and payments engine (Mambu SaaS core banking)
+    { id: "mambu_payments", name: "Mambu Payments", tags: ["fintech", "banking", "payments", "cloud-banking", "saas"], status_url: "https://status.numeral.io/api/v2/status.json", page_url: "https://status.numeral.io", type: "statuspage" },
+    // Riverside.fm — professional podcast and video recording platform for remote interviews
+    { id: "riverside_fm", name: "Riverside.fm", tags: ["podcast", "video", "recording", "media", "creator-tools"], status_url: "https://status.riverside.fm/api/v2/status.json", page_url: "https://status.riverside.fm", type: "statuspage" },
+    // Instructure — education technology company behind Canvas LMS and Mastery Connect
+    { id: "instructure", name: "Instructure", tags: ["edtech", "lms", "canvas", "education", "k12"], status_url: "https://status.instructure.com/api/v2/status.json", page_url: "https://status.instructure.com", type: "statuspage" },
+    // Pear Deck Learning — interactive presentation and formative assessment platform for K-12 classrooms
+    { id: "pear_deck", name: "Pear Deck Learning", tags: ["edtech", "k12", "classroom", "assessment", "presentations"], status_url: "https://status.peardeck.com/api/v2/status.json", page_url: "https://status.peardeck.com", type: "statuspage" },
+    // Parchment — digital credential and academic transcript delivery platform for education institutions
+    { id: "parchment", name: "Parchment", tags: ["edtech", "credentials", "transcripts", "higher-ed", "verification"], status_url: "https://status.parchment.com/api/v2/status.json", page_url: "https://status.parchment.com", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -7461,7 +7481,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3952 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3972 services.",
                     },
                 },
                 required: [],
