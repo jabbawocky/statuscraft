@@ -7212,6 +7212,16 @@ const SERVICES: ServiceConfig[] = [
   { id: "synchroteam", name: "Synchroteam", tags: ["field-service", "job-scheduling", "mobile-workforce", "crm", "saas"], status_url: "https://synchroteam.statuspage.io/api/v2/status.json", page_url: "https://synchroteam.statuspage.io", type: "statuspage" },
   { id: "inky", name: "Inky", tags: ["email-security", "phishing-protection", "security", "enterprise", "saas"], status_url: "https://inky.statuspage.io/api/v2/status.json", page_url: "https://inky.statuspage.io", type: "statuspage" },
   { id: "adaptable_io", name: "Adaptable", tags: ["cloud", "paas", "deployment", "developer-tools", "saas"], status_url: "https://adaptable.statuspage.io/api/v2/status.json", page_url: "https://adaptable.statuspage.io", type: "statuspage" },
+  { id: "wave_apps", name: "Wave", tags: ["accounting", "invoicing", "fintech", "small-business", "saas"], status_url: "https://status.waveapps.com/api/v2/status.json", page_url: "https://status.waveapps.com", type: "statuspage" },
+  { id: "followupcrm", name: "Follow Up CRM", tags: ["real-estate", "crm", "sales", "construction", "saas"], status_url: "https://followupcrm.statuspage.io/api/v2/status.json", page_url: "https://followupcrm.statuspage.io", type: "statuspage" },
+  { id: "cleverreach", name: "CleverReach", tags: ["email-marketing", "marketing", "email", "automation", "saas"], status_url: "https://status.cleverreach.com/api/v2/status.json", page_url: "https://status.cleverreach.com", type: "statuspage" },
+  { id: "fern_api", name: "Fern", tags: ["api", "documentation", "sdk", "developer-tools", "saas"], status_url: "https://status.buildwithfern.com/api/v2/status.json", page_url: "https://status.buildwithfern.com", type: "statuspage" },
+  { id: "ease_benefits", name: "Ease", tags: ["hr", "benefits", "employee-benefits", "insurance", "saas"], status_url: "https://status.ease.com/api/v2/status.json", page_url: "https://status.ease.com", type: "statuspage" },
+  { id: "gem_recruiting", name: "Gem", tags: ["recruiting", "talent", "hr", "sourcing", "ats", "saas"], status_url: "https://status.gem.com/api/v2/status.json", page_url: "https://status.gem.com", type: "statuspage" },
+  { id: "club_os", name: "Club OS", tags: ["fitness", "gym-management", "health", "member-management", "saas"], status_url: "https://status.club-os.com/api/v2/status.json", page_url: "https://status.club-os.com", type: "statuspage" },
+  { id: "gettimely", name: "Timely by EverCommerce", tags: ["scheduling", "salon", "beauty", "appointments", "saas"], status_url: "https://status.gettimely.com/api/v2/status.json", page_url: "https://status.gettimely.com", type: "statuspage" },
+  { id: "ipvanish", name: "IPVanish", tags: ["vpn", "security", "privacy", "networking"], status_url: "https://status.ipvanish.com/api/v2/status.json", page_url: "https://status.ipvanish.com", type: "statuspage" },
+  { id: "strongvpn", name: "StrongVPN", tags: ["vpn", "security", "privacy", "networking"], status_url: "https://status.strongvpn.com/api/v2/status.json", page_url: "https://status.strongvpn.com", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7703,7 +7713,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 4009 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 4019 services.",
           },
         },
         required: [],
