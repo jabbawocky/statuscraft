@@ -7285,6 +7285,26 @@ const SERVICES: ServiceConfig[] = [
   { id: "stack_hawk", name: "StackHawk", tags: ["security", "dast", "api-testing", "devops", "developer-tools"], status_url: "https://status.stackhawk.com/api/v2/status.json", page_url: "https://status.stackhawk.com", type: "statuspage" },
   // PortSwigger / Burp Suite — web application security testing platform
   { id: "burp_suite", name: "PortSwigger / Burp Suite", tags: ["security", "web-security", "penetration-testing", "appsec", "developer-tools"], status_url: "https://status.portswigger.net/api/v2/status.json", page_url: "https://status.portswigger.net", type: "statuspage" },
+  // Gloat — workforce agility and talent marketplace platform
+  { id: "gloat", name: "Gloat", tags: ["hr", "talent", "workforce", "internal-mobility", "saas"], status_url: "https://status.gloat.com/api/v2/status.json", page_url: "https://status.gloat.com", type: "statuspage" },
+  // Firsthand — AI-powered career guidance and talent platform
+  { id: "firsthand", name: "Firsthand", tags: ["hr", "recruiting", "ai", "career", "saas"], status_url: "https://status.firsthand.ai/api/v2/status.json", page_url: "https://status.firsthand.ai", type: "statuspage" },
+  // HiredScore — AI-driven talent scoring and hiring platform
+  { id: "hiredscore", name: "HiredScore", tags: ["hr", "recruiting", "ai", "talent", "enterprise"], status_url: "https://status.hiredscore.com/api/v2/status.json", page_url: "https://status.hiredscore.com", type: "statuspage" },
+  // Contrast Security — application security platform (IAST/RASP/SCA)
+  { id: "contrastsecurity", name: "Contrast Security", tags: ["security", "appsec", "iast", "developer-tools", "enterprise"], status_url: "https://status.contrastsecurity.com/api/v2/status.json", page_url: "https://status.contrastsecurity.com", type: "statuspage" },
+  // Trusted — per diem and travel healthcare staffing platform
+  { id: "trusted_health", name: "Trusted Health", tags: ["healthcare", "staffing", "nursing", "hr", "saas"], status_url: "https://status.trustedhealth.com/api/v2/status.json", page_url: "https://status.trustedhealth.com", type: "statuspage" },
+  // Genymotion — Android emulator and cloud device testing platform
+  { id: "genymotion", name: "Genymotion", tags: ["mobile", "testing", "android", "emulator", "developer-tools"], status_url: "https://status.genymotion.com/api/v2/status.json", page_url: "https://status.genymotion.com", type: "statuspage" },
+  // Eventive — film festival and virtual cinema streaming platform
+  { id: "eventive", name: "Eventive", tags: ["media", "streaming", "film-festival", "events", "saas"], status_url: "https://status.eventive.org/api/v2/status.json", page_url: "https://status.eventive.org", type: "statuspage" },
+  // MJ Freeway — seed-to-sale cannabis compliance and POS platform
+  { id: "mjfreeway", name: "MJ Freeway", tags: ["cannabis", "pos", "compliance", "retail", "saas"], status_url: "https://status.mjplatform.com/api/v2/status.json", page_url: "https://status.mjplatform.com", type: "statuspage" },
+  // Veradigm FollowMyHealth — patient engagement and health record portal
+  { id: "followmyhealth", name: "Veradigm FollowMyHealth", tags: ["healthcare", "ehr", "patient-portal", "saas", "health-it"], status_url: "https://status.followmyhealth.com/api/v2/status.json", page_url: "https://status.followmyhealth.com", type: "statuspage" },
+  // Doxy.me — HIPAA-compliant telehealth video platform
+  { id: "doxyme", name: "Doxy.me", tags: ["telehealth", "healthcare", "video", "hipaa", "saas"], status_url: "https://status.doxy.me/api/v2/status.json", page_url: "https://status.doxy.me", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7694,7 +7714,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.85.0" },
+  { name: "statuscraft", version: "2.86.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -7776,7 +7796,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 4056 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 4066 services.",
           },
         },
         required: [],
