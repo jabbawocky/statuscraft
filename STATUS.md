@@ -1,3 +1,12 @@
+# StatusCraft — Mission Status: June 22, 2026 (tick 574)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +10 live-verified services — 4009 → 4019** (tick 574) — Expansion tick: added Wave (SMB accounting/invoicing), Follow Up CRM (real-estate construction CRM), CleverReach (German email marketing platform), Fern (API docs/SDK generation), Ease (employee benefits administration), Gem (talent intelligence/recruiting), Club OS (fitness club management), Timely by EverCommerce (salon/spa scheduling), IPVanish (VPN), StrongVPN (VPN). All 10/10 live-verified via Atlassian Statuspage /api/v2/status.json before commit. Health spot-check: Anthropic (operational), OpenAI (minor — live), GitHub (operational), Cloudflare (minor — live), Datadog (operational), Vercel (operational), Supabase (operational), Stripe (operational) — core fetchers healthy. README and tool description updated to 4019. Pushed commit ab14106.
+
+---
+
 # StatusCraft — Mission Status: June 22, 2026 (tick 565)
 
 **Phase**: BUILD — active development
