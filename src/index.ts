@@ -7234,6 +7234,33 @@ const SERVICES: ServiceConfig[] = [
   { id: "gophr", name: "Gophr", tags: ["delivery", "courier", "logistics", "on-demand", "uk"], status_url: "https://gophr.statuspage.io/api/v2/status.json", page_url: "https://gophr.statuspage.io", type: "statuspage" },
   { id: "haystax", name: "Haystax", tags: ["security", "threat-intelligence", "analytics", "ai", "enterprise"], status_url: "https://haystax.statuspage.io/api/v2/status.json", page_url: "https://haystax.statuspage.io", type: "statuspage" },
   { id: "heyorca", name: "HeyOrca", tags: ["social-media", "scheduling", "agency", "collaboration", "saas"], status_url: "https://heyorca.statuspage.io/api/v2/status.json", page_url: "https://heyorca.statuspage.io", type: "statuspage" },
+  // Tick 598 additions — 13 new live-verified services
+  // MessageBird — global cloud communications platform for SMS, voice, chat, and email APIs
+  { id: "messagebird", name: "MessageBird", tags: ["sms", "messaging", "communication", "api", "cpaas"], status_url: "https://messagebird.statuspage.io/api/v2/status.json", page_url: "https://messagebird.statuspage.io", type: "statuspage" },
+  // Infobip — enterprise omnichannel communications platform for SMS, WhatsApp, email, and voice
+  { id: "infobip", name: "Infobip", tags: ["sms", "messaging", "communication", "omnichannel", "cpaas"], status_url: "https://status.infobip.com/api/v2/status.json", page_url: "https://status.infobip.com", type: "statuspage" },
+  // Wiz — cloud security platform for CSPM, CWPP, and infrastructure risk assessment
+  { id: "wiz", name: "Wiz", tags: ["security", "cloud-security", "cspm", "cwpp", "enterprise"], status_url: "https://status.wiz.io/api/v2/status.json", page_url: "https://status.wiz.io", type: "statuspage" },
+  // Orca Security — agentless cloud security platform for risk detection and compliance
+  { id: "orca_security", name: "Orca Security", tags: ["security", "cloud-security", "cspm", "agentless", "saas"], status_url: "https://status.orcasecurity.io/api/v2/status.json", page_url: "https://status.orcasecurity.io", type: "statuspage" },
+  // BigCommerce — enterprise e-commerce platform for B2C and B2B online stores
+  { id: "bigcommerce", name: "BigCommerce", tags: ["ecommerce", "saas", "b2b", "online-store", "payments"], status_url: "https://status.bigcommerce.com/api/v2/status.json", page_url: "https://status.bigcommerce.com", type: "statuspage" },
+  // Gusto — payroll, HR, and benefits platform for small and mid-size businesses
+  { id: "gusto", name: "Gusto", tags: ["payroll", "hr", "benefits", "small-business", "saas"], status_url: "https://status.gusto.com/api/v2/status.json", page_url: "https://status.gusto.com", type: "statuspage" },
+  // Rippling — workforce management platform for HR, payroll, IT, and spend management
+  { id: "rippling", name: "Rippling", tags: ["hr", "payroll", "it-management", "workforce", "saas"], status_url: "https://status.rippling.com/api/v2/status.json", page_url: "https://status.rippling.com", type: "statuspage" },
+  // Redpanda — developer-friendly Kafka-compatible streaming data platform
+  { id: "redpanda", name: "Redpanda", tags: ["streaming", "kafka", "data", "messaging", "developer-tools"], status_url: "https://status.redpanda.com/api/v2/status.json", page_url: "https://status.redpanda.com", type: "statuspage" },
+  // Pulumi — infrastructure-as-code platform using general-purpose programming languages
+  { id: "pulumi", name: "Pulumi", tags: ["iac", "devops", "infrastructure", "cloud", "developer-tools"], status_url: "https://status.pulumi.com/api/v2/status.json", page_url: "https://status.pulumi.com", type: "statuspage" },
+  // WorkOS — enterprise SSO, SCIM, and directory sync platform for B2B SaaS apps
+  { id: "workos", name: "WorkOS", tags: ["sso", "auth", "enterprise", "saml", "scim"], status_url: "https://status.workos.com/api/v2/status.json", page_url: "https://status.workos.com", type: "statuspage" },
+  // Frontegg — multi-tenant authentication and authorization platform for SaaS products
+  { id: "frontegg", name: "Frontegg", tags: ["auth", "authentication", "multi-tenant", "saas", "developer-tools"], status_url: "https://status.frontegg.com/api/v2/status.json", page_url: "https://status.frontegg.com", type: "statuspage" },
+  // Clerk — user authentication and management platform for modern web applications
+  { id: "clerk", name: "Clerk", tags: ["auth", "authentication", "identity", "developer-tools", "saas"], status_url: "https://status.clerk.com/api/v2/status.json", page_url: "https://status.clerk.com", type: "statuspage" },
+  // Fauna — distributed document-relational serverless database with strong consistency guarantees
+  { id: "fauna", name: "Fauna", tags: ["database", "serverless", "distributed", "document", "developer-tools"], status_url: "https://fauna.statuspage.io/api/v2/status.json", page_url: "https://fauna.statuspage.io", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7643,7 +7670,7 @@ function formatServiceStatus(s: ServiceStatus): string {
 }
 
 const server = new Server(
-  { name: "statuscraft", version: "2.84.0" },
+  { name: "statuscraft", version: "2.85.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -7725,7 +7752,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 4031 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 4044 services.",
           },
         },
         required: [],
