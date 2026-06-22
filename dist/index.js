@@ -7044,6 +7044,18 @@ const SERVICES = [
     { id: "gettimely", name: "Timely by EverCommerce", tags: ["scheduling", "salon", "beauty", "appointments", "saas"], status_url: "https://status.gettimely.com/api/v2/status.json", page_url: "https://status.gettimely.com", type: "statuspage" },
     { id: "ipvanish", name: "IPVanish", tags: ["vpn", "security", "privacy", "networking"], status_url: "https://status.ipvanish.com/api/v2/status.json", page_url: "https://status.ipvanish.com", type: "statuspage" },
     { id: "strongvpn", name: "StrongVPN", tags: ["vpn", "security", "privacy", "networking"], status_url: "https://status.strongvpn.com/api/v2/status.json", page_url: "https://status.strongvpn.com", type: "statuspage" },
+    { id: "ninety_io", name: "Ninety", tags: ["business-management", "eos", "okr", "strategy", "saas"], status_url: "https://ninety.statuspage.io/api/v2/status.json", page_url: "https://ninety.statuspage.io", type: "statuspage" },
+    { id: "civica", name: "Civica", tags: ["public-sector", "government", "local-government", "housing", "saas"], status_url: "https://civica.statuspage.io/api/v2/status.json", page_url: "https://civica.statuspage.io", type: "statuspage" },
+    { id: "copilot_portal", name: "Copilot", tags: ["client-portal", "agency", "freelance", "collaboration", "saas"], status_url: "https://copilot.statuspage.io/api/v2/status.json", page_url: "https://copilot.statuspage.io", type: "statuspage" },
+    { id: "customgpt_ai", name: "CustomGPT", tags: ["ai", "chatbot", "custom-ai", "knowledge-base", "saas"], status_url: "https://customgpt.statuspage.io/api/v2/status.json", page_url: "https://customgpt.statuspage.io", type: "statuspage" },
+    { id: "deca_cloud", name: "DECA Cloud", tags: ["cloud", "iaas", "hosting", "japan", "infrastructure"], status_url: "https://deca.statuspage.io/api/v2/status.json", page_url: "https://deca.statuspage.io", type: "statuspage" },
+    { id: "dropzone_ai", name: "Dropzone AI", tags: ["security", "soc", "aiops", "threat-detection", "saas"], status_url: "https://dropzone.statuspage.io/api/v2/status.json", page_url: "https://dropzone.statuspage.io", type: "statuspage" },
+    { id: "edlink", name: "Edlink", tags: ["edtech", "lms", "integration", "education", "api"], status_url: "https://edlink.statuspage.io/api/v2/status.json", page_url: "https://edlink.statuspage.io", type: "statuspage" },
+    { id: "formtitan", name: "Form Titan", tags: ["forms", "form-builder", "no-code", "workflows", "saas"], status_url: "https://formtitan.statuspage.io/api/v2/status.json", page_url: "https://formtitan.statuspage.io", type: "statuspage" },
+    { id: "glowforge", name: "Glowforge", tags: ["maker", "laser-cutter", "hardware", "iot", "creative"], status_url: "https://glowforge.statuspage.io/api/v2/status.json", page_url: "https://glowforge.statuspage.io", type: "statuspage" },
+    { id: "gophr", name: "Gophr", tags: ["delivery", "courier", "logistics", "on-demand", "uk"], status_url: "https://gophr.statuspage.io/api/v2/status.json", page_url: "https://gophr.statuspage.io", type: "statuspage" },
+    { id: "haystax", name: "Haystax", tags: ["security", "threat-intelligence", "analytics", "ai", "enterprise"], status_url: "https://haystax.statuspage.io/api/v2/status.json", page_url: "https://haystax.statuspage.io", type: "statuspage" },
+    { id: "heyorca", name: "HeyOrca", tags: ["social-media", "scheduling", "agency", "collaboration", "saas"], status_url: "https://heyorca.statuspage.io/api/v2/status.json", page_url: "https://heyorca.statuspage.io", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -7551,7 +7563,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 4019 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 4031 services.",
                     },
                 },
                 required: [],
