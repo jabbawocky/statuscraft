@@ -7261,6 +7261,30 @@ const SERVICES: ServiceConfig[] = [
   { id: "clerk", name: "Clerk", tags: ["auth", "authentication", "identity", "developer-tools", "saas"], status_url: "https://status.clerk.com/api/v2/status.json", page_url: "https://status.clerk.com", type: "statuspage" },
   // Fauna — distributed document-relational serverless database with strong consistency guarantees
   { id: "fauna", name: "Fauna", tags: ["database", "serverless", "distributed", "document", "developer-tools"], status_url: "https://fauna.statuspage.io/api/v2/status.json", page_url: "https://fauna.statuspage.io", type: "statuspage" },
+  // Neon — serverless Postgres with branching, autoscaling, and instant provisioning
+  { id: "neon_database", name: "Neon", tags: ["database", "postgres", "serverless", "developer-tools", "cloud"], status_url: "https://neondb.statuspage.io/api/v2/status.json", page_url: "https://neondb.statuspage.io", type: "statuspage" },
+  // Hawk AI — AML and financial crime compliance platform for fintechs and banks
+  { id: "hawk_ai", name: "Hawk AI", tags: ["compliance", "aml", "fintech", "fraud", "security"], status_url: "https://status.hawk.ai/api/v2/status.json", page_url: "https://status.hawk.ai", type: "statuspage" },
+  // MathWorks — MATLAB and Simulink cloud products for technical computing and simulation
+  { id: "mathworks", name: "MathWorks", tags: ["developer-tools", "simulation", "cloud", "education", "engineering"], status_url: "https://status.mathworks.com/api/v2/status.json", page_url: "https://status.mathworks.com", type: "statuspage" },
+  // Marvel App — UI/UX design prototyping and collaboration platform
+  { id: "marvel", name: "Marvel App", tags: ["design", "prototyping", "collaboration", "saas", "developer-tools"], status_url: "https://status.marvelapp.com/api/v2/status.json", page_url: "https://status.marvelapp.com", type: "statuspage" },
+  // Percolate — enterprise content marketing and campaign management platform
+  { id: "perkolate", name: "Percolate", tags: ["marketing", "content", "enterprise", "saas", "collaboration"], status_url: "https://status.percolate.com/api/v2/status.json", page_url: "https://status.percolate.com", type: "statuspage" },
+  // Smarty — US and international address verification and geocoding APIs
+  { id: "smartystreets", name: "Smarty", tags: ["address-verification", "geocoding", "api", "developer-tools", "data"], status_url: "https://status.smarty.com/api/v2/status.json", page_url: "https://status.smarty.com", type: "statuspage" },
+  // Capacity — AI-powered support automation and helpdesk platform
+  { id: "capacity", name: "Capacity", tags: ["ai", "support", "automation", "helpdesk", "saas"], status_url: "https://status.capacity.com/api/v2/status.json", page_url: "https://status.capacity.com", type: "statuspage" },
+  // Balto — real-time AI call guidance and coaching for contact center agents
+  { id: "balto", name: "Balto", tags: ["ai", "contact-center", "sales", "coaching", "saas"], status_url: "https://status.balto.ai/api/v2/status.json", page_url: "https://status.balto.ai", type: "statuspage" },
+  // Cursor — AI-powered code editor with inline code generation and chat
+  { id: "cursor_ai", name: "Cursor", tags: ["ai", "developer-tools", "code-editor", "ide", "saas"], status_url: "https://status.cursor.com/api/v2/status.json", page_url: "https://status.cursor.com", type: "statuspage" },
+  // Socket — supply chain security for open-source packages (npm, PyPI, Go, etc.)
+  { id: "socket_security", name: "Socket", tags: ["security", "supply-chain", "developer-tools", "npm", "saas"], status_url: "https://status.socket.dev/api/v2/status.json", page_url: "https://status.socket.dev", type: "statuspage" },
+  // StackHawk — DAST API security testing integrated into CI/CD pipelines
+  { id: "stack_hawk", name: "StackHawk", tags: ["security", "dast", "api-testing", "devops", "developer-tools"], status_url: "https://status.stackhawk.com/api/v2/status.json", page_url: "https://status.stackhawk.com", type: "statuspage" },
+  // PortSwigger / Burp Suite — web application security testing platform
+  { id: "burp_suite", name: "PortSwigger / Burp Suite", tags: ["security", "web-security", "penetration-testing", "appsec", "developer-tools"], status_url: "https://status.portswigger.net/api/v2/status.json", page_url: "https://status.portswigger.net", type: "statuspage" },
 ];
 
 // Statuspage indicator → normalized status
@@ -7752,7 +7776,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 4044 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 4056 services.",
           },
         },
         required: [],
