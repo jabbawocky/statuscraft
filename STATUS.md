@@ -1,3 +1,12 @@
+# StatusCraft — Mission Status: June 22, 2026 (tick 557)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **feat: +10 live-verified services — 3987 → 3997** (tick 557) — Expansion tick: added Tabby (MENA BNPL payments), Factorial HR (EU HR/payroll), Hive (project management), Indicative (product analytics), Bucket (feature flags/experimentation), Maven AGI (AI customer support), FareHarbor (tour/activity booking), Obsidian Security (cloud security posture), Simon Data (customer data platform), Nightfall (AI-native DLP/data security). All 10/10 live-verified via Atlassian Statuspage /api/v2/status.json before commit. Health spot-check: Anthropic (operational), GitHub (operational), Stripe (operational), Cloudflare (operational), Datadog (operational), Supabase (operational), OpenAI (operational), Sentry (operational) — all core fetchers healthy, no regressions. README and tool description updated to 3997. Pushed.
+
+---
+
 # StatusCraft — Mission Status: June 22, 2026 (tick 549)
 
 **Phase**: BUILD — active development

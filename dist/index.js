@@ -7002,6 +7002,26 @@ const SERVICES = [
     { id: "clarivate", name: "Clarivate", tags: ["research", "academia", "intelligence", "data", "analytics"], status_url: "https://status.clarivate.com/api/v2/status.json", page_url: "https://status.clarivate.com", type: "statuspage" },
     // ISO — International Organization for Standardization digital services
     { id: "iso", name: "ISO", tags: ["standards", "research", "data", "international", "organization"], status_url: "https://iso.statuspage.io/api/v2/status.json", page_url: "https://status.iso.org", type: "statuspage" },
+    // Tabby — MENA BNPL and payments platform
+    { id: "tabby", name: "Tabby", tags: ["fintech", "bnpl", "payments", "mena", "saas"], status_url: "https://www.tabby-status.com/api/v2/status.json", page_url: "https://www.tabby-status.com", type: "statuspage" },
+    // Factorial HR — EU HR, payroll, and people management platform
+    { id: "factorial_hr", name: "Factorial HR", tags: ["hr", "hrms", "payroll", "saas", "europe"], status_url: "https://status.factorialhr.com/api/v2/status.json", page_url: "https://status.factorialhr.com", type: "statuspage" },
+    // Hive — project management and collaboration platform
+    { id: "hive_app", name: "Hive", tags: ["project-management", "collaboration", "productivity", "saas"], status_url: "https://status.hive.com/api/v2/status.json", page_url: "https://status.hive.com", type: "statuspage" },
+    // Indicative — product analytics and user journey intelligence platform
+    { id: "indicative", name: "Indicative", tags: ["analytics", "product-analytics", "data", "saas"], status_url: "https://status.indicative.com/api/v2/status.json", page_url: "https://status.indicative.com", type: "statuspage" },
+    // Bucket — feature flags and experimentation platform for developers
+    { id: "bucket_io", name: "Bucket", tags: ["feature-flags", "developer-tools", "experimentation", "saas"], status_url: "https://status.bucket.io/api/v2/status.json", page_url: "https://status.bucket.io", type: "statuspage" },
+    // Maven AGI — AI-powered customer support automation platform
+    { id: "maven_agi", name: "Maven AGI", tags: ["ai", "customer-support", "llm", "saas"], status_url: "https://status.mavenagi.com/api/v2/status.json", page_url: "https://status.mavenagi.com", type: "statuspage" },
+    // FareHarbor — booking and reservation software for tours and activities
+    { id: "fareharbor", name: "FareHarbor", tags: ["travel", "booking", "activities", "saas", "tours"], status_url: "https://status.fareharbor.com/api/v2/status.json", page_url: "https://status.fareharbor.com", type: "statuspage" },
+    // Obsidian Security — cloud security posture and identity threat detection
+    { id: "obsidian_security", name: "Obsidian Security", tags: ["security", "cloud-security", "saas", "enterprise"], status_url: "https://status.obsidiansecurity.com/api/v2/status.json", page_url: "https://status.obsidiansecurity.com", type: "statuspage" },
+    // Simon Data — customer data platform for marketing and analytics
+    { id: "simon_data", name: "Simon Data", tags: ["cdp", "data", "marketing", "customer-data", "saas"], status_url: "https://status.simondata.com/api/v2/status.json", page_url: "https://status.simondata.com", type: "statuspage" },
+    // Nightfall — AI-native DLP and data security platform
+    { id: "nightfall", name: "Nightfall", tags: ["security", "dlp", "data-protection", "ai", "saas"], status_url: "https://status.nightfall.ai/api/v2/status.json", page_url: "https://status.nightfall.ai", type: "statuspage" },
 ];
 // Statuspage indicator → normalized status
 function normalizeStatuspageIndicator(indicator) {
@@ -7509,7 +7529,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
                 properties: {
                     service: {
                         type: "string",
-                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3987 services.",
+                        description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3997 services.",
                     },
                 },
                 required: [],
