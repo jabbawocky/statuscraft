@@ -1,3 +1,16 @@
+# StatusCraft — Mission Status: July 18, 2026 (maintenance session, part 2)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **fix: removed the remaining 274 alias-dupe entries — 3,629 → 3,355 unique services (zero duplicate status_urls left).** 249 groups of different IDs shared one status_url (e.g. `unit`/`unit_co`/`unit_finance`, `toasttab`/`toast`/`toast_pos`/`toast_tab`). 196 groups had identical service names (trivial dupes, first occurrence kept); 53 were rebrands/aliases, resolved keep-first with explicit overrides for known rebrands (`splunk_on_call` over `victorops`, `betterstack` over `betteruptime`, `kantata` over `mavenlink`, `eptura_visitor` over `proxyclick`, `acquia_dam` over `widen`) and README-canonical IDs (`jira_cloud`, `hashicorp`).
+- ✅ **Alias queries still resolve.** `get_status` falls back id → exact name → name-substring, so 32 kept entries were renamed to carry the lost brand (e.g. "Splunk On Call (VictorOps)", "Kantata OX (Mavenlink)", "Daily.co", "Oyster HR", "Close CRM", "Mode Analytics"). Verified per-alias: all 274 dropped IDs/names resolve except 3 intentional ones — `cortex_xdr` (entry was mislabeled: cortex.statuspage.io is Cortex the developer portal, NOT Palo Alto Cortex XDR), `vault_hashicorp` and `aquasecurity` (base brands "hashicorp"/"aqua" resolve fine).
+- ✅ **fix: `fathom_analytics` was mislabeled — corrected to `fathom_hq`.** Its status_url (status.fathomhq.com) belongs to Fathom HQ, the financial reporting/forecasting software — a third Fathom, distinct from both Fathom Analytics (usefathom.com, whose status page 404s — NOT re-added, per the live-verify rule) and Fathom Video (fathom.video, already tracked as `fathom`). Renamed id/name/tags to match reality.
+- ✅ README "Video API" section removed (`daily_co` row — merged into `daily`, displayed as "Daily.co"); counts synced 3629 → 3355 in README + tool descriptions; dist rebuilt and committed.
+- Live e2e (built server over MCP stdio): victorops→Splunk On Call, daily.co→Daily.co, mavenlink→Kantata, burp suite→PortSwigger, oyster hr→Oyster HR, close crm→Close CRM, jira→Jira Cloud, salesforce + github operational. `audit-dupes.mjs`: 0 duplicate URLs.
+
+---
+
 # StatusCraft — Mission Status: July 18, 2026 (maintenance session)
 
 **Phase**: BUILD — active development

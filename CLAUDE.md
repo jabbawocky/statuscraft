@@ -24,8 +24,8 @@ Everything lives in `src/index.ts` (~8,000 lines):
 
 - `STATUS.md` is a rolling mission log in "ticks" — newest entry at the top. Each expansion tick records: services added, count change (e.g. 4056 → 4066), verification results, and a health spot-check of core fetchers (Anthropic, GitHub, Datadog, Sentry, etc.). Append a new entry per work session.
 - **Every new service is live-verified before commit** — actually hit its `status_url` and confirm a valid response. No unverified entries.
-- The service count appears in several places that must stay in sync: README header/intro, the tool descriptions inside `src/index.ts`, and the STATUS.md tick. `grep -c 'id: "' src/index.ts` is the source of truth (3,629 as of 2026-07-18, after removing 436 duplicate-ID entries that expansion ticks had accumulated). **Before adding a service, grep for its id AND its status_url** — duplicate IDs are bugs (`get_status` only reaches the first match), and this repo has been burned by re-adding existing services.
-- Known follow-up: ~249 groups of different IDs sharing one `status_url` (alias dupes like `unit`/`unit_co`) — run `node audit-dupes.mjs` to see them.
+- The service count appears in several places that must stay in sync: README header/intro, the tool descriptions inside `src/index.ts`, and the STATUS.md tick. `grep -c 'id: "' src/index.ts` is the source of truth (3,355 as of 2026-07-18, after removing 436 duplicate-ID entries and 274 alias-dupe entries that expansion ticks had accumulated). **Before adding a service, grep for its id AND its status_url** — duplicate IDs are bugs (`get_status` only reaches the first match), and this repo has been burned by re-adding existing services. `node audit-dupes.mjs` must report 0 duplicate URLs.
+- When a service rebrands, keep ONE entry and put the former brand in the display name (e.g. "Splunk On Call (VictorOps)") — `get_status` falls back id → exact name → name-substring, so that keeps old-brand queries resolving without a second entry.
 - Adding a Statuspage-backed service is a 6-line entry in the `SERVICES` array; non-standard pages need one of the existing custom `type` handlers.
 
 ## Audit scripts
