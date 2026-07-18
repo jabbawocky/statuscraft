@@ -37,7 +37,7 @@ interface ServiceConfig {
   tags: string[];
   status_url: string;
   page_url: string;
-  type: "statuspage" | "gcp" | "slack" | "azure" | "aws" | "incidentio" | "pagerduty" | "heroku" | "statusio" | "betterstack";
+  type: "statuspage" | "gcp" | "slack" | "azure" | "aws" | "incidentio" | "pagerduty" | "heroku" | "statusio" | "betterstack" | "salesforce";
 }
 
 const CACHE_TTL_MS = 60_000; // 60-second TTL
@@ -651,7 +651,6 @@ const SERVICES: ServiceConfig[] = [
     page_url: "https://status.make.com",
     type: "statuspage",
   },
-  // Tick 14 additions
   {
     id: "fivetran",
     name: "Fivetran",
@@ -732,7 +731,6 @@ const SERVICES: ServiceConfig[] = [
     page_url: "https://www.contentfulstatus.com",
     type: "statuspage",
   },
-  // Tick 15 additions
   {
     id: "rollbar",
     name: "Rollbar",
@@ -853,7 +851,6 @@ const SERVICES: ServiceConfig[] = [
     page_url: "https://status.plivo.com",
     type: "statuspage",
   },
-  // Tick 16 additions
   { id: "heap", name: "Heap", tags: ["analytics", "product", "data"], status_url: "https://status.heap.io/api/v2/status.json", page_url: "https://status.heap.io", type: "statuspage" },
   { id: "appcues", name: "Appcues", tags: ["product", "onboarding", "analytics"], status_url: "https://status.appcues.com/api/v2/status.json", page_url: "https://status.appcues.com", type: "statuspage" },
   { id: "pendo", name: "Pendo", tags: ["analytics", "product", "onboarding"], status_url: "https://status.pendo.io/api/v2/status.json", page_url: "https://status.pendo.io", type: "statuspage" },
@@ -869,7 +866,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "salesloft", name: "Salesloft", tags: ["sales", "crm", "outreach"], status_url: "https://status.salesloft.com/api/v2/status.json", page_url: "https://status.salesloft.com", type: "statuspage" },
   { id: "gong", name: "Gong", tags: ["sales", "analytics", "ai"], status_url: "https://status.gong.io/api/v2/status.json", page_url: "https://status.gong.io", type: "statuspage" },
   { id: "contentsquare", name: "Contentsquare", tags: ["analytics", "product", "ux"], status_url: "https://status.contentsquare.com/api/v2/status.json", page_url: "https://status.contentsquare.com", type: "statuspage" },
-  // Tick 17 additions
   { id: "close", name: "Close", tags: ["crm", "sales", "email"], status_url: "https://status.close.com/api/v2/status.json", page_url: "https://status.close.com", type: "statuspage" },
   { id: "helpscout", name: "Help Scout", tags: ["customer-support", "email", "helpdesk"], status_url: "https://status.helpscout.com/api/v2/status.json", page_url: "https://status.helpscout.com", type: "statuspage" },
   { id: "talkdesk", name: "Talkdesk", tags: ["communications", "customer-support", "voice", "api"], status_url: "https://status.talkdesk.com/api/v2/status.json", page_url: "https://status.talkdesk.com", type: "statuspage" },
@@ -886,7 +882,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "bunny", name: "Bunny.net", tags: ["cdn", "networking", "media", "hosting"], status_url: "https://status.bunny.net/api/v2/status.json", page_url: "https://status.bunny.net", type: "statuspage" },
   { id: "imgix", name: "Imgix", tags: ["media", "image-processing", "cdn"], status_url: "https://status.imgix.com/api/v2/status.json", page_url: "https://status.imgix.com", type: "statuspage" },
   { id: "prismic", name: "Prismic", tags: ["cms", "content", "headless"], status_url: "https://status.prismic.io/api/v2/status.json", page_url: "https://status.prismic.io", type: "statuspage" },
-  // Tick 20 additions
   { id: "optimizely", name: "Optimizely", tags: ["ab-testing", "feature-flags", "experimentation"], status_url: "https://status.optimizely.com/api/v2/status.json", page_url: "https://status.optimizely.com", type: "statuspage" },
   { id: "aircall", name: "Aircall", tags: ["communications", "voice", "cloud-phone"], status_url: "https://status.aircall.io/api/v2/status.json", page_url: "https://status.aircall.io", type: "statuspage" },
   { id: "harness", name: "Harness", tags: ["ci-cd", "devtools", "feature-flags", "deployment"], status_url: "https://status.harness.io/api/v2/status.json", page_url: "https://status.harness.io", type: "statuspage" },
@@ -1282,13 +1277,11 @@ const SERVICES: ServiceConfig[] = [
   { id: "sprinklr", name: "Sprinklr", tags: ["social-media", "marketing", "customer-experience", "enterprise"], status_url: "https://status.sprinklr.com/api/v2/status.json", page_url: "https://status.sprinklr.com", type: "statuspage" },
   { id: "bynder", name: "Bynder", tags: ["dam", "digital-asset-management", "marketing", "saas"], status_url: "https://status.bynder.com/api/v2/status.json", page_url: "https://status.bynder.com", type: "statuspage" },
   { id: "clicksend", name: "ClickSend", tags: ["sms", "email", "communications", "api"], status_url: "https://status.clicksend.com/api/v2/status.json", page_url: "https://status.clicksend.com", type: "statuspage" },
-  // Package registries / open-source ecosystems
   { id: "pypi", name: "PyPI", tags: ["python", "packages", "open-source", "developer-tools"], status_url: "https://status.python.org/api/v2/status.json", page_url: "https://status.python.org", type: "statuspage" },
   { id: "rubygems", name: "RubyGems", tags: ["ruby", "packages", "open-source", "developer-tools"], status_url: "https://status.rubygems.org/api/v2/status.json", page_url: "https://status.rubygems.org", type: "statuspage" },
   { id: "crates_io", name: "crates.io", tags: ["rust", "packages", "open-source", "developer-tools"], status_url: "https://status.crates.io/api/v2/status.json", page_url: "https://status.crates.io", type: "statuspage" },
   { id: "maven_central", name: "Maven Central", tags: ["java", "packages", "open-source", "developer-tools"], status_url: "https://status.maven.org/api/v2/status.json", page_url: "https://status.maven.org", type: "statuspage" },
   { id: "hex_pm", name: "Hex.pm", tags: ["elixir", "erlang", "packages", "open-source"], status_url: "https://status.hex.pm/api/v2/status.json", page_url: "https://status.hex.pm", type: "statuspage" },
-  // Cloud hosting
   { id: "kinsta", name: "Kinsta", tags: ["wordpress", "hosting", "cloud", "managed"], status_url: "https://status.kinsta.com/api/v2/status.json", page_url: "https://status.kinsta.com", type: "statuspage" },
   { id: "upcloud", name: "UpCloud", tags: ["cloud", "vps", "european", "hosting"], status_url: "https://status.upcloud.com/api/v2/status.json", page_url: "https://status.upcloud.com", type: "statuspage" },
   { id: "cloudways", name: "Cloudways", tags: ["cloud", "hosting", "managed", "wordpress"], status_url: "https://status.cloudways.com/api/v2/status.json", page_url: "https://status.cloudways.com", type: "statuspage" },
@@ -1296,228 +1289,136 @@ const SERVICES: ServiceConfig[] = [
   { id: "flightcontrol", name: "Flightcontrol", tags: ["cloud", "deployment", "aws", "developer-tools"], status_url: "https://status.flightcontrol.dev/api/v2/status.json", page_url: "https://status.flightcontrol.dev", type: "statuspage" },
   { id: "azion", name: "Azion", tags: ["cdn", "edge", "serverless", "infrastructure"], status_url: "https://status.azion.com/api/v2/status.json", page_url: "https://status.azion.com", type: "statuspage" },
   { id: "acquia", name: "Acquia", tags: ["drupal", "cms", "cloud", "enterprise"], status_url: "https://status.acquia.com/api/v2/status.json", page_url: "https://status.acquia.com", type: "statuspage" },
-  // Billing / payments
   { id: "zuora", name: "Zuora", tags: ["billing", "subscriptions", "revenue", "enterprise"], status_url: "https://trust.zuora.com/api/v2/status.json", page_url: "https://trust.zuora.com", type: "statuspage" },
   { id: "avalara", name: "Avalara", tags: ["tax", "compliance", "ecommerce", "api"], status_url: "https://status.avalara.com/api/v2/status.json", page_url: "https://status.avalara.com", type: "statuspage" },
   { id: "taxjar", name: "TaxJar", tags: ["tax", "compliance", "ecommerce", "automation"], status_url: "https://status.taxjar.com/api/v2/status.json", page_url: "https://status.taxjar.com", type: "statuspage" },
-  // Identity / security
   { id: "jumpcloud", name: "JumpCloud", tags: ["identity", "mdm", "directory", "zero-trust"], status_url: "https://status.jumpcloud.com/api/v2/status.json", page_url: "https://status.jumpcloud.com", type: "statuspage" },
   { id: "duo", name: "Duo Security", tags: ["mfa", "authentication", "security", "zero-trust"], status_url: "https://status.duo.com/api/v2/status.json", page_url: "https://status.duo.com", type: "statuspage" },
   { id: "rapid7", name: "Rapid7", tags: ["security", "vulnerability", "siem", "cloud"], status_url: "https://status.rapid7.com/api/v2/status.json", page_url: "https://status.rapid7.com", type: "statuspage" },
   { id: "aquasec", name: "Aqua Security", tags: ["security", "cloud-native", "container", "devsecops"], status_url: "https://status.aquasec.com/api/v2/status.json", page_url: "https://status.aquasec.com", type: "statuspage" },
   { id: "traceable", name: "Traceable AI", tags: ["security", "api-security", "observability", "ai"], status_url: "https://status.traceable.ai/api/v2/status.json", page_url: "https://status.traceable.ai", type: "statuspage" },
-  // API management
   { id: "apigee", name: "Apigee", tags: ["api-management", "gateway", "google", "enterprise"], status_url: "https://status.apigee.com/api/v2/status.json", page_url: "https://status.apigee.com", type: "statuspage" },
-  // Monitoring
   { id: "hetrixtools", name: "HetrixTools", tags: ["monitoring", "uptime", "server", "blacklist"], status_url: "https://status.hetrixtools.com/api/v2/status.json", page_url: "https://status.hetrixtools.com", type: "statuspage" },
-  // Communications / VoIP
-  { id: "talkdesk", name: "Talkdesk", tags: ["contact-center", "voip", "ccaas", "ai"], status_url: "https://status.talkdesk.com/api/v2/status.json", page_url: "https://status.talkdesk.com", type: "statuspage" },
   { id: "nextiva", name: "Nextiva", tags: ["voip", "ucaas", "phone", "communications"], status_url: "https://status.nextiva.com/api/v2/status.json", page_url: "https://status.nextiva.com", type: "statuspage" },
   { id: "justcall", name: "JustCall", tags: ["voip", "sms", "phone", "sales"], status_url: "https://status.justcall.io/api/v2/status.json", page_url: "https://status.justcall.io", type: "statuspage" },
   { id: "genesys", name: "Genesys Cloud", tags: ["contact-center", "ccaas", "voip", "enterprise"], status_url: "https://status.mypurecloud.com/api/v2/status.json", page_url: "https://status.mypurecloud.com", type: "statuspage" },
-  // Sales / GTM
   { id: "zoominfo", name: "ZoomInfo", tags: ["sales", "intelligence", "b2b", "data"], status_url: "https://status.zoominfo.com/api/v2/status.json", page_url: "https://status.zoominfo.com", type: "statuspage" },
   { id: "chili_piper", name: "Chili Piper", tags: ["scheduling", "sales", "revenue", "saas"], status_url: "https://status.chilipiper.com/api/v2/status.json", page_url: "https://status.chilipiper.com", type: "statuspage" },
   { id: "demandbase", name: "Demandbase", tags: ["abm", "b2b", "marketing", "sales"], status_url: "https://status.demandbase.com/api/v2/status.json", page_url: "https://status.demandbase.com", type: "statuspage" },
   { id: "qualified_com", name: "Qualified", tags: ["sales", "pipeline", "chat", "ai"], status_url: "https://status.qualified.com/api/v2/status.json", page_url: "https://status.qualified.com", type: "statuspage" },
   { id: "bazaarvoice", name: "Bazaarvoice", tags: ["reviews", "ugc", "ecommerce", "marketing"], status_url: "https://status.bazaarvoice.com/api/v2/status.json", page_url: "https://status.bazaarvoice.com", type: "statuspage" },
   { id: "knak", name: "Knak", tags: ["email", "builder", "marketing", "enterprise"], status_url: "https://status.knak.com/api/v2/status.json", page_url: "https://status.knak.com", type: "statuspage" },
-  // E-commerce
-  { id: "bigcommerce", name: "BigCommerce", tags: ["ecommerce", "saas", "hosting", "enterprise"], status_url: "https://status.bigcommerce.com/api/v2/status.json", page_url: "https://status.bigcommerce.com", type: "statuspage" },
   { id: "omnisend", name: "Omnisend", tags: ["email", "sms", "ecommerce", "marketing"], status_url: "https://status.omnisend.com/api/v2/status.json", page_url: "https://status.omnisend.com", type: "statuspage" },
-  // Location / address
   { id: "geocodio", name: "Geocodio", tags: ["geocoding", "address", "location", "api"], status_url: "https://status.geocod.io/api/v2/status.json", page_url: "https://status.geocod.io", type: "statuspage" },
   { id: "smarty", name: "Smarty", tags: ["address-validation", "geocoding", "usps", "api"], status_url: "https://status.smarty.com/api/v2/status.json", page_url: "https://status.smarty.com", type: "statuspage" },
-  // AI / ML
   { id: "tidb_cloud", name: "TiDB Cloud", tags: ["database", "mysql", "distributed", "cloud"], status_url: "https://status.tidbcloud.com/api/v2/status.json", page_url: "https://status.tidbcloud.com", type: "statuspage" },
-  // CI/CD
   { id: "cloudbees", name: "CloudBees", tags: ["ci-cd", "devops", "jenkins", "enterprise"], status_url: "https://status.cloudbees.com/api/v2/status.json", page_url: "https://status.cloudbees.com", type: "statuspage" },
-  // HR / compliance
   { id: "finch", name: "Finch", tags: ["hr", "payroll", "integration", "api"], status_url: "https://status.tryfinch.com/api/v2/status.json", page_url: "https://status.tryfinch.com", type: "statuspage" },
-  // Communications / messaging
   { id: "bird", name: "Bird", tags: ["communications", "sms", "email", "messaging"], status_url: "https://status.bird.com/api/v2/status.json", page_url: "https://status.bird.com", type: "statuspage" },
   { id: "mailersend", name: "MailerSend", tags: ["email", "transactional", "api", "developer-tools"], status_url: "https://status.mailersend.com/api/v2/status.json", page_url: "https://status.mailersend.com", type: "statuspage" },
-  // Payments / e-commerce
   { id: "flutterwave", name: "Flutterwave", tags: ["payments", "fintech", "africa", "api"], status_url: "https://status.flutterwave.com/api/v2/status.json", page_url: "https://status.flutterwave.com", type: "statuspage" },
   { id: "fastspring", name: "FastSpring", tags: ["ecommerce", "payments", "saas", "subscriptions"], status_url: "https://status.fastspring.com/api/v2/status.json", page_url: "https://status.fastspring.com", type: "statuspage" },
   { id: "bold_commerce", name: "Bold Commerce", tags: ["ecommerce", "checkout", "subscriptions", "shopify"], status_url: "https://status.boldcommerce.com/api/v2/status.json", page_url: "https://status.boldcommerce.com", type: "statuspage" },
-  // Creator platforms
   { id: "patreon", name: "Patreon", tags: ["creator", "membership", "subscriptions", "saas"], status_url: "https://status.patreon.com/api/v2/status.json", page_url: "https://status.patreon.com", type: "statuspage" },
   { id: "memberful", name: "Memberful", tags: ["membership", "creator", "subscriptions", "saas"], status_url: "https://status.memberful.com/api/v2/status.json", page_url: "https://status.memberful.com", type: "statuspage" },
-  // Ad tech
   { id: "kevel", name: "Kevel", tags: ["ad-tech", "api", "advertising", "saas"], status_url: "https://status.kevel.co/api/v2/status.json", page_url: "https://status.kevel.co", type: "statuspage" },
-  // AI evaluation / LLM tooling
   { id: "braintrust", name: "Braintrust", tags: ["ai", "llm", "evaluation", "developer-tools"], status_url: "https://status.braintrust.dev/api/v2/status.json", page_url: "https://status.braintrust.dev", type: "statuspage" },
-  // Auth / Web3
   { id: "magic_link", name: "Magic.link", tags: ["auth", "web3", "passwordless", "identity"], status_url: "https://status.magic.link/api/v2/status.json", page_url: "https://status.magic.link", type: "statuspage" },
-  // BI / Analytics
   { id: "mode_analytics", name: "Mode Analytics", tags: ["analytics", "bi", "sql", "data"], status_url: "https://status.modeanalytics.com/api/v2/status.json", page_url: "https://status.modeanalytics.com", type: "statuspage" },
-  // Customer success
   { id: "planhat", name: "Planhat", tags: ["customer-success", "crm", "saas", "analytics"], status_url: "https://status.planhat.com/api/v2/status.json", page_url: "https://status.planhat.com", type: "statuspage" },
   { id: "catalyst_io", name: "Catalyst", tags: ["customer-success", "crm", "saas", "analytics"], status_url: "https://status.catalyst.io/api/v2/status.json", page_url: "https://status.catalyst.io", type: "statuspage" },
-  // Security / AppSec
   { id: "cycode", name: "Cycode", tags: ["security", "appsec", "devsecops", "code-security"], status_url: "https://status.cycode.com/api/v2/status.json", page_url: "https://status.cycode.com", type: "statuspage" },
-  // DNS security
   { id: "dnsfilter", name: "DNSFilter", tags: ["dns", "security", "filtering", "network"], status_url: "https://status.dnsfilter.com/api/v2/status.json", page_url: "https://status.dnsfilter.com", type: "statuspage" },
-  // CDN / edge
   { id: "section_io", name: "Section.io", tags: ["cdn", "edge", "platform", "devops"], status_url: "https://status.section.io/api/v2/status.json", page_url: "https://status.section.io", type: "statuspage" },
-  // GPU compute
   { id: "sfcompute", name: "SF Compute", tags: ["gpu", "compute", "cloud", "ai"], status_url: "https://status.sfcompute.com/api/v2/status.json", page_url: "https://status.sfcompute.com", type: "statuspage" },
-  // AI / inference
   { id: "cartesia", name: "Cartesia AI", tags: ["ai", "tts", "audio", "inference"], status_url: "https://status.cartesia.ai/api/v2/status.json", page_url: "https://status.cartesia.ai", type: "statuspage" },
   { id: "cerebras", name: "Cerebras Inference", tags: ["ai", "llm", "inference", "cloud"], status_url: "https://status.cerebras.ai/api/v2/status.json", page_url: "https://status.cerebras.ai", type: "statuspage" },
-  // Payments / fintech
   { id: "gocardless", name: "GoCardless", tags: ["payments", "bank-debit", "fintech", "api"], status_url: "https://status.gocardless.com/api/v2/status.json", page_url: "https://status.gocardless.com", type: "statuspage" },
   { id: "airwallex", name: "Airwallex", tags: ["payments", "fintech", "global", "api"], status_url: "https://status.airwallex.com/api/v2/status.json", page_url: "https://status.airwallex.com", type: "statuspage" },
-  // Media intelligence
   { id: "meltwater", name: "Meltwater", tags: ["media-intelligence", "monitoring", "pr", "analytics"], status_url: "https://status.meltwater.com/api/v2/status.json", page_url: "https://status.meltwater.com", type: "statuspage" },
-  // Marketing / CMS
   { id: "bloomreach", name: "Bloomreach", tags: ["marketing", "cms", "personalization", "ecommerce"], status_url: "https://status.bloomreach.com/api/v2/status.json", page_url: "https://status.bloomreach.com", type: "statuspage" },
-  // CRM
   { id: "affinity", name: "Affinity", tags: ["crm", "relationship-intelligence", "sales", "vc"], status_url: "https://status.affinity.co/api/v2/status.json", page_url: "https://status.affinity.co", type: "statuspage" },
-  // API tooling
   { id: "swaggerhub", name: "SwaggerHub", tags: ["api", "openapi", "documentation", "developer-tools"], status_url: "https://status.swaggerhub.com/api/v2/status.json", page_url: "https://status.swaggerhub.com", type: "statuspage" },
-  // Financial reporting / GRC
   { id: "workiva", name: "Workiva", tags: ["financial-reporting", "grc", "compliance", "enterprise"], status_url: "https://status.workiva.com/api/v2/status.json", page_url: "https://status.workiva.com", type: "statuspage" },
-  // Construction / project
   { id: "procore", name: "Procore", tags: ["construction", "project-management", "enterprise", "saas"], status_url: "https://status.procore.com/api/v2/status.json", page_url: "https://status.procore.com", type: "statuspage" },
-  // Sales enablement
   { id: "seismic", name: "Seismic", tags: ["sales-enablement", "content", "marketing", "enterprise"], status_url: "https://status.seismic.com/api/v2/status.json", page_url: "https://status.seismic.com", type: "statuspage" },
   { id: "highspot", name: "Highspot", tags: ["sales-enablement", "content", "training", "enterprise"], status_url: "https://status.highspot.com/api/v2/status.json", page_url: "https://status.highspot.com", type: "statuspage" },
   { id: "showpad", name: "Showpad", tags: ["sales-enablement", "content", "coaching", "enterprise"], status_url: "https://status.showpad.com/api/v2/status.json", page_url: "https://status.showpad.com", type: "statuspage" },
-  // Revenue ops
   { id: "leandata", name: "LeanData", tags: ["revenue-ops", "routing", "attribution", "sales"], status_url: "https://status.leandata.com/api/v2/status.json", page_url: "https://status.leandata.com", type: "statuspage" },
-  // Competitive intelligence
   { id: "klue", name: "Klue", tags: ["competitive-intelligence", "sales", "marketing", "saas"], status_url: "https://status.klue.com/api/v2/status.json", page_url: "https://status.klue.com", type: "statuspage" },
-  // Interactive demos
   { id: "navattic", name: "Navattic", tags: ["demos", "product", "sales", "saas"], status_url: "https://status.navattic.com/api/v2/status.json", page_url: "https://status.navattic.com", type: "statuspage" },
-  // Meeting intelligence
   { id: "grain", name: "Grain", tags: ["meeting-intelligence", "recording", "ai", "sales"], status_url: "https://status.grain.com/api/v2/status.json", page_url: "https://status.grain.com", type: "statuspage" },
   { id: "fathom", name: "Fathom Video", tags: ["meeting-recorder", "ai", "notes", "productivity"], status_url: "https://status.fathom.video/api/v2/status.json", page_url: "https://status.fathom.video", type: "statuspage" },
-  // Legal practice management
   { id: "mycase", name: "MyCase", tags: ["legal", "practice-management", "law-firm", "saas"], status_url: "https://status.mycase.com/api/v2/status.json", page_url: "https://status.mycase.com", type: "statuspage" },
-  // Fitness / wellness
   { id: "mindbody", name: "Mindbody", tags: ["fitness", "wellness", "scheduling", "saas"], status_url: "https://status.mindbodyonline.com/api/v2/status.json", page_url: "https://status.mindbodyonline.com", type: "statuspage" },
-  // Scheduling
   { id: "acuity", name: "Acuity Scheduling", tags: ["scheduling", "calendar", "appointments", "saas"], status_url: "https://status.acuityscheduling.com/api/v2/status.json", page_url: "https://status.acuityscheduling.com", type: "statuspage" },
-  // Reputation / reviews
   { id: "birdeye", name: "Birdeye", tags: ["reputation", "reviews", "listings", "cx"], status_url: "https://status.birdeye.com/api/v2/status.json", page_url: "https://status.birdeye.com", type: "statuspage" },
   { id: "trustpilot", name: "Trustpilot", tags: ["reviews", "reputation", "ecommerce", "trust"], status_url: "https://status.trustpilot.com/api/v2/status.json", page_url: "https://status.trustpilot.com", type: "statuspage" },
   { id: "feefo", name: "Feefo", tags: ["reviews", "reputation", "ecommerce", "verified"], status_url: "https://status.feefo.com/api/v2/status.json", page_url: "https://status.feefo.com", type: "statuspage" },
-  // SMS / messaging
   { id: "textmagic", name: "Textmagic", tags: ["sms", "messaging", "api", "business"], status_url: "https://status.textmagic.com/api/v2/status.json", page_url: "https://status.textmagic.com", type: "statuspage" },
-  // Chatbots
   { id: "chatfuel", name: "Chatfuel", tags: ["chatbot", "messaging", "automation", "ai"], status_url: "https://status.chatfuel.com/api/v2/status.json", page_url: "https://status.chatfuel.com", type: "statuspage" },
-  // ATS / recruiting
   { id: "jobvite", name: "Jobvite", tags: ["ats", "recruiting", "hr", "talent"], status_url: "https://status.jobvite.com/api/v2/status.json", page_url: "https://status.jobvite.com", type: "statuspage" },
   { id: "smartrecruiters", name: "SmartRecruiters", tags: ["ats", "recruiting", "hr", "enterprise"], status_url: "https://status.smartrecruiters.com/api/v2/status.json", page_url: "https://status.smartrecruiters.com", type: "statuspage" },
   { id: "teamtailor", name: "Teamtailor", tags: ["ats", "recruiting", "employer-brand", "hr"], status_url: "https://status.teamtailor.com/api/v2/status.json", page_url: "https://status.teamtailor.com", type: "statuspage" },
-  // Tick 103 additions — cloud/IaaS, dev tools, logistics, legal tech, tax, e-commerce, CX
-  // Cloud / IaaS
   { id: "oracle_cloud", name: "Oracle Cloud (OCI)", tags: ["cloud", "infrastructure", "iaas", "hosting"], status_url: "https://ocistatus.oraclecloud.com/api/v2/status.json", page_url: "https://ocistatus.oraclecloud.com", type: "statuspage" },
-  // Dev tools / DevOps
   { id: "gitlab", name: "GitLab", tags: ["devtools", "git", "ci-cd", "hosting"], status_url: "https://api.status.io/1.0/status/5b36dc6502d06804c08349f7", page_url: "https://status.gitlab.com", type: "statusio" },
-  // Headless commerce
   { id: "nacelle", name: "Nacelle", tags: ["ecommerce", "headless", "commerce", "saas"], status_url: "https://status.nacelle.com/api/v2/status.json", page_url: "https://status.nacelle.com", type: "statuspage" },
-  // Legal tech
   { id: "litify", name: "Litify", tags: ["legal", "crm", "saas", "law"], status_url: "https://status.litify.com/api/v2/status.json", page_url: "https://status.litify.com", type: "statuspage" },
-  // Finance / investment management
   { id: "allvue", name: "Allvue Systems", tags: ["finance", "investment-management", "alts", "saas"], status_url: "https://status.allvuesystems.com/api/v2/status.json", page_url: "https://status.allvuesystems.com", type: "statuspage" },
-  // Tax compliance
   { id: "vertex", name: "Vertex Inc", tags: ["tax", "compliance", "finance", "saas"], status_url: "https://status.vertexinc.com/api/v2/status.json", page_url: "https://status.vertexinc.com", type: "statuspage" },
-  // Logistics / supply chain visibility
   { id: "project44", name: "project44", tags: ["logistics", "supply-chain", "visibility", "saas"], status_url: "https://status.project44.com/api/v2/status.json", page_url: "https://status.project44.com", type: "statuspage" },
   { id: "bringg", name: "Bringg", tags: ["logistics", "delivery", "last-mile", "saas"], status_url: "https://status.bringg.com/api/v2/status.json", page_url: "https://status.bringg.com", type: "statuspage" },
-  // E-commerce fulfillment / shipping
   { id: "shipbob", name: "ShipBob", tags: ["logistics", "fulfillment", "ecommerce", "shipping"], status_url: "https://status.shipbob.com/api/v2/status.json", page_url: "https://status.shipbob.com", type: "statuspage" },
   { id: "stamps", name: "Stamps.com", tags: ["shipping", "postage", "ecommerce", "logistics"], status_url: "https://status.stamps.com/api/v2/status.json", page_url: "https://status.stamps.com", type: "statuspage" },
   { id: "pirateship", name: "Pirate Ship", tags: ["shipping", "postage", "ecommerce", "logistics"], status_url: "https://status.pirateship.com/api/v2/status.json", page_url: "https://status.pirateship.com", type: "statuspage" },
-  // Subscription commerce
   { id: "ordergroove", name: "Ordergroove", tags: ["ecommerce", "subscriptions", "retention", "saas"], status_url: "https://status.ordergroove.com/api/v2/status.json", page_url: "https://status.ordergroove.com", type: "statuspage" },
-  // Customer experience / UX research
   { id: "satismeter", name: "SatisMeter", tags: ["analytics", "feedback", "nps", "customer-success"], status_url: "https://status.satismeter.com/api/v2/status.json", page_url: "https://status.satismeter.com", type: "statuspage" },
   { id: "userzoom", name: "UserZoom", tags: ["ux-research", "usability-testing", "analytics", "saas"], status_url: "https://status.userzoom.com/api/v2/status.json", page_url: "https://status.userzoom.com", type: "statuspage" },
-  // Tick 104 additions — scheduling, writing, PIM, CMS, fundraising, training/LMS, billing, KB
-  // Scheduling
   { id: "calendly", name: "Calendly", tags: ["scheduling", "calendar", "productivity", "saas"], status_url: "https://calendlystatus.com/api/v2/status.json", page_url: "https://calendlystatus.com", type: "statuspage" },
-  // Writing assistant
   { id: "grammarly", name: "Grammarly", tags: ["writing", "ai", "productivity", "saas"], status_url: "https://status.grammarly.com/api/v2/status.json", page_url: "https://status.grammarly.com", type: "statuspage" },
-  // Product Information Management (PIM)
   { id: "salsify", name: "Salsify", tags: ["pim", "ecommerce", "product-data", "saas"], status_url: "https://status.salsify.com/api/v2/status.json", page_url: "https://status.salsify.com", type: "statuspage" },
   { id: "akeneo", name: "Akeneo", tags: ["pim", "ecommerce", "product-data", "saas"], status_url: "https://status.akeneo.com/api/v2/status.json", page_url: "https://status.akeneo.com", type: "statuspage" },
-  // Headless CMS
   { id: "buttercms", name: "ButterCMS", tags: ["cms", "headless", "content", "saas"], status_url: "https://status.buttercms.com/api/v2/status.json", page_url: "https://status.buttercms.com", type: "statuspage" },
-  // Nonprofit fundraising
   { id: "classy", name: "Classy (GoFundMe Pro)", tags: ["fundraising", "nonprofit", "payments", "saas"], status_url: "https://status.classy.org/api/v2/status.json", page_url: "https://status.classy.org", type: "statuspage" },
-  // Employee training / SOPs / LMS
   { id: "trainual", name: "Trainual", tags: ["training", "lms", "hr", "saas"], status_url: "https://status.trainual.com/api/v2/status.json", page_url: "https://status.trainual.com", type: "statuspage" },
   { id: "degreed", name: "Degreed", tags: ["lms", "learning", "hr", "enterprise"], status_url: "https://status.degreed.com/api/v2/status.json", page_url: "https://status.degreed.com", type: "statuspage" },
   { id: "northpass", name: "Northpass", tags: ["lms", "training", "customer-education", "saas"], status_url: "https://status.northpass.com/api/v2/status.json", page_url: "https://status.northpass.com", type: "statuspage" },
-  // Knowledge base
   { id: "helpjuice", name: "Helpjuice", tags: ["knowledge-base", "help-center", "support", "saas"], status_url: "https://status.helpjuice.com/api/v2/status.json", page_url: "https://status.helpjuice.com", type: "statuspage" },
-  // Recurring billing
   { id: "chargeover", name: "ChargeOver", tags: ["billing", "subscriptions", "payments", "saas"], status_url: "https://status.chargeover.com/api/v2/status.json", page_url: "https://status.chargeover.com", type: "statuspage" },
-  // Payments / BNPL
   { id: "afterpay", name: "Afterpay", tags: ["payments", "bnpl", "ecommerce", "fintech"], status_url: "https://status.afterpay.com/api/v2/status.json", page_url: "https://status.afterpay.com", type: "statuspage" },
-  // Identity verification
   { id: "onfido", name: "Onfido", tags: ["identity", "kyc", "verification", "security"], status_url: "https://status.onfido.com/api/v2/status.json", page_url: "https://status.onfido.com", type: "statuspage" },
   { id: "veriff", name: "Veriff", tags: ["identity", "kyc", "verification", "security"], status_url: "https://status.veriff.com/api/v2/status.json", page_url: "https://status.veriff.com", type: "statuspage" },
   { id: "socure", name: "Socure", tags: ["identity", "fraud", "kyc", "fintech"], status_url: "https://status.socure.com/api/v2/status.json", page_url: "https://status.socure.com", type: "statuspage" },
   { id: "alloy", name: "Alloy", tags: ["fintech", "kyc", "compliance", "fraud"], status_url: "https://status.alloy.com/api/v2/status.json", page_url: "https://status.alloy.com", type: "statuspage" },
-  // Project management / SaaS
   { id: "37signals", name: "37signals (Basecamp / HEY)", tags: ["project-management", "email", "saas", "productivity"], status_url: "https://www.37status.com/api/v2/status.json", page_url: "https://www.37status.com", type: "statuspage" },
-  // Sales intelligence / data enrichment
   { id: "rocketreach", name: "RocketReach", tags: ["sales", "data-enrichment", "prospecting", "saas"], status_url: "https://status.rocketreach.co/api/v2/status.json", page_url: "https://status.rocketreach.co", type: "statuspage" },
-  // Partnerships / co-selling
   { id: "crossbeam", name: "Crossbeam", tags: ["partnerships", "co-selling", "data-sharing", "saas"], status_url: "https://status.crossbeam.com/api/v2/status.json", page_url: "https://status.crossbeam.com", type: "statuspage" },
-  // Affiliate marketing
   { id: "awin", name: "Awin", tags: ["affiliate", "marketing", "partnerships", "ecommerce"], status_url: "https://status.awin.com/api/v2/status.json", page_url: "https://status.awin.com", type: "statuspage" },
-  // Global HR / employer of record
   { id: "oysterhr", name: "OysterHR", tags: ["hr", "eor", "global-payroll", "remote-work"], status_url: "https://status.oysterhr.com/api/v2/status.json", page_url: "https://status.oysterhr.com", type: "statuspage" },
-  // Ad tech
   { id: "criteo", name: "Criteo", tags: ["advertising", "retargeting", "ecommerce", "adtech"], status_url: "https://status.criteo.com/api/v2/status.json", page_url: "https://status.criteo.com", type: "statuspage" },
-  // Interactive product demos
   { id: "storylane", name: "Storylane", tags: ["demos", "sales", "product", "saas"], status_url: "https://status.storylane.io/api/v2/status.json", page_url: "https://status.storylane.io", type: "statuspage" },
   { id: "reprise", name: "Reprise", tags: ["demos", "sales", "product", "saas"], status_url: "https://status.reprise.com/api/v2/status.json", page_url: "https://status.reprise.com", type: "statuspage" },
-  // Developer tunneling
   { id: "ngrok", name: "ngrok", tags: ["devtools", "tunneling", "networking", "developer"], status_url: "https://status.ngrok.com/api/v2/status.json", page_url: "https://status.ngrok.com", type: "statuspage" },
-  // PKI / SSL
   { id: "digicert", name: "DigiCert", tags: ["ssl", "pki", "certificates", "security"], status_url: "https://status.digicert.com/api/v2/status.json", page_url: "https://status.digicert.com", type: "statuspage" },
-  // Domain registrar / hosting
   { id: "godaddy", name: "GoDaddy", tags: ["domains", "hosting", "dns", "registrar"], status_url: "https://status.godaddy.com/api/v2/status.json", page_url: "https://status.godaddy.com", type: "statuspage" },
-  // Developer tools / terminal
   { id: "warp", name: "Warp", tags: ["devtools", "terminal", "ai", "developer"], status_url: "https://status.warp.dev/api/v2/status.json", page_url: "https://status.warp.dev", type: "statuspage" },
-  // Data streaming
   { id: "redpanda", name: "Redpanda", tags: ["data-streaming", "kafka", "messaging", "developer"], status_url: "https://status.redpanda.com/api/v2/status.json", page_url: "https://status.redpanda.com", type: "statuspage" },
-  // Data integration / ETL
   { id: "estuary", name: "Estuary", tags: ["data-integration", "etl", "streaming", "developer"], status_url: "https://status.estuary.dev/api/v2/status.json", page_url: "https://status.estuary.dev", type: "statuspage" },
-  // Vector database
   { id: "turbopuffer", name: "turbopuffer", tags: ["vector-db", "search", "ai", "developer"], status_url: "https://status.turbopuffer.com/api/v2/status.json", page_url: "https://status.turbopuffer.com", type: "statuspage" },
-  // Open banking / fintech data
   { id: "truelayer", name: "TrueLayer", tags: ["fintech", "open-banking", "payments", "api"], status_url: "https://status.truelayer.com/api/v2/status.json", page_url: "https://status.truelayer.com", type: "statuspage" },
   { id: "codat", name: "Codat", tags: ["fintech", "financial-data", "accounting", "api"], status_url: "https://status.codat.io/api/v2/status.json", page_url: "https://status.codat.io", type: "statuspage" },
-  // Live chat / customer support
   { id: "tawk_to", name: "tawk.to", tags: ["live-chat", "customer-support", "messaging", "saas"], status_url: "https://status.tawk.to/api/v2/status.json", page_url: "https://status.tawk.to", type: "statuspage" },
   { id: "olark", name: "Olark", tags: ["live-chat", "customer-support", "messaging", "saas"], status_url: "https://status.olark.com/api/v2/status.json", page_url: "https://status.olark.com", type: "statuspage" },
-  // Network security
   { id: "barracuda", name: "Barracuda Networks", tags: ["security", "email-security", "networking", "enterprise"], status_url: "https://status.barracuda.com/api/v2/status.json", page_url: "https://status.barracuda.com", type: "statuspage" },
-  // Enterprise file sharing / content management
   { id: "sharefile", name: "ShareFile", tags: ["file-sharing", "documents", "cloud-storage", "enterprise"], status_url: "https://status.sharefile.com/api/v2/status.json", page_url: "https://status.sharefile.com", type: "statuspage" },
   { id: "egnyte", name: "Egnyte", tags: ["content-management", "file-sharing", "cloud-storage", "enterprise"], status_url: "https://status.egnyte.com/api/v2/status.json", page_url: "https://status.egnyte.com", type: "statuspage" },
-  // Visual testing
   { id: "percy", name: "Percy", tags: ["testing", "visual-testing", "qa", "devtools"], status_url: "https://status.percy.io/api/v2/status.json", page_url: "https://status.percy.io", type: "statuspage" },
-  // Email testing
   { id: "mailosaur", name: "Mailosaur", tags: ["email", "testing", "qa", "developer"], status_url: "https://status.mailosaur.com/api/v2/status.json", page_url: "https://status.mailosaur.com", type: "statuspage" },
-  // Construction management
   { id: "fieldwire", name: "Fieldwire", tags: ["construction", "project-management", "field-service", "saas"], status_url: "https://status.fieldwire.com/api/v2/status.json", page_url: "https://status.fieldwire.com", type: "statuspage" },
-  // Spa / salon / wellness management
   { id: "zenoti", name: "Zenoti", tags: ["wellness", "spa", "salon", "saas"], status_url: "https://status.zenoti.com/api/v2/status.json", page_url: "https://status.zenoti.com", type: "statuspage" },
-  // POS / retail
   { id: "lightspeedhq", name: "Lightspeed", tags: ["pos", "retail", "ecommerce", "payments"], status_url: "https://status.lightspeedhq.com/api/v2/status.json", page_url: "https://status.lightspeedhq.com", type: "statuspage" },
   { id: "clover", name: "Clover", tags: ["pos", "payments", "retail", "smb"], status_url: "https://status.clover.com/api/v2/status.json", page_url: "https://status.clover.com", type: "statuspage" },
   { id: "shopkeep", name: "ShopKeep", tags: ["pos", "retail", "smb", "payments"], status_url: "https://status.shopkeep.com/api/v2/status.json", page_url: "https://status.shopkeep.com", type: "statuspage" },
-
-  // Tick 107 additions
   { id: "goto", name: "GoTo", tags: ["collaboration", "meetings", "remote-work", "ucaas"], status_url: "https://status.goto.com/api/v2/status.json", page_url: "https://status.goto.com", type: "statuspage" },
   { id: "splashtop", name: "Splashtop", tags: ["remote-access", "remote-desktop", "it", "saas"], status_url: "https://status.splashtop.com/api/v2/status.json", page_url: "https://status.splashtop.com", type: "statuspage" },
   { id: "teamviewer", name: "TeamViewer", tags: ["remote-access", "remote-desktop", "it", "enterprise"], status_url: "https://status.teamviewer.com/api/v2/status.json", page_url: "https://status.teamviewer.com", type: "statuspage" },
@@ -1533,322 +1434,178 @@ const SERVICES: ServiceConfig[] = [
   { id: "webinarjam", name: "WebinarJam", tags: ["webinars", "events", "marketing", "saas"], status_url: "https://status.webinarjam.com/api/v2/status.json", page_url: "https://status.webinarjam.com", type: "statuspage" },
   { id: "lumigo", name: "Lumigo", tags: ["observability", "serverless", "monitoring", "developer"], status_url: "https://status.lumigo.io/api/v2/status.json", page_url: "https://status.lumigo.io", type: "statuspage" },
   { id: "tomorrow_io", name: "Tomorrow.io", tags: ["weather", "api", "climate", "developer"], status_url: "https://status.tomorrow.io/api/v2/status.json", page_url: "https://status.tomorrow.io", type: "statuspage" },
-
-  // Tick 108 additions
-  // Cybersecurity / enterprise security
   { id: "paloalto_networks", name: "Palo Alto Networks", tags: ["security", "firewall", "cloud-security", "enterprise"], status_url: "https://status.paloaltonetworks.com/api/v2/status.json", page_url: "https://status.paloaltonetworks.com", type: "statuspage" },
   { id: "rubrik", name: "Rubrik", tags: ["security", "backup", "data-management", "enterprise"], status_url: "https://status.rubrik.com/api/v2/status.json", page_url: "https://status.rubrik.com", type: "statuspage" },
   { id: "cohesity", name: "Cohesity", tags: ["security", "data-management", "backup", "enterprise"], status_url: "https://status.cohesity.com/api/v2/status.json", page_url: "https://status.cohesity.com", type: "statuspage" },
-  // Device management
   { id: "jamf", name: "Jamf", tags: ["device-management", "apple", "mdm", "enterprise"], status_url: "https://status.jamf.com/api/v2/status.json", page_url: "https://status.jamf.com", type: "statuspage" },
-  // Healthcare tech
   { id: "drchrono", name: "DrChrono", tags: ["healthcare", "ehr", "medical", "saas"], status_url: "https://status.drchrono.com/api/v2/status.json", page_url: "https://status.drchrono.com", type: "statuspage" },
   { id: "healthsherpa", name: "HealthSherpa", tags: ["healthcare", "health-insurance", "marketplace", "saas"], status_url: "https://status.healthsherpa.com/api/v2/status.json", page_url: "https://status.healthsherpa.com", type: "statuspage" },
-  // Real estate / property management
   { id: "yardi", name: "Yardi Systems", tags: ["real-estate", "property-management", "erp", "enterprise"], status_url: "https://status.yardi.com/api/v2/status.json", page_url: "https://status.yardi.com", type: "statuspage" },
   { id: "buildium", name: "Buildium", tags: ["real-estate", "property-management", "landlord", "saas"], status_url: "https://status.buildium.com/api/v2/status.json", page_url: "https://status.buildium.com", type: "statuspage" },
   { id: "propertyware", name: "Propertyware", tags: ["real-estate", "property-management", "landlord", "saas"], status_url: "https://status.propertyware.com/api/v2/status.json", page_url: "https://status.propertyware.com", type: "statuspage" },
-  // Enterprise content management
   { id: "opentext", name: "OpenText", tags: ["content-management", "ecm", "information-management", "enterprise"], status_url: "https://status.opentext.com/api/v2/status.json", page_url: "https://status.opentext.com", type: "statuspage" },
   { id: "laserfiche", name: "Laserfiche", tags: ["content-management", "ecm", "document-management", "enterprise"], status_url: "https://status.laserfiche.com/api/v2/status.json", page_url: "https://status.laserfiche.com", type: "statuspage" },
-  // Construction / BIM tech
   { id: "newforma_konekt", name: "Newforma Konekt", tags: ["construction", "project-management", "bim", "enterprise"], status_url: "https://status.bimtrack.co/api/v2/status.json", page_url: "https://status.bimtrack.co", type: "statuspage" },
-
-  // Tick 109 additions
-  // Restaurant / hospitality tech
   { id: "toasttab", name: "Toast POS", tags: ["pos", "restaurant", "hospitality", "payments"], status_url: "https://status.toasttab.com/api/v2/status.json", page_url: "https://status.toasttab.com", type: "statuspage" },
   { id: "olo", name: "Olo", tags: ["restaurant", "online-ordering", "delivery", "saas"], status_url: "https://status.olo.com/api/v2/status.json", page_url: "https://status.olo.com", type: "statuspage" },
-  // CRM / sales
   { id: "capsulecrm", name: "Capsule CRM", tags: ["crm", "sales", "smb", "saas"], status_url: "https://status.capsulecrm.com/api/v2/status.json", page_url: "https://status.capsulecrm.com", type: "statuspage" },
-  // Social media management
-  { id: "buffer", name: "Buffer", tags: ["social-media", "marketing", "scheduling", "saas"], status_url: "https://status.buffer.com/api/v2/status.json", page_url: "https://status.buffer.com", type: "statuspage" },
   { id: "statusbrew", name: "Statusbrew", tags: ["social-media", "marketing", "analytics", "saas"], status_url: "https://status.statusbrew.com/api/v2/status.json", page_url: "https://status.statusbrew.com", type: "statuspage" },
-  // Sales enablement / training
   { id: "mindtickle", name: "MindTickle", tags: ["sales-enablement", "training", "revenue", "enterprise"], status_url: "https://status.mindtickle.com/api/v2/status.json", page_url: "https://status.mindtickle.com", type: "statuspage" },
-  // ERP / integration
   { id: "salto", name: "Salto", tags: ["erp", "integration", "netsuite", "saas"], status_url: "https://status.salto.io/api/v2/status.json", page_url: "https://status.salto.io", type: "statuspage" },
-  // Field service / home services
   { id: "housecallpro", name: "Housecall Pro", tags: ["field-service", "home-services", "hvac", "saas"], status_url: "https://status.housecallpro.com/api/v2/status.json", page_url: "https://status.housecallpro.com", type: "statuspage" },
-  // HR / recruiting
   { id: "recruitee", name: "Tellent (Recruitee)", tags: ["ats", "recruiting", "hr", "saas"], status_url: "https://status.recruitee.com/api/v2/status.json", page_url: "https://status.recruitee.com", type: "statuspage" },
   { id: "comeet", name: "Comeet", tags: ["ats", "recruiting", "hr", "saas"], status_url: "https://status.comeet.com/api/v2/status.json", page_url: "https://status.comeet.com", type: "statuspage" },
-  // Proposals / e-signatures
   { id: "proposify", name: "Proposify", tags: ["proposals", "sales", "e-signature", "saas"], status_url: "https://status.proposify.com/api/v2/status.json", page_url: "https://status.proposify.com", type: "statuspage" },
   { id: "qwilr", name: "Qwilr", tags: ["proposals", "sales", "content", "saas"], status_url: "https://status.qwilr.com/api/v2/status.json", page_url: "https://status.qwilr.com", type: "statuspage" },
-  // Spend management / corporate cards
   { id: "spendesk", name: "Spendesk", tags: ["spend-management", "finance", "corporate-cards", "saas"], status_url: "https://status.spendesk.com/api/v2/status.json", page_url: "https://status.spendesk.com", type: "statuspage" },
   { id: "pleo", name: "Pleo", tags: ["spend-management", "finance", "corporate-cards", "saas"], status_url: "https://status.pleo.io/api/v2/status.json", page_url: "https://status.pleo.io", type: "statuspage" },
-  // IT management / MSP / RMM
   { id: "ninjaone", name: "NinjaOne", tags: ["it-management", "rmm", "msp", "endpoint"], status_url: "https://status.ninjaone.com/api/v2/status.json", page_url: "https://status.ninjaone.com", type: "statuspage" },
   { id: "atera", name: "Atera", tags: ["it-management", "rmm", "msp", "saas"], status_url: "https://status.atera.com/api/v2/status.json", page_url: "https://status.atera.com", type: "statuspage" },
   { id: "kaseya", name: "Kaseya", tags: ["it-management", "rmm", "msp", "enterprise"], status_url: "https://status.kaseya.com/api/v2/status.json", page_url: "https://status.kaseya.com", type: "statuspage" },
   { id: "auvik", name: "Auvik Networks", tags: ["network-monitoring", "it-management", "msp", "saas"], status_url: "https://status.auvik.com/api/v2/status.json", page_url: "https://status.auvik.com", type: "statuspage" },
   { id: "datto", name: "Datto", tags: ["backup", "disaster-recovery", "msp", "enterprise"], status_url: "https://status.datto.com/api/v2/status.json", page_url: "https://status.datto.com", type: "statuspage" },
-  // Education / LMS
   { id: "instructure", name: "Instructure (Canvas LMS)", tags: ["edtech", "lms", "education", "saas"], status_url: "https://status.instructure.com/api/v2/status.json", page_url: "https://status.instructure.com", type: "statuspage" },
   { id: "blackboard", name: "Blackboard", tags: ["edtech", "lms", "education", "saas"], status_url: "https://status.blackboard.com/api/v2/status.json", page_url: "https://status.blackboard.com", type: "statuspage" },
   { id: "coursera", name: "Coursera", tags: ["edtech", "education", "saas"], status_url: "https://status.coursera.org/api/v2/status.json", page_url: "https://status.coursera.org", type: "statuspage" },
   { id: "udemy", name: "Udemy for Business", tags: ["edtech", "education", "hr", "saas"], status_url: "https://status.udemy.com/api/v2/status.json", page_url: "https://status.udemy.com", type: "statuspage" },
   { id: "learnupon", name: "LearnUpon LMS", tags: ["edtech", "lms", "hr", "saas"], status_url: "https://status.learnupon.com/api/v2/status.json", page_url: "https://status.learnupon.com", type: "statuspage" },
   { id: "threesixtylearning", name: "360Learning", tags: ["edtech", "lms", "hr", "saas"], status_url: "https://status.360learning.com/api/v2/status.json", page_url: "https://status.360learning.com", type: "statuspage" },
-  // Data streaming / event platforms
   { id: "confluent", name: "Confluent Cloud", tags: ["data", "kafka", "streaming", "saas"], status_url: "https://status.confluent.cloud/api/v2/status.json", page_url: "https://status.confluent.cloud", type: "statuspage" },
-  // Engineering / CAD / AEC
   { id: "autodesk", name: "Autodesk", tags: ["developer-tools", "construction", "manufacturing", "saas"], status_url: "https://health.autodesk.com/api/v2/status.json", page_url: "https://health.autodesk.com", type: "statuspage" },
   { id: "bentley", name: "Bentley Systems", tags: ["construction", "engineering", "infrastructure", "saas"], status_url: "https://status.bentley.com/api/v2/status.json", page_url: "https://status.bentley.com", type: "statuspage" },
-  // Insurance software
   { id: "guidewire", name: "Guidewire", tags: ["insurance", "enterprise", "saas"], status_url: "https://status.guidewire.com/api/v2/status.json", page_url: "https://status.guidewire.com", type: "statuspage" },
-  // Video / media delivery
   { id: "jwplayer", name: "JW Player", tags: ["video", "media", "cdn", "saas"], status_url: "https://status.jwplayer.com/api/v2/status.json", page_url: "https://status.jwplayer.com", type: "statuspage" },
   { id: "kaltura", name: "Kaltura", tags: ["video", "media", "edtech", "saas"], status_url: "https://status.kaltura.com/api/v2/status.json", page_url: "https://status.kaltura.com", type: "statuspage" },
   { id: "dailymotion", name: "Dailymotion", tags: ["video", "media", "saas"], status_url: "https://status.dailymotion.com/api/v2/status.json", page_url: "https://status.dailymotion.com", type: "statuspage" },
-  // Nonprofit CRM
   { id: "bloomerang", name: "Bloomerang", tags: ["crm", "nonprofit", "saas"], status_url: "https://status.bloomerang.co/api/v2/status.json", page_url: "https://status.bloomerang.co", type: "statuspage" },
   { id: "blackbaud", name: "Blackbaud", tags: ["nonprofit", "crm", "fundraising", "saas"], status_url: "https://status.blackbaud.com/api/v2/status.json", page_url: "https://status.blackbaud.com", type: "statuspage" },
-  // Supply chain / logistics
   { id: "fourkites", name: "FourKites", tags: ["logistics", "supply-chain", "saas"], status_url: "https://status.fourkites.com/api/v2/status.json", page_url: "https://status.fourkites.com", type: "statuspage" },
-  // Fleet management
   { id: "fleetio", name: "Fleetio", tags: ["fleet", "logistics", "saas"], status_url: "https://status.fleetio.com/api/v2/status.json", page_url: "https://status.fleetio.com", type: "statuspage" },
-  // UX research
   { id: "usertesting", name: "UserTesting", tags: ["ux", "research", "testing", "saas"], status_url: "https://status.usertesting.com/api/v2/status.json", page_url: "https://status.usertesting.com", type: "statuspage" },
-  // Mobile attribution / analytics
   { id: "appsflyer", name: "AppsFlyer", tags: ["analytics", "mobile", "attribution", "marketing"], status_url: "https://status.appsflyer.com/api/v2/status.json", page_url: "https://status.appsflyer.com", type: "statuspage" },
-  // Security / identity access management
   { id: "cerby", name: "Cerby", tags: ["security", "iam", "access-management", "saas"], status_url: "https://status.cerby.com/api/v2/status.json", page_url: "https://status.cerby.com", type: "statuspage" },
   { id: "socket_dev", name: "Socket", tags: ["security", "supply-chain", "npm", "devtools"], status_url: "https://status.socket.dev/api/v2/status.json", page_url: "https://status.socket.dev", type: "statuspage" },
-  // AI coding assistant
   { id: "tabnine", name: "Tabnine", tags: ["ai", "developer-tools", "code-completion", "ide"], status_url: "https://status.tabnine.com/api/v2/status.json", page_url: "https://status.tabnine.com", type: "statuspage" },
-  // Bare-metal / colocation cloud
   { id: "equinix_metal", name: "Equinix Metal", tags: ["cloud", "bare-metal", "infrastructure", "iaas"], status_url: "https://status.equinixmetal.com/api/v2/status.json", page_url: "https://status.equinixmetal.com", type: "statuspage" },
-  // Visual collaboration
   { id: "mural", name: "Mural", tags: ["collaboration", "whiteboard", "design", "saas"], status_url: "https://status.mural.co/api/v2/status.json", page_url: "https://status.mural.co", type: "statuspage" },
-  // Checkout / payments
   { id: "bolt_payments", name: "Bolt", tags: ["payments", "checkout", "ecommerce", "fintech"], status_url: "https://status.bolt.com/api/v2/status.json", page_url: "https://status.bolt.com", type: "statuspage" },
-  // Serverless GPU compute
   { id: "beam_cloud", name: "Beam Cloud", tags: ["cloud", "serverless", "gpu", "ai-infra"], status_url: "https://status.beam.cloud/api/v2/status.json", page_url: "https://status.beam.cloud", type: "statuspage" },
-  // Compliance cloud / HIPAA PaaS
   { id: "aptible", name: "Aptible", tags: ["cloud", "compliance", "hipaa", "paas"], status_url: "https://status.aptible.com/api/v2/status.json", page_url: "https://status.aptible.com", type: "statuspage" },
-  // Business VoIP / call center
   { id: "cloudtalk", name: "CloudTalk", tags: ["voip", "telephony", "call-center", "saas"], status_url: "https://status.cloudtalk.io/api/v2/status.json", page_url: "https://status.cloudtalk.io", type: "statuspage" },
-  // Card issuing / payments infrastructure
   { id: "marqeta", name: "Marqeta", tags: ["payments", "card-issuing", "fintech", "api"], status_url: "https://status.marqeta.com/api/v2/status.json", page_url: "https://status.marqeta.com", type: "statuspage" },
-  // Event-driven background jobs / queues
-  { id: "inngest", name: "Inngest", tags: ["devtools", "queues", "background-jobs", "serverless"], status_url: "https://status.inngest.com/api/v2/status.json", page_url: "https://status.inngest.com", type: "statuspage" },
-  // Gaming / digital content platform
   { id: "epicgames", name: "Epic Games", tags: ["gaming", "marketplace", "digital-content", "saas"], status_url: "https://status.epicgames.com/api/v2/status.json", page_url: "https://status.epicgames.com", type: "statuspage" },
-  // Real-time collaborative comments SDK
   { id: "velt", name: "Velt", tags: ["devtools", "collaboration", "sdk", "realtime"], status_url: "https://status.velt.dev/api/v2/status.json", page_url: "https://status.velt.dev", type: "statuspage" },
-  // Zero-trust network access
   { id: "twingate", name: "Twingate", tags: ["security", "vpn", "zero-trust", "networking"], status_url: "https://status.twingate.com/api/v2/status.json", page_url: "https://status.twingate.com", type: "statuspage" },
-  // Global payments / money movement (APAC/emerging markets)
   { id: "nium", name: "Nium", tags: ["payments", "fintech", "global", "api"], status_url: "https://status.nium.com/api/v2/status.json", page_url: "https://status.nium.com", type: "statuspage" },
-  // Secrets detection / developer security
   { id: "gitguardian", name: "GitGuardian", tags: ["security", "secrets", "devsecops", "devtools"], status_url: "https://status.gitguardian.com/api/v2/status.json", page_url: "https://status.gitguardian.com", type: "statuspage" },
-  // Southeast Asian payment gateway
   { id: "xendit", name: "Xendit", tags: ["payments", "fintech", "southeast-asia", "api"], status_url: "https://status.xendit.co/api/v2/status.json", page_url: "https://status.xendit.co", type: "statuspage" },
-  // 3D printing / digital manufacturing
   { id: "formlabs", name: "Formlabs", tags: ["manufacturing", "3d-printing", "iot", "cloud"], status_url: "https://status.formlabs.com/api/v2/status.json", page_url: "https://status.formlabs.com", type: "statuspage" },
-  // ML data labeling / annotation platform
   { id: "kili_technology", name: "Kili Technology", tags: ["ai", "ml", "data-labeling", "annotation"], status_url: "https://status.kili-technology.com/api/v2/status.json", page_url: "https://status.kili-technology.com", type: "statuspage" },
-  // ML training data / annotation platform
   { id: "encord", name: "Encord", tags: ["ai", "ml", "data-labeling", "annotation"], status_url: "https://status.encord.com/api/v2/status.json", page_url: "https://status.encord.com", type: "statuspage" },
-  // IoT cloud platform
   { id: "particle", name: "Particle", tags: ["iot", "cloud", "hardware", "developer-tools"], status_url: "https://status.particle.io/api/v2/status.json", page_url: "https://status.particle.io", type: "statuspage" },
-  // HR software (Europe)
   { id: "factorial", name: "Factorial", tags: ["hr", "payroll", "people-ops", "saas"], status_url: "https://status.factorialhr.com/api/v2/status.json", page_url: "https://status.factorialhr.com", type: "statuspage" },
-  // AI video generation
   { id: "synthesia", name: "Synthesia", tags: ["ai", "video", "generation", "saas"], status_url: "https://status.synthesia.io/api/v2/status.json", page_url: "https://status.synthesia.io", type: "statuspage" },
-  // Code search and intelligence platform
   { id: "sourcegraph", name: "Sourcegraph", tags: ["devtools", "code-search", "developer-tools", "saas"], status_url: "https://sourcegraphstatus.com/api/v2/status.json", page_url: "https://sourcegraphstatus.com", type: "statuspage" },
-  // Landing page builder
   { id: "unbounce", name: "Unbounce", tags: ["marketing", "landing-pages", "conversion", "saas"], status_url: "https://status.unbounce.com/api/v2/status.json", page_url: "https://status.unbounce.com", type: "statuspage" },
-  // Identity verification platform
   { id: "persona", name: "Persona", tags: ["identity", "kyc", "verification", "security"], status_url: "https://status.withpersona.com/api/v2/status.json", page_url: "https://status.withpersona.com", type: "statuspage" },
-  // Conversational AI / chatbot builder
   { id: "voiceflow", name: "Voiceflow", tags: ["ai", "chatbot", "conversational-ai", "devtools"], status_url: "https://status.voiceflow.com/api/v2/status.json", page_url: "https://status.voiceflow.com", type: "statuspage" },
-  // ACH payments platform
   { id: "dwolla", name: "Dwolla", tags: ["payments", "ach", "fintech", "api"], status_url: "https://status.dwolla.com/api/v2/status.json", page_url: "https://status.dwolla.com", type: "statuspage" },
-  // Employment background checks
   { id: "checkr", name: "Checkr", tags: ["hr", "background-checks", "compliance", "saas"], status_url: "https://checkrstatus.com/api/v2/status.json", page_url: "https://checkrstatus.com", type: "statuspage" },
-  // AI-powered fraud prevention
   { id: "sardine_ai", name: "Sardine", tags: ["security", "fraud-prevention", "fintech", "api"], status_url: "https://status.sardine.ai/api/v2/status.json", page_url: "https://status.sardine.ai", type: "statuspage" },
-  // HR software (Canada)
   { id: "humi", name: "Humi", tags: ["hr", "payroll", "people-ops", "canada"], status_url: "https://status.humi.ca/api/v2/status.json", page_url: "https://status.humi.ca", type: "statuspage" },
-  // Payment facilitation (Worldpay for Platforms)
   { id: "payrix", name: "Payrix", tags: ["payments", "payfac", "fintech", "api"], status_url: "https://status.payrix.com/api/v2/status.json", page_url: "https://status.payrix.com", type: "statuspage" },
-  // Payment orchestration platform
   { id: "spreedly", name: "Spreedly", tags: ["payments", "orchestration", "fintech", "api"], status_url: "https://status.spreedly.com/api/v2/status.json", page_url: "https://status.spreedly.com", type: "statuspage" },
-  // Async standup / team updates bot
   { id: "geekbot", name: "Geekbot", tags: ["productivity", "standup", "slack", "saas"], status_url: "https://status.geekbot.com/api/v2/status.json", page_url: "https://status.geekbot.com", type: "statuspage" },
-  // Chatbot builder platform
   { id: "botpress", name: "Botpress", tags: ["ai", "chatbot", "conversational-ai", "devtools"], status_url: "https://status.botpress.com/api/v2/status.json", page_url: "https://status.botpress.com", type: "statuspage" },
-  // No-code chatbot builder
   { id: "landbot", name: "Landbot", tags: ["chatbot", "no-code", "conversational-ai", "saas"], status_url: "https://status.landbot.io/api/v2/status.json", page_url: "https://status.landbot.io", type: "statuspage" },
-  // Roofing contractor management software
   { id: "acculynx", name: "AccuLynx", tags: ["construction", "roofing", "field-service", "saas"], status_url: "https://status.acculynx.com/api/v2/status.json", page_url: "https://status.acculynx.com", type: "statuspage" },
-  // Banking API (ACH / RTP)
   { id: "increase", name: "Increase", tags: ["banking", "fintech", "api", "payments"], status_url: "https://status.increase.com/api/v2/status.json", page_url: "https://status.increase.com", type: "statuspage" },
-  // Banking-as-a-Service platform
   { id: "treasury_prime", name: "Treasury Prime", tags: ["banking", "baas", "fintech", "api"], status_url: "https://status.treasuryprime.com/api/v2/status.json", page_url: "https://status.treasuryprime.com", type: "statuspage" },
-  // Modern card issuing
   { id: "lithic", name: "Lithic", tags: ["payments", "card-issuing", "fintech", "api"], status_url: "https://status.lithic.com/api/v2/status.json", page_url: "https://status.lithic.com", type: "statuspage" },
-  // Card issuing / embedded finance
   { id: "highnote", name: "Highnote", tags: ["payments", "card-issuing", "fintech", "api"], status_url: "https://status.highnote.com/api/v2/status.json", page_url: "https://status.highnote.com", type: "statuspage" },
-  // Low-code / no-code platforms
   { id: "outsystems", name: "OutSystems", tags: ["low-code", "no-code", "development", "saas"], status_url: "https://status.outsystems.com/api/v2/status.json", page_url: "https://status.outsystems.com", type: "statuspage" },
   { id: "mendix", name: "Mendix", tags: ["low-code", "no-code", "development", "saas"], status_url: "https://status.mendix.com/api/v2/status.json", page_url: "https://status.mendix.com", type: "statuspage" },
-  // Automation / integration
   { id: "make_com", name: "Make", tags: ["automation", "integration", "no-code", "workflow"], status_url: "https://status.make.com/api/v2/status.json", page_url: "https://status.make.com", type: "statuspage" },
   { id: "stitch_data", name: "Stitch Data", tags: ["etl", "data-integration", "pipeline", "analytics"], status_url: "https://status.stitchdata.com/api/v2/status.json", page_url: "https://status.stitchdata.com", type: "statuspage" },
-  // Code quality / security
   { id: "sonarqube", name: "SonarQube", tags: ["code-quality", "sast", "devtools", "ci-cd"], status_url: "https://status.sonarqube.com/api/v2/status.json", page_url: "https://status.sonarqube.com", type: "statuspage" },
-  // Monitoring / observability
   { id: "newrelic", name: "New Relic", tags: ["monitoring", "observability", "apm", "saas"], status_url: "https://status.newrelic.com/api/v2/status.json", page_url: "https://status.newrelic.com", type: "statuspage" },
   { id: "logz_io", name: "Logz.io", tags: ["monitoring", "observability", "logging", "saas"], status_url: "https://status.logz.io/api/v2/status.json", page_url: "https://status.logz.io", type: "statuspage" },
-  // LMS / e-learning
   { id: "skilljar", name: "Skilljar", tags: ["lms", "e-learning", "training", "saas"], status_url: "https://status.skilljar.com/api/v2/status.json", page_url: "https://status.skilljar.com", type: "statuspage" },
-  // CRM / sales
   { id: "nutshell", name: "Nutshell", tags: ["crm", "sales", "email", "saas"], status_url: "https://status.nutshell.com/api/v2/status.json", page_url: "https://status.nutshell.com", type: "statuspage" },
-  // Email marketing
   { id: "listrak", name: "Listrak", tags: ["email", "marketing", "ecommerce", "saas"], status_url: "https://status.listrak.com/api/v2/status.json", page_url: "https://status.listrak.com", type: "statuspage" },
-  // Legal tech
   { id: "practicepanther", name: "PracticePanther", tags: ["legal", "law-firm", "practice-management", "saas"], status_url: "https://status.practicepanther.com/api/v2/status.json", page_url: "https://status.practicepanther.com", type: "statuspage" },
-  // Analytics / BI
   { id: "count_co", name: "Count", tags: ["analytics", "bi", "sql", "data"], status_url: "https://status.count.co/api/v2/status.json", page_url: "https://status.count.co", type: "statuspage" },
-  // Reputation management
   { id: "reputation", name: "Reputation.com", tags: ["reputation", "reviews", "marketing", "saas"], status_url: "https://status.reputation.com/api/v2/status.json", page_url: "https://status.reputation.com", type: "statuspage" },
-  // JavaScript error tracking
   { id: "trackjs", name: "TrackJS", tags: ["error-tracking", "javascript", "monitoring", "developer-tools"], status_url: "https://status.trackjs.com/api/v2/status.json", page_url: "https://status.trackjs.com", type: "statuspage" },
-  // Video hosting / streaming API
   { id: "api_video", name: "api.video", tags: ["video", "api", "media", "streaming"], status_url: "https://status.api.video/api/v2/status.json", page_url: "https://status.api.video", type: "statuspage" },
-  // AI image generation
   { id: "ideogram", name: "Ideogram", tags: ["ai", "image-generation", "creative", "saas"], status_url: "https://status.ideogram.ai/api/v2/status.json", page_url: "https://status.ideogram.ai", type: "statuspage" },
-  // Payment orchestration platform
   { id: "primer", name: "Primer", tags: ["payments", "fintech", "api", "orchestration"], status_url: "https://status.primer.io/api/v2/status.json", page_url: "https://status.primer.io", type: "statuspage" },
-  // Email marketing for creators / small business
   { id: "emailoctopus", name: "EmailOctopus", tags: ["email", "marketing", "saas", "automation"], status_url: "https://status.emailoctopus.com/api/v2/status.json", page_url: "https://status.emailoctopus.com", type: "statuspage" },
-  // Cold email / outreach automation
   { id: "woodpecker", name: "Woodpecker", tags: ["email", "sales", "outreach", "automation"], status_url: "https://status.woodpecker.co/api/v2/status.json", page_url: "https://status.woodpecker.co", type: "statuspage" },
-  // Shipment tracking / post-purchase
   { id: "aftership", name: "AfterShip", tags: ["logistics", "shipping", "tracking", "ecommerce"], status_url: "https://status.aftership.com/api/v2/status.json", page_url: "https://status.aftership.com", type: "statuspage" },
-  // Multi-carrier shipping API
   { id: "shipengine", name: "ShipEngine", tags: ["shipping", "logistics", "api", "ecommerce"], status_url: "https://status.shipengine.com/api/v2/status.json", page_url: "https://status.shipengine.com", type: "statuspage" },
-  // E-commerce subscription management
   { id: "skio", name: "Skio", tags: ["subscriptions", "ecommerce", "payments", "saas"], status_url: "https://status.skio.com/api/v2/status.json", page_url: "https://status.skio.com", type: "statuspage" },
-  // Loyalty & rewards platform
   { id: "loyaltylion", name: "LoyaltyLion", tags: ["loyalty", "rewards", "ecommerce", "marketing"], status_url: "https://status.loyaltylion.com/api/v2/status.json", page_url: "https://status.loyaltylion.com", type: "statuspage" },
-  // Compliance evidence automation
   { id: "anecdotes", name: "Anecdotes.ai", tags: ["compliance", "grc", "security", "saas"], status_url: "https://status.anecdotes.ai/api/v2/status.json", page_url: "https://status.anecdotes.ai", type: "statuspage" },
-  // Cloud object storage (S3-compatible)
   { id: "wasabi", name: "Wasabi Cloud Storage", tags: ["storage", "cloud", "object-storage", "s3"], status_url: "https://status.wasabi.com/api/v2/status.json", page_url: "https://status.wasabi.com", type: "statuspage" },
-  // AI prompt engineering & evaluation platform
   { id: "humanloop", name: "Humanloop", tags: ["ai", "llm", "prompts", "evaluation"], status_url: "https://humanloop.statuspage.io/api/v2/status.json", page_url: "https://humanloop.statuspage.io", type: "statuspage" },
-  // Headless commerce infrastructure
   { id: "commercelayer", name: "Commerce Layer", tags: ["ecommerce", "headless", "api", "payments"], status_url: "https://status.commercelayer.io/api/v2/status.json", page_url: "https://status.commercelayer.io", type: "statuspage" },
-  // Managed detection & response (MDR) security
   { id: "huntress", name: "Huntress", tags: ["security", "mdr", "endpoint", "saas"], status_url: "https://status.huntress.com/api/v2/status.json", page_url: "https://status.huntress.com", type: "statuspage" },
-  // AI-powered email security
   { id: "abnormal_security", name: "Abnormal Security", tags: ["security", "email", "ai", "threat-protection"], status_url: "https://status.abnormalsecurity.com/api/v2/status.json", page_url: "https://status.abnormalsecurity.com", type: "statuspage" },
-  // Computer vision & AI platform
   { id: "clarifai", name: "Clarifai", tags: ["ai", "computer-vision", "ml", "api"], status_url: "https://status.clarifai.com/api/v2/status.json", page_url: "https://status.clarifai.com", type: "statuspage" },
-  // Marketing automation (EU-focused)
   { id: "actito", name: "Actito", tags: ["marketing", "automation", "email", "crm"], status_url: "https://status.actito.com/api/v2/status.json", page_url: "https://status.actito.com", type: "statuspage" },
-  // Email retargeting & cart abandonment
   { id: "rejoiner", name: "Rejoiner", tags: ["email", "marketing", "ecommerce", "retargeting"], status_url: "https://status.rejoiner.com/api/v2/status.json", page_url: "https://status.rejoiner.com", type: "statuspage" },
-  // Healthcare data integration platform
   { id: "redox", name: "Redox", tags: ["healthcare", "ehr", "api", "data-integration"], status_url: "https://status.redoxengine.com/api/v2/status.json", page_url: "https://status.redoxengine.com", type: "statuspage" },
-  // Health data network & FHIR API
   { id: "healthgorilla", name: "Health Gorilla", tags: ["healthcare", "fhir", "api", "health-data"], status_url: "https://status.healthgorilla.com/api/v2/status.json", page_url: "https://status.healthgorilla.com", type: "statuspage" },
-  // Mobile push notification platform
   { id: "batch", name: "Batch", tags: ["push-notifications", "mobile", "messaging", "engagement"], status_url: "https://status.batch.com/api/v2/status.json", page_url: "https://status.batch.com", type: "statuspage" },
-  // Apple device management (MDM)
   { id: "addigy", name: "Addigy", tags: ["mdm", "apple", "device-management", "it"], status_url: "https://status.addigy.com/api/v2/status.json", page_url: "https://status.addigy.com", type: "statuspage" },
-  // Apple device management platform
   { id: "kandji", name: "Kandji", tags: ["mdm", "apple", "device-management", "security"], status_url: "https://status.kandji.io/api/v2/status.json", page_url: "https://status.kandji.io", type: "statuspage" },
-  // AI video generation (talking avatars)
   { id: "d_id", name: "D-ID", tags: ["ai", "video", "avatars", "generative"], status_url: "https://status.d-id.com/api/v2/status.json", page_url: "https://status.d-id.com", type: "statuspage" },
-  // Decentralized IoT wireless network
   { id: "helium", name: "Helium", tags: ["iot", "blockchain", "wireless", "network"], status_url: "https://status.helium.com/api/v2/status.json", page_url: "https://status.helium.com", type: "statuspage" },
-  // BNPL / installment payments
   { id: "sezzle", name: "Sezzle", tags: ["payments", "bnpl", "fintech", "ecommerce"], status_url: "https://status.sezzle.com/api/v2/status.json", page_url: "https://status.sezzle.com", type: "statuspage" },
   { id: "splitit", name: "Splitit", tags: ["payments", "bnpl", "fintech", "ecommerce"], status_url: "https://status.splitit.com/api/v2/status.json", page_url: "https://status.splitit.com", type: "statuspage" },
   { id: "paidy", name: "Paidy", tags: ["payments", "bnpl", "fintech", "japan"], status_url: "https://status.paidy.com/api/v2/status.json", page_url: "https://status.paidy.com", type: "statuspage" },
-  // Time-series database platform
   { id: "influxdata", name: "InfluxDB Cloud", tags: ["database", "time-series", "iot", "observability"], status_url: "https://status.influxdata.com/api/v2/status.json", page_url: "https://status.influxdata.com", type: "statuspage" },
-  // Monitoring platform (status.io)
   { id: "dynatrace", name: "Dynatrace", tags: ["monitoring", "observability", "apm", "infrastructure"], status_url: "https://api.status.io/1.0/status/546d8cb6af8407b6730000cb", page_url: "https://dynatrace.status.io", type: "statusio" },
-  // Google Firebase (GCP incident format)
   { id: "firebase", name: "Google Firebase", tags: ["database", "hosting", "mobile", "google"], status_url: "https://status.firebase.google.com/incidents.json", page_url: "https://status.firebase.google.com", type: "gcp" },
-  // Social media platform
   { id: "reddit", name: "Reddit", tags: ["social", "community", "media"], status_url: "https://www.redditstatus.com/api/v2/status.json", page_url: "https://www.redditstatus.com", type: "statuspage" },
-  // Serverless database with branching
   { id: "xata", name: "Xata", tags: ["database", "postgres", "search", "serverless"], status_url: "https://www.xatastatus.com/api/v2/status.json", page_url: "https://www.xatastatus.com", type: "statuspage" },
-  // Email marketing platform
   { id: "getresponse", name: "GetResponse", tags: ["email", "marketing", "automation", "saas"], status_url: "https://status.getresponse.com/api/v2/status.json", page_url: "https://status.getresponse.com", type: "statuspage" },
-  // Code quality and test coverage
   { id: "codeclimate", name: "Code Climate", tags: ["code-quality", "testing", "devtools", "ci-cd"], status_url: "https://status.codeclimate.com/api/v2/status.json", page_url: "https://status.codeclimate.com", type: "statuspage" },
-  // Investing platform
   { id: "wealthsimple", name: "Wealthsimple", tags: ["fintech", "investing", "trading", "canada"], status_url: "https://status.wealthsimple.com/api/v2/status.json", page_url: "https://status.wealthsimple.com", type: "statuspage" },
   { id: "robinhood", name: "Robinhood", tags: ["fintech", "investing", "trading", "stocks"], status_url: "https://status.robinhood.com/api/v2/status.json", page_url: "https://status.robinhood.com", type: "statuspage" },
-  // Neobank
   { id: "chime", name: "Chime", tags: ["fintech", "banking", "neobank", "payments"], status_url: "https://status.chime.com/api/v2/status.json", page_url: "https://status.chime.com", type: "statuspage" },
-  // Presentation platform
   { id: "prezi", name: "Prezi", tags: ["productivity", "presentations", "collaboration", "saas"], status_url: "https://status.prezi.com/api/v2/status.json", page_url: "https://status.prezi.com", type: "statuspage" },
-  // Mobile/app development platform
   { id: "expo", name: "Expo", tags: ["mobile", "react-native", "developer-tools", "deployment"], status_url: "https://status.expo.dev/api/v2/status.json", page_url: "https://status.expo.dev", type: "statuspage" },
-  // Security / bug bounty
   { id: "hackerone", name: "HackerOne", tags: ["security", "bug-bounty", "vulnerability", "saas"], status_url: "https://www.hackeronestatus.com/api/v2/status.json", page_url: "https://www.hackeronestatus.com", type: "statuspage" },
-  // Passwordless / zero-trust authentication
   { id: "beyondidentity", name: "Beyond Identity", tags: ["auth", "identity", "security", "zero-trust"], status_url: "https://status.beyondidentity.com/api/v2/status.json", page_url: "https://status.beyondidentity.com", type: "statuspage" },
-  // Privileged Access Management (PAM)
   { id: "delinea", name: "Delinea", tags: ["security", "pam", "identity", "privileged-access"], status_url: "https://status.delinea.com/api/v2/status.json", page_url: "https://status.delinea.com", type: "statuspage" },
-  // Financial modeling / BI
   { id: "causal", name: "Causal", tags: ["analytics", "bi", "financial-modeling", "saas"], status_url: "https://status.causal.app/api/v2/status.json", page_url: "https://status.causal.app", type: "statuspage" },
-  // Secure file sharing / collaboration
   { id: "tresorit", name: "Tresorit", tags: ["file-sharing", "security", "cloud-storage", "collaboration"], status_url: "https://status.tresorit.com/api/v2/status.json", page_url: "https://status.tresorit.com", type: "statuspage" },
-  // Document parsing / data extraction
   { id: "docparser", name: "Docparser", tags: ["document-processing", "ocr", "api", "automation"], status_url: "https://status.docparser.com/api/v2/status.json", page_url: "https://status.docparser.com", type: "statuspage" },
-  // GraphQL platform / federation
   { id: "apollographql", name: "Apollo GraphQL", tags: ["graphql", "api", "developer-tools", "platform"], status_url: "https://status.apollographql.com/api/v2/status.json", page_url: "https://status.apollographql.com", type: "statuspage" },
-  // Cloud architecture diagramming
   { id: "cloudcraft", name: "Cloudcraft", tags: ["devops", "cloud", "diagramming", "developer-tools"], status_url: "https://status.cloudcraft.co/api/v2/status.json", page_url: "https://status.cloudcraft.co", type: "statuspage" },
-  // AI voice conversations
   { id: "retellai", name: "Retell AI", tags: ["ai", "voice", "telephony", "api"], status_url: "https://status.retellai.com/api/v2/status.json", page_url: "https://status.retellai.com", type: "statuspage" },
-  // AI inference (SambaNova Systems)
   { id: "sambanova", name: "SambaNova", tags: ["ai", "llm", "inference", "api"], status_url: "https://status.sambanova.ai/api/v2/status.json", page_url: "https://status.sambanova.ai", type: "statuspage" },
-  // Lambda AI cloud inference
   { id: "lambda_ai", name: "Lambda AI", tags: ["ai", "cloud", "inference", "gpu"], status_url: "https://status.lambda.ai/api/v2/status.json", page_url: "https://status.lambda.ai", type: "statuspage" },
-  // Data catalog / data governance
   { id: "atlan", name: "Atlan", tags: ["data", "catalog", "governance", "metadata"], status_url: "https://status.atlan.com/api/v2/status.json", page_url: "https://status.atlan.com", type: "statuspage" },
-  // No-code app builder
   { id: "stacker", name: "Stacker", tags: ["no-code", "app-builder", "productivity", "saas"], status_url: "https://status.stacker.app/api/v2/status.json", page_url: "https://status.stacker.app", type: "statuspage" },
-  // Business intelligence / analytics
   { id: "omni", name: "Omni Analytics", tags: ["bi", "analytics", "data", "saas"], status_url: "https://status.omni.co/api/v2/status.json", page_url: "https://status.omni.co", type: "statuspage" },
-  // Crypto exchanges
   { id: "coinbase", name: "Coinbase", tags: ["crypto", "exchange", "fintech", "payments"], status_url: "https://status.coinbase.com/api/v2/status.json", page_url: "https://status.coinbase.com", type: "statuspage" },
   { id: "kraken", name: "Kraken", tags: ["crypto", "exchange", "fintech", "trading"], status_url: "https://status.kraken.com/api/v2/status.json", page_url: "https://status.kraken.com", type: "statuspage" },
   { id: "gemini", name: "Gemini Exchange", tags: ["crypto", "exchange", "fintech", "trading"], status_url: "https://status.gemini.com/api/v2/status.json", page_url: "https://status.gemini.com", type: "statuspage" },
   { id: "blockchain_com", name: "Blockchain.com", tags: ["crypto", "bitcoin", "fintech", "wallet"], status_url: "https://status.blockchain.com/api/v2/status.json", page_url: "https://status.blockchain.com", type: "statuspage" },
   { id: "cexio", name: "CEX.IO", tags: ["crypto", "exchange", "fintech", "trading"], status_url: "https://status.cex.io/api/v2/status.json", page_url: "https://status.cex.io", type: "statuspage" },
-  // Project management
   { id: "workflowmax", name: "WorkflowMax", tags: ["project-management", "job-management", "saas", "productivity"], status_url: "https://status.workflowmax.com/api/v2/status.json", page_url: "https://status.workflowmax.com", type: "statuspage" },
-  // AI / vector search
   { id: "vectara", name: "Vectara", tags: ["ai", "search", "vector-db", "llm", "rag"], status_url: "https://status.vectara.com/api/v2/status.json", page_url: "https://status.vectara.com", type: "statuspage" },
-  // Education
   { id: "duolingo", name: "Duolingo", tags: ["education", "language-learning", "saas", "mobile"], status_url: "https://status.duolingo.com/api/v2/status.json", page_url: "https://status.duolingo.com", type: "statuspage" },
   { id: "kahoot", name: "Kahoot", tags: ["education", "learning", "gamification", "saas"], status_url: "https://status.kahoot.com/api/v2/status.json", page_url: "https://status.kahoot.com", type: "statuspage" },
-  // Email clients / privacy
   { id: "superhuman", name: "Superhuman", tags: ["email", "productivity", "saas", "enterprise"], status_url: "https://status.superhuman.com/api/v2/status.json", page_url: "https://status.superhuman.com", type: "statuspage" },
   { id: "proton", name: "Proton", tags: ["email", "privacy", "security", "vpn"], status_url: "https://status.proton.me/api/v2/status.json", page_url: "https://status.proton.me", type: "statuspage" },
-  // 3D design
   { id: "spline", name: "Spline", tags: ["design", "3d", "creative", "developer-tools"], status_url: "https://status.spline.design/api/v2/status.json", page_url: "https://status.spline.design", type: "statuspage" },
-  // Website builder
   { id: "duda", name: "Duda", tags: ["website-builder", "cms", "saas", "agencies"], status_url: "https://status.duda.co/api/v2/status.json", page_url: "https://status.duda.co", type: "statuspage" },
-  // Web performance testing
   { id: "webpagetest", name: "WebPageTest", tags: ["performance", "testing", "developer-tools", "monitoring"], status_url: "https://status.webpagetest.org/api/v2/status.json", page_url: "https://status.webpagetest.org", type: "statuspage" },
-  // Databases
   { id: "tembo", name: "Tembo", tags: ["database", "postgres", "cloud", "saas"], status_url: "https://status.tembo.io/api/v2/status.json", page_url: "https://status.tembo.io", type: "statuspage" },
-  // Tick 120 additions
   { id: "khan_academy", name: "Khan Academy", tags: ["education", "learning", "nonprofit", "saas"], status_url: "https://status.khanacademy.org/api/v2/status.json", page_url: "https://status.khanacademy.org", type: "statuspage" },
   { id: "strava", name: "Strava", tags: ["fitness", "sports", "social", "mobile"], status_url: "https://status.strava.com/api/v2/status.json", page_url: "https://status.strava.com", type: "statuspage" },
   { id: "peloton", name: "Peloton", tags: ["fitness", "hardware", "streaming", "saas"], status_url: "https://status.onepeloton.com/api/v2/status.json", page_url: "https://status.onepeloton.com", type: "statuspage" },
@@ -1864,7 +1621,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "litmus", name: "Litmus", tags: ["email", "testing", "marketing", "analytics"], status_url: "https://status.litmus.com/api/v2/status.json", page_url: "https://status.litmus.com", type: "statuspage" },
   { id: "mediasite", name: "Mediasite", tags: ["video", "webinar", "learning", "enterprise"], status_url: "https://status.mediasite.com/api/v2/status.json", page_url: "https://status.mediasite.com", type: "statuspage" },
   { id: "appcenter", name: "Visual Studio App Center", tags: ["mobile", "ci-cd", "testing", "microsoft"], status_url: "https://status.appcenter.ms/api/v2/status.json", page_url: "https://status.appcenter.ms", type: "statuspage" },
-  // Tick 121 additions
   { id: "teleport", name: "Teleport Cloud", tags: ["security", "infrastructure", "zero-trust", "devops"], status_url: "https://status.teleport.sh/api/v2/status.json", page_url: "https://status.teleport.sh", type: "statuspage" },
   { id: "bigpanda", name: "BigPanda", tags: ["aiops", "monitoring", "incident-management", "observability"], status_url: "https://status.bigpanda.io/api/v2/status.json", page_url: "https://status.bigpanda.io", type: "statuspage" },
   { id: "lastpass", name: "LastPass", tags: ["security", "password-manager", "identity", "saas"], status_url: "https://lastpass.statuspage.io/api/v2/status.json", page_url: "https://status.lastpass.com", type: "statuspage" },
@@ -1876,42 +1632,24 @@ const SERVICES: ServiceConfig[] = [
   { id: "worldpay", name: "Worldpay", tags: ["payments", "fintech", "acquiring", "processing"], status_url: "https://status.worldpay.com/api/v2/status.json", page_url: "https://status.worldpay.com", type: "statuspage" },
   { id: "360learning", name: "360Learning", tags: ["lms", "learning", "training", "saas"], status_url: "https://status.360learning.com/api/v2/status.json", page_url: "https://status.360learning.com", type: "statuspage" },
   { id: "litmos", name: "Litmos", tags: ["lms", "learning", "training", "saas"], status_url: "https://litmos.statuspage.io/api/v2/status.json", page_url: "https://litmos.statuspage.io", type: "statuspage" },
-  // Tick 122 additions
-  // Mobile attribution / engagement
   { id: "branch", name: "Branch", tags: ["mobile", "attribution", "deep-links", "analytics"], status_url: "https://status.branch.io/api/v2/status.json", page_url: "https://status.branch.io", type: "statuspage" },
   { id: "adjust", name: "Adjust", tags: ["mobile", "attribution", "analytics", "adtech"], status_url: "https://status.adjust.com/api/v2/status.json", page_url: "https://status.adjust.com", type: "statuspage" },
   { id: "clevertap", name: "CleverTap", tags: ["mobile", "analytics", "engagement", "marketing"], status_url: "https://status.clevertap.com/api/v2/status.json", page_url: "https://status.clevertap.com", type: "statuspage" },
   { id: "moengage", name: "MoEngage", tags: ["mobile", "engagement", "marketing", "saas"], status_url: "https://status.moengage.com/api/v2/status.json", page_url: "https://status.moengage.com", type: "statuspage" },
-  // ABM / revenue intelligence
   { id: "sixsense", name: "6sense", tags: ["abm", "revenue-intelligence", "marketing", "saas"], status_url: "https://status.6sense.com/api/v2/status.json", page_url: "https://status.6sense.com", type: "statuspage" },
-  // Video conferencing infrastructure
   { id: "pexip", name: "Pexip", tags: ["video-conferencing", "infrastructure", "enterprise", "saas"], status_url: "https://status.pexip.com/api/v2/status.json", page_url: "https://status.pexip.com", type: "statuspage" },
-  // Business messaging / VoIP / contact center
   { id: "avochato", name: "Avochato", tags: ["sms", "messaging", "business", "saas"], status_url: "https://status.avochato.com/api/v2/status.json", page_url: "https://status.avochato.com", type: "statuspage" },
   { id: "kixie", name: "Kixie", tags: ["voip", "sales-dialer", "crm", "saas"], status_url: "https://status.kixie.com/api/v2/status.json", page_url: "https://status.kixie.com", type: "statuspage" },
   { id: "aloware", name: "Aloware", tags: ["contact-center", "voip", "sales", "saas"], status_url: "https://status.aloware.com/api/v2/status.json", page_url: "https://status.aloware.com", type: "statuspage" },
-  // Web accessibility
   { id: "audioeye", name: "AudioEye", tags: ["accessibility", "ada", "compliance", "saas"], status_url: "https://status.audioeye.com/api/v2/status.json", page_url: "https://status.audioeye.com", type: "statuspage" },
-  // Tick 123 additions
-  // Cap table / equity management
   { id: "carta", name: "Carta", tags: ["fintech", "cap-table", "equity", "saas"], status_url: "https://status.carta.com/api/v2/status.json", page_url: "https://status.carta.com", type: "statuspage" },
-  // Streaming SQL / real-time database
   { id: "materialize", name: "Materialize", tags: ["database", "streaming", "sql", "real-time"], status_url: "https://status.materialize.com/api/v2/status.json", page_url: "https://status.materialize.com", type: "statuspage" },
-  // Developer portal / internal developer platform
-  { id: "port", name: "Port", tags: ["developer-portal", "platform-engineering", "idp", "devops"], status_url: "https://status.getport.io/api/v2/status.json", page_url: "https://status.getport.io", type: "statuspage" },
-  // Email newsletter platform
   { id: "buttondown", name: "Buttondown", tags: ["email", "newsletter", "publishing", "saas"], status_url: "https://status.buttondown.com/api/v2/status.json", page_url: "https://status.buttondown.com", type: "statuspage" },
-  // AI speech recognition / transcription
   { id: "speechmatics", name: "Speechmatics", tags: ["ai", "speech-recognition", "transcription", "api"], status_url: "https://status.speechmatics.com/api/v2/status.json", page_url: "https://status.speechmatics.com", type: "statuspage" },
-  // Mortgage / lending technology
   { id: "blend", name: "Blend", tags: ["fintech", "mortgage", "lending", "saas"], status_url: "https://status.blend.com/api/v2/status.json", page_url: "https://status.blend.com", type: "statuspage" },
-  // In-app subscription / monetization management
   { id: "revenuecat", name: "RevenueCat", tags: ["mobile", "subscriptions", "payments", "saas"], status_url: "https://status.revenuecat.com/api/v2/status.json", page_url: "https://status.revenuecat.com", type: "statuspage" },
-  // No-code data automation / ETL
   { id: "parabola", name: "Parabola", tags: ["no-code", "data", "automation", "etl"], status_url: "https://status.parabola.io/api/v2/status.json", page_url: "https://status.parabola.io", type: "statuspage" },
-  // Read-it-later / article saving
   { id: "omnivore", name: "Omnivore", tags: ["read-it-later", "reading", "content", "open-source"], status_url: "https://status.omnivore.io/api/v2/status.json", page_url: "https://status.omnivore.io", type: "statuspage" },
-  // Restaurant tech / digital ordering platform
   { id: "lunchbox", name: "Lunchbox", tags: ["restaurant", "online-ordering", "delivery", "saas"], status_url: "https://status.lunchbox.io/api/v2/status.json", page_url: "https://status.lunchbox.io", type: "statuspage" },
   { id: "aweber", name: "AWeber", tags: ["email-marketing", "marketing", "newsletters", "saas"], status_url: "https://status.aweber.com/api/v2/status.json", page_url: "https://status.aweber.com", type: "statuspage" },
   { id: "clickfunnels", name: "ClickFunnels", tags: ["marketing", "funnels", "landing-pages", "saas"], status_url: "https://status.clickfunnels.com/api/v2/status.json", page_url: "https://status.clickfunnels.com", type: "statuspage" },
@@ -1923,410 +1661,185 @@ const SERVICES: ServiceConfig[] = [
   { id: "envoy", name: "Envoy", tags: ["visitor-management", "workplace", "office", "facilities"], status_url: "https://status.envoy.com/api/v2/status.json", page_url: "https://status.envoy.com", type: "statuspage" },
   { id: "brivo", name: "Brivo", tags: ["access-control", "security", "physical-security", "saas"], status_url: "https://status.brivo.com/api/v2/status.json", page_url: "https://status.brivo.com", type: "statuspage" },
   { id: "eptura_visitor", name: "Eptura Visitor", tags: ["visitor-management", "workplace", "facilities", "saas"], status_url: "https://status.proxyclick.com/api/v2/status.json", page_url: "https://status.proxyclick.com", type: "statuspage" },
-  // Tick 125 additions
-  // Security awareness training / phishing simulation
   { id: "knowbe4", name: "KnowBe4", tags: ["security", "awareness-training", "phishing-simulation", "saas"], status_url: "https://status.knowbe4.com/api/v2/status.json", page_url: "https://status.knowbe4.com", type: "statuspage" },
-  // Image CDN and optimization
   { id: "imagekit", name: "ImageKit", tags: ["cdn", "image-optimization", "media", "api"], status_url: "https://imagekit.statuspage.io/api/v2/status.json", page_url: "https://imagekit.statuspage.io", type: "statuspage" },
-  // Applicant tracking system
   { id: "jazzhr", name: "JazzHR", tags: ["hr", "ats", "recruiting", "saas"], status_url: "https://status.jazzhr.com/api/v2/status.json", page_url: "https://status.jazzhr.com", type: "statuspage" },
-  // Recruiting platform
   { id: "workable", name: "Workable", tags: ["hr", "recruiting", "ats", "saas"], status_url: "https://workable.statuspage.io/api/v2/status.json", page_url: "https://workable.statuspage.io", type: "statuspage" },
-  // Learning and talent management suite
   { id: "cornerstoneondemand", name: "Cornerstone OnDemand", tags: ["lms", "learning", "talent-management", "hr"], status_url: "https://cornerstoneondemand.statuspage.io/api/v2/status.json", page_url: "https://cornerstoneondemand.statuspage.io", type: "statuspage" },
-  // Construction project management
   { id: "buildertrend", name: "Buildertrend", tags: ["construction", "project-management", "field-service", "saas"], status_url: "https://status.buildertrend.net/api/v2/status.json", page_url: "https://status.buildertrend.net", type: "statuspage" },
-  // IoT fleet management and device OS
   { id: "balena", name: "Balena", tags: ["iot", "fleet-management", "embedded", "devices"], status_url: "https://status.balena.io/api/v2/status.json", page_url: "https://status.balena.io", type: "statuspage" },
-  // Cellular IoT connectivity
   { id: "hologram", name: "Hologram", tags: ["iot", "cellular", "connectivity", "hardware"], status_url: "https://status.hologram.io/api/v2/status.json", page_url: "https://status.hologram.io", type: "statuspage" },
-  // Game development / real-time 3D platform
   { id: "unity", name: "Unity", tags: ["gaming", "game-engine", "developer-tools", "3d"], status_url: "https://unity.statuspage.io/api/v2/status.json", page_url: "https://unity.statuspage.io", type: "statuspage" },
-  // IT service management
   { id: "topdesk", name: "TOPdesk", tags: ["itsm", "service-management", "help-desk", "saas"], status_url: "https://status.topdesk.com/api/v2/status.json", page_url: "https://status.topdesk.com", type: "statuspage" },
-  // Reverse ETL / data activation
-  { id: "census", name: "Census", tags: ["data", "reverse-etl", "data-activation", "analytics"], status_url: "https://status.getcensus.com/api/v2/status.json", page_url: "https://status.getcensus.com", type: "statuspage" },
-  // Cloud ETL / data pipeline
-  { id: "stitch_data", name: "Stitch Data", tags: ["data", "etl", "data-integration", "saas"], status_url: "https://status.stitchdata.com/api/v2/status.json", page_url: "https://status.stitchdata.com", type: "statuspage" },
-  // Blockchain analytics / compliance intelligence
   { id: "chainalysis", name: "Chainalysis", tags: ["blockchain", "crypto", "compliance", "analytics"], status_url: "https://status.chainalysis.com/api/v2/status.json", page_url: "https://status.chainalysis.com", type: "statuspage" },
-  // Blockchain infrastructure / node management
   { id: "blockdaemon", name: "Blockdaemon", tags: ["blockchain", "infrastructure", "nodes", "crypto"], status_url: "https://status.blockdaemon.com/api/v2/status.json", page_url: "https://status.blockdaemon.com", type: "statuspage" },
-  // Subscription revenue analytics
   { id: "baremetrics", name: "Baremetrics", tags: ["analytics", "subscriptions", "revenue", "saas"], status_url: "https://status.baremetrics.com/api/v2/status.json", page_url: "https://status.baremetrics.com", type: "statuspage" },
-  // 3PL e-commerce fulfillment
   { id: "shipmonk", name: "ShipMonk", tags: ["logistics", "fulfillment", "e-commerce", "shipping"], status_url: "https://status.shipmonk.com/api/v2/status.json", page_url: "https://status.shipmonk.com", type: "statuspage" },
-  // Algorithmic stock trading API
   { id: "alpaca", name: "Alpaca", tags: ["fintech", "trading", "api", "stocks"], status_url: "https://status.alpaca.markets/api/v2/status.json", page_url: "https://status.alpaca.markets", type: "statuspage" },
-  // Financial market data API
   { id: "iex_cloud", name: "IEX Cloud", tags: ["fintech", "market-data", "api", "stocks"], status_url: "https://status.iexapis.com/api/v2/status.json", page_url: "https://status.iexapis.com", type: "statuspage" },
-  // Bitcoin / Stacks blockchain developer tools
   { id: "hiro", name: "Hiro Systems", tags: ["blockchain", "bitcoin", "developer-tools", "stacks"], status_url: "https://status.hiro.so/api/v2/status.json", page_url: "https://status.hiro.so", type: "statuspage" },
-  // Banking-as-a-Service platform
-  { id: "treasury_prime", name: "Treasury Prime", tags: ["fintech", "banking", "baas", "api"], status_url: "https://status.treasuryprime.com/api/v2/status.json", page_url: "https://status.treasuryprime.com", type: "statuspage" },
-  // Payment processing / instant ACH
   { id: "tabapay", name: "TabaPay", tags: ["payments", "fintech", "ach", "instant-payments"], status_url: "https://status.tabapay.com/api/v2/status.json", page_url: "https://status.tabapay.com", type: "statuspage" },
-  // Embedded lending / revenue-based financing
   { id: "parafin", name: "Parafin", tags: ["fintech", "lending", "embedded-finance", "api"], status_url: "https://status.parafin.com/api/v2/status.json", page_url: "https://status.parafin.com", type: "statuspage" },
-  // Business identity verification / KYB
   { id: "middesk", name: "Middesk", tags: ["identity", "kyb", "compliance", "fintech"], status_url: "https://status.middesk.com/api/v2/status.json", page_url: "https://status.middesk.com", type: "statuspage" },
-  // Project management / team collaboration
   { id: "hive", name: "Hive", tags: ["collaboration", "project-management", "productivity", "saas"], status_url: "https://status.hive.com/api/v2/status.json", page_url: "https://status.hive.com", type: "statuspage" },
-  // E-signature platforms
   { id: "boldsign", name: "BoldSign", tags: ["esignature", "documents", "saas", "api"], status_url: "https://status.boldsign.com/api/v2/status.json", page_url: "https://status.boldsign.com", type: "statuspage" },
   { id: "scrive", name: "Scrive", tags: ["esignature", "e-identification", "documents", "compliance"], status_url: "https://status.scrive.com/api/v2/status.json", page_url: "https://status.scrive.com", type: "statuspage" },
-  // Password manager
   { id: "nordpass", name: "NordPass", tags: ["password-manager", "security", "identity", "saas"], status_url: "https://status.nordpass.com/api/v2/status.json", page_url: "https://status.nordpass.com", type: "statuspage" },
-  // Cross-border payments / FX
   { id: "currencycloud", name: "CurrencyCloud", tags: ["fintech", "fx", "cross-border-payments", "api"], status_url: "https://status.currencycloud.com/api/v2/status.json", page_url: "https://status.currencycloud.com", type: "statuspage" },
-  // Tax technology
   { id: "vertexinc", name: "Vertex Inc", tags: ["tax", "compliance", "fintech", "saas"], status_url: "https://status.vertexinc.com/api/v2/status.json", page_url: "https://status.vertexinc.com", type: "statuspage" },
-  // HR / LMS
   { id: "eloomi", name: "eloomi", tags: ["hr", "lms", "learning-management", "saas"], status_url: "https://status.eloomi.com/api/v2/status.json", page_url: "https://status.eloomi.com", type: "statuspage" },
-  // Shipping / fulfillment
   { id: "shippingeasy", name: "ShippingEasy", tags: ["shipping", "ecommerce", "fulfillment", "logistics"], status_url: "https://status.shippingeasy.com/api/v2/status.json", page_url: "https://status.shippingeasy.com", type: "statuspage" },
-  // Freight marketplace / logistics
   { id: "freightos", name: "Freightos", tags: ["freight", "logistics", "supply-chain", "marketplace"], status_url: "https://status.freightos.com/api/v2/status.json", page_url: "https://status.freightos.com", type: "statuspage" },
-  // E-commerce platform
   { id: "volusion", name: "Volusion", tags: ["ecommerce", "saas", "online-store", "payments"], status_url: "https://status.volusion.com/api/v2/status.json", page_url: "https://status.volusion.com", type: "statuspage" },
-  // Online course platform
   { id: "learnworlds", name: "LearnWorlds", tags: ["elearning", "lms", "online-courses", "saas"], status_url: "https://status.learnworlds.com/api/v2/status.json", page_url: "https://status.learnworlds.com", type: "statuspage" },
-  // Domain registrar / hosting
   { id: "gandi", name: "Gandi", tags: ["domain", "registrar", "hosting", "dns"], status_url: "https://status.gandi.net/api/v2/status.json", page_url: "https://status.gandi.net", type: "statuspage" },
-  // IT financial management
   { id: "apptio", name: "Apptio", tags: ["it-finance", "cloud-cost", "finops", "saas"], status_url: "https://status.apptio.com/api/v2/status.json", page_url: "https://status.apptio.com", type: "statuspage" },
-  // Local business digital platform
   { id: "vendasta", name: "Vendasta", tags: ["marketing", "local-business", "saas", "white-label"], status_url: "https://status.vendasta.com/api/v2/status.json", page_url: "https://status.vendasta.com", type: "statuspage" },
-  // Employee rewards / gifting
   { id: "rybbon", name: "Rybbon (BHN Rewards)", tags: ["rewards", "gifting", "employee-engagement", "saas"], status_url: "https://status.rybbon.net/api/v2/status.json", page_url: "https://status.rybbon.net", type: "statuspage" },
   { id: "xoxoday", name: "Xoxoday", tags: ["rewards", "gifting", "employee-engagement", "saas"], status_url: "https://status.xoxoday.com/api/v2/status.json", page_url: "https://status.xoxoday.com", type: "statuspage" },
-  // AI image generation / inference
   { id: "fal", name: "Fal.ai", tags: ["ai", "inference", "image-generation", "api"], status_url: "https://fal.statuspage.io/api/v2/status.json", page_url: "https://fal.statuspage.io", type: "statuspage" },
-  // Vector / ML database
   { id: "lancedb", name: "LanceDB", tags: ["database", "vector", "ai", "ml"], status_url: "https://lancedb.statuspage.io/api/v2/status.json", page_url: "https://lancedb.statuspage.io", type: "statuspage" },
-  // Communications API
   { id: "vonage", name: "Vonage API", tags: ["communications", "sms", "voice", "api"], status_url: "https://vonageapi.statuspage.io/api/v2/status.json", page_url: "https://vonageapi.statuspage.io", type: "statuspage" },
-  // Email security / secure email gateway
   { id: "mimecast", name: "Mimecast", tags: ["email", "security", "enterprise", "compliance"], status_url: "https://api.status.io/1.0/status/5d849b1c02e65b3ec45369d4", page_url: "https://status.mimecast.com", type: "statusio" },
-  // Customer data platform
   { id: "lytics", name: "Lytics", tags: ["cdp", "analytics", "personalization", "data"], status_url: "https://lytics.statuspage.io/api/v2/status.json", page_url: "https://lytics.statuspage.io", type: "statuspage" },
-  // Data management platform (formerly Treasure Data, now Treasure AI by ARM)
   { id: "treasure_ai", name: "Treasure AI", tags: ["cdp", "data", "analytics", "enterprise"], status_url: "https://treasure-data.statuspage.io/api/v2/status.json", page_url: "https://status.treasure.ai", type: "statuspage" },
-  // CDN
   { id: "cachefly", name: "CacheFly", tags: ["cdn", "networking", "media", "performance"], status_url: "https://cachefly.statuspage.io/api/v2/status.json", page_url: "https://cachefly.statuspage.io", type: "statuspage" },
-  // CockroachDB Cloud (managed / cloud)
   { id: "cockroachdb_cloud", name: "CockroachDB Cloud", tags: ["database", "distributed", "sql", "cloud"], status_url: "https://cockroachcloud.statuspage.io/api/v2/status.json", page_url: "https://cockroachcloud.statuspage.io", type: "statuspage" },
-  // Billing / subscription management
   { id: "maxio", name: "Maxio", tags: ["billing", "subscription", "revenue", "saas"], status_url: "https://maxio.statuspage.io/api/v2/status.json", page_url: "https://maxio.statuspage.io", type: "statuspage" },
-  // E-commerce personalization
   { id: "rebuy", name: "Rebuy", tags: ["ecommerce", "personalization", "shopify", "saas"], status_url: "https://rebuy.statuspage.io/api/v2/status.json", page_url: "https://rebuy.statuspage.io", type: "statuspage" },
-  // API testing / collaboration
   { id: "hoppscotch", name: "Hoppscotch", tags: ["api", "developer-tools", "testing", "open-source"], status_url: "https://hoppscotch.statuspage.io/api/v2/status.json", page_url: "https://hoppscotch.statuspage.io", type: "statuspage" },
-  // Logistics / TMS
   { id: "turvo", name: "Turvo", tags: ["logistics", "supply-chain", "tms", "saas"], status_url: "https://turvo.statuspage.io/api/v2/status.json", page_url: "https://status.turvo.com", type: "statuspage" },
-  // Banking-as-a-service
-  { id: "treasury_prime", name: "Treasury Prime", tags: ["fintech", "banking", "baas", "api"], status_url: "https://treasuryprime.statuspage.io/api/v2/status.json", page_url: "https://status.treasuryprime.com", type: "statuspage" },
-  // IoT / hardware platform
   { id: "arduino", name: "Arduino", tags: ["iot", "hardware", "embedded", "cloud"], status_url: "https://arduino.statuspage.io/api/v2/status.json", page_url: "https://status.arduino.cc", type: "statuspage" },
-  // Education LMS (now part of PowerSchool)
   { id: "schoology", name: "Schoology", tags: ["education", "lms", "k12", "saas"], status_url: "https://schoology.statuspage.io/api/v2/status.json", page_url: "https://schoology.statuspage.io", type: "statuspage" },
-  // Education platform for K-12
   { id: "seesaw", name: "Seesaw", tags: ["education", "k12", "learning", "saas"], status_url: "https://seesaw.statuspage.io/api/v2/status.json", page_url: "https://seesaw.statuspage.io", type: "statuspage" },
-  // Field service management
   { id: "servicemax", name: "ServiceMax", tags: ["field-service", "iot", "enterprise", "saas"], status_url: "https://servicemax.statuspage.io/api/v2/status.json", page_url: "https://servicemax.statuspage.io", type: "statuspage" },
-  // Hospitality / hotel property management system
   { id: "mews", name: "Mews", tags: ["hospitality", "pms", "hotel", "saas"], status_url: "https://mews.statuspage.io/api/v2/status.json", page_url: "https://mews.statuspage.io", type: "statuspage" },
-  // Point-of-sale (restaurant / retail)
   { id: "revel", name: "Revel Systems", tags: ["pos", "retail", "restaurant", "saas"], status_url: "https://revel.statuspage.io/api/v2/status.json", page_url: "https://revel.statuspage.io", type: "statuspage" },
-  // Commercial real estate CRM / marketing
   { id: "buildout", name: "Buildout", tags: ["real-estate", "crm", "commercial", "saas"], status_url: "https://buildout.statuspage.io/api/v2/status.json", page_url: "https://buildout.statuspage.io", type: "statuspage" },
-
-  // Customer experience / voice-of-customer platform
   { id: "medallia", name: "Medallia", tags: ["cx", "voc", "survey", "enterprise"], status_url: "https://medallia.statuspage.io/api/v2/status.json", page_url: "https://medallia.statuspage.io", type: "statuspage" },
-
-  // Frontline workforce communications
   { id: "beekeeper", name: "Beekeeper", tags: ["communications", "workforce", "frontline", "saas"], status_url: "https://beekeeper.statuspage.io/api/v2/status.json", page_url: "https://beekeeper.statuspage.io", type: "statuspage" },
-
-  // Email delivery service
   { id: "smtp2go", name: "SMTP2GO", tags: ["email", "transactional", "smtp", "delivery"], status_url: "https://smtp2go.statuspage.io/api/v2/status.json", page_url: "https://smtp2go.statuspage.io", type: "statuspage" },
-
-  // Open-source LMS / e-learning platform
   { id: "moodle", name: "Moodle", tags: ["education", "lms", "open-source", "e-learning"], status_url: "https://moodle.statuspage.io/api/v2/status.json", page_url: "https://moodle.statuspage.io", type: "statuspage" },
-
-  // Sports team management platform
   { id: "teamsnap", name: "TeamSnap", tags: ["sports", "team-management", "scheduling", "saas"], status_url: "https://teamsnap.statuspage.io/api/v2/status.json", page_url: "https://teamsnap.statuspage.io", type: "statuspage" },
-
-  // Data science & AI e-learning
   { id: "datacamp", name: "DataCamp", tags: ["education", "data-science", "e-learning", "ai"], status_url: "https://status.datacamp.com/api/v2/status.json", page_url: "https://status.datacamp.com", type: "statuspage" },
-
-  // Hotel/hospitality PMS platform
   { id: "apaleo", name: "Apaleo", tags: ["hospitality", "pms", "hotel", "api-first"], status_url: "https://apaleo.statuspage.io/api/v2/status.json", page_url: "https://apaleo.statuspage.io", type: "statuspage" },
-
-  // Open source foundation (hosts npm, PyPI, Maven, etc. infra)
   { id: "linuxfoundation", name: "Linux Foundation", tags: ["open-source", "foundation", "developer", "infrastructure"], status_url: "https://status.linuxfoundation.org/api/v2/status.json", page_url: "https://status.linuxfoundation.org", type: "statuspage" },
-
-  // Accounting close management / financial close automation
   { id: "floqast", name: "FloQast", tags: ["accounting", "finance", "close-management", "saas"], status_url: "https://status.floqast.com/api/v2/status.json", page_url: "https://status.floqast.com", type: "statuspage" },
-
-  // Connected planning platform (enterprise FP&A / supply chain)
   { id: "anaplan", name: "Anaplan", tags: ["planning", "finance", "fpa", "enterprise"], status_url: "https://status.anaplan.com/api/v2/status.json", page_url: "https://status.anaplan.com", type: "statuspage" },
-
-  // Enterprise data management / backup
   { id: "veritas", name: "Veritas", tags: ["backup", "data-management", "enterprise", "storage"], status_url: "https://veritas.statuspage.io/api/v2/status.json", page_url: "https://veritas.statuspage.io", type: "statuspage" },
-
-  // Print-on-demand / dropshipping
   { id: "spod", name: "SPOD", tags: ["print-on-demand", "ecommerce", "dropshipping", "fulfillment"], status_url: "https://spod.statuspage.io/api/v2/status.json", page_url: "https://spod.statuspage.io", type: "statuspage" },
-
-  // Procurement / spend management
   { id: "zip_hq", name: "Zip", tags: ["procurement", "spend-management", "finance", "enterprise"], status_url: "https://status.ziphq.com/api/v2/status.json", page_url: "https://status.ziphq.com", type: "statuspage" },
-
-  // Real estate / property management software
   { id: "mri_software", name: "MRI Software", tags: ["real-estate", "property-management", "enterprise", "saas"], status_url: "https://status.mrisoftware.com/api/v2/status.json", page_url: "https://status.mrisoftware.com", type: "statuspage" },
-
-  // Medical practice management (EHR / billing)
   { id: "advancedmd", name: "AdvancedMD", tags: ["healthcare", "ehr", "practice-management", "medical"], status_url: "https://advancedmd.statuspage.io/api/v2/status.json", page_url: "https://advancedmd.statuspage.io", type: "statuspage" },
-
-  // Property management / landlord software
   { id: "doorloop", name: "DoorLoop", tags: ["real-estate", "property-management", "landlord", "saas"], status_url: "https://status.doorloop.com/api/v2/status.json", page_url: "https://status.doorloop.com", type: "statuspage" },
-
-  // Field service management / FSM
   { id: "servicefusion", name: "ServiceFusion", tags: ["field-service", "fsm", "hvac", "saas"], status_url: "https://servicefusion.statuspage.io/api/v2/status.json", page_url: "https://servicefusion.statuspage.io", type: "statuspage" },
-
-  // Healthcare scheduling & practice management
   { id: "jane_app", name: "Jane App", tags: ["healthcare", "scheduling", "practice-management", "saas"], status_url: "https://status.janeapp.com/api/v2/status.json", page_url: "https://status.janeapp.com", type: "statuspage" },
-
-  // Mental health / behavioral health practice management
   { id: "theranest", name: "TheraNest", tags: ["healthcare", "mental-health", "ehr", "saas"], status_url: "https://theranest.statuspage.io/api/v2/status.json", page_url: "https://theranest.statuspage.io", type: "statuspage" },
-
-  // Healthcare practice management (allied health, PT, chiro)
   { id: "cliniko", name: "Cliniko", tags: ["healthcare", "practice-management", "allied-health", "saas"], status_url: "https://status.cliniko.com/api/v2/status.json", page_url: "https://status.cliniko.com", type: "statuspage" },
-
-  // Real estate closing / title & escrow platform
   { id: "qualia", name: "Qualia", tags: ["real-estate", "closing", "title", "fintech"], status_url: "https://status.qualia.com/api/v2/status.json", page_url: "https://status.qualia.com", type: "statuspage" },
-
-  // Digital mortgage / e-closing platform
   { id: "snapdocs", name: "Snapdocs", tags: ["mortgage", "real-estate", "fintech", "e-signing"], status_url: "https://status.snapdocs.com/api/v2/status.json", page_url: "https://status.snapdocs.com", type: "statuspage" },
-
-  // Graph database cloud service
   { id: "neo4j", name: "Neo4j Aura", tags: ["database", "graph", "cloud", "saas"], status_url: "https://status.neo4j.io/api/v2/status.json", page_url: "https://status.neo4j.io", type: "statuspage" },
-
-  // Code coverage service
   { id: "coveralls", name: "Coveralls", tags: ["devtools", "ci-cd", "code-coverage", "testing"], status_url: "https://status.coveralls.io/api/v2/status.json", page_url: "https://status.coveralls.io", type: "statuspage" },
-
-  // HTML/CSS screenshot & image generation API
   { id: "hcti", name: "HTML/CSS to Image", tags: ["api", "image-generation", "screenshot", "devtools"], status_url: "https://status.htmlcsstoimage.com/api/v2/status.json", page_url: "https://status.htmlcsstoimage.com", type: "statuspage" },
-
-  // QA testing automation
   { id: "rainforestqa", name: "Rainforest QA", tags: ["testing", "qa", "automation", "devtools"], status_url: "https://status.rainforestqa.com/api/v2/status.json", page_url: "https://status.rainforestqa.com", type: "statuspage" },
   { id: "applitools", name: "Applitools", tags: ["testing", "visual-testing", "ai", "qa"], status_url: "https://status.applitools.com/api/v2/status.json", page_url: "https://status.applitools.com", type: "statuspage" },
   { id: "testsigma", name: "Testsigma", tags: ["testing", "qa", "cloud", "automation"], status_url: "https://status.testsigma.com/api/v2/status.json", page_url: "https://status.testsigma.com", type: "statuspage" },
   { id: "katalon", name: "Katalon", tags: ["testing", "qa", "automation", "devtools"], status_url: "https://status.katalon.com/api/v2/status.json", page_url: "https://status.katalon.com", type: "statuspage" },
-
-  // Mobile/web logging & crash reporting
   { id: "bugfender", name: "Bugfender", tags: ["monitoring", "mobile", "logging", "crash-reporting"], status_url: "https://status.bugfender.com/api/v2/status.json", page_url: "https://status.bugfender.com", type: "statuspage" },
-
-  // Mobile attribution / marketing analytics
   { id: "singular", name: "Singular", tags: ["mobile", "attribution", "marketing", "analytics"], status_url: "https://status.singular.net/api/v2/status.json", page_url: "https://status.singular.net", type: "statuspage" },
   { id: "airbridge", name: "Airbridge", tags: ["mobile", "attribution", "marketing", "analytics"], status_url: "https://status.airbridge.io/api/v2/status.json", page_url: "https://status.airbridge.io", type: "statuspage" },
-
-  // Open banking / financial data APIs
   { id: "mono", name: "Mono", tags: ["fintech", "open-banking", "api", "africa"], status_url: "https://status.mono.co/api/v2/status.json", page_url: "https://status.mono.co", type: "statuspage" },
   { id: "tink", name: "Tink", tags: ["fintech", "open-banking", "api", "europe"], status_url: "https://status.tink.com/api/v2/status.json", page_url: "https://status.tink.com", type: "statuspage" },
   { id: "yapily", name: "Yapily", tags: ["fintech", "open-banking", "api", "europe"], status_url: "https://status.yapily.com/api/v2/status.json", page_url: "https://status.yapily.com", type: "statuspage" },
-
-  // Sales intelligence / B2B data
   { id: "leadfeeder", name: "Leadfeeder", tags: ["sales", "b2b", "analytics", "website-tracking"], status_url: "https://status.leadfeeder.com/api/v2/status.json", page_url: "https://status.leadfeeder.com", type: "statuspage" },
   { id: "phantombuster", name: "PhantomBuster", tags: ["automation", "scraping", "sales", "b2b"], status_url: "https://status.phantombuster.com/api/v2/status.json", page_url: "https://status.phantombuster.com", type: "statuspage" },
   { id: "uplead", name: "UpLead", tags: ["b2b", "data", "sales", "leads"], status_url: "https://status.uplead.com/api/v2/status.json", page_url: "https://status.uplead.com", type: "statuspage" },
   { id: "bookyourdata", name: "BookYourData", tags: ["b2b", "data", "email", "leads"], status_url: "https://status.bookyourdata.com/api/v2/status.json", page_url: "https://status.bookyourdata.com", type: "statuspage" },
-
-  // Email builder / template tools
   { id: "dyspatch", name: "Dyspatch", tags: ["email", "template", "builder", "saas"], status_url: "https://status.dyspatch.io/api/v2/status.json", page_url: "https://status.dyspatch.io", type: "statuspage" },
   { id: "movableink", name: "Movable Ink", tags: ["email", "personalization", "marketing", "saas"], status_url: "https://status.movableink.com/api/v2/status.json", page_url: "https://status.movableink.com", type: "statuspage" },
   { id: "beefree", name: "Beefree", tags: ["email", "builder", "sdk", "templates"], status_url: "https://status.beefree.io/api/v2/status.json", page_url: "https://status.beefree.io", type: "statuspage" },
   { id: "stripo", name: "Stripo", tags: ["email", "builder", "templates", "saas"], status_url: "https://status.stripo.email/api/v2/status.json", page_url: "https://status.stripo.email", type: "statuspage" },
-
-  // API gateway / management
   { id: "tyk", name: "Tyk Cloud", tags: ["api", "gateway", "api-management", "devtools"], status_url: "https://status.tyk.io/api/v2/status.json", page_url: "https://status.tyk.io", type: "statuspage" },
-
-  // Crypto exchanges
   { id: "bitstamp", name: "Bitstamp", tags: ["crypto", "exchange", "fintech", "trading"], status_url: "https://status.bitstamp.net/api/v2/status.json", page_url: "https://status.bitstamp.net", type: "statuspage" },
   { id: "crypto_com", name: "Crypto.com", tags: ["crypto", "exchange", "fintech", "trading"], status_url: "https://status.crypto.com/api/v2/status.json", page_url: "https://status.crypto.com", type: "statuspage" },
-
-  // Customer support / help desk
   { id: "helpdesk", name: "HelpDesk", tags: ["customer-support", "helpdesk", "saas", "ticketing"], status_url: "https://status.helpdesk.com/api/v2/status.json", page_url: "https://status.helpdesk.com", type: "statuspage" },
-
-  // Tick 131 additions
-  // Scheduling / appointment booking (fitness, beauty, wellness verticals)
   { id: "acuityscheduling", name: "Acuity Scheduling", tags: ["scheduling", "appointments", "booking", "saas"], status_url: "https://status.acuityscheduling.com/api/v2/status.json", page_url: "https://status.acuityscheduling.com", type: "statuspage" },
   { id: "vagaro", name: "Vagaro", tags: ["scheduling", "salon", "spa", "fitness"], status_url: "https://status.vagaro.com/api/v2/status.json", page_url: "https://status.vagaro.com", type: "statuspage" },
   { id: "pike13", name: "Pike13", tags: ["scheduling", "fitness", "classes", "booking"], status_url: "https://status.pike13.com/api/v2/status.json", page_url: "https://status.pike13.com", type: "statuspage" },
   { id: "glofox", name: "Glofox", tags: ["fitness", "gym-management", "scheduling", "saas"], status_url: "https://status.glofox.com/api/v2/status.json", page_url: "https://status.glofox.com", type: "statuspage" },
-  // Live chat widget
   { id: "tawkto", name: "tawk.to", tags: ["live-chat", "customer-support", "messaging", "saas"], status_url: "https://status.tawk.to/api/v2/status.json", page_url: "https://status.tawk.to", type: "statuspage" },
-  // Landing page builders
   { id: "instapage", name: "Instapage", tags: ["landing-pages", "marketing", "conversion", "saas"], status_url: "https://status.instapage.com/api/v2/status.json", page_url: "https://status.instapage.com", type: "statuspage" },
   { id: "landingi", name: "Landingi", tags: ["landing-pages", "marketing", "no-code", "saas"], status_url: "https://status.landingi.com/api/v2/status.json", page_url: "https://status.landingi.com", type: "statuspage" },
-  // Customer onboarding / project delivery
   { id: "rocketlane", name: "Rocketlane", tags: ["project-management", "onboarding", "client-portal", "saas"], status_url: "https://status.rocketlane.com/api/v2/status.json", page_url: "https://status.rocketlane.com", type: "statuspage" },
-  // Security compliance / vendor risk management
   { id: "conveyor", name: "Conveyor", tags: ["security", "compliance", "vendor-risk", "saas"], status_url: "https://status.conveyor.com/api/v2/status.json", page_url: "https://status.conveyor.com", type: "statuspage" },
-  // Embedded integration / workflow automation platform
   { id: "paragon", name: "Paragon", tags: ["integrations", "embedded-ipaas", "developer-tools", "saas"], status_url: "https://status.useparagon.com/api/v2/status.json", page_url: "https://status.useparagon.com", type: "statuspage" },
-  // Creator / course platforms
-  { id: "thinkific", name: "Thinkific", tags: ["elearning", "courses", "saas", "creators"], status_url: "https://status.thinkific.com/api/v2/status.json", page_url: "https://status.thinkific.com", type: "statuspage" },
   { id: "kartra", name: "Kartra", tags: ["marketing", "funnels", "courses", "saas"], status_url: "https://status.kartra.com/api/v2/status.json", page_url: "https://status.kartra.com", type: "statuspage" },
   { id: "kit", name: "Kit (ConvertKit)", tags: ["email", "newsletter", "creators", "marketing"], status_url: "https://status.kit.com/api/v2/status.json", page_url: "https://status.kit.com", type: "statuspage" },
-  // Email deliverability / newsletter platform
   { id: "simplero", name: "Simplero", tags: ["email", "courses", "membership", "creators"], status_url: "https://status.simplero.com/api/v2/status.json", page_url: "https://status.simplero.com", type: "statuspage" },
-  // Marketing analytics / call tracking
   { id: "callrail", name: "CallRail", tags: ["marketing", "analytics", "call-tracking", "saas"], status_url: "https://status.callrail.com/api/v2/status.json", page_url: "https://status.callrail.com", type: "statuspage" },
-  // Media / audio / video APIs
   { id: "dolby", name: "Dolby.io", tags: ["media", "audio", "video", "api"], status_url: "https://status.dolby.io/api/v2/status.json", page_url: "https://status.dolby.io", type: "statuspage" },
-  // Work management / project collaboration
   { id: "smartsuite", name: "SmartSuite", tags: ["project-management", "collaboration", "no-code", "saas"], status_url: "https://status.smartsuite.com/api/v2/status.json", page_url: "https://status.smartsuite.com", type: "statuspage" },
-  // Events / virtual event platform
   { id: "spotme", name: "SpotMe", tags: ["events", "virtual-events", "conference", "saas"], status_url: "https://status.spotme.com/api/v2/status.json", page_url: "https://status.spotme.com", type: "statuspage" },
-  // Sports league / team management
   { id: "sportsengine", name: "SportsEngine", tags: ["sports", "team-management", "scheduling", "saas"], status_url: "https://status.sportsengine.com/api/v2/status.json", page_url: "https://status.sportsengine.com", type: "statuspage" },
-  // Sports video analysis
   { id: "hudl", name: "Hudl", tags: ["sports", "video-analysis", "coaching", "saas"], status_url: "https://status.hudl.com/api/v2/status.json", page_url: "https://status.hudl.com", type: "statuspage" },
-  // Community / member engagement platform
   { id: "higher_logic", name: "Higher Logic", tags: ["community", "membership", "associations", "saas"], status_url: "https://status.higherlogic.com/api/v2/status.json", page_url: "https://status.higherlogic.com", type: "statuspage" },
-  // Workforce / shift management
   { id: "deputy", name: "Deputy", tags: ["workforce", "scheduling", "hr", "saas"], status_url: "https://status.deputy.com/api/v2/status.json", page_url: "https://status.deputy.com", type: "statuspage" },
   { id: "sevenshift", name: "7shifts", tags: ["restaurant", "scheduling", "workforce", "saas"], status_url: "https://status.7shifts.com/api/v2/status.json", page_url: "https://status.7shifts.com", type: "statuspage" },
-  // Space / room booking
   { id: "skedda", name: "Skedda", tags: ["scheduling", "room-booking", "facilities", "saas"], status_url: "https://status.skedda.com/api/v2/status.json", page_url: "https://status.skedda.com", type: "statuspage" },
-  // Healthcare practice management
   { id: "noterro", name: "Noterro", tags: ["healthcare", "practice-management", "allied-health", "saas"], status_url: "https://status.noterro.com/api/v2/status.json", page_url: "https://status.noterro.com", type: "statuspage" },
-  // Document automation / CPQ
   { id: "conga", name: "Conga", tags: ["document-automation", "contracts", "cpq", "enterprise"], status_url: "https://status.conga.com/api/v2/status.json", page_url: "https://status.conga.com", type: "statuspage" },
-  // Legal practice management
   { id: "smokeball", name: "Smokeball", tags: ["legal", "law-firm", "practice-management", "saas"], status_url: "https://status.smokeball.com/api/v2/status.json", page_url: "https://status.smokeball.com", type: "statuspage" },
-  // Field service / trade software
   { id: "fieldedge", name: "FieldEdge", tags: ["field-service", "hvac", "plumbing", "saas"], status_url: "https://status.fieldedge.com/api/v2/status.json", page_url: "https://status.fieldedge.com", type: "statuspage" },
-  // Log management
   { id: "humio", name: "Humio (CrowdStrike)", tags: ["logging", "observability", "devops", "security"], status_url: "https://status.humio.com/api/v2/status.json", page_url: "https://status.humio.com", type: "statuspage" },
   { id: "logdna", name: "LogDNA (Mezmo)", tags: ["logging", "observability", "devops", "cloud"], status_url: "https://status.logdna.com/api/v2/status.json", page_url: "https://status.logdna.com", type: "statuspage" },
-  // IT helpdesk / ITSM
   { id: "spiceworks", name: "Spiceworks", tags: ["it-helpdesk", "itsm", "community", "saas"], status_url: "https://status.spiceworks.com/api/v2/status.json", page_url: "https://status.spiceworks.com", type: "statuspage" },
   { id: "samanage", name: "Samanage (SolarWinds ITSM)", tags: ["itsm", "it-service-management", "saas", "enterprise"], status_url: "https://status.samanage.com/api/v2/status.json", page_url: "https://status.samanage.com", type: "statuspage" },
-  // Talent acquisition / recruiting
   { id: "fountain", name: "Fountain", tags: ["recruiting", "hr", "hourly-hiring", "saas"], status_url: "https://status.fountain.com/api/v2/status.json", page_url: "https://status.fountain.com", type: "statuspage" },
   { id: "phenom", name: "Phenom", tags: ["recruiting", "talent", "hr", "saas"], status_url: "https://status.phenom.com/api/v2/status.json", page_url: "https://status.phenom.com", type: "statuspage" },
   { id: "paradox_ai", name: "Paradox", tags: ["recruiting", "ai", "conversational", "hr"], status_url: "https://status.paradox.ai/api/v2/status.json", page_url: "https://status.paradox.ai", type: "statuspage" },
-  // Automotive connectivity
   { id: "smartcar", name: "Smartcar", tags: ["automotive", "api", "connected-car", "developer-tools"], status_url: "https://status.smartcar.com/api/v2/status.json", page_url: "https://status.smartcar.com", type: "statuspage" },
-  // Business VPN / network security
   { id: "nordlayer", name: "NordLayer", tags: ["vpn", "network-security", "zero-trust", "saas"], status_url: "https://status.nordlayer.com/api/v2/status.json", page_url: "https://status.nordlayer.com", type: "statuspage" },
-  // Cannabis tech / retail POS
   { id: "dutchie", name: "Dutchie", tags: ["cannabis", "pos", "ecommerce", "retail"], status_url: "https://status.dutchie.com/api/v2/status.json", page_url: "https://status.dutchie.com", type: "statuspage" },
   { id: "flowhub", name: "Flowhub", tags: ["cannabis", "pos", "retail", "compliance"], status_url: "https://status.flowhub.com/api/v2/status.json", page_url: "https://status.flowhub.com", type: "statuspage" },
-  // Property management
   { id: "entrata", name: "Entrata", tags: ["real-estate", "property-management", "multifamily", "saas"], status_url: "https://status.entrata.com/api/v2/status.json", page_url: "https://status.entrata.com", type: "statuspage" },
-  // Test management
   { id: "testmo", name: "Testmo", tags: ["testing", "qa", "test-management", "developer-tools"], status_url: "https://status.testmo.com/api/v2/status.json", page_url: "https://status.testmo.com", type: "statuspage" },
-  // Business process automation
   { id: "camunda", name: "Camunda", tags: ["workflow", "bpm", "process-automation", "developer-tools"], status_url: "https://status.camunda.io/api/v2/status.json", page_url: "https://status.camunda.io", type: "statuspage" },
-  // Workforce / people analytics
   { id: "visier", name: "Visier", tags: ["hr", "workforce-analytics", "people-analytics", "enterprise"], status_url: "https://status.visier.com/api/v2/status.json", page_url: "https://status.visier.com", type: "statuspage" },
-  // Network monitoring / MSP
   { id: "domotz", name: "Domotz", tags: ["network-monitoring", "msp", "iot", "it-management"], status_url: "https://status.domotz.com/api/v2/status.json", page_url: "https://status.domotz.com", type: "statuspage" },
-  // Customer / extended-enterprise LMS
   { id: "thought_industries", name: "Thought Industries", tags: ["lms", "learning", "customer-education", "saas"], status_url: "https://status.thoughtindustries.com/api/v2/status.json", page_url: "https://status.thoughtindustries.com", type: "statuspage" },
-  // Payments / fintech
-  { id: "gocardless", name: "GoCardless", tags: ["payments", "fintech", "saas", "api"], status_url: "https://status.gocardless.com/api/v2/status.json", page_url: "https://status.gocardless.com", type: "statuspage" },
-  { id: "zuora", name: "Zuora", tags: ["payments", "billing", "subscription-management", "saas", "enterprise"], status_url: "https://zuora.statuspage.io/api/v2/status.json", page_url: "https://zuora.statuspage.io", type: "statuspage" },
-  // Observability / error tracking
-  { id: "honeycomb", name: "Honeycomb", tags: ["observability", "monitoring", "devtools", "saas"], status_url: "https://honeycomb.statuspage.io/api/v2/status.json", page_url: "https://honeycomb.statuspage.io", type: "statuspage" },
-  { id: "rollbar", name: "Rollbar", tags: ["observability", "error-tracking", "devtools", "saas"], status_url: "https://status.rollbar.com/api/v2/status.json", page_url: "https://status.rollbar.com", type: "statuspage" },
-  { id: "logrocket", name: "LogRocket", tags: ["observability", "analytics", "devtools", "saas"], status_url: "https://status.logrocket.com/api/v2/status.json", page_url: "https://status.logrocket.com", type: "statuspage" },
   { id: "scout_apm", name: "Scout APM", tags: ["observability", "monitoring", "devtools", "saas"], status_url: "https://status.scoutapm.com/api/v2/status.json", page_url: "https://status.scoutapm.com", type: "statuspage" },
-  // Analytics / session replay
-  { id: "fullstory", name: "FullStory", tags: ["analytics", "session-replay", "saas", "enterprise"], status_url: "https://status.fullstory.com/api/v2/status.json", page_url: "https://status.fullstory.com", type: "statuspage" },
-  // Database / cache infrastructure
-  { id: "upstash", name: "Upstash", tags: ["database", "cache", "serverless", "infrastructure"], status_url: "https://upstash.statuspage.io/api/v2/status.json", page_url: "https://upstash.statuspage.io", type: "statuspage" },
-  // Marketing / local search
   { id: "yext", name: "Yext", tags: ["marketing", "local-search", "saas", "enterprise"], status_url: "https://yext.statuspage.io/api/v2/status.json", page_url: "https://yext.statuspage.io", type: "statuspage" },
-  // Security / identity
-  { id: "onepassword", name: "1Password", tags: ["security", "identity", "saas", "enterprise"], status_url: "https://status.1password.com/api/v2/status.json", page_url: "https://status.1password.com", type: "statuspage" },
-  { id: "jumpcloud", name: "JumpCloud", tags: ["identity", "security", "saas", "enterprise", "directory"], status_url: "https://status.jumpcloud.com/api/v2/status.json", page_url: "https://status.jumpcloud.com", type: "statuspage" },
-  // Communications / voice / SMS
-  { id: "telnyx", name: "Telnyx", tags: ["communications", "sms", "voice", "api", "saas"], status_url: "https://status.telnyx.com/api/v2/status.json", page_url: "https://status.telnyx.com", type: "statuspage" },
-  { id: "bandwidth", name: "Bandwidth", tags: ["communications", "sms", "voice", "api", "saas"], status_url: "https://status.bandwidth.com/api/v2/status.json", page_url: "https://status.bandwidth.com", type: "statuspage" },
-  // Headless CMS
-  { id: "prismic", name: "Prismic", tags: ["cms", "headless-cms", "saas", "developer-tools"], status_url: "https://status.prismic.io/api/v2/status.json", page_url: "https://status.prismic.io", type: "statuspage" },
-  // E-commerce
-  { id: "bigcommerce", name: "BigCommerce", tags: ["ecommerce", "saas", "enterprise"], status_url: "https://status.bigcommerce.com/api/v2/status.json", page_url: "https://status.bigcommerce.com", type: "statuspage" },
-  { id: "squarespace", name: "Squarespace", tags: ["website-builder", "ecommerce", "saas"], status_url: "https://status.squarespace.com/api/v2/status.json", page_url: "https://status.squarespace.com", type: "statuspage" },
-  { id: "ecwid", name: "Ecwid", tags: ["ecommerce", "saas"], status_url: "https://status.ecwid.com/api/v2/status.json", page_url: "https://status.ecwid.com", type: "statuspage" },
-  // Restaurant technology
   { id: "toast", name: "Toast POS", tags: ["pos", "restaurant-technology", "payments", "saas"], status_url: "https://status.toasttab.com/api/v2/status.json", page_url: "https://status.toasttab.com", type: "statuspage" },
-  // Productivity / collaboration
-  { id: "coda", name: "Coda", tags: ["productivity", "collaboration", "saas"], status_url: "https://status.coda.io/api/v2/status.json", page_url: "https://status.coda.io", type: "statuspage" },
-  { id: "smartsheet", name: "Smartsheet", tags: ["productivity", "project-management", "enterprise", "saas"], status_url: "https://status.smartsheet.com/api/v2/status.json", page_url: "https://status.smartsheet.com", type: "statuspage" },
-  // Cloud storage
   { id: "storj", name: "Storj DCS", tags: ["storage", "cloud", "infrastructure", "developer-tools"], status_url: "https://status.storj.io/api/v2/status.json", page_url: "https://status.storj.io", type: "statuspage" },
-  // CI/CD
   { id: "appveyor", name: "AppVeyor", tags: ["ci-cd", "developer-tools", "windows", "automation"], status_url: "https://status.appveyor.com/api/v2/status.json", page_url: "https://status.appveyor.com", type: "statuspage" },
-  // Customer support
   { id: "groovehq", name: "Groove", tags: ["customer-support", "helpdesk", "saas"], status_url: "https://status.groovehq.com/api/v2/status.json", page_url: "https://status.groovehq.com", type: "statuspage" },
-  // Video / webinars
   { id: "crowdcast", name: "Crowdcast", tags: ["video", "webinar", "events", "streaming"], status_url: "https://status.crowdcast.io/api/v2/status.json", page_url: "https://status.crowdcast.io", type: "statuspage" },
-  // Social media monitoring
   { id: "mention", name: "Mention", tags: ["social-media", "monitoring", "analytics", "marketing"], status_url: "https://status.mention.com/api/v2/status.json", page_url: "https://status.mention.com", type: "statuspage" },
-  // E-commerce / SMS marketing
   { id: "recart", name: "Recart", tags: ["ecommerce", "sms", "messaging", "marketing"], status_url: "https://status.recart.com/api/v2/status.json", page_url: "https://status.recart.com", type: "statuspage" },
-  // Network security / zero-trust
   { id: "perimeter81", name: "Perimeter 81", tags: ["security", "networking", "vpn", "zero-trust"], status_url: "https://status.perimeter81.com/api/v2/status.json", page_url: "https://status.perimeter81.com", type: "statuspage" },
-  // CPaaS / messaging
   { id: "cm_com", name: "CM.com", tags: ["communications", "sms", "messaging", "api"], status_url: "https://status.cm.com/api/v2/status.json", page_url: "https://status.cm.com", type: "statuspage" },
-  // Push notifications
   { id: "webpushr", name: "Webpushr", tags: ["push-notifications", "marketing", "web", "mobile"], status_url: "https://status.webpushr.com/api/v2/status.json", page_url: "https://status.webpushr.com", type: "statuspage" },
-  // Email security / anti-phishing
   { id: "ironscales", name: "IRONSCALES", tags: ["security", "email-security", "phishing", "saas"], status_url: "https://status.ironscales.com/api/v2/status.json", page_url: "https://status.ironscales.com", type: "statuspage" },
-  // E-signature
   { id: "signwell", name: "SignWell", tags: ["e-signature", "documents", "saas"], status_url: "https://status.signwell.com/api/v2/status.json", page_url: "https://status.signwell.com", type: "statuspage" },
-  // Open-source license compliance
   { id: "fossa", name: "FOSSA", tags: ["security", "open-source", "license-compliance", "developer-tools"], status_url: "https://status.fossa.com/api/v2/status.json", page_url: "https://status.fossa.com", type: "statuspage" },
-  // Developer portal (Atlassian)
   { id: "compass", name: "Compass", tags: ["developer-portal", "devtools", "atlassian", "saas"], status_url: "https://compass.status.atlassian.com/api/v2/status.json", page_url: "https://compass.status.atlassian.com", type: "statuspage" },
-  // Remote access
   { id: "anydesk", name: "AnyDesk", tags: ["remote-access", "desktop", "saas"], status_url: "https://status.anydesk.com/api/v2/status.json", page_url: "https://status.anydesk.com", type: "statuspage" },
-  // Web3 video conferencing
   { id: "huddle01", name: "Huddle01", tags: ["video", "web3", "conferencing", "decentralized"], status_url: "https://status.huddle01.com/api/v2/status.json", page_url: "https://status.huddle01.com", type: "statuspage" },
-  // Fitness / trainer platform
   { id: "trainerize", name: "ABC Trainerize", tags: ["fitness", "training", "wellness", "saas"], status_url: "https://status.trainerize.com/api/v2/status.json", page_url: "https://status.trainerize.com", type: "statuspage" },
-  // Indoor cycling / fitness gaming
   { id: "zwift", name: "Zwift", tags: ["fitness", "gaming", "cycling", "sports"], status_url: "https://status.zwift.com/api/v2/status.json", page_url: "https://status.zwift.com", type: "statuspage" },
-  // Donation / fundraising platform
   { id: "donorbox", name: "Donorbox", tags: ["nonprofit", "donations", "fundraising", "payments"], status_url: "https://status.donorbox.org/api/v2/status.json", page_url: "https://status.donorbox.org", type: "statuspage" },
-  // Financial data / market data API
   { id: "intrinio", name: "Intrinio", tags: ["financial-data", "market-data", "api", "fintech"], status_url: "https://status.intrinio.com/api/v2/status.json", page_url: "https://status.intrinio.com", type: "statuspage" },
-  // IoT application platform
   { id: "losant", name: "Losant", tags: ["iot", "platform", "developer-tools", "saas"], status_url: "https://status.losant.com/api/v2/status.json", page_url: "https://status.losant.com", type: "statuspage" },
-  // Academic LaTeX editor
   { id: "overleaf", name: "Overleaf", tags: ["academic", "latex", "collaboration", "writing"], status_url: "https://status.overleaf.com/api/v2/status.json", page_url: "https://status.overleaf.com", type: "statuspage" },
-  // Government / civic technology
   { id: "granicus", name: "Granicus", tags: ["govtech", "government", "civic", "saas"], status_url: "https://status.granicus.com/api/v2/status.json", page_url: "https://status.granicus.com", type: "statuspage" },
-  // Hedera distributed ledger network
   { id: "hedera", name: "Hedera", tags: ["blockchain", "distributed-ledger", "web3", "infrastructure"], status_url: "https://status.hedera.com/api/v2/status.json", page_url: "https://status.hedera.com", type: "statuspage" },
-  // Solana blockchain network
   { id: "solana", name: "Solana", tags: ["blockchain", "web3", "crypto", "infrastructure"], status_url: "https://status.solana.com/api/v2/status.json", page_url: "https://status.solana.com", type: "statuspage" },
-  // Medium publishing platform
   { id: "medium", name: "Medium", tags: ["publishing", "blogging", "content", "saas"], status_url: "https://status.medium.com/api/v2/status.json", page_url: "https://status.medium.com", type: "statuspage" },
-  // Avalanche blockchain
   { id: "avalanche", name: "Avalanche", tags: ["blockchain", "web3", "crypto", "infrastructure"], status_url: "https://status.avax.network/api/v2/status.json", page_url: "https://status.avax.network", type: "statuspage" },
-  // Polygon blockchain
   { id: "polygon", name: "Polygon", tags: ["blockchain", "web3", "crypto", "layer2"], status_url: "https://status.polygon.technology/api/v2/status.json", page_url: "https://status.polygon.technology", type: "statuspage" },
-  // Flow blockchain (Dapper Labs)
   { id: "flow_blockchain", name: "Flow", tags: ["blockchain", "web3", "nft", "gaming"], status_url: "https://status.flow.com/api/v2/status.json", page_url: "https://status.flow.com", type: "statuspage" },
-  // Consent management / data privacy
   { id: "osano", name: "Osano", tags: ["privacy", "consent", "compliance", "gdpr"], status_url: "https://status.osano.com/api/v2/status.json", page_url: "https://status.osano.com", type: "statuspage" },
-  // Cookie consent management
   { id: "cookiebot", name: "Cookiebot", tags: ["privacy", "consent", "cookies", "compliance"], status_url: "https://status.cookiebot.com/api/v2/status.json", page_url: "https://status.cookiebot.com", type: "statuspage" },
-  // Tick 138 additions
   { id: "brandwatch", name: "Brandwatch", tags: ["social media", "analytics", "monitoring", "marketing"], status_url: "https://status.brandwatch.com/api/v2/status.json", page_url: "https://status.brandwatch.com", type: "statuspage" },
   { id: "sumup", name: "SumUp", tags: ["payments", "pos", "card", "fintech"], status_url: "https://status.sumup.com/api/v2/status.json", page_url: "https://status.sumup.com", type: "statuspage" },
   { id: "frontify", name: "Frontify", tags: ["brand management", "dam", "design", "assets"], status_url: "https://status.frontify.com/api/v2/status.json", page_url: "https://status.frontify.com", type: "statuspage" },
@@ -2337,7 +1850,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "ometria", name: "Ometria", tags: ["crm", "retail", "marketing", "customer"], status_url: "https://status.ometria.com/api/v2/status.json", page_url: "https://status.ometria.com", type: "statuspage" },
   { id: "walnut", name: "Walnut", tags: ["demos", "sales", "product", "interactive"], status_url: "https://status.walnut.io/api/v2/status.json", page_url: "https://status.walnut.io", type: "statuspage" },
   { id: "metronome", name: "Metronome", tags: ["billing", "usage", "metering", "saas"], status_url: "https://status.metronome.com/api/v2/status.json", page_url: "https://status.metronome.com", type: "statuspage" },
-  // Tick 139 additions
   { id: "practice_fusion", name: "Practice Fusion", tags: ["healthcare", "ehr", "emr", "medical"], status_url: "https://status.practicefusion.com/api/v2/status.json", page_url: "https://status.practicefusion.com", type: "statuspage" },
   { id: "login_gov", name: "Login.gov", tags: ["government", "identity", "authentication", "federal"], status_url: "https://status.login.gov/api/v2/status.json", page_url: "https://status.login.gov", type: "statuspage" },
   { id: "idme", name: "ID.me", tags: ["identity", "verification", "government", "authentication"], status_url: "https://status.id.me/api/v2/status.json", page_url: "https://status.id.me", type: "statuspage" },
@@ -2356,7 +1868,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "corelight", name: "Corelight", tags: ["security", "network", "detection", "monitoring"], status_url: "https://status.corelight.com/api/v2/status.json", page_url: "https://status.corelight.com", type: "statuspage" },
   { id: "expel", name: "Expel", tags: ["security", "operations", "mdr", "managed-services"], status_url: "https://status.expel.io/api/v2/status.json", page_url: "https://status.expel.io", type: "statuspage" },
   { id: "orca_security", name: "Orca Security", tags: ["security", "cloud", "cnapp", "compliance"], status_url: "https://status.orcasecurity.io/api/v2/status.json", page_url: "https://status.orcasecurity.io", type: "statuspage" },
-  { id: "scale_ai", name: "Scale AI", tags: ["ai", "data", "annotation", "training"], status_url: "https://status.scale.com/api/v2/status.json", page_url: "https://status.scale.com", type: "statuspage" },
   { id: "wordtune", name: "Wordtune", tags: ["ai", "writing", "productivity", "saas"], status_url: "https://status.wordtune.com/api/v2/status.json", page_url: "https://status.wordtune.com", type: "statuspage" },
   { id: "quantumworkplace", name: "Quantum Workplace", tags: ["hr", "employee-engagement", "performance", "saas"], status_url: "https://status.quantumworkplace.com/api/v2/status.json", page_url: "https://status.quantumworkplace.com", type: "statuspage" },
   { id: "precisely", name: "Precisely", tags: ["data", "quality", "enrichment", "analytics"], status_url: "https://status.precisely.com/api/v2/status.json", page_url: "https://status.precisely.com", type: "statuspage" },
@@ -2372,13 +1883,10 @@ const SERVICES: ServiceConfig[] = [
   { id: "performyard", name: "PerformYard", tags: ["hr", "performance", "reviews", "goals"], status_url: "https://status.performyard.com/api/v2/status.json", page_url: "https://status.performyard.com", type: "statuspage" },
   { id: "everstage", name: "Everstage", tags: ["sales", "compensation", "commissions", "revenue"], status_url: "https://status.everstage.com/api/v2/status.json", page_url: "https://status.everstage.com", type: "statuspage" },
   { id: "reclaim", name: "Reclaim.ai", tags: ["ai", "scheduling", "calendar", "productivity"], status_url: "https://status.reclaim.ai/api/v2/status.json", page_url: "https://status.reclaim.ai", type: "statuspage" },
-  { id: "ashby", name: "Ashby", tags: ["ats", "recruiting", "hiring", "hr"], status_url: "https://status.ashbyhq.com/api/v2/status.json", page_url: "https://status.ashbyhq.com", type: "statuspage" },
   { id: "shiphero", name: "ShipHero", tags: ["logistics", "fulfillment", "warehouse", "ecommerce"], status_url: "https://status.shiphero.com/api/v2/status.json", page_url: "https://status.shiphero.com", type: "statuspage" },
   { id: "extensiv", name: "Extensiv", tags: ["logistics", "fulfillment", "warehouse", "3pl"], status_url: "https://status.extensiv.com/api/v2/status.json", page_url: "https://status.extensiv.com", type: "statuspage" },
-  { id: "incident_io", name: "Incident.io", tags: ["incident-management", "ops", "on-call", "devops"], status_url: "https://status.incident.io/api/v2/status.json", page_url: "https://status.incident.io", type: "statuspage" },
   { id: "playfab", name: "PlayFab", tags: ["gaming", "backend", "game-services", "microsoft"], status_url: "https://status.playfab.com/api/v2/status.json", page_url: "https://status.playfab.com", type: "statuspage" },
   { id: "lightspeed", name: "Lightspeed", tags: ["pos", "retail", "restaurant", "ecommerce"], status_url: "https://status.lightspeedhq.com/api/v2/status.json", page_url: "https://status.lightspeedhq.com", type: "statuspage" },
-  { id: "tawkto", name: "Tawk.to", tags: ["live-chat", "customer-support", "messaging", "saas"], status_url: "https://status.tawk.to/api/v2/status.json", page_url: "https://status.tawk.to", type: "statuspage" },
   { id: "inspectlet", name: "Inspectlet", tags: ["analytics", "session-recording", "heatmaps", "ux"], status_url: "https://status.inspectlet.com/api/v2/status.json", page_url: "https://status.inspectlet.com", type: "statuspage" },
   { id: "zenduty", name: "Zenduty", tags: ["incident-management", "on-call", "alerting", "devops"], status_url: "https://status.zenduty.com/api/v2/status.json", page_url: "https://status.zenduty.com", type: "statuspage" },
   { id: "localytics", name: "Localytics", tags: ["analytics", "mobile", "marketing", "engagement"], status_url: "https://status.localytics.com/api/v2/status.json", page_url: "https://status.localytics.com", type: "statuspage" },
@@ -2386,7 +1894,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "socio_events", name: "Socio Events", tags: ["events", "virtual", "hybrid", "engagement"], status_url: "https://status.socio.events/api/v2/status.json", page_url: "https://status.socio.events", type: "statuspage" },
   { id: "slido", name: "Slido", tags: ["events", "polls", "q-and-a", "audience-engagement"], status_url: "https://status.slido.com/api/v2/status.json", page_url: "https://status.slido.com", type: "statuspage" },
   { id: "jellyfish", name: "Jellyfish", tags: ["engineering", "analytics", "productivity", "devtools"], status_url: "https://status.jellyfish.co/api/v2/status.json", page_url: "https://status.jellyfish.co", type: "statuspage" },
-  { id: "higher_logic", name: "Higher Logic", tags: ["community", "association", "member-engagement", "collaboration"], status_url: "https://status.higherlogic.com/api/v2/status.json", page_url: "https://status.higherlogic.com", type: "statuspage" },
   { id: "planning_center", name: "Planning Center", tags: ["church", "faith", "nonprofit", "management"], status_url: "https://status.planningcenter.com/api/v2/status.json", page_url: "https://status.planningcenter.com", type: "statuspage" },
   { id: "bullhorn", name: "Bullhorn", tags: ["recruiting", "staffing", "crm", "ats"], status_url: "https://status.bullhorn.com/api/v2/status.json", page_url: "https://status.bullhorn.com", type: "statuspage" },
   { id: "process_street", name: "Process Street", tags: ["workflow", "process", "checklist", "productivity"], status_url: "https://status.process.st/api/v2/status.json", page_url: "https://status.process.st", type: "statuspage" },
@@ -2396,458 +1903,187 @@ const SERVICES: ServiceConfig[] = [
   { id: "reggora", name: "Reggora", tags: ["appraisal", "mortgage", "real-estate", "fintech"], status_url: "https://status.reggora.com/api/v2/status.json", page_url: "https://status.reggora.com", type: "statuspage" },
   { id: "eltropy", name: "Eltropy", tags: ["banking", "credit-union", "digital-banking", "communications"], status_url: "https://status.eltropy.com/api/v2/status.json", page_url: "https://status.eltropy.com", type: "statuspage" },
   { id: "glia", name: "Glia", tags: ["customer-service", "banking", "digital-service", "fintech"], status_url: "https://status.glia.com/api/v2/status.json", page_url: "https://status.glia.com", type: "statuspage" },
-  // Climate / sustainability tech
   { id: "watershed", name: "Watershed", tags: ["climate", "carbon", "sustainability", "esg"], status_url: "https://status.watershed.com/api/v2/status.json", page_url: "https://status.watershed.com", type: "statuspage" },
   { id: "persefoni", name: "Persefoni", tags: ["climate", "esg", "carbon-accounting", "sustainability"], status_url: "https://status.persefoni.com/api/v2/status.json", page_url: "https://status.persefoni.com", type: "statuspage" },
   { id: "arcadia", name: "Arcadia", tags: ["energy", "utilities", "clean-energy", "climate"], status_url: "https://status.arcadia.com/api/v2/status.json", page_url: "https://status.arcadia.com", type: "statuspage" },
-  // Mental health benefits
   { id: "spring_health", name: "Spring Health", tags: ["mental-health", "hr", "benefits", "wellness"], status_url: "https://springhealth.statuspage.io/api/v2/status.json", page_url: "https://springhealth.statuspage.io", type: "statuspage" },
-  // Accounting automation
   { id: "botkeeper", name: "Botkeeper", tags: ["accounting", "bookkeeping", "ai", "automation"], status_url: "https://status.botkeeper.com/api/v2/status.json", page_url: "https://status.botkeeper.com", type: "statuspage" },
-  // Payment orchestration
   { id: "gr4vy", name: "Gr4vy", tags: ["payments", "orchestration", "fintech", "api"], status_url: "https://status.gr4vy.com/api/v2/status.json", page_url: "https://status.gr4vy.com", type: "statuspage" },
-  // Master data management
   { id: "reltio", name: "Reltio", tags: ["mdm", "master-data", "data-management", "cloud"], status_url: "https://status.reltio.com/api/v2/status.json", page_url: "https://status.reltio.com", type: "statuspage" },
-  // Email creation platform
   { id: "stensul", name: "Stensul", tags: ["email", "marketing", "creation", "saas"], status_url: "https://status.stensul.com/api/v2/status.json", page_url: "https://status.stensul.com", type: "statuspage" },
-  // Digital asset management
   { id: "acquia_dam", name: "Acquia DAM (Widen)", tags: ["dam", "digital-asset-management", "marketing", "cms"], status_url: "https://status.widen.com/api/v2/status.json", page_url: "https://status.widen.com", type: "statuspage" },
   { id: "air", name: "Air", tags: ["creative-ops", "dam", "collaboration", "design"], status_url: "https://status.air.inc/api/v2/status.json", page_url: "https://status.air.inc", type: "statuspage" },
-  // Privacy / consent management
   { id: "privacera", name: "Privacera", tags: ["data-privacy", "governance", "security", "cloud"], status_url: "https://status.privacera.com/api/v2/status.json", page_url: "https://status.privacera.com", type: "statuspage" },
   { id: "transcend", name: "Transcend", tags: ["privacy", "data-rights", "compliance", "saas"], status_url: "https://status.transcend.io/api/v2/status.json", page_url: "https://status.transcend.io", type: "statuspage" },
   { id: "ketch", name: "Ketch", tags: ["privacy", "consent", "data-governance", "compliance"], status_url: "https://status.ketch.com/api/v2/status.json", page_url: "https://status.ketch.com", type: "statuspage" },
   { id: "didomi", name: "Didomi", tags: ["consent", "privacy", "gdpr", "saas"], status_url: "https://status.didomi.io/api/v2/status.json", page_url: "https://status.didomi.io", type: "statuspage" },
-  // Restaurant operations
   { id: "restaurant365", name: "Restaurant365", tags: ["restaurant", "accounting", "operations", "saas"], status_url: "https://status.restaurant365.com/api/v2/status.json", page_url: "https://status.restaurant365.com", type: "statuspage" },
-  // Communications / CPaaS
   { id: "kaleyra", name: "Kaleyra", tags: ["sms", "communications", "cpaas", "api"], status_url: "https://status.kaleyra.com/api/v2/status.json", page_url: "https://status.kaleyra.com", type: "statuspage" },
-  // Fleet telematics / IoT
   { id: "lytx", name: "Lytx", tags: ["fleet", "telematics", "video", "iot"], status_url: "https://status.lytx.com/api/v2/status.json", page_url: "https://status.lytx.com", type: "statuspage" },
-  // B2B chemical commerce platform
   { id: "knowde", name: "Knowde", tags: ["chemicals", "b2b", "marketplace", "saas"], status_url: "https://status.knowde.com/api/v2/status.json", page_url: "https://status.knowde.com", type: "statuspage" },
-  // Product analytics / digital experience
   { id: "quantum_metric", name: "Quantum Metric", tags: ["analytics", "digital-experience", "product", "enterprise"], status_url: "https://status.quantummetric.com/api/v2/status.json", page_url: "https://status.quantummetric.com", type: "statuspage" },
-  // QA / test management
   { id: "qase", name: "Qase", tags: ["testing", "qa", "test-management", "devtools"], status_url: "https://status.qase.io/api/v2/status.json", page_url: "https://status.qase.io", type: "statuspage" },
-  // GraphQL platform
   { id: "apollo_graphql", name: "Apollo GraphQL", tags: ["graphql", "api", "developer-tools", "platform"], status_url: "https://status.apollographql.com/api/v2/status.json", page_url: "https://status.apollographql.com", type: "statuspage" },
-  // UGC / visual content marketing
   { id: "crowdriff", name: "CrowdRiff", tags: ["ugc", "marketing", "visual-content", "saas"], status_url: "https://status.crowdriff.com/api/v2/status.json", page_url: "https://status.crowdriff.com", type: "statuspage" },
-  // Cloud database (DataStax Astra)
   { id: "astradb", name: "DataStax Astra", tags: ["database", "cassandra", "cloud", "nosql"], status_url: "https://status.astra.datastax.com/api/v2/status.json", page_url: "https://status.astra.datastax.com", type: "statuspage" },
-  // Global HR / employer of record
   { id: "oyster_hr", name: "Oyster HR", tags: ["hr", "employer-of-record", "global-payroll", "saas"], status_url: "https://status.oysterhr.com/api/v2/status.json", page_url: "https://status.oysterhr.com", type: "statuspage" },
-  // EHR / practice management
   { id: "practicefusion", name: "Practice Fusion", tags: ["ehr", "healthcare", "practice-management", "saas"], status_url: "https://status.practicefusion.com/api/v2/status.json", page_url: "https://status.practicefusion.com", type: "statuspage" },
-  // Payment processing
   { id: "stax_payments", name: "Stax Payments", tags: ["payments", "payment-processing", "fintech", "saas"], status_url: "https://status.staxpayments.com/api/v2/status.json", page_url: "https://status.staxpayments.com", type: "statuspage" },
-  // Form builders
   { id: "cognito_forms", name: "Cognito Forms", tags: ["forms", "data-collection", "workflow", "saas"], status_url: "https://status.cognitoforms.com/api/v2/status.json", page_url: "https://status.cognitoforms.com", type: "statuspage" },
   { id: "wufoo", name: "Wufoo", tags: ["forms", "surveys", "data-collection", "saas"], status_url: "https://status.wufoo.com/api/v2/status.json", page_url: "https://status.wufoo.com", type: "statuspage" },
-  // CRM
   { id: "pipelinecrm", name: "Pipeline CRM", tags: ["crm", "sales", "pipeline", "saas"], status_url: "https://status.pipelinecrm.com/api/v2/status.json", page_url: "https://status.pipelinecrm.com", type: "statuspage" },
-  // Payment gateway
   { id: "authorizenet", name: "Authorize.Net", tags: ["payments", "payment-gateway", "fintech", "api"], status_url: "https://authorize.statuspage.io/api/v2/status.json", page_url: "https://authorize.statuspage.io", type: "statuspage" },
-  // Review / reputation management
   { id: "reviewtrackers", name: "ReviewTrackers", tags: ["reviews", "reputation", "analytics", "saas"], status_url: "https://status.reviewtrackers.com/api/v2/status.json", page_url: "https://status.reviewtrackers.com", type: "statuspage" },
-  // Marketing automation
   { id: "act_on", name: "Act-On", tags: ["marketing", "email", "automation", "saas"], status_url: "https://status.act-on.com/api/v2/status.json", page_url: "https://status.act-on.com", type: "statuspage" },
   { id: "sharpspring", name: "SharpSpring", tags: ["marketing", "crm", "automation", "saas"], status_url: "https://status.sharpspring.com/api/v2/status.json", page_url: "https://status.sharpspring.com", type: "statuspage" },
-  // Time tracking / workforce management
   { id: "replicon", name: "Replicon", tags: ["time-tracking", "workforce", "hr", "saas"], status_url: "https://status.replicon.com/api/v2/status.json", page_url: "https://status.replicon.com", type: "statuspage" },
-  // Cloud UC/CC
   { id: "avaya_cloud", name: "Avaya Cloud", tags: ["ucaas", "ccaas", "communications", "telephony"], status_url: "https://avayacloud.statuspage.io/api/v2/status.json", page_url: "https://avayacloud.statuspage.io", type: "statuspage" },
-  // Link shortening / analytics
   { id: "bitly", name: "Bitly", tags: ["link-shortening", "analytics", "saas"], status_url: "https://status.bitly.com/api/v2/status.json", page_url: "https://status.bitly.com", type: "statuspage" },
   { id: "rebrandly", name: "Rebrandly", tags: ["link-shortening", "branding", "saas"], status_url: "https://status.rebrandly.com/api/v2/status.json", page_url: "https://status.rebrandly.com", type: "statuspage" },
-  // SMS marketing
   { id: "simpletexting", name: "SimpleTexting", tags: ["sms", "marketing", "texting", "saas"], status_url: "https://status.simpletexting.com/api/v2/status.json", page_url: "https://status.simpletexting.com", type: "statuspage" },
-  // Form builders
   { id: "formbuilder_123", name: "123FormBuilder", tags: ["forms", "surveys", "data-collection", "saas"], status_url: "https://status.123formbuilder.com/api/v2/status.json", page_url: "https://status.123formbuilder.com", type: "statuspage" },
   { id: "formassembly", name: "FormAssembly", tags: ["forms", "data-collection", "compliance", "saas"], status_url: "https://status.formassembly.com/api/v2/status.json", page_url: "https://status.formassembly.com", type: "statuspage" },
-  // Telemedicine
   { id: "doxy_me", name: "Doxy.me", tags: ["telemedicine", "healthcare", "video", "saas"], status_url: "https://status.doxy.me/api/v2/status.json", page_url: "https://status.doxy.me", type: "statuspage" },
-  // RMM / IT management
   { id: "pulseway", name: "Pulseway", tags: ["rmm", "it-management", "msp", "monitoring"], status_url: "https://status.pulseway.com/api/v2/status.json", page_url: "https://status.pulseway.com", type: "statuspage" },
-  // B2B payment routing
   { id: "routable", name: "Routable", tags: ["payments", "b2b", "fintech", "api"], status_url: "https://status.routable.com/api/v2/status.json", page_url: "https://status.routable.com", type: "statuspage" },
-  // Gaming payments
   { id: "xsolla", name: "Xsolla", tags: ["gaming", "payments", "fintech", "saas"], status_url: "https://status.xsolla.com/api/v2/status.json", page_url: "https://status.xsolla.com", type: "statuspage" },
-  // Restaurant POS
   { id: "upserve", name: "Upserve", tags: ["pos", "restaurant", "hospitality", "payments"], status_url: "https://status.upserve.com/api/v2/status.json", page_url: "https://status.upserve.com", type: "statuspage" },
   { id: "spoton", name: "SpotOn", tags: ["pos", "restaurant", "retail", "payments"], status_url: "https://status.spoton.com/api/v2/status.json", page_url: "https://status.spoton.com", type: "statuspage" },
-  // Fitness management
   { id: "wodify", name: "Wodify", tags: ["fitness", "gym-management", "crossfit", "saas"], status_url: "https://status.wodify.com/api/v2/status.json", page_url: "https://status.wodify.com", type: "statuspage" },
-  // Customer data platforms
   { id: "blueconic", name: "BlueConic", tags: ["cdp", "customer-data", "marketing", "saas"], status_url: "https://status.blueconic.com/api/v2/status.json", page_url: "https://status.blueconic.com", type: "statuspage" },
   { id: "amperity", name: "Amperity", tags: ["cdp", "customer-data", "analytics", "saas"], status_url: "https://status.amperity.com/api/v2/status.json", page_url: "https://status.amperity.com", type: "statuspage" },
-  // Session recording / analytics
   { id: "luckyorange", name: "Lucky Orange", tags: ["analytics", "session-recording", "heatmaps", "saas"], status_url: "https://status.luckyorange.com/api/v2/status.json", page_url: "https://status.luckyorange.com", type: "statuspage" },
-  // Document AI / AP automation
   { id: "hypatos", name: "Hypatos", tags: ["document-ai", "ap-automation", "finance", "saas"], status_url: "https://status.hypatos.ai/api/v2/status.json", page_url: "https://status.hypatos.ai", type: "statuspage" },
-  // Data security / DLP
   { id: "nightfall", name: "Nightfall AI", tags: ["security", "dlp", "data-protection", "saas"], status_url: "https://status.nightfall.ai/api/v2/status.json", page_url: "https://status.nightfall.ai", type: "statuspage" },
-  // Event ticketing
   { id: "universe", name: "Universe", tags: ["events", "ticketing", "saas"], status_url: "https://status.universe.com/api/v2/status.json", page_url: "https://status.universe.com", type: "statuspage" },
-  // Email marketing automation
   { id: "vero", name: "Vero", tags: ["email", "marketing", "automation", "saas"], status_url: "https://status.getvero.com/api/v2/status.json", page_url: "https://status.getvero.com", type: "statuspage" },
-  // Gaming platform
-  { id: "epicgames", name: "Epic Games", tags: ["gaming", "developer-tools", "saas"], status_url: "https://status.epicgames.com/api/v2/status.json", page_url: "https://status.epicgames.com", type: "statuspage" },
-  // Crypto exchanges
-  { id: "coinbase", name: "Coinbase", tags: ["crypto", "fintech", "payments", "saas"], status_url: "https://status.coinbase.com/api/v2/status.json", page_url: "https://status.coinbase.com", type: "statuspage" },
-  { id: "kraken", name: "Kraken", tags: ["crypto", "fintech", "payments", "saas"], status_url: "https://status.kraken.com/api/v2/status.json", page_url: "https://status.kraken.com", type: "statuspage" },
-  // Web3 / blockchain infrastructure
-  { id: "alchemy", name: "Alchemy", tags: ["web3", "blockchain", "developer-tools", "api"], status_url: "https://status.alchemy.com/api/v2/status.json", page_url: "https://status.alchemy.com", type: "statuspage" },
-  { id: "infura", name: "Infura", tags: ["web3", "blockchain", "developer-tools", "api"], status_url: "https://status.infura.io/api/v2/status.json", page_url: "https://status.infura.io", type: "statuspage" },
-  { id: "quicknode", name: "QuickNode", tags: ["web3", "blockchain", "developer-tools", "api"], status_url: "https://status.quicknode.com/api/v2/status.json", page_url: "https://status.quicknode.com", type: "statuspage" },
-  // Shipping / logistics
-  { id: "shipstation", name: "ShipStation", tags: ["logistics", "shipping", "ecommerce", "saas"], status_url: "https://status.shipstation.com/api/v2/status.json", page_url: "https://status.shipstation.com", type: "statuspage" },
-  // Construction & legal SaaS
-  { id: "procore", name: "Procore", tags: ["construction", "project-management", "saas"], status_url: "https://status.procore.com/api/v2/status.json", page_url: "https://status.procore.com", type: "statuspage" },
-  { id: "clio", name: "Clio", tags: ["legal", "law-practice", "saas"], status_url: "https://status.clio.com/api/v2/status.json", page_url: "https://status.clio.com", type: "statuspage" },
-  // Mobile measurement / attribution
-  { id: "appsflyer", name: "AppsFlyer", tags: ["mobile", "analytics", "attribution", "saas"], status_url: "https://status.appsflyer.com/api/v2/status.json", page_url: "https://status.appsflyer.com", type: "statuspage" },
-  { id: "branch", name: "Branch", tags: ["mobile", "analytics", "attribution", "developer-tools"], status_url: "https://status.branch.io/api/v2/status.json", page_url: "https://status.branch.io", type: "statuspage" },
-  { id: "adjust", name: "Adjust", tags: ["mobile", "analytics", "attribution", "saas"], status_url: "https://status.adjust.com/api/v2/status.json", page_url: "https://status.adjust.com", type: "statuspage" },
-  // iPaaS / automation
-  { id: "workato", name: "Workato", tags: ["automation", "integration", "ipaas", "saas"], status_url: "https://status.workato.com/api/v2/status.json", page_url: "https://status.workato.com", type: "statuspage" },
-  // IoT platform
-  { id: "particle", name: "Particle", tags: ["iot", "developer-tools", "hardware", "saas"], status_url: "https://status.particle.io/api/v2/status.json", page_url: "https://status.particle.io", type: "statuspage" },
-  // Privacy / consent management
   { id: "onetrust", name: "OneTrust", tags: ["privacy", "compliance", "consent", "saas"], status_url: "https://onetrust.statuspage.io/api/v2/status.json", page_url: "https://onetrust.statuspage.io", type: "statuspage" },
-  { id: "trustarc", name: "TrustArc", tags: ["privacy", "compliance", "consent", "saas"], status_url: "https://status.trustarc.com/api/v2/status.json", page_url: "https://status.trustarc.com", type: "statuspage" },
-  // Ad verification
   { id: "doubleverify", name: "DoubleVerify", tags: ["adtech", "advertising", "brand-safety", "saas"], status_url: "https://status.doubleverify.com/api/v2/status.json", page_url: "https://status.doubleverify.com", type: "statuspage" },
-  // SMS / messaging
-  { id: "clicksend", name: "ClickSend", tags: ["sms", "messaging", "communications", "api"], status_url: "https://status.clicksend.com/api/v2/status.json", page_url: "https://status.clicksend.com", type: "statuspage" },
-  // Email / lifecycle marketing
-  { id: "customerio", name: "Customer.io", tags: ["email", "marketing", "automation", "saas"], status_url: "https://status.customerio.com/api/v2/status.json", page_url: "https://status.customerio.com", type: "statuspage" },
-  // Cloud / IaaS
-  { id: "linode", name: "Linode (Akamai)", tags: ["cloud", "iaas", "hosting", "infrastructure"], status_url: "https://status.linode.com/api/v2/status.json", page_url: "https://status.linode.com", type: "statuspage" },
-  { id: "render", name: "Render", tags: ["cloud", "hosting", "paas", "developer-tools"], status_url: "https://status.render.com/api/v2/status.json", page_url: "https://status.render.com", type: "statuspage" },
-  { id: "bunny", name: "Bunny.net", tags: ["cdn", "hosting", "edge", "infrastructure"], status_url: "https://status.bunny.net/api/v2/status.json", page_url: "https://status.bunny.net", type: "statuspage" },
-  { id: "equinix_metal", name: "Equinix Metal", tags: ["cloud", "bare-metal", "infrastructure", "iaas"], status_url: "https://equinixmetal.statuspage.io/api/v2/status.json", page_url: "https://equinixmetal.statuspage.io", type: "statuspage" },
-  // Vector databases
-  { id: "pinecone", name: "Pinecone", tags: ["database", "vector-db", "ai", "developer-tools"], status_url: "https://status.pinecone.io/api/v2/status.json", page_url: "https://status.pinecone.io", type: "statuspage" },
-  // AI / LLM services
-  { id: "elevenlabs", name: "ElevenLabs", tags: ["ai", "voice", "text-to-speech", "api"], status_url: "https://status.elevenlabs.io/api/v2/status.json", page_url: "https://status.elevenlabs.io", type: "statuspage" },
-  { id: "baseten", name: "Baseten", tags: ["ai", "ml", "deployment", "developer-tools"], status_url: "https://status.baseten.co/api/v2/status.json", page_url: "https://status.baseten.co", type: "statuspage" },
-  { id: "clarifai", name: "Clarifai", tags: ["ai", "computer-vision", "ml", "api"], status_url: "https://status.clarifai.com/api/v2/status.json", page_url: "https://status.clarifai.com", type: "statuspage" },
   { id: "scale", name: "Scale AI", tags: ["ai", "data-labeling", "ml", "saas"], status_url: "https://status.scale.com/api/v2/status.json", page_url: "https://status.scale.com", type: "statuspage" },
-  // Fleet management
-  { id: "fleetio", name: "Fleetio", tags: ["fleet", "logistics", "saas"], status_url: "https://status.fleetio.com/api/v2/status.json", page_url: "https://status.fleetio.com", type: "statuspage" },
   { id: "sensepass", name: "SensePass", tags: ["payments", "saas", "retail"], status_url: "https://status.sensepass.com/api/v2/status.json", page_url: "https://status.sensepass.com", type: "statuspage" },
-  // Survey / CX research platforms
-  { id: "qualtrics", name: "Qualtrics", tags: ["surveys", "cx", "analytics", "enterprise"], status_url: "https://status.qualtrics.com/api/v2/status.json", page_url: "https://status.qualtrics.com", type: "statuspage" },
-  { id: "surveymonkey", name: "SurveyMonkey", tags: ["surveys", "analytics", "saas"], status_url: "https://status.surveymonkey.com/api/v2/status.json", page_url: "https://status.surveymonkey.com", type: "statuspage" },
-  // Reputation / review management
-  { id: "birdeye", name: "Birdeye", tags: ["reputation", "reviews", "marketing", "saas"], status_url: "https://status.birdeye.com/api/v2/status.json", page_url: "https://status.birdeye.com", type: "statuspage" },
-  { id: "yotpo", name: "Yotpo", tags: ["reviews", "ecommerce", "marketing", "saas"], status_url: "https://status.yotpo.com/api/v2/status.json", page_url: "https://status.yotpo.com", type: "statuspage" },
-  { id: "trustpilot", name: "Trustpilot", tags: ["reviews", "reputation", "saas"], status_url: "https://status.trustpilot.com/api/v2/status.json", page_url: "https://status.trustpilot.com", type: "statuspage" },
-  // Auth / identity
-  { id: "clerk", name: "Clerk", tags: ["auth", "identity", "developer-tools", "saas"], status_url: "https://status.clerk.com/api/v2/status.json", page_url: "https://status.clerk.com", type: "statuspage" },
-  { id: "frontegg", name: "Frontegg", tags: ["auth", "identity", "developer-tools", "saas"], status_url: "https://status.frontegg.com/api/v2/status.json", page_url: "https://status.frontegg.com", type: "statuspage" },
-  { id: "workos", name: "WorkOS", tags: ["auth", "identity", "enterprise", "developer-tools"], status_url: "https://status.workos.com/api/v2/status.json", page_url: "https://status.workos.com", type: "statuspage" },
-  { id: "magic", name: "Magic", tags: ["auth", "web3", "identity", "developer-tools"], status_url: "https://status.magic.link/api/v2/status.json", page_url: "https://status.magic.link", type: "statuspage" },
-  // Databases
   { id: "tidbcloud", name: "TiDB Cloud", tags: ["database", "cloud", "mysql", "saas"], status_url: "https://status.tidbcloud.com/api/v2/status.json", page_url: "https://status.tidbcloud.com", type: "statuspage" },
-  { id: "couchbase", name: "Couchbase", tags: ["database", "nosql", "cloud", "saas"], status_url: "https://status.couchbase.com/api/v2/status.json", page_url: "https://status.couchbase.com", type: "statuspage" },
-  { id: "upstash", name: "Upstash", tags: ["database", "redis", "kafka", "developer-tools"], status_url: "https://status.upstash.com/api/v2/status.json", page_url: "https://status.upstash.com", type: "statuspage" },
-  { id: "supabase", name: "Supabase", tags: ["database", "postgres", "backend", "developer-tools"], status_url: "https://status.supabase.com/api/v2/status.json", page_url: "https://status.supabase.com", type: "statuspage" },
-  { id: "hygraph", name: "Hygraph", tags: ["cms", "graphql", "headless", "developer-tools"], status_url: "https://status.hygraph.com/api/v2/status.json", page_url: "https://status.hygraph.com", type: "statuspage" },
-  // Fintech / trading infrastructure
   { id: "tradier", name: "Tradier", tags: ["fintech", "brokerage", "trading", "api"], status_url: "https://status.tradier.com/api/v2/status.json", page_url: "https://status.tradier.com", type: "statuspage" },
   { id: "cashapp", name: "Cash App", tags: ["fintech", "payments", "mobile", "banking"], status_url: "https://status.cash.app/api/v2/status.json", page_url: "https://status.cash.app", type: "statuspage" },
-  // Marketing / CDP
   { id: "blueshift", name: "Blueshift", tags: ["marketing", "cdp", "ai", "email"], status_url: "https://status.blueshift.com/api/v2/status.json", page_url: "https://status.blueshift.com", type: "statuspage" },
-  // AI / creative tools
   { id: "runway_ml", name: "Runway", tags: ["ai", "video", "creative", "generative"], status_url: "https://status.runwayml.com/api/v2/status.json", page_url: "https://status.runwayml.com", type: "statuspage" },
   { id: "lovable", name: "Lovable", tags: ["ai", "developer-tools", "no-code", "web"], status_url: "https://status.lovable.dev/api/v2/status.json", page_url: "https://status.lovable.dev", type: "statuspage" },
   { id: "bolt", name: "Bolt.new", tags: ["ai", "developer-tools", "no-code", "coding"], status_url: "https://status.bolt.new/api/v2/status.json", page_url: "https://status.bolt.new", type: "statuspage" },
-  // AI meeting tools
   { id: "tactiq", name: "Tactiq", tags: ["ai", "meeting-transcription", "productivity", "collaboration"], status_url: "https://status.tactiq.io/api/v2/status.json", page_url: "https://status.tactiq.io", type: "statuspage" },
-  // Email / messaging security
   { id: "vade", name: "Vade", tags: ["security", "email", "ai", "anti-phishing"], status_url: "https://status.vadesecure.com/api/v2/status.json", page_url: "https://status.vadesecure.com", type: "statuspage" },
-  // Cyber threat intelligence
   { id: "recorded_future", name: "Recorded Future", tags: ["security", "threat-intelligence", "cyber", "saas"], status_url: "https://status.recordedfuture.com/api/v2/status.json", page_url: "https://status.recordedfuture.com", type: "statuspage" },
   { id: "greynoise", name: "GreyNoise", tags: ["security", "threat-intelligence", "network", "saas"], status_url: "https://status.greynoise.io/api/v2/status.json", page_url: "https://status.greynoise.io", type: "statuspage" },
   { id: "anomali", name: "Anomali", tags: ["security", "threat-intelligence", "siem", "saas"], status_url: "https://status.anomali.com/api/v2/status.json", page_url: "https://status.anomali.com", type: "statuspage" },
-  // IoT connectivity
   { id: "emnify", name: "emnify", tags: ["iot", "connectivity", "sim", "infrastructure"], status_url: "https://status.emnify.com/api/v2/status.json", page_url: "https://status.emnify.com", type: "statuspage" },
-  // Enterprise architecture / IT portfolio management
   { id: "ardoq", name: "Ardoq", tags: ["enterprise-architecture", "it-portfolio", "saas", "governance"], status_url: "https://status.ardoq.com/api/v2/status.json", page_url: "https://status.ardoq.com", type: "statuspage" },
-  // Video interviewing / hiring platform
   { id: "spark_hire", name: "Spark Hire Recruit", tags: ["recruiting", "video-interview", "hr", "saas"], status_url: "https://status.comeet.com/api/v2/status.json", page_url: "https://status.comeet.com", type: "statuspage" },
-  // Website builder
   { id: "ucraft", name: "Ucraft", tags: ["website-builder", "no-code", "saas", "ecommerce"], status_url: "https://status.ucraft.com/api/v2/status.json", page_url: "https://status.ucraft.com", type: "statuspage" },
-  // CMS / digital experience platform
   { id: "sitefinity", name: "Sitefinity Insight", tags: ["cms", "digital-experience", "marketing", "saas"], status_url: "https://status.sitefinity.com/api/v2/status.json", page_url: "https://status.sitefinity.com", type: "statuspage" },
-  // Payment processing
   { id: "paysafe", name: "Paysafe", tags: ["payments", "fintech", "processing", "api"], status_url: "https://status.paysafe.com/api/v2/status.json", page_url: "https://status.paysafe.com", type: "statuspage" },
-  // Crowdfunding platform
   { id: "kickstarter", name: "Kickstarter", tags: ["crowdfunding", "marketplace", "creative", "saas"], status_url: "https://status.kickstarter.com/api/v2/status.json", page_url: "https://status.kickstarter.com", type: "statuspage" },
-  // Crypto payment processing
   { id: "bitpay", name: "BitPay", tags: ["crypto", "payments", "bitcoin", "fintech"], status_url: "https://status.bitpay.com/api/v2/status.json", page_url: "https://status.bitpay.com", type: "statuspage" },
-  // Crypto on-ramp
   { id: "moonpay", name: "MoonPay", tags: ["crypto", "on-ramp", "payments", "fintech"], status_url: "https://status.moonpay.com/api/v2/status.json", page_url: "https://status.moonpay.com", type: "statuspage" },
-  // Fiat-to-crypto gateway
   { id: "onramper", name: "Onramper", tags: ["crypto", "on-ramp", "fintech", "api"], status_url: "https://status.onramper.com/api/v2/status.json", page_url: "https://status.onramper.com", type: "statuspage" },
-  // IoT / LoRaWAN network
   { id: "the_things_network", name: "The Things Network", tags: ["iot", "lorawan", "connectivity", "open-source"], status_url: "https://status.thethings.network/api/v2/status.json", page_url: "https://status.thethings.network", type: "statuspage" },
-  // IoT data platform
   { id: "ubidots", name: "Ubidots", tags: ["iot", "data-platform", "analytics", "saas"], status_url: "https://status.ubidots.com/api/v2/status.json", page_url: "https://status.ubidots.com", type: "statuspage" },
-  // Lending / fintech software
   { id: "meridianlink", name: "MeridianLink", tags: ["fintech", "lending", "banking", "saas"], status_url: "https://status.meridianlink.com/api/v2/status.json", page_url: "https://status.meridianlink.com", type: "statuspage" },
-  // Professional services automation / PSA
   { id: "kantata", name: "Kantata OX", tags: ["psa", "project-management", "resource-management", "saas"], status_url: "https://status.mavenlink.com/api/v2/status.json", page_url: "https://status.mavenlink.com", type: "statuspage" },
-  // Community / customer engagement platform
   { id: "khoros", name: "Khoros", tags: ["community", "customer-engagement", "social", "saas"], status_url: "https://status.khoros.com/api/v2/status.json", page_url: "https://status.khoros.com", type: "statuspage" },
-  // Online community platform
   { id: "hivebrite", name: "Hivebrite", tags: ["community", "membership", "network", "saas"], status_url: "https://status.hivebrite.com/api/v2/status.json", page_url: "https://status.hivebrite.com", type: "statuspage" },
-  // No-code database / app builder
   { id: "knack", name: "Knack", tags: ["no-code", "database", "app-builder", "saas"], status_url: "https://status.knack.com/api/v2/status.json", page_url: "https://status.knack.com", type: "statuspage" },
-  // Community / membership engagement platform
   { id: "bettermode", name: "Bettermode", tags: ["community", "membership", "engagement", "saas"], status_url: "https://status.bettermode.com/api/v2/status.json", page_url: "https://status.bettermode.com", type: "statuspage" },
-  // Ecommerce analytics / attribution
   { id: "triple_whale", name: "Triple Whale", tags: ["ecommerce", "analytics", "attribution", "marketing"], status_url: "https://status.triplewhale.com/api/v2/status.json", page_url: "https://status.triplewhale.com", type: "statuspage" },
-  // Browser-based QA test automation
   { id: "reflect", name: "Reflect", tags: ["testing", "qa", "automation", "devtools"], status_url: "https://reflect.status.smartbear.com/api/v2/status.json", page_url: "https://reflect.status.smartbear.com", type: "statuspage" },
-  // Product experience / user analytics (Gainsight PX)
   { id: "gainsight_px", name: "Gainsight PX", tags: ["product-analytics", "user-experience", "onboarding", "saas"], status_url: "https://status.aptrinsic.com/api/v2/status.json", page_url: "https://status.aptrinsic.com", type: "statuspage" },
-  // Data observability platform
   { id: "metaplane", name: "Metaplane", tags: ["data-observability", "data-quality", "analytics", "saas"], status_url: "https://status.metaplane.dev/api/v2/status.json", page_url: "https://status.metaplane.dev", type: "statuspage" },
-  // NFT marketplace
   { id: "opensea", name: "OpenSea", tags: ["nft", "web3", "marketplace", "crypto"], status_url: "https://status.opensea.io/api/v2/status.json", page_url: "https://status.opensea.io", type: "statuspage" },
-  // AI customer support / triage
   { id: "forethought", name: "Forethought AI", tags: ["ai", "customer-support", "helpdesk", "saas"], status_url: "https://status.forethought.ai/api/v2/status.json", page_url: "https://status.forethought.ai", type: "statuspage" },
-  // DeFi protocol / crypto lending
   { id: "aave", name: "Aave", tags: ["defi", "web3", "crypto", "lending"], status_url: "https://status.aave.com/api/v2/status.json", page_url: "https://status.aave.com", type: "statuspage" },
-  // NVIDIA GPU Cloud catalog / ML models
   { id: "nvidia_ngc", name: "NVIDIA NGC", tags: ["ai", "ml", "gpu", "cloud"], status_url: "https://status.ngc.nvidia.com/api/v2/status.json", page_url: "https://status.ngc.nvidia.com", type: "statuspage" },
-  // 3D digital twin / virtual tours
   { id: "matterport", name: "Matterport", tags: ["3d", "digital-twin", "real-estate", "saas"], status_url: "https://status.matterport.com/api/v2/status.json", page_url: "https://status.matterport.com", type: "statuspage" },
-  // Data catalog and collaboration
   { id: "data_world", name: "data.world", tags: ["data-catalog", "data-collaboration", "analytics", "saas"], status_url: "https://status.data.world/api/v2/status.json", page_url: "https://status.data.world", type: "statuspage" },
-  // Documentation platform
   { id: "gitbook", name: "GitBook", tags: ["documentation", "developer-tools", "publishing", "saas"], status_url: "https://www.gitbookstatus.com/api/v2/status.json", page_url: "https://www.gitbookstatus.com", type: "statuspage" },
-  // UCaaS / telephony (tick 152)
   { id: "mitel", name: "Mitel CloudLink", tags: ["voip", "ucaas", "telephony", "enterprise"], status_url: "https://status.mitel.io/api/v2/status.json", page_url: "https://status.mitel.io", type: "statuspage" },
-  // Digital experience analytics
   { id: "siteimprove", name: "Siteimprove", tags: ["analytics", "seo", "accessibility", "digital-experience"], status_url: "https://status.siteimprove.com/api/v2/status.json", page_url: "https://status.siteimprove.com", type: "statuspage" },
-  // LMS / eLearning
   { id: "learningpool", name: "Learning Pool", tags: ["lms", "elearning", "training", "saas"], status_url: "https://status.learningpool.com/api/v2/status.json", page_url: "https://status.learningpool.com", type: "statuspage" },
   { id: "bridge_lms", name: "Bridge", tags: ["lms", "elearning", "hr", "performance"], status_url: "https://status.bridgeapp.com/api/v2/status.json", page_url: "https://status.bridgeapp.com", type: "statuspage" },
-  // Enterprise content management
   { id: "hyland", name: "Hyland", tags: ["ecm", "content-management", "enterprise", "saas"], status_url: "https://status.hylandcloud.com/api/v2/status.json", page_url: "https://status.hylandcloud.com", type: "statuspage" },
-  // AI document processing / OCR
   { id: "abbyy", name: "ABBYY", tags: ["ocr", "document-ai", "automation", "enterprise"], status_url: "https://status.abbyy.com/api/v2/status.json", page_url: "https://status.abbyy.com", type: "statuspage" },
-  // Customer support
   { id: "helpshift", name: "Helpshift", tags: ["customer-support", "mobile", "chat", "saas"], status_url: "https://status.helpshift.com/api/v2/status.json", page_url: "https://status.helpshift.com", type: "statuspage" },
-  // CRM
   { id: "capsule_crm", name: "Capsule CRM", tags: ["crm", "sales", "smb", "saas"], status_url: "https://status.capsulecrm.com/api/v2/status.json", page_url: "https://status.capsulecrm.com", type: "statuspage" },
   { id: "close_crm", name: "Close CRM", tags: ["crm", "sales", "inside-sales", "saas"], status_url: "https://status.close.com/api/v2/status.json", page_url: "https://status.close.com", type: "statuspage" },
-
-  // Fintech / banking
   { id: "belvo", name: "Belvo", tags: ["fintech", "banking", "open-finance", "latam"], status_url: "https://status.belvo.com/api/v2/status.json", page_url: "https://status.belvo.com", type: "statuspage" },
   { id: "tide", name: "Tide", tags: ["banking", "neobank", "business-banking", "uk"], status_url: "https://status.tide.co/api/v2/status.json", page_url: "https://status.tide.co", type: "statuspage" },
-
-  // Fraud / trust & safety
   { id: "sift", name: "Sift", tags: ["fraud", "trust-safety", "risk", "payments"], status_url: "https://status.sift.com/api/v2/status.json", page_url: "https://status.sift.com", type: "statuspage" },
-
-  // Speech-to-text / AI voice
   { id: "rev_ai", name: "Rev AI", tags: ["speech-to-text", "ai", "transcription", "api"], status_url: "https://status.rev.ai/api/v2/status.json", page_url: "https://status.rev.ai", type: "statuspage" },
-
-  // No-code backend
   { id: "xano", name: "Xano", tags: ["no-code", "backend", "database", "api"], status_url: "https://status.xano.com/api/v2/status.json", page_url: "https://status.xano.com", type: "statuspage" },
-
-  // Freight / logistics
   { id: "transfix", name: "Transfix", tags: ["logistics", "freight", "transportation", "saas"], status_url: "https://status.transfix.io/api/v2/status.json", page_url: "https://status.transfix.io", type: "statuspage" },
-
-  // CPaaS / messaging
   { id: "8x8_cpaas", name: "8x8 CPaaS", tags: ["messaging", "sms", "cpaas", "communication"], status_url: "https://status.wavecell.com/api/v2/status.json", page_url: "https://status.wavecell.com", type: "statuspage" },
-
-  // Developer tools
   { id: "aviator", name: "Aviator", tags: ["devtools", "merge-queue", "ci-cd", "git"], status_url: "https://status.aviator.co/api/v2/status.json", page_url: "https://status.aviator.co", type: "statuspage" },
-
-  // In-app purchases / mobile subscriptions
   { id: "adapty", name: "Adapty", tags: ["in-app-purchases", "subscriptions", "mobile", "sdk"], status_url: "https://status.adapty.io/api/v2/status.json", page_url: "https://status.adapty.io", type: "statuspage" },
   { id: "qonversion", name: "Qonversion", tags: ["in-app-purchases", "subscriptions", "mobile", "analytics"], status_url: "https://status.qonversion.io/api/v2/status.json", page_url: "https://status.qonversion.io", type: "statuspage" },
   { id: "nami", name: "Nami", tags: ["in-app-purchases", "subscriptions", "mobile", "paywalls"], status_url: "https://status.namiml.com/api/v2/status.json", page_url: "https://status.namiml.com", type: "statuspage" },
   { id: "apphud", name: "Apphud", tags: ["in-app-purchases", "subscriptions", "mobile", "analytics"], status_url: "https://status.apphud.com/api/v2/status.json", page_url: "https://status.apphud.com", type: "statuspage" },
-
-  // Security automation / SOAR
   { id: "torq", name: "Torq", tags: ["security", "soar", "automation", "no-code"], status_url: "https://status.torq.io/api/v2/status.json", page_url: "https://status.torq.io", type: "statuspage" },
-
-  // Video API
   { id: "daily_co", name: "Daily.co", tags: ["video", "api", "webrtc", "real-time"], status_url: "https://status.daily.co/api/v2/status.json", page_url: "https://status.daily.co", type: "statuspage" },
-
-  // SEO / web crawling
   { id: "lumar", name: "Lumar", tags: ["seo", "crawling", "analytics", "developer-tools"], status_url: "https://status.lumar.io/api/v2/status.json", page_url: "https://status.lumar.io", type: "statuspage" },
-
-  // AI / ML platform
   { id: "lightning_ai", name: "Lightning AI", tags: ["ai", "ml", "training", "cloud"], status_url: "https://status.lightning.ai/api/v2/status.json", page_url: "https://status.lightning.ai", type: "statuspage" },
-
-  // HR integrations API
   { id: "stackone", name: "StackOne", tags: ["hr", "integrations", "api", "saas"], status_url: "https://status.stackone.com/api/v2/status.json", page_url: "https://status.stackone.com", type: "statuspage" },
-
-  // Authorization / SpiceDB
   { id: "authzed", name: "Authzed", tags: ["authorization", "permissions", "api", "security"], status_url: "https://status.authzed.com/api/v2/status.json", page_url: "https://status.authzed.com", type: "statuspage" },
-
-  // Creator economy / digital products
   { id: "stan_store", name: "Stan", tags: ["creator-economy", "ecommerce", "digital-products", "saas"], status_url: "https://status.stan.store/api/v2/status.json", page_url: "https://status.stan.store", type: "statuspage" },
-
-  // Conversational AI / enterprise chatbots
   { id: "cognigy", name: "Cognigy", tags: ["conversational-ai", "chatbot", "enterprise", "saas"], status_url: "https://status.cognigy.ai/api/v2/status.json", page_url: "https://status.cognigy.ai", type: "statuspage" },
-
-  // Data lakehouse
   { id: "dremio", name: "Dremio Cloud", tags: ["data", "lakehouse", "analytics", "cloud"], status_url: "https://status.dremio.com/api/v2/status.json", page_url: "https://status.dremio.com", type: "statuspage" },
-
-  // Data catalog
   { id: "alation", name: "Alation", tags: ["data-catalog", "governance", "analytics", "enterprise"], status_url: "https://status.alationcloud.com/api/v2/status.json", page_url: "https://status.alationcloud.com", type: "statuspage" },
-
-  // Fraud prevention / e-commerce
   { id: "signifyd", name: "Signifyd", tags: ["fraud-prevention", "ecommerce", "payments", "security"], status_url: "https://status.signifyd.com/api/v2/status.json", page_url: "https://status.signifyd.com", type: "statuspage" },
-
-  // Fraud prevention / chargeback protection
   { id: "riskified", name: "Riskified", tags: ["fraud-prevention", "ecommerce", "payments", "security"], status_url: "https://status.riskified.com/api/v2/status.json", page_url: "https://status.riskified.com", type: "statuspage" },
-
-  // Fraud / compliance / KYC AI
-  { id: "sardine_ai", name: "Sardine AI", tags: ["fraud-prevention", "compliance", "kyc", "fintech", "security"], status_url: "https://status.sardine.ai/api/v2/status.json", page_url: "https://status.sardine.ai", type: "statuspage" },
-
-  // AI-powered email security
-  { id: "abnormal_security", name: "Abnormal AI", tags: ["email-security", "ai", "security", "enterprise"], status_url: "https://status.abnormalsecurity.com/api/v2/status.json", page_url: "https://status.abnormalsecurity.com", type: "statuspage" },
-
-  // Email security (anti-phishing / anti-spam)
   { id: "vadesecure", name: "Vade Secure", tags: ["email-security", "anti-phishing", "security"], status_url: "https://status.vadesecure.com/api/v2/status.json", page_url: "https://status.vadesecure.com", type: "statuspage" },
-
-  // Website security / WAF / CDN
   { id: "sucuri", name: "Sucuri", tags: ["security", "waf", "cdn", "website-security"], status_url: "https://status.sucuri.net/api/v2/status.json", page_url: "https://status.sucuri.net", type: "statuspage" },
-
-  // Managed WordPress / Magento hosting
   { id: "nexcess", name: "Nexcess", tags: ["hosting", "wordpress", "magento", "managed"], status_url: "https://status.nexcess.net/api/v2/status.json", page_url: "https://status.nexcess.net", type: "statuspage" },
-
-  // Managed dedicated / cloud hosting
   { id: "liquidweb", name: "Liquid Web", tags: ["hosting", "managed", "dedicated", "cloud"], status_url: "https://status.liquidweb.com/api/v2/status.json", page_url: "https://status.liquidweb.com", type: "statuspage" },
-
-  // Sales enablement / content platform
   { id: "bigtincan", name: "Bigtincan", tags: ["sales-enablement", "content", "saas", "enterprise"], status_url: "https://status.bigtincan.com/api/v2/status.json", page_url: "https://status.bigtincan.com", type: "statuspage" },
-
-  // LMS / learning experience platform (Cornerstone)
   { id: "edcast", name: "EdCast by Cornerstone", tags: ["lms", "learning", "e-learning", "enterprise"], status_url: "https://status.edcast.com/api/v2/status.json", page_url: "https://status.edcast.com", type: "statuspage" },
-  // Data observability
   { id: "bigeye", name: "Bigeye", tags: ["data-observability", "data-quality", "analytics", "saas"], status_url: "https://status.bigeye.com/api/v2/status.json", page_url: "https://status.bigeye.com", type: "statuspage" },
-  // Visual content creation
   { id: "visme", name: "Visme", tags: ["visual-content", "design", "presentations", "infographics"], status_url: "https://status.visme.co/api/v2/status.json", page_url: "https://status.visme.co", type: "statuspage" },
-  // Translation / CAT tool
   { id: "memoq", name: "memoQ", tags: ["translation", "localization", "cat-tool", "enterprise"], status_url: "https://status.memoq.com/api/v2/status.json", page_url: "https://status.memoq.com", type: "statuspage" },
-  // Screen recording / EdTech
   { id: "screencastify", name: "Screencastify", tags: ["screen-recording", "edtech", "video", "education"], status_url: "https://status.screencastify.com/api/v2/status.json", page_url: "https://status.screencastify.com", type: "statuspage" },
-  // Crypto / blockchain infrastructure
   { id: "paxos", name: "Paxos", tags: ["crypto", "blockchain", "fintech", "payments"], status_url: "https://status.paxos.com/api/v2/status.json", page_url: "https://status.paxos.com", type: "statuspage" },
-  // IoT / cellular connectivity
   { id: "blues", name: "Blues (Notehub)", tags: ["iot", "cellular", "connectivity", "embedded"], status_url: "https://status.notehub.io/api/v2/status.json", page_url: "https://status.notehub.io", type: "statuspage" },
-  // Message broker (RabbitMQ-as-a-service)
   { id: "cloudamqp", name: "CloudAMQP", tags: ["messaging", "rabbitmq", "amqp", "cloud"], status_url: "https://status.cloudamqp.com/api/v2/status.json", page_url: "https://status.cloudamqp.com", type: "statuspage" },
-  // Fitness wearable / health platform
   { id: "whoop", name: "WHOOP", tags: ["fitness", "wearable", "health", "wellness"], status_url: "https://status.whoop.com/api/v2/status.json", page_url: "https://status.whoop.com", type: "statuspage" },
-  // Smart ring / health platform
   { id: "oura", name: "Oura Ring", tags: ["fitness", "wearable", "health", "sleep"], status_url: "https://status.ouraring.com/api/v2/status.json", page_url: "https://status.ouraring.com", type: "statuspage" },
-  // Software test management / QA
   { id: "tricentis", name: "Tricentis", tags: ["testing", "qa", "test-management", "enterprise"], status_url: "https://status.tricentis.com/api/v2/status.json", page_url: "https://status.tricentis.com", type: "statuspage" },
-
-  // AI / LLM (China)
   { id: "moonshot_ai", name: "Moonshot AI", tags: ["ai", "llm", "api", "china"], status_url: "https://status.moonshot.cn/api/v2/status.json", page_url: "https://status.moonshot.cn", type: "statuspage" },
-
-  // Cloud cost management / FinOps
   { id: "cloudability", name: "Cloudability", tags: ["cloud-cost", "finops", "cloud", "analytics"], status_url: "https://status.cloudability.com/api/v2/status.json", page_url: "https://status.cloudability.com", type: "statuspage" },
-
-  // SaaS sales tax compliance
   { id: "anrok", name: "Anrok", tags: ["tax", "compliance", "saas", "fintech"], status_url: "https://anrok.statuspage.io/api/v2/status.json", page_url: "https://anrok-status.com", type: "statuspage" },
-
-  // Build automation / CI
   { id: "gradle", name: "Gradle", tags: ["build", "ci", "devtools", "java"], status_url: "https://status.gradle.com/api/v2/status.json", page_url: "https://status.gradle.com", type: "statuspage" },
-
-  // GitHub project management
   { id: "zenhub", name: "ZenHub", tags: ["project-management", "devtools", "agile", "github"], status_url: "https://status.zenhub.com/api/v2/status.json", page_url: "https://status.zenhub.com", type: "statuspage" },
-
-  // Open source foundation infrastructure
   { id: "apache", name: "Apache Software Foundation", tags: ["open-source", "infrastructure", "hosting", "foundation"], status_url: "https://status.apache.org/api/v2/status.json", page_url: "https://status.apache.org", type: "statuspage" },
-
-  // AI agent platform for teams
   { id: "dust", name: "Dust", tags: ["ai", "agents", "llm", "enterprise"], status_url: "https://status.dust.tt/api/v2/status.json", page_url: "https://status.dust.tt", type: "statuspage" },
-
-  // Compliance automation / trust management
   { id: "trustcloud", name: "TrustCloud", tags: ["compliance", "security", "grc", "trust"], status_url: "https://status.trustcloud.ai/api/v2/status.json", page_url: "https://status.trustcloud.ai", type: "statuspage" },
-
-  // B2B integration platform / embedded iPaaS
   { id: "cyclr", name: "Cyclr", tags: ["integration", "ipaas", "api", "automation"], status_url: "https://cyclr.statuspage.io/api/v2/status.json", page_url: "https://cyclr.statuspage.io", type: "statuspage" },
-
-  // Terraform cloud enterprise / infrastructure management
   { id: "scalr", name: "Scalr", tags: ["terraform", "infrastructure", "devops", "cloud"], status_url: "https://status.scalr.io/api/v2/status.json", page_url: "https://status.scalr.io", type: "statuspage" },
-
-  // Kubernetes management platform
   { id: "spectrocloud", name: "Spectro Cloud", tags: ["kubernetes", "cloud-native", "devops", "infrastructure"], status_url: "https://spectrocloud.statuspage.io/api/v2/status.json", page_url: "https://spectrocloud.statuspage.io", type: "statuspage" },
-
-  // Cloud security / container monitoring
   { id: "sysdig", name: "Sysdig", tags: ["security", "cloud-native", "monitoring", "containers"], status_url: "https://sysdig.statuspage.io/api/v2/status.json", page_url: "https://status.sysdigcloud.com", type: "statuspage" },
-
-  // UI/UX prototyping and design tool
   { id: "marvelapp", name: "Marvel App", tags: ["design", "prototyping", "ux", "collaboration"], status_url: "https://status.marvelapp.com/api/v2/status.json", page_url: "https://status.marvelapp.com", type: "statuspage" },
-
-  // Incident management / alerting
   { id: "xmatters", name: "xMatters", tags: ["incident-management", "alerting", "devops", "on-call"], status_url: "https://status.xmatters.com/api/v2/status.json", page_url: "https://status.xmatters.com", type: "statuspage" },
-
-  // Healthcare / EHR
   { id: "curemd", name: "CureMD", tags: ["healthcare", "ehr", "practice-management", "medical"], status_url: "https://status.curemd.com/api/v2/status.json", page_url: "https://status.curemd.com", type: "statuspage" },
   { id: "klara", name: "Klara", tags: ["healthcare", "patient-communication", "telehealth", "saas"], status_url: "https://status.klara.com/api/v2/status.json", page_url: "https://status.klara.com", type: "statuspage" },
-
-  // Property management
   { id: "leadsimple", name: "LeadSimple", tags: ["property-management", "crm", "real-estate", "saas"], status_url: "https://status.leadsimple.com/api/v2/status.json", page_url: "https://status.leadsimple.com", type: "statuspage" },
-
-  // Field service management
   { id: "fieldaware", name: "FieldAware", tags: ["field-service", "fsm", "workforce", "operations"], status_url: "https://status.fieldaware.com/api/v2/status.json", page_url: "https://status.fieldaware.com", type: "statuspage" },
   { id: "zuper", name: "Zuper", tags: ["field-service", "fsm", "workforce-management", "saas"], status_url: "https://status.zuper.co/api/v2/status.json", page_url: "https://status.zuper.co", type: "statuspage" },
   { id: "fieldpulse", name: "FieldPulse", tags: ["field-service", "fsm", "contractor", "saas"], status_url: "https://status.fieldpulse.com/api/v2/status.json", page_url: "https://status.fieldpulse.com", type: "statuspage" },
-
-  // Insurance / Insurtech
   { id: "insurity", name: "Insurity", tags: ["insurance", "insurtech", "p-c", "enterprise"], status_url: "https://status.insurity.com/api/v2/status.json", page_url: "https://status.insurity.com", type: "statuspage" },
   { id: "bold_penguin", name: "Bold Penguin", tags: ["insurance", "insurtech", "commercial", "api"], status_url: "https://status.boldpenguin.com/api/v2/status.json", page_url: "https://status.boldpenguin.com", type: "statuspage" },
-
-  // Identity verification
   { id: "intellicheck", name: "Intellicheck", tags: ["identity-verification", "kyc", "fraud", "security"], status_url: "https://status.intellicheck.com/api/v2/status.json", page_url: "https://status.intellicheck.com", type: "statuspage" },
-
-  // Automotive SaaS
   { id: "dealersocket", name: "DealerSocket", tags: ["automotive", "crm", "dealership", "saas"], status_url: "https://status.dealersocket.com/api/v2/status.json", page_url: "https://status.dealersocket.com", type: "statuspage" },
-
-  // Healthcare patient engagement
   { id: "phreesia", name: "Phreesia", tags: ["healthcare", "patient-intake", "practice-management", "saas"], status_url: "https://status.phreesia.net/api/v2/status.json", page_url: "https://status.phreesia.net", type: "statuspage" },
-
-  // Healthcare workflow automation
   { id: "workpath", name: "Workpath", tags: ["healthcare", "workflow", "automation", "saas"], status_url: "https://status.workpath.com/api/v2/status.json", page_url: "https://status.workpath.com", type: "statuspage" },
-
-  // Banking-as-a-Service
   { id: "unit_co", name: "Unit", tags: ["fintech", "banking-as-a-service", "api", "payments"], status_url: "https://status.unit.co/api/v2/status.json", page_url: "https://status.unit.co", type: "statuspage" },
-
-  // Accounting data API (FIS Railz)
   { id: "railz", name: "Railz", tags: ["fintech", "accounting", "data", "api"], status_url: "https://status.railz.ai/api/v2/status.json", page_url: "https://status.railz.ai", type: "statuspage" },
-
-  // Small business management
   { id: "thryv", name: "Thryv", tags: ["small-business", "crm", "marketing", "saas"], status_url: "https://status.thryv.com/api/v2/status.json", page_url: "https://status.thryv.com", type: "statuspage" },
-
-  // Deskless workforce management
   { id: "skedulo", name: "Skedulo", tags: ["workforce-management", "field-service", "scheduling", "saas"], status_url: "https://status.skedulo.com/api/v2/status.json", page_url: "https://status.skedulo.com", type: "statuspage" },
-
-  // Fleet & field operations
   { id: "intellishift", name: "IntelliShift", tags: ["fleet-management", "telematics", "field-operations", "saas"], status_url: "https://status.intellishift.com/api/v2/status.json", page_url: "https://status.intellishift.com", type: "statuspage" },
-
-  // Route optimization
   { id: "routific", name: "Routific", tags: ["logistics", "route-optimization", "delivery", "saas"], status_url: "https://status.routific.com/api/v2/status.json", page_url: "https://status.routific.com", type: "statuspage" },
-
-  // MSP IT visibility
   { id: "liongard", name: "Liongard", tags: ["msp", "it-management", "visibility", "saas"], status_url: "https://status.liongard.com/api/v2/status.json", page_url: "https://status.liongard.com", type: "statuspage" },
-
-  // Restaurant workforce scheduling
   { id: "seven_shifts", name: "7shifts", tags: ["restaurant", "workforce-management", "scheduling", "saas"], status_url: "https://status.7shifts.com/api/v2/status.json", page_url: "https://status.7shifts.com", type: "statuspage" },
   { id: "mavenlink", name: "Mavenlink", tags: ["project-management", "resource-management", "professional-services", "saas"], status_url: "https://status.mavenlink.com/api/v2/status.json", page_url: "https://status.mavenlink.com", type: "statuspage" },
   { id: "liquidplanner", name: "LiquidPlanner", tags: ["project-management", "scheduling", "resource-planning", "saas"], status_url: "https://status.liquidplanner.com/api/v2/status.json", page_url: "https://status.liquidplanner.com", type: "statuspage" },
@@ -2859,995 +2095,429 @@ const SERVICES: ServiceConfig[] = [
   { id: "productiv", name: "Productiv", tags: ["saas-management", "software-analytics", "it", "enterprise"], status_url: "https://status.productiv.com/api/v2/status.json", page_url: "https://status.productiv.com", type: "statuspage" },
   { id: "vena", name: "Vena", tags: ["fpa", "finance", "planning", "enterprise"], status_url: "https://status.vena.io/api/v2/status.json", page_url: "https://status.vena.io", type: "statuspage" },
   { id: "smartvault", name: "SmartVault", tags: ["document-management", "accounting", "file-sharing", "saas"], status_url: "https://status.smartvault.com/api/v2/status.json", page_url: "https://status.smartvault.com", type: "statuspage" },
-  // Tick 161 additions
-  { id: "retool", name: "Retool", tags: ["internal-tools", "no-code", "low-code", "saas"], status_url: "https://status.retool.com/api/v2/status.json", page_url: "https://status.retool.com", type: "statuspage" },
-  { id: "webflow", name: "Webflow", tags: ["website-builder", "no-code", "cms", "hosting"], status_url: "https://status.webflow.com/api/v2/status.json", page_url: "https://status.webflow.com", type: "statuspage" },
-  { id: "plaid", name: "Plaid", tags: ["fintech", "banking", "api", "payments"], status_url: "https://status.plaid.com/api/v2/status.json", page_url: "https://status.plaid.com", type: "statuspage" },
-  { id: "temporal", name: "Temporal", tags: ["workflow", "orchestration", "developer-tools", "cloud"], status_url: "https://temporal.statuspage.io/api/v2/status.json", page_url: "https://temporal.statuspage.io", type: "statuspage" },
-  { id: "fivetran", name: "Fivetran", tags: ["data-integration", "etl", "analytics", "saas"], status_url: "https://status.fivetran.com/api/v2/status.json", page_url: "https://status.fivetran.com", type: "statuspage" },
-  { id: "clerk", name: "Clerk", tags: ["auth", "identity", "developer-tools", "saas"], status_url: "https://status.clerk.com/api/v2/status.json", page_url: "https://status.clerk.com", type: "statuspage" },
-  { id: "upstash", name: "Upstash", tags: ["database", "redis", "serverless", "kafka"], status_url: "https://status.upstash.com/api/v2/status.json", page_url: "https://status.upstash.com", type: "statuspage" },
-  { id: "convex", name: "Convex", tags: ["database", "backend", "serverless", "developer-tools"], status_url: "https://status.convex.dev/api/v2/status.json", page_url: "https://status.convex.dev", type: "statuspage" },
-  { id: "ably", name: "Ably", tags: ["realtime", "messaging", "pubsub", "api"], status_url: "https://status.ably.com/api/v2/status.json", page_url: "https://status.ably.com", type: "statuspage" },
-  { id: "pusher", name: "Pusher", tags: ["realtime", "messaging", "websockets", "api"], status_url: "https://status.pusher.com/api/v2/status.json", page_url: "https://status.pusher.com", type: "statuspage" },
-  { id: "affinity", name: "Affinity", tags: ["crm", "relationships", "sales", "saas"], status_url: "https://status.affinity.co/api/v2/status.json", page_url: "https://status.affinity.co", type: "statuspage" },
   { id: "ashbyhq", name: "Ashby", tags: ["recruiting", "ats", "hr", "saas"], status_url: "https://status.ashbyhq.com/api/v2/status.json", page_url: "https://status.ashbyhq.com", type: "statuspage" },
-  { id: "greenhouse", name: "Greenhouse", tags: ["recruiting", "ats", "hr", "saas"], status_url: "https://status.greenhouse.io/api/v2/status.json", page_url: "https://status.greenhouse.io", type: "statuspage" },
-  { id: "lever", name: "Lever", tags: ["recruiting", "ats", "hr", "saas"], status_url: "https://status.lever.co/api/v2/status.json", page_url: "https://status.lever.co", type: "statuspage" },
-  { id: "rippling", name: "Rippling", tags: ["hr", "payroll", "it", "saas"], status_url: "https://status.rippling.com/api/v2/status.json", page_url: "https://status.rippling.com", type: "statuspage" },
-  { id: "gusto", name: "Gusto", tags: ["hr", "payroll", "benefits", "saas"], status_url: "https://status.gusto.com/api/v2/status.json", page_url: "https://status.gusto.com", type: "statuspage" },
-  { id: "monday", name: "monday.com", tags: ["project-management", "work-os", "collaboration", "saas"], status_url: "https://status.monday.com/api/v2/status.json", page_url: "https://status.monday.com", type: "statuspage" },
-  { id: "drata", name: "Drata", tags: ["compliance", "security", "soc2", "saas"], status_url: "https://status.drata.com/api/v2/status.json", page_url: "https://status.drata.com", type: "statuspage" },
-  { id: "vanta", name: "Vanta", tags: ["compliance", "security", "soc2", "saas"], status_url: "https://status.vanta.com/api/v2/status.json", page_url: "https://status.vanta.com", type: "statuspage" },
-  { id: "launchdarkly", name: "LaunchDarkly", tags: ["feature-flags", "developer-tools", "experimentation", "saas"], status_url: "https://status.launchdarkly.com/api/v2/status.json", page_url: "https://status.launchdarkly.com", type: "statuspage" },
-  { id: "appsflyer", name: "AppsFlyer", tags: ["mobile-analytics", "attribution", "marketing", "saas"], status_url: "https://status.appsflyer.com/api/v2/status.json", page_url: "https://status.appsflyer.com", type: "statuspage" },
-  { id: "attio", name: "Attio", tags: ["crm", "sales", "collaboration", "saas"], status_url: "https://status.attio.com/api/v2/status.json", page_url: "https://status.attio.com", type: "statuspage" },
-  { id: "kustomer", name: "Kustomer", tags: ["customer-service", "crm", "helpdesk", "saas"], status_url: "https://status.kustomer.com/api/v2/status.json", page_url: "https://status.kustomer.com", type: "statuspage" },
-  // Wellness / mental health
   { id: "calm", name: "Calm", tags: ["wellness", "meditation", "mindfulness", "mobile"], status_url: "https://status.calm.com/api/v2/status.json", page_url: "https://status.calm.com", type: "statuspage" },
-  // Healthcare data / interoperability
   { id: "particle_health", name: "Particle Health", tags: ["healthcare", "health-data", "api", "interoperability"], status_url: "https://status.particlehealth.com/api/v2/status.json", page_url: "https://status.particlehealth.com", type: "statuspage" },
-  // Gaming / Xbox
   { id: "xbox_live", name: "Xbox Live", tags: ["gaming", "microsoft", "console", "online"], status_url: "https://xboxlive.statuspage.io/api/v2/status.json", page_url: "https://xboxlive.statuspage.io", type: "statuspage" },
-  // Music / live events
   { id: "bandsintown", name: "Bandsintown", tags: ["music", "events", "ticketing", "entertainment"], status_url: "https://status.bandsintown.com/api/v2/status.json", page_url: "https://status.bandsintown.com", type: "statuspage" },
-  // Cloud infrastructure
   { id: "latitude_sh", name: "Latitude.sh", tags: ["cloud", "infrastructure", "bare-metal", "hosting"], status_url: "https://status.latitude.sh/api/v2/status.json", page_url: "https://status.latitude.sh", type: "statuspage" },
-  // HR / payroll / workforce
   { id: "employment_hero", name: "Employment Hero", tags: ["hr", "payroll", "workforce", "saas"], status_url: "https://status.employmenthero.com/api/v2/status.json", page_url: "https://status.employmenthero.com", type: "statuspage" },
   { id: "tanda", name: "Tanda", tags: ["workforce", "scheduling", "hr", "time-tracking"], status_url: "https://status.tanda.co/api/v2/status.json", page_url: "https://status.tanda.co", type: "statuspage" },
   { id: "rotageek", name: "Rotageek", tags: ["workforce", "scheduling", "retail", "hr"], status_url: "https://status.rotageek.com/api/v2/status.json", page_url: "https://status.rotageek.com", type: "statuspage" },
   { id: "breathehr", name: "Breathe HR", tags: ["hr", "sme", "uk", "saas"], status_url: "https://status.breathehr.com/api/v2/status.json", page_url: "https://status.breathehr.com", type: "statuspage" },
-  // Payments
   { id: "tyro", name: "Tyro", tags: ["payments", "fintech", "eftpos", "australia"], status_url: "https://status.tyro.com/api/v2/status.json", page_url: "https://status.tyro.com", type: "statuspage" },
-  // No-code / workflow
   { id: "trackvia", name: "TrackVia", tags: ["no-code", "workflow", "database", "operations"], status_url: "https://status.trackvia.com/api/v2/status.json", page_url: "https://status.trackvia.com", type: "statuspage" },
-  // E-commerce / supply chain
   { id: "logicbroker", name: "Logicbroker", tags: ["ecommerce", "supply-chain", "drop-shipping", "integration"], status_url: "https://status.logicbroker.com/api/v2/status.json", page_url: "https://status.logicbroker.com", type: "statuspage" },
-  // Expense management
   { id: "emburse_professional", name: "Emburse Professional", tags: ["expense-management", "travel", "finance", "enterprise"], status_url: "https://status.certify.com/api/v2/status.json", page_url: "https://status.certify.com", type: "statuspage" },
-  // API management / integration platform
   { id: "axway", name: "Axway", tags: ["api-management", "integration", "enterprise", "mft"], status_url: "https://status.axway.com/api/v2/status.json", page_url: "https://status.axway.com", type: "statuspage" },
-  // Sales commissions / incentive compensation
   { id: "captivateiq", name: "CaptivateIQ", tags: ["sales", "commissions", "incentive-compensation", "saas"], status_url: "https://status.captivateiq.com/api/v2/status.json", page_url: "https://status.captivateiq.com", type: "statuspage" },
-  // VoIP / telephony (Germany / Europe)
   { id: "sipgate", name: "sipgate", tags: ["voip", "telephony", "communication", "germany"], status_url: "https://status.sipgate.de/api/v2/status.json", page_url: "https://status.sipgate.de", type: "statuspage" },
-  // EdTech — quiz / assessment
   { id: "socrative", name: "Socrative", tags: ["edtech", "quiz", "assessment", "education"], status_url: "https://status.socrative.com/api/v2/status.json", page_url: "https://status.socrative.com", type: "statuspage" },
-  // Financial crime / risk management
   { id: "abrigo", name: "Abrigo", tags: ["fintech", "financial-crime", "risk-management", "banking"], status_url: "https://status.abrigo.com/api/v2/status.json", page_url: "https://status.abrigo.com", type: "statuspage" },
-  // IT monitoring / observability
   { id: "logicmonitor", name: "LogicMonitor", tags: ["monitoring", "observability", "infrastructure", "it-ops"], status_url: "https://status.logicmonitor.com/api/v2/status.json", page_url: "https://status.logicmonitor.com", type: "statuspage" },
-  // Video monetization / OTT
   { id: "uscreen", name: "Uscreen", tags: ["video", "ott", "monetization", "streaming"], status_url: "https://status.uscreen.tv/api/v2/status.json", page_url: "https://status.uscreen.tv", type: "statuspage" },
-  // Religious / bible software
   { id: "faithlife", name: "Faithlife", tags: ["faith", "church", "bible", "software"], status_url: "https://status.faithlife.com/api/v2/status.json", page_url: "https://status.faithlife.com", type: "statuspage" },
-  // Church tech / mobile apps
   { id: "subsplash", name: "Subsplash", tags: ["church", "faith", "mobile-apps", "giving"], status_url: "https://status.subsplash.com/api/v2/status.json", page_url: "https://status.subsplash.com", type: "statuspage" },
-  // Automotive DMS / retail tech
   { id: "tekion", name: "Tekion", tags: ["automotive", "dms", "retail-tech", "cloud"], status_url: "https://status.tekion.com/api/v2/status.json", page_url: "https://status.tekion.com", type: "statuspage" },
-  // Data management platform / DMP
   { id: "lotame", name: "Lotame", tags: ["data-management", "dmp", "advertising", "audience"], status_url: "https://status.lotame.com/api/v2/status.json", page_url: "https://status.lotame.com", type: "statuspage" },
-  // Data connectivity / clean room
   { id: "liveramp", name: "LiveRamp", tags: ["data-connectivity", "clean-room", "identity", "advertising"], status_url: "https://status.liveramp.com/api/v2/status.json", page_url: "https://status.liveramp.com", type: "statuspage" },
-  // CDP / customer data platform (EU)
   { id: "zeotap", name: "Zeotap", tags: ["cdp", "customer-data", "identity", "advertising"], status_url: "https://status.zeotap.com/api/v2/status.json", page_url: "https://status.zeotap.com", type: "statuspage" },
-  // Buy now pay later (Italy / EU)
   { id: "scalapay", name: "Scalapay", tags: ["bnpl", "payments", "fintech", "europe"], status_url: "https://status.scalapay.com/api/v2/status.json", page_url: "https://status.scalapay.com", type: "statuspage" },
-  // Video tech for publishers / ad monetization
   { id: "connatix", name: "Connatix", tags: ["video", "publishing", "advertising", "monetization"], status_url: "https://status.connatix.com/api/v2/status.json", page_url: "https://status.connatix.com", type: "statuspage" },
-  // Professional services automation (PSA)
   { id: "accelo", name: "Accelo", tags: ["psa", "professional-services", "project-management", "saas"], status_url: "https://status.accelo.com/api/v2/status.json", page_url: "https://status.accelo.com", type: "statuspage" },
-  // BPM / workflow automation
   { id: "processmaker", name: "ProcessMaker", tags: ["bpm", "workflow-automation", "process-management", "saas"], status_url: "https://status.processmaker.com/api/v2/status.json", page_url: "https://status.processmaker.com", type: "statuspage" },
-  // File storage / cloud storage
-  { id: "dropbox", name: "Dropbox", tags: ["storage", "file-sharing", "cloud", "saas"], status_url: "https://status.dropbox.com/api/v2/status.json", page_url: "https://status.dropbox.com", type: "statuspage" },
-  { id: "box", name: "Box", tags: ["storage", "file-sharing", "cloud", "saas", "collaboration"], status_url: "https://status.box.com/api/v2/status.json", page_url: "https://status.box.com", type: "statuspage" },
-  // Design / collaboration
-  { id: "figma", name: "Figma", tags: ["design", "collaboration", "saas", "devtools"], status_url: "https://status.figma.com/api/v2/status.json", page_url: "https://status.figma.com", type: "statuspage" },
-  // Product analytics / data
-  { id: "amplitude", name: "Amplitude", tags: ["analytics", "product-analytics", "saas", "data"], status_url: "https://status.amplitude.com/api/v2/status.json", page_url: "https://status.amplitude.com", type: "statuspage" },
-  { id: "segment", name: "Segment", tags: ["cdp", "analytics", "data", "saas"], status_url: "https://status.segment.com/api/v2/status.json", page_url: "https://status.segment.com", type: "statuspage" },
-  // Error tracking / observability
-  { id: "sentry", name: "Sentry", tags: ["error-tracking", "monitoring", "observability", "devtools"], status_url: "https://status.sentry.io/api/v2/status.json", page_url: "https://status.sentry.io", type: "statuspage" },
-  // Email / SMS / marketing automation
-  { id: "klaviyo", name: "Klaviyo", tags: ["email", "sms", "marketing-automation", "ecommerce"], status_url: "https://status.klaviyo.com/api/v2/status.json", page_url: "https://status.klaviyo.com", type: "statuspage" },
-  { id: "activecampaign", name: "ActiveCampaign", tags: ["email", "marketing-automation", "crm", "saas"], status_url: "https://status.activecampaign.com/api/v2/status.json", page_url: "https://status.activecampaign.com", type: "statuspage" },
-  // CRM / customer success
-  { id: "hubspot", name: "HubSpot", tags: ["crm", "marketing-automation", "saas", "sales"], status_url: "https://status.hubspot.com/api/v2/status.json", page_url: "https://status.hubspot.com", type: "statuspage" },
-  { id: "intercom", name: "Intercom", tags: ["crm", "customer-messaging", "support", "saas"], status_url: "https://www.intercomstatus.com/api/v2/status.json", page_url: "https://www.intercomstatus.com", type: "statuspage" },
-  // Database / nocode
-  { id: "airtable", name: "Airtable", tags: ["database", "nocode", "collaboration", "saas"], status_url: "https://status.airtable.com/api/v2/status.json", page_url: "https://status.airtable.com", type: "statuspage" },
-  // Project management / issue tracking
-  { id: "asana", name: "Asana", tags: ["project-management", "task-management", "collaboration", "saas"], status_url: "https://status.asana.com/api/v2/status.json", page_url: "https://status.asana.com", type: "statuspage" },
-  // Automation / integration
-  { id: "zapier", name: "Zapier", tags: ["automation", "integration", "nocode", "saas"], status_url: "https://status.zapier.com/api/v2/status.json", page_url: "https://status.zapier.com", type: "statuspage" },
-  { id: "make", name: "Make", tags: ["automation", "integration", "nocode", "saas"], status_url: "https://status.make.com/api/v2/status.json", page_url: "https://status.make.com", type: "statuspage" },
-  // Forms / surveys
-  { id: "typeform", name: "Typeform", tags: ["forms", "surveys", "saas", "data-collection"], status_url: "https://status.typeform.com/api/v2/status.json", page_url: "https://status.typeform.com", type: "statuspage" },
-  // Hosting / PaaS / JAMstack
-  { id: "fly", name: "Fly.io", tags: ["hosting", "paas", "containers", "cloud"], status_url: "https://status.flyio.net/api/v2/status.json", page_url: "https://status.flyio.net", type: "statuspage" },
-  { id: "netlify", name: "Netlify", tags: ["hosting", "jamstack", "cdn", "saas"], status_url: "https://www.netlifystatus.com/api/v2/status.json", page_url: "https://www.netlifystatus.com", type: "statuspage" },
-  { id: "vercel", name: "Vercel", tags: ["hosting", "jamstack", "cdn", "frontend"], status_url: "https://www.vercel-status.com/api/v2/status.json", page_url: "https://www.vercel-status.com", type: "statuspage" },
-  // QA / testing tools
   { id: "testrail", name: "TestRail", tags: ["testing", "qa", "test-management", "devtools"], status_url: "https://status.testrail.com/api/v2/status.json", page_url: "https://status.testrail.com", type: "statuspage" },
-  // Fitness / health consumer
   { id: "myfitnesspal", name: "MyFitnessPal", tags: ["fitness", "health", "wellness", "consumer"], status_url: "https://status.myfitnesspal.com/api/v2/status.json", page_url: "https://status.myfitnesspal.com", type: "statuspage" },
-  // Workforce scheduling for hourly workers
   { id: "homebase", name: "Homebase", tags: ["workforce", "scheduling", "hr", "smb"], status_url: "https://status.joinhomebase.com/api/v2/status.json", page_url: "https://status.joinhomebase.com", type: "statuspage" },
-  // B2B supply chain / invoicing network
   { id: "tradeshift", name: "Tradeshift", tags: ["supply-chain", "procurement", "invoicing", "b2b"], status_url: "https://status.tradeshift.com/api/v2/status.json", page_url: "https://status.tradeshift.com", type: "statuspage" },
-  // Construction project management ERP
   { id: "viewpoint", name: "Viewpoint", tags: ["construction", "erp", "project-management", "enterprise"], status_url: "https://status.viewpoint.com/api/v2/status.json", page_url: "https://status.viewpoint.com", type: "statuspage" },
-  // Cloud IaaS (Europe / global)
   { id: "cloudsigma", name: "CloudSigma", tags: ["cloud", "iaas", "hosting", "infrastructure"], status_url: "https://status.cloudsigma.com/api/v2/status.json", page_url: "https://status.cloudsigma.com", type: "statuspage" },
-  // Telehealth / EHR platform
   { id: "healthie", name: "Healthie", tags: ["healthcare", "telehealth", "ehr", "wellness"], status_url: "https://status.gethealthie.com/api/v2/status.json", page_url: "https://status.gethealthie.com", type: "statuspage" },
-  // Beauty & wellness appointment booking
   { id: "booksy", name: "Booksy", tags: ["booking", "beauty", "wellness", "appointments"], status_url: "https://status.booksy.com/api/v2/status.json", page_url: "https://status.booksy.com", type: "statuspage" },
-  // Legal e-discovery / document review
   { id: "logikcull", name: "Logikcull", tags: ["legal", "ediscovery", "document-review", "saas"], status_url: "https://status.logikcull.com/api/v2/status.json", page_url: "https://status.logikcull.com", type: "statuspage" },
   { id: "everlaw", name: "Everlaw", tags: ["legal", "ediscovery", "litigation", "saas"], status_url: "https://status.everlaw.com/api/v2/status.json", page_url: "https://status.everlaw.com", type: "statuspage" },
-  // Healthcare / dental office communications platform
   { id: "weave", name: "Weave", tags: ["healthcare", "dental", "patient-communications", "saas"], status_url: "https://status.getweave.com/api/v2/status.json", page_url: "https://status.getweave.com", type: "statuspage" },
-  // Nonprofit fundraising platforms
   { id: "funraise", name: "Funraise", tags: ["nonprofit", "fundraising", "donations", "saas"], status_url: "https://status.funraise.org/api/v2/status.json", page_url: "https://status.funraise.org", type: "statuspage" },
   { id: "kindful", name: "Kindful", tags: ["nonprofit", "crm", "fundraising", "donor-management"], status_url: "https://status.kindful.com/api/v2/status.json", page_url: "https://status.kindful.com", type: "statuspage" },
-  // Secrets management / zero-trust security
   { id: "akeyless", name: "Akeyless", tags: ["security", "secrets-management", "zero-trust", "devops"], status_url: "https://status.akeyless.io/api/v2/status.json", page_url: "https://status.akeyless.io", type: "statuspage" },
-  // AI / LLM providers
-  { id: "ai21", name: "AI21 Labs", tags: ["ai", "llm", "api"], status_url: "https://status.ai21.com/api/v2/status.json", page_url: "https://status.ai21.com", type: "statuspage" },
   { id: "stability", name: "Stability AI", tags: ["ai", "image-gen", "api"], status_url: "https://status.stability.ai/api/v2/status.json", page_url: "https://status.stability.ai", type: "statuspage" },
-  { id: "runway", name: "RunwayML", tags: ["ai", "video-gen", "creative", "api"], status_url: "https://status.runwayml.com/api/v2/status.json", page_url: "https://status.runwayml.com", type: "statuspage" },
-  { id: "elevenlabs", name: "ElevenLabs", tags: ["ai", "voice", "tts", "api"], status_url: "https://status.elevenlabs.io/api/v2/status.json", page_url: "https://status.elevenlabs.io", type: "statuspage" },
-  { id: "assemblyai", name: "AssemblyAI", tags: ["ai", "speech-to-text", "transcription", "api"], status_url: "https://status.assemblyai.com/api/v2/status.json", page_url: "https://status.assemblyai.com", type: "statuspage" },
-  { id: "deepgram", name: "Deepgram", tags: ["ai", "speech", "transcription", "api"], status_url: "https://status.deepgram.com/api/v2/status.json", page_url: "https://status.deepgram.com", type: "statuspage" },
-  { id: "cartesia", name: "Cartesia", tags: ["ai", "tts", "voice", "api"], status_url: "https://status.cartesia.ai/api/v2/status.json", page_url: "https://status.cartesia.ai", type: "statuspage" },
-  // AI dev tools
-  { id: "tabnine", name: "Tabnine", tags: ["ai", "devtools", "code-completion", "ide"], status_url: "https://status.tabnine.com/api/v2/status.json", page_url: "https://status.tabnine.com", type: "statuspage" },
-  { id: "cursor", name: "Cursor", tags: ["ai", "devtools", "ide", "code-editor"], status_url: "https://status.cursor.com/api/v2/status.json", page_url: "https://status.cursor.com", type: "statuspage" },
-  { id: "langsmith", name: "LangSmith", tags: ["ai", "llm-ops", "devtools", "observability"], status_url: "https://status.smith.langchain.com/api/v2/status.json", page_url: "https://status.smith.langchain.com", type: "statuspage" },
-  { id: "pinecone", name: "Pinecone", tags: ["ai", "vector-db", "database", "api"], status_url: "https://status.pinecone.io/api/v2/status.json", page_url: "https://status.pinecone.io", type: "statuspage" },
-  // Security / password management
-  { id: "onepassword", name: "1Password", tags: ["security", "password-manager", "identity"], status_url: "https://status.1password.com/api/v2/status.json", page_url: "https://status.1password.com", type: "statuspage" },
-  { id: "nordpass", name: "NordPass", tags: ["security", "password-manager", "identity"], status_url: "https://status.nordpass.com/api/v2/status.json", page_url: "https://status.nordpass.com", type: "statuspage" },
-  // Auth / identity
-  { id: "clerk", name: "Clerk", tags: ["auth", "identity", "api", "devtools"], status_url: "https://status.clerk.com/api/v2/status.json", page_url: "https://status.clerk.com", type: "statuspage" },
-  // Payments / fintech
-  { id: "klarna", name: "Klarna", tags: ["payments", "fintech", "bnpl", "ecommerce"], status_url: "https://status.klarna.com/api/v2/status.json", page_url: "https://status.klarna.com", type: "statuspage" },
-  { id: "afterpay", name: "Afterpay", tags: ["payments", "fintech", "bnpl", "ecommerce"], status_url: "https://status.afterpay.com/api/v2/status.json", page_url: "https://status.afterpay.com", type: "statuspage" },
-  { id: "wise", name: "Wise", tags: ["fintech", "payments", "banking", "money-transfer"], status_url: "https://status.wise.com/api/v2/status.json", page_url: "https://status.wise.com", type: "statuspage" },
-  // Cloud storage
-  { id: "box", name: "Box", tags: ["storage", "cloud", "collaboration", "saas"], status_url: "https://status.box.com/api/v2/status.json", page_url: "https://status.box.com", type: "statuspage" },
-  { id: "dropbox", name: "Dropbox", tags: ["storage", "cloud", "collaboration", "saas"], status_url: "https://status.dropbox.com/api/v2/status.json", page_url: "https://status.dropbox.com", type: "statuspage" },
-  // CRM / marketing
-  { id: "hubspot", name: "HubSpot", tags: ["crm", "marketing", "sales", "saas"], status_url: "https://status.hubspot.com/api/v2/status.json", page_url: "https://status.hubspot.com", type: "statuspage" },
-  // Project management / collaboration
-  { id: "airtable", name: "Airtable", tags: ["database", "collaboration", "project-management", "saas"], status_url: "https://status.airtable.com/api/v2/status.json", page_url: "https://status.airtable.com", type: "statuspage" },
-  { id: "monday", name: "Monday.com", tags: ["project-management", "collaboration", "saas"], status_url: "https://status.monday.com/api/v2/status.json", page_url: "https://status.monday.com", type: "statuspage" },
-  { id: "asana", name: "Asana", tags: ["project-management", "collaboration", "saas"], status_url: "https://status.asana.com/api/v2/status.json", page_url: "https://status.asana.com", type: "statuspage" },
-  // Atlassian products
   { id: "jira", name: "Jira", tags: ["devtools", "project-management", "atlassian", "issue-tracking"], status_url: "https://jira-software.status.atlassian.com/api/v2/status.json", page_url: "https://jira-software.status.atlassian.com", type: "statuspage" },
-  { id: "confluence", name: "Confluence", tags: ["collaboration", "wiki", "atlassian", "documentation"], status_url: "https://confluence.status.atlassian.com/api/v2/status.json", page_url: "https://confluence.status.atlassian.com", type: "statuspage" },
-  // Customer support / communications
-  { id: "intercom", name: "Intercom", tags: ["customer-support", "communication", "saas", "crm"], status_url: "https://www.intercomstatus.com/api/v2/status.json", page_url: "https://www.intercomstatus.com", type: "statuspage" },
-  // AI / LLM providers
   { id: "deepseek", name: "DeepSeek", tags: ["ai", "llm", "api"], status_url: "https://deepseek.statuspage.io/api/v2/status.json", page_url: "https://status.deepseek.com", type: "statuspage" },
-  // Social / professional networks
   { id: "linkedin_api", name: "LinkedIn API", tags: ["social", "professional", "api"], status_url: "https://linkedin.statuspage.io/api/v2/status.json", page_url: "https://www.linkedin-apistatus.com", type: "statuspage" },
   { id: "tumblr", name: "Tumblr", tags: ["social", "blogging", "consumer"], status_url: "https://tumblr.statuspage.io/api/v2/status.json", page_url: "https://tumblr.statuspage.io", type: "statuspage" },
-  // Music / streaming
   { id: "spotify", name: "Spotify", tags: ["music", "streaming", "consumer"], status_url: "https://spotify.statuspage.io/api/v2/status.json", page_url: "https://spotify.statuspage.io", type: "statuspage" },
-  // Ride-share / delivery
   { id: "uber", name: "Uber", tags: ["rideshare", "delivery", "consumer"], status_url: "https://uber.statuspage.io/api/v2/status.json", page_url: "https://uber.statuspage.io", type: "statuspage" },
   { id: "lyft", name: "Lyft", tags: ["rideshare", "consumer"], status_url: "https://lyft.statuspage.io/api/v2/status.json", page_url: "https://lyft.statuspage.io", type: "statuspage" },
   { id: "doordash", name: "DoorDash", tags: ["food-delivery", "consumer", "marketplace"], status_url: "https://doordash.statuspage.io/api/v2/status.json", page_url: "https://www.doordashstatus.com", type: "statuspage" },
   { id: "deliveroo", name: "Deliveroo", tags: ["food-delivery", "consumer", "marketplace"], status_url: "https://deliveroo.statuspage.io/api/v2/status.json", page_url: "https://status.deliveroo.com", type: "statuspage" },
   { id: "just_eat", name: "Just Eat", tags: ["food-delivery", "consumer", "marketplace"], status_url: "https://justeat.statuspage.io/api/v2/status.json", page_url: "https://justeat.statuspage.io", type: "statuspage" },
-  // Payments / fintech
   { id: "mastercard", name: "Mastercard", tags: ["payments", "fintech", "banking"], status_url: "https://mastercard.statuspage.io/api/v2/status.json", page_url: "https://mastercard.statuspage.io", type: "statuspage" },
   { id: "mx_merchant", name: "MX Merchant", tags: ["payments", "fintech", "merchant"], status_url: "https://status.mxmerchant.com/api/v2/status.json", page_url: "https://status.mxmerchant.com", type: "statuspage" },
-  // Retail / e-commerce
   { id: "walmart", name: "Walmart", tags: ["retail", "ecommerce", "consumer"], status_url: "https://walmart.statuspage.io/api/v2/status.json", page_url: "https://walmart.statuspage.io", type: "statuspage" },
-  // Gaming
   { id: "steam_platform", name: "Steam", tags: ["gaming", "platform", "consumer"], status_url: "https://steam2.statuspage.io/api/v2/status.json", page_url: "https://steam2.statuspage.io", type: "statuspage" },
-  // Weather / data
   { id: "accuweather", name: "AccuWeather", tags: ["weather", "data", "api"], status_url: "https://accuweather.statuspage.io/api/v2/status.json", page_url: "https://status.accuweather.com", type: "statuspage" },
-  // Developer tools / web
   { id: "zyte", name: "Zyte", tags: ["scraping", "web", "data", "api"], status_url: "https://status.zyte.com/api/v2/status.json", page_url: "https://status.zyte.com", type: "statuspage" },
   { id: "kraken_io", name: "Kraken.io", tags: ["image-optimization", "cdn", "api"], status_url: "https://kraken.statuspage.io/api/v2/status.json", page_url: "https://status.kraken.io", type: "statuspage" },
-  // Tick 168 additions
-  // Gaming / consumer
   { id: "roblox", name: "Roblox", tags: ["gaming", "platform", "consumer"], status_url: "https://api.status.io/1.0/status/59db90dbcdeb2f04dadcf16d", page_url: "https://status.roblox.com", type: "statusio" },
-  // WordPress managed hosting
   { id: "pagely", name: "Pagely", tags: ["hosting", "wordpress", "managed", "cloud"], status_url: "https://status.pagely.com/api/v2/status.json", page_url: "https://status.pagely.com", type: "statuspage" },
   { id: "wpcloud", name: "WordPress.com Cloud", tags: ["hosting", "wordpress", "cloud", "managed"], status_url: "https://wpcloud.statuspage.io/api/v2/status.json", page_url: "https://wpcloud.statuspage.io", type: "statuspage" },
-  // CI/CD
-  { id: "circleci", name: "CircleCI", tags: ["ci-cd", "devtools", "automation", "cloud"], status_url: "https://circleci.statuspage.io/api/v2/status.json", page_url: "https://circleci.statuspage.io", type: "statuspage" },
-  { id: "bitbucket", name: "Bitbucket", tags: ["git", "devtools", "ci-cd", "atlassian"], status_url: "https://bitbucket.statuspage.io/api/v2/status.json", page_url: "https://bitbucket.statuspage.io", type: "statuspage" },
   { id: "nx_cloud", name: "Nx Cloud", tags: ["ci-cd", "devtools", "monorepo", "build-cache"], status_url: "https://status.nx.app/api/v2/status.json", page_url: "https://status.nx.app", type: "statuspage" },
-  // Community / online courses
   { id: "mighty_networks", name: "Mighty Networks", tags: ["community", "courses", "membership", "saas"], status_url: "https://status.mightynetworks.com/api/v2/status.json", page_url: "https://status.mightynetworks.com", type: "statuspage" },
-  // Email marketing
   { id: "constant_contact", name: "Constant Contact", tags: ["email", "marketing", "crm", "saas"], status_url: "https://status.constantcontact.com/api/v2/status.json", page_url: "https://status.constantcontact.com", type: "statuspage" },
-  // DevOps / infrastructure configuration
   { id: "chef", name: "Chef", tags: ["devops", "infrastructure", "configuration-management", "automation"], status_url: "https://status.chef.io/api/v2/status.json", page_url: "https://status.chef.io", type: "statuspage" },
   { id: "puppet", name: "Puppet", tags: ["devops", "infrastructure", "configuration-management", "automation"], status_url: "https://puppet.statuspage.io/api/v2/status.json", page_url: "https://puppet.statuspage.io", type: "statuspage" },
-  // Enterprise Linux / developer platform
   { id: "redhat", name: "Red Hat", tags: ["linux", "enterprise", "cloud", "developer-platform"], status_url: "https://status.redhat.com/api/v2/status.json", page_url: "https://status.redhat.com", type: "statuspage" },
-  // Analytics / OLAP database
   { id: "firebolt", name: "Firebolt", tags: ["database", "analytics", "olap", "cloud"], status_url: "https://status.firebolt.io/api/v2/status.json", page_url: "https://status.firebolt.io", type: "statuspage" },
-  // Tick 169 additions
-  // Identity verification
   { id: "idnow", name: "IDnow", tags: ["identity", "kyc", "verification", "security"], status_url: "https://idnow.statuspage.io/api/v2/status.json", page_url: "https://idnow.statuspage.io", type: "statuspage" },
   { id: "jumio", name: "Jumio", tags: ["identity", "kyc", "verification", "security"], status_url: "https://jumio.statuspage.io/api/v2/status.json", page_url: "https://jumio.statuspage.io", type: "statuspage" },
-  // Background screening
   { id: "sterling", name: "Sterling", tags: ["background-check", "hr", "compliance", "screening"], status_url: "https://sterling.statuspage.io/api/v2/status.json", page_url: "https://sterling.statuspage.io", type: "statuspage" },
   { id: "accurate", name: "Accurate Background", tags: ["background-check", "hr", "compliance", "screening"], status_url: "https://status.accurate.com/api/v2/status.json", page_url: "https://status.accurate.com", type: "statuspage" },
   { id: "cisive", name: "Cisive", tags: ["background-check", "hr", "compliance", "screening"], status_url: "https://status.cisive.com/api/v2/status.json", page_url: "https://status.cisive.com", type: "statuspage" },
-  // Insurance tech
   { id: "hippo", name: "Hippo Insurance", tags: ["insurance", "insurtech", "consumer"], status_url: "https://hippo.statuspage.io/api/v2/status.json", page_url: "https://hippo.statuspage.io", type: "statuspage" },
-  // Scheduling
   { id: "cal_com", name: "Cal.com", tags: ["scheduling", "calendar", "productivity", "open-source"], status_url: "https://cal.statuspage.io/api/v2/status.json", page_url: "https://cal.statuspage.io", type: "statuspage" },
-  // Gaming platforms
   { id: "nexon", name: "Nexon", tags: ["gaming", "platform", "consumer"], status_url: "https://nexon.statuspage.io/api/v2/status.json", page_url: "https://nexon.statuspage.io", type: "statuspage" },
   { id: "garena", name: "Garena", tags: ["gaming", "platform", "consumer"], status_url: "https://garena.statuspage.io/api/v2/status.json", page_url: "https://garena.statuspage.io", type: "statuspage" },
   { id: "gearbox", name: "Gearbox SHiFT", tags: ["gaming", "platform", "consumer"], status_url: "https://status.gearbox.com/api/v2/status.json", page_url: "https://status.gearbox.com", type: "statuspage" },
-  // Package registry
   { id: "gemfury", name: "Gemfury", tags: ["package-registry", "devtools", "hosting"], status_url: "https://status.gemfury.com/api/v2/status.json", page_url: "https://status.gemfury.com", type: "statuspage" },
-  // Field service management
   { id: "jobber", name: "Jobber", tags: ["field-service", "smb", "crm", "saas"], status_url: "https://jobber.statuspage.io/api/v2/status.json", page_url: "https://jobber.statuspage.io", type: "statuspage" },
-  // Construction management
   { id: "esub", name: "eSUB Construction Software", tags: ["construction", "project-management", "field-service", "saas"], status_url: "https://status.esub.com/api/v2/status.json", page_url: "https://status.esub.com", type: "statuspage" },
-  // Property / rental tech
   { id: "rently", name: "Rently", tags: ["real-estate", "property-management", "saas"], status_url: "https://status.rently.com/api/v2/status.json", page_url: "https://status.rently.com", type: "statuspage" },
-  // Telecom / identity verification
   { id: "telesign", name: "TeleSign", tags: ["communication", "sms", "verification", "cpaas", "api"], status_url: "https://status.telesign.com/api/v2/status.json", page_url: "https://status.telesign.com", type: "statuspage" },
-  // Enterprise file sync
   { id: "syncplicity", name: "Syncplicity", tags: ["cloud-storage", "file-sync", "enterprise", "collaboration"], status_url: "https://status.syncplicity.com/api/v2/status.json", page_url: "https://status.syncplicity.com", type: "statuspage" },
-  // Event management
   { id: "stova", name: "Stova", tags: ["events", "event-management", "saas"], status_url: "https://status.stova.io/api/v2/status.json", page_url: "https://status.stova.io", type: "statuspage" },
-  // Network intelligence / observability
   { id: "thousandeyes", name: "ThousandEyes (Cisco)", tags: ["monitoring", "network", "observability", "cisco"], status_url: "https://status.thousandeyes.com/api/v2/status.json", page_url: "https://status.thousandeyes.com", type: "statuspage" },
-  // Last-mile delivery
   { id: "lalamove", name: "Lalamove", tags: ["delivery", "logistics", "last-mile", "api"], status_url: "https://status.lalamove.com/api/v2/status.json", page_url: "https://status.lalamove.com", type: "statuspage" },
-  // Time-series database cloud
   { id: "influxdb_cloud", name: "InfluxDB Cloud", tags: ["database", "time-series", "cloud", "monitoring", "observability"], status_url: "https://status.influxdata.com/api/v2/status.json", page_url: "https://status.influxdata.com", type: "statuspage" },
-  // CDN / video delivery
   { id: "bunny_net", name: "bunny.net", tags: ["cdn", "infrastructure", "video", "hosting"], status_url: "https://status.bunny.net/api/v2/status.json", page_url: "https://status.bunny.net", type: "statuspage" },
-  // Accessibility testing
   { id: "evinced", name: "Evinced", tags: ["accessibility", "testing", "devtools"], status_url: "https://status.evinced.com/api/v2/status.json", page_url: "https://status.evinced.com", type: "statuspage" },
-  // Transactional email templates
   { id: "sendwithus", name: "Sendwithus", tags: ["email", "transactional", "templates", "api"], status_url: "https://status.sendwithus.com/api/v2/status.json", page_url: "https://status.sendwithus.com", type: "statuspage" },
-  // Workflow automation
   { id: "pipefy", name: "Pipefy", tags: ["workflow", "automation", "no-code", "process-management", "saas"], status_url: "https://status.pipefy.com/api/v2/status.json", page_url: "https://status.pipefy.com", type: "statuspage" },
-  // Scheduling
   { id: "doodle", name: "Doodle", tags: ["scheduling", "calendar", "productivity", "saas"], status_url: "https://doodle.statuspage.io/api/v2/status.json", page_url: "https://doodle.statuspage.io", type: "statuspage" },
-  // File transfer
   { id: "wetransfer", name: "WeTransfer", tags: ["file-sharing", "cloud-storage", "collaboration"], status_url: "https://status.wetransfer.com/api/v2/status.json", page_url: "https://status.wetransfer.com", type: "statuspage" },
-  // Package registries
-  { id: "pypi", name: "PyPI", tags: ["package-registry", "python", "devtools", "open-source"], status_url: "https://status.python.org/api/v2/status.json", page_url: "https://status.python.org", type: "statuspage" },
-  { id: "hex_pm", name: "Hex.pm", tags: ["package-registry", "elixir", "erlang", "devtools", "open-source"], status_url: "https://hex.statuspage.io/api/v2/status.json", page_url: "https://hex.statuspage.io", type: "statuspage" },
   { id: "cocoapods", name: "CocoaPods", tags: ["package-registry", "ios", "macos", "swift", "devtools", "open-source"], status_url: "https://cocoapods.statuspage.io/api/v2/status.json", page_url: "https://cocoapods.statuspage.io", type: "statuspage" },
-  // Gaming
   { id: "geforce_now", name: "NVIDIA GeForce NOW", tags: ["gaming", "cloud-gaming", "streaming", "nvidia"], status_url: "https://status.geforcenow.com/api/v2/status.json", page_url: "https://status.geforcenow.com", type: "statuspage" },
   { id: "psn", name: "PlayStation Network", tags: ["gaming", "platform", "consumer", "sony"], status_url: "https://psn.statuspage.io/api/v2/status.json", page_url: "https://psn.statuspage.io", type: "statuspage" },
-  // Web3 / blockchain infrastructure
-  { id: "alchemy", name: "Alchemy", tags: ["web3", "blockchain", "api", "developer-tools", "ethereum"], status_url: "https://alchemyapi.statuspage.io/api/v2/status.json", page_url: "https://alchemyapi.statuspage.io", type: "statuspage" },
-  // DNS
   { id: "dnssimple", name: "DNSimple", tags: ["dns", "domains", "infrastructure", "api"], status_url: "https://dnsimplestatus.com/api/v2/status.json", page_url: "https://dnsimplestatus.com", type: "statuspage" },
-  // Payments
-  { id: "authorizenet", name: "Authorize.Net", tags: ["payments", "payment-processing", "fintech", "api"], status_url: "https://status.authorize.net/api/v2/status.json", page_url: "https://status.authorize.net", type: "statuspage" },
   { id: "pay_com", name: "Pay.com", tags: ["payments", "payment-processing", "fintech", "api"], status_url: "https://status.pay.com/api/v2/status.json", page_url: "https://status.pay.com", type: "statuspage" },
-  // AI/LLM platforms
   { id: "poe", name: "Poe", tags: ["ai", "llm", "chatbot", "platform"], status_url: "https://status.poe.com/api/v2/status.json", page_url: "https://status.poe.com", type: "statuspage" },
-  // Hosting / server management
   { id: "cpanel", name: "cPanel", tags: ["hosting", "server", "control-panel", "infrastructure"], status_url: "https://cpanel.statuspage.io/api/v2/status.json", page_url: "https://status.cpanel.net", type: "statuspage" },
-  // Gaming infrastructure
   { id: "photon_engine", name: "Photon Engine", tags: ["gaming", "multiplayer", "networking", "realtime"], status_url: "https://photon.statuspage.io/api/v2/status.json", page_url: "https://photon.statuspage.io", type: "statuspage" },
-  // Manufacturing / industrial operations
   { id: "tulip", name: "Tulip Interfaces", tags: ["manufacturing", "operations", "no-code", "industrial", "iot"], status_url: "https://status.tulip.co/api/v2/status.json", page_url: "https://status.tulip.co", type: "statuspage" },
-  // Spend management / AP automation
   { id: "teampay", name: "Teampay", tags: ["spend-management", "finance", "ap-automation", "saas"], status_url: "https://status.teampay.co/api/v2/status.json", page_url: "https://status.teampay.co", type: "statuspage" },
   { id: "expensya", name: "Expensya", tags: ["expense-management", "finance", "saas", "travel"], status_url: "https://status.expensya.com/api/v2/status.json", page_url: "https://status.expensya.com", type: "statuspage" },
-  // Logistics / freight
   { id: "truckstop", name: "Truckstop", tags: ["logistics", "freight", "trucking", "marketplace"], status_url: "https://truckstop.statuspage.io/api/v2/status.json", page_url: "https://truckstop.statuspage.io", type: "statuspage" },
-  // Events
   { id: "swoogo", name: "Swoogo", tags: ["events", "event-management", "conference", "saas"], status_url: "https://swoogo.statuspage.io/api/v2/status.json", page_url: "https://www.swoogostatus.com", type: "statuspage" },
   { id: "vfairs", name: "vFairs", tags: ["events", "virtual-events", "conference", "saas"], status_url: "https://status.vfairs.com/api/v2/status.json", page_url: "https://status.vfairs.com", type: "statuspage" },
   { id: "grip_events", name: "Grip", tags: ["events", "networking", "matchmaking", "conference"], status_url: "https://status.grip.events/api/v2/status.json", page_url: "https://status.grip.events", type: "statuspage" },
-  // Sales outreach
   { id: "overloop", name: "Overloop", tags: ["sales", "outreach", "prospecting", "automation", "saas"], status_url: "https://overloop.statuspage.io/api/v2/status.json", page_url: "https://overloop.statuspage.io", type: "statuspage" },
-  // Healthcare/EHR
   { id: "simplepractice", name: "SimplePractice", tags: ["healthcare", "ehr", "therapy", "mental-health", "practice-management"], status_url: "https://simplepractice.statuspage.io/api/v2/status.json", page_url: "https://www.simplepracticestatus.com", type: "statuspage" },
-  // PLM/product lifecycle
   { id: "arena", name: "Arena Solutions", tags: ["plm", "product-lifecycle", "manufacturing", "saas"], status_url: "https://arena.statuspage.io/api/v2/status.json", page_url: "https://statuspage.arenasolutions.com", type: "statuspage" },
-  // Crypto asset custody
   { id: "fireblocks", name: "Fireblocks", tags: ["crypto", "digital-assets", "custody", "fintech", "web3"], status_url: "https://fireblocks.statuspage.io/api/v2/status.json", page_url: "https://status.fireblocks.com", type: "statuspage" },
-  // Crypto hardware wallet
   { id: "ledger", name: "Ledger", tags: ["crypto", "hardware-wallet", "web3", "security", "fintech"], status_url: "https://ledger.statuspage.io/api/v2/status.json", page_url: "https://status.ledger.com", type: "statuspage" },
-  // Event ticketing
   { id: "tixr", name: "Tixr", tags: ["events", "ticketing", "entertainment", "saas"], status_url: "https://tixr.statuspage.io/api/v2/status.json", page_url: "https://tixr.statuspage.io", type: "statuspage" },
-  // Blockchain compliance
   { id: "trm_labs", name: "TRM Labs", tags: ["blockchain", "crypto", "compliance", "fraud", "web3"], status_url: "https://trmlabs.statuspage.io/api/v2/status.json", page_url: "https://status.trmlabs.com", type: "statuspage" },
-  // Customer data platform
-  { id: "treasure_ai", name: "Treasure AI", tags: ["cdp", "customer-data", "analytics", "saas"], status_url: "https://status.treasure.ai/api/v2/status.json", page_url: "https://status.treasure.ai", type: "statuspage" },
-  // Video interviewing
   { id: "hirevue", name: "HireVue", tags: ["recruiting", "hr", "video-interview", "ai", "saas"], status_url: "https://hirevue.statuspage.io/api/v2/status.json", page_url: "https://status.hirevue.com", type: "statuspage" },
-  // Technical interviewing
   { id: "coderpad", name: "CoderPad", tags: ["recruiting", "technical-interview", "developer-tools", "saas"], status_url: "https://coderpad.statuspage.io/api/v2/status.json", page_url: "https://status.coderpad.io", type: "statuspage" },
-  // Hetzner Cloud
   { id: "hetzner_cloud", name: "Hetzner Cloud", tags: ["cloud", "iaas", "vps", "european", "hosting"], status_url: "https://hcloud.statuspage.io/api/v2/status.json", page_url: "https://hcloud.statuspage.io", type: "statuspage" },
-  // Headless CMS
   { id: "kontent_ai", name: "Kontent.ai", tags: ["cms", "headless", "content-management", "saas"], status_url: "https://status.kontent.ai/api/v2/status.json", page_url: "https://status.kontent.ai", type: "statuspage" },
-  // CI/CD
   { id: "travis_ci", name: "Travis CI", tags: ["ci-cd", "devtools", "testing", "open-source"], status_url: "https://www.traviscistatus.com/api/v2/status.json", page_url: "https://www.traviscistatus.com", type: "statuspage" },
-  // Geocoding / mapping API
   { id: "locationiq", name: "LocationIQ", tags: ["geocoding", "mapping", "api", "gis", "developer-tools"], status_url: "https://locationiq.statuspage.io/api/v2/status.json", page_url: "https://locationiq.statuspage.io", type: "statuspage" },
-  // Legal practice management
   { id: "actionstep", name: "Actionstep", tags: ["legal", "case-management", "law-firm", "practice-management", "saas"], status_url: "https://status.actionstep.com/api/v2/status.json", page_url: "https://pm.actionstep-status.com", type: "statuspage" },
-  // Home services marketplace
   { id: "taskrabbit", name: "TaskRabbit", tags: ["marketplace", "home-services", "gig-economy", "consumer"], status_url: "https://status.taskrabbit.com/api/v2/status.json", page_url: "https://status.taskrabbit.com", type: "statuspage" },
-  // Freelance marketplace
   { id: "fiverr", name: "Fiverr", tags: ["marketplace", "freelance", "gig-economy", "consumer"], status_url: "https://fiverr.statuspage.io/api/v2/status.json", page_url: "https://fiverr.statuspage.io", type: "statuspage" },
-  // Digital asset marketplace
   { id: "envato", name: "Envato", tags: ["marketplace", "digital-assets", "themes", "creative", "developer"], status_url: "https://status.envato.com/api/v2/status.json", page_url: "https://status.envato.com", type: "statuspage" },
-  // Tax compliance / invoicing API
   { id: "quaderno", name: "Quaderno", tags: ["tax", "billing", "invoicing", "api", "fintech"], status_url: "https://quaderno.statuspage.io/api/v2/status.json", page_url: "https://quaderno.statuspage.io", type: "statuspage" },
-  // CRM
   { id: "nimble", name: "Nimble CRM", tags: ["crm", "sales", "contacts", "social-crm", "saas"], status_url: "https://nimble.statuspage.io/api/v2/status.json", page_url: "https://nimble.statuspage.io", type: "statuspage" },
-  // Payments / ISO
   { id: "sola_payments", name: "Sola Payments", tags: ["payments", "card-processing", "pos", "iso", "fintech"], status_url: "https://status.solapayments.com/api/v2/status.json", page_url: "https://status.solapayments.com", type: "statuspage" },
-  // AI video generation
   { id: "runwayml", name: "Runway", tags: ["ai", "video-generation", "generative-ai", "creative", "ml"], status_url: "https://status.runwayml.com/api/v2/status.json", page_url: "https://status.runwayml.com", type: "statuspage" },
-  // AI voice / empathic AI
   { id: "hume", name: "Hume AI", tags: ["ai", "voice", "emotion-ai", "api", "llm"], status_url: "https://status.hume.ai/api/v2/status.json", page_url: "https://status.hume.ai", type: "statuspage" },
-  // Vector database cloud (Milvus / Zilliz Cloud)
-  { id: "zilliz", name: "Zilliz Cloud", tags: ["vector-database", "ai", "ml", "database", "cloud"], status_url: "https://status.zilliz.com/api/v2/status.json", page_url: "https://status.zilliz.com", type: "statuspage" },
-  // Live chat widget
   { id: "tawk", name: "Tawk.to", tags: ["live-chat", "customer-support", "saas", "free"], status_url: "https://status.tawk.to/api/v2/status.json", page_url: "https://status.tawk.to", type: "statuspage" },
-  // Rust package registry
-  { id: "crates_io", name: "crates.io", tags: ["package-registry", "rust", "developer-tools", "open-source"], status_url: "https://status.crates.io/api/v2/status.json", page_url: "https://status.crates.io", type: "statuspage" },
-  // Java package registry
-  { id: "maven_central", name: "Maven Central", tags: ["package-registry", "java", "developer-tools", "open-source"], status_url: "https://status.maven.org/api/v2/status.json", page_url: "https://status.maven.org", type: "statuspage" },
-  // Telecom / SMS — Africa
   { id: "africastalking", name: "Africa's Talking", tags: ["sms", "voice", "api", "africa", "communications"], status_url: "https://status.africastalking.com/api/v2/status.json", page_url: "https://status.africastalking.com", type: "statuspage" },
-  // Aerial imagery / geospatial
   { id: "nearmap", name: "Nearmap", tags: ["geospatial", "aerial-imagery", "mapping", "api", "saas"], status_url: "https://status.nearmap.com/api/v2/status.json", page_url: "https://status.nearmap.com", type: "statuspage" },
-  // Location data platform
   { id: "radar", name: "Radar", tags: ["location", "geofencing", "geocoding", "api", "saas"], status_url: "https://status.radar.com/api/v2/status.json", page_url: "https://status.radar.com", type: "statuspage" },
-  // Podcast hosting / ad platform (Spotify)
   { id: "megaphone", name: "Megaphone", tags: ["podcast", "hosting", "advertising", "media", "saas"], status_url: "https://status.megaphone.fm/api/v2/status.json", page_url: "https://status.megaphone.fm", type: "statuspage" },
-  // DNS/privacy protection (AdGuard)
   { id: "adguard", name: "AdGuard", tags: ["security", "dns", "privacy", "ad-blocking", "saas"], status_url: "https://status.adguard.com/api/v2/status.json", page_url: "https://status.adguard.com", type: "statuspage" },
-  // Cloud voice / SIP trunking
   { id: "flowroute", name: "Flowroute", tags: ["voice", "sip", "telecom", "api", "communications"], status_url: "https://status.flowroute.com/api/v2/status.json", page_url: "https://status.flowroute.com", type: "statuspage" },
-  // Open-source session replay / error monitoring (oss)
   { id: "highlight_io", name: "Highlight.io", tags: ["observability", "error-tracking", "session-replay", "open-source", "developer-tools"], status_url: "https://status.highlight.io/api/v2/status.json", page_url: "https://status.highlight.io", type: "statuspage" },
-  // Open-source billing / usage-based pricing engine
   { id: "getlago", name: "Lago", tags: ["billing", "usage-based-pricing", "fintech", "open-source", "saas"], status_url: "https://status.getlago.com/api/v2/status.json", page_url: "https://status.getlago.com", type: "statuspage" },
-  // Canadian open banking data API
   { id: "flinks", name: "Flinks", tags: ["open-banking", "fintech", "financial-data", "api", "canada"], status_url: "https://status.flinks.com/api/v2/status.json", page_url: "https://status.flinks.com", type: "statuspage" },
-  // Global HR / talent management
   { id: "cezannehr", name: "Cezanne HR", tags: ["hr", "talent-management", "enterprise", "saas"], status_url: "https://status.cezannehr.com/api/v2/status.json", page_url: "https://status.cezannehr.com", type: "statuspage" },
-  // Interactive prototyping tool
   { id: "protopie", name: "ProtoPie", tags: ["design", "prototyping", "ux", "developer-tools", "saas"], status_url: "https://status.protopie.io/api/v2/status.json", page_url: "https://status.protopie.io", type: "statuspage" },
-  // Wireframing / mockup tool
   { id: "balsamiq", name: "Balsamiq", tags: ["design", "wireframing", "mockups", "ux", "saas"], status_url: "https://status.balsamiq.com/api/v2/status.json", page_url: "https://status.balsamiq.com", type: "statuspage" },
-  // Diagram / flowchart tool (Atlassian)
   { id: "gliffy", name: "Gliffy", tags: ["diagrams", "flowcharts", "design", "collaboration", "saas"], status_url: "https://status.gliffy.com/api/v2/status.json", page_url: "https://status.gliffy.com", type: "statuspage" },
-  // Technical skills assessment platform
   { id: "codesignal", name: "CodeSignal", tags: ["hr-tech", "assessment", "developer-skills", "hiring", "saas"], status_url: "https://status.codesignal.com/api/v2/status.json", page_url: "https://status.codesignal.com", type: "statuspage" },
-  // Psychometric / talent assessment
   { id: "thomas_international", name: "Thomas International", tags: ["hr-tech", "assessment", "psychometric", "talent", "saas"], status_url: "https://status.thomas.co/api/v2/status.json", page_url: "https://status.thomas.co", type: "statuspage" },
-  // Interactive quiz / classroom assessment
   { id: "classtime", name: "Classtime", tags: ["edtech", "assessment", "classroom", "quiz", "saas"], status_url: "https://status.classtime.com/api/v2/status.json", page_url: "https://status.classtime.com", type: "statuspage" },
-  // CRM — SMB / team-focused
   { id: "teamleader", name: "Teamleader", tags: ["crm", "project-management", "invoicing", "smb", "saas"], status_url: "https://status.teamleader.eu/api/v2/status.json", page_url: "https://status.teamleader.eu", type: "statuspage" },
-  // Email marketing
   { id: "verticalresponse", name: "VerticalResponse", tags: ["email-marketing", "campaigns", "smb", "saas"], status_url: "https://status.verticalresponse.com/api/v2/status.json", page_url: "https://status.verticalresponse.com", type: "statuspage" },
-  // Crypto exchange
   { id: "bitmex", name: "BitMEX", tags: ["crypto", "exchange", "trading", "derivatives", "fintech"], status_url: "https://status.bitmex.com/api/v2/status.json", page_url: "https://status.bitmex.com", type: "statuspage" },
-  // Time tracking / Jira plugin
   { id: "tempo", name: "Tempo", tags: ["time-tracking", "jira", "project-management", "productivity", "saas"], status_url: "https://status.tempo.io/api/v2/status.json", page_url: "https://status.tempo.io", type: "statuspage" },
-  // Payment processing (Visa)
   { id: "cybersource", name: "CyberSource", tags: ["payments", "payment-gateway", "fraud", "visa", "fintech"], status_url: "https://status.cybersource.com/api/v2/status.json", page_url: "https://status.cybersource.com", type: "statuspage" },
-  // Global B2B payments
   { id: "veem", name: "Veem", tags: ["payments", "b2b", "international", "fintech", "saas"], status_url: "https://status.veem.com/api/v2/status.json", page_url: "https://status.veem.com", type: "statuspage" },
-  // Email parsing / automation
   { id: "mailparser", name: "Mailparser", tags: ["email", "parsing", "automation", "data-extraction", "saas"], status_url: "https://status.mailparser.io/api/v2/status.json", page_url: "https://status.mailparser.io", type: "statuspage" },
-  // Customer feedback (SurveyMonkey product)
   { id: "getfeedback", name: "GetFeedback", tags: ["feedback", "survey", "cx", "customer-experience", "saas"], status_url: "https://status.getfeedback.com/api/v2/status.json", page_url: "https://status.getfeedback.com", type: "statuspage" },
-  // E-signature (UK)
   { id: "signable", name: "Signable", tags: ["e-signature", "documents", "legal", "uk", "saas"], status_url: "https://status.signable.co.uk/api/v2/status.json", page_url: "https://status.signable.co.uk", type: "statuspage" },
-  // Session replay / CX analytics
   { id: "auryc", name: "Auryc", tags: ["session-replay", "analytics", "cx", "user-experience", "saas"], status_url: "https://status.auryc.com/api/v2/status.json", page_url: "https://status.auryc.com", type: "statuspage" },
-  // Audience / advertising measurement
   { id: "quantcast", name: "Quantcast", tags: ["analytics", "advertising", "audience", "measurement", "adtech"], status_url: "https://status.quantcast.com/api/v2/status.json", page_url: "https://status.quantcast.com", type: "statuspage" },
-  // Data privacy / governance platform
   { id: "securiti", name: "Securiti", tags: ["privacy", "data-governance", "compliance", "security", "saas"], status_url: "https://status.securiti.ai/api/v2/status.json", page_url: "https://status.securiti.ai", type: "statuspage" },
-  // Integration / workflow automation platform
   { id: "appmixer", name: "Appmixer", tags: ["integration", "automation", "workflows", "ipaas", "saas"], status_url: "https://status.appmixer.com/api/v2/status.json", page_url: "https://status.appmixer.com", type: "statuspage" },
-  // Healthcare IT — health plans & payers
   { id: "veradigm", name: "Veradigm", tags: ["healthcare", "health-plans", "ehr", "data", "enterprise"], status_url: "https://status.veradigm.com/api/v2/status.json", page_url: "https://status.veradigm.com", type: "statuspage" },
-  // USDC / crypto payments infrastructure (Circle)
-  { id: "circle", name: "Circle", tags: ["crypto", "stablecoin", "usdc", "payments", "fintech"], status_url: "https://status.circle.com/api/v2/status.json", page_url: "https://status.circle.com", type: "statuspage" },
-  // Shipping API (Shippo)
-  { id: "shippo", name: "Shippo", tags: ["shipping", "logistics", "ecommerce", "api"], status_url: "https://status.goshippo.com/api/v2/status.json", page_url: "https://status.goshippo.com", type: "statuspage" },
-  // Employment & income data API
   { id: "argyle", name: "Argyle", tags: ["employment-data", "payroll", "fintech", "api", "open-banking"], status_url: "https://status.argyle.com/api/v2/status.json", page_url: "https://status.argyle.com", type: "statuspage" },
-  // Smart home / proptech OS for multifamily
   { id: "smartrent", name: "SmartRent", tags: ["proptech", "smart-home", "iot", "multifamily", "saas"], status_url: "https://status.smartrent.com/api/v2/status.json", page_url: "https://status.smartrent.com", type: "statuspage" },
-  // Mobile marketing & engagement (SMS/push)
   { id: "vibes", name: "Vibes", tags: ["mobile-marketing", "sms", "push", "loyalty", "engagement"], status_url: "https://status.vibes.com/api/v2/status.json", page_url: "https://status.vibes.com", type: "statuspage" },
-  // Marketing cloud — email, SMS, loyalty
   { id: "maropost", name: "Maropost", tags: ["email-marketing", "sms", "loyalty", "automation", "saas"], status_url: "https://status.maropost.com/api/v2/status.json", page_url: "https://status.maropost.com", type: "statuspage" },
-  // Voice / SIP carrier (Inteliquent)
   { id: "inteliquent", name: "Inteliquent", tags: ["voice", "sip", "telecom", "carrier", "api"], status_url: "https://status.inteliquent.com/api/v2/status.json", page_url: "https://status.inteliquent.com", type: "statuspage" },
-  // Cloud voice & SMS carrier (Commio)
   { id: "commio", name: "Commio", tags: ["voice", "sms", "cpaas", "telecom", "api"], status_url: "https://status.commio.com/api/v2/status.json", page_url: "https://status.commio.com", type: "statuspage" },
-  // EV charging network
   { id: "chargepoint", name: "ChargePoint", tags: ["ev-charging", "iot", "energy", "mobility", "saas"], status_url: "https://status.chargepoint.com/api/v2/status.json", page_url: "https://status.chargepoint.com", type: "statuspage" },
-  // Client collaboration / digital interaction portal
   { id: "moxo", name: "Moxo", tags: ["collaboration", "client-portal", "workflow", "saas"], status_url: "https://status.moxo.com/api/v2/status.json", page_url: "https://status.moxo.com", type: "statuspage" },
-  // EDI / supply-chain integration network
   { id: "orderful", name: "Orderful", tags: ["edi", "supply-chain", "integration", "b2b", "api"], status_url: "https://status.orderful.com/api/v2/status.json", page_url: "https://status.orderful.com", type: "statuspage" },
-  // Healthcare provider data API
   { id: "ribbon_health", name: "Ribbon Health", tags: ["healthcare", "provider-data", "api", "health-tech"], status_url: "https://status.ribbonhealth.com/api/v2/status.json", page_url: "https://status.ribbonhealth.com", type: "statuspage" },
-  // Benefits administration platform
   { id: "ease", name: "Ease", tags: ["benefits", "hr", "insurance", "saas", "brokers"], status_url: "https://status.ease.com/api/v2/status.json", page_url: "https://status.ease.com", type: "statuspage" },
-  // PDF productivity & e-signature (Nitro)
   { id: "nitro", name: "Nitro", tags: ["pdf", "e-signature", "documents", "productivity", "saas"], status_url: "https://status.gonitro.com/api/v2/status.json", page_url: "https://status.gonitro.com", type: "statuspage" },
-  // Cloud-based load testing (LoadNinja)
   { id: "loadninja", name: "LoadNinja", tags: ["load-testing", "performance-testing", "qa", "devtools", "saas"], status_url: "https://status.loadninja.com/api/v2/status.json", page_url: "https://status.loadninja.com", type: "statuspage" },
-  // Enterprise load & performance testing (BlazeMeter)
   { id: "blazemeter", name: "BlazeMeter", tags: ["load-testing", "performance-testing", "qa", "devtools", "saas"], status_url: "https://status.blazemeter.com/api/v2/status.json", page_url: "https://status.blazemeter.com", type: "statuspage" },
-  // Multi-chain NFT marketplace
   { id: "magic_eden", name: "Magic Eden", tags: ["nft", "marketplace", "web3", "crypto", "multi-chain"], status_url: "https://status.magiceden.io/api/v2/status.json", page_url: "https://status.magiceden.io", type: "statuspage" },
-  // Vehicle allowance & mileage reimbursement platform
   { id: "motus", name: "Motus", tags: ["vehicle-allowance", "mileage", "hr", "fleet", "saas"], status_url: "https://status.motus.com/api/v2/status.json", page_url: "https://status.motus.com", type: "statuspage" },
-  // ATS for small-to-mid businesses (JazzHR)
   { id: "jazz_hr", name: "JazzHR", tags: ["ats", "recruiting", "hr", "saas", "smb"], status_url: "https://status.jazzhr.com/api/v2/status.json", page_url: "https://status.jazzhr.com", type: "statuspage" },
-  // Conversational recruiting AI / Olivia chatbot
-  { id: "paradox_ai", name: "Paradox", tags: ["recruiting", "ai", "chatbot", "hr", "saas"], status_url: "https://status.paradox.ai/api/v2/status.json", page_url: "https://status.paradox.ai", type: "statuspage" },
-  // Recruiting CRM & talent sourcing platform
   { id: "gem", name: "Gem", tags: ["recruiting", "crm", "sourcing", "hr", "saas"], status_url: "https://status.gem.com/api/v2/status.json", page_url: "https://status.gem.com", type: "statuspage" },
-  // Base L2 blockchain (by Coinbase)
   { id: "base_network", name: "Base", tags: ["blockchain", "l2", "ethereum", "web3", "coinbase"], status_url: "https://status.base.org/api/v2/status.json", page_url: "https://status.base.org", type: "statuspage" },
-  // StarkNet ZK rollup L2
   { id: "starknet", name: "StarkNet", tags: ["blockchain", "l2", "zk-rollup", "ethereum", "web3"], status_url: "https://status.starknet.io/api/v2/status.json", page_url: "https://status.starknet.io", type: "statuspage" },
-  // Next-gen spreadsheet with live data connections
   { id: "equals", name: "Equals", tags: ["spreadsheet", "analytics", "data", "productivity", "saas"], status_url: "https://status.equals.com/api/v2/status.json", page_url: "https://status.equals.com", type: "statuspage" },
-  // Generative video AI (avatar & talking head)
   { id: "hedra", name: "Hedra", tags: ["ai", "video", "generative", "avatar", "saas"], status_url: "https://status.hedra.com/api/v2/status.json", page_url: "https://status.hedra.com", type: "statuspage" },
-  // LLM application development & evaluation platform
   { id: "vellum", name: "Vellum", tags: ["ai", "llm", "developer-tools", "evaluation", "saas"], status_url: "https://status.vellum.ai/api/v2/status.json", page_url: "https://status.vellum.ai", type: "statuspage" },
-  // Multi-agent AI orchestration (enterprise)
   { id: "crewai", name: "CrewAI", tags: ["ai", "agents", "multi-agent", "llm", "saas"], status_url: "https://status.crewai.com/api/v2/status.json", page_url: "https://status.crewai.com", type: "statuspage" },
-  // Open-source publishing platform / headless CMS
   { id: "ghost", name: "Ghost", tags: ["publishing", "blogging", "cms", "newsletter", "saas"], status_url: "https://status.ghost.org", page_url: "https://status.ghost.org", type: "incidentio" },
-  // Carbon accounting & sustainability reporting
   { id: "normative", name: "Normative", tags: ["sustainability", "carbon-accounting", "esg", "climate-tech", "saas"], status_url: "https://status.normative.io/api/v2/status.json", page_url: "https://status.normative.io", type: "statuspage" },
-  // Cisco Umbrella DNS-layer cloud security
   { id: "cisco_umbrella", name: "Cisco Umbrella", tags: ["security", "dns", "cloud-security", "networking", "enterprise"], status_url: "https://status.umbrella.com/api/v2/status.json", page_url: "https://status.umbrella.com", type: "statuspage" },
-  // AI-powered developer tool (context & snippet manager)
   { id: "pieces", name: "Pieces", tags: ["developer-tools", "ai", "productivity", "code-snippets", "saas"], status_url: "https://status.pieces.app/api/v2/status.json", page_url: "https://status.pieces.app", type: "statuspage" },
-  // Generative AI legal research assistant
   { id: "harvey", name: "Harvey AI", tags: ["legal", "ai", "llm", "legal-tech", "saas"], status_url: "https://status.harvey.ai/api/v2/status.json", page_url: "https://status.harvey.ai", type: "statuspage" },
-  // Legal case management for plaintiff law firms
   { id: "casepeer", name: "CASEpeer", tags: ["legal", "case-management", "law-firm", "legal-tech", "saas"], status_url: "https://status.casepeer.com/api/v2/status.json", page_url: "https://status.casepeer.com", type: "statuspage" },
-  // Interactive lesson platform for K-12 education
   { id: "nearpod", name: "Nearpod", tags: ["edtech", "education", "k12", "interactive", "saas"], status_url: "https://status.nearpod.com/api/v2/status.json", page_url: "https://status.nearpod.com", type: "statuspage" },
-  // Interactive slides & formative assessment for classrooms
   { id: "peardeck", name: "Pear Deck", tags: ["edtech", "education", "k12", "interactive-slides", "saas"], status_url: "https://status.peardeck.com/api/v2/status.json", page_url: "https://status.peardeck.com", type: "statuspage" },
-  // Fintech banking-as-a-service: ACH/digital payments API
   { id: "sila", name: "Sila", tags: ["fintech", "payments", "ach", "banking-as-a-service", "api"], status_url: "https://status.silamoney.com/api/v2/status.json", page_url: "https://status.silamoney.com", type: "statuspage" },
-  // Australian payments & financial infrastructure platform
   { id: "zai", name: "Zai", tags: ["fintech", "payments", "australia", "banking-as-a-service", "api"], status_url: "https://status.hellozai.com/api/v2/status.json", page_url: "https://status.hellozai.com", type: "statuspage" },
-  // Stax — flat-rate merchant processing & payment gateway
-  { id: "stax_payments", name: "Stax Payments", tags: ["payments", "merchant-processing", "payment-gateway", "fintech", "saas"], status_url: "https://status.staxpayments.com/api/v2/status.json", page_url: "https://status.staxpayments.com", type: "statuspage" },
-  // Poshmark — social commerce / peer-to-peer fashion marketplace
   { id: "poshmark", name: "Poshmark", tags: ["marketplace", "e-commerce", "fashion", "resale", "consumer"], status_url: "https://status.poshmark.com/api/v2/status.json", page_url: "https://status.poshmark.com", type: "statuspage" },
-  // Polar — fitness tracking hardware & cloud platform
   { id: "polar_fitness", name: "Polar", tags: ["fitness", "wearables", "health", "tracking", "consumer"], status_url: "https://status.polar.com/api/v2/status.json", page_url: "https://status.polar.com", type: "statuspage" },
-  // Skai (formerly Kenshoo) — omnichannel marketing intelligence platform
   { id: "skai", name: "Skai", tags: ["marketing", "advertising", "analytics", "omnichannel", "saas"], status_url: "https://status.kenshoo.com/api/v2/status.json", page_url: "https://status.kenshoo.com", type: "statuspage" },
-  // Treasure Data — enterprise customer data platform (CDP)
   { id: "treasure_data", name: "Treasure Data", tags: ["cdp", "data", "analytics", "customer-data", "enterprise"], status_url: "https://status.treasuredata.com/api/v2/status.json", page_url: "https://status.treasuredata.com", type: "statuspage" },
-  // NextRoll (AdRoll) — performance marketing and retargeting
   { id: "nextroll", name: "NextRoll", tags: ["marketing", "advertising", "retargeting", "performance-marketing", "saas"], status_url: "https://status.adroll.com/api/v2/status.json", page_url: "https://status.adroll.com", type: "statuspage" },
-  // Emplifi (formerly Socialbakers) — unified social media & CX platform
   { id: "emplifi", name: "Emplifi", tags: ["social-media", "customer-experience", "marketing", "analytics", "saas"], status_url: "https://status.emplifi.io/api/v2/status.json", page_url: "https://status.emplifi.io", type: "statuspage" },
-  // Sprout Social — social media management & analytics platform
   { id: "sprout_social", name: "Sprout Social", tags: ["social-media", "marketing", "analytics", "scheduling", "saas"], status_url: "https://status.sproutsocial.com/api/v2/status.json", page_url: "https://status.sproutsocial.com", type: "statuspage" },
-  // Quantum Workplace — employee engagement & performance management
   { id: "quantum_workplace", name: "Quantum Workplace", tags: ["hr", "employee-engagement", "performance-management", "surveys", "saas"], status_url: "https://status.quantumworkplace.com/api/v2/status.json", page_url: "https://status.quantumworkplace.com", type: "statuspage" },
-  // Small Improvements — continuous performance feedback & OKR platform
   { id: "small_improvements", name: "Small Improvements", tags: ["hr", "performance-management", "okr", "feedback", "saas"], status_url: "https://status.small-improvements.com/api/v2/status.json", page_url: "https://status.small-improvements.com", type: "statuspage" },
-  // Cover Genius — global embedded insurance platform
   { id: "covergenius", name: "Cover Genius", tags: ["insurance", "insurtech", "embedded-insurance", "fintech", "api"], status_url: "https://status.covergenius.com/api/v2/status.json", page_url: "https://status.covergenius.com", type: "statuspage" },
-  // 7shifts — restaurant employee scheduling & workforce management
   { id: "7shifts", name: "7shifts", tags: ["restaurant", "workforce-management", "scheduling", "hospitality", "saas"], status_url: "https://status.7shifts.com/api/v2/status.json", page_url: "https://status.7shifts.com", type: "statuspage" },
-  // CalAmp — IoT/telematics platform for fleet & asset tracking
   { id: "calamp", name: "CalAmp", tags: ["iot", "telematics", "fleet", "asset-tracking", "saas"], status_url: "https://status.calamp.com/api/v2/status.json", page_url: "https://status.calamp.com", type: "statuspage" },
-  // Pinterest — visual discovery & social commerce platform
   { id: "pinterest", name: "Pinterest", tags: ["social-media", "visual-discovery", "e-commerce", "advertising", "consumer"], status_url: "https://status.pinterest.com/api/v2/status.json", page_url: "https://status.pinterest.com", type: "statuspage" },
-  // Elastic Path — headless commerce platform for complex B2C/B2B
   { id: "elasticpath", name: "Elastic Path", tags: ["e-commerce", "headless-commerce", "saas", "api", "b2b"], status_url: "https://status.elasticpath.com/api/v2/status.json", page_url: "https://status.elasticpath.com", type: "statuspage" },
-  // Saleor — open-source headless e-commerce platform
   { id: "saleor", name: "Saleor", tags: ["e-commerce", "headless-commerce", "open-source", "saas", "graphql"], status_url: "https://status.saleor.io/api/v2/status.json", page_url: "https://status.saleor.io", type: "statuspage" },
-  // Crystal Commerce — specialty/collectible retail & marketplace management
   { id: "crystalcommerce", name: "Crystal Commerce", tags: ["e-commerce", "marketplace", "retail", "collectibles", "saas"], status_url: "https://status.crystalcommerce.com/api/v2/status.json", page_url: "https://status.crystalcommerce.com", type: "statuspage" },
-  // TravelPerk — business travel management platform
   { id: "travelperk", name: "TravelPerk", tags: ["travel", "business-travel", "expense", "saas", "hr"], status_url: "https://status.travelperk.com/api/v2/status.json", page_url: "https://status.travelperk.com", type: "statuspage" },
-  // Vanilla Forums — enterprise community forum & discussion platform
   { id: "vanillaforums", name: "Vanilla Forums", tags: ["community", "forum", "support", "engagement", "saas"], status_url: "https://status.vanillaforums.com/api/v2/status.json", page_url: "https://status.vanillaforums.com", type: "statuspage" },
-  // CardConnect — omnichannel payment processing & merchant services
   { id: "cardconnect", name: "CardConnect", tags: ["payments", "merchant-services", "processing", "fintech", "api"], status_url: "https://status.cardconnect.com/api/v2/status.json", page_url: "https://status.cardconnect.com", type: "statuspage" },
-  // Shift4 — integrated payment processing for hospitality & retail
   { id: "shift4", name: "Shift4", tags: ["payments", "payment-processing", "hospitality", "retail", "fintech"], status_url: "https://status.shift4.com/api/v2/status.json", page_url: "https://status.shift4.com", type: "statuspage" },
-  // Khan Academy — free online education platform
   { id: "khanacademy", name: "Khan Academy", tags: ["edtech", "education", "nonprofit", "learning"], status_url: "https://status.khanacademy.org/api/v2/status.json", page_url: "https://status.khanacademy.org", type: "statuspage" },
-  // Planning Center — church/ministry management platform
   { id: "planningcenter", name: "Planning Center", tags: ["church", "ministry", "scheduling", "nonprofit", "saas"], status_url: "https://status.planningcenter.com/api/v2/status.json", page_url: "https://status.planningcenter.com", type: "statuspage" },
-  // Emburse — enterprise expense management & travel
   { id: "emburse", name: "Emburse", tags: ["expense-management", "travel", "finance", "enterprise", "saas"], status_url: "https://emburse.statuspage.io/api/v2/status.json", page_url: "https://emburse.statuspage.io", type: "statuspage" },
-  // Nextech — EHR & practice management for ophthalmology and dermatology
   { id: "nextech", name: "Nextech", tags: ["healthcare", "ehr", "ophthalmology", "dermatology", "saas"], status_url: "https://status.nextech.com/api/v2/status.json", page_url: "https://status.nextech.com", type: "statuspage" },
-  // CareCloud — cloud-based healthcare practice management & EHR
   { id: "carecloud", name: "CareCloud", tags: ["healthcare", "ehr", "practice-management", "billing", "saas"], status_url: "https://status.carecloud.com/api/v2/status.json", page_url: "https://status.carecloud.com", type: "statuspage" },
-  // Jane — practice management for allied health professionals
   { id: "janeapp", name: "Jane", tags: ["healthcare", "practice-management", "scheduling", "allied-health", "saas"], status_url: "https://status.janeapp.com/api/v2/status.json", page_url: "https://status.janeapp.com", type: "statuspage" },
-  // Floify — mortgage point-of-sale & loan origination platform
   { id: "floify", name: "Floify", tags: ["mortgage", "fintech", "loan-origination", "lending", "saas"], status_url: "https://status.floify.com/api/v2/status.json", page_url: "https://status.floify.com", type: "statuspage" },
-  // Encompass Supply Chain Solutions — supply chain management platform
   { id: "encompass_scs", name: "Encompass Supply Chain Solutions", tags: ["supply-chain", "logistics", "distribution", "enterprise"], status_url: "https://status.encompass.com/api/v2/status.json", page_url: "https://status.encompass.com", type: "statuspage" },
-  // Snappt — AI-powered tenant screening & rental fraud detection
   { id: "snappt", name: "Snappt", tags: ["real-estate", "tenant-screening", "fraud-detection", "rental", "saas"], status_url: "https://status.snappt.com/api/v2/status.json", page_url: "https://status.snappt.com", type: "statuspage" },
-  // AskNicely — NPS & customer feedback platform
   { id: "asknicely", name: "AskNicely", tags: ["cx", "nps", "customer-feedback", "surveys", "saas"], status_url: "https://status.asknicely.com/api/v2/status.json", page_url: "https://status.asknicely.com", type: "statuspage" },
-  // Prismatic — embedded iPaaS / integration platform for B2B SaaS
   { id: "prismatic", name: "Prismatic", tags: ["ipaas", "integration", "automation", "developer-tools", "saas"], status_url: "https://status.prismatic.io/api/v2/status.json", page_url: "https://status.prismatic.io", type: "statuspage" },
-  // deepset — AI/NLP platform & Haystack framework cloud service
   { id: "deepset", name: "deepset", tags: ["ai", "nlp", "llm", "developer-tools", "saas"], status_url: "https://status.deepset.ai/api/v2/status.json", page_url: "https://status.deepset.ai", type: "statuspage" },
-  // SuperAnnotate AI — ML data annotation & model training platform
   { id: "superannotate", name: "SuperAnnotate AI", tags: ["ai", "ml", "annotation", "data-labeling", "saas"], status_url: "https://status.superannotate.com/api/v2/status.json", page_url: "https://status.superannotate.com", type: "statuspage" },
-  // Arctic Wolf — managed security / SOC-as-a-service
   { id: "arctic_wolf", name: "Arctic Wolf", tags: ["security", "soc", "mdr", "enterprise", "saas"], status_url: "https://status.arcticwolf.com/api/v2/status.json", page_url: "https://status.arcticwolf.com", type: "statuspage" },
-  // Stytch — auth & identity platform (BetterStack)
   { id: "stytch", name: "Stytch", tags: ["auth", "identity", "sso", "developer-tools", "api"], status_url: "https://status.stytch.com/api/v2/summary.json", page_url: "https://status.stytch.com", type: "betterstack" },
-  // Deno Deploy — edge runtime & serverless JavaScript platform (BetterStack)
   { id: "deno", name: "Deno Deploy", tags: ["edge", "serverless", "runtime", "developer-tools", "iaas"], status_url: "https://status.deno.com/api/v2/summary.json", page_url: "https://status.deno.com", type: "betterstack" },
-  // Netcore Cloud — email, SMS & customer engagement platform
   { id: "netcore_cloud", name: "Netcore Cloud", tags: ["email", "sms", "marketing", "engagement", "saas"], status_url: "https://status.netcorecloud.com/api/v2/status.json", page_url: "https://status.netcorecloud.com", type: "statuspage" },
-  // ProductPlan — product roadmap & strategy platform
   { id: "productplan", name: "ProductPlan", tags: ["product-management", "roadmap", "planning", "saas"], status_url: "https://status.productplan.com/api/v2/status.json", page_url: "https://status.productplan.com", type: "statuspage" },
-  // Cleverbridge — global subscription commerce & billing platform
   { id: "cleverbridge", name: "Cleverbridge", tags: ["ecommerce", "billing", "subscriptions", "payments", "saas"], status_url: "https://status.cleverbridge.com/api/v2/status.json", page_url: "https://status.cleverbridge.com", type: "statuspage" },
-  // Mynewsdesk — PR & media relations platform
   { id: "mynewsdesk", name: "Mynewsdesk", tags: ["pr", "media", "communications", "saas"], status_url: "https://status.mynewsdesk.com/api/v2/status.json", page_url: "https://status.mynewsdesk.com", type: "statuspage" },
-  // Accredible — digital credentials & certificate platform
   { id: "accredible", name: "Accredible", tags: ["credentials", "certificates", "education", "hr", "saas"], status_url: "https://status.accredible.com/api/v2/status.json", page_url: "https://status.accredible.com", type: "statuspage" },
-  // Badgr — open digital badges & micro-credentials platform
   { id: "badgr", name: "Badgr", tags: ["credentials", "badges", "education", "open-badges", "saas"], status_url: "https://status.badgr.com/api/v2/status.json", page_url: "https://status.badgr.com", type: "statuspage" },
-  // Tick 185 additions
-  // Check Point — network security & cybersecurity platform
   { id: "checkpoint", name: "Check Point", tags: ["security", "network-security", "firewall", "enterprise", "cybersecurity"], status_url: "https://status.checkpoint.com/api/v2/status.json", page_url: "https://status.checkpoint.com", type: "statuspage" },
-  // Infoblox — DNS, DHCP & IP address management (DDI) + network security
   { id: "infoblox", name: "Infoblox", tags: ["dns", "networking", "security", "ddi", "enterprise"], status_url: "https://status.infoblox.com/api/v2/status.json", page_url: "https://status.infoblox.com", type: "statuspage" },
-  // Nutanix — hyperconverged infrastructure & cloud platform
   { id: "nutanix", name: "Nutanix", tags: ["cloud", "iaas", "hyperconverged", "virtualization", "enterprise"], status_url: "https://status.nutanix.com/api/v2/status.json", page_url: "https://status.nutanix.com", type: "statuspage" },
-  // Unit — banking-as-a-service / embedded finance platform
-  { id: "unit", name: "Unit", tags: ["banking", "fintech", "baas", "embedded-finance", "api"], status_url: "https://status.unit.co/api/v2/status.json", page_url: "https://status.unit.co", type: "statuspage" },
-  // BentoML — ML model serving & deployment platform
   { id: "bentoml", name: "BentoML", tags: ["ml", "ai", "model-serving", "inference", "mlops"], status_url: "https://status.bentoml.com/api/v2/status.json", page_url: "https://status.bentoml.com", type: "statuspage" },
-  // Stardog — enterprise knowledge graph & graph database platform
   { id: "stardog", name: "Stardog", tags: ["database", "knowledge-graph", "graph", "enterprise", "data"], status_url: "https://status.stardog.com/api/v2/status.json", page_url: "https://status.stardog.com", type: "statuspage" },
-  // Loop — returns management platform for e-commerce (Shopify ecosystem)
   { id: "loop_returns", name: "Loop Returns", tags: ["e-commerce", "returns", "shopify", "retail", "saas"], status_url: "https://status.loop.com/api/v2/status.json", page_url: "https://status.loop.com", type: "statuspage" },
-  // Nhost — open-source BaaS (Postgres + Hasura + Auth + Storage)
   { id: "nhost", name: "Nhost", tags: ["baas", "database", "auth", "storage", "developer-tools"], status_url: "https://status.nhost.io/api/v2/summary.json", page_url: "https://status.nhost.io", type: "betterstack" },
-  // PropelAuth — hosted auth & user management for B2B SaaS
   { id: "propelauth", name: "PropelAuth", tags: ["auth", "identity", "b2b", "sso", "developer-tools"], status_url: "https://status.propelauth.com/api/v2/summary.json", page_url: "https://status.propelauth.com", type: "betterstack" },
-  // Kinde — modern auth & user management platform
   { id: "kinde", name: "Kinde", tags: ["auth", "identity", "sso", "developer-tools", "api"], status_url: "https://status.kinde.com/api/v2/summary.json", page_url: "https://status.kinde.com", type: "betterstack" },
-  // Tick 186 additions
-  // Cribl — data observability & stream processing platform (log/metric/trace routing)
   { id: "cribl", name: "Cribl", tags: ["observability", "logging", "data", "devops", "streaming"], status_url: "https://status.cribl.cloud/api/v2/status.json", page_url: "https://status.cribl.cloud", type: "statuspage" },
-  // Airbyte — open-source data integration & ELT pipeline platform
   { id: "airbyte", name: "Airbyte", tags: ["data", "etl", "elt", "integration", "developer-tools"], status_url: "https://status.airbyte.com/api/v2/summary.json", page_url: "https://status.airbyte.com", type: "betterstack" },
-  // Wistia — video hosting & marketing platform for businesses
   { id: "wistia", name: "Wistia", tags: ["video", "media", "marketing", "analytics", "saas"], status_url: "https://status.wistia.com/api/v2/summary.json", page_url: "https://status.wistia.com", type: "betterstack" },
-  // Modern Treasury — payment operations & money-movement API platform
   { id: "modern_treasury", name: "Modern Treasury", tags: ["payments", "banking", "api", "fintech", "money-movement"], status_url: "https://status.moderntreasury.com/api/v2/summary.json", page_url: "https://status.moderntreasury.com", type: "betterstack" },
-  // Templafy — enterprise document template & brand management platform
   { id: "templafy", name: "Templafy", tags: ["documents", "templates", "enterprise", "brand", "productivity"], status_url: "https://status.templafy.com/api/v2/status.json", page_url: "https://status.templafy.com", type: "statuspage" },
-  // Deadline Funnel — countdown timer & email deadline marketing platform
   { id: "deadline_funnel", name: "Deadline Funnel", tags: ["marketing", "email", "conversion", "saas"], status_url: "https://status.deadlinefunnel.com/api/v2/status.json", page_url: "https://status.deadlinefunnel.com", type: "statuspage" },
-  // Payrails — enterprise payment orchestration & routing platform
   { id: "payrails", name: "Payrails", tags: ["payments", "fintech", "orchestration", "enterprise", "api"], status_url: "https://status.payrails.com/api/v2/status.json", page_url: "https://status.payrails.com", type: "statuspage" },
-  // Numeral — automated payment reconciliation & accounting API platform
   { id: "numeral", name: "Numeral", tags: ["payments", "fintech", "reconciliation", "accounting", "api"], status_url: "https://status.numeral.io/api/v2/status.json", page_url: "https://status.numeral.io", type: "statuspage" },
-  // Formance — open-source financial ledger & money-movement infrastructure
   { id: "formance", name: "Formance", tags: ["fintech", "ledger", "payments", "open-source", "api"], status_url: "https://status.formance.com/api/v2/status.json", page_url: "https://status.formance.com", type: "statuspage" },
-  // Pangea — security-as-a-service API platform (AuthN, AuthZ, audit, vault, intel)
   { id: "pangea", name: "Pangea", tags: ["security", "api", "auth", "developer-tools", "saas"], status_url: "https://status.pangea.cloud/api/v2/status.json", page_url: "https://status.pangea.cloud", type: "statuspage" },
-  // Convercent — ethics & compliance management platform (now NAVEX)
   { id: "convercent", name: "Convercent", tags: ["compliance", "ethics", "risk", "enterprise", "saas"], status_url: "https://status.convercent.com/api/v2/status.json", page_url: "https://status.convercent.com", type: "statuspage" },
-  // Paystack — African payments platform (Nigeria, Ghana, Kenya, South Africa)
   { id: "paystack", name: "Paystack", tags: ["payments", "fintech", "africa", "api"], status_url: "https://paystack.statuspage.io/api/v2/status.json", page_url: "https://paystack.statuspage.io", type: "statuspage" },
-  // WellSaid Labs — AI voice synthesis / text-to-speech for enterprise
   { id: "wellsaid", name: "WellSaid Labs", tags: ["ai", "voice", "tts", "text-to-speech", "saas"], status_url: "https://status.wellsaidlabs.com/api/v2/status.json", page_url: "https://status.wellsaidlabs.com", type: "statuspage" },
-  // Hume AI — empathic AI voice & emotion intelligence API
   { id: "hume_ai", name: "Hume AI", tags: ["ai", "voice", "emotion", "api", "developer-tools"], status_url: "https://status.hume.ai/api/v2/status.json", page_url: "https://status.hume.ai", type: "statuspage" },
-  // Retell AI — conversational AI voice agent platform
   { id: "retell_ai", name: "Retell AI", tags: ["ai", "voice", "conversational-ai", "api", "developer-tools"], status_url: "https://status.retellai.com/api/v2/status.json", page_url: "https://status.retellai.com", type: "statuspage" },
-  // Spike.sh — on-call alerting & incident management
   { id: "spike_sh", name: "Spike.sh", tags: ["monitoring", "alerting", "incident-management", "on-call", "devops"], status_url: "https://spike.statuspage.io/api/v2/status.json", page_url: "https://spike.statuspage.io", type: "statuspage" },
-  // InfluxDB Cloud — time-series database & observability platform
   { id: "influxdb", name: "InfluxDB Cloud", tags: ["database", "time-series", "observability", "monitoring", "cloud"], status_url: "https://status.influxdata.com/api/v2/status.json", page_url: "https://status.influxdata.com", type: "statuspage" },
-  // Rutter — universal commerce API (ERP, accounting, e-commerce integrations)
   { id: "rutter", name: "Rutter", tags: ["api", "integration", "ecommerce", "accounting", "developer-tools"], status_url: "https://rutter.statuspage.io/api/v2/status.json", page_url: "https://rutter.statuspage.io", type: "statuspage" },
-  // Nami ML — mobile paywall & subscription monetization SDK
   { id: "namiml", name: "Nami ML", tags: ["mobile", "subscriptions", "payments", "monetization", "sdk"], status_url: "https://status.namiml.com/api/v2/status.json", page_url: "https://status.namiml.com", type: "statuspage" },
-  // Glassfy — in-app purchase & subscription SDK for mobile apps
   { id: "glassfy", name: "Glassfy", tags: ["mobile", "subscriptions", "in-app-purchase", "sdk", "saas"], status_url: "https://glassfy.statuspage.io/api/v2/status.json", page_url: "https://glassfy.statuspage.io", type: "statuspage" },
-  // Superwall — mobile paywall infrastructure & A/B testing
   { id: "superwall", name: "Superwall", tags: ["mobile", "paywall", "subscriptions", "a-b-testing", "saas"], status_url: "https://superwall.statuspage.io/api/v2/status.json", page_url: "https://superwall.statuspage.io", type: "statuspage" },
-  // Purchasely — no-code mobile subscription & paywall platform
   { id: "purchasely", name: "Purchasely", tags: ["mobile", "subscriptions", "paywall", "no-code", "saas"], status_url: "https://purchasely.statuspage.io/api/v2/status.json", page_url: "https://purchasely.statuspage.io", type: "statuspage" },
-  // Tick 188 additions
-  // Elastic Cloud — managed Elasticsearch, Kibana & observability platform
   { id: "elastic_cloud", name: "Elastic Cloud", tags: ["search", "database", "observability", "logging", "cloud"], status_url: "https://status.elastic.co/api/v2/status.json", page_url: "https://status.elastic.co", type: "statuspage" },
-  // Observe — cloud observability & log analytics platform (AWS-native)
   { id: "observe_inc", name: "Observe", tags: ["observability", "logging", "analytics", "cloud", "devops"], status_url: "https://status.observeinc.com/api/v2/status.json", page_url: "https://status.observeinc.com", type: "statuspage" },
-  // Tray.ai — low-code automation & iPaaS integration platform
   { id: "tray_io", name: "Tray.ai", tags: ["automation", "ipaas", "integration", "low-code", "saas"], status_url: "https://status.tray.io/api/v2/status.json", page_url: "https://status.tray.io", type: "statuspage" },
-  // Jira Service Management — ITSM & service desk platform (Atlassian)
   { id: "jira_service_management", name: "Jira Service Management", tags: ["itsm", "service-desk", "atlassian", "enterprise", "saas"], status_url: "https://jira-service-management.status.atlassian.com/api/v2/status.json", page_url: "https://jira-service-management.status.atlassian.com", type: "statuspage" },
-  // Atlassian Statuspage — incident communication & status page platform
   { id: "statuspage_io", name: "Atlassian Statuspage", tags: ["incident-management", "status-page", "atlassian", "saas", "developer-tools"], status_url: "https://metastatuspage.com/api/v2/status.json", page_url: "https://metastatuspage.com", type: "statuspage" },
-  // bunny.net — CDN, video streaming & edge storage platform
   { id: "bunny_cdn", name: "bunny.net", tags: ["cdn", "video", "edge", "storage", "cloud"], status_url: "https://status.bunny.net/api/v2/status.json", page_url: "https://status.bunny.net", type: "statuspage" },
-  // Gainsight PX — product experience & user onboarding analytics platform
-  { id: "gainsight_px", name: "Gainsight PX", tags: ["product-analytics", "user-onboarding", "customer-success", "saas", "analytics"], status_url: "https://status.aptrinsic.com/api/v2/status.json", page_url: "https://status.aptrinsic.com", type: "statuspage" },
-  // Mend.io — open-source security & SCA vulnerability platform (formerly WhiteSource)
   { id: "mend_io", name: "Mend.io", tags: ["security", "sca", "open-source", "vulnerabilities", "developer-tools"], status_url: "https://status.mend.io/api/v2/status.json", page_url: "https://status.mend.io", type: "statuspage" },
-  // Aqua Cloud — cloud-native & container security platform
   { id: "aquasecurity", name: "Aqua Cloud", tags: ["security", "container", "cloud-native", "kubernetes", "devsecops"], status_url: "https://status.aquasec.com/api/v2/status.json", page_url: "https://status.aquasec.com", type: "statuspage" },
-  // Wiz — cloud security posture management (CSPM) platform
   { id: "wiz_io", name: "Wiz", tags: ["security", "cspm", "cloud", "devsecops", "enterprise"], status_url: "https://status.wiz.io/api/v2/status.json", page_url: "https://status.wiz.io", type: "statuspage" },
-  // Code Climate — automated code review & engineering analytics platform
   { id: "code_climate", name: "Code Climate", tags: ["code-quality", "developer-tools", "ci", "analytics", "saas"], status_url: "https://status.codeclimate.com/api/v2/status.json", page_url: "https://status.codeclimate.com", type: "statuspage" },
-  // Sleuth — DORA metrics & deployment tracking platform for engineering teams
   { id: "sleuth", name: "Sleuth", tags: ["dora-metrics", "deployments", "developer-tools", "devops", "analytics"], status_url: "https://status.sleuth.io/api/v2/status.json", page_url: "https://status.sleuth.io", type: "statuspage" },
-  // Arbitrum — Ethereum Layer 2 optimistic rollup (Offchain Labs)
   { id: "arbitrum", name: "Arbitrum", tags: ["blockchain", "l2", "ethereum", "web3", "infrastructure"], status_url: "https://arbitrum.statuspage.io/api/v2/status.json", page_url: "https://arbitrum.statuspage.io", type: "statuspage" },
-  // Hex — collaborative data analytics & SQL notebooks platform
-  { id: "hex", name: "Hex", tags: ["analytics", "data", "notebooks", "sql", "collaboration"], status_url: "https://status.hex.tech/api/v2/status.json", page_url: "https://status.hex.tech", type: "statuspage" },
-  // SearchSpring — ecommerce search, merchandising & personalization
   { id: "searchspring", name: "SearchSpring", tags: ["ecommerce", "search", "merchandising", "personalization", "saas"], status_url: "https://status.searchspring.com/api/v2/status.json", page_url: "https://status.searchspring.com", type: "statuspage" },
-  // ModernFi — bank deposit placement network (CDARS/ICS for credit unions & banks)
   { id: "modernfi", name: "ModernFi", tags: ["fintech", "banking", "deposits", "fdic", "api"], status_url: "https://status.modernfi.com/api/v2/status.json", page_url: "https://status.modernfi.com", type: "statuspage" },
-  // June — product analytics platform built for B2B SaaS companies
   { id: "june", name: "June", tags: ["analytics", "product", "b2b", "saas", "developer-tools"], status_url: "https://june.statuspage.io/api/v2/status.json", page_url: "https://june.statuspage.io", type: "statuspage" },
-  // Momento — serverless caching & pub/sub platform (zero-ops, instant scale)
   { id: "momento", name: "Momento", tags: ["cache", "serverless", "infrastructure", "developer-tools", "pub-sub"], status_url: "https://momento.statuspage.io/api/v2/status.json", page_url: "https://momento.statuspage.io", type: "statuspage" },
-  // Kobiton — mobile device testing platform (real devices + AI automation)
   { id: "kobiton", name: "Kobiton", tags: ["mobile", "testing", "qa", "automation", "developer-tools"], status_url: "https://status.kobiton.com/api/v2/status.json", page_url: "https://status.kobiton.com", type: "statuspage" },
-  // OKX — global crypto exchange & Web3 platform
   { id: "okx", name: "OKX", tags: ["crypto", "exchange", "web3", "fintech", "trading"], status_url: "https://okx.statuspage.io/api/v2/status.json", page_url: "https://okx.statuspage.io", type: "statuspage" },
-  // Atomic Financial — payroll connectivity & employment data API
   { id: "atomic_financial", name: "Atomic Financial", tags: ["fintech", "payroll", "employment", "api", "developer-tools"], status_url: "https://status.atomic.financial/api/v2/status.json", page_url: "https://status.atomic.financial", type: "statuspage" },
-  // Leonardo AI — AI image & video generation platform
   { id: "leonardo_ai", name: "Leonardo AI", tags: ["ai", "image-generation", "creative", "saas", "api"], status_url: "https://leonardo.statuspage.io/api/v2/status.json", page_url: "https://leonardo.statuspage.io", type: "statuspage" },
-  // VEED.io — online video editing & creation platform
   { id: "veed_io", name: "VEED.io", tags: ["video", "editing", "ai", "content-creation", "saas"], status_url: "https://status.veed.io/api/v2/status.json", page_url: "https://status.veed.io", type: "statuspage" },
-  // Mergify — GitHub pull request automation & merge queue platform
   { id: "mergify", name: "Mergify", tags: ["developer-tools", "github", "ci-cd", "automation", "pull-requests"], status_url: "https://status.mergify.com/api/v2/status.json", page_url: "https://status.mergify.com", type: "statuspage" },
-  // Cohere — enterprise AI & large language model API platform
-  { id: "cohere", name: "Cohere", tags: ["ai", "llm", "nlp", "api", "developer-tools"], status_url: "https://status.cohere.com/api/v2/status.json", page_url: "https://status.cohere.com", type: "statuspage" },
-  // Fly.io — global application deployment platform (VMs near users)
   { id: "fly_io", name: "Fly.io", tags: ["cloud", "hosting", "edge", "infrastructure", "developer-tools"], status_url: "https://status.flyio.net/api/v2/status.json", page_url: "https://status.flyio.net", type: "statuspage" },
-  // Railway — instant cloud deployments for developers (full-stack hosting)
-  { id: "railway", name: "Railway", tags: ["cloud", "hosting", "deployment", "developer-tools", "paas"], status_url: "https://railway.statuspage.io/api/v2/status.json", page_url: "https://railway.statuspage.io", type: "statuspage" },
-  // Replicate — cloud platform for running open-source ML models via API
-  { id: "replicate", name: "Replicate", tags: ["ai", "ml", "inference", "api", "developer-tools"], status_url: "https://www.replicatestatus.com/api/v2/status.json", page_url: "https://www.replicatestatus.com", type: "statuspage" },
-  // Brex — corporate cards & spend management platform for startups
-  { id: "brex", name: "Brex", tags: ["fintech", "banking", "corporate-cards", "spend-management", "saas"], status_url: "https://status.brex.com/api/v2/status.json", page_url: "https://status.brex.com", type: "statuspage" },
-  // Snyk — developer security platform for finding & fixing vulnerabilities
-  { id: "snyk", name: "Snyk", tags: ["security", "devsecops", "vulnerabilities", "developer-tools", "sca"], status_url: "https://status.snyk.io/api/v2/status.json", page_url: "https://status.snyk.io", type: "statuspage" },
-  // Tailscale — zero-config VPN & secure network connectivity platform
-  { id: "tailscale", name: "Tailscale", tags: ["networking", "vpn", "security", "infrastructure", "developer-tools"], status_url: "https://status.tailscale.com/api/v2/status.json", page_url: "https://status.tailscale.com", type: "statuspage" },
-  // Mixpanel — product analytics platform for user behavior & event tracking
-  { id: "mixpanel", name: "Mixpanel", tags: ["analytics", "product", "user-behavior", "saas", "data"], status_url: "https://mixpanelstatus.com/api/v2/status.json", page_url: "https://mixpanelstatus.com", type: "statuspage" },
-  // DigitalOcean — cloud infrastructure platform (VMs, Kubernetes, databases, storage)
-  { id: "digitalocean", name: "DigitalOcean", tags: ["cloud", "iaas", "infrastructure", "hosting", "kubernetes"], status_url: "https://status.digitalocean.com/api/v2/status.json", page_url: "https://status.digitalocean.com", type: "statuspage" },
-  // Cloudinary — cloud-based image & video management, optimization & delivery CDN
-  { id: "cloudinary", name: "Cloudinary", tags: ["cdn", "media", "image", "video", "cloud"], status_url: "https://status.cloudinary.com/api/v2/status.json", page_url: "https://status.cloudinary.com", type: "statuspage" },
-  // npm — JavaScript package registry & package manager (Node.js ecosystem)
-  { id: "npm", name: "npm", tags: ["package-registry", "javascript", "nodejs", "developer-tools", "open-source"], status_url: "https://status.npmjs.org/api/v2/status.json", page_url: "https://status.npmjs.org", type: "statuspage" },
-  // OpenAI — AI research lab and API provider (GPT-4, DALL-E, Whisper)
-  { id: "openai", name: "OpenAI", tags: ["ai", "llm", "api", "developer-tools", "gpt"], status_url: "https://status.openai.com/api/v2/status.json", page_url: "https://status.openai.com", type: "statuspage" },
-  // Anthropic — AI safety company and Claude API provider
-  { id: "anthropic", name: "Anthropic", tags: ["ai", "llm", "api", "developer-tools", "claude"], status_url: "https://status.claude.com/api/v2/status.json", page_url: "https://status.claude.com", type: "statuspage" },
-  // Miro — collaborative online whiteboard platform
-  { id: "miro", name: "Miro", tags: ["collaboration", "whiteboard", "design", "productivity", "saas"], status_url: "https://status.miro.com/api/v2/status.json", page_url: "https://status.miro.com", type: "statuspage" },
-  // Iterable — cross-channel marketing automation platform
-  { id: "iterable", name: "Iterable", tags: ["marketing", "email", "automation", "notifications", "saas"], status_url: "https://status.iterable.com/api/v2/status.json", page_url: "https://status.iterable.com", type: "statuspage" },
-  // Shopify — e-commerce platform for online stores and retail POS
-  { id: "shopify", name: "Shopify", tags: ["e-commerce", "saas", "payments", "retail", "platform"], status_url: "https://status.shopify.com/api/v2/status.json", page_url: "https://status.shopify.com", type: "statuspage" },
-  // SendGrid — cloud-based email delivery service (Twilio)
-  { id: "sendgrid", name: "SendGrid", tags: ["email", "api", "transactional", "marketing", "communications"], status_url: "https://status.sendgrid.com/api/v2/status.json", page_url: "https://status.sendgrid.com", type: "statuspage" },
-  // Mailgun — email API service for developers
-  { id: "mailgun", name: "Mailgun", tags: ["email", "api", "transactional", "developer-tools", "communications"], status_url: "https://status.mailgun.com/api/v2/status.json", page_url: "https://status.mailgun.com", type: "statuspage" },
-  // Contentful — headless CMS and content platform
-  { id: "contentful", name: "Contentful", tags: ["cms", "headless", "content", "api", "saas"], status_url: "https://status.contentful.com/api/v2/status.json", page_url: "https://status.contentful.com", type: "statuspage" },
-  // Elastic — search, observability & security platform (Elasticsearch, Kibana)
-  { id: "elastic", name: "Elastic", tags: ["search", "observability", "security", "analytics", "cloud"], status_url: "https://status.elastic.co/api/v2/status.json", page_url: "https://status.elastic.co", type: "statuspage" },
-  // GitHub — code hosting platform and developer collaboration hub
-  { id: "github", name: "GitHub", tags: ["devtools", "git", "code-hosting", "ci-cd", "collaboration"], status_url: "https://www.githubstatus.com/api/v2/status.json", page_url: "https://www.githubstatus.com", type: "statuspage" },
-  // Atlassian — maker of Jira, Confluence, Bitbucket, Trello
-  { id: "atlassian", name: "Atlassian", tags: ["devtools", "project-management", "collaboration", "saas", "enterprise"], status_url: "https://status.atlassian.com/api/v2/status.json", page_url: "https://status.atlassian.com", type: "statuspage" },
-  // HashiCorp — infrastructure automation tools (Terraform, Vault, Consul, Nomad)
-  { id: "hashicorp", name: "HashiCorp", tags: ["infrastructure", "devops", "cloud", "security", "developer-tools"], status_url: "https://status.hashicorp.com/api/v2/status.json", page_url: "https://status.hashicorp.com", type: "statuspage" },
-  // Monzo — UK neobank / digital bank
   { id: "monzo", name: "Monzo", tags: ["fintech", "banking", "neobank", "payments", "uk"], status_url: "https://status.monzo.com/api/v2/status.json", page_url: "https://status.monzo.com", type: "statuspage" },
-  // Curve — all-in-one card that connects multiple bank cards (UK fintech)
   { id: "curve", name: "Curve", tags: ["fintech", "payments", "card", "uk"], status_url: "https://status.curve.com/api/v2/status.json", page_url: "https://status.curve.com", type: "statuspage" },
-  // CoinList — cryptocurrency exchange and token launch platform
   { id: "coinlist", name: "CoinList", tags: ["crypto", "exchange", "web3", "fintech"], status_url: "https://status.coinlist.co/api/v2/status.json", page_url: "https://status.coinlist.co", type: "statuspage" },
-  // Bitso — Latin American cryptocurrency exchange
   { id: "bitso", name: "Bitso", tags: ["crypto", "exchange", "latam", "fintech"], status_url: "https://status.bitso.com/api/v2/status.json", page_url: "https://status.bitso.com", type: "statuspage" },
-  // eToro — social trading and multi-asset investment platform
   { id: "etoro", name: "eToro", tags: ["fintech", "trading", "investments", "social", "crypto"], status_url: "https://status.etoro.com/api/v2/status.json", page_url: "https://status.etoro.com", type: "statuspage" },
-  // Sync.com — encrypted cloud storage and file sharing platform
   { id: "sync_com", name: "Sync.com", tags: ["storage", "cloud", "privacy", "encryption", "file-sharing"], status_url: "https://status.sync.com/api/v2/status.json", page_url: "https://status.sync.com", type: "statuspage" },
-  // Ravelin — fraud detection and prevention platform for e-commerce
   { id: "ravelin", name: "Ravelin", tags: ["fraud-prevention", "security", "payments", "ecommerce", "api"], status_url: "https://status.ravelin.com/api/v2/status.json", page_url: "https://status.ravelin.com", type: "statuspage" },
-  // Remind — K-12 education communication platform for teachers, students, and parents
   { id: "remind", name: "Remind", tags: ["education", "communication", "k12", "saas"], status_url: "https://status.remind.com/api/v2/status.json", page_url: "https://status.remind.com", type: "statuspage" },
-  // Fellow — meeting management and employee feedback platform
   { id: "fellow", name: "Fellow", tags: ["productivity", "meetings", "hr", "collaboration", "saas"], status_url: "https://status.fellow.app/api/v2/status.json", page_url: "https://status.fellow.app", type: "statuspage" },
-  // Churnkey — subscription cancellation flow and churn prevention tool
   { id: "churnkey", name: "Churnkey", tags: ["saas", "churn", "subscriptions", "retention", "payments"], status_url: "https://status.churnkey.co/api/v2/status.json", page_url: "https://status.churnkey.co", type: "statuspage" },
-  // Aderant — legal practice management software for law firms
   { id: "aderant", name: "Aderant", tags: ["legal", "law-firm", "practice-management", "enterprise", "saas"], status_url: "https://status.aderant.com/api/v2/status.json", page_url: "https://status.aderant.com", type: "statuspage" },
-  // Nuix — legal e-discovery and digital investigation platform
   { id: "nuix", name: "Nuix", tags: ["legal", "ediscovery", "investigation", "forensics", "enterprise"], status_url: "https://status.nuix.com/api/v2/status.json", page_url: "https://status.nuix.com", type: "statuspage" },
-  // ClassLink — education SSO and identity management for K-12 and higher ed
   { id: "classlink", name: "ClassLink", tags: ["education", "sso", "identity", "k12", "saas"], status_url: "https://status.classlink.com/api/v2/status.json", page_url: "https://status.classlink.com", type: "statuspage" },
-  // Clever — education SSO and rostering platform for K-12 schools
   { id: "clever", name: "Clever", tags: ["education", "sso", "rostering", "k12", "saas"], status_url: "https://status.clever.com/api/v2/status.json", page_url: "https://status.clever.com", type: "statuspage" },
-  // PTC Atlas (Windchill) — product lifecycle management and CAD platform
   { id: "ptc_atlas", name: "PTC Atlas", tags: ["cad", "plm", "manufacturing", "engineering", "enterprise"], status_url: "https://status.ptc.com/api/v2/status.json", page_url: "https://status.ptc.com", type: "statuspage" },
-  // Onshape — cloud-native CAD and product development platform
   { id: "onshape", name: "Onshape", tags: ["cad", "design", "engineering", "cloud", "saas"], status_url: "https://status.onshape.com/api/v2/status.json", page_url: "https://status.onshape.com", type: "statuspage" },
-  // Polly — AI-powered mortgage pricing and analytics platform
   { id: "polly_ai", name: "Polly", tags: ["mortgage", "fintech", "pricing", "analytics", "api"], status_url: "https://status.polly.ai/api/v2/status.json", page_url: "https://status.polly.ai", type: "statuspage" },
-  // Optimal Blue — mortgage pricing engine, secondary market, and hedge analytics
   { id: "optimal_blue", name: "Optimal Blue", tags: ["mortgage", "fintech", "pricing", "secondary-market", "enterprise"], status_url: "https://status.optimalblue.com/api/v2/status.json", page_url: "https://status.optimalblue.com", type: "statuspage" },
-  // DEV Community (dev.to) — developer blogging and community platform
   { id: "devto", name: "DEV Community", tags: ["community", "blogging", "developer-tools", "social", "content"], status_url: "https://status.dev.to/api/v2/status.json", page_url: "https://status.dev.to", type: "statuspage" },
-  // Aerospike — high-performance NoSQL database for real-time workloads
   { id: "aerospike", name: "Aerospike", tags: ["database", "nosql", "real-time", "cloud", "infrastructure"], status_url: "https://status.aerospike.com/api/v2/status.json", page_url: "https://status.aerospike.com", type: "statuspage" },
-  // Restate Cloud — durable workflow orchestration and serverless functions platform
   { id: "restate", name: "Restate Cloud", tags: ["workflow", "orchestration", "serverless", "developer-tools", "cloud"], status_url: "https://status.restate.dev/api/v2/status.json", page_url: "https://status.restate.dev", type: "statuspage" },
-  // Sana AI — AI-powered enterprise search and learning platform
   { id: "sana_ai", name: "Sana", tags: ["ai", "enterprise-search", "learning", "knowledge-management", "saas"], status_url: "https://status.sana.ai/api/v2/status.json", page_url: "https://status.sana.ai", type: "statuspage" },
-  // Lambda GPU Cloud — on-demand GPU cloud compute for AI/ML workloads
   { id: "lambda_labs", name: "Lambda GPU Cloud", tags: ["gpu", "cloud", "ai", "ml", "compute"], status_url: "https://status.lambda.ai/api/v2/status.json", page_url: "https://status.lambda.ai", type: "statuspage" },
-  // Chord Commerce — headless commerce platform for DTC brands
   { id: "chord_commerce", name: "Chord Commerce", tags: ["ecommerce", "headless", "commerce", "dtc", "saas"], status_url: "https://status.chord.co/api/v2/status.json", page_url: "https://status.chord.co", type: "statuspage" },
-  // Lucidworks — AI-powered enterprise search and discovery platform
   { id: "lucidworks", name: "Lucidworks", tags: ["search", "enterprise-search", "ai", "analytics", "saas"], status_url: "https://status.lucidworks.com/api/v2/status.json", page_url: "https://status.lucidworks.com", type: "statuspage" },
-  // SearchStax — managed Solr and OpenSearch cloud service
   { id: "searchstax", name: "SearchStax", tags: ["search", "solr", "opensearch", "cloud", "managed-services"], status_url: "https://status.searchstax.com/api/v2/status.json", page_url: "https://status.searchstax.com", type: "statuspage" },
-  // Dolby.io — audio and video processing/enhancement APIs for developers
   { id: "dolby_io", name: "Dolby.io", tags: ["audio", "video", "media", "api", "developer-tools"], status_url: "https://status.dolby.io/api/v2/status.json", page_url: "https://status.dolby.io", type: "statuspage" },
-  // Incognia — location-based fraud prevention and device fingerprinting
   { id: "incognia", name: "Incognia", tags: ["fraud-prevention", "identity", "location", "security", "api"], status_url: "https://status.incognia.com/api/v2/status.json", page_url: "https://status.incognia.com", type: "statuspage" },
-  // Sardine AI — fraud prevention and anti-money laundering compliance platform
-  { id: "sardine_ai", name: "Sardine AI", tags: ["fraud-prevention", "aml", "compliance", "fintech", "security"], status_url: "https://status.sardine.ai/api/v2/status.json", page_url: "https://status.sardine.ai", type: "statuspage" },
-  // NeuroID — behavioral analytics for fraud detection and identity verification
   { id: "neuroid", name: "NeuroID", tags: ["fraud-detection", "behavioral-analytics", "identity", "security", "api"], status_url: "https://status.neuro-id.com/api/v2/status.json", page_url: "https://status.neuro-id.com", type: "statuspage" },
-  // Reducto AI — AI-powered document parsing and extraction API
   { id: "reducto_ai", name: "Reducto AI", tags: ["ai", "document-parsing", "ocr", "developer-tools", "api"], status_url: "https://status.reducto.ai/api/v2/status.json", page_url: "https://status.reducto.ai", type: "statuspage" },
-  // Vectorize — managed vector search and AI retrieval infrastructure
   { id: "vectorize", name: "Vectorize", tags: ["vector-search", "ai", "retrieval", "developer-tools", "api"], status_url: "https://status.vectorize.io/api/v2/status.json", page_url: "https://status.vectorize.io", type: "statuspage" },
-  // Fairwinds — Kubernetes reliability and security policy enforcement
   { id: "fairwinds", name: "Fairwinds", tags: ["kubernetes", "k8s", "security", "reliability", "devops"], status_url: "https://status.fairwinds.com/api/v2/status.json", page_url: "https://status.fairwinds.com", type: "statuspage" },
-  // Cast AI — Kubernetes cost optimization and autoscaling platform
   { id: "cast_ai", name: "Cast AI", tags: ["kubernetes", "k8s", "cloud-cost", "optimization", "devops"], status_url: "https://status.cast.ai/api/v2/status.json", page_url: "https://status.cast.ai", type: "statuspage" },
-  // BigID — data intelligence for privacy, security, and governance
   { id: "bigid", name: "BigID", tags: ["data-privacy", "governance", "security", "compliance", "enterprise"], status_url: "https://status.bigid.com/api/v2/status.json", page_url: "https://status.bigid.com", type: "statuspage" },
-  // Nanonets — AI-powered document processing and intelligent automation
   { id: "nanonets", name: "Nanonets", tags: ["ai", "document-ai", "ocr", "automation", "api"], status_url: "https://status.nanonets.com/api/v2/status.json", page_url: "https://status.nanonets.com", type: "statuspage" },
-  // Rossum — AI-native document processing for AP automation and data extraction
   { id: "rossum", name: "Rossum", tags: ["document-ai", "ap-automation", "ocr", "enterprise", "saas"], status_url: "https://status.rossum.ai/api/v2/status.json", page_url: "https://status.rossum.ai", type: "statuspage" },
-  // Pandium — embedded integration marketplace platform for SaaS companies
   { id: "pandium", name: "Pandium", tags: ["integration", "embedded-integration", "marketplace", "developer-tools", "saas"], status_url: "https://status.pandium.com/api/v2/status.json", page_url: "https://status.pandium.com", type: "statuspage" },
-  // PowerSync — real-time offline-first sync engine for mobile and web apps
   { id: "powersync", name: "PowerSync", tags: ["sync", "offline-first", "database", "mobile", "developer-tools"], status_url: "https://status.powersync.com/api/v2/status.json", page_url: "https://status.powersync.com", type: "statuspage" },
-  // Gather — virtual office and spatial video platform for remote teams
   { id: "gather_town", name: "Gather", tags: ["virtual-office", "video", "collaboration", "remote-work", "saas"], status_url: "https://status.gather.town/api/v2/status.json", page_url: "https://status.gather.town", type: "statuspage" },
-  // Appen — human-annotated training data and AI model evaluation platform
   { id: "appen", name: "Appen", tags: ["ai", "data-labeling", "training-data", "annotation", "enterprise"], status_url: "https://status.appen.com/api/v2/status.json", page_url: "https://status.appen.com", type: "statuspage" },
-  // Cloudera — enterprise data cloud platform for analytics and ML
   { id: "cloudera", name: "Cloudera", tags: ["data-platform", "cloud", "analytics", "ml", "enterprise"], status_url: "https://status.cloudera.com/api/v2/status.json", page_url: "https://status.cloudera.com", type: "statuspage" },
-  // Stream.io (GetStream) — real-time activity feeds, chat, and messaging infrastructure
-  { id: "getstream", name: "Stream", tags: ["messaging", "chat", "activity-feeds", "api", "developer-tools"], status_url: "https://status.getstream.io/api/v2/status.json", page_url: "https://status.getstream.io", type: "statuspage" },
-  // Incorta Cloud — augmented analytics and data warehouse platform
   { id: "incorta", name: "Incorta Cloud", tags: ["analytics", "bi", "data-warehouse", "enterprise", "saas"], status_url: "https://status.incorta.com/api/v2/status.json", page_url: "https://status.incorta.com", type: "statuspage" },
-  // FortiCloud — Fortinet cloud security services hub
   { id: "forticloud", name: "FortiCloud", tags: ["security", "cloud-security", "enterprise", "networking", "fortinet"], status_url: "https://status.forticloud.com/api/v2/status.json", page_url: "https://status.forticloud.com", type: "statuspage" },
-  // CData Cloud — data connectivity and integration platform
   { id: "cdata_cloud", name: "CData Cloud", tags: ["data-connectivity", "integration", "etl", "saas", "enterprise"], status_url: "https://status.cdata.com/api/v2/status.json", page_url: "https://status.cdata.com", type: "statuspage" },
-  // Memfault — IoT and embedded device monitoring and OTA update platform
   { id: "memfault", name: "Memfault", tags: ["iot", "embedded", "monitoring", "ota", "developer-tools"], status_url: "https://status.memfault.com/api/v2/status.json", page_url: "https://status.memfault.com", type: "statuspage" },
-  // Pirate Ship — discount shipping rates and postage platform
   { id: "pirate_ship", name: "Pirate Ship", tags: ["shipping", "logistics", "e-commerce", "postage", "saas"], status_url: "https://status.pirateship.com/api/v2/status.json", page_url: "https://status.pirateship.com", type: "statuspage" },
-  // Beautiful.ai — AI-powered presentation design platform
   { id: "beautiful_ai", name: "Beautiful.ai", tags: ["presentations", "design", "ai", "productivity", "saas"], status_url: "https://status.beautiful.ai/api/v2/status.json", page_url: "https://status.beautiful.ai", type: "statuspage" },
-  // Chameleon — user onboarding and in-app product tours platform
   { id: "chameleon_io", name: "Chameleon", tags: ["user-onboarding", "product-tours", "saas", "growth", "developer-tools"], status_url: "https://status.chameleon.io/api/v2/status.json", page_url: "https://status.chameleon.io", type: "statuspage" },
-  // Walnut — interactive product demo platform for sales teams
   { id: "walnut_io", name: "Walnut", tags: ["sales-demos", "product-tours", "saas", "sales", "enablement"], status_url: "https://status.walnut.io/api/v2/status.json", page_url: "https://status.walnut.io", type: "statuspage" },
-  // Zluri — SaaS management and spend optimization platform
   { id: "zluri", name: "Zluri", tags: ["saas-management", "spend-optimization", "it", "enterprise", "saas"], status_url: "https://status.zluri.com/api/v2/status.json", page_url: "https://status.zluri.com", type: "statuspage" },
-  // Vendr — SaaS purchasing and vendor management platform
   { id: "vendr", name: "Vendr", tags: ["saas-purchasing", "procurement", "vendor-management", "enterprise", "saas"], status_url: "https://status.vendr.com/api/v2/status.json", page_url: "https://status.vendr.com", type: "statuspage" },
-  // HungerRush — restaurant management and POS platform
   { id: "hungerrush", name: "HungerRush", tags: ["restaurant", "pos", "hospitality", "saas", "enterprise"], status_url: "https://status.hungerrush.com/api/v2/status.json", page_url: "https://status.hungerrush.com", type: "statuspage" },
-  // Omise — Southeast Asia payment gateway and processing platform
   { id: "omise", name: "Omise", tags: ["payments", "payment-gateway", "fintech", "api", "southeast-asia"], status_url: "https://status.omise.co/api/v2/status.json", page_url: "https://status.omise.co", type: "statuspage" },
-  // Toss Payments — Korean digital payments platform
   { id: "tosspayments", name: "Toss Payments", tags: ["payments", "fintech", "payment-gateway", "korea", "api"], status_url: "https://status.tosspayments.com/api/v2/status.json", page_url: "https://status.tosspayments.com", type: "statuspage" },
-  // Visma Cloud Services — Scandinavian enterprise business software cloud
   { id: "visma", name: "Visma Cloud Services", tags: ["erp", "accounting", "enterprise", "cloud", "saas"], status_url: "https://status.visma.com/api/v2/status.json", page_url: "https://status.visma.com", type: "statuspage" },
-  // Starling Bank — UK challenger bank and banking infrastructure
   { id: "starling_bank", name: "Starling Bank", tags: ["banking", "fintech", "neobank", "uk", "payments"], status_url: "https://starlingbank.statuspage.io/api/v2/status.json", page_url: "https://starlingbank.statuspage.io", type: "statuspage" },
-  // Monese — European digital banking and international money transfer
   { id: "monese", name: "Monese", tags: ["banking", "fintech", "neobank", "europe", "payments"], status_url: "https://status.monese.com/api/v2/status.json", page_url: "https://status.monese.com", type: "statuspage" },
-  // Immutable — Web3 gaming blockchain platform (ImmutableX / Immutable zkEVM)
   { id: "immutable", name: "Immutable", tags: ["web3", "blockchain", "gaming", "nft", "layer2"], status_url: "https://status.immutable.com/api/v2/status.json", page_url: "https://status.immutable.com", type: "statuspage" },
-  // Perplexity — AI-powered search engine and answer engine
   { id: "perplexity", name: "Perplexity", tags: ["ai", "search", "llm", "saas"], status_url: "https://perplexity.instatus.com/api/v2/summary.json", page_url: "https://status.perplexity.com", type: "betterstack" },
-  // Talon.One — promotion engine for loyalty, vouchers, and gamification
   { id: "talon_one", name: "Talon.One", tags: ["promotions", "loyalty", "ecommerce", "marketing", "api"], status_url: "https://status.talon.one/api/v2/status.json", page_url: "https://status.talon.one", type: "statuspage" },
-  // Voucherify — API-first promotions and loyalty platform
   { id: "voucherify", name: "Voucherify", tags: ["promotions", "loyalty", "vouchers", "ecommerce", "api"], status_url: "https://status.voucherify.io/api/v2/status.json", page_url: "https://status.voucherify.io", type: "statuspage" },
-  // Giftbit — digital gift card and rewards delivery platform
   { id: "giftbit", name: "Giftbit", tags: ["gifting", "rewards", "digital-cards", "fintech", "api"], status_url: "https://status.giftbit.com/api/v2/status.json", page_url: "https://status.giftbit.com", type: "statuspage" },
-  // Tango Card — digital rewards and incentive delivery platform
   { id: "tango_card", name: "Tango Card", tags: ["rewards", "gifting", "incentives", "digital-cards", "saas"], status_url: "https://status.tangocard.com/api/v2/status.json", page_url: "https://status.tangocard.com", type: "statuspage" },
-  // Assembled — customer support workforce management and scheduling
   { id: "assembled", name: "Assembled", tags: ["workforce-management", "customer-support", "scheduling", "saas"], status_url: "https://status.assembled.com/api/v2/status.json", page_url: "https://status.assembled.com", type: "statuspage" },
-  // Planday — employee scheduling and workforce management platform
   { id: "planday", name: "Planday", tags: ["workforce", "scheduling", "hr", "shift-management", "saas"], status_url: "https://status.planday.com/api/v2/status.json", page_url: "https://status.planday.com", type: "statuspage" },
-  // Handshake — early talent recruiting and career platform
   { id: "handshake", name: "Handshake", tags: ["recruiting", "hr", "early-talent", "campus", "saas"], status_url: "https://status.joinhandshake.com/api/v2/status.json", page_url: "https://status.joinhandshake.com", type: "statuspage" },
-  // Practice Better — all-in-one health coaching and client management platform
   { id: "practice_better", name: "Practice Better", tags: ["healthcare", "coaching", "wellness", "telehealth", "saas"], status_url: "https://status.practicebetter.io/api/v2/status.json", page_url: "https://status.practicebetter.io", type: "statuspage" },
-  // GPS Insight — fleet tracking and telematics for enterprise fleets
   { id: "gps_insight", name: "GPS Insight", tags: ["fleet", "telematics", "gps", "iot", "saas"], status_url: "https://status.gpsinsight.com/api/v2/status.json", page_url: "https://status.gpsinsight.com", type: "statuspage" },
-  // Basiq — open banking API for Australia and New Zealand
   { id: "basiq", name: "Basiq", tags: ["open-banking", "fintech", "financial-data", "api", "australia"], status_url: "https://status.basiq.io/api/v2/status.json", page_url: "https://status.basiq.io", type: "statuspage" },
-  // Volt — open banking payment infrastructure for Europe
   { id: "volt_io", name: "Volt", tags: ["open-banking", "payments", "fintech", "europe", "api"], status_url: "https://status.volt.io/api/v2/status.json", page_url: "https://status.volt.io", type: "statuspage" },
-  // LocalStack — AWS cloud emulator for local development and testing
   { id: "localstack", name: "LocalStack", tags: ["developer-tools", "cloud", "aws", "testing", "emulation"], status_url: "https://status.localstack.cloud/api/v2/status.json", page_url: "https://status.localstack.cloud", type: "statuspage" },
-  // Productsup — product content management and syndication platform
   { id: "productsup", name: "Productsup", tags: ["ecommerce", "product-data", "feeds", "syndication", "saas"], status_url: "https://status.productsup.io/api/v2/status.json", page_url: "https://status.productsup.io", type: "statuspage" },
-  // ChannelEngine — marketplace management and order routing platform
   { id: "channelengine", name: "ChannelEngine", tags: ["ecommerce", "marketplace", "feeds", "orders", "saas"], status_url: "https://status.channelengine.com/api/v2/status.json", page_url: "https://status.channelengine.com", type: "statuspage" },
-  // Functionize — AI-powered autonomous test automation platform
   { id: "functionize", name: "Functionize", tags: ["testing", "ai", "automation", "qa", "developer-tools"], status_url: "https://status.functionize.com/api/v2/status.json", page_url: "https://status.functionize.com", type: "statuspage" },
-  // MemberSpace — membership and subscription management for websites
   { id: "memberspace", name: "MemberSpace", tags: ["membership", "subscriptions", "payments", "content", "saas"], status_url: "https://status.memberspace.com/api/v2/status.json", page_url: "https://status.memberspace.com", type: "statuspage" },
-  // Clinically AI — AI clinical documentation and note generation
   { id: "clinically_ai", name: "Clinically AI", tags: ["healthcare", "ai", "clinical-notes", "documentation", "saas"], status_url: "https://status.clinicalnotes.ai/api/v2/status.json", page_url: "https://status.clinicalnotes.ai", type: "statuspage" },
-  // Kudos — employee recognition and rewards platform
   { id: "kudos", name: "Kudos", tags: ["hr", "employee-recognition", "rewards", "engagement", "saas"], status_url: "https://status.kudos.com/api/v2/status.json", page_url: "https://status.kudos.com", type: "statuspage" },
-  // Targetprocess — agile project and portfolio management tool
   { id: "targetprocess", name: "Targetprocess", tags: ["project-management", "agile", "planning", "developer-tools", "saas"], status_url: "https://status.targetprocess.com/api/v2/status.json", page_url: "https://status.targetprocess.com", type: "statuspage" },
-  // OpenNode — Bitcoin payment processing API for businesses
   { id: "opennode", name: "OpenNode", tags: ["crypto", "bitcoin", "payments", "api", "fintech"], status_url: "https://status.opennode.com/api/v2/status.json", page_url: "https://status.opennode.com", type: "statuspage" },
-  // Banxa — crypto on/off ramp infrastructure for exchanges and wallets
   { id: "banxa", name: "Banxa", tags: ["crypto", "on-ramp", "off-ramp", "payments", "fintech"], status_url: "https://status.banxa.com/api/v2/status.json", page_url: "https://status.banxa.com", type: "statuspage" },
-  // Inkit — direct mail automation and generation platform
   { id: "inkit", name: "Inkit", tags: ["direct-mail", "print", "automation", "marketing", "api"], status_url: "https://status.inkit.com/api/v2/status.json", page_url: "https://status.inkit.com", type: "statuspage" },
-  // Mindee — document parsing and data extraction API
   { id: "mindee", name: "Mindee", tags: ["document-ai", "ocr", "parsing", "api", "developer-tools"], status_url: "https://status.mindee.com/api/v2/status.json", page_url: "https://status.mindee.com", type: "statuspage" },
-  // Affinda — AI-powered resume and document parsing API
   { id: "affinda", name: "Affinda", tags: ["document-ai", "resume-parsing", "ocr", "api", "hr"], status_url: "https://status.affinda.com/api/v2/status.json", page_url: "https://status.affinda.com", type: "statuspage" },
-  // Incode — AI-powered biometric identity verification platform
   { id: "incode", name: "Incode", tags: ["identity", "biometrics", "kyc", "verification", "ai"], status_url: "https://status.incode.com/api/v2/status.json", page_url: "https://status.incode.com", type: "statuspage" },
-  // PayGate — South African payment gateway for online businesses
   { id: "paygate_za", name: "PayGate", tags: ["payments", "gateway", "south-africa", "ecommerce", "fintech"], status_url: "https://status.paygate.co.za/api/v2/status.json", page_url: "https://status.paygate.co.za", type: "statuspage" },
-  // Peach Payments — African online payments infrastructure
   { id: "peach_payments", name: "Peach Payments", tags: ["payments", "africa", "gateway", "ecommerce", "fintech"], status_url: "https://status.peachpayments.com/api/v2/status.json", page_url: "https://status.peachpayments.com", type: "statuspage" },
-  // Yoco — South African payments and POS for small businesses
   { id: "yoco", name: "Yoco", tags: ["payments", "pos", "south-africa", "smb", "fintech"], status_url: "https://status.yoco.com/api/v2/status.json", page_url: "https://status.yoco.com", type: "statuspage" },
-  // Kuda — Nigerian digital bank and neobank
   { id: "kuda", name: "Kuda", tags: ["neobank", "fintech", "nigeria", "banking", "africa"], status_url: "https://status.kuda.com/api/v2/status.json", page_url: "https://status.kuda.com", type: "statuspage" },
-  // BluePay — payment processing and merchant services
   { id: "bluepay", name: "BluePay", tags: ["payments", "processing", "merchant", "fintech", "api"], status_url: "https://status.bluepay.com/api/v2/status.json", page_url: "https://status.bluepay.com", type: "statuspage" },
-  // Griffin — UK Banking as a Service platform for fintechs
   { id: "griffin", name: "Griffin", tags: ["banking", "baas", "fintech", "uk", "api"], status_url: "https://status.griffin.com/api/v2/status.json", page_url: "https://status.griffin.com", type: "statuspage" },
-  // LeadSquared — CRM and marketing automation for high-velocity sales
   { id: "leadsquared", name: "LeadSquared", tags: ["crm", "marketing-automation", "sales", "saas", "india"], status_url: "https://status.leadsquared.com/api/v2/status.json", page_url: "https://status.leadsquared.com", type: "statuspage" },
-  // Sendcloud — multi-carrier shipping and returns platform for e-commerce
   { id: "sendcloud", name: "Sendcloud", tags: ["shipping", "logistics", "ecommerce", "returns", "europe"], status_url: "https://status.sendcloud.com/api/v2/status.json", page_url: "https://status.sendcloud.com", type: "statuspage" },
-  // Click (ClickSoftware) — Salesforce field service management platform
   { id: "clicksoftware", name: "Click (ClickSoftware)", tags: ["field-service", "workforce", "scheduling", "salesforce", "enterprise"], status_url: "https://status.clicksoftware.com/api/v2/status.json", page_url: "https://status.clicksoftware.com", type: "statuspage" },
-  // Zettle — PayPal's mobile POS and card payment solution for SMBs
   { id: "zettle", name: "Zettle", tags: ["payments", "pos", "mobile", "smb", "fintech"], status_url: "https://status.zettle.com/api/v2/status.json", page_url: "https://status.zettle.com", type: "statuspage" },
-  // Textline — business texting and SMS communication platform
   { id: "textline", name: "Textline", tags: ["sms", "messaging", "customer-support", "business", "saas"], status_url: "https://status.textline.com/api/v2/status.json", page_url: "https://status.textline.com", type: "statuspage" },
-  // Cuboh — restaurant online ordering integration hub
   { id: "cuboh", name: "Cuboh", tags: ["restaurant", "online-ordering", "pos-integration", "delivery", "saas"], status_url: "https://status.cuboh.com/api/v2/status.json", page_url: "https://status.cuboh.com", type: "statuspage" },
-  // Anthology — education technology platform (Blackboard + Campus Management)
   { id: "anthology", name: "Anthology", tags: ["edtech", "lms", "higher-education", "student-success", "saas"], status_url: "https://status.anthology.com/api/v2/status.json", page_url: "https://status.anthology.com", type: "statuspage" },
-  // Veracross — K-12 school information and management system
   { id: "veracross", name: "Veracross", tags: ["edtech", "k12", "sis", "school-management", "saas"], status_url: "https://status.veracross.com/api/v2/status.json", page_url: "https://status.veracross.com", type: "statuspage" },
-  // NextGen Healthcare — EHR and practice management for ambulatory care
   { id: "nextgen_healthcare", name: "NextGen Healthcare", tags: ["healthcare", "ehr", "practice-management", "clinical", "saas"], status_url: "https://nextgen.statuspage.io/api/v2/status.json", page_url: "https://nextgen.statuspage.io", type: "statuspage" },
-  // dLocal — cross-border payments infrastructure for emerging markets (LatAm, Africa, Asia)
   { id: "dlocal", name: "dLocal", tags: ["payments", "fintech", "emerging-markets", "latam", "africa"], status_url: "https://dlocal.statuspage.io/api/v2/status.json", page_url: "https://dlocal.statuspage.io", type: "statuspage" },
-  // NetDocuments — cloud document management and collaboration for legal and compliance
   { id: "netdocuments", name: "NetDocuments", tags: ["document-management", "legal", "cloud", "collaboration", "enterprise"], status_url: "https://netdocuments.statuspage.io/api/v2/status.json", page_url: "https://netdocuments.statuspage.io", type: "statuspage" },
-  // MachineMetrics — industrial IoT platform for manufacturing equipment monitoring
   { id: "machinemetrics", name: "MachineMetrics", tags: ["manufacturing", "iot", "oee", "industrial", "saas"], status_url: "https://status.machinemetrics.com/api/v2/status.json", page_url: "https://status.machinemetrics.com", type: "statuspage" },
-  // Cority — EHS (environmental, health & safety) management platform
   { id: "cority", name: "Cority", tags: ["ehs", "health-safety", "environmental", "compliance", "enterprise"], status_url: "https://status.cority.com/api/v2/status.json", page_url: "https://status.cority.com", type: "statuspage" },
-  // Bonusly — employee recognition and rewards platform
   { id: "bonusly", name: "Bonusly", tags: ["hr", "employee-recognition", "rewards", "engagement", "saas"], status_url: "https://bonusly.statuspage.io/api/v2/status.json", page_url: "https://bonusly.statuspage.io", type: "statuspage" },
-  // Relay — business banking platform for SMBs (relay.fi)
   { id: "relay", name: "Relay", tags: ["banking", "fintech", "smb", "business-banking", "saas"], status_url: "https://relay.statuspage.io/api/v2/status.json", page_url: "https://relay.statuspage.io", type: "statuspage" },
-  // Arize AI — ML observability and model monitoring platform
   { id: "arize", name: "Arize AI", tags: ["ai", "ml", "observability", "model-monitoring", "mlops"], status_url: "https://arize.statuspage.io/api/v2/status.json", page_url: "https://arize.statuspage.io", type: "statuspage" },
-  // OptimoRoute — route planning and optimization for delivery and field service
   { id: "optimoroute", name: "OptimoRoute", tags: ["logistics", "route-optimization", "delivery", "field-service", "saas"], status_url: "https://optimoroute.statuspage.io/api/v2/status.json", page_url: "https://optimoroute.statuspage.io", type: "statuspage" },
-  // HawkSoft — cloud-based insurance agency management system
   { id: "hawksoft", name: "HawkSoft", tags: ["insurance", "agency-management", "ams", "independent-agents", "saas"], status_url: "https://hawksoft.statuspage.io/api/v2/status.json", page_url: "https://hawksoft.statuspage.io", type: "statuspage" },
-  // EZLynx — insurance technology platform (rater, CRM, policy management)
   { id: "ezlynx", name: "EZLynx", tags: ["insurance", "insurtech", "rater", "crm", "policy-management"], status_url: "https://ezlynx.statuspage.io/api/v2/status.json", page_url: "https://ezlynx.statuspage.io", type: "statuspage" },
-  // Dispatch — contractor network management for enterprise field service
   { id: "dispatch", name: "Dispatch", tags: ["field-service", "contractor-management", "enterprise", "home-services", "saas"], status_url: "https://dispatch.statuspage.io/api/v2/status.json", page_url: "https://dispatch.statuspage.io", type: "statuspage" },
-  // Fern — SDK generation and API documentation from OpenAPI specs
   { id: "fern", name: "Fern", tags: ["developer-tools", "sdk-generation", "api-docs", "openapi", "saas"], status_url: "https://fern.statuspage.io/api/v2/status.json", page_url: "https://fern.statuspage.io", type: "statuspage" },
-  // Konnectify — iPaaS for HR, payroll, and recruiting integrations
   { id: "konnectify", name: "Konnectify", tags: ["ipaas", "integration", "hr", "payroll", "automation"], status_url: "https://konnectify.statuspage.io/api/v2/status.json", page_url: "https://konnectify.statuspage.io", type: "statuspage" },
-  // Slope — B2B buy now pay later platform for business purchases
   { id: "slope", name: "Slope", tags: ["payments", "bnpl", "b2b", "fintech", "ecommerce"], status_url: "https://slope.statuspage.io/api/v2/status.json", page_url: "https://slope.statuspage.io", type: "statuspage" },
-  // Capchase — revenue-based financing and growth capital for SaaS companies
   { id: "capchase", name: "Capchase", tags: ["fintech", "financing", "saas", "revenue-based-financing", "growth"], status_url: "https://capchase.statuspage.io/api/v2/status.json", page_url: "https://capchase.statuspage.io", type: "statuspage" },
-  // Empower — personal finance management platform (budgeting, cash advance)
   { id: "empower", name: "Empower", tags: ["fintech", "personal-finance", "banking", "consumer", "saas"], status_url: "https://empower.statuspage.io/api/v2/status.json", page_url: "https://empower.statuspage.io", type: "statuspage" },
-  // Notch — customer experience and CX platform
   { id: "notch_cx", name: "Notch CX", tags: ["cx", "customer-experience", "saas"], status_url: "https://notch.statuspage.io/api/v2/status.json", page_url: "https://notch.statuspage.io", type: "statuspage" },
-  // OpenTelemetry — open-source observability framework (CNCF)
   { id: "opentelemetry", name: "OpenTelemetry", tags: ["observability", "tracing", "metrics", "logs", "open-source", "cncf"], status_url: "https://opentelemetry.statuspage.io/api/v2/status.json", page_url: "https://opentelemetry.statuspage.io", type: "statuspage" },
-  // Smartlook — behavioral analytics and session recording platform
   { id: "smartlook", name: "Smartlook", tags: ["analytics", "session-recording", "ux", "heatmaps", "saas"], status_url: "https://smartlook.statuspage.io/api/v2/status.json", page_url: "https://smartlook.statuspage.io", type: "statuspage" },
-  // Chartbeat — real-time content analytics for publishers and media
   { id: "chartbeat", name: "Chartbeat", tags: ["analytics", "content", "media", "publishing", "real-time"], status_url: "https://chartbeat.statuspage.io/api/v2/status.json", page_url: "https://chartbeat.statuspage.io", type: "statuspage" },
-  // Fireflies — AI meeting transcription and note-taking platform
   { id: "fireflies", name: "Fireflies", tags: ["ai", "meeting", "transcription", "notes", "productivity"], status_url: "https://fireflies.statuspage.io/api/v2/status.json", page_url: "https://fireflies.statuspage.io", type: "statuspage" },
-  // Obsidian — popular local-first note-taking and knowledge management app
   { id: "obsidian", name: "Obsidian", tags: ["notes", "knowledge-management", "productivity", "pkm", "local-first"], status_url: "https://obsidian.statuspage.io/api/v2/status.json", page_url: "https://obsidian.statuspage.io", type: "statuspage" },
-  // Video SDK — video and audio API platform for real-time communication
   { id: "videosdk", name: "Video SDK", tags: ["video", "audio", "webrtc", "real-time", "api"], status_url: "https://videosdk.statuspage.io/api/v2/status.json", page_url: "https://videosdk.statuspage.io", type: "statuspage" },
-  // Engagelab — mobile push notification and marketing platform by NetEase
   { id: "engagelab", name: "Engagelab", tags: ["push-notifications", "mobile-marketing", "messaging", "engagement", "api"], status_url: "https://engagelab.statuspage.io/api/v2/status.json", page_url: "https://engagelab.statuspage.io", type: "statuspage" },
-  // DeskTime — time tracking and productivity analytics for teams
   { id: "desktime", name: "DeskTime", tags: ["time-tracking", "productivity", "employee-monitoring", "analytics", "saas"], status_url: "https://desktime.statuspage.io/api/v2/status.json", page_url: "https://desktime.statuspage.io", type: "statuspage" },
-  // Teramind — employee monitoring and insider threat detection platform
   { id: "teramind", name: "Teramind", tags: ["employee-monitoring", "security", "insider-threat", "dlp", "enterprise"], status_url: "https://teramind.statuspage.io/api/v2/status.json", page_url: "https://teramind.statuspage.io", type: "statuspage" },
-  // Insightful — workforce analytics and employee productivity platform
   { id: "insightful", name: "Insightful", tags: ["workforce-analytics", "productivity", "employee-monitoring", "remote-work", "saas"], status_url: "https://insightful.statuspage.io/api/v2/status.json", page_url: "https://insightful.statuspage.io", type: "statuspage" },
-  // Treasury Prime — banking-as-a-service API platform
   { id: "treasuryprime", name: "Treasury Prime", tags: ["banking-as-a-service", "baas", "fintech", "api", "banking"], status_url: "https://treasuryprime.statuspage.io/api/v2/status.json", page_url: "https://treasuryprime.statuspage.io", type: "statuspage" },
   { id: "benchmark", name: "Benchmark Email", tags: ["email-marketing", "email", "campaigns", "marketing", "saas"], status_url: "https://benchmark.statuspage.io/api/v2/status.json", page_url: "https://benchmark.statuspage.io", type: "statuspage" },
   { id: "cloudmailin", name: "CloudMailin", tags: ["email", "inbound-email", "smtp", "developer-tools", "api"], status_url: "https://cloudmailin.statuspage.io/api/v2/status.json", page_url: "https://cloudmailin.statuspage.io", type: "statuspage" },
@@ -3881,7 +2551,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "agencyanalytics", name: "AgencyAnalytics", tags: ["marketing", "reporting", "analytics", "agencies", "saas"], status_url: "https://agencyanalytics.statuspage.io/api/v2/status.json", page_url: "https://agencyanalytics.statuspage.io", type: "statuspage" },
   { id: "meisterplan", name: "Meisterplan", tags: ["project-management", "portfolio", "resource-management", "enterprise", "saas"], status_url: "https://meisterplan.statuspage.io/api/v2/status.json", page_url: "https://meisterplan.statuspage.io", type: "statuspage" },
   { id: "forecast_app", name: "Forecast", tags: ["project-management", "resource-planning", "ai", "agency", "saas"], status_url: "https://forecast.statuspage.io/api/v2/status.json", page_url: "https://forecast.statuspage.io", type: "statuspage" },
-  { id: "hint_health", name: "Hint Health", tags: ["healthcare", "direct-primary-care", "membership", "practice-management", "saas"], status_url: "https://status.hint.com/api/v2/status.json", page_url: "https://status.hint.com", type: "statuspage" },
   { id: "cratejoy", name: "Cratejoy", tags: ["ecommerce", "subscriptions", "marketplace", "subscription-box", "saas"], status_url: "https://status.cratejoy.com/api/v2/status.json", page_url: "https://status.cratejoy.com", type: "statuspage" },
   { id: "blaze_cannabis", name: "Blaze", tags: ["cannabis", "retail", "pos", "dispensary", "saas"], status_url: "https://blaze.statuspage.io/api/v2/status.json", page_url: "https://blaze.statuspage.io", type: "statuspage" },
   { id: "meadow", name: "Meadow", tags: ["cannabis", "dispensary", "pos", "compliance", "saas"], status_url: "https://meadow.statuspage.io/api/v2/status.json", page_url: "https://meadow.statuspage.io", type: "statuspage" },
@@ -3907,123 +2576,60 @@ const SERVICES: ServiceConfig[] = [
   { id: "unify", name: "Unify", tags: ["gtm", "crm", "data", "sales-intelligence", "saas"], status_url: "https://unify.statuspage.io/api/v2/status.json", page_url: "https://unify.statuspage.io", type: "statuspage" },
   { id: "halon", name: "Halon", tags: ["email", "mta", "security", "deliverability", "saas"], status_url: "https://halon.statuspage.io/api/v2/status.json", page_url: "https://halon.statuspage.io", type: "statuspage" },
   { id: "metadata_io", name: "Metadata", tags: ["marketing", "abm", "paid-media", "b2b", "saas"], status_url: "https://metadata.statuspage.io/api/v2/status.json", page_url: "https://metadata.statuspage.io", type: "statuspage" },
-  // Tick 207 additions
-  // Chroma — open-source vector database for AI/ML embeddings (BetterStack)
   { id: "chroma", name: "Chroma", tags: ["vector-database", "ai", "ml", "embeddings", "developer-tools"], status_url: "https://status.trychroma.com/api/v2/summary.json", page_url: "https://status.trychroma.com", type: "betterstack" },
-  // name.com — domain registrar & DNS management
   { id: "namecom", name: "name.com", tags: ["domain", "dns", "registrar", "hosting"], status_url: "https://status.name.com/api/v2/status.json", page_url: "https://status.name.com", type: "statuspage" },
-  // NuGet — .NET package manager & registry
   { id: "nuget", name: "NuGet", tags: ["package-manager", "dotnet", "csharp", "developer-tools"], status_url: "https://nuget.statuspage.io/api/v2/status.json", page_url: "https://nuget.statuspage.io", type: "statuspage" },
-  // Goldsky — real-time blockchain data indexing & subgraph infrastructure (BetterStack)
   { id: "goldsky", name: "Goldsky", tags: ["blockchain", "web3", "data-indexing", "subgraph", "infrastructure"], status_url: "https://status.goldsky.com/api/v2/summary.json", page_url: "https://status.goldsky.com", type: "betterstack" },
-  // 1upHealth — FHIR-native healthcare data aggregation API (BetterStack)
   { id: "health_1up", name: "1upHealth", tags: ["healthcare", "fhir", "api", "data-aggregation", "health-tech"], status_url: "https://status.1up.health/api/v2/summary.json", page_url: "https://status.1up.health", type: "betterstack" },
-  // Datavant — healthcare data de-identification & tokenization platform (BetterStack)
   { id: "datavant", name: "Datavant", tags: ["healthcare", "data", "privacy", "de-identification", "enterprise"], status_url: "https://status.datavant.com/api/v2/summary.json", page_url: "https://status.datavant.com", type: "betterstack" },
-  // Medallion — healthcare provider credentialing & enrollment automation (BetterStack)
   { id: "medallion", name: "Medallion", tags: ["healthcare", "credentialing", "provider-management", "health-tech", "saas"], status_url: "https://status.medallion.co/api/v2/summary.json", page_url: "https://status.medallion.co", type: "betterstack" },
-  // Canvas Medical — EHR & care workflow platform for virtual-first health companies (BetterStack)
   { id: "canvas_medical", name: "Canvas Medical", tags: ["healthcare", "ehr", "clinical", "health-tech", "saas"], status_url: "https://status.canvasmedical.com/api/v2/summary.json", page_url: "https://status.canvasmedical.com", type: "betterstack" },
-  // CodeRabbit — AI-powered automated code review platform (BetterStack)
   { id: "coderabbit", name: "CodeRabbit", tags: ["ai", "code-review", "developer-tools", "ci-cd", "saas"], status_url: "https://status.coderabbit.ai/api/v2/summary.json", page_url: "https://status.coderabbit.ai", type: "betterstack" },
-  // Zed — high-performance multiplayer code editor (BetterStack)
   { id: "zed", name: "Zed", tags: ["editor", "developer-tools", "collaboration", "ide", "saas"], status_url: "https://status.zed.dev/api/v2/summary.json", page_url: "https://status.zed.dev", type: "betterstack" },
-  // Bolt.new — AI-powered full-stack web app builder by StackBlitz
   { id: "bolt_new", name: "Bolt.new", tags: ["ai", "developer-tools", "web-builder", "no-code", "saas"], status_url: "https://status.bolt.new/api/v2/status.json", page_url: "https://status.bolt.new", type: "statuspage" },
-  // Dynamic — web3 authentication & user management platform (BetterStack)
   { id: "dynamic_xyz", name: "Dynamic", tags: ["web3", "auth", "identity", "wallet", "developer-tools"], status_url: "https://status.dynamic.xyz/api/v2/summary.json", page_url: "https://status.dynamic.xyz", type: "betterstack" },
-  // Particle Network — web3 infrastructure: AA wallet, BTC re-staking, chain abstraction
   { id: "particle_network", name: "Particle Network", tags: ["web3", "blockchain", "wallet", "account-abstraction", "infrastructure"], status_url: "https://status.particle.network/api/v2/status.json", page_url: "https://status.particle.network", type: "statuspage" },
-  // Pimlico — ERC-4337 bundler & paymaster infrastructure for account abstraction (BetterStack)
   { id: "pimlico", name: "Pimlico", tags: ["web3", "erc4337", "account-abstraction", "bundler", "infrastructure"], status_url: "https://status.pimlico.io/api/v2/summary.json", page_url: "https://status.pimlico.io", type: "betterstack" },
-  // Tick 208 additions
-  // Weights & Biases — ML experiment tracking, model monitoring & collaborative AI development platform
   { id: "weights_biases", name: "Weights & Biases", tags: ["ai", "ml", "experiment-tracking", "monitoring", "developer-tools"], status_url: "https://status.wandb.com/api/v2/status.json", page_url: "https://status.wandb.com", type: "statuspage" },
-  // Bubble — no-code full-stack web app builder
   { id: "bubble_io", name: "Bubble", tags: ["no-code", "low-code", "web-builder", "saas", "developer-tools"], status_url: "https://status.bubble.io/api/v2/status.json", page_url: "https://status.bubble.io", type: "statuspage" },
-  // Semaphore CI — fast cloud CI/CD for modern engineering teams
   { id: "semaphore", name: "Semaphore CI", tags: ["ci-cd", "devtools", "automation", "cloud", "developer-tools"], status_url: "https://status.semaphoreci.com/api/v2/status.json", page_url: "https://status.semaphoreci.com", type: "statuspage" },
-  // Split.io — feature flags, experimentation & data-driven delivery platform
   { id: "split_io", name: "Split.io", tags: ["feature-flags", "experimentation", "developer-tools", "saas", "testing"], status_url: "https://status.split.io/api/v2/status.json", page_url: "https://status.split.io", type: "statuspage" },
-  // Linode / Akamai Cloud — managed cloud computing (VMs, Kubernetes, object storage, databases)
   { id: "linode_akamai", name: "Linode / Akamai Cloud", tags: ["cloud", "infrastructure", "iaas", "hosting", "cdn"], status_url: "https://status.linode.com/api/v2/status.json", page_url: "https://status.linode.com", type: "statuspage" },
-  // Yuno — global payments orchestration platform for Latin America & emerging markets
   { id: "yuno", name: "Yuno Payments", tags: ["payments", "fintech", "orchestration", "latam", "api"], status_url: "https://status.y.uno/api/v2/status.json", page_url: "https://status.y.uno", type: "statuspage" },
-  // Sigma Computing — cloud-native BI & analytics on top of cloud data warehouses
   { id: "sigma_computing", name: "Sigma Computing", tags: ["bi", "analytics", "data", "cloud", "saas"], status_url: "https://status.sigmacomputing.com/api/v2/status.json", page_url: "https://status.sigmacomputing.com", type: "statuspage" },
-  // Stream — scalable chat & activity feed APIs for in-app messaging
   { id: "stream_io", name: "Stream", tags: ["chat", "messaging", "realtime", "api", "developer-tools"], status_url: "https://status.getstream.io/api/v2/status.json", page_url: "https://status.getstream.io", type: "statuspage" },
-  // Bunny.net — global CDN, edge storage, video streaming & DNS platform
   { id: "bunnynet", name: "Bunny.net", tags: ["cdn", "edge", "storage", "video", "infrastructure"], status_url: "https://status.bunny.net/api/v2/status.json", page_url: "https://status.bunny.net", type: "statuspage" },
-  // Aha! Roadmaps — product roadmap, strategy & release planning platform
   { id: "aha_io", name: "Aha! Roadmaps", tags: ["product-management", "roadmap", "planning", "saas", "productivity"], status_url: "https://status.aha.io/api/v2/status.json", page_url: "https://status.aha.io", type: "statuspage" },
-  // HashiCorp Cloud Platform — managed Vault, Terraform, Consul & Packer on multi-cloud
   { id: "vault_hashicorp", name: "HashiCorp Cloud Platform", tags: ["secrets", "infrastructure", "security", "developer-tools", "cloud"], status_url: "https://status.hashicorp.com/api/v2/status.json", page_url: "https://status.hashicorp.com", type: "statuspage" },
-  // BitGo — institutional-grade crypto custody, trading & staking infrastructure
   { id: "bitgo", name: "BitGo", tags: ["crypto", "custody", "fintech", "blockchain", "institutional"], status_url: "https://status.bitgo.com/api/v2/status.json", page_url: "https://status.bitgo.com", type: "statuspage" },
-  // Faros AI — engineering intelligence & metrics platform (DORA, sprint health, etc.)
   { id: "faros_ai", name: "Faros AI", tags: ["engineering-analytics", "developer-tools", "metrics", "dora", "ai"], status_url: "https://status.faros.ai/api/v2/status.json", page_url: "https://status.faros.ai", type: "statuspage" },
-  // MadKudu — predictive lead scoring & pipeline intelligence for B2B SaaS
   { id: "madkudu", name: "MadKudu", tags: ["sales", "lead-scoring", "analytics", "b2b", "saas"], status_url: "https://status.madkudu.com/api/v2/status.json", page_url: "https://status.madkudu.com", type: "statuspage" },
-  // YugabyteDB Aeon — distributed SQL database cloud service (PostgreSQL-compatible)
   { id: "yugabyte", name: "YugabyteDB Aeon", tags: ["database", "distributed-sql", "cloud", "postgresql", "developer-tools"], status_url: "https://status.yugabyte.cloud/api/v2/status.json", page_url: "https://status.yugabyte.cloud", type: "statuspage" },
-  // Instaclustr — managed open-source database & streaming (Cassandra, Kafka, OpenSearch, etc.)
   { id: "instaclustr", name: "Instaclustr", tags: ["database", "managed", "cassandra", "kafka", "cloud"], status_url: "https://status.instaclustr.com/api/v2/status.json", page_url: "https://status.instaclustr.com", type: "statuspage" },
-  // PeopleDataLabs — B2B contact & company data enrichment API
   { id: "people_data_labs", name: "PeopleDataLabs", tags: ["data-enrichment", "b2b", "contact-data", "api", "sales-intelligence"], status_url: "https://status.peopledatalabs.com/api/v2/status.json", page_url: "https://status.peopledatalabs.com", type: "statuspage" },
-  // Dropcontact — GDPR-compliant email finding & enrichment (no database, real-time)
   { id: "dropcontact", name: "Dropcontact", tags: ["email-enrichment", "gdpr", "sales", "b2b", "crm"], status_url: "https://status.dropcontact.com/api/v2/status.json", page_url: "https://status.dropcontact.com", type: "statuspage" },
-  // Pipl — deep people-data search & identity verification platform
   { id: "pipl", name: "Pipl", tags: ["identity", "people-data", "verification", "search", "api"], status_url: "https://status.pipl.com/api/v2/status.json", page_url: "https://status.pipl.com", type: "statuspage" },
-  // Superthread — fast, modern team communication & project threads platform
   { id: "superthread", name: "Superthread", tags: ["collaboration", "team-communication", "project-management", "saas", "productivity"], status_url: "https://status.superthread.com/api/v2/status.json", page_url: "https://status.superthread.com", type: "statuspage" },
-  // OneWelcome — customer identity & access management (CIAM) platform (Thales)
   { id: "onewelcome", name: "OneWelcome", tags: ["identity", "ciam", "auth", "enterprise", "security"], status_url: "https://status.onewelcome.com/api/v2/status.json", page_url: "https://status.onewelcome.com", type: "statuspage" },
-  // LoginRadius — cloud-native customer identity & access management (CIAM)
   { id: "loginradius", name: "LoginRadius", tags: ["identity", "ciam", "auth", "customer-identity", "saas"], status_url: "https://status.loginradius.com/api/v2/status.json", page_url: "https://status.loginradius.com", type: "statuspage" },
-  // Modulr — UK-based embedded banking and payments-as-a-service platform
   { id: "modulr", name: "Modulr", tags: ["fintech", "banking", "payments", "embedded-finance", "api"], status_url: "https://status.modulrfinance.com/api/v2/status.json", page_url: "https://status.modulrfinance.com", type: "statuspage" },
-  // Verkada — cloud-managed physical security (cameras, access control, alarms)
   { id: "verkada", name: "Verkada", tags: ["security", "iot", "physical-security", "cloud", "enterprise"], status_url: "https://status.verkada.com/api/v2/status.json", page_url: "https://status.verkada.com", type: "statuspage" },
-  // Chord Commerce — headless ecommerce platform for DTC brands
-  { id: "chord_commerce", name: "Chord Commerce", tags: ["ecommerce", "headless", "dtc", "saas", "retail"], status_url: "https://status.chord.co/api/v2/status.json", page_url: "https://status.chord.co", type: "statuspage" },
-  // Skylight — Ruby on Rails performance monitoring and profiling
   { id: "skylight", name: "Skylight", tags: ["monitoring", "performance", "ruby", "rails", "apm"], status_url: "https://status.skylight.io/api/v2/status.json", page_url: "https://status.skylight.io", type: "statuspage" },
-  // kiwi.com — online travel agency and flight search/booking platform
   { id: "kiwi_com", name: "kiwi.com", tags: ["travel", "flights", "booking", "saas", "consumer"], status_url: "https://status.kiwi.com/api/v2/status.json", page_url: "https://status.kiwi.com", type: "statuspage" },
-  // BIMcollab — BIM issue management and collaboration platform for construction
   { id: "bimcollab", name: "BIMcollab", tags: ["construction", "bim", "collaboration", "aec", "saas"], status_url: "https://status.bimcollab.com/api/v2/status.json", page_url: "https://status.bimcollab.com", type: "statuspage" },
-  // Atomic — payroll connectivity API for direct deposit switching and income verification
-  { id: "atomic_financial", name: "Atomic", tags: ["fintech", "payroll", "api", "direct-deposit", "income-verification"], status_url: "https://status.atomic.financial/api/v2/status.json", page_url: "https://status.atomic.financial", type: "statuspage" },
-  // Telerik — enterprise UI component library and developer tools (Progress Software)
   { id: "telerik", name: "Telerik", tags: ["developer-tools", "ui-components", "dotnet", "enterprise", "saas"], status_url: "https://status.telerik.com/api/v2/status.json", page_url: "https://status.telerik.com", type: "statuspage" },
-  // Zulip Cloud — open-source team messaging platform with threaded conversations
   { id: "zulip", name: "Zulip Cloud", tags: ["messaging", "collaboration", "team-chat", "open-source", "saas"], status_url: "https://status.zulip.com/api/v2/status.json", page_url: "https://status.zulip.com", type: "statuspage" },
-  // Formant — cloud robotics observability and operations platform
   { id: "formant", name: "Formant", tags: ["robotics", "iot", "observability", "cloud", "operations"], status_url: "https://status.formant.io/api/v2/status.json", page_url: "https://status.formant.io", type: "statuspage" },
-  // Monogoto — IoT SIM connectivity and private cellular network platform
   { id: "monogoto", name: "Monogoto", tags: ["iot", "connectivity", "cellular", "sim", "infrastructure"], status_url: "https://status.monogoto.io/api/v2/status.json", page_url: "https://status.monogoto.io", type: "statuspage" },
-  // Orum — AI-powered parallel dialer for sales teams
   { id: "orum", name: "Orum", tags: ["sales", "dialer", "ai", "revenue", "saas"], status_url: "https://status.orum.com/api/v2/status.json", page_url: "https://status.orum.com", type: "statuspage" },
-  // Plane.so — open-source project management and issue tracking platform
   { id: "plane_so", name: "Plane", tags: ["project-management", "open-source", "issue-tracking", "saas", "productivity"], status_url: "https://status.plane.so/api/v2/status.json", page_url: "https://status.plane.so", type: "statuspage" },
-  // DoiT — cloud cost optimization and engineering platform for GCP/AWS/Azure
   { id: "doit", name: "DoiT", tags: ["cloud", "finops", "cost-optimization", "aws", "gcp"], status_url: "https://status.doit.com/api/v2/status.json", page_url: "https://status.doit.com", type: "statuspage" },
-  // Shipwell — cloud-based transportation management system (TMS)
   { id: "shipwell", name: "Shipwell", tags: ["logistics", "tms", "supply-chain", "freight", "saas"], status_url: "https://status.shipwell.com/api/v2/status.json", page_url: "https://status.shipwell.com", type: "statuspage" },
-  // Close CRM — sales CRM built for inside sales teams
-  { id: "close_crm", name: "Close CRM", tags: ["crm", "sales", "email", "calling", "saas"], status_url: "https://status.close.com/api/v2/status.json", page_url: "https://status.close.com", type: "statuspage" },
-  // GoodTime — hiring intelligence and interview scheduling automation platform
   { id: "goodtime", name: "GoodTime", tags: ["recruiting", "interview-scheduling", "hr", "automation", "saas"], status_url: "https://status.goodtime.io/api/v2/status.json", page_url: "https://status.goodtime.io", type: "statuspage" },
-  // Spotnana — modern corporate travel management and booking platform
   { id: "spotnana", name: "Spotnana", tags: ["travel", "corporate-travel", "expense", "saas", "enterprise"], status_url: "https://status.spotnana.com/api/v2/status.json", page_url: "https://status.spotnana.com", type: "statuspage" },
-  // Meraki — Cisco cloud-managed networking platform (WiFi, switches, security)
   { id: "meraki", name: "Cisco Meraki", tags: ["networking", "wifi", "cloud", "enterprise", "cisco"], status_url: "https://status.meraki.net/api/v2/status.json", page_url: "https://status.meraki.net", type: "statuspage" },
-  // Ecamm Live — professional live streaming software for Mac creators
   { id: "ecamm", name: "Ecamm Live", tags: ["streaming", "video", "live-streaming", "mac", "saas"], status_url: "https://status.ecamm.com/api/v2/status.json", page_url: "https://status.ecamm.com", type: "statuspage" },
-  // Sketch — vector design tool for UI/UX and icon design
   { id: "sketch", name: "Sketch", tags: ["design", "ui-ux", "vector", "mac", "collaboration"], status_url: "https://status.sketch.com/api/v2/summary.json", page_url: "https://status.sketch.com", type: "betterstack" },
-  // Tick 212 additions — 10 new live-verified services
   { id: "corrigo", name: "Corrigo", tags: ["facility-management", "cmms", "maintenance", "iot", "enterprise"], status_url: "https://status.corrigo.com/api/v2/status.json", page_url: "https://status.corrigo.com", type: "statuspage" },
   { id: "eptura", name: "Eptura", tags: ["asset-management", "workplace", "facility-management", "enterprise", "saas"], status_url: "https://status.eptura.com/api/v2/status.json", page_url: "https://status.eptura.com", type: "statuspage" },
   { id: "particle_io", name: "Particle", tags: ["iot", "embedded", "connectivity", "hardware", "developer-tools"], status_url: "https://status.particle.io/api/v2/status.json", page_url: "https://status.particle.io", type: "statuspage" },
@@ -4034,7 +2640,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "guru_app", name: "Guru", tags: ["knowledge-management", "wiki", "collaboration", "ai", "saas"], status_url: "https://status.getguru.com/api/v2/status.json", page_url: "https://status.getguru.com", type: "statuspage" },
   { id: "shelf_io", name: "Shelf", tags: ["knowledge-management", "content", "search", "ai", "enterprise"], status_url: "https://status.shelf.io/api/v2/status.json", page_url: "https://status.shelf.io", type: "statuspage" },
   { id: "finch_api", name: "Finch", tags: ["hr", "payroll", "employment-data", "api", "developer-tools"], status_url: "https://status.tryfinch.com/api/v2/status.json", page_url: "https://status.tryfinch.com", type: "statuspage" },
-  // Tick 213 additions — 11 new live-verified services
   { id: "mariana_tek", name: "Mariana Tek", tags: ["fitness", "boutique-fitness", "scheduling", "pos", "saas"], status_url: "https://status.marianatek.com/api/v2/status.json", page_url: "https://status.marianatek.com", type: "statuspage" },
   { id: "mortech", name: "Mortech", tags: ["fintech", "mortgage", "pricing", "api", "analytics"], status_url: "https://status.mortech.com/api/v2/status.json", page_url: "https://status.mortech.com", type: "statuspage" },
   { id: "taxamo", name: "Taxamo", tags: ["tax", "vat", "compliance", "e-commerce", "digital-goods"], status_url: "https://status.taxamo.com/api/v2/status.json", page_url: "https://status.taxamo.com", type: "statuspage" },
@@ -4046,63 +2651,33 @@ const SERVICES: ServiceConfig[] = [
   { id: "umbraco", name: "Umbraco", tags: ["cms", "open-source", "dotnet", "content-management", "hosting"], status_url: "https://status.umbraco.io/api/v2/status.json", page_url: "https://status.umbraco.io", type: "statuspage" },
   { id: "managewp", name: "ManageWP", tags: ["wordpress", "cms", "hosting", "saas", "management"], status_url: "https://status.managewp.com/api/v2/status.json", page_url: "https://status.managewp.com", type: "statuspage" },
   { id: "ubiquiti", name: "Ubiquiti", tags: ["networking", "wifi", "hardware", "enterprise", "iot"], status_url: "https://status.ui.com/api/v2/status.json", page_url: "https://status.ui.com", type: "statuspage" },
-  // Sales conversation intelligence
   { id: "jiminny", name: "Jiminny", tags: ["sales", "conversation-intelligence", "coaching", "analytics", "saas"], status_url: "https://status.jiminny.com/api/v2/status.json", page_url: "https://status.jiminny.com", type: "statuspage" },
-  // Revenue intelligence / forecasting
   { id: "boostup", name: "BoostUp", tags: ["sales", "revenue-intelligence", "forecasting", "analytics", "saas"], status_url: "https://status.boostup.ai/api/v2/status.json", page_url: "https://status.boostup.ai", type: "statuspage" },
-  // Background screening
   { id: "asurint", name: "Asurint", tags: ["background-check", "screening", "hr", "compliance", "saas"], status_url: "https://status.asurint.com/api/v2/status.json", page_url: "https://status.asurint.com", type: "statuspage" },
-  // Employee benefits platform
   { id: "benify", name: "Benifex", tags: ["employee-benefits", "hr", "perks", "saas", "enterprise"], status_url: "https://status.benify.com/api/v2/status.json", page_url: "https://status.benify.com", type: "statuspage" },
-  // Employee perks and recognition
   { id: "perkbox", name: "Perkbox", tags: ["employee-benefits", "perks", "recognition", "hr", "saas"], status_url: "https://status.perkbox.com/api/v2/status.json", page_url: "https://status.perkbox.com", type: "statuspage" },
-  // SMS marketing
   { id: "eztexting", name: "EZ Texting", tags: ["sms", "messaging", "marketing", "communications", "saas"], status_url: "https://status.eztexting.com/api/v2/status.json", page_url: "https://status.eztexting.com", type: "statuspage" },
-  // Payment orchestration
   { id: "paydock", name: "Paydock", tags: ["payments", "payment-orchestration", "fintech", "api", "saas"], status_url: "https://paydock.statuspage.io/api/v2/status.json", page_url: "https://paydock.statuspage.io", type: "statuspage" },
-  // Dutch ERP / accounting
   { id: "exact_online", name: "Exact", tags: ["erp", "accounting", "finance", "saas", "cloud"], status_url: "https://status.exact.com/api/v2/status.json", page_url: "https://status.exact.com", type: "statuspage" },
-  // Cloud deployment platform
   { id: "divio", name: "Divio", tags: ["cloud", "deployment", "hosting", "cms", "developer-tools"], status_url: "https://status.divio.com/api/v2/status.json", page_url: "https://status.divio.com", type: "statuspage" },
-  // Church management software
   { id: "breezechms", name: "Breeze ChMS", tags: ["church", "nonprofit", "crm", "management", "saas"], status_url: "https://status.breezechms.com/api/v2/status.json", page_url: "https://status.breezechms.com", type: "statuspage" },
-  // Marketplace platform
   { id: "sharetribe", name: "Sharetribe", tags: ["marketplace", "ecommerce", "platform", "saas", "sharing-economy"], status_url: "https://status.sharetribe.com/api/v2/status.json", page_url: "https://status.sharetribe.com", type: "statuspage" },
-  // Funnel / page builder
   { id: "bucket_io", name: "Bucket.io", tags: ["funnel", "page-builder", "marketing", "saas", "no-code"], status_url: "https://status.bucket.io/api/v2/status.json", page_url: "https://status.bucket.io", type: "statuspage" },
-  // AI framework for LLM-powered apps
   { id: "llamaindex", name: "LlamaIndex", tags: ["ai", "llm", "framework", "developer-tools", "open-source"], status_url: "https://llamaindex.statuspage.io/api/v2/status.json", page_url: "https://llamaindex.statuspage.io", type: "statuspage" },
-  // AI-powered test automation
   { id: "testim", name: "Testim", tags: ["testing", "qa", "automation", "ai", "developer-tools"], status_url: "https://testim.statuspage.io/api/v2/status.json", page_url: "https://testim.statuspage.io", type: "statuspage" },
-  // Crowdsourced software QA testing
   { id: "test_io", name: "Test IO", tags: ["testing", "qa", "crowdsourced", "developer-tools", "saas"], status_url: "https://testio.statuspage.io/api/v2/status.json", page_url: "https://testio.statuspage.io", type: "statuspage" },
-  // Webinar / virtual event platform
   { id: "on24", name: "ON24", tags: ["webinar", "virtual-events", "marketing", "enterprise", "saas"], status_url: "https://on24.statuspage.io/api/v2/status.json", page_url: "https://on24.statuspage.io", type: "statuspage" },
-  // Scheduling & calendar booking tool
   { id: "meetergo", name: "Meetergo", tags: ["scheduling", "calendar", "productivity", "meetings", "saas"], status_url: "https://meetergo.statuspage.io/api/v2/status.json", page_url: "https://meetergo.statuspage.io", type: "statuspage" },
-  // Crypto exchange
   { id: "bitfinex", name: "Bitfinex", tags: ["crypto", "exchange", "trading", "blockchain", "fintech"], status_url: "https://bitfinex.statuspage.io/api/v2/status.json", page_url: "https://bitfinex.statuspage.io", type: "statuspage" },
-  // Video collaboration & review platform (Adobe)
   { id: "frameio", name: "Frame.io", tags: ["video", "collaboration", "creative", "media", "saas"], status_url: "https://status.frame.io/api/v2/status.json", page_url: "https://status.frame.io", type: "statuspage" },
-  // Supply chain visibility platform
   { id: "shippeo", name: "Shippeo", tags: ["supply-chain", "logistics", "visibility", "saas", "enterprise"], status_url: "https://shippeo.statuspage.io/api/v2/status.json", page_url: "https://shippeo.statuspage.io", type: "statuspage" },
-  // LinkedIn developer API status
-  { id: "linkedin_api", name: "LinkedIn API", tags: ["social", "api", "developer-tools", "enterprise", "professional"], status_url: "https://linkedin.statuspage.io/api/v2/status.json", page_url: "https://linkedin.statuspage.io", type: "statuspage" },
-  // Email security & DMARC management
   { id: "easydmarc", name: "EasyDMARC", tags: ["email", "security", "dmarc", "deliverability", "saas"], status_url: "https://status.easydmarc.com/api/v2/status.json", page_url: "https://status.easydmarc.com", type: "statuspage" },
-  // Email authentication platform
   { id: "valimail", name: "Valimail", tags: ["email", "security", "dmarc", "authentication", "saas"], status_url: "https://status.valimail.com/api/v2/status.json", page_url: "https://status.valimail.com", type: "statuspage" },
-  // Spotify podcast creation platform
   { id: "anchor", name: "Anchor", tags: ["podcast", "audio", "streaming", "creator", "saas"], status_url: "https://anchor.statuspage.io/api/v2/status.json", page_url: "https://anchor.statuspage.io", type: "statuspage" },
-  // Fashion resale marketplace
   { id: "depop", name: "Depop", tags: ["marketplace", "ecommerce", "fashion", "resale", "consumer"], status_url: "https://depop.statuspage.io/api/v2/status.json", page_url: "https://depop.statuspage.io", type: "statuspage" },
-  // NFT creative marketplace
   { id: "foundation_app", name: "Foundation", tags: ["nft", "marketplace", "web3", "blockchain", "creator"], status_url: "https://foundation.statuspage.io/api/v2/status.json", page_url: "https://foundation.statuspage.io", type: "statuspage" },
-  // Passwordless authentication platform
   { id: "passage", name: "Passage", tags: ["auth", "passwordless", "identity", "developer-tools", "api"], status_url: "https://passage.statuspage.io/api/v2/status.json", page_url: "https://passage.statuspage.io", type: "statuspage" },
-  // AI image generation platform
   { id: "midjourney", name: "Midjourney", tags: ["ai", "image-generation", "creative", "generative-ai", "saas"], status_url: "https://midjourney.statuspage.io/api/v2/status.json", page_url: "https://midjourney.statuspage.io", type: "statuspage" },
-  // Tick 216 additions
   { id: "together_ai", name: "Together AI", tags: ["ai", "llm", "inference", "api", "developer-tools"], status_url: "https://together.statuspage.io/api/v2/status.json", page_url: "https://together.statuspage.io", type: "statuspage" },
   { id: "customer_io", name: "Customer.io", tags: ["email", "messaging", "automation", "marketing", "api"], status_url: "https://customerio.statuspage.io/api/v2/status.json", page_url: "https://customerio.statuspage.io", type: "statuspage" },
   { id: "polar", name: "Polar", tags: ["fitness", "wearable", "health", "consumer", "saas"], status_url: "https://polar.statuspage.io/api/v2/status.json", page_url: "https://polar.statuspage.io", type: "statuspage" },
@@ -4144,12 +2719,10 @@ const SERVICES: ServiceConfig[] = [
   { id: "avid", name: "Avid", tags: ["media-production", "audio", "video", "broadcast", "enterprise"], status_url: "https://status.avid.com/api/v2/status.json", page_url: "https://status.avid.com", type: "statuspage" },
   { id: "telestream", name: "Telestream", tags: ["video", "encoding", "streaming", "broadcast", "media"], status_url: "https://status.telestream.net/api/v2/status.json", page_url: "https://status.telestream.net", type: "statuspage" },
   { id: "samsara", name: "Samsara", tags: ["fleet", "iot", "telematics", "logistics", "saas"], status_url: "https://www.samsarastatus.com/api/v2/status.json", page_url: "https://www.samsarastatus.com", type: "statuspage" },
-  { id: "catalyst_io", name: "Catalyst", tags: ["customer-success", "crm", "saas", "revenue", "enterprise"], status_url: "https://status.catalyst.io/api/v2/status.json", page_url: "https://status.catalyst.io", type: "statuspage" },
   { id: "optum", name: "Optum", tags: ["healthcare", "pharmacy", "insurance", "health-services", "enterprise"], status_url: "https://status.optum.com/api/v2/status.json", page_url: "https://status.optum.com", type: "statuspage" },
   { id: "perfecto", name: "Perfecto", tags: ["testing", "mobile", "cloud", "qa", "devtools"], status_url: "https://status.perfecto.io/api/v2/status.json", page_url: "https://status.perfecto.io", type: "statuspage" },
   { id: "messagemedia", name: "MessageMedia (Sinch)", tags: ["sms", "messaging", "communications", "marketing", "api"], status_url: "https://status.messagemedia.com/api/v2/status.json", page_url: "https://status.messagemedia.com", type: "statuspage" },
   { id: "stayntouch", name: "StayNTouch", tags: ["hospitality", "hotel", "pms", "property-management", "saas"], status_url: "https://status.stayntouch.com/api/v2/status.json", page_url: "https://status.stayntouch.com", type: "statuspage" },
-  { id: "starling_bank", name: "Starling Bank", tags: ["banking", "fintech", "neobank", "payments", "uk"], status_url: "https://starlingbank.statuspage.io/api/v2/status.json", page_url: "https://starlingbank.statuspage.io", type: "statuspage" },
   { id: "sofi", name: "SoFi", tags: ["fintech", "banking", "lending", "investing", "consumer"], status_url: "https://sofi.statuspage.io/api/v2/status.json", page_url: "https://sofi.statuspage.io", type: "statuspage" },
   { id: "float", name: "Float", tags: ["resource-planning", "scheduling", "project-management", "capacity", "saas"], status_url: "https://status.float.com/api/v2/status.json", page_url: "https://status.float.com", type: "statuspage" },
   { id: "planful", name: "Planful", tags: ["financial-planning", "budgeting", "analytics", "finance", "saas"], status_url: "https://planful.statuspage.io/api/v2/status.json", page_url: "https://planful.statuspage.io", type: "statuspage" },
@@ -4169,25 +2742,19 @@ const SERVICES: ServiceConfig[] = [
   { id: "nextdns", name: "NextDNS", tags: ["dns", "security", "privacy", "networking", "filtering"], status_url: "https://nextdns.statuspage.io/api/v2/status.json", page_url: "https://nextdns.statuspage.io", type: "statuspage" },
   { id: "roadie", name: "Roadie", tags: ["developer-portal", "backstage", "devtools", "saas", "platform-engineering"], status_url: "https://roadie.statuspage.io/api/v2/status.json", page_url: "https://roadie.statuspage.io", type: "statuspage" },
   { id: "k6_cloud", name: "Grafana k6", tags: ["testing", "load-testing", "performance", "devtools", "ci-cd"], status_url: "https://k6.statuspage.io/api/v2/status.json", page_url: "https://k6.statuspage.io", type: "statuspage" },
-  { id: "helpscout", name: "Help Scout", tags: ["customer-support", "helpdesk", "crm", "email", "saas"], status_url: "https://helpscout.statuspage.io/api/v2/status.json", page_url: "https://helpscout.statuspage.io", type: "statuspage" },
   { id: "shortio", name: "Short.io", tags: ["url-shortener", "links", "analytics", "marketing", "saas"], status_url: "https://shortio.statuspage.io/api/v2/status.json", page_url: "https://shortio.statuspage.io", type: "statuspage" },
   { id: "atatus", name: "Atatus", tags: ["apm", "monitoring", "error-tracking", "observability", "devtools"], status_url: "https://atatus.statuspage.io/api/v2/status.json", page_url: "https://atatus.statuspage.io", type: "statuspage" },
   { id: "alertops", name: "AlertOps", tags: ["incident-management", "on-call", "alerting", "ops", "monitoring"], status_url: "https://status.alertops.com/api/v2/status.json", page_url: "https://status.alertops.com", type: "statuspage" },
   { id: "unkey", name: "Unkey", tags: ["api-keys", "developer-tools", "auth", "infrastructure"], status_url: "https://status.unkey.com/api/v2/summary.json", page_url: "https://status.unkey.com", type: "betterstack" },
   { id: "oci", name: "Oracle Cloud Infrastructure", tags: ["cloud", "iaas", "enterprise", "oracle", "infrastructure"], status_url: "https://ocistatus.oraclecloud.com/api/v2/status.json", page_url: "https://ocistatus.oraclecloud.com", type: "statuspage" },
-  { id: "iex_cloud", name: "IEX Cloud", tags: ["financial-data", "market-data", "api", "fintech"], status_url: "https://status.iexapis.com/api/v2/status.json", page_url: "https://status.iexapis.com", type: "statuspage" },
   { id: "globalsign", name: "GlobalSign", tags: ["ssl", "pki", "certificates", "security", "identity"], status_url: "https://status.globalsign.com/api/v2/status.json", page_url: "https://status.globalsign.com", type: "statuspage" },
   { id: "plex", name: "Plex", tags: ["media", "streaming", "entertainment", "consumer"], status_url: "https://status.plex.tv/api/v2/status.json", page_url: "https://status.plex.tv", type: "statuspage" },
-  { id: "linkedin_api", name: "LinkedIn API", tags: ["social", "professional-network", "api", "developer-tools"], status_url: "https://linkedin.statuspage.io/api/v2/status.json", page_url: "https://linkedin.statuspage.io", type: "statuspage" },
   { id: "absolute_security", name: "Absolute Security", tags: ["security", "endpoint", "device-management", "firmware"], status_url: "https://status.absolute.com/api/v2/status.json", page_url: "https://status.absolute.com", type: "statuspage" },
-  { id: "abnormal_security", name: "Abnormal Security", tags: ["security", "email-security", "ai", "phishing"], status_url: "https://status.abnormalsecurity.com/api/v2/status.json", page_url: "https://status.abnormalsecurity.com", type: "statuspage" },
   { id: "mindbridge", name: "MindBridge", tags: ["ai", "auditing", "finance", "risk", "analytics"], status_url: "https://status.mindbridge.ai/api/v2/status.json", page_url: "https://status.mindbridge.ai", type: "statuspage" },
-  { id: "lightning_ai", name: "Lightning AI", tags: ["ml", "ai", "training", "gpu", "developer-tools"], status_url: "https://status.lightning.ai/api/v2/status.json", page_url: "https://status.lightning.ai", type: "statuspage" },
   { id: "uxcam", name: "UXCam", tags: ["mobile-analytics", "session-replay", "ux", "mobile", "saas"], status_url: "https://status.uxcam.com/api/v2/status.json", page_url: "https://status.uxcam.com", type: "statuspage" },
   { id: "smsapi", name: "SMSAPI", tags: ["sms", "messaging", "communications", "cpaas", "api"], status_url: "https://status.smsapi.com/api/v2/status.json", page_url: "https://status.smsapi.com", type: "statuspage" },
   { id: "qualified", name: "Qualified", tags: ["sales", "conversational-marketing", "pipeline", "saas", "b2b"], status_url: "https://status.qualified.com/api/v2/status.json", page_url: "https://status.qualified.com", type: "statuspage" },
   { id: "boldcommerce", name: "Bold Commerce", tags: ["ecommerce", "checkout", "subscriptions", "headless", "shopify"], status_url: "https://status.boldcommerce.com/api/v2/status.json", page_url: "https://status.boldcommerce.com", type: "statuspage" },
-  { id: "sardine_ai", name: "Sardine AI", tags: ["fraud-prevention", "risk", "fintech", "identity", "security"], status_url: "https://status.sardine.ai/api/v2/status.json", page_url: "https://status.sardine.ai", type: "statuspage" },
   { id: "coalesce", name: "Coalesce", tags: ["data", "transformation", "dbt", "analytics", "cloud"], status_url: "https://status.coalesce.io/api/v2/status.json", page_url: "https://status.coalesce.io", type: "statuspage" },
   { id: "triplewhale", name: "Triple Whale", tags: ["ecommerce-analytics", "attribution", "marketing", "shopify", "saas"], status_url: "https://status.triplewhale.com/api/v2/status.json", page_url: "https://status.triplewhale.com", type: "statuspage" },
   { id: "xandr", name: "Xandr", tags: ["advertising", "adtech", "programmatic", "microsoft", "marketplace"], status_url: "https://status.xandr.com/api/v2/status.json", page_url: "https://status.xandr.com", type: "statuspage" },
@@ -4227,7 +2794,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "fareharbor", name: "FareHarbor", tags: ["booking", "activities", "tours", "experiences", "saas"], status_url: "https://status.fareharbor.com/api/v2/status.json", page_url: "https://status.fareharbor.com", type: "statuspage" },
   { id: "rxnt", name: "RXNT", tags: ["healthcare", "ehr", "pharmacy", "billing", "saas"], status_url: "https://status.rxnt.com/api/v2/status.json", page_url: "https://status.rxnt.com", type: "statuspage" },
   { id: "regiondo", name: "Regiondo", tags: ["booking", "tours", "activities", "experiences", "europe"], status_url: "https://status.regiondo.com/api/v2/status.json", page_url: "https://status.regiondo.com", type: "statuspage" },
-  // Tick 227 additions — 11 new live-verified services
   { id: "recharge", name: "Recharge Payments", tags: ["ecommerce", "subscriptions", "recurring-billing", "payments", "shopify"], status_url: "https://status.rechargepayments.com/api/v2/status.json", page_url: "https://status.rechargepayments.com", type: "statuspage" },
   { id: "loqate", name: "Loqate", tags: ["address-verification", "geocoding", "data-quality", "global", "api"], status_url: "https://status.loqate.com/api/v2/status.json", page_url: "https://status.loqate.com", type: "statuspage" },
   { id: "moveworks", name: "Moveworks", tags: ["ai", "enterprise", "helpdesk", "automation", "it-support"], status_url: "https://status.moveworks.com/api/v2/status.json", page_url: "https://status.moveworks.com", type: "statuspage" },
@@ -4239,7 +2805,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "health_gorilla", name: "Health Gorilla", tags: ["healthcare", "health-data", "lab-results", "fhir", "api"], status_url: "https://status.healthgorilla.com/api/v2/status.json", page_url: "https://status.healthgorilla.com", type: "statuspage" },
   { id: "deliverect", name: "Deliverect", tags: ["food-delivery", "restaurant", "pos-integration", "ecommerce", "saas"], status_url: "https://status.deliverect.com/api/v2/status.json", page_url: "https://status.deliverect.com", type: "statuspage" },
   { id: "thoughtspot", name: "ThoughtSpot", tags: ["analytics", "bi", "search-analytics", "ai", "enterprise"], status_url: "https://status.thoughtspot.cloud/api/v2/status.json", page_url: "https://status.thoughtspot.cloud", type: "statuspage" },
-  // Tick 228 additions — 14 new live-verified services
   { id: "whiparound", name: "Whip Around", tags: ["fleet-management", "vehicle-inspection", "maintenance", "field-service", "saas"], status_url: "https://status.whip-around.com/api/v2/status.json", page_url: "https://status.whip-around.com", type: "statuspage" },
   { id: "apivideo", name: "api.video", tags: ["video", "streaming", "transcoding", "media", "api"], status_url: "https://status.api.video/api/v2/status.json", page_url: "https://status.api.video", type: "statuspage" },
   { id: "smugmug", name: "SmugMug", tags: ["photo-hosting", "photography", "media", "storage", "consumer"], status_url: "https://status.smugmug.com/api/v2/status.json", page_url: "https://status.smugmug.com", type: "statuspage" },
@@ -4269,7 +2834,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "justt_ai", name: "Justt", tags: ["chargeback", "dispute-management", "payments", "fintech", "ai"], status_url: "https://status.justt.ai/api/v2/status.json", page_url: "https://status.justt.ai", type: "statuspage" },
   { id: "workyard", name: "Workyard", tags: ["workforce-management", "construction", "field-service", "time-tracking", "saas"], status_url: "https://status.workyard.com/api/v2/status.json", page_url: "https://status.workyard.com", type: "statuspage" },
   { id: "twelve_twenty", name: "12twenty", tags: ["recruiting", "talent-acquisition", "campus-recruiting", "hr", "saas"], status_url: "https://status.12twenty.com/api/v2/status.json", page_url: "https://status.12twenty.com", type: "statuspage" },
-  // Tick 230 additions — 10 new live-verified services
   { id: "inspectorio", name: "Inspectorio", tags: ["supply-chain", "quality-inspection", "compliance", "retail", "enterprise"], status_url: "https://status.inspectorio.com/api/v2/status.json", page_url: "https://status.inspectorio.com", type: "statuspage" },
   { id: "tracify", name: "Tracify", tags: ["attribution", "ecommerce", "marketing-analytics", "ads", "saas"], status_url: "https://status.tracify.ai/api/v2/status.json", page_url: "https://status.tracify.ai", type: "statuspage" },
   { id: "funnel_io", name: "Funnel", tags: ["marketing-data", "attribution", "analytics", "bi", "saas"], status_url: "https://status.funnel.io/api/v2/status.json", page_url: "https://status.funnel.io", type: "statuspage" },
@@ -4294,524 +2858,183 @@ const SERVICES: ServiceConfig[] = [
   { id: "taulia", name: "Taulia", tags: ["supply-chain-finance", "working-capital", "procurement", "fintech", "enterprise"], status_url: "https://taulia.statuspage.io/api/v2/status.json", page_url: "https://taulia.statuspage.io", type: "statuspage" },
   { id: "validic", name: "Validic", tags: ["healthcare", "health-data", "iot", "api", "interoperability"], status_url: "https://validic.statuspage.io/api/v2/status.json", page_url: "https://validic.statuspage.io", type: "statuspage" },
   { id: "orion_advisor", name: "Orion Advisor", tags: ["wealth-management", "fintech", "ria", "portfolio-management", "enterprise"], status_url: "https://status.orionadvisor.com/api/v2/status.json", page_url: "https://status.orionadvisor.com", type: "statuspage" },
-  { id: "loop_returns", name: "Loop Returns", tags: ["ecommerce", "returns", "shopify", "saas", "logistics"], status_url: "https://status.loop.com/api/v2/status.json", page_url: "https://status.loop.com", type: "statuspage" },
   { id: "redtail", name: "Redtail Technology", tags: ["crm", "wealth-management", "financial-advisors", "ria", "saas"], status_url: "https://status.redtailtechnology.com/api/v2/status.json", page_url: "https://status.redtailtechnology.com", type: "statuspage" },
   { id: "healthstream", name: "HealthStream", tags: ["healthcare", "learning-management", "credentialing", "workforce", "enterprise"], status_url: "https://healthstream.statuspage.io/api/v2/status.json", page_url: "https://healthstream.statuspage.io", type: "statuspage" },
   { id: "maintainx", name: "MaintainX", tags: ["cmms", "maintenance", "facilities", "iot", "manufacturing"], status_url: "https://maintainx.statuspage.io/api/v2/status.json", page_url: "https://maintainx.statuspage.io", type: "statuspage" },
   { id: "kore_ai", name: "Kore.ai", tags: ["ai", "chatbot", "conversational-ai", "enterprise", "saas"], status_url: "https://koreai.statuspage.io/api/v2/status.json", page_url: "https://koreai.statuspage.io", type: "statuspage" },
   { id: "limble_cmms", name: "Limble CMMS", tags: ["cmms", "maintenance", "asset-management", "facilities", "manufacturing"], status_url: "https://limblecmms.statuspage.io/api/v2/status.json", page_url: "https://limblecmms.statuspage.io", type: "statuspage" },
   { id: "linksquares", name: "LinkSquares", tags: ["contracts", "legal", "ai", "clm", "enterprise"], status_url: "https://linksquares.statuspage.io/api/v2/status.json", page_url: "https://linksquares.statuspage.io", type: "statuspage" },
-  // Quantum computing
   { id: "ionq", name: "IonQ", tags: ["quantum-computing", "cloud", "developer-tools", "enterprise"], status_url: "https://ionq.statuspage.io/api/v2/status.json", page_url: "https://status.ionq.co", type: "statuspage" },
   { id: "rigetti", name: "Rigetti Computing", tags: ["quantum-computing", "cloud", "developer-tools", "api"], status_url: "https://rigetti.statuspage.io/api/v2/status.json", page_url: "https://rigetti.statuspage.io", type: "statuspage" },
-  // Government tech
   { id: "opengov", name: "OpenGov", tags: ["govtech", "government", "budgeting", "transparency", "saas"], status_url: "https://opengov.statuspage.io/api/v2/status.json", page_url: "https://www.opengovstatus.com", type: "statuspage" },
-  // Healthcare niche
   { id: "chirotouch", name: "ChiroTouch", tags: ["healthcare", "chiropractic", "ehr", "practice-management", "saas"], status_url: "https://chirotouch.statuspage.io/api/v2/status.json", page_url: "https://chirotouch.statuspage.io", type: "statuspage" },
-  // Sports & recreation
   { id: "golf_genius", name: "Golf Genius", tags: ["golf", "tournament-management", "sports", "saas"], status_url: "https://status.golfgenius.com/api/v2/status.json", page_url: "https://status.golfgenius.com", type: "statuspage" },
-  // Automotive services
   { id: "tekmetric", name: "Tekmetric", tags: ["automotive", "auto-repair", "shop-management", "saas"], status_url: "https://status.tekmetric.com/api/v2/status.json", page_url: "https://status.tekmetric.com", type: "statuspage" },
-  // Insurance tech
   { id: "insly", name: "Insly", tags: ["insurance", "insurtech", "policy-management", "saas"], status_url: "https://status.insly.com/api/v2/status.json", page_url: "https://status.insly.com", type: "statuspage" },
-  // Crypto tax
   { id: "koinly", name: "Koinly", tags: ["crypto", "tax", "portfolio", "fintech"], status_url: "https://koinly.statuspage.io/api/v2/status.json", page_url: "http://status.koinly.io", type: "statuspage" },
-  // AI productivity
   { id: "circleback", name: "Circleback", tags: ["ai", "meetings", "notes", "crm", "productivity"], status_url: "https://status.circleback.ai/api/v2/status.json", page_url: "https://status.circleback.ai", type: "statuspage" },
-  // Early childhood education
   { id: "brightwheel", name: "Brightwheel", tags: ["edtech", "childcare", "early-childhood", "daycare", "saas"], status_url: "https://brightwheel.statuspage.io/api/v2/status.json", page_url: "https://brightwheel.statuspage.io", type: "statuspage" },
-  // K-12 educational content
   { id: "savvas", name: "Savvas Learning", tags: ["edtech", "k12", "curriculum", "publishing", "education"], status_url: "https://savvas.statuspage.io/api/v2/status.json", page_url: "https://status.savvas.com", type: "statuspage" },
-  // Nscale — UK-based AI GPU cloud compute platform
   { id: "nscale", name: "Nscale", tags: ["ai", "gpu", "cloud", "infrastructure", "compute"], status_url: "https://status.nscale.com/api/v2/status.json", page_url: "https://status.nscale.com", type: "statuspage" },
-  // Devin — AI software engineer (Cognition AI)
   { id: "devin", name: "Devin", tags: ["ai", "coding", "developer-tools", "agent", "automation"], status_url: "https://status.devin.ai/api/v2/status.json", page_url: "https://status.devin.ai", type: "statuspage" },
-  // Nmbrs — Dutch HR & payroll SaaS platform
   { id: "nmbrs", name: "Nmbrs", tags: ["hr", "payroll", "saas", "enterprise", "europe"], status_url: "https://status.nmbrs.com/api/v2/status.json", page_url: "https://status.nmbrs.com", type: "statuspage" },
-  // Exact — Dutch ERP and accounting software for SMBs
   { id: "exact", name: "Exact", tags: ["erp", "accounting", "finance", "saas", "europe"], status_url: "https://status.exact.com/api/v2/status.json", page_url: "https://status.exact.com", type: "statuspage" },
-  // ZENSAI — HR performance and learning management platform
   { id: "zensai", name: "ZENSAI", tags: ["hr", "learning", "performance", "lms", "saas"], status_url: "https://status.zensai.com/api/v2/status.json", page_url: "https://status.zensai.com", type: "statuspage" },
-  // Cloud 66 — DevOps-as-a-Service, deploy any stack to any cloud
   { id: "cloud66", name: "Cloud 66", tags: ["devops", "paas", "deployment", "infrastructure", "developer-tools"], status_url: "https://status.cloud66.com/api/v2/status.json", page_url: "https://status.cloud66.com", type: "statuspage" },
-  // NFT.Storage — free decentralized storage for NFT data via IPFS & Filecoin
   { id: "nft_storage", name: "NFT.Storage", tags: ["web3", "nft", "ipfs", "storage", "blockchain"], status_url: "https://status.nft.storage/api/v2/status.json", page_url: "https://status.nft.storage", type: "statuspage" },
-  // Filecoin — decentralized storage blockchain network
   { id: "filecoin", name: "Filecoin", tags: ["blockchain", "web3", "storage", "decentralized", "crypto"], status_url: "https://status.filecoin.io/api/v2/status.json", page_url: "https://status.filecoin.io", type: "statuspage" },
-  // Platform9 — managed Kubernetes & OpenStack cloud platform
   { id: "platform9", name: "Platform9", tags: ["kubernetes", "openstack", "cloud", "infrastructure", "managed"], status_url: "https://status.platform9.com/api/v2/status.json", page_url: "https://status.platform9.com", type: "statuspage" },
-  // HUMAN Security — bot defense & fraud prevention platform (formerly PerimeterX)
   { id: "human_security", name: "HUMAN Security", tags: ["security", "bot-defense", "fraud", "api", "enterprise"], status_url: "https://status.perimeterx.com/api/v2/status.json", page_url: "https://status.perimeterx.com", type: "statuspage" },
-  // Channel.io — all-in-one customer chat & CRM platform (popular in Asia)
   { id: "channel_io", name: "Channel.io", tags: ["customer-support", "chat", "crm", "messaging", "saas"], status_url: "https://status.channel.io/api/v2/status.json", page_url: "https://status.channel.io", type: "statuspage" },
-  // Mollie — European payment service provider (Netherlands)
   { id: "mollie", name: "Mollie", tags: ["payments", "fintech", "api", "europe", "ecommerce"], status_url: "https://status.mollie.com/api/v2/summary.json", page_url: "https://status.mollie.com", type: "betterstack" },
-  // Signicat — European digital identity & eSign platform (Nordic)
   { id: "signicat", name: "Signicat", tags: ["identity", "esign", "kyc", "europe", "security"], status_url: "https://status.signicat.com/api/v2/status.json", page_url: "https://status.signicat.com", type: "statuspage" },
-  // Nx — smart monorepo build system & CI (Nrwl)
   { id: "nx", name: "Nx", tags: ["developer-tools", "monorepo", "build", "ci-cd", "open-source"], status_url: "https://status.nx.app/api/v2/status.json", page_url: "https://status.nx.app", type: "statuspage" },
-  // BankID — Swedish digital identity & authentication system
   { id: "bankid", name: "BankID", tags: ["identity", "authentication", "sweden", "fintech", "government"], status_url: "https://status.bankid.com/api/v2/status.json", page_url: "https://status.bankid.com", type: "statuspage" },
-  // Swish — Swedish mobile payment system
   { id: "swish", name: "Swish", tags: ["payments", "mobile", "sweden", "fintech", "p2p"], status_url: "https://status.swish.nu/api/v2/status.json", page_url: "https://status.swish.nu", type: "statuspage" },
-  // Nimble — web scraping & data collection platform (nimbleway.com)
   { id: "nimble_way", name: "Nimble", tags: ["web-scraping", "data", "proxy", "api", "developer-tools"], status_url: "https://status.nimbleway.com/api/v2/summary.json", page_url: "https://status.nimbleway.com", type: "betterstack" },
-  // Mia-Platform — cloud-native platform engineering & developer portal (Italy)
   { id: "mia_platform", name: "Mia-Platform", tags: ["developer-portal", "platform-engineering", "kubernetes", "paas", "enterprise"], status_url: "https://status.mia-platform.eu/api/v2/status.json", page_url: "https://status.mia-platform.eu", type: "statuspage" },
-  // env0 — Terraform/OpenTofu cloud infrastructure automation platform
   { id: "env0", name: "env0", tags: ["iac", "terraform", "devops", "infrastructure", "cloud"], status_url: "https://status.env0.com/api/v2/summary.json", page_url: "https://status.env0.com", type: "betterstack" },
-  // Smarkets — UK sports betting exchange & trading platform
   { id: "smarkets", name: "Smarkets", tags: ["betting", "sports", "exchange", "fintech", "uk"], status_url: "https://status.smarkets.com/api/v2/status.json", page_url: "https://status.smarkets.com", type: "statuspage" },
-  // e-conomic — Danish cloud accounting software (Visma)
   { id: "e_conomic", name: "e-conomic", tags: ["accounting", "fintech", "smb", "saas", "europe"], status_url: "https://status.e-conomic.com/api/v2/status.json", page_url: "https://status.e-conomic.com", type: "statuspage" },
-  // Lunar — Scandinavian digital bank (Denmark/Sweden/Norway)
   { id: "lunar", name: "Lunar", tags: ["banking", "neobank", "fintech", "scandinavia", "payments"], status_url: "https://status.lunar.app/api/v2/status.json", page_url: "https://status.lunar.app", type: "statuspage" },
-  // Tick 236 additions
-  // CloudZero — cloud cost intelligence / FinOps platform
   { id: "cloudzero", name: "CloudZero", tags: ["finops", "cloud-cost", "cost-management", "observability", "saas"], status_url: "https://cloudzero.statuspage.io/api/v2/status.json", page_url: "https://cloudzero.statuspage.io", type: "statuspage" },
-  // Humanitec — Internal Developer Platform (IDP) / platform engineering
   { id: "humanitec", name: "Humanitec", tags: ["developer-platform", "platform-engineering", "idp", "devops", "kubernetes"], status_url: "https://humanitec.statuspage.io/api/v2/status.json", page_url: "https://humanitec.statuspage.io", type: "statuspage" },
-  // Akuity — managed Argo CD / GitOps cloud platform (by Argo creators)
   { id: "akuity", name: "Akuity", tags: ["gitops", "argocd", "kubernetes", "devops", "cloud"], status_url: "https://status.akuity.io/api/v2/status.json", page_url: "https://status.akuity.io", type: "statuspage" },
-  // Unqork — no-code enterprise application development platform
   { id: "unqork", name: "Unqork", tags: ["no-code", "enterprise", "low-code", "saas", "platform"], status_url: "https://status.unqork.com/api/v2/status.json", page_url: "https://status.unqork.com", type: "statuspage" },
-  // Writer — enterprise AI writing and LLM platform
   { id: "writer", name: "Writer", tags: ["ai", "llm", "writing", "enterprise", "saas"], status_url: "https://writer.statuspage.io/api/v2/status.json", page_url: "https://writer.statuspage.io", type: "statuspage" },
-  // Sitecore — digital experience platform / enterprise CMS
   { id: "sitecore", name: "Sitecore", tags: ["cms", "digital-experience", "enterprise", "marketing", "saas"], status_url: "https://sitecore.statuspage.io/api/v2/status.json", page_url: "https://sitecore.statuspage.io", type: "statuspage" },
-  // Yoast — WordPress SEO plugin and services
   { id: "yoast", name: "Yoast", tags: ["seo", "wordpress", "marketing", "plugins", "saas"], status_url: "https://status.yoast.com/api/v2/status.json", page_url: "https://status.yoast.com", type: "statuspage" },
-  // EventMobi — event management and event app platform
   { id: "eventmobi", name: "EventMobi", tags: ["events", "event-management", "conference", "mobile-app", "saas"], status_url: "https://eventmobi.statuspage.io/api/v2/status.json", page_url: "https://eventmobi.statuspage.io", type: "statuspage" },
-  // Loyverse — cloud-based POS system for retail and restaurants
   { id: "loyverse", name: "Loyverse", tags: ["pos", "retail", "restaurant", "point-of-sale", "saas"], status_url: "https://loyverse.statuspage.io/api/v2/status.json", page_url: "https://loyverse.statuspage.io", type: "statuspage" },
-  // DroneDeploy — drone mapping, aerial intelligence and photogrammetry platform
   { id: "dronedeploy", name: "DroneDeploy", tags: ["drone", "mapping", "aerial", "photogrammetry", "saas"], status_url: "https://status.dronedeploy.com/api/v2/status.json", page_url: "https://status.dronedeploy.com", type: "statuspage" },
-  // Murf — AI voice synthesis and text-to-speech platform
   { id: "murf", name: "Murf", tags: ["ai", "voice", "text-to-speech", "audio", "saas"], status_url: "https://murf.statuspage.io/api/v2/status.json", page_url: "https://murf.statuspage.io", type: "statuspage" },
-  // Scrapfly — web scraping API and data extraction platform
   { id: "scrapfly", name: "Scrapfly", tags: ["web-scraping", "data", "api", "proxy", "developer-tools"], status_url: "https://scrapfly.statuspage.io/api/v2/status.json", page_url: "https://scrapfly.statuspage.io", type: "statuspage" },
-  // SnapLogic — enterprise iPaaS integration and data pipeline platform
   { id: "snaplogic", name: "SnapLogic", tags: ["integration", "ipaas", "etl", "data-pipeline", "enterprise"], status_url: "https://snaplogic.statuspage.io/api/v2/status.json", page_url: "https://snaplogic.statuspage.io", type: "statuspage" },
-  // Groq — AI inference API with LPU chips for ultra-fast LLM serving
-  { id: "groq", name: "Groq", tags: ["ai", "llm", "inference", "api", "developer-tools"], status_url: "https://groqstatus.com/api/v2/status.json", page_url: "https://groqstatus.com", type: "statuspage" },
-  // PlanetScale — serverless MySQL-compatible database platform
-  { id: "planetscale", name: "PlanetScale", tags: ["database", "mysql", "serverless", "developer-tools", "cloud"], status_url: "https://www.planetscalestatus.com/api/v2/status.json", page_url: "https://www.planetscalestatus.com", type: "statuspage" },
-  // Travis CI — hosted continuous integration and deployment service
-  { id: "travis_ci", name: "Travis CI", tags: ["ci-cd", "devtools", "testing", "automation", "open-source"], status_url: "https://www.traviscistatus.com/api/v2/status.json", page_url: "https://www.traviscistatus.com", type: "statuspage" },
-  // BigCommerce — enterprise e-commerce platform for online stores
-  { id: "bigcommerce", name: "BigCommerce", tags: ["ecommerce", "saas", "retail", "enterprise", "shopping-cart"], status_url: "https://status.bigcommerce.com/api/v2/status.json", page_url: "https://status.bigcommerce.com", type: "statuspage" },
-  // SentinelOne — AI-powered endpoint security and XDR platform
-  { id: "sentinelone", name: "SentinelOne", tags: ["security", "endpoint", "xdr", "edr", "enterprise"], status_url: "https://status.sentinelone.com/api/v2/status.json", page_url: "https://status.sentinelone.com", type: "statuspage" },
-  // Affirm — buy-now-pay-later and consumer lending platform
-  { id: "affirm", name: "Affirm", tags: ["payments", "bnpl", "fintech", "consumer-lending", "ecommerce"], status_url: "https://status.affirm.com/api/v2/status.json", page_url: "https://status.affirm.com", type: "statuspage" },
-  // Klarna — buy-now-pay-later and global payments bank
-  { id: "klarna", name: "Klarna", tags: ["payments", "bnpl", "fintech", "europe", "ecommerce"], status_url: "https://status.klarna.com/api/v2/status.json", page_url: "https://status.klarna.com", type: "statuspage" },
-  // Chargebee — subscription billing and revenue management platform
-  { id: "chargebee", name: "Chargebee", tags: ["billing", "subscriptions", "payments", "saas", "revenue-management"], status_url: "https://status.chargebee.com/api/v2/status.json", page_url: "https://status.chargebee.com", type: "statuspage" },
-  // FullStory — digital experience analytics and session replay platform
-  { id: "fullstory", name: "FullStory", tags: ["analytics", "session-replay", "ux", "product-analytics", "saas"], status_url: "https://status.fullstory.com/api/v2/status.json", page_url: "https://status.fullstory.com", type: "statuspage" },
-  // Gong — revenue intelligence and sales conversation analytics platform
-  { id: "gong", name: "Gong", tags: ["sales", "revenue-intelligence", "crm", "analytics", "enterprise"], status_url: "https://status.gong.io/api/v2/status.json", page_url: "https://status.gong.io", type: "statuspage" },
-  // Grammarly — AI-powered writing assistant and grammar checker
-  { id: "grammarly", name: "Grammarly", tags: ["ai", "writing", "productivity", "saas", "browser-extension"], status_url: "https://status.grammarly.com/api/v2/status.json", page_url: "https://status.grammarly.com", type: "statuspage" },
-  // Ironclad — digital contracting and contract lifecycle management platform
-  { id: "ironclad", name: "Ironclad", tags: ["legal", "contracts", "clm", "enterprise", "saas"], status_url: "https://status.ironcladapp.com/api/v2/status.json", page_url: "https://status.ironcladapp.com", type: "statuspage" },
-  // Heap — product analytics platform with retroactive event capture
-  { id: "heap", name: "Heap", tags: ["analytics", "product-analytics", "ux", "saas", "developer-tools"], status_url: "https://status.heap.io/api/v2/status.json", page_url: "https://status.heap.io", type: "statuspage" },
-  // IONOS — European web hosting, cloud, and domain registrar
   { id: "ionos", name: "IONOS", tags: ["hosting", "cloud", "domains", "web-hosting", "infrastructure"], status_url: "https://status.ionos.com/api/v2/status.json", page_url: "https://www.ionos-status.com", type: "statuspage" },
-  // Act CRM — customer relationship management and contact management platform
   { id: "act", name: "Act CRM", tags: ["crm", "sales", "contact-management", "saas", "small-business"], status_url: "https://status.act.com/api/v2/status.json", page_url: "https://status.act.com", type: "statuspage" },
-  // ExpensePoint — cloud-based expense management and reporting platform
   { id: "expensepoint", name: "ExpensePoint", tags: ["expense-management", "finance", "saas", "enterprise", "accounting"], status_url: "https://status.expensepoint.com/api/v2/status.json", page_url: "https://status.expensepoint.com", type: "statuspage" },
-  // RightSignature — electronic signature platform (Citrix product)
   { id: "rightsignature", name: "RightSignature", tags: ["esign", "documents", "legal", "saas", "workflows"], status_url: "https://status.rightsignature.com/api/v2/status.json", page_url: "https://status.rightsignature.com", type: "statuspage" },
-  // Coveo — AI-powered search and relevance platform
   { id: "coveo", name: "Coveo", tags: ["search", "ai", "relevance", "enterprise", "saas"], status_url: "https://status.coveo.com/api/v2/status.json", page_url: "https://status.cloud.coveo.com", type: "statuspage" },
-  // 6sense — AI-driven account engagement and revenue intelligence platform
   { id: "6sense", name: "6sense", tags: ["abm", "sales-intelligence", "ai", "marketing", "enterprise"], status_url: "https://status.6sense.com/api/v2/status.json", page_url: "https://status.6sense.com", type: "statuspage" },
-  // 123FormBuilder — online form and survey builder platform
   { id: "123formbuilder", name: "123FormBuilder", tags: ["forms", "surveys", "saas", "no-code", "data-collection"], status_url: "https://status.123formbuilder.com/api/v2/status.json", page_url: "https://status.123formbuilder.com", type: "statuspage" },
-  // TextUs — business text messaging and SMS platform for sales and recruiting
   { id: "textus", name: "TextUs", tags: ["sms", "messaging", "sales", "recruiting", "communication"], status_url: "https://status.textus.com/api/v2/status.json", page_url: "https://status.next.textus.com", type: "statuspage" },
-  // Pennylane — French accounting and financial management SaaS for SMEs
   { id: "pennylane", name: "Pennylane", tags: ["accounting", "finance", "saas", "smb", "europe"], status_url: "https://status.pennylane.com/api/v2/status.json", page_url: "https://status.pennylane.com", type: "statuspage" },
-  // NoFraud — real-time ecommerce fraud prevention platform
   { id: "nofraud", name: "NoFraud", tags: ["fraud-prevention", "ecommerce", "payments", "risk", "saas"], status_url: "https://status.nofraud.com/api/v2/status.json", page_url: "https://status.nofraud.com", type: "statuspage" },
-  // ClearSale — fraud prevention and chargeback protection for ecommerce
   { id: "clearsale", name: "ClearSale", tags: ["fraud-prevention", "ecommerce", "payments", "risk", "latin-america"], status_url: "https://status.clearsale.com.br/api/v2/status.json", page_url: "https://status.clearsale.com.br", type: "statuspage" },
-  // PetDesk — veterinary practice management and pet care appointment platform
   { id: "petdesk", name: "PetDesk", tags: ["veterinary", "pet-care", "appointments", "healthcare", "saas"], status_url: "https://status.petdesk.com/api/v2/status.json", page_url: "https://status.petdesk.com", type: "statuspage" },
-  // Dock — sales room and deal acceleration platform for B2B revenue teams
   { id: "dock", name: "Dock", tags: ["sales", "deal-room", "revenue", "b2b", "saas"], status_url: "https://status.dock.us/api/v2/status.json", page_url: "https://status.dock.us", type: "statuspage" },
-  // Virtuagym — gym and fitness club management software and member engagement platform
   { id: "virtuagym", name: "Virtuagym", tags: ["fitness", "gym-management", "health", "member-engagement", "saas"], status_url: "https://status.virtuagym.com/api/v2/status.json", page_url: "https://status.virtuagym.com", type: "statuspage" },
-  // Lakera — AI security and guardrails platform protecting LLM-powered applications
   { id: "lakera", name: "Lakera", tags: ["ai", "security", "llm", "guardrails", "api"], status_url: "https://status.lakera.ai/api/v2/status.json", page_url: "https://status.lakera.ai", type: "statuspage" },
-  // Wipster — video review and approval collaboration platform for creative teams
   { id: "wipster", name: "Wipster", tags: ["video", "review", "collaboration", "creative", "saas"], status_url: "https://status.wipster.io/api/v2/status.json", page_url: "https://status.wipster.io", type: "statuspage" },
-  // Eligible — healthcare eligibility verification and claims processing API platform
   { id: "eligible", name: "Eligible", tags: ["healthcare", "eligibility", "claims", "api", "insurance"], status_url: "https://status.eligible.com/api/v2/status.json", page_url: "https://status.eligible.com", type: "statuspage" },
-  // Change Healthcare — healthcare data exchange, payment processing, and clinical intelligence platform
   { id: "change_healthcare", name: "Change Healthcare", tags: ["healthcare", "data-exchange", "claims", "payments", "enterprise"], status_url: "https://status.changehealthcare.com/api/v2/status.json", page_url: "https://status.changehealthcare.com", type: "statuspage" },
-  // Wavy — Sinch LatAm CPaaS platform for SMS, WhatsApp, and conversational messaging in Brazil/LatAm
   { id: "wavy", name: "Wavy", tags: ["sms", "messaging", "cpaas", "latin-america", "api"], status_url: "https://status.wavy.global/api/v2/status.json", page_url: "https://status.wavy.global", type: "statuspage" },
-  // Webexpenses — cloud-based expense management and employee spending platform (UK/Europe)
   { id: "webexpenses", name: "Webexpenses", tags: ["expense-management", "finance", "saas", "europe", "enterprise"], status_url: "https://status.webexpenses.com/api/v2/status.json", page_url: "https://status.webexpenses.com", type: "statuspage" },
-  // Sharebite — employee meal benefits and food ordering platform for corporate teams
   { id: "sharebite", name: "Sharebite", tags: ["employee-benefits", "food", "hr", "workplace", "saas"], status_url: "https://status.sharebite.com/api/v2/status.json", page_url: "https://status.sharebite.com", type: "statuspage" },
-  // Uniqode — QR code generation and proximity marketing platform (formerly Beaconstac)
   { id: "uniqode", name: "Uniqode", tags: ["qr-codes", "proximity-marketing", "digital-signage", "saas", "retail"], status_url: "https://status.beaconstac.com/api/v2/status.json", page_url: "https://status.beaconstac.com", type: "statuspage" },
-  // Spot by NetApp — cloud cost optimization, Spot instance management, and cloud infrastructure platform
   { id: "spot_by_netapp", name: "Spot by NetApp", tags: ["cloud", "cost-optimization", "infrastructure", "kubernetes", "devops"], status_url: "https://status.spot.io/api/v2/status.json", page_url: "https://status.spot.io", type: "statuspage" },
-  // Hevo Data — no-code ETL / ELT data pipeline platform
   { id: "hevo_data", name: "Hevo Data", tags: ["data", "etl", "integration", "pipeline", "analytics"], status_url: "https://status.hevodata.com/api/v2/status.json", page_url: "https://status.hevodata.com", type: "statuspage" },
-  // TwicPics — real-time image and video optimization CDN
   { id: "twicpics", name: "TwicPics", tags: ["cdn", "image-processing", "media", "optimization", "api"], status_url: "https://status.twicpics.com/api/v2/status.json", page_url: "https://status.twicpics.com", type: "statuspage" },
-  // Quip — collaborative documents and spreadsheets platform (by Salesforce)
   { id: "quip", name: "Quip", tags: ["collaboration", "documents", "productivity", "saas", "enterprise"], status_url: "https://status.quip.com/api/v2/status.json", page_url: "https://status.quip.com", type: "statuspage" },
-  // Voximplant — cloud communications platform for voice, video, and messaging APIs
   { id: "voximplant", name: "Voximplant", tags: ["communications", "voice", "video", "api", "cloud"], status_url: "https://status.voximplant.com/api/v2/status.json", page_url: "https://status.voximplant.com", type: "statuspage" },
-  // Deskpro — multi-channel helpdesk and customer support platform
   { id: "deskpro", name: "Deskpro", tags: ["customer-support", "helpdesk", "ticketing", "saas", "enterprise"], status_url: "https://deskprostatus.com/api/v2/status.json", page_url: "https://deskprostatus.com", type: "statuspage" },
-  // ESET — cybersecurity products including antivirus, endpoint protection, and threat intelligence
   { id: "eset", name: "ESET", tags: ["security", "antivirus", "endpoint-protection", "cybersecurity", "enterprise"], status_url: "https://status.eset.com/api/v2/status.json", page_url: "https://status.eset.com", type: "statuspage" },
-  // WithSecure — enterprise cybersecurity platform (formerly F-Secure Business)
   { id: "withsecure", name: "WithSecure", tags: ["security", "endpoint-protection", "cybersecurity", "enterprise", "cloud"], status_url: "https://status.withsecure.com/api/v2/status.json", page_url: "https://status.withsecure.com", type: "statuspage" },
-  // F-Secure — consumer and SMB cybersecurity and privacy products
   { id: "f_secure", name: "F-Secure", tags: ["security", "antivirus", "privacy", "cybersecurity", "consumer"], status_url: "https://status.f-secure.com/api/v2/status.json", page_url: "https://status.f-secure.com", type: "statuspage" },
-  // Ivanti Cloud — unified endpoint and IT service management platform (formerly MobileIron)
   { id: "ivanti_cloud", name: "Ivanti Cloud", tags: ["mdm", "endpoint-management", "itsm", "enterprise", "security"], status_url: "https://status.ivanticloud.com/api/v2/status.json", page_url: "https://status.ivanticloud.com", type: "statuspage" },
-  // Amplience — headless content management and digital experience platform
   { id: "amplience", name: "Amplience", tags: ["cms", "headless", "content", "ecommerce", "enterprise"], status_url: "https://status.amplience.com/api/v2/status.json", page_url: "https://status.amplience.com", type: "statuspage" },
-  // Factory.ai — AI software engineering and autonomous coding platform
   { id: "factory_ai", name: "Factory", tags: ["ai", "coding", "developer-tools", "automation", "software-engineering"], status_url: "https://status.factory.ai/api/v2/status.json", page_url: "https://status.factory.ai", type: "statuspage" },
-  // Qodo — AI-powered code quality and test generation platform
   { id: "qodo", name: "Qodo", tags: ["ai", "code-quality", "testing", "developer-tools", "llm"], status_url: "https://status.qodo.ai/api/v2/status.json", page_url: "https://status.qodo.ai", type: "statuspage" },
-  // Poolside — AI foundation models for software engineering
   { id: "poolside", name: "Poolside", tags: ["ai", "llm", "software-engineering", "coding", "enterprise"], status_url: "https://status.poolside.ai/api/v2/status.json", page_url: "https://status.poolside.ai", type: "statuspage" },
-  // Tick 241 additions — 10 new live-verified services
-  // LoyaltyLion — loyalty and rewards program platform for ecommerce
   { id: "loyalty_lion", name: "LoyaltyLion", tags: ["loyalty", "rewards", "ecommerce", "retention", "saas"], status_url: "https://status.loyaltylion.com/api/v2/status.json", page_url: "https://status.loyaltylion.com", type: "statuspage" },
-  // Salt Edge — open banking / PSD2 data aggregation and payment initiation API
   { id: "saltedge", name: "Salt Edge", tags: ["open-banking", "fintech", "api", "psd2", "europe"], status_url: "https://status.saltedge.com/api/v2/status.json", page_url: "https://www.saltedgestatus.com", type: "statuspage" },
-  // Yapily — open banking API platform for account data and payment initiation
-  { id: "yapily", name: "Yapily", tags: ["open-banking", "fintech", "api", "payments", "europe"], status_url: "https://status.yapily.com/api/v2/status.json", page_url: "https://status.yapily.com", type: "statuspage" },
-  // Authorize.net — payment gateway and merchant services platform (Visa company)
   { id: "authorize_net", name: "Authorize.net", tags: ["payments", "gateway", "merchant", "fintech", "saas"], status_url: "https://status.authorize.net/api/v2/status.json", page_url: "https://status.authorize.net", type: "statuspage" },
-  // Moneris — Canadian payment processing and point-of-sale solutions
   { id: "moneris", name: "Moneris", tags: ["payments", "pos", "canada", "fintech", "merchant"], status_url: "https://status.moneris.com/api/v2/status.json", page_url: "https://status.moneris.com", type: "statuspage" },
-  // ConanCenter — Conan C/C++ package manager and repository index
   { id: "conan_center", name: "ConanCenter", tags: ["package-manager", "c++", "developer-tools", "open-source", "registry"], status_url: "https://status.conan.io/api/v2/status.json", page_url: "https://status.conan.io", type: "statuspage" },
-  // Userlane — digital adoption platform and in-app employee onboarding / training
   { id: "userlane", name: "Userlane", tags: ["digital-adoption", "onboarding", "training", "saas", "enterprise"], status_url: "https://status.userlane.com/api/v2/status.json", page_url: "https://status.userlane.com", type: "statuspage" },
-  // Qualified — pipeline acceleration and revenue platform with AI sales agents
-  { id: "qualified", name: "Qualified", tags: ["sales", "pipeline", "ai", "revenue", "saas"], status_url: "https://status.qualified.com/api/v2/status.json", page_url: "https://status.qualified.com", type: "statuspage" },
-  // Rainforest QA — AI-powered automated QA testing platform for web applications
   { id: "rainforest", name: "Rainforest QA", tags: ["testing", "qa", "automation", "developer-tools", "saas"], status_url: "https://status.rainforestqa.com/api/v2/status.json", page_url: "https://status.rainforestqa.com", type: "statuspage" },
-  // HetrixTools — uptime monitoring, blacklist monitoring, and server monitoring platform
   { id: "hetrix_tools", name: "HetrixTools", tags: ["monitoring", "uptime", "blacklist", "server", "developer-tools"], status_url: "https://status.hetrixtools.com/api/v2/status.json", page_url: "https://status.hetrixtools.com", type: "statuspage" },
-  // HashiCorp — cloud infrastructure automation platform (Terraform, Vault, Consul, Nomad)
-  { id: "hashicorp", name: "HashiCorp", tags: ["devtools", "infrastructure", "terraform", "vault", "cloud"], status_url: "https://status.hashicorp.com/api/v2/status.json", page_url: "https://status.hashicorp.com", type: "statuspage" },
-  // Snyk — developer security platform for finding and fixing vulnerabilities
-  { id: "snyk", name: "Snyk", tags: ["security", "devtools", "vulnerability", "devsecops", "open-source"], status_url: "https://status.snyk.io/api/v2/status.json", page_url: "https://status.snyk.io", type: "statuspage" },
-  // Sauce Labs — cloud-based automated testing platform for web and mobile apps
-  { id: "saucelabs", name: "Sauce Labs", tags: ["testing", "qa", "browser-testing", "devtools", "automation"], status_url: "https://status.saucelabs.com/api/v2/status.json", page_url: "https://status.saucelabs.com", type: "statuspage" },
-  // BrowserStack — browser and app testing platform with real devices in the cloud
-  { id: "browserstack", name: "BrowserStack", tags: ["testing", "qa", "browser-testing", "devtools", "mobile"], status_url: "https://status.browserstack.com/api/v2/status.json", page_url: "https://status.browserstack.com", type: "statuspage" },
-  // LiveKit — open-source WebRTC infrastructure for real-time video and audio
-  { id: "livekit", name: "LiveKit", tags: ["video", "realtime", "webrtc", "api", "communication"], status_url: "https://status.livekit.io/api/v2/status.json", page_url: "https://status.livekit.io", type: "statuspage" },
-  // Daily.co — embeddable video infrastructure APIs for real-time communication
-  { id: "daily", name: "Daily", tags: ["video", "realtime", "webrtc", "api", "communication"], status_url: "https://status.daily.co/api/v2/status.json", page_url: "https://status.daily.co", type: "statuspage" },
-  // Cloudflare — global CDN, DDoS protection, DNS, and security platform
-  { id: "cloudflare", name: "Cloudflare", tags: ["cdn", "dns", "security", "network", "infrastructure"], status_url: "https://www.cloudflarestatus.com/api/v2/status.json", page_url: "https://www.cloudflarestatus.com", type: "statuspage" },
-  // Linear — issue tracking and project management for software teams
-  { id: "linear", name: "Linear", tags: ["project-management", "issue-tracking", "devtools", "saas", "productivity"], status_url: "https://linearstatus.com/api/v2/status.json", page_url: "https://linearstatus.com", type: "statuspage" },
-  // DocuSign — electronic signature and agreement cloud platform
-  { id: "docusign", name: "DocuSign", tags: ["esign", "legal", "documents", "saas", "enterprise"], status_url: "https://status.docusign.com/api/v2/status.json", page_url: "https://status.docusign.com", type: "statuspage" },
-  // Plivo — cloud communication platform for voice and SMS APIs
-  { id: "plivo", name: "Plivo", tags: ["sms", "voice", "api", "communications", "cpaas"], status_url: "https://status.plivo.com/api/v2/status.json", page_url: "https://status.plivo.com", type: "statuspage" },
-  // Xero — cloud-based accounting software for small businesses
-  { id: "xero", name: "Xero", tags: ["accounting", "finance", "saas", "small-business", "bookkeeping"], status_url: "https://status.xero.com/api/v2/status.json", page_url: "https://status.xero.com", type: "statuspage" },
-  // Blockchain.com — cryptocurrency exchange, wallet, and data platform
-  { id: "blockchain_com", name: "Blockchain.com", tags: ["crypto", "bitcoin", "web3", "exchange", "wallet"], status_url: "https://status.blockchain.com/api/v2/status.json", page_url: "https://status.blockchain.com", type: "statuspage" },
-  // Productboard — product management platform for roadmapping and prioritization
-  { id: "productboard", name: "Productboard", tags: ["product-management", "roadmap", "saas", "enterprise", "feedback"], status_url: "https://status.productboard.com/api/v2/status.json", page_url: "https://status.productboard.com", type: "statuspage" },
-  // Bird — cloud communications platform for SMS, email, voice and WhatsApp (formerly MessageBird)
-  { id: "bird", name: "Bird", tags: ["sms", "email", "voice", "communications", "cpaas", "api"], status_url: "https://status.bird.com/api/v2/status.json", page_url: "https://status.bird.com", type: "statuspage" },
-  // Threekit — 3D product visualization and augmented reality platform for e-commerce
   { id: "threekit", name: "Threekit", tags: ["3d", "ar", "visualization", "ecommerce", "saas"], status_url: "https://status.threekit.com/api/v2/status.json", page_url: "https://status.threekit.com", type: "statuspage" },
-  // Clumio — SaaS-based cloud backup and data protection for AWS and Microsoft 365
   { id: "clumio", name: "Clumio", tags: ["backup", "cloud", "data-protection", "aws", "saas"], status_url: "https://status.clumio.com/api/v2/status.json", page_url: "https://status.clumio.com", type: "statuspage" },
-  // Keepit — cloud-to-cloud backup for Microsoft 365, Google Workspace, Salesforce, and more
   { id: "keepit", name: "Keepit", tags: ["backup", "cloud", "microsoft365", "saas", "data-protection"], status_url: "https://status.keepit.com/api/v2/status.json", page_url: "https://status.keepit.com", type: "statuspage" },
-  // Agno — AI agent platform for building and deploying intelligent agents
   { id: "agno", name: "Agno", tags: ["ai", "agents", "llm", "platform", "api"], status_url: "https://status.agno.com/api/v2/status.json", page_url: "https://status.agno.com", type: "statuspage" },
-  // Datadog EU — Datadog monitoring platform status for EU region customers
   { id: "datadog_eu", name: "Datadog EU", tags: ["monitoring", "observability", "apm", "metrics", "europe"], status_url: "https://status.datadoghq.eu/api/v2/status.json", page_url: "https://status.datadoghq.eu", type: "statuspage" },
-  // Chili Piper — intelligent meeting scheduling and lead routing for revenue teams
   { id: "chilipiper", name: "Chili Piper", tags: ["scheduling", "sales", "crm", "meetings", "lead-routing"], status_url: "https://status.chilipiper.com/api/v2/status.json", page_url: "https://status.chilipiper.com", type: "statuspage" },
-  // Stash — micro-investing and banking app for personal finance and wealth building
   { id: "stash", name: "Stash", tags: ["investing", "fintech", "banking", "personal-finance", "mobile"], status_url: "https://status.stash.com/api/v2/status.json", page_url: "https://status.stash.com", type: "statuspage" },
-  // Swrve — mobile marketing automation platform for in-app messaging and push notifications
   { id: "swrve", name: "Swrve", tags: ["mobile-marketing", "push-notifications", "in-app-messaging", "saas", "engagement"], status_url: "https://status.swrve.com/api/v2/status.json", page_url: "https://status.swrve.com", type: "statuspage" },
-  // Sessionboard — conference and event content management platform for speakers and sessions
   { id: "sessionboard", name: "Sessionboard", tags: ["events", "conferences", "content-management", "speakers", "saas"], status_url: "https://status.sessionboard.com/api/v2/status.json", page_url: "https://status.sessionboard.com", type: "statuspage" },
-  // Ambassador Software — referral and affiliate marketing platform for SaaS and B2B companies
   { id: "ambassador_software", name: "Ambassador Software", tags: ["referral", "affiliate", "marketing", "saas", "partnerships"], status_url: "https://status.getambassador.com/api/v2/status.json", page_url: "https://status.getambassador.com", type: "statuspage" },
-  // Tribe — community engagement and customer community platform for SaaS companies
   { id: "tribe", name: "Tribe", tags: ["community", "engagement", "saas", "forum", "customer-success"], status_url: "https://status.tribe.so/api/v2/status.json", page_url: "https://status.tribe.so", type: "statuspage" },
-  // Heartbeat Community — community platform for creators, coaches, and online courses
   { id: "heartbeat_community", name: "Heartbeat Community", tags: ["community", "creators", "courses", "coaching", "saas"], status_url: "https://status.heartbeat.chat/api/v2/status.json", page_url: "https://status.heartbeat.chat", type: "statuspage" },
-  // Palo Alto Networks — enterprise network security, firewall, and SASE platform
   { id: "palo_alto", name: "Palo Alto Networks", tags: ["security", "firewall", "network-security", "sase", "enterprise"], status_url: "https://status.paloaltonetworks.com/api/v2/status.json", page_url: "https://status.paloaltonetworks.com", type: "statuspage" },
-  // Agility CMS — cloud-native headless CMS for omnichannel content delivery
   { id: "agility_cms", name: "Agility CMS", tags: ["cms", "headless", "content-management", "jamstack", "api"], status_url: "https://status.agilitycms.com/api/v2/status.json", page_url: "https://status.agilitycms.com", type: "statuspage" },
-  // CloudCannon — Git-based CMS and static site hosting platform for web agencies
   { id: "cloudcannon", name: "CloudCannon", tags: ["cms", "static-sites", "git", "hosting", "jamstack"], status_url: "https://status.cloudcannon.com/api/v2/status.json", page_url: "https://status.cloudcannon.com", type: "statuspage" },
-  // Grow — business intelligence and KPI dashboard platform for SMBs
   { id: "grow_com", name: "Grow", tags: ["bi", "dashboards", "analytics", "kpi", "saas"], status_url: "https://status.grow.com/api/v2/status.json", page_url: "https://status.grow.com", type: "statuspage" },
-  // Lucca — French HR software suite covering payroll, expenses, and workforce management
   { id: "lucca", name: "Lucca", tags: ["hr", "payroll", "expenses", "workforce", "saas"], status_url: "https://status.lucca.fr/api/v2/status.json", page_url: "https://status.lucca.fr", type: "statuspage" },
-  // NeverBounce — real-time email verification and list cleaning service
   { id: "neverbounce", name: "NeverBounce", tags: ["email-verification", "deliverability", "api", "list-cleaning", "saas"], status_url: "https://status.neverbounce.com/api/v2/status.json", page_url: "https://status.neverbounce.com", type: "statuspage" },
-  // Popmenu — restaurant marketing platform for menus, online ordering, and digital presence
   { id: "popmenu", name: "Popmenu", tags: ["restaurant", "marketing", "menus", "online-ordering", "saas"], status_url: "https://status.popmenu.com/api/v2/status.json", page_url: "https://status.popmenu.com", type: "statuspage" },
-  // Edge Delta — distributed log management and streaming observability platform
   { id: "edge_delta", name: "Edge Delta", tags: ["observability", "logging", "streaming", "monitoring", "devops"], status_url: "https://status.edgedelta.com/api/v2/status.json", page_url: "https://status.edgedelta.com", type: "statuspage" },
-  // Scratchpad — AI-powered sales workspace for Salesforce pipeline management
   { id: "scratchpad", name: "Scratchpad", tags: ["sales", "crm", "salesforce", "pipeline", "productivity"], status_url: "https://status.scratchpad.com/api/v2/status.json", page_url: "https://status.scratchpad.com", type: "statuspage" },
-  // Phrase — translation management platform for localization workflows
-  { id: "phrase", name: "Phrase", tags: ["localization", "translation", "i18n", "developer-tools", "saas"], status_url: "https://status.phrase.com/api/v2/status.json", page_url: "https://status.phrase.com", type: "statuspage" },
-  // Later — social media scheduling and visual content planning platform
-  { id: "later", name: "Later", tags: ["social-media", "scheduling", "marketing", "content", "saas"], status_url: "https://status.later.com/api/v2/status.json", page_url: "https://status.later.com", type: "statuspage" },
-  // Wiz — cloud security platform for vulnerability and misconfiguration detection
-  { id: "wiz", name: "Wiz", tags: ["security", "cloud", "vulnerability", "cspm", "enterprise"], status_url: "https://status.wiz.io/api/v2/status.json", page_url: "https://status.wiz.io", type: "statuspage" },
-  // CloudConvert — online file conversion API supporting 200+ formats (BetterStack)
   { id: "cloudconvert", name: "CloudConvert", tags: ["file-conversion", "api", "developer-tools", "saas", "media"], status_url: "https://cloudconvert.instatus.com/api/v2/summary.json", page_url: "https://status.cloudconvert.com", type: "betterstack" },
-  // Deque — web accessibility testing tools and axe-core DevTools platform
   { id: "deque", name: "Deque", tags: ["accessibility", "a11y", "testing", "developer-tools", "compliance"], status_url: "https://status.deque.com/api/v2/status.json", page_url: "https://status.deque.com", type: "statuspage" },
-  // Genially — interactive presentation and visual content creation platform
   { id: "genially", name: "Genially", tags: ["presentations", "interactive", "content", "education", "saas"], status_url: "https://status.genially.com/api/v2/status.json", page_url: "https://status.genially.com", type: "statuspage" },
-  // Workforce.com — employee scheduling and workforce management platform
   { id: "workforce_com", name: "Workforce.com", tags: ["workforce-management", "scheduling", "hr", "time-tracking", "saas"], status_url: "https://status.workforce.com/api/v2/status.json", page_url: "https://status.workforce.com", type: "statuspage" },
-  // CustomerGauge — NPS and B2B customer experience management platform
   { id: "customergauge", name: "CustomerGauge", tags: ["nps", "customer-experience", "analytics", "b2b", "saas"], status_url: "https://status.customergauge.com/api/v2/status.json", page_url: "https://status.customergauge.com", type: "statuspage" },
-  // Invoiced — accounts receivable automation and billing platform
   { id: "invoiced", name: "Invoiced", tags: ["accounts-receivable", "billing", "payments", "fintech", "saas"], status_url: "https://status.invoiced.com/api/v2/status.json", page_url: "https://status.invoiced.com", type: "statuspage" },
-  // PayWhirl — subscription billing and recurring payments management platform
   { id: "paywhirl", name: "PayWhirl", tags: ["subscriptions", "billing", "payments", "ecommerce", "saas"], status_url: "https://status.paywhirl.com/api/v2/status.json", page_url: "https://status.paywhirl.com", type: "statuspage" },
-  // Swile — employee benefits and meal voucher platform (France/Europe)
   { id: "swile", name: "Swile", tags: ["employee-benefits", "hr", "fintech", "europe", "saas"], status_url: "https://status.swile.co/api/v2/status.json", page_url: "https://status.swile.co", type: "statuspage" },
-  // Retention Science — AI-powered lifecycle marketing and customer retention platform
   { id: "retention_science", name: "Retention Science", tags: ["marketing", "retention", "ai", "email", "ecommerce"], status_url: "https://status.retentionscience.com/api/v2/status.json", page_url: "https://status.retentionscience.com", type: "statuspage" },
-  // PortSwigger — maker of Burp Suite, the industry-leading web security testing toolkit
   { id: "portswigger", name: "PortSwigger", tags: ["security", "appsec", "devtools", "testing"], status_url: "https://status.portswigger.net/api/v2/status.json", page_url: "https://status.portswigger.net", type: "statuspage" },
-  // Netomi — AI-powered customer service automation platform
   { id: "netomi", name: "Netomi", tags: ["ai", "customer-service", "chatbot", "automation", "saas"], status_url: "https://status.netomi.com/api/v2/status.json", page_url: "https://status.netomi.com", type: "statuspage" },
-  // Creovai (formerly Tethr) — AI conversation intelligence and contact center analytics
   { id: "creovai", name: "Creovai", tags: ["ai", "conversation-intelligence", "contact-center", "analytics", "saas"], status_url: "https://status.tethr.com/api/v2/status.json", page_url: "https://status.tethr.com", type: "statuspage" },
-  // EvaluAgent — quality assurance and agent evaluation platform for contact centers
   { id: "evaluagent", name: "EvaluAgent", tags: ["qa", "contact-center", "quality-assurance", "workforce-management", "saas"], status_url: "https://status.evaluagent.com/api/v2/status.json", page_url: "https://status.evaluagent.com", type: "statuspage" },
-  // Splunk On Call (formerly VictorOps) — incident management and on-call scheduling platform
   { id: "splunk_on_call", name: "Splunk On Call", tags: ["incident-management", "on-call", "alerting", "devops", "monitoring"], status_url: "https://status.victorops.com/api/v2/status.json", page_url: "https://status.victorops.com", type: "statuspage" },
-  // Airtame — wireless presentation and screen-sharing hardware and cloud platform
   { id: "airtame", name: "Airtame", tags: ["presentation", "screen-sharing", "cloud", "hardware", "collaboration"], status_url: "https://status.airtame.com/api/v2/status.json", page_url: "https://status.airtame.com", type: "statuspage" },
-  // Greenlight Guru — quality management system (QMS) for medical device companies
   { id: "greenlight_guru", name: "Greenlight Guru", tags: ["qms", "medical-device", "quality-management", "compliance", "healthtech"], status_url: "https://status.greenlight.guru/api/v2/status.json", page_url: "https://status.greenlight.guru", type: "statuspage" },
-  // Flock — team messaging and collaboration platform
   { id: "flock", name: "Flock", tags: ["messaging", "collaboration", "productivity", "team-communication", "saas"], status_url: "https://status.flock.com/api/v2/status.json", page_url: "https://status.flock.com", type: "statuspage" },
-  // Ryver — team messaging, task management, and workflow automation platform
   { id: "ryver", name: "Ryver", tags: ["messaging", "collaboration", "task-management", "workflow", "saas"], status_url: "https://status.ryver.com/api/v2/status.json", page_url: "https://status.ryver.com", type: "statuspage" },
-  // Feature.fm — music marketing platform for smart links, pre-save, and streaming analytics
   { id: "feature_fm", name: "Feature.fm", tags: ["music", "marketing", "streaming", "analytics", "creator-tools"], status_url: "https://status.feature.fm/api/v2/status.json", page_url: "https://status.feature.fm", type: "statuspage" },
-  // Make — no-code automation platform (formerly Integromat) for connecting apps and workflows
-  { id: "make_com", name: "Make", tags: ["automation", "no-code", "integration", "workflow", "saas"], status_url: "https://status.make.com/api/v2/status.json", page_url: "https://status.make.com", type: "statuspage" },
-  // IFTTT — automation platform for connecting apps, devices, and services
   { id: "ifttt", name: "IFTTT", tags: ["automation", "integration", "iot", "workflow", "consumer"], status_url: "https://status.ifttt.com/api/v2/status.json", page_url: "https://status.ifttt.com", type: "statuspage" },
-  // Particle — IoT platform for connecting and managing connected devices at scale
-  { id: "particle_io", name: "Particle", tags: ["iot", "embedded", "hardware", "cloud", "developer-tools"], status_url: "https://status.particle.io/api/v2/status.json", page_url: "https://status.particle.io", type: "statuspage" },
-  // JW Player — video platform for streaming, monetization, and player technology
-  { id: "jwplayer", name: "JW Player", tags: ["video", "streaming", "media", "cdn", "api"], status_url: "https://status.jwplayer.com/api/v2/status.json", page_url: "https://status.jwplayer.com", type: "statuspage" },
-  // Help Scout — customer support platform with shared inbox, knowledge base, and live chat
-  { id: "helpscout", name: "Help Scout", tags: ["customer-support", "help-desk", "email", "knowledge-base", "saas"], status_url: "https://status.helpscout.com/api/v2/status.json", page_url: "https://status.helpscout.com", type: "statuspage" },
-  // impact.com — partnership management platform for affiliate, influencer, and B2B programs
   { id: "impact_com", name: "impact.com", tags: ["affiliate", "partnerships", "marketing", "performance", "saas"], status_url: "https://status.impact.com/api/v2/status.json", page_url: "https://status.impact.com", type: "statuspage" },
-  // Hex — collaborative data workspace for notebooks, dashboards, and data apps
-  { id: "hex", name: "Hex", tags: ["data", "analytics", "notebooks", "bi", "collaboration"], status_url: "https://status.hex.tech/api/v2/status.json", page_url: "https://status.hex.tech", type: "statuspage" },
-  // Circle — community platform for creators, entrepreneurs, and brands
   { id: "circle_so", name: "Circle", tags: ["community", "creators", "membership", "courses", "saas"], status_url: "https://status.circle.so/api/v2/status.json", page_url: "https://status.circle.so", type: "statuspage" },
-  // Higher Logic — community and engagement platform for associations and B2B companies
   { id: "higherlogic", name: "Higher Logic", tags: ["community", "associations", "engagement", "marketing", "saas"], status_url: "https://status.higherlogic.com/api/v2/status.json", page_url: "https://status.higherlogic.com", type: "statuspage" },
-  // Smartly — AI-powered social advertising and creative automation platform
   { id: "smartly_io", name: "Smartly", tags: ["advertising", "social-media", "ai", "creative", "automation"], status_url: "https://status.smartly.io/api/v2/status.json", page_url: "https://status.smartly.io", type: "statuspage" },
-  // NextRoll (AdRoll) — B2B and B2C marketing platform for retargeting and programmatic ads
-  { id: "nextroll", name: "NextRoll (AdRoll)", tags: ["advertising", "retargeting", "programmatic", "b2b", "marketing"], status_url: "https://status.adroll.com/api/v2/status.json", page_url: "https://status.nextroll.com", type: "statuspage" },
-  // Loops — email marketing platform for SaaS products with behavioral targeting
   { id: "loops_so", name: "Loops", tags: ["email", "marketing", "saas", "automation", "notifications"], status_url: "https://status.loops.so/api/v2/status.json", page_url: "https://status.loops.so", type: "statuspage" },
-  // Alpaca — commission-free trading API for stocks, ETFs, and crypto
   { id: "alpaca_markets", name: "Alpaca", tags: ["fintech", "trading", "api", "stocks", "broker"], status_url: "https://status.alpaca.markets/api/v2/status.json", page_url: "https://status.alpaca.markets", type: "statuspage" },
-  // Endicia — postage and shipping label solution for e-commerce businesses
   { id: "endicia", name: "Endicia", tags: ["shipping", "postage", "ecommerce", "logistics", "usps"], status_url: "https://status.endicia.com/api/v2/status.json", page_url: "https://status.endicia.com", type: "statuspage" },
-  // Conviva — streaming intelligence and real-time analytics for video platforms
   { id: "conviva", name: "Conviva", tags: ["streaming", "video", "analytics", "media", "monitoring"], status_url: "https://status.conviva.com/api/v2/status.json", page_url: "https://status.conviva.com", type: "statuspage" },
-  // Mindbody — booking and management platform for fitness, wellness, and beauty businesses
   { id: "mindbodyonline", name: "Mindbody", tags: ["booking", "fitness", "wellness", "scheduling", "saas"], status_url: "https://status.mindbodyonline.com/api/v2/status.json", page_url: "https://status.mindbodyonline.com", type: "statuspage" },
-  // CrashPlan — cloud backup and data protection for businesses and individuals
   { id: "crashplan", name: "CrashPlan", tags: ["backup", "cloud", "data-protection", "disaster-recovery", "saas"], status_url: "https://status.crashplan.com/api/v2/status.json", page_url: "https://status.crashplan.com", type: "statuspage" },
-  // Signhost — verified electronic signing platform with legal compliance
   { id: "signhost", name: "Signhost", tags: ["e-signature", "digital-signing", "legal", "compliance", "saas"], status_url: "https://status.signhost.com/api/v2/status.json", page_url: "https://status.signhost.com", type: "statuspage" },
-  // TestingBot — cross-browser and mobile testing cloud platform
   { id: "testingbot", name: "TestingBot", tags: ["testing", "qa", "browser-testing", "mobile", "developer-tools"], status_url: "https://status.testingbot.com/api/v2/status.json", page_url: "https://status.testingbot.com", type: "statuspage" },
-  // Audioboom — podcast hosting and monetization platform for creators and publishers
   { id: "audioboom", name: "Audioboom", tags: ["podcast", "audio", "media", "hosting", "monetization"], status_url: "https://status.audioboom.com/api/v2/status.json", page_url: "https://status.audioboom.com", type: "statuspage" },
-  // ipdata — IP intelligence API for geolocation, threat data, and network information
   { id: "ipdata", name: "ipdata", tags: ["ip-geolocation", "api", "security", "network", "developer-tools"], status_url: "https://status.ipdata.co/api/v2/status.json", page_url: "https://status.ipdata.co", type: "statuspage" },
-  // Dotcom Monitor — web performance and uptime monitoring with global network
   { id: "dotcom_monitor", name: "Dotcom Monitor", tags: ["uptime-monitoring", "performance", "web-monitoring", "alerting", "saas"], status_url: "https://status.dotcom-monitor.com/api/v2/status.json", page_url: "https://status.dotcom-monitor.com", type: "statuspage" },
-  // Tines — no-code security orchestration and automation platform
   { id: "tines", name: "Tines", tags: ["security", "soar", "automation", "no-code", "developer-tools"], status_url: "https://tines.statuspage.io/api/v2/status.json", page_url: "https://tines.statuspage.io", type: "statuspage" },
-  // Ortto — marketing automation and customer data platform
   { id: "ortto", name: "Ortto", tags: ["marketing", "automation", "cdp", "email", "saas"], status_url: "https://ortto.statuspage.io/api/v2/status.json", page_url: "https://www.orttostatus.com", type: "statuspage" },
-  // Workiz — field service management for home service businesses
   { id: "workiz", name: "Workiz", tags: ["field-service", "scheduling", "operations", "service-management", "saas"], status_url: "https://workiz.statuspage.io/api/v2/status.json", page_url: "https://workiz.statuspage.io", type: "statuspage" },
-  // Dagster Cloud — data orchestration and pipeline platform
   { id: "dagster", name: "Dagster Cloud", tags: ["data", "orchestration", "pipelines", "etl", "developer-tools"], status_url: "https://dagstercloud.statuspage.io/api/v2/status.json", page_url: "https://dagstercloud.statuspage.io", type: "statuspage" },
-  // Cypress — end-to-end testing framework and cloud
   { id: "cypress", name: "Cypress", tags: ["testing", "qa", "e2e", "browser-testing", "developer-tools"], status_url: "https://cypress.statuspage.io/api/v2/status.json", page_url: "https://www.cypressstatus.com", type: "statuspage" },
-  // Simon AI — AI-powered customer data platform
   { id: "simon_ai", name: "Simon AI", tags: ["cdp", "marketing", "ai", "personalization", "saas"], status_url: "https://status.simondata.com/api/v2/status.json", page_url: "https://status.simondata.com", type: "statuspage" },
-  // k6 — open-source load and performance testing tool
   { id: "k6", name: "k6", tags: ["testing", "load-testing", "performance", "developer-tools", "open-source"], status_url: "https://k6.statuspage.io/api/v2/status.json", page_url: "http://status.k6.io", type: "statuspage" },
-  // WHOOP — wearable health and fitness tracker platform
-  { id: "whoop", name: "WHOOP", tags: ["health", "fitness", "wearable", "iot", "consumer"], status_url: "https://status.whoop.com/api/v2/status.json", page_url: "https://status.whoop.com", type: "statuspage" },
-  // MyFitnessPal — calorie tracking and nutrition logging platform
-  { id: "myfitnesspal", name: "MyFitnessPal", tags: ["health", "fitness", "nutrition", "tracking", "consumer"], status_url: "https://status.myfitnesspal.com/api/v2/status.json", page_url: "https://status.myfitnesspal.com", type: "statuspage" },
-  // LeanData — revenue operations and lead routing platform
-  { id: "leandata", name: "LeanData", tags: ["revenue-ops", "lead-routing", "crm", "marketing", "saas"], status_url: "https://status.leandata.com/api/v2/status.json", page_url: "https://status.leandata.com", type: "statuspage" },
-  // Rocketlane — customer onboarding and project management platform
-  { id: "rocketlane", name: "Rocketlane", tags: ["onboarding", "project-management", "customer-success", "saas"], status_url: "https://status.rocketlane.com/api/v2/status.json", page_url: "https://status.rocketlane.com", type: "statuspage" },
-  // Stonly — interactive knowledge base and customer support platform
-  { id: "stonly", name: "Stonly", tags: ["knowledge-base", "customer-support", "self-service", "saas"], status_url: "https://status.stonly.com/api/v2/status.json", page_url: "https://status.stonly.com", type: "statuspage" },
-  // Fireworks AI — fast AI inference platform for open-source models
   { id: "fireworks_ai", name: "Fireworks AI", tags: ["ai", "llm", "inference", "api", "developer-tools"], status_url: "https://fireworks.statuspage.io/api/v2/status.json", page_url: "https://fireworks.statuspage.io", type: "statuspage" },
-  // Lucid — visual collaboration suite including Lucidchart, Lucidspark, and Lucidscale
-  { id: "lucid", name: "Lucid", tags: ["diagramming", "visual-collaboration", "productivity", "saas"], status_url: "https://status.lucid.co/api/v2/status.json", page_url: "https://status.lucid.co", type: "statuspage" },
-  // Jina AI — neural search and multimodal AI embedding platform
   { id: "jina_ai", name: "Jina AI", tags: ["ai", "embeddings", "neural-search", "multimodal", "api"], status_url: "https://status.jina.ai/api/v2/status.json", page_url: "https://status.jina.ai", type: "statuspage" },
-  // Stamps.com — online postage and shipping label platform
   { id: "stamps_com", name: "Stamps.com", tags: ["shipping", "postage", "logistics", "ecommerce", "saas"], status_url: "https://status.stamps.com/api/v2/status.json", page_url: "https://status.stamps.com", type: "statuspage" },
-  // MoodleCloud — hosted Moodle LMS for online learning and course delivery
   { id: "moodle_cloud", name: "MoodleCloud", tags: ["lms", "education", "e-learning", "courses", "saas"], status_url: "https://moodle.statuspage.io/api/v2/status.json", page_url: "https://moodle.statuspage.io", type: "statuspage" },
-  // Copper CRM — CRM built natively for Google Workspace
   { id: "copper_crm", name: "Copper CRM", tags: ["crm", "sales", "google-workspace", "saas"], status_url: "https://status.copper.com/api/v2/status.json", page_url: "https://status.copper.com", type: "statuspage" },
-  // Jotform — online form builder and data collection platform
-  { id: "jotform", name: "Jotform", tags: ["forms", "surveys", "data-collection", "saas", "no-code"], status_url: "https://status.jotform.com/api/v2/status.json", page_url: "https://status.jotform.com", type: "statuspage" },
-  // Toast — restaurant point-of-sale and management platform
   { id: "toast_pos", name: "Toast POS", tags: ["pos", "restaurant", "payments", "hospitality", "saas"], status_url: "https://status.toasttab.com/api/v2/status.json", page_url: "https://status.toasttab.com", type: "statuspage" },
-  // Revel Systems — iPad-based POS platform for retail and restaurants
   { id: "revel_systems", name: "Revel Systems", tags: ["pos", "retail", "restaurant", "payments", "saas"], status_url: "https://status.revelsystems.com/api/v2/status.json", page_url: "https://status.revelsystems.com", type: "statuspage" },
-  // Axiom — log management and analytics platform for modern engineering teams
-  { id: "axiom", name: "Axiom", tags: ["logging", "observability", "analytics", "developer-tools", "saas"], status_url: "https://status.axiom.co/api/v2/status.json", page_url: "https://status.axiom.co", type: "statuspage" },
-  // Brex — business credit cards and spend management for startups and enterprises
-  { id: "brex", name: "Brex", tags: ["fintech", "payments", "banking", "saas", "corporate-cards"], status_url: "https://status.brex.com/api/v2/status.json", page_url: "https://status.brex.com", type: "statuspage" },
-  // Highnote — modern card issuing and payment infrastructure platform
-  { id: "highnote", name: "Highnote", tags: ["fintech", "payments", "card-issuing", "api", "saas"], status_url: "https://status.highnote.com/api/v2/status.json", page_url: "https://status.highnote.com", type: "statuspage" },
-  // Knock — notifications infrastructure platform for product and engineering teams
-  { id: "knock", name: "Knock", tags: ["notifications", "api", "developer-tools", "saas"], status_url: "https://status.knock.app/api/v2/status.json", page_url: "https://status.knock.app", type: "statuspage" },
-  // Finix — payments infrastructure and card processing for software platforms
-  { id: "finix", name: "Finix", tags: ["fintech", "payments", "api", "saas"], status_url: "https://status.finix.com/api/v2/status.json", page_url: "https://status.finix.com", type: "statuspage" },
-  // Courier — multi-channel notification delivery API (email, SMS, push, Slack, etc.)
-  { id: "courier", name: "Courier", tags: ["notifications", "email", "sms", "api", "developer-tools", "saas"], status_url: "https://status.courier.com/api/v2/status.json", page_url: "https://status.courier.com", type: "statuspage" },
-  // Alchemy — blockchain developer platform for Ethereum, Polygon, and other chains
-  { id: "alchemy", name: "Alchemy", tags: ["blockchain", "web3", "api", "developer-tools"], status_url: "https://status.alchemy.com/api/v2/status.json", page_url: "https://status.alchemy.com", type: "statuspage" },
-  // incident.io — incident management and on-call platform for engineering teams
-  { id: "incident_io", name: "incident.io", tags: ["incident-management", "on-call", "monitoring", "devops", "saas"], status_url: "https://status.incident.io/api/v2/status.json", page_url: "https://status.incident.io", type: "statuspage" },
-  // Cortex — internal developer portal and software catalog platform
-  { id: "cortex", name: "Cortex", tags: ["developer-tools", "devops", "platform-engineering", "saas"], status_url: "https://status.cortex.io/api/v2/status.json", page_url: "https://status.cortex.io", type: "statuspage" },
-  // QuickNode — blockchain node infrastructure for Ethereum, Solana, and 25+ chains
-  { id: "quicknode", name: "QuickNode", tags: ["blockchain", "web3", "api", "developer-tools", "infrastructure"], status_url: "https://status.quicknode.com/api/v2/status.json", page_url: "https://status.quicknode.com", type: "statuspage" },
-  // Infura — Ethereum and IPFS API infrastructure by ConsenSys
-  { id: "infura", name: "Infura", tags: ["blockchain", "web3", "api", "ethereum", "ipfs", "developer-tools"], status_url: "https://status.infura.io/api/v2/status.json", page_url: "https://status.infura.io", type: "statuspage" },
-  // Grafana Cloud — managed observability platform for metrics, logs, and traces
-  { id: "grafana_cloud", name: "Grafana Cloud", tags: ["monitoring", "observability", "metrics", "logging", "saas"], status_url: "https://status.grafana.com/api/v2/status.json", page_url: "https://status.grafana.com", type: "statuspage" },
-  // Metabase — self-service business intelligence and analytics platform (cloud)
-  { id: "metabase", name: "Metabase Cloud", tags: ["analytics", "bi", "saas", "data"], status_url: "https://status.metabase.com/api/v2/status.json", page_url: "https://status.metabase.com", type: "statuspage" },
-  // Opsgenie — on-call scheduling and alerting platform by Atlassian
-  { id: "opsgenie", name: "Opsgenie", tags: ["monitoring", "on-call", "alerting", "devops", "atlassian", "saas"], status_url: "https://opsgenie.statuspage.io/api/v2/status.json", page_url: "https://opsgenie.statuspage.io", type: "statuspage" },
-  // Splunk On Call (formerly VictorOps) — on-call and incident response platform
-  { id: "victorops", name: "Splunk On Call", tags: ["monitoring", "on-call", "alerting", "incident-management", "saas"], status_url: "https://status.victorops.com/api/v2/status.json", page_url: "https://status.victorops.com", type: "statuspage" },
-  // Supabase — open-source Firebase alternative: Postgres, auth, storage, edge functions
-  { id: "supabase", name: "Supabase", tags: ["database", "baas", "postgres", "developer-tools", "saas"], status_url: "https://status.supabase.com/api/v2/status.json", page_url: "https://status.supabase.com", type: "statuspage" },
-  // Neon — serverless Postgres with branching and autoscaling
-  { id: "neon", name: "Neon", tags: ["database", "postgres", "serverless", "developer-tools", "saas"], status_url: "https://neondb.statuspage.io/api/v2/status.json", page_url: "https://neondb.statuspage.io", type: "statuspage" },
-  // Linear — modern project management and issue tracking for engineering teams
-  { id: "linear", name: "Linear", tags: ["project-management", "developer-tools", "productivity", "saas"], status_url: "https://linearstatus.com/api/v2/status.json", page_url: "https://linearstatus.com", type: "statuspage" },
-  // Clerk — authentication and user management platform for web applications
-  { id: "clerk", name: "Clerk", tags: ["auth", "identity", "developer-tools", "api", "saas"], status_url: "https://status.clerk.com/api/v2/status.json", page_url: "https://status.clerk.com", type: "statuspage" },
-  // LaunchDarkly — feature flag management and experimentation platform
-  { id: "launchdarkly", name: "LaunchDarkly", tags: ["feature-flags", "developer-tools", "experimentation", "saas"], status_url: "https://status.launchdarkly.com/api/v2/status.json", page_url: "https://status.launchdarkly.com", type: "statuspage" },
-  // Contentful — headless CMS and content platform for digital experiences
-  { id: "contentful", name: "Contentful", tags: ["cms", "content", "api", "saas"], status_url: "https://www.contentfulstatus.com/api/v2/status.json", page_url: "https://www.contentfulstatus.com", type: "statuspage" },
-  // MailerSend — transactional email and SMS API platform
-  { id: "mailersend", name: "MailerSend", tags: ["email", "sms", "api", "developer-tools", "saas"], status_url: "https://status.mailersend.com/api/v2/status.json", page_url: "https://status.mailersend.com", type: "statuspage" },
-  // Temporal — durable workflow execution engine for distributed applications
-  { id: "temporal", name: "Temporal Cloud", tags: ["workflow", "developer-tools", "api", "saas"], status_url: "https://status.temporal.io/api/v2/status.json", page_url: "https://status.temporal.io", type: "statuspage" },
-  // Drata — continuous security and compliance automation platform (SOC 2, ISO 27001)
-  { id: "drata", name: "Drata", tags: ["compliance", "security", "saas", "governance"], status_url: "https://status.drata.com/api/v2/status.json", page_url: "https://status.drata.com", type: "statuspage" },
-  // Vanta — automated security compliance platform (SOC 2, HIPAA, GDPR)
-  { id: "vanta", name: "Vanta", tags: ["compliance", "security", "saas", "governance"], status_url: "https://status.vanta.com/api/v2/status.json", page_url: "https://status.vanta.com", type: "statuspage" },
-  // WorkOS — enterprise SSO, SCIM provisioning, and directory sync APIs
-  { id: "workos", name: "WorkOS", tags: ["auth", "identity", "sso", "enterprise", "api", "saas"], status_url: "https://status.workos.com/api/v2/status.json", page_url: "https://status.workos.com", type: "statuspage" },
-  // Prismic — headless CMS with visual slice builder for marketing and web teams
-  { id: "prismic", name: "Prismic", tags: ["cms", "content", "api", "saas"], status_url: "https://status.prismic.io/api/v2/status.json", page_url: "https://status.prismic.io", type: "statuspage" },
-  // Inngest — event-driven background jobs and workflow orchestration for serverless
-  { id: "inngest", name: "Inngest", tags: ["workflow", "background-jobs", "developer-tools", "saas"], status_url: "https://status.inngest.com/api/v2/status.json", page_url: "https://status.inngest.com", type: "statuspage" },
-  // Harness — developer operations platform: CI/CD, feature flags, cloud cost management
-  { id: "harness", name: "Harness", tags: ["ci-cd", "devops", "feature-flags", "developer-tools", "saas"], status_url: "https://status.harness.io/api/v2/status.json", page_url: "https://status.harness.io", type: "statuspage" },
-  // CircleCI — continuous integration and continuous delivery platform
-  { id: "circleci", name: "CircleCI", tags: ["ci-cd", "devops", "developer-tools", "saas"], status_url: "https://status.circleci.com/api/v2/status.json", page_url: "https://status.circleci.com", type: "statuspage" },
-  // Sanity — structured content platform and headless CMS with real-time collaboration
-  { id: "sanity", name: "Sanity", tags: ["cms", "content", "api", "developer-tools", "saas"], status_url: "https://status.sanity.io/api/v2/status.json", page_url: "https://status.sanity.io", type: "statuspage" },
-  // Metronome — usage-based billing infrastructure for SaaS companies
-  { id: "metronome", name: "Metronome", tags: ["billing", "fintech", "api", "saas"], status_url: "https://status.metronome.com/api/v2/status.json", page_url: "https://status.metronome.com", type: "statuspage" },
-  // Lago — open-source metering and usage-based billing engine
-  { id: "lago", name: "Lago", tags: ["billing", "metering", "api", "saas", "open-source"], status_url: "https://status.getlago.com/api/v2/status.json", page_url: "https://status.getlago.com", type: "statuspage" },
-  // Orb — usage-based billing platform for modern SaaS products
-  { id: "orb", name: "Orb", tags: ["billing", "fintech", "api", "saas"], status_url: "https://status.withorb.com/api/v2/status.json", page_url: "https://status.withorb.com", type: "statuspage" },
-  // Mixpanel — product analytics platform for user behavior and event tracking
-  { id: "mixpanel", name: "Mixpanel", tags: ["analytics", "product-analytics", "saas"], status_url: "https://status.mixpanel.com/api/v2/status.json", page_url: "https://status.mixpanel.com", type: "statuspage" },
-  // Heap — automatic digital insights and session replay platform
-  { id: "heap", name: "Heap", tags: ["analytics", "product-analytics", "session-replay", "saas"], status_url: "https://status.heap.io/api/v2/status.json", page_url: "https://status.heap.io", type: "statuspage" },
-  // FullStory — digital experience intelligence: session replay, heatmaps, product analytics
-  { id: "fullstory", name: "FullStory", tags: ["analytics", "session-replay", "product-analytics", "saas"], status_url: "https://status.fullstory.com/api/v2/status.json", page_url: "https://status.fullstory.com", type: "statuspage" },
-  // Hotjar — heatmaps, session recordings, and user feedback for websites
-  { id: "hotjar", name: "Hotjar", tags: ["analytics", "session-replay", "ux", "saas"], status_url: "https://status.hotjar.com/api/v2/status.json", page_url: "https://status.hotjar.com", type: "statuspage" },
-  // LogRocket — session replay, performance monitoring, and product analytics
-  { id: "logrocket", name: "LogRocket", tags: ["monitoring", "session-replay", "analytics", "developer-tools", "saas"], status_url: "https://status.logrocket.com/api/v2/status.json", page_url: "https://status.logrocket.com", type: "statuspage" },
-  // Survicate — customer survey and feedback platform (NPS, CSAT, CES)
-  { id: "survicate", name: "Survicate", tags: ["surveys", "feedback", "analytics", "saas"], status_url: "https://status.survicate.com/api/v2/status.json", page_url: "https://status.survicate.com", type: "statuspage" },
-  // Typeform — conversational forms and surveys with beautiful UX
-  { id: "typeform", name: "Typeform", tags: ["forms", "surveys", "saas"], status_url: "https://status.typeform.com/api/v2/status.json", page_url: "https://status.typeform.com", type: "statuspage" },
-  // Tally — simple, free-form builder with Notion-like experience
-  { id: "tally", name: "Tally", tags: ["forms", "surveys", "saas", "developer-tools"], status_url: "https://tally.statuspage.io/api/v2/status.json", page_url: "https://tally.statuspage.io", type: "statuspage" },
-  // tick 252 additions
   { id: "mercadopago", name: "Mercado Pago", tags: ["payments", "fintech", "latam", "saas"], status_url: "https://status.mercadopago.com/api/v2/status.json", page_url: "https://status.mercadopago.com", type: "statuspage" },
   { id: "placester", name: "Placester", tags: ["real-estate", "website-builder", "crm", "saas"], status_url: "https://status.placester.com/api/v2/status.json", page_url: "https://status.placester.com", type: "statuspage" },
   { id: "booqable", name: "Booqable", tags: ["rental", "inventory", "ecommerce", "saas"], status_url: "https://status.booqable.com/api/v2/status.json", page_url: "https://status.booqable.com", type: "statuspage" },
   { id: "cumulocity", name: "Cumulocity", tags: ["iot", "platform", "saas", "sap"], status_url: "https://status.cumulocity.com/api/v2/status.json", page_url: "https://status.cumulocity.com", type: "statuspage" },
-  { id: "paloalto_networks", name: "Palo Alto Networks", tags: ["security", "sase", "firewall", "cloud-security", "networking", "saas"], status_url: "https://status.paloaltonetworks.com/api/v2/status.json", page_url: "https://status.paloaltonetworks.com", type: "statuspage" },
   { id: "hypr", name: "HYPR", tags: ["auth", "passwordless", "identity", "security", "saas"], status_url: "https://status.hypr.com/api/v2/status.json", page_url: "https://status.hypr.com", type: "statuspage" },
   { id: "yubico", name: "Yubico", tags: ["auth", "security", "hardware", "mfa", "saas"], status_url: "https://status.yubico.com/api/v2/status.json", page_url: "https://status.yubico.com", type: "statuspage" },
   { id: "securityscorecard", name: "SecurityScorecard", tags: ["security", "risk", "compliance", "saas"], status_url: "https://status.securityscorecard.com/api/v2/status.json", page_url: "https://status.securityscorecard.com", type: "statuspage" },
   { id: "blast", name: "Blast", tags: ["blockchain", "ethereum", "layer2", "web3"], status_url: "https://status.blast.io/api/v2/status.json", page_url: "https://status.blast.io", type: "statuspage" },
   { id: "veza", name: "Veza", tags: ["security", "identity", "governance", "access", "saas"], status_url: "https://status.veza.com/api/v2/status.json", page_url: "https://status.veza.com", type: "statuspage" },
-  // tick 253 additions — 11 new live-verified services
-  { id: "zoom", name: "Zoom", tags: ["video", "conferencing", "collaboration", "communication", "saas"], status_url: "https://status.zoom.us/api/v2/status.json", page_url: "https://status.zoom.us", type: "statuspage" },
   { id: "sprucehealth", name: "Spruce Health", tags: ["healthcare", "messaging", "telemedicine", "saas"], status_url: "https://status.sprucehealth.com/api/v2/status.json", page_url: "https://status.sprucehealth.com", type: "statuspage" },
   { id: "escapia", name: "Escapia", tags: ["vacation-rental", "property-management", "hospitality", "saas"], status_url: "https://status.escapia.com/api/v2/status.json", page_url: "https://status.escapia.com", type: "statuspage" },
-  { id: "postman", name: "Postman", tags: ["api", "testing", "developer-tools", "collaboration", "saas"], status_url: "https://status.postman.com/api/v2/status.json", page_url: "https://status.postman.com", type: "statuspage" },
   { id: "tenderly", name: "Tenderly", tags: ["blockchain", "ethereum", "developer-tools", "web3", "devops"], status_url: "https://status.tenderly.co/api/v2/status.json", page_url: "https://status.tenderly.co", type: "statuspage" },
   { id: "iwantmyname", name: "iwantmyname", tags: ["dns", "domain", "registrar", "hosting"], status_url: "https://status.iwantmyname.com/api/v2/status.json", page_url: "https://status.iwantmyname.com", type: "statuspage" },
   { id: "multisafepay", name: "MultiSafepay", tags: ["payments", "fintech", "europe", "processing", "api"], status_url: "https://status.multisafepay.com/api/v2/status.json", page_url: "https://status.multisafepay.com", type: "statuspage" },
@@ -4819,7 +3042,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "dochub", name: "DocHub", tags: ["pdf", "e-signature", "document-management", "saas"], status_url: "https://status.dochub.com/api/v2/status.json", page_url: "https://status.dochub.com", type: "statuspage" },
   { id: "checkmate", name: "Checkmate", tags: ["restaurant", "online-ordering", "aggregator", "food-tech", "saas"], status_url: "https://status.itsacheckmate.com/api/v2/status.json", page_url: "https://status.itsacheckmate.com", type: "statuspage" },
   { id: "donorperfect", name: "DonorPerfect", tags: ["nonprofit", "fundraising", "crm", "saas"], status_url: "https://status.donorperfect.com/api/v2/status.json", page_url: "https://status.donorperfect.com", type: "statuspage" },
-  // tick 254 additions — 10 new live-verified services
   { id: "castle", name: "Castle", tags: ["security", "fraud-detection", "auth", "api", "saas"], status_url: "https://status.castle.io/api/v2/status.json", page_url: "https://status.castle.io", type: "statuspage" },
   { id: "iugu", name: "IUGU", tags: ["payments", "fintech", "brazil", "billing", "saas"], status_url: "https://status.iugu.com/api/v2/status.json", page_url: "https://status.iugu.com", type: "statuspage" },
   { id: "ytel", name: "Ytel", tags: ["telephony", "sms", "voice", "cpaas", "api"], status_url: "https://status.ytel.com/api/v2/status.json", page_url: "https://status.ytel.com", type: "statuspage" },
@@ -4853,97 +3075,47 @@ const SERVICES: ServiceConfig[] = [
   { id: "invoca", name: "Invoca", tags: ["call-intelligence", "ai", "marketing", "analytics", "saas"], status_url: "https://status.invoca.com/api/v2/status.json", page_url: "https://status.invoca.com", type: "statuspage" },
   { id: "skyslope", name: "SkySlope", tags: ["real-estate", "transaction-management", "compliance", "saas"], status_url: "https://skyslope.statuspage.io/api/v2/status.json", page_url: "https://skyslope.statuspage.io", type: "statuspage" },
   { id: "followupboss", name: "Follow Up Boss", tags: ["real-estate", "crm", "sales", "saas"], status_url: "https://followupboss.statuspage.io/api/v2/status.json", page_url: "https://followupboss.statuspage.io", type: "statuspage" },
-  // Tick 257 additions
-  // Synctera — banking-as-a-service platform (sponsor banks + fintechs)
-  { id: "synctera", name: "Synctera", tags: ["banking", "fintech", "baas", "api", "payments"], status_url: "https://status.synctera.com/api/v2/status.json", page_url: "https://status.synctera.com", type: "statuspage" },
-  // Top Hat — active learning & student engagement platform (EdTech)
   { id: "tophat", name: "Top Hat", tags: ["edtech", "education", "engagement", "lms", "saas"], status_url: "https://status.tophat.com/api/v2/status.json", page_url: "https://status.tophat.com", type: "statuspage" },
-  // Learnosity — assessment & analytics platform for EdTech builders
   { id: "learnosity", name: "Learnosity", tags: ["edtech", "assessment", "education", "api", "saas"], status_url: "https://status.learnosity.com/api/v2/status.json", page_url: "https://status.learnosity.com", type: "statuspage" },
-  // YellowDig — social community learning platform (EdTech)
   { id: "yellowdig", name: "YellowDig", tags: ["edtech", "community", "engagement", "lms", "saas"], status_url: "https://status.yellowdig.com/api/v2/status.json", page_url: "https://status.yellowdig.com", type: "statuspage" },
-  // Edmentum — K-12 digital curriculum & personalized learning platform
   { id: "edmentum", name: "Edmentum", tags: ["edtech", "k12", "curriculum", "personalized-learning", "saas"], status_url: "https://status.edmentum.com/api/v2/status.json", page_url: "https://status.edmentum.com", type: "statuspage" },
-  // Vivi — wireless classroom display & EdTech collaboration platform (Australia/global)
   { id: "vivi", name: "Vivi", tags: ["edtech", "classroom", "display", "collaboration", "saas"], status_url: "https://status.vivi.io/api/v2/status.json", page_url: "https://status.vivi.io", type: "statuspage" },
-  // M1 Finance — automated investing & banking platform
   { id: "m1finance", name: "M1 Finance", tags: ["fintech", "investing", "portfolio", "banking", "saas"], status_url: "https://m1finance.statuspage.io/api/v2/status.json", page_url: "https://m1finance.statuspage.io", type: "statuspage" },
-  // Webull — commission-free stock & options trading platform
   { id: "webull", name: "Webull", tags: ["fintech", "trading", "stocks", "options", "saas"], status_url: "https://webull.statuspage.io/api/v2/status.json", page_url: "https://webull.statuspage.io", type: "statuspage" },
-  // PlayFab (Microsoft) — game backend platform (multiplayer, leaderboards, analytics)
-  { id: "playfab", name: "PlayFab", tags: ["gaming", "backend", "microsoft", "multiplayer", "saas"], status_url: "https://status.playfab.com/api/v2/status.json", page_url: "https://status.playfab.com", type: "statuspage" },
-  // ServiceMax — field service management platform (Salesforce ecosystem)
-  { id: "servicemax", name: "ServiceMax", tags: ["field-service", "saas", "iot", "manufacturing", "enterprise"], status_url: "https://servicemax.statuspage.io/api/v2/status.json", page_url: "https://servicemax.statuspage.io", type: "statuspage" },
-  // ConductorOne — cloud access management & identity governance platform
   { id: "conductorone", name: "ConductorOne", tags: ["security", "access-management", "identity", "iam", "saas"], status_url: "https://conductorone.statuspage.io/api/v2/status.json", page_url: "https://conductorone.statuspage.io", type: "statuspage" },
-  // Indent — just-in-time cloud access & privilege escalation management
   { id: "indent", name: "Indent", tags: ["security", "access-management", "jit", "iam", "saas"], status_url: "https://status.indent.com/api/v2/status.json", page_url: "https://status.indent.com", type: "statuspage" },
-  // Starburst Data — Trino-powered SQL analytics engine for data lakehouse & cloud analytics
   { id: "starburst", name: "Starburst Data", tags: ["analytics", "database", "trino", "data-lakehouse", "saas"], status_url: "https://starburstdata.statuspage.io/api/v2/status.json", page_url: "https://starburstdata.statuspage.io", type: "statuspage" },
-  // Veed.io — online video editing, subtitles, and screen recording platform
   { id: "veed", name: "Veed.io", tags: ["video", "editing", "subtitles", "screen-recording", "saas"], status_url: "https://status.veed.io/api/v2/status.json", page_url: "https://status.veed.io", type: "statuspage" },
-  // Zight — screen capture, GIF, and screenshot sharing tool (formerly CloudApp)
   { id: "zight", name: "Zight", tags: ["screen-recording", "screenshot", "gif", "productivity", "saas"], status_url: "https://status.zight.com/api/v2/status.json", page_url: "https://status.zight.com", type: "statuspage" },
-  // Pinata — IPFS pinning service for Web3 and NFT file storage
   { id: "pinata", name: "Pinata", tags: ["web3", "ipfs", "storage", "nft", "developer-tools"], status_url: "https://pinata.statuspage.io/api/v2/status.json", page_url: "https://pinata.statuspage.io", type: "statuspage" },
-  // EBANX — Brazilian and Latin American payment processing platform
   { id: "ebanx", name: "EBANX", tags: ["payments", "fintech", "latam", "brazil", "processing"], status_url: "https://status.ebanx.com/api/v2/status.json", page_url: "https://status.ebanx.com", type: "statuspage" },
-  // Polygon.io — real-time and historical financial market data API (stocks, options, forex, crypto)
   { id: "polygon_io", name: "Polygon.io", tags: ["financial-data", "market-data", "api", "stocks", "crypto"], status_url: "https://polygonio.statuspage.io/api/v2/status.json", page_url: "https://polygonio.statuspage.io", type: "statuspage" },
-  // tastytrade — derivatives and options trading platform
   { id: "tastytrade", name: "tastytrade", tags: ["fintech", "trading", "options", "derivatives", "saas"], status_url: "https://status.tastytrade.com/api/v2/status.json", page_url: "https://status.tastytrade.com", type: "statuspage" },
-  // DriveWealth — fractional investing and brokerage-as-a-service API
   { id: "drivewealth", name: "DriveWealth", tags: ["fintech", "investing", "brokerage", "api", "fractional"], status_url: "https://status.drivewealth.com/api/v2/status.json", page_url: "https://status.drivewealth.com", type: "statuspage" },
-  // Replicated — enterprise on-premises software delivery and management platform
   { id: "replicated", name: "Replicated", tags: ["enterprise", "software-delivery", "on-premises", "kubernetes", "saas"], status_url: "https://status.replicated.com/api/v2/status.json", page_url: "https://status.replicated.com", type: "statuspage" },
-  // Kameleoon — A/B testing, personalization, and experimentation platform
   { id: "kameleoon", name: "Kameleoon", tags: ["ab-testing", "personalization", "experimentation", "feature-flags", "saas"], status_url: "https://kameleoon.statuspage.io/api/v2/status.json", page_url: "https://kameleoon.statuspage.io", type: "statuspage" },
-  // Tick 260 additions
-  // Lookback — user research platform for remote usability testing and UX interviews
   { id: "lookback", name: "Lookback", tags: ["ux-research", "user-testing", "usability", "video", "saas"], status_url: "https://lookback.statuspage.io/api/v2/status.json", page_url: "https://lookback.statuspage.io", type: "statuspage" },
-  // Extole — referral marketing and customer advocacy platform
   { id: "extole", name: "Extole", tags: ["referral-marketing", "advocacy", "loyalty", "saas", "marketing"], status_url: "https://status.extole.com/api/v2/status.json", page_url: "https://status.extole.com", type: "statuspage" },
-  // Optimal Blue — mortgage pricing engine and secondary market automation
   { id: "optimalblue", name: "Optimal Blue", tags: ["mortgage", "fintech", "pricing-engine", "secondary-market", "saas"], status_url: "https://status.optimalblue.com/api/v2/status.json", page_url: "https://status.optimalblue.com", type: "statuspage" },
-  // Brandfolder — digital asset management (DAM) platform for brand assets
   { id: "brandfolder", name: "Brandfolder", tags: ["dam", "digital-assets", "brand-management", "saas", "marketing"], status_url: "https://brandfolder.statuspage.io/api/v2/status.json", page_url: "https://brandfolder.statuspage.io", type: "statuspage" },
-  // AlertMedia — mass notification and emergency communications platform
   { id: "alertmedia", name: "AlertMedia", tags: ["emergency-notifications", "mass-communications", "safety", "enterprise", "saas"], status_url: "https://status.alertmedia.com/api/v2/status.json", page_url: "https://status.alertmedia.com", type: "statuspage" },
-  // Checkbook.io — digital check and B2B payment disbursement platform
   { id: "checkbook_io", name: "Checkbook.io", tags: ["payments", "fintech", "b2b", "disbursements", "api"], status_url: "https://checkbook.statuspage.io/api/v2/status.json", page_url: "https://checkbook.statuspage.io", type: "statuspage" },
-  // Ginger — on-demand behavioral health coaching and therapy platform
   { id: "ginger_health", name: "Ginger", tags: ["mental-health", "telehealth", "wellness", "coaching", "saas"], status_url: "https://status.ginger.io/api/v2/status.json", page_url: "https://status.ginger.io", type: "statuspage" },
-  // Fundraise Up — AI-powered nonprofit fundraising and donation optimization platform
   { id: "fundraiseup", name: "Fundraise Up", tags: ["nonprofit", "fundraising", "donations", "ai", "saas"], status_url: "https://status.fundraiseup.com/api/v2/status.json", page_url: "https://status.fundraiseup.com", type: "statuspage" },
-  // Zentail — multichannel e-commerce listing and catalog management platform
   { id: "zentail", name: "Zentail", tags: ["ecommerce", "multichannel", "catalog-management", "listing", "saas"], status_url: "https://status.zentail.com/api/v2/status.json", page_url: "https://status.zentail.com", type: "statuspage" },
-  // Shopping Feed — product feed management and multichannel e-commerce platform
   { id: "shoppingfeed", name: "Shopping Feed", tags: ["ecommerce", "product-feed", "multichannel", "marketplace", "saas"], status_url: "https://shoppingfeed.statuspage.io/api/v2/status.json", page_url: "https://shoppingfeed.statuspage.io", type: "statuspage" },
-  // H2O.ai — AI cloud platform for automated machine learning and data science
   { id: "h2o_ai", name: "H2O.ai", tags: ["ai", "mlops", "automl", "data-science", "saas"], status_url: "https://h2oai.statuspage.io/api/v2/status.json", page_url: "https://h2oai.statuspage.io", type: "statuspage" },
-  // Reviews.io — product reviews and UGC platform for e-commerce
   { id: "reviews_io", name: "Reviews.io", tags: ["reviews", "ugc", "ecommerce", "trust", "saas"], status_url: "https://reviewsio.statuspage.io/api/v2/status.json", page_url: "https://reviewsio.statuspage.io", type: "statuspage" },
-  // Trackunit — IoT telematics platform for construction and rental equipment fleet management
   { id: "trackunit", name: "Trackunit", tags: ["iot", "telematics", "construction", "fleet", "saas"], status_url: "https://status.trackunit.com/api/v2/status.json", page_url: "https://status.trackunit.com", type: "statuspage" },
-  // Rask AI — AI-powered video dubbing, translation, and localization platform
   { id: "rask", name: "Rask AI", tags: ["ai", "video", "dubbing", "translation", "localization"], status_url: "https://status.rask.ai/api/v2/status.json", page_url: "https://status.rask.ai", type: "statuspage" },
-  // Predibase — serverless LLM fine-tuning and inference deployment platform
   { id: "predibase", name: "Predibase", tags: ["ai", "llm", "fine-tuning", "mlops", "developer-tools"], status_url: "https://predibase.statuspage.io/api/v2/status.json", page_url: "https://predibase.statuspage.io", type: "statuspage" },
-  // Nebius — AI cloud platform for GPU compute, inference, and ML infrastructure
   { id: "nebius", name: "Nebius", tags: ["ai", "cloud", "gpu", "compute", "infrastructure"], status_url: "https://nebius.statuspage.io/api/v2/status.json", page_url: "https://nebius.statuspage.io", type: "statuspage" },
-  // Sevalla — cloud hosting platform for containerized applications (by Kinsta)
   { id: "sevalla", name: "Sevalla", tags: ["cloud", "hosting", "containers", "deployment", "saas"], status_url: "https://status.sevalla.com/api/v2/status.json", page_url: "https://status.sevalla.com", type: "statuspage" },
-  // Twelve Data — real-time and historical stock, forex, and crypto market data API
   { id: "twelvedata", name: "Twelve Data", tags: ["financial-data", "market-data", "stocks", "forex", "api"], status_url: "https://twelvedata.statuspage.io/api/v2/status.json", page_url: "https://twelvedata.statuspage.io", type: "statuspage" },
-  // Finnhub — real-time financial market data, fundamentals, and news API
   { id: "finnhub", name: "Finnhub", tags: ["financial-data", "market-data", "api", "stocks", "fundamentals"], status_url: "https://finnhub.statuspage.io/api/v2/status.json", page_url: "https://finnhub.statuspage.io", type: "statuspage" },
-  // Barchart — market data APIs for equities, futures, options, forex, and digital solutions
   { id: "barchart", name: "Barchart", tags: ["financial-data", "market-data", "equities", "futures", "api"], status_url: "https://status.barchart.com/api/v2/status.json", page_url: "https://status.barchart.com", type: "statuspage" },
-  // Granola — AI-powered meeting notes and intelligence platform
   { id: "granola", name: "Granola", tags: ["ai", "meetings", "notes", "productivity", "saas"], status_url: "https://status.granola.ai/api/v2/status.json", page_url: "https://status.granola.ai", type: "statuspage" },
-  // Read AI — AI meeting intelligence for real-time summaries, transcripts, and coaching
   { id: "read_ai", name: "Read AI", tags: ["ai", "meetings", "transcription", "intelligence", "productivity"], status_url: "https://status.read.ai/api/v2/status.json", page_url: "https://status.read.ai", type: "statuspage" },
-  // New services added tick 264
   { id: "ro_health", name: "Ro Health", tags: ["healthcare", "telehealth", "direct-to-consumer", "saas"], status_url: "https://status.ro.co/api/v2/status.json", page_url: "https://status.ro.co", type: "statuspage" },
   { id: "ecobee", name: "Ecobee", tags: ["iot", "smart-home", "hvac", "thermostat", "hardware"], status_url: "https://status.ecobee.com/api/v2/status.json", page_url: "https://status.ecobee.com", type: "statuspage" },
   { id: "fulfil_io", name: "Fulfil.IO", tags: ["erp", "inventory", "ecommerce", "manufacturing", "saas"], status_url: "https://status.fulfil.io/api/v2/status.json", page_url: "https://status.fulfil.io", type: "statuspage" },
@@ -4986,8 +3158,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "aisera", name: "AISera", tags: ["ai", "itsm", "service-management", "conversational-ai", "enterprise"], status_url: "https://aisera.statuspage.io/api/v2/status.json", page_url: "https://aisera.statuspage.io", type: "statuspage" },
   { id: "rezolve_ai", name: "Rezolve.ai", tags: ["ai", "itsm", "service-desk", "automation", "saas"], status_url: "https://rezolve.statuspage.io/api/v2/status.json", page_url: "https://rezolve.statuspage.io", type: "statuspage" },
   { id: "rainforest_qa", name: "Rainforest QA", tags: ["testing", "qa", "automation", "web-testing", "saas"], status_url: "https://status.rainforestqa.com/api/v2/status.json", page_url: "https://status.rainforestqa.com", type: "statuspage" },
-  { id: "beam_cloud", name: "Beam", tags: ["ml", "machine-learning", "gpu", "serverless", "developer-tools"], status_url: "https://status.beam.cloud/api/v2/status.json", page_url: "https://status.beam.cloud", type: "statuspage" },
-  { id: "atomic_financial", name: "Atomic Financial", tags: ["fintech", "payroll-connectivity", "open-finance", "api", "saas"], status_url: "https://status.atomic.financial/api/v2/status.json", page_url: "https://status.atomic.financial", type: "statuspage" },
   { id: "assignar", name: "Assignar", tags: ["construction", "workforce-management", "scheduling", "field-service", "saas"], status_url: "https://status.assignar.com/api/v2/status.json", page_url: "https://status.assignar.com", type: "statuspage" },
   { id: "heartbeat_chat", name: "Heartbeat", tags: ["community", "collaboration", "messaging", "saas"], status_url: "https://status.heartbeat.chat/api/v2/status.json", page_url: "https://status.heartbeat.chat", type: "statuspage" },
   { id: "neon_one", name: "Neon One", tags: ["nonprofit", "crm", "fundraising", "donor-management", "saas"], status_url: "https://status.neonone.com/api/v2/status.json", page_url: "https://status.neonone.com", type: "statuspage" },
@@ -5005,248 +3175,116 @@ const SERVICES: ServiceConfig[] = [
   { id: "buildinglink", name: "BuildingLink", tags: ["property-management", "residential", "tenant-communication", "saas", "real-estate"], status_url: "https://status.buildinglink.com/api/v2/status.json", page_url: "https://status.buildinglink.com", type: "statuspage" },
   { id: "goodrx", name: "GoodRx", tags: ["healthcare", "pharmacy", "drug-pricing", "api", "consumer"], status_url: "https://status.goodrx.com/api/v2/status.json", page_url: "https://status.goodrx.com", type: "statuspage" },
   { id: "overdrive", name: "OverDrive", tags: ["library", "ebooks", "digital-lending", "education", "consumer"], status_url: "https://status.overdrive.com/api/v2/status.json", page_url: "https://status.overdrive.com", type: "statuspage" },
-  // CockroachDB — distributed SQL cloud database
   { id: "cockroachlabs", name: "CockroachDB", tags: ["database", "distributed-sql", "cloud", "postgres", "saas"], status_url: "https://cockroachlabs.statuspage.io/api/v2/status.json", page_url: "https://cockroachlabs.statuspage.io", type: "statuspage" },
-  // ClubOS — fitness club management and member engagement platform
   { id: "clubos", name: "ClubOS", tags: ["fitness", "club-management", "pos", "member-experience", "saas"], status_url: "https://clubos.statuspage.io/api/v2/status.json", page_url: "https://clubos.statuspage.io", type: "statuspage" },
-  // MX Technologies — open banking and financial data connectivity platform
   { id: "mx_technologies", name: "MX Technologies", tags: ["fintech", "open-banking", "financial-data", "data-connectivity", "api"], status_url: "https://mx.statuspage.io/api/v2/status.json", page_url: "https://mx.statuspage.io", type: "statuspage" },
-  // IEX Cloud — financial data platform for market data and fundamentals
   { id: "iexcloud", name: "IEX Cloud", tags: ["financial-data", "market-data", "stocks", "api", "fintech"], status_url: "https://iexcloud.statuspage.io/api/v2/status.json", page_url: "https://iexcloud.statuspage.io", type: "statuspage" },
-  // Max (HBO Max) — Warner Bros. Discovery streaming video platform
   { id: "max_stream", name: "Max", tags: ["streaming", "entertainment", "video", "consumer", "media"], status_url: "https://max.statuspage.io/api/v2/status.json", page_url: "https://max.statuspage.io", type: "statuspage" },
-  // LinkedIn API — professional social network developer platform
-  { id: "linkedin_api", name: "LinkedIn API", tags: ["social", "professional-network", "developer-tools", "api", "b2b"], status_url: "https://linkedin.statuspage.io/api/v2/status.json", page_url: "https://www.linkedin-apistatus.com", type: "statuspage" },
-  // Revel Systems — iPad point-of-sale and business management platform for restaurants and retail
-  { id: "revel_systems", name: "Revel Systems", tags: ["pos", "restaurant", "retail", "ipad-pos", "saas"], status_url: "https://revelsystems.statuspage.io/api/v2/status.json", page_url: "https://status.revelsystems.com", type: "statuspage" },
-  // SerpAPI — search engine results page data API for web scraping and SEO
   { id: "serpapi", name: "SerpAPI", tags: ["search", "seo", "api", "developer-tools", "web-data"], status_url: "https://status.serpapi.com/api/v2/status.json", page_url: "https://status.serpapi.com", type: "statuspage" },
-  // Botify — enterprise SEO analytics and technical SEO automation platform
   { id: "botify", name: "Botify", tags: ["seo", "analytics", "enterprise", "search", "saas"], status_url: "https://botify.statuspage.io/api/v2/status.json", page_url: "https://botify.statuspage.io", type: "statuspage" },
-  // HyperTrack — live location tracking and movement API for logistics and mobility apps
   { id: "hypertrack", name: "HyperTrack", tags: ["location-tracking", "logistics", "mobility", "api", "developer-tools"], status_url: "https://status.hypertrack.com/api/v2/status.json", page_url: "https://status.hypertrack.com", type: "statuspage" },
-  // Dropbox Sign — e-signature and fax API platform (formerly HelloSign)
   { id: "dropboxsign", name: "Dropbox Sign", tags: ["e-signature", "documents", "api", "productivity", "legal"], status_url: "https://hellosign.statuspage.io/api/v2/status.json", page_url: "https://hellosign.statuspage.io", type: "statuspage" },
-  // Redox — healthcare data exchange and interoperability platform
   { id: "redox_engine", name: "Redox", tags: ["healthcare", "interoperability", "hl7", "fhir", "api"], status_url: "https://redoxengine.statuspage.io/api/v2/status.json", page_url: "https://status.redoxengine.com", type: "statuspage" },
-  // RSA ID Plus — enterprise identity and access management (SecurID platform)
   { id: "rsa_id_plus", name: "RSA ID Plus", tags: ["identity", "mfa", "security", "enterprise", "iam"], status_url: "https://rsasecurity.statuspage.io/api/v2/status.json", page_url: "https://status.securid.com", type: "statuspage" },
-  // Zip (formerly Quadpay) — buy-now-pay-later installment payment platform
   { id: "zip_pay", name: "Zip", tags: ["bnpl", "payments", "fintech", "consumer", "installments"], status_url: "https://zip.statuspage.io/api/v2/status.json", page_url: "https://zip.statuspage.io", type: "statuspage" },
-  // QuadPay — buy-now-pay-later payment solution for US consumers
   { id: "quadpay", name: "QuadPay", tags: ["bnpl", "payments", "fintech", "consumer", "installments"], status_url: "https://quadpay.statuspage.io/api/v2/status.json", page_url: "http://status.quadpay.com", type: "statuspage" },
-  // DocRaptor — HTML-to-PDF and HTML-to-Excel document generation API
   { id: "docraptor", name: "DocRaptor", tags: ["pdf", "documents", "api", "developer-tools", "printing"], status_url: "https://docraptor.statuspage.io/api/v2/status.json", page_url: "https://status.docraptor.com", type: "statuspage" },
-  // Happo — cross-browser screenshot testing and visual regression service
   { id: "happo", name: "Happo", tags: ["testing", "visual-regression", "screenshots", "developer-tools", "qa"], status_url: "https://happo.statuspage.io/api/v2/status.json", page_url: "https://happo.statuspage.io", type: "statuspage" },
-  // Cognito Forms — online form builder and data collection platform
   { id: "cognitoforms", name: "Cognito Forms", tags: ["forms", "data-collection", "productivity", "saas", "no-code"], status_url: "https://cognitoforms.statuspage.io/api/v2/status.json", page_url: "https://status.cognitoforms.com", type: "statuspage" },
-  // Involve.me — interactive content and lead generation platform
   { id: "involve", name: "Involve.me", tags: ["interactive-content", "lead-generation", "forms", "marketing", "saas"], status_url: "https://involve.statuspage.io/api/v2/status.json", page_url: "https://involve.statuspage.io", type: "statuspage" },
-  // Socio — event management and engagement platform for conferences and trade shows
   { id: "socio", name: "Socio", tags: ["events", "event-management", "conferences", "engagement", "saas"], status_url: "https://socio.statuspage.io/api/v2/status.json", page_url: "https://status.socio.events", type: "statuspage" },
-  // Swapcard — AI-powered event platform for networking and matchmaking
   { id: "swapcard", name: "Swapcard", tags: ["events", "networking", "event-management", "ai", "saas"], status_url: "https://swapcard.statuspage.io/api/v2/status.json", page_url: "https://swapcard.statuspage.io", type: "statuspage" },
-  // Grip — AI event networking platform for B2B conferences and trade shows
   { id: "grip", name: "Grip", tags: ["events", "networking", "b2b", "ai", "event-management"], status_url: "https://grip.statuspage.io/api/v2/status.json", page_url: "https://status.grip.events", type: "statuspage" },
-  // Motion — AI-powered calendar and task scheduling app
   { id: "motion_app", name: "Motion", tags: ["calendar", "productivity", "ai", "scheduling", "task-management"], status_url: "https://motionapp.statuspage.io/api/v2/status.json", page_url: "https://status.motionapp.com", type: "statuspage" },
-  // ProjectManager — cloud-based project management and planning tool
   { id: "projectmanager", name: "ProjectManager", tags: ["project-management", "planning", "productivity", "saas", "gantt"], status_url: "https://projectmanager.statuspage.io/api/v2/status.json", page_url: "https://projectmanager.statuspage.io", type: "statuspage" },
-  // Boundless — employer of record (EOR) and global HR platform
   { id: "boundless", name: "Boundless", tags: ["hr", "eor", "global-payroll", "remote-work", "saas"], status_url: "https://boundless.statuspage.io/api/v2/status.json", page_url: "http://status.boundless.com", type: "statuspage" },
-  // UPS — global package delivery and supply chain management services
   { id: "ups", name: "UPS", tags: ["shipping", "logistics", "delivery", "supply-chain", "enterprise"], status_url: "https://ups.statuspage.io/api/v2/status.json", page_url: "https://ups.statuspage.io", type: "statuspage" },
-  // AddEvent — add-to-calendar buttons, event landing pages and RSVP tools
   { id: "addevent", name: "AddEvent", tags: ["calendar", "events", "scheduling", "productivity", "saas"], status_url: "https://addevent.statuspage.io/api/v2/status.json", page_url: "https://addevent.statuspage.io", type: "statuspage" },
-  // Apache Superset — open-source BI and data visualization platform cloud service
   { id: "superset_cloud", name: "Superset", tags: ["bi", "analytics", "data-visualization", "open-source", "saas"], status_url: "https://superset.statuspage.io/api/v2/status.json", page_url: "https://superset.statuspage.io", type: "statuspage" },
-  // VTEX — enterprise e-commerce platform powering LATAM and global retailers (BetterStack)
   { id: "vtex", name: "VTEX", tags: ["e-commerce", "retail", "platform", "latam", "saas"], status_url: "https://status.vtex.com/api/v2/summary.json", page_url: "https://status.vtex.com", type: "betterstack" },
-  // Payfast — South African online payment gateway
   { id: "payfast", name: "Payfast", tags: ["payments", "fintech", "south-africa", "payment-gateway", "api"], status_url: "https://status.payfast.io/api/v2/status.json", page_url: "https://status.payfast.io", type: "statuspage" },
-  // Pin Payments — Australian payment gateway for online businesses
   { id: "pin_payments", name: "Pin Payments", tags: ["payments", "fintech", "australia", "payment-gateway", "api"], status_url: "https://status.pinpayments.com/api/v2/status.json", page_url: "https://status.pinpayments.com", type: "statuspage" },
-  // Peach Payments — African payment gateway (South Africa, Kenya, Nigeria)
-  { id: "peach_payments", name: "Peach Payments", tags: ["payments", "fintech", "africa", "south-africa", "payment-gateway"], status_url: "https://status.peachpayments.com/api/v2/status.json", page_url: "https://status.peachpayments.com", type: "statuspage" },
-  // Flipside Crypto — on-chain blockchain analytics and data platform
   { id: "flipside_crypto", name: "Flipside Crypto", tags: ["blockchain", "analytics", "web3", "data", "crypto"], status_url: "https://flipside.statuspage.io/api/v2/status.json", page_url: "https://flipside.statuspage.io", type: "statuspage" },
-  // Santiment — crypto market intelligence, on-chain metrics, and social data
   { id: "santiment", name: "Santiment", tags: ["crypto", "market-data", "analytics", "blockchain", "on-chain"], status_url: "https://santiment.statuspage.io/api/v2/status.json", page_url: "https://santiment.statuspage.io", type: "statuspage" },
-  // ZeroFOX — digital risk protection platform (social media, dark web, brand threats)
   { id: "zerofox", name: "ZeroFOX", tags: ["security", "digital-risk", "threat-intelligence", "brand-protection", "saas"], status_url: "https://zerofox.statuspage.io/api/v2/status.json", page_url: "https://zerofox.statuspage.io", type: "statuspage" },
-  // Thales — data security, cloud protection, and identity platform
   { id: "thales", name: "Thales", tags: ["security", "data-security", "identity", "encryption", "enterprise"], status_url: "https://thales.statuspage.io/api/v2/status.json", page_url: "https://thales.statuspage.io", type: "statuspage" },
-  // LogRhythm Axon — cloud-native SIEM and security analytics platform
   { id: "logrhythm", name: "LogRhythm Axon", tags: ["security", "siem", "analytics", "log-management", "enterprise"], status_url: "https://logrhythm.statuspage.io/api/v2/status.json", page_url: "https://logrhythm.statuspage.io", type: "statuspage" },
-  // Dexcom — continuous glucose monitoring (CGM) platform and apps
   { id: "dexcom", name: "Dexcom", tags: ["healthcare", "glucose-monitoring", "diabetes", "medical-device", "consumer"], status_url: "https://status.dexcom.com/api/v2/status.json", page_url: "https://status.dexcom.com", type: "statuspage" },
-  // Mercari — Japanese-origin C2C marketplace platform (US, Japan, UK)
   { id: "mercari", name: "Mercari", tags: ["marketplace", "e-commerce", "consumer", "japan", "resale"], status_url: "https://mercari.statuspage.io/api/v2/status.json", page_url: "https://status.mercari.com", type: "statuspage" },
-  // Hive Moderation — AI-powered content moderation and trust & safety API
   { id: "hive_moderation", name: "Hive Moderation", tags: ["ai", "content-moderation", "trust-safety", "api", "developer-tools"], status_url: "https://hivemoderation.statuspage.io/api/v2/status.json", page_url: "https://status.hivemoderation.com", type: "statuspage" },
-  // Helius — Solana blockchain developer infrastructure (RPC, webhooks, APIs)
   { id: "helius", name: "Helius", tags: ["blockchain", "solana", "web3", "api", "developer-tools"], status_url: "https://helius.statuspage.io/api/v2/status.json", page_url: "https://helius.statuspage.io", type: "statuspage" },
-  // Raise — gift card marketplace and rewards platform
   { id: "raise", name: "Raise", tags: ["marketplace", "gift-cards", "rewards", "consumer", "fintech"], status_url: "https://raise.statuspage.io/api/v2/status.json", page_url: "https://raise.statuspage.io", type: "statuspage" },
-  // ZenML — open-source MLOps framework with managed cloud services
   { id: "zenml", name: "ZenML", tags: ["mlops", "ml", "ai", "pipelines", "developer-tools"], status_url: "https://zenml.statuspage.io/api/v2/status.json", page_url: "https://status.zenml.io", type: "statuspage" },
-  // Celestia — modular blockchain data availability layer (L1)
   { id: "celestia", name: "Celestia", tags: ["blockchain", "web3", "data-availability", "modular", "l1"], status_url: "https://status.celestia.org/api/v2/status.json", page_url: "https://status.celestia.org", type: "statuspage" },
-  // Contrast Security — runtime application self-protection (RASP) and AppSec platform
   { id: "contrast_security", name: "Contrast Security", tags: ["security", "appsec", "rasp", "sast", "enterprise"], status_url: "https://contrast.statuspage.io/api/v2/status.json", page_url: "https://contrast.statuspage.io", type: "statuspage" },
-  // CrateDB Cloud — distributed SQL + time-series database-as-a-service
   { id: "cratedb", name: "CrateDB Cloud", tags: ["database", "sql", "time-series", "distributed", "cloud"], status_url: "https://status.cratedb.com/api/v2/status.json", page_url: "https://status.cratedb.com", type: "statuspage" },
-  // Linea — Ethereum L2 zkEVM by ConsenSys
   { id: "linea", name: "Linea", tags: ["blockchain", "ethereum", "layer2", "web3", "zk-rollup"], status_url: "https://linea.statuspage.io/api/v2/status.json", page_url: "https://linea.statuspage.io", type: "statuspage" },
-  // Stellar — open-source blockchain network for cross-border payments and asset issuance
   { id: "stellar", name: "Stellar", tags: ["blockchain", "payments", "crypto", "web3", "fintech"], status_url: "https://status.stellar.org/api/v2/status.json", page_url: "https://status.stellar.org", type: "statuspage" },
-  // Osmosis — decentralized exchange (DEX) and AMM built on the Cosmos ecosystem
   { id: "osmosis", name: "Osmosis", tags: ["defi", "blockchain", "cosmos", "dex", "web3"], status_url: "https://osmosis.statuspage.io/api/v2/status.json", page_url: "https://osmosis.statuspage.io", type: "statuspage" },
-  // New services added tick 282
-  // Scroll — Ethereum zkEVM Layer 2 for scaling Ethereum with zero-knowledge proofs
   { id: "scroll", name: "Scroll", tags: ["blockchain", "ethereum", "layer2", "zkevm", "web3"], status_url: "https://scroll.statuspage.io/api/v2/status.json", page_url: "https://scroll.statuspage.io", type: "statuspage" },
-  // Base — Ethereum Layer 2 by Coinbase built on the OP Stack
   { id: "base", name: "Base", tags: ["blockchain", "ethereum", "layer2", "web3", "coinbase"], status_url: "https://base.statuspage.io/api/v2/status.json", page_url: "https://base.statuspage.io", type: "statuspage" },
-  // Morph — Ethereum Layer 2 with hybrid architecture combining optimistic and zk rollup
   { id: "morph", name: "Morph", tags: ["blockchain", "ethereum", "layer2", "zk-rollup", "web3"], status_url: "https://morph.statuspage.io/api/v2/status.json", page_url: "https://morph.statuspage.io", type: "statuspage" },
-  // Mantle — Ethereum Layer 2 network with modular architecture and data availability layer
   { id: "mantle", name: "Mantle", tags: ["blockchain", "ethereum", "layer2", "web3", "modular"], status_url: "https://mantle.statuspage.io/api/v2/status.json", page_url: "https://mantle.statuspage.io", type: "statuspage" },
-  // Sui — high-performance Layer 1 blockchain with object-centric model and Move language
   { id: "sui", name: "Sui", tags: ["blockchain", "layer1", "web3", "move-lang", "l1"], status_url: "https://sui.statuspage.io/api/v2/status.json", page_url: "https://sui.statuspage.io", type: "statuspage" },
-  // Merlin Chain — Bitcoin Layer 2 network with EVM compatibility and ZK-rollup technology
   { id: "merlin", name: "Merlin Chain", tags: ["blockchain", "bitcoin", "layer2", "evm", "web3"], status_url: "https://merlin.statuspage.io/api/v2/status.json", page_url: "https://merlin.statuspage.io", type: "statuspage" },
-  // Hyperliquid — fully on-chain perpetuals DEX and Layer 1 blockchain
   { id: "hyperliquid", name: "Hyperliquid", tags: ["defi", "dex", "perpetuals", "blockchain", "web3"], status_url: "https://hyperliquid.statuspage.io/api/v2/status.json", page_url: "https://hyperliquid.statuspage.io", type: "statuspage" },
-  // dYdX — decentralized perpetuals trading exchange on its own Cosmos-based chain
   { id: "dydx", name: "dYdX", tags: ["defi", "dex", "perpetuals", "blockchain", "web3"], status_url: "https://dydx.statuspage.io/api/v2/status.json", page_url: "https://dydx.statuspage.io", type: "statuspage" },
-  // Blur — NFT marketplace and aggregator on Ethereum focused on professional traders
   { id: "blur", name: "Blur", tags: ["nft", "marketplace", "ethereum", "web3", "defi"], status_url: "https://blur.statuspage.io/api/v2/status.json", page_url: "https://blur.statuspage.io", type: "statuspage" },
-  // Compound — decentralized lending and borrowing protocol on Ethereum
   { id: "compound", name: "Compound", tags: ["defi", "lending", "ethereum", "protocol", "web3"], status_url: "https://compound.statuspage.io/api/v2/status.json", page_url: "https://compound.statuspage.io", type: "statuspage" },
-  // Coconut.co — cloud video transcoding and media processing API
   { id: "coconut", name: "Coconut", tags: ["video", "transcoding", "media", "api", "developer-tools"], status_url: "https://coconut.statuspage.io/api/v2/status.json", page_url: "https://coconut.statuspage.io", type: "statuspage" },
-  // Weedmaps — cannabis marketplace and discovery platform for dispensaries and brands
   { id: "weedmaps", name: "Weedmaps", tags: ["cannabis", "marketplace", "dispensary", "consumer", "saas"], status_url: "https://status.weedmaps.com/api/v2/status.json", page_url: "https://status.weedmaps.com", type: "statuspage" },
-  // New services added tick 284
-  // Anyword — AI writing platform for marketing copy and content optimization
   { id: "anyword", name: "Anyword", tags: ["ai", "writing", "marketing", "content", "saas"], status_url: "https://anyword.statuspage.io/api/v2/status.json", page_url: "https://anyword.statuspage.io", type: "statuspage" },
-  // Thunder Client — lightweight REST API client extension for VS Code
   { id: "thunderclient", name: "Thunder Client", tags: ["api-testing", "developer-tools", "rest", "vscode", "saas"], status_url: "https://thunderclient.statuspage.io/api/v2/status.json", page_url: "https://thunderclient.statuspage.io", type: "statuspage" },
-  // QuillBot — AI paraphrasing and writing tool for content rewriting and summarization
   { id: "quillbot", name: "QuillBot", tags: ["ai", "writing", "paraphrasing", "nlp", "saas"], status_url: "https://quillbot.statuspage.io/api/v2/status.json", page_url: "https://quillbot.statuspage.io", type: "statuspage" },
-  // RankMath — WordPress SEO plugin for on-page SEO optimization and schema markup
   { id: "rankmath", name: "RankMath", tags: ["seo", "wordpress", "content", "marketing", "saas"], status_url: "https://rankmath.statuspage.io/api/v2/status.json", page_url: "https://rankmath.statuspage.io", type: "statuspage" },
-  // Ekata — identity verification and fraud prevention API (Mastercard subsidiary)
   { id: "ekata", name: "Ekata", tags: ["identity", "fraud-prevention", "verification", "fintech", "api"], status_url: "https://ekata.statuspage.io/api/v2/status.json", page_url: "https://ekata.statuspage.io", type: "statuspage" },
-  // Sapiens International — insurance core software platform for P&C, life, and reinsurance
   { id: "sapiens", name: "Sapiens", tags: ["insurance", "core-software", "enterprise", "financial-services", "saas"], status_url: "https://sapiens.statuspage.io/api/v2/status.json", page_url: "https://sapiens.statuspage.io", type: "statuspage" },
-  // Folloze — buyer experience platform for B2B sales and account-based marketing
   { id: "folloze", name: "Folloze", tags: ["sales-enablement", "b2b", "marketing", "abm", "saas"], status_url: "https://folloze.statuspage.io/api/v2/status.json", page_url: "https://folloze.statuspage.io", type: "statuspage" },
-  // Allego — sales enablement and learning platform for revenue teams
   { id: "allego", name: "Allego", tags: ["sales-enablement", "learning", "coaching", "revenue", "saas"], status_url: "https://allego.statuspage.io/api/v2/status.json", page_url: "https://allego.statuspage.io", type: "statuspage" },
-  // Vivantio — ITSM and service management platform for enterprise help desks
   { id: "vivantio", name: "Vivantio", tags: ["itsm", "helpdesk", "service-management", "enterprise", "saas"], status_url: "https://vivantio.statuspage.io/api/v2/status.json", page_url: "https://vivantio.statuspage.io", type: "statuspage" },
-  // SkydropX — shipping and logistics platform for e-commerce in Mexico/LATAM
   { id: "skydropx", name: "SkydropX", tags: ["shipping", "logistics", "e-commerce", "latam", "saas"], status_url: "https://skydropx.statuspage.io/api/v2/status.json", page_url: "https://skydropx.statuspage.io", type: "statuspage" },
-  // Chatra — live chat and chatbot platform for customer support and sales
   { id: "chatra", name: "Chatra", tags: ["live-chat", "customer-support", "messaging", "chatbot", "saas"], status_url: "https://chatra.statuspage.io/api/v2/status.json", page_url: "https://chatra.statuspage.io", type: "statuspage" },
-  // Trustmary — video testimonial and review collection platform for social proof marketing
   { id: "trustmary", name: "Trustmary", tags: ["reviews", "testimonials", "social-proof", "marketing", "saas"], status_url: "https://trustmary.statuspage.io/api/v2/status.json", page_url: "https://trustmary.statuspage.io", type: "statuspage" },
-  // ReadMe — developer hub and API documentation platform
   { id: "readme_io", name: "ReadMe", tags: ["documentation", "developer-hub", "api-docs", "developer-tools", "saas"], status_url: "https://readme.statuspage.io/api/v2/status.json", page_url: "https://www.readmestatus.com", type: "statuspage" },
-  // Cluvio — SQL-based BI and data analytics platform for SaaS companies
   { id: "cluvio", name: "Cluvio", tags: ["bi", "analytics", "data-visualization", "sql", "saas"], status_url: "https://status.cluvio.com/api/v2/status.json", page_url: "https://status.cluvio.com", type: "statuspage" },
-  // Runscope — API monitoring and testing (now part of Datadog)
   { id: "runscope", name: "Runscope", tags: ["api-testing", "monitoring", "developer-tools", "qa", "api"], status_url: "https://runscope.statuspage.io/api/v2/status.json", page_url: "https://runscope.statuspage.io", type: "statuspage" },
-  // TravelNet Solutions (formerly Track) — hospitality management platform for vacation rentals and hotels
   { id: "track_hospitality", name: "TravelNet Solutions", tags: ["hospitality", "hotel", "property-management", "vacation-rental", "saas"], status_url: "https://status.trackhs.com/api/v2/status.json", page_url: "https://status.trackhs.com", type: "statuspage" },
-  // RMS Cloud — property management system for hotels, resorts, and campgrounds
   { id: "rms_cloud", name: "RMS Cloud", tags: ["hospitality", "hotel", "property-management", "reservations", "saas"], status_url: "https://status.rmscloud.com/api/v2/status.json", page_url: "https://status.rmscloud.com", type: "statuspage" },
-  // Stay — vacation rental and channel management platform
   { id: "stay", name: "Stay", tags: ["hospitality", "vacation-rental", "channel-manager", "property-management", "saas"], status_url: "https://stay.statuspage.io/api/v2/status.json", page_url: "https://stay.statuspage.io", type: "statuspage" },
-  // Asite — cloud-based construction and engineering collaboration platform
   { id: "asite", name: "Asite", tags: ["construction", "project-management", "bim", "engineering", "saas"], status_url: "https://status.asite.com/api/v2/status.json", page_url: "https://status.asite.com", type: "statuspage" },
-  // Assemble — construction quantity takeoff and cost estimating from BIM
   { id: "assemble", name: "Assemble", tags: ["construction", "estimating", "bim", "takeoff", "saas"], status_url: "https://assemble.statuspage.io/api/v2/status.json", page_url: "https://assemble.statuspage.io", type: "statuspage" },
-  // Leap — field sales and project management software for contractors (roofing, windows, siding)
   { id: "leap", name: "Leap", tags: ["construction", "contractor", "field-service", "sales", "saas"], status_url: "https://status.leaptodigital.com/api/v2/status.json", page_url: "https://status.leaptodigital.com", type: "statuspage" },
-  // ServiceChannel — facilities and maintenance management platform for multi-site businesses
   { id: "servicechannel", name: "ServiceChannel", tags: ["facilities-management", "maintenance", "vendor-management", "enterprise", "saas"], status_url: "https://status.servicechannel.com/api/v2/status.json", page_url: "https://status.servicechannel.com", type: "statuspage" },
-  // Archibus by Eptura — integrated workplace management system (IWMS) for real estate and facilities
   { id: "archibus", name: "Archibus", tags: ["facilities-management", "iwms", "real-estate", "workplace", "enterprise"], status_url: "https://archibus.statuspage.io/api/v2/status.json", page_url: "https://archibus.statuspage.io", type: "statuspage" },
-  // Nemetschek — AEC software group (Vectorworks, Allplan, Archicad parent company)
   { id: "nemetschek", name: "Nemetschek", tags: ["construction", "architecture", "engineering", "bim", "software"], status_url: "https://nemetschek.statuspage.io/api/v2/status.json", page_url: "https://status.nemetschek.bg", type: "statuspage" },
-  // New services added tick 288
-  // DEV Community — developer blogging platform and community (dev.to)
   { id: "dev_to", name: "DEV Community", tags: ["developer-community", "blogging", "content", "developer-tools", "saas"], status_url: "https://status.dev.to/api/v2/status.json", page_url: "https://status.dev.to", type: "statuspage" },
-  // Hint Health — direct primary care (DPC) practice management platform
-  { id: "hint_health", name: "Hint Health", tags: ["healthcare", "primary-care", "practice-management", "dpc", "saas"], status_url: "https://status.hint.com/api/v2/status.json", page_url: "https://status.hint.com", type: "statuspage" },
-  // Sequel — virtual event and webinar platform for audience engagement
   { id: "sequel_io", name: "Sequel", tags: ["virtual-events", "webinars", "events", "engagement", "saas"], status_url: "https://status.sequel.io/api/v2/status.json", page_url: "https://status.sequel.io", type: "statuspage" },
-  // itslearning — cloud-based learning management system (LMS) for K-12 and higher education
   { id: "itslearning", name: "itslearning", tags: ["lms", "education", "e-learning", "k12", "saas"], status_url: "https://status.itslearning.com/api/v2/status.json", page_url: "https://status.itslearning.com", type: "statuspage" },
-  // Apptegy — school district communication and branding platform
   { id: "apptegy", name: "Apptegy", tags: ["education", "k12", "school-communication", "branding", "saas"], status_url: "https://status.apptegy.com/api/v2/status.json", page_url: "https://status.apptegy.com", type: "statuspage" },
-  // Responsive (formerly RFPIO) — RFP response and proposal automation platform
-  { id: "responsive", name: "Responsive", tags: ["rfp", "proposals", "sales-enablement", "content-management", "saas"], status_url: "https://status.rfpio.com/api/v2/status.json", page_url: "https://status.rfpio.com", type: "statuspage" },
-  // ContactMonkey — internal employee email communication and analytics platform
   { id: "contactmonkey", name: "ContactMonkey", tags: ["internal-communications", "email", "hr", "employee-engagement", "saas"], status_url: "https://status.contactmonkey.com/api/v2/status.json", page_url: "https://status.contactmonkey.com", type: "statuspage" },
-  // Certain — enterprise event management and attendee engagement platform
   { id: "certain", name: "Certain", tags: ["events", "event-management", "enterprise", "attendee-engagement", "saas"], status_url: "https://status.certain.com/api/v2/status.json", page_url: "https://status.certain.com", type: "statuspage" },
-  // PhoneBurner — power dialing and outbound sales call automation platform
   { id: "phoneburner", name: "PhoneBurner", tags: ["sales", "dialer", "outbound-calling", "crm", "saas"], status_url: "https://status.phoneburner.com/api/v2/status.json", page_url: "https://status.phoneburner.com", type: "statuspage" },
-  // MightyCall — virtual phone system for small businesses with call routing and IVR
   { id: "mightycall", name: "MightyCall", tags: ["voip", "phone-system", "business-phone", "ivr", "saas"], status_url: "https://status.mightycall.com/api/v2/status.json", page_url: "https://status.mightycall.com", type: "statuspage" },
-  // Pipe17 — order management and commerce operations hub connecting e-commerce platforms, ERPs, and 3PLs
   { id: "pipe17", name: "Pipe17", tags: ["ecommerce", "order-management", "integration", "logistics", "saas"], status_url: "https://status.pipe17.com/api/v2/status.json", page_url: "https://status.pipe17.com", type: "statuspage" },
-  // TeamSupport — B2B customer support helpdesk and ticket management platform
   { id: "teamsupport", name: "TeamSupport", tags: ["customer-support", "helpdesk", "ticketing", "b2b", "saas"], status_url: "https://status.teamsupport.com/api/v2/status.json", page_url: "https://status.teamsupport.com", type: "statuspage" },
-  // Sonos — cloud services for Sonos smart speakers and home audio systems
   { id: "sonos", name: "Sonos", tags: ["audio", "iot", "smart-home", "streaming", "consumer"], status_url: "https://status.sonos.com/api/v2/status.json", page_url: "https://status.sonos.com", type: "statuspage" },
-  // Knock CRM — apartment leasing CRM and lead management platform for property management
   { id: "knockcrm", name: "Knock CRM", tags: ["real-estate", "crm", "property-management", "leasing", "saas"], status_url: "https://status.knockcrm.com/api/v2/status.json", page_url: "https://status.knockcrm.com", type: "statuspage" },
-  // Ticket Tailor — self-service event ticketing platform for event organizers
   { id: "tickettailor", name: "Ticket Tailor", tags: ["events", "ticketing", "event-management", "saas"], status_url: "https://status.tickettailor.com/api/v2/status.json", page_url: "https://status.tickettailor.com", type: "statuspage" },
-  // ActiveProspect — consent-based marketing, lead verification, and TrustedForm certification platform
   { id: "activeprospect", name: "ActiveProspect", tags: ["marketing", "lead-generation", "compliance", "consent", "saas"], status_url: "https://status.activeprospect.com/api/v2/status.json", page_url: "https://status.activeprospect.com", type: "statuspage" },
-  // Ocrolus — AI-powered document analysis and cash flow analytics for financial services
   { id: "ocrolus", name: "Ocrolus", tags: ["fintech", "ai", "document-analysis", "lending", "saas"], status_url: "https://status.ocrolus.com/api/v2/status.json", page_url: "https://status.ocrolus.com", type: "statuspage" },
-  // Fulcrum — mobile data collection and field operations management platform
   { id: "fulcrum", name: "Fulcrum", tags: ["field-operations", "data-collection", "mobile", "gis", "saas"], status_url: "https://status.fulcrumapp.com/api/v2/status.json", page_url: "https://status.fulcrumapp.com", type: "statuspage" },
-  // Inscribe — AI-powered document fraud detection and financial document analysis platform
   { id: "inscribe", name: "Inscribe", tags: ["fintech", "ai", "fraud-detection", "document-analysis", "saas"], status_url: "https://status.inscribe.ai/api/v2/status.json", page_url: "https://status.inscribe.ai", type: "statuspage" },
-  // Patriot Software — small business payroll processing and accounting software
   { id: "patriot_software", name: "Patriot Software", tags: ["payroll", "accounting", "small-business", "hr", "saas"], status_url: "https://status.patriotsoftware.com/api/v2/status.json", page_url: "https://status.patriotsoftware.com", type: "statuspage" },
-  // Juniper Square — private markets investment management platform for real estate and private equity
   { id: "juniper_square", name: "Juniper Square", tags: ["fintech", "investment-management", "private-markets", "real-estate", "saas"], status_url: "https://status.junipersquare.com/api/v2/status.json", page_url: "https://status.junipersquare.com", type: "statuspage" },
-  // Visible — investor relations and portfolio company reporting platform for startups and VCs
   { id: "visible_vc", name: "Visible", tags: ["investor-relations", "reporting", "startups", "venture-capital", "saas"], status_url: "https://status.visible.vc/api/v2/status.json", page_url: "https://status.visible.vc", type: "statuspage" },
-  // Census — reverse ETL / data activation platform syncing warehouse data to business tools
-  { id: "census", name: "Census", tags: ["data", "reverse-etl", "data-sync", "integration", "saas"], status_url: "https://status.getcensus.com/api/v2/status.json", page_url: "https://status.getcensus.com", type: "statuspage" },
-  // Wave — free accounting, invoicing, and payroll software for small businesses
   { id: "wave_accounting", name: "Wave", tags: ["accounting", "invoicing", "payroll", "small-business", "saas"], status_url: "https://status.waveapps.com/api/v2/status.json", page_url: "https://status.waveapps.com", type: "statuspage" },
-  // Speakap — employee communications and social intranet platform for deskless workers
   { id: "speakap", name: "Speakap", tags: ["internal-communications", "employee-engagement", "intranet", "mobile", "saas"], status_url: "https://speakap.statuspage.io/api/v2/status.json", page_url: "https://speakap.statuspage.io", type: "statuspage" },
-  // Igloo Software — digital workplace / intranet platform for employee communication and collaboration
   { id: "igloo_software", name: "Igloo Software", tags: ["intranet", "digital-workplace", "employee-engagement", "collaboration", "saas"], status_url: "https://igloo.statuspage.io/api/v2/status.json", page_url: "https://igloo.statuspage.io", type: "statuspage" },
-  // Qminder — queue management and customer flow platform for service businesses and clinics
   { id: "qminder", name: "Qminder", tags: ["queue-management", "customer-flow", "healthcare", "retail", "saas"], status_url: "https://status.qminder.com/api/v2/status.json", page_url: "https://status.qminder.com", type: "statuspage" },
-  // Weave — patient and customer communication platform for healthcare SMBs (dental, optometry, etc.)
-  { id: "weave", name: "Weave", tags: ["healthcare", "patient-communication", "voip", "sms", "saas"], status_url: "https://status.getweave.com/api/v2/status.json", page_url: "https://status.getweave.com", type: "statuspage" },
-  // Airplane — internal tools and admin panel builder for engineering teams
   { id: "airplane", name: "Airplane", tags: ["internal-tools", "developer-tools", "admin-panel", "workflow", "saas"], status_url: "https://airplane.statuspage.io/api/v2/status.json", page_url: "https://airplane.statuspage.io", type: "statuspage" },
-  // Clutch — B2B ratings and reviews marketplace connecting buyers with service providers
   { id: "clutch_reviews", name: "Clutch", tags: ["b2b", "marketplace", "reviews", "lead-generation", "saas"], status_url: "https://clutch.statuspage.io/api/v2/status.json", page_url: "https://status.clutch.com", type: "statuspage" },
-  // Screenly — digital signage platform for managing screen content at scale (cloud-based, Pi-powered)
   { id: "screenly", name: "Screenly", tags: ["digital-signage", "iot", "display", "media", "saas"], status_url: "https://screenly.statuspage.io/api/v2/status.json", page_url: "https://status.screenly.io", type: "statuspage" },
-  // ZenHR — cloud-based HR and payroll platform for companies in the MENA region
   { id: "zenhr", name: "ZenHR", tags: ["hr", "payroll", "hrms", "mena", "saas"], status_url: "https://zenhr.statuspage.io/api/v2/status.json", page_url: "https://zenhr.statuspage.io", type: "statuspage" },
-
-  // === BATCH EXPANSION +200: 2825 → 3025 ===
-
-  // --- AI / ML ---
-  // NOTE: Mistral AI uses a custom Nuxt status page with no machine-readable JSON API — removed until they add one
   { id: "anyscale", name: "Anyscale", tags: ["ai", "ml", "ray", "cloud", "saas"], status_url: "https://status.anyscale.com/api/v2/status.json", page_url: "https://status.anyscale.com", type: "statuspage" },
   { id: "hugging_face", name: "Hugging Face", tags: ["ai", "ml", "llm", "open-source", "saas"], status_url: "https://status.huggingface.co/api/v2/status.json", page_url: "https://status.huggingface.co", type: "statuspage" },
   { id: "weaviate_cloud", name: "Weaviate Cloud", tags: ["ai", "vector-database", "ml", "api", "saas"], status_url: "https://status.weaviate.io/api/v2/status.json", page_url: "https://status.weaviate.io", type: "statuspage" },
@@ -5256,8 +3294,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "dooly_ai", name: "Dooly", tags: ["ai", "sales", "note-taking", "crm", "saas"], status_url: "https://status.dooly.ai/api/v2/status.json", page_url: "https://status.dooly.ai", type: "statuspage" },
   { id: "vivun", name: "Vivun", tags: ["ai", "sales-engineering", "presales", "crm", "saas"], status_url: "https://status.vivun.com/api/v2/status.json", page_url: "https://status.vivun.com", type: "statuspage" },
   { id: "drift_chat", name: "Drift", tags: ["marketing", "conversational", "chatbot", "b2b", "saas"], status_url: "https://status.drift.com/api/v2/status.json", page_url: "https://status.drift.com", type: "statuspage" },
-
-  // --- Security ---
   { id: "crowdstrike", name: "CrowdStrike Falcon", tags: ["security", "edr", "endpoint", "cloud", "enterprise"], status_url: "https://status.crowdstrike.com/api/v2/status.json", page_url: "https://status.crowdstrike.com", type: "statuspage" },
   { id: "cyberark", name: "CyberArk", tags: ["security", "identity", "pam", "privileged-access", "enterprise"], status_url: "https://cyberark.statuspage.io/api/v2/status.json", page_url: "https://cyberark.statuspage.io", type: "statuspage" },
   { id: "lacework", name: "Lacework", tags: ["security", "cloud-security", "cspm", "devsecops", "saas"], status_url: "https://status.lacework.com/api/v2/status.json", page_url: "https://status.lacework.com", type: "statuspage" },
@@ -5270,8 +3306,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "logicgate", name: "LogicGate", tags: ["security", "grc", "risk-management", "compliance", "saas"], status_url: "https://status.logicgate.com/api/v2/status.json", page_url: "https://status.logicgate.com", type: "statuspage" },
   { id: "hyperproof", name: "Hyperproof", tags: ["security", "compliance", "grc", "audit", "saas"], status_url: "https://status.hyperproof.io/api/v2/status.json", page_url: "https://status.hyperproof.io", type: "statuspage" },
   { id: "riskonnect", name: "Riskonnect", tags: ["security", "risk-management", "insurance", "grc", "enterprise"], status_url: "https://status.riskonnect.com/api/v2/status.json", page_url: "https://status.riskonnect.com", type: "statuspage" },
-
-  // --- HR / Payroll / People Ops ---
   { id: "workday", name: "Workday", tags: ["hr", "finance", "erp", "enterprise", "saas"], status_url: "https://status.workday.com/api/v2/status.json", page_url: "https://status.workday.com", type: "statuspage" },
   { id: "adp_workforce", name: "ADP Workforce Now", tags: ["hr", "payroll", "enterprise", "workforce", "saas"], status_url: "https://status.adp.com/api/v2/status.json", page_url: "https://status.adp.com", type: "statuspage" },
   { id: "paychex", name: "Paychex Flex", tags: ["hr", "payroll", "benefits", "small-business", "saas"], status_url: "https://statuspage.paychex.com/api/v2/status.json", page_url: "https://statuspage.paychex.com", type: "statuspage" },
@@ -5283,8 +3317,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "fifteen_five", name: "15Five", tags: ["hr", "performance-management", "engagement", "okr", "saas"], status_url: "https://status.15five.com/api/v2/status.json", page_url: "https://status.15five.com", type: "statuspage" },
   { id: "betterworks", name: "BetterWorks", tags: ["hr", "okr", "performance-management", "enterprise", "saas"], status_url: "https://status.betterworks.com/api/v2/status.json", page_url: "https://status.betterworks.com", type: "statuspage" },
   { id: "icims", name: "iCIMS", tags: ["hr", "ats", "recruiting", "talent-acquisition", "enterprise"], status_url: "https://status.icims.com/api/v2/status.json", page_url: "https://status.icims.com", type: "statuspage" },
-
-  // --- LMS / EdTech ---
   { id: "edx", name: "edX", tags: ["education", "lms", "mooc", "online-learning", "saas"], status_url: "https://status.edx.org/api/v2/status.json", page_url: "https://status.edx.org", type: "statuspage" },
   { id: "docebo", name: "Docebo", tags: ["education", "lms", "corporate-training", "e-learning", "saas"], status_url: "https://status.docebo.com/api/v2/status.json", page_url: "https://status.docebo.com", type: "statuspage" },
   { id: "brightspace_d2l", name: "Brightspace by D2L", tags: ["education", "lms", "k12", "higher-ed", "saas"], status_url: "https://status.d2l.com/api/v2/status.json", page_url: "https://status.d2l.com", type: "statuspage" },
@@ -5293,8 +3325,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "sumtotal_systems", name: "SumTotal Systems", tags: ["education", "lms", "hr", "talent-management", "enterprise"], status_url: "https://status.sumtotalsystems.com/api/v2/status.json", page_url: "https://status.sumtotalsystems.com", type: "statuspage" },
   { id: "looop", name: "Looop", tags: ["education", "lms", "microlearning", "employee-training", "saas"], status_url: "https://looop.statuspage.io/api/v2/status.json", page_url: "https://looop.statuspage.io", type: "statuspage" },
   { id: "axonify", name: "Axonify", tags: ["education", "lms", "microlearning", "frontline-workers", "saas"], status_url: "https://status.axonify.com/api/v2/status.json", page_url: "https://status.axonify.com", type: "statuspage" },
-
-  // --- Payments / FinTech ---
   { id: "adyen", name: "Adyen", tags: ["payments", "fintech", "enterprise", "global", "api"], status_url: "https://status.adyen.com/api/v2/status.json", page_url: "https://status.adyen.com", type: "statuspage" },
   { id: "checkout_com", name: "Checkout.com", tags: ["payments", "fintech", "api", "enterprise", "global"], status_url: "https://status.checkout.com/api/v2/status.json", page_url: "https://status.checkout.com", type: "statuspage" },
   { id: "paypal", name: "PayPal", tags: ["payments", "fintech", "consumer", "ecommerce", "global"], status_url: "https://paypal.statuspage.io/api/v2/status.json", page_url: "https://paypal.statuspage.io", type: "statuspage" },
@@ -5303,9 +3333,7 @@ const SERVICES: ServiceConfig[] = [
   { id: "paymongo", name: "PayMongo", tags: ["payments", "fintech", "philippines", "api", "saas"], status_url: "https://status.paymongo.com/api/v2/status.json", page_url: "https://status.paymongo.com", type: "statuspage" },
   { id: "clearent", name: "Clearent by Xplor", tags: ["payments", "fintech", "merchant-services", "pos", "saas"], status_url: "https://clearent.statuspage.io/api/v2/status.json", page_url: "https://clearent.statuspage.io", type: "statuspage" },
   { id: "payflex", name: "Payflex", tags: ["payments", "bnpl", "south-africa", "consumer", "fintech"], status_url: "https://status.payflex.co.za/api/v2/status.json", page_url: "https://status.payflex.co.za", type: "statuspage" },
-
-  // --- CRM / Sales ---
-  { id: "salesforce", name: "Salesforce", tags: ["crm", "sales", "enterprise", "marketing", "saas"], status_url: "https://api.status.salesforce.com/v1/summary", page_url: "https://status.salesforce.com", type: "statuspage" },
+  { id: "salesforce", name: "Salesforce", tags: ["crm", "sales", "enterprise", "marketing", "saas"], status_url: "https://api.status.salesforce.com/v1/instances/status/preview", page_url: "https://status.salesforce.com", type: "salesforce" },
   { id: "pipedrive", name: "Pipedrive", tags: ["crm", "sales", "smb", "pipeline", "saas"], status_url: "https://status.pipedrive.com/api/v2/status.json", page_url: "https://status.pipedrive.com", type: "statuspage" },
   { id: "keap", name: "Keap", tags: ["crm", "marketing-automation", "small-business", "email", "saas"], status_url: "https://status.keap.com/api/v2/status.json", page_url: "https://status.keap.com", type: "statuspage" },
   { id: "freshsales", name: "Freshsales", tags: ["crm", "sales", "ai", "smb", "saas"], status_url: "https://freshsales.statuspage.io/api/v2/status.json", page_url: "https://freshsales.statuspage.io", type: "statuspage" },
@@ -5313,21 +3341,15 @@ const SERVICES: ServiceConfig[] = [
   { id: "sugar_crm", name: "SugarCRM", tags: ["crm", "sales", "enterprise", "open-source", "saas"], status_url: "https://status.sugarcrm.com/api/v2/status.json", page_url: "https://status.sugarcrm.com", type: "statuspage" },
   { id: "zoom_info", name: "ZoomInfo", tags: ["sales", "data", "b2b", "market-intelligence", "saas"], status_url: "https://status.zoominfo.com/api/v2/status.json", page_url: "https://status.zoominfo.com", type: "statuspage" },
   { id: "cognism", name: "Cognism", tags: ["sales", "data", "prospecting", "b2b", "saas"], status_url: "https://status.cognism.com/api/v2/status.json", page_url: "https://status.cognism.com", type: "statuspage" },
-
-  // --- Communications / Collaboration ---
   { id: "telegram", name: "Telegram", tags: ["messaging", "communication", "mobile", "api", "consumer"], status_url: "https://status.telegram.org/api/v2/status.json", page_url: "https://status.telegram.org", type: "statuspage" },
   { id: "basecamp", name: "Basecamp", tags: ["project-management", "collaboration", "messaging", "smb", "saas"], status_url: "https://status.37signals.com/api/v2/status.json", page_url: "https://status.37signals.com", type: "statuspage" },
   { id: "lark_suite", name: "Lark Suite", tags: ["collaboration", "messaging", "video", "productivity", "saas"], status_url: "https://status.larksuite.com/api/v2/status.json", page_url: "https://status.larksuite.com", type: "statuspage" },
   { id: "pumble", name: "Pumble", tags: ["messaging", "team-communication", "collaboration", "smb", "saas"], status_url: "https://status.pumble.com/api/v2/status.json", page_url: "https://status.pumble.com", type: "statuspage" },
-
-  // --- Cloud / Infrastructure ---
   { id: "vultr", name: "Vultr", tags: ["cloud", "vps", "hosting", "infrastructure", "developer-tools"], status_url: "https://status.vultr.com/api/v2/status.json", page_url: "https://status.vultr.com", type: "statuspage" },
   { id: "ovhcloud", name: "OVHcloud", tags: ["cloud", "hosting", "vps", "enterprise", "infrastructure"], status_url: "https://status.ovh.com/api/v2/status.json", page_url: "https://status.ovh.com", type: "statuspage" },
   { id: "coreweave", name: "CoreWeave", tags: ["cloud", "gpu", "ai", "infrastructure", "enterprise"], status_url: "https://status.coreweave.com/api/v2/status.json", page_url: "https://status.coreweave.com", type: "statuspage" },
   { id: "rackspace", name: "Rackspace Technology", tags: ["cloud", "managed-services", "hosting", "enterprise", "infrastructure"], status_url: "https://status.rackspace.com/api/v2/status.json", page_url: "https://status.rackspace.com", type: "statuspage" },
   { id: "exoscale", name: "Exoscale", tags: ["cloud", "hosting", "europe", "developer-tools", "infrastructure"], status_url: "https://status.exoscale.com/api/v2/status.json", page_url: "https://status.exoscale.com", type: "statuspage" },
-
-  // --- Gaming / Entertainment ---
   { id: "playstation_network", name: "PlayStation Network", tags: ["gaming", "console", "entertainment", "sony", "consumer"], status_url: "https://status.playstation.com/api/v2/status.json", page_url: "https://status.playstation.com", type: "statuspage" },
   { id: "nintendo_online", name: "Nintendo Switch Online", tags: ["gaming", "console", "entertainment", "nintendo", "consumer"], status_url: "https://status.nintendo.com/api/v2/status.json", page_url: "https://status.nintendo.com", type: "statuspage" },
   { id: "riot_games", name: "Riot Games", tags: ["gaming", "esports", "league-of-legends", "valorant", "entertainment"], status_url: "https://status.riotgames.com/api/v2/status.json", page_url: "https://status.riotgames.com", type: "statuspage" },
@@ -5336,8 +3358,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "blizzard", name: "Blizzard Battle.net", tags: ["gaming", "pc", "esports", "world-of-warcraft", "entertainment"], status_url: "https://status.blizzard.com/api/v2/status.json", page_url: "https://status.blizzard.com", type: "statuspage" },
   { id: "bethesda_net", name: "Bethesda.net", tags: ["gaming", "pc", "console", "fallout", "entertainment"], status_url: "https://status.bethesda.net/api/v2/status.json", page_url: "https://status.bethesda.net", type: "statuspage" },
   { id: "bungie", name: "Bungie / Destiny", tags: ["gaming", "pc", "console", "destiny", "entertainment"], status_url: "https://bungie.statuspage.io/api/v2/status.json", page_url: "https://bungie.statuspage.io", type: "statuspage" },
-
-  // --- Marketing Automation ---
   { id: "mailchimp", name: "Mailchimp", tags: ["email", "marketing", "automation", "smb", "saas"], status_url: "https://status.mailchimp.com/api/v2/status.json", page_url: "https://status.mailchimp.com", type: "statuspage" },
   { id: "marketo", name: "Adobe Marketo Engage", tags: ["marketing", "automation", "crm", "enterprise", "saas"], status_url: "https://status.marketo.com/api/v2/status.json", page_url: "https://status.marketo.com", type: "statuspage" },
   { id: "dotdigital", name: "Dotdigital", tags: ["marketing", "email", "automation", "omnichannel", "saas"], status_url: "https://status.dotdigital.com/api/v2/status.json", page_url: "https://status.dotdigital.com", type: "statuspage" },
@@ -5346,8 +3366,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "acoustic_campaign", name: "Acoustic Campaign", tags: ["marketing", "email", "automation", "enterprise", "saas"], status_url: "https://status.acoustic.com/api/v2/status.json", page_url: "https://status.acoustic.com", type: "statuspage" },
   { id: "selligent", name: "Selligent Marketing Cloud", tags: ["marketing", "automation", "email", "omnichannel", "saas"], status_url: "https://selligent.statuspage.io/api/v2/status.json", page_url: "https://selligent.statuspage.io", type: "statuspage" },
   { id: "responsys", name: "Oracle Responsys", tags: ["marketing", "automation", "email", "enterprise", "saas"], status_url: "https://responsys.statuspage.io/api/v2/status.json", page_url: "https://responsys.statuspage.io", type: "statuspage" },
-
-  // --- Healthcare / HealthTech ---
   { id: "veeva_systems", name: "Veeva Systems", tags: ["healthcare", "life-sciences", "crm", "enterprise", "saas"], status_url: "https://status.veeva.com/api/v2/status.json", page_url: "https://status.veeva.com", type: "statuspage" },
   { id: "athenahealth", name: "Athenahealth", tags: ["healthcare", "ehr", "practice-management", "revenue-cycle", "saas"], status_url: "https://status.athenahealth.com/api/v2/status.json", page_url: "https://status.athenahealth.com", type: "statuspage" },
   { id: "pointclickcare", name: "PointClickCare", tags: ["healthcare", "ehr", "long-term-care", "senior-care", "saas"], status_url: "https://status.pointclickcare.com/api/v2/status.json", page_url: "https://status.pointclickcare.com", type: "statuspage" },
@@ -5355,12 +3373,8 @@ const SERVICES: ServiceConfig[] = [
   { id: "kareo", name: "Kareo / Tebra", tags: ["healthcare", "ehr", "billing", "small-practice", "saas"], status_url: "https://status.kareo.com/api/v2/status.json", page_url: "https://status.kareo.com", type: "statuspage" },
   { id: "meditab", name: "Meditab IMS", tags: ["healthcare", "ehr", "practice-management", "multi-specialty", "saas"], status_url: "https://status.meditab.com/api/v2/status.json", page_url: "https://status.meditab.com", type: "statuspage" },
   { id: "ambra_health", name: "Ambra Health", tags: ["healthcare", "medical-imaging", "dicom", "radiology", "saas"], status_url: "https://status.ambrahealth.com/api/v2/status.json", page_url: "https://status.ambrahealth.com", type: "statuspage" },
-
-  // --- Logistics / Shipping ---
   { id: "narvar", name: "Narvar", tags: ["logistics", "post-purchase", "tracking", "ecommerce", "saas"], status_url: "https://status.narvar.com/api/v2/status.json", page_url: "https://status.narvar.com", type: "statuspage" },
   { id: "route_protection", name: "Route", tags: ["logistics", "package-protection", "ecommerce", "insurance", "saas"], status_url: "https://status.route.com/api/v2/status.json", page_url: "https://status.route.com", type: "statuspage" },
-
-  // --- Real Estate Tech ---
   { id: "costar", name: "CoStar", tags: ["real-estate", "commercial", "data", "analytics", "enterprise"], status_url: "https://status.costar.com/api/v2/status.json", page_url: "https://status.costar.com", type: "statuspage" },
   { id: "vts_realty", name: "VTS", tags: ["real-estate", "commercial", "leasing", "asset-management", "saas"], status_url: "https://status.vts.com/api/v2/status.json", page_url: "https://status.vts.com", type: "statuspage" },
   { id: "buildout_cre", name: "Buildout CRE", tags: ["real-estate", "commercial", "marketing", "brokerage", "saas"], status_url: "https://status.buildout.com/api/v2/status.json", page_url: "https://status.buildout.com", type: "statuspage" },
@@ -5368,35 +3382,23 @@ const SERVICES: ServiceConfig[] = [
   { id: "appfolio", name: "AppFolio Property Manager", tags: ["real-estate", "property-management", "residential", "accounting", "saas"], status_url: "https://status.appfolio.com/api/v2/status.json", page_url: "https://status.appfolio.com", type: "statuspage" },
   { id: "landlord_studio", name: "Landlord Studio", tags: ["real-estate", "property-management", "residential", "small-landlord", "saas"], status_url: "https://status.landlordstudio.com/api/v2/status.json", page_url: "https://status.landlordstudio.com", type: "statuspage" },
   { id: "rentec_direct", name: "Rentec Direct", tags: ["real-estate", "property-management", "residential", "accounting", "saas"], status_url: "https://status.rentecdirect.com/api/v2/status.json", page_url: "https://status.rentecdirect.com", type: "statuspage" },
-
-  // --- Legal Tech ---
   { id: "lawmatics", name: "Lawmatics", tags: ["legal", "crm", "automation", "law-firms", "saas"], status_url: "https://status.lawmatics.com/api/v2/status.json", page_url: "https://status.lawmatics.com", type: "statuspage" },
   { id: "filevine", name: "Filevine", tags: ["legal", "case-management", "law-firms", "api", "saas"], status_url: "https://status.filevine.com/api/v2/status.json", page_url: "https://status.filevine.com", type: "statuspage" },
   { id: "lexisnexis_api", name: "LexisNexis API", tags: ["legal", "data", "research", "api", "enterprise"], status_url: "https://status.lexisnexis.com/api/v2/status.json", page_url: "https://status.lexisnexis.com", type: "statuspage" },
-
-  // --- Business Intelligence ---
   { id: "qlik", name: "Qlik", tags: ["analytics", "bi", "data-integration", "enterprise", "saas"], status_url: "https://status.qlik.com/api/v2/status.json", page_url: "https://status.qlik.com", type: "statuspage" },
   { id: "microstrategy", name: "MicroStrategy", tags: ["analytics", "bi", "enterprise", "data-visualization", "saas"], status_url: "https://status.microstrategy.com/api/v2/status.json", page_url: "https://status.microstrategy.com", type: "statuspage" },
   { id: "tibco_spotfire", name: "TIBCO Spotfire", tags: ["analytics", "bi", "enterprise", "data-science", "saas"], status_url: "https://status.tibco.com/api/v2/status.json", page_url: "https://status.tibco.com", type: "statuspage" },
   { id: "yellowfin_bi", name: "Yellowfin BI", tags: ["analytics", "bi", "embedded", "reporting", "saas"], status_url: "https://status.yellowfin.bi/api/v2/status.json", page_url: "https://status.yellowfin.bi", type: "statuspage" },
-
-  // --- Customer Experience / Contact Center ---
   { id: "five9", name: "Five9", tags: ["cx", "contact-center", "ccaas", "cloud", "saas"], status_url: "https://status.five9.com/api/v2/status.json", page_url: "https://status.five9.com", type: "statuspage" },
   { id: "ujet", name: "UJET", tags: ["cx", "contact-center", "mobile", "ccaas", "saas"], status_url: "https://status.ujet.cx/api/v2/status.json", page_url: "https://status.ujet.cx", type: "statuspage" },
   { id: "calabrio", name: "Calabrio", tags: ["cx", "workforce-management", "quality-management", "contact-center", "saas"], status_url: "https://status.calabrio.com/api/v2/status.json", page_url: "https://status.calabrio.com", type: "statuspage" },
   { id: "verint", name: "Verint", tags: ["cx", "workforce-engagement", "analytics", "contact-center", "enterprise"], status_url: "https://status.verint.com/api/v2/status.json", page_url: "https://status.verint.com", type: "statuspage" },
-
-  // --- Field Service / Fleet Management ---
   { id: "verizon_connect", name: "Verizon Connect", tags: ["fleet-management", "gps-tracking", "telematics", "logistics", "saas"], status_url: "https://status.verizonconnect.com/api/v2/status.json", page_url: "https://status.verizonconnect.com", type: "statuspage" },
   { id: "motive_eld", name: "Motive", tags: ["fleet-management", "eld", "telematics", "trucking", "saas"], status_url: "https://status.gomotive.com/api/v2/status.json", page_url: "https://status.gomotive.com", type: "statuspage" },
-
-  // --- Supply Chain / ERP ---
   { id: "infor_erp", name: "Infor", tags: ["erp", "supply-chain", "enterprise", "manufacturing", "saas"], status_url: "https://status.infor.com/api/v2/status.json", page_url: "https://status.infor.com", type: "statuspage" },
   { id: "epicor", name: "Epicor", tags: ["erp", "manufacturing", "distribution", "enterprise", "saas"], status_url: "https://status.epicor.com/api/v2/status.json", page_url: "https://status.epicor.com", type: "statuspage" },
   { id: "acumatica", name: "Acumatica", tags: ["erp", "accounting", "distribution", "smb", "saas"], status_url: "https://status.acumatica.com/api/v2/status.json", page_url: "https://status.acumatica.com", type: "statuspage" },
   { id: "syspro", name: "SYSPRO", tags: ["erp", "manufacturing", "distribution", "mid-market", "saas"], status_url: "https://status.syspro.com/api/v2/status.json", page_url: "https://status.syspro.com", type: "statuspage" },
-
-  // --- Travel / Hospitality ---
   { id: "airbnb", name: "Airbnb", tags: ["travel", "hospitality", "marketplace", "consumer", "global"], status_url: "https://status.airbnb.com/api/v2/status.json", page_url: "https://status.airbnb.com", type: "statuspage" },
   { id: "expedia_partner", name: "Expedia Partner Solutions", tags: ["travel", "booking", "api", "enterprise", "saas"], status_url: "https://status.expediagroup.com/api/v2/status.json", page_url: "https://status.expediagroup.com", type: "statuspage" },
   { id: "sabre_hospitality", name: "Sabre Hospitality", tags: ["travel", "hospitality", "gds", "enterprise", "saas"], status_url: "https://status.sabre.com/api/v2/status.json", page_url: "https://status.sabre.com", type: "statuspage" },
@@ -5405,77 +3407,47 @@ const SERVICES: ServiceConfig[] = [
   { id: "cloudbeds", name: "Cloudbeds", tags: ["hospitality", "pms", "hotel", "property-management", "saas"], status_url: "https://status.cloudbeds.com/api/v2/status.json", page_url: "https://status.cloudbeds.com", type: "statuspage" },
   { id: "guestline", name: "Guestline", tags: ["hospitality", "pms", "hotel", "distribution", "saas"], status_url: "https://status.guestline.com/api/v2/status.json", page_url: "https://status.guestline.com", type: "statuspage" },
   { id: "siteminder", name: "SiteMinder", tags: ["hospitality", "channel-manager", "hotel", "distribution", "saas"], status_url: "https://status.siteminder.com/api/v2/status.json", page_url: "https://status.siteminder.com", type: "statuspage" },
-
-  // --- Microsoft Enterprise ---
   { id: "microsoft_365", name: "Microsoft 365", tags: ["productivity", "collaboration", "enterprise", "microsoft", "saas"], status_url: "https://status.office365.com/api/v2/status.json", page_url: "https://status.office365.com", type: "statuspage" },
-
-  // --- SEO / Content Tools ---
   { id: "semrush", name: "Semrush", tags: ["seo", "marketing", "analytics", "competitive-intelligence", "saas"], status_url: "https://status.semrush.com/api/v2/status.json", page_url: "https://status.semrush.com", type: "statuspage" },
   { id: "ahrefs", name: "Ahrefs", tags: ["seo", "backlinks", "keyword-research", "developer-tools", "saas"], status_url: "https://status.ahrefs.com/api/v2/status.json", page_url: "https://status.ahrefs.com", type: "statuspage" },
   { id: "moz_pro", name: "Moz Pro", tags: ["seo", "keyword-research", "backlinks", "analytics", "saas"], status_url: "https://status.moz.com/api/v2/status.json", page_url: "https://status.moz.com", type: "statuspage" },
   { id: "clearscope", name: "Clearscope", tags: ["seo", "content", "ai", "writing", "saas"], status_url: "https://status.clearscope.io/api/v2/status.json", page_url: "https://status.clearscope.io", type: "statuspage" },
   { id: "surfer_seo", name: "Surfer SEO", tags: ["seo", "content", "ai", "writing", "saas"], status_url: "https://status.surferseo.com/api/v2/status.json", page_url: "https://status.surferseo.com", type: "statuspage" },
-
-  // --- Reviews / Reputation ---
   { id: "g2_reviews", name: "G2", tags: ["reviews", "marketplace", "b2b", "saas", "data"], status_url: "https://status.g2.com/api/v2/status.json", page_url: "https://status.g2.com", type: "statuspage" },
   { id: "podium_local", name: "Podium", tags: ["reviews", "messaging", "local-business", "payments", "saas"], status_url: "https://status.podium.com/api/v2/status.json", page_url: "https://status.podium.com", type: "statuspage" },
-
-  // --- AI Writing Tools ---
   { id: "writesonic", name: "Writesonic", tags: ["ai", "writing", "content", "marketing", "saas"], status_url: "https://status.writesonic.com/api/v2/status.json", page_url: "https://status.writesonic.com", type: "statuspage" },
   { id: "copy_ai", name: "Copy.ai", tags: ["ai", "writing", "content", "marketing", "saas"], status_url: "https://status.copy.ai/api/v2/status.json", page_url: "https://status.copy.ai", type: "statuspage" },
   { id: "jasper_ai", name: "Jasper", tags: ["ai", "writing", "content", "marketing", "saas"], status_url: "https://status.jasper.ai/api/v2/status.json", page_url: "https://status.jasper.ai", type: "statuspage" },
   { id: "speechify", name: "Speechify", tags: ["ai", "text-to-speech", "accessibility", "productivity", "saas"], status_url: "https://status.speechify.com/api/v2/status.json", page_url: "https://status.speechify.com", type: "statuspage" },
   { id: "frase_io", name: "Frase", tags: ["seo", "content", "ai", "writing", "saas"], status_url: "https://status.frase.io/api/v2/status.json", page_url: "https://status.frase.io", type: "statuspage" },
-
-  // --- Podcasting ---
   { id: "buzzsprout", name: "Buzzsprout", tags: ["podcasting", "hosting", "distribution", "media", "saas"], status_url: "https://status.buzzsprout.com/api/v2/status.json", page_url: "https://status.buzzsprout.com", type: "statuspage" },
   { id: "transistor_fm", name: "Transistor", tags: ["podcasting", "hosting", "distribution", "media", "saas"], status_url: "https://status.transistor.fm/api/v2/status.json", page_url: "https://status.transistor.fm", type: "statuspage" },
   { id: "podbean", name: "Podbean", tags: ["podcasting", "hosting", "distribution", "media", "saas"], status_url: "https://status.podbean.com/api/v2/status.json", page_url: "https://status.podbean.com", type: "statuspage" },
   { id: "captivate_fm", name: "Captivate", tags: ["podcasting", "hosting", "analytics", "media", "saas"], status_url: "https://status.captivate.fm/api/v2/status.json", page_url: "https://status.captivate.fm", type: "statuspage" },
-
-  // --- Fintech / Lending ---
   { id: "blend_labs", name: "Blend", tags: ["fintech", "mortgage", "lending", "digital-banking", "saas"], status_url: "https://status.blend.com/api/v2/status.json", page_url: "https://status.blend.com", type: "statuspage" },
   { id: "finicity", name: "Finicity (Mastercard)", tags: ["fintech", "open-banking", "data", "api", "enterprise"], status_url: "https://status.finicity.com/api/v2/status.json", page_url: "https://status.finicity.com", type: "statuspage" },
   { id: "virtuous_crm", name: "Virtuous CRM", tags: ["nonprofit", "fundraising", "crm", "automation", "saas"], status_url: "https://status.virtuoussoftware.com/api/v2/status.json", page_url: "https://status.virtuoussoftware.com", type: "statuspage" },
-
-  // --- ABM / Sales Intelligence ---
   { id: "madison_logic", name: "Madison Logic", tags: ["marketing", "abm", "demand-generation", "b2b", "saas"], status_url: "https://status.madisonlogic.com/api/v2/status.json", page_url: "https://status.madisonlogic.com", type: "statuspage" },
   { id: "rollworks", name: "RollWorks", tags: ["marketing", "abm", "advertising", "b2b", "saas"], status_url: "https://status.rollworks.com/api/v2/status.json", page_url: "https://status.rollworks.com", type: "statuspage" },
   { id: "albacross", name: "Albacross", tags: ["marketing", "website-visitors", "b2b", "lead-generation", "saas"], status_url: "https://status.albacross.com/api/v2/status.json", page_url: "https://status.albacross.com", type: "statuspage" },
-
-  // --- e-Signature / Contracts ---
   { id: "yousign", name: "YouSign", tags: ["esignature", "documents", "contracts", "europe", "saas"], status_url: "https://status.yousign.com/api/v2/status.json", page_url: "https://status.yousign.com", type: "statuspage" },
   { id: "skribble", name: "Skribble", tags: ["esignature", "documents", "switzerland", "compliance", "saas"], status_url: "https://status.skribble.com/api/v2/status.json", page_url: "https://status.skribble.com", type: "statuspage" },
   { id: "signrequest", name: "SignRequest", tags: ["esignature", "documents", "smb", "api", "saas"], status_url: "https://status.signrequest.com/api/v2/status.json", page_url: "https://status.signrequest.com", type: "statuspage" },
-
-  // --- Customer Data Platform ---
   { id: "tealium", name: "Tealium", tags: ["data", "cdp", "marketing", "analytics", "enterprise"], status_url: "https://status.tealium.com/api/v2/status.json", page_url: "https://status.tealium.com", type: "statuspage" },
   { id: "exponea", name: "Bloomreach Engagement", tags: ["marketing", "cdp", "automation", "personalization", "saas"], status_url: "https://status.exponea.com/api/v2/status.json", page_url: "https://status.exponea.com", type: "statuspage" },
-
-  // --- Survey / Forms ---
   { id: "forsta", name: "Forsta (Confirmit)", tags: ["surveys", "market-research", "enterprise", "analytics", "saas"], status_url: "https://status.forsta.com/api/v2/status.json", page_url: "https://status.forsta.com", type: "statuspage" },
-
-  // --- Workforce / Scheduling ---
   { id: "humanity_scheduling", name: "Humanity", tags: ["workforce-management", "scheduling", "hr", "enterprise", "saas"], status_url: "https://status.humanity.com/api/v2/status.json", page_url: "https://status.humanity.com", type: "statuspage" },
   { id: "shiftboard", name: "Shiftboard", tags: ["workforce-management", "scheduling", "hr", "enterprise", "saas"], status_url: "https://status.shiftboard.com/api/v2/status.json", page_url: "https://status.shiftboard.com", type: "statuspage" },
   { id: "homebase_scheduling", name: "Homebase", tags: ["workforce-management", "scheduling", "hr", "small-business", "saas"], status_url: "https://status.joinhomebase.com/api/v2/status.json", page_url: "https://status.joinhomebase.com", type: "statuspage" },
-
-  // --- Accounting / Finance ---
   { id: "sage_intacct", name: "Sage Intacct", tags: ["finance", "accounting", "erp", "mid-market", "saas"], status_url: "https://status.sageintacct.com/api/v2/status.json", page_url: "https://status.sageintacct.com", type: "statuspage" },
   { id: "zoho_books", name: "Zoho Books", tags: ["accounting", "finance", "smb", "invoicing", "saas"], status_url: "https://status.zoho.com/api/v2/status.json", page_url: "https://status.zoho.com", type: "statuspage" },
-
-  // --- E-commerce Platforms ---
   { id: "prestashop", name: "PrestaShop", tags: ["ecommerce", "open-source", "smb", "saas", "marketplace"], status_url: "https://status.prestashop.com/api/v2/status.json", page_url: "https://status.prestashop.com", type: "statuspage" },
   { id: "lightspeed_retail", name: "Lightspeed Retail", tags: ["ecommerce", "pos", "retail", "omnichannel", "saas"], status_url: "https://status.lightspeedhq.com/api/v2/status.json", page_url: "https://status.lightspeedhq.com", type: "statuspage" },
   { id: "sellfy", name: "Sellfy", tags: ["ecommerce", "digital-products", "creator-economy", "smb", "saas"], status_url: "https://status.sellfy.com/api/v2/status.json", page_url: "https://status.sellfy.com", type: "statuspage" },
   { id: "payhip", name: "Payhip", tags: ["ecommerce", "digital-products", "creator-economy", "payments", "saas"], status_url: "https://status.payhip.com/api/v2/status.json", page_url: "https://status.payhip.com", type: "statuspage" },
-
-  // --- Developer Tools / CI-CD ---
   { id: "drone_ci", name: "Drone CI / Harness", tags: ["developer-tools", "ci-cd", "devops", "open-source", "saas"], status_url: "https://status.harness.io/api/v2/status.json", page_url: "https://status.harness.io", type: "statuspage" },
   { id: "percy_io", name: "Percy (Visual Testing)", tags: ["developer-tools", "testing", "visual-regression", "devops", "saas"], status_url: "https://status.percy.io/api/v2/status.json", page_url: "https://status.percy.io", type: "statuspage" },
   { id: "mabl_testing", name: "Mabl", tags: ["developer-tools", "testing", "automation", "ai", "saas"], status_url: "https://status.mabl.com/api/v2/status.json", page_url: "https://status.mabl.com", type: "statuspage" },
-
-  // --- Observability / APM ---
   { id: "honeycomb_io", name: "Honeycomb", tags: ["observability", "tracing", "developer-tools", "devops", "saas"], status_url: "https://status.honeycomb.io/api/v2/status.json", page_url: "https://status.honeycomb.io", type: "statuspage" },
   { id: "instana", name: "Instana (IBM)", tags: ["observability", "apm", "monitoring", "enterprise", "saas"], status_url: "https://status.instana.com/api/v2/status.json", page_url: "https://status.instana.com", type: "statuspage" },
   { id: "zoho_desk", name: "Zoho Desk", tags: ["cx", "helpdesk", "support", "smb", "saas"], status_url: "https://desk.status.zoho.com/api/v2/status.json", page_url: "https://desk.status.zoho.com", type: "statuspage" },
@@ -5490,20 +3462,16 @@ const SERVICES: ServiceConfig[] = [
   { id: "iubenda", name: "Iubenda", tags: ["privacy", "consent-management", "compliance", "gdpr", "saas"], status_url: "https://status.iubenda.com/api/v2/status.json", page_url: "https://status.iubenda.com", type: "statuspage" },
   { id: "cookieyes", name: "CookieYes", tags: ["privacy", "consent-management", "cookies", "gdpr", "saas"], status_url: "https://status.cookieyes.com/api/v2/status.json", page_url: "https://status.cookieyes.com", type: "statuspage" },
   { id: "cookiepro", name: "CookiePro by OneTrust", tags: ["privacy", "consent-management", "cookies", "gdpr", "saas"], status_url: "https://status.cookiepro.com/api/v2/status.json", page_url: "https://status.cookiepro.com", type: "statuspage" },
-  // Batch added tick 295 — 12 new live-verified services
   { id: "elementor", name: "Elementor", tags: ["wordpress", "page-builder", "website", "saas"], status_url: "https://status.elementor.com/api/v2/status.json", page_url: "https://status.elementor.com", type: "statuspage" },
   { id: "globalmeet", name: "GlobalMeet", tags: ["video-conferencing", "webinar", "meetings", "saas"], status_url: "https://status.globalmeet.com/api/v2/status.json", page_url: "https://status.globalmeet.com", type: "statuspage" },
-  { id: "encompass_scs", name: "Encompass Supply Chain Solutions", tags: ["supply-chain", "logistics", "enterprise", "saas"], status_url: "https://status.encompass.com/api/v2/status.json", page_url: "https://status.encompass.com", type: "statuspage" },
   { id: "nobl9", name: "Nobl9", tags: ["slo", "observability", "sre", "monitoring", "saas"], status_url: "https://status.nobl9.com/api/v2/status.json", page_url: "https://status.nobl9.com", type: "statuspage" },
   { id: "observe_ai", name: "Observe.AI", tags: ["contact-center", "ai", "voice-analytics", "enterprise", "saas"], status_url: "https://status.observe.ai/api/v2/status.json", page_url: "https://status.observe.ai", type: "statuspage" },
-  { id: "ptc_atlas", name: "PTC (Atlas)", tags: ["plm", "industrial-iot", "enterprise", "manufacturing", "saas"], status_url: "https://status.ptc.com/api/v2/status.json", page_url: "https://status.ptc.com", type: "statuspage" },
   { id: "prodly", name: "Prodly", tags: ["salesforce", "devops", "data-management", "release-management", "saas"], status_url: "https://status.prodly.co/api/v2/status.json", page_url: "https://status.prodly.co", type: "statuspage" },
   { id: "sequoia_benefits", name: "Sequoia", tags: ["hr", "benefits", "compensation", "enterprise", "saas"], status_url: "https://status.sequoia.com/api/v2/status.json", page_url: "https://status.sequoia.com", type: "statuspage" },
   { id: "alex_benefits", name: "Alex AI", tags: ["hr", "benefits", "ai", "decision-support", "saas"], status_url: "https://status.alex.com/api/v2/status.json", page_url: "https://status.alex.com", type: "statuspage" },
   { id: "ease_hcm", name: "Ease", tags: ["hr", "benefits", "administration", "smb", "saas"], status_url: "https://status.ease.com/api/v2/status.json", page_url: "https://status.ease.com", type: "statuspage" },
   { id: "pave_comp", name: "Pave", tags: ["compensation", "hr", "benchmarking", "planning", "saas"], status_url: "https://status.pave.com/api/v2/status.json", page_url: "https://status.pave.com", type: "statuspage" },
   { id: "monitaur", name: "Monitaur", tags: ["ai-governance", "mlops", "compliance", "enterprise", "saas"], status_url: "https://status.monitaur.ai/api/v2/status.json", page_url: "https://status.monitaur.ai", type: "statuspage" },
-  // Batch added tick 297 — 13 new live-verified services
   { id: "sync", name: "Sync.com", tags: ["cloud-storage", "file-sync", "privacy", "backup"], status_url: "https://status.sync.com/api/v2/status.json", page_url: "https://status.sync.com", type: "statuspage" },
   { id: "jottacloud", name: "Jottacloud", tags: ["cloud-storage", "file-sync", "backup", "norway"], status_url: "https://status.jottacloud.com/api/v2/status.json", page_url: "https://status.jottacloud.com", type: "statuspage" },
   { id: "firetext", name: "FireText", tags: ["sms", "messaging", "uk", "communications"], status_url: "https://status.firetext.co.uk/api/v2/status.json", page_url: "https://status.firetext.co.uk", type: "statuspage" },
@@ -5517,7 +3485,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "employmenthero", name: "Employment Hero", tags: ["hr", "payroll", "employee-management", "australia"], status_url: "https://status.employmenthero.com/api/v2/status.json", page_url: "https://status.employmenthero.com", type: "statuspage" },
   { id: "truecontext", name: "TrueContext", tags: ["field-service", "mobile-forms", "operations", "saas"], status_url: "https://status.truecontext.com/api/v2/status.json", page_url: "https://status.truecontext.com", type: "statuspage" },
   { id: "avionte", name: "Avionte", tags: ["staffing", "recruiting", "ats", "hr"], status_url: "https://status.avionte.com/api/v2/status.json", page_url: "https://status.avionte.com", type: "statuspage" },
-  // Batch added tick 299 — 12 new live-verified services
   { id: "examsoft", name: "ExamSoft", tags: ["edtech", "assessment", "exam", "education", "saas"], status_url: "https://status.examsoft.com/api/v2/status.json", page_url: "https://status.examsoft.com", type: "statuspage" },
   { id: "pixieset", name: "Pixieset", tags: ["photography", "gallery", "portfolio", "creative", "saas"], status_url: "https://status.pixieset.com/api/v2/status.json", page_url: "https://status.pixieset.com", type: "statuspage" },
   { id: "ada_support", name: "Ada", tags: ["ai", "customer-support", "chatbot", "automation", "saas"], status_url: "https://status.ada.support/api/v2/status.json", page_url: "https://status.ada.support", type: "statuspage" },
@@ -5530,7 +3497,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "campspot", name: "Campspot", tags: ["camping", "outdoor", "reservation", "hospitality", "saas"], status_url: "https://status.campspot.com/api/v2/status.json", page_url: "https://status.campspot.com", type: "statuspage" },
   { id: "parkwhiz", name: "ParkWhiz", tags: ["parking", "mobility", "reservations", "saas"], status_url: "https://status.parkwhiz.com/api/v2/status.json", page_url: "https://status.parkwhiz.com", type: "statuspage" },
   { id: "parkmobile", name: "ParkMobile", tags: ["parking", "mobility", "payments", "saas"], status_url: "https://status.parkmobile.io/api/v2/status.json", page_url: "https://status.parkmobile.io", type: "statuspage" },
-  // Batch added tick 301 — 12 new live-verified services
   { id: "heymarket", name: "Heymarket", tags: ["sms", "business-texting", "messaging", "crm", "saas"], status_url: "https://status.heymarket.com/api/v2/status.json", page_url: "https://status.heymarket.com", type: "statuspage" },
   { id: "fortnox", name: "Fortnox", tags: ["accounting", "finance", "erp", "sweden", "smb"], status_url: "https://status.fortnox.se/api/v2/status.json", page_url: "https://status.fortnox.se", type: "statuspage" },
   { id: "zid_sa", name: "Zid", tags: ["e-commerce", "retail", "saudi-arabia", "mena", "saas"], status_url: "https://status.zid.sa/api/v2/status.json", page_url: "https://status.zid.sa", type: "statuspage" },
@@ -5543,54 +3509,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "podscribe", name: "Podscribe", tags: ["podcast", "analytics", "attribution", "advertising", "saas"], status_url: "https://status.podscribe.com/api/v2/status.json", page_url: "https://status.podscribe.com", type: "statuspage" },
   { id: "explo", name: "Explo", tags: ["analytics", "embedded-analytics", "dashboards", "developer-tools", "saas"], status_url: "https://status.explo.co/api/v2/status.json", page_url: "https://status.explo.co", type: "statuspage" },
   { id: "notability", name: "Notability", tags: ["note-taking", "productivity", "ios", "education", "saas"], status_url: "https://status.notability.com/api/v2/status.json", page_url: "https://status.notability.com", type: "statuspage" },
-  // Batch added tick 303 — 46 new live-verified services
-  { id: "tabnine", name: "Tabnine", tags: ["ai", "developer-tools", "code-completion", "ide"], status_url: "https://status.tabnine.com/api/v2/status.json", page_url: "https://status.tabnine.com", type: "statuspage" },
-  { id: "sourcegraph", name: "Sourcegraph", tags: ["developer-tools", "code-search", "devtools", "saas"], status_url: "https://sourcegraphstatus.com/api/v2/status.json", page_url: "https://sourcegraphstatus.com", type: "statuspage" },
-  { id: "retool", name: "Retool", tags: ["developer-tools", "low-code", "internal-tools", "saas"], status_url: "https://status.retool.com/api/v2/status.json", page_url: "https://status.retool.com", type: "statuspage" },
-  { id: "webflow", name: "Webflow", tags: ["website-builder", "cms", "no-code", "hosting", "saas"], status_url: "https://status.webflow.com/api/v2/status.json", page_url: "https://status.webflow.com", type: "statuspage" },
-  { id: "miro", name: "Miro", tags: ["collaboration", "whiteboard", "design", "productivity", "saas"], status_url: "https://status.miro.com/api/v2/status.json", page_url: "https://status.miro.com", type: "statuspage" },
-  { id: "coda", name: "Coda", tags: ["docs", "collaboration", "no-code", "productivity", "saas"], status_url: "https://status.coda.io/api/v2/status.json", page_url: "https://status.coda.io", type: "statuspage" },
-  { id: "clerk", name: "Clerk", tags: ["auth", "identity", "authentication", "developer-tools", "saas"], status_url: "https://status.clerk.com/api/v2/status.json", page_url: "https://status.clerk.com", type: "statuspage" },
-  { id: "loops", name: "Loops", tags: ["email", "marketing", "saas", "developer-tools"], status_url: "https://status.loops.so/api/v2/status.json", page_url: "https://status.loops.so", type: "statuspage" },
-  { id: "snyk", name: "Snyk", tags: ["security", "devtools", "vulnerability-scanning", "developer-tools"], status_url: "https://status.snyk.io/api/v2/status.json", page_url: "https://status.snyk.io", type: "statuspage" },
-  { id: "bunny_net", name: "Bunny.net", tags: ["cdn", "edge", "hosting", "media", "performance"], status_url: "https://status.bunny.net/api/v2/status.json", page_url: "https://status.bunny.net", type: "statuspage" },
-  { id: "linode", name: "Linode (Akamai)", tags: ["cloud", "iaas", "vps", "hosting", "akamai"], status_url: "https://status.linode.com/api/v2/status.json", page_url: "https://status.linode.com", type: "statuspage" },
-  { id: "courier", name: "Courier", tags: ["notifications", "messaging", "email", "sms", "developer-tools"], status_url: "https://status.courier.com/api/v2/status.json", page_url: "https://status.courier.com", type: "statuspage" },
-  { id: "ably", name: "Ably", tags: ["realtime", "messaging", "pubsub", "websockets", "developer-tools"], status_url: "https://status.ably.com/api/v2/status.json", page_url: "https://status.ably.com", type: "statuspage" },
-  { id: "pusher", name: "Pusher", tags: ["realtime", "websockets", "messaging", "pubsub", "developer-tools"], status_url: "https://status.pusher.com/api/v2/status.json", page_url: "https://status.pusher.com", type: "statuspage" },
-  { id: "tinybird", name: "Tinybird", tags: ["analytics", "data", "real-time", "developer-tools", "saas"], status_url: "https://status.tinybird.co/api/v2/status.json", page_url: "https://status.tinybird.co", type: "statuspage" },
-  { id: "hex", name: "Hex", tags: ["analytics", "data-science", "notebooks", "collaboration", "saas"], status_url: "https://status.hex.tech/api/v2/status.json", page_url: "https://status.hex.tech", type: "statuspage" },
-  { id: "fivetran", name: "Fivetran", tags: ["data", "etl", "data-integration", "pipelines", "saas"], status_url: "https://status.fivetran.com/api/v2/status.json", page_url: "https://status.fivetran.com", type: "statuspage" },
-  { id: "workos", name: "WorkOS", tags: ["auth", "sso", "enterprise", "identity", "developer-tools"], status_url: "https://status.workos.com/api/v2/status.json", page_url: "https://status.workos.com", type: "statuspage" },
-  { id: "getstream", name: "Stream", tags: ["chat", "feeds", "realtime", "messaging", "developer-tools"], status_url: "https://status.getstream.io/api/v2/status.json", page_url: "https://status.getstream.io", type: "statuspage" },
-  { id: "pinecone", name: "Pinecone", tags: ["vector-database", "ai", "machine-learning", "search", "saas"], status_url: "https://status.pinecone.io/api/v2/status.json", page_url: "https://status.pinecone.io", type: "statuspage" },
-  { id: "stonly", name: "Stonly", tags: ["knowledge-base", "customer-success", "saas", "support"], status_url: "https://status.stonly.com/api/v2/status.json", page_url: "https://status.stonly.com", type: "statuspage" },
-  { id: "gainsight", name: "Gainsight", tags: ["customer-success", "crm", "enterprise", "saas"], status_url: "https://status.gainsight.com/api/v2/status.json", page_url: "https://status.gainsight.com", type: "statuspage" },
-  { id: "elevenlabs", name: "ElevenLabs", tags: ["ai", "voice", "tts", "text-to-speech", "api"], status_url: "https://status.elevenlabs.io/api/v2/status.json", page_url: "https://status.elevenlabs.io", type: "statuspage" },
-  { id: "assemblyai", name: "AssemblyAI", tags: ["ai", "speech-to-text", "transcription", "api", "nlp"], status_url: "https://status.assemblyai.com/api/v2/status.json", page_url: "https://status.assemblyai.com", type: "statuspage" },
-  { id: "deepgram", name: "Deepgram", tags: ["ai", "speech-to-text", "transcription", "api", "voice"], status_url: "https://status.deepgram.com/api/v2/status.json", page_url: "https://status.deepgram.com", type: "statuspage" },
-  { id: "speechmatics", name: "Speechmatics", tags: ["ai", "speech-to-text", "transcription", "api", "voice"], status_url: "https://status.speechmatics.com/api/v2/status.json", page_url: "https://status.speechmatics.com", type: "statuspage" },
-  { id: "baseten", name: "Baseten", tags: ["ai", "ml-deployment", "inference", "developer-tools", "saas"], status_url: "https://status.baseten.co/api/v2/status.json", page_url: "https://status.baseten.co", type: "statuspage" },
-  { id: "lightning_ai", name: "Lightning AI", tags: ["ai", "ml-training", "gpu", "developer-tools", "saas"], status_url: "https://status.lightning.ai/api/v2/status.json", page_url: "https://status.lightning.ai", type: "statuspage" },
-  { id: "stability_ai", name: "Stability AI", tags: ["ai", "image-generation", "diffusion", "api", "llm"], status_url: "https://status.stability.ai/api/v2/status.json", page_url: "https://status.stability.ai", type: "statuspage" },
-  { id: "convex", name: "Convex", tags: ["database", "backend", "serverless", "realtime", "developer-tools"], status_url: "https://status.convex.dev/api/v2/status.json", page_url: "https://status.convex.dev", type: "statuspage" },
-  { id: "upstash", name: "Upstash", tags: ["redis", "database", "serverless", "edge", "developer-tools"], status_url: "https://status.upstash.com/api/v2/status.json", page_url: "https://status.upstash.com", type: "statuspage" },
-  { id: "inngest", name: "Inngest", tags: ["background-jobs", "workflows", "serverless", "developer-tools", "saas"], status_url: "https://status.inngest.com/api/v2/status.json", page_url: "https://status.inngest.com", type: "statuspage" },
-  { id: "bitrise", name: "Bitrise", tags: ["ci-cd", "mobile", "devops", "developer-tools", "saas"], status_url: "https://status.bitrise.io/api/v2/status.json", page_url: "https://status.bitrise.io", type: "statuspage" },
-  { id: "harness", name: "Harness", tags: ["ci-cd", "devops", "deployment", "developer-tools", "saas"], status_url: "https://status.harness.io/api/v2/status.json", page_url: "https://status.harness.io", type: "statuspage" },
-  { id: "launchdarkly", name: "LaunchDarkly", tags: ["feature-flags", "deployment", "developer-tools", "saas", "devops"], status_url: "https://status.launchdarkly.com/api/v2/status.json", page_url: "https://status.launchdarkly.com", type: "statuspage" },
-  { id: "coralogix", name: "Coralogix", tags: ["observability", "logging", "monitoring", "security", "saas"], status_url: "https://status.coralogix.com/api/v2/status.json", page_url: "https://status.coralogix.com", type: "statuspage" },
-  { id: "logz_io", name: "Logz.io", tags: ["observability", "logging", "monitoring", "elk", "saas"], status_url: "https://status.logz.io/api/v2/status.json", page_url: "https://status.logz.io", type: "statuspage" },
-  { id: "honeycomb", name: "Honeycomb", tags: ["observability", "distributed-tracing", "monitoring", "developer-tools"], status_url: "https://status.honeycomb.io/api/v2/status.json", page_url: "https://status.honeycomb.io", type: "statuspage" },
-  { id: "lightstep", name: "Lightstep", tags: ["observability", "distributed-tracing", "monitoring", "apm"], status_url: "https://status.lightstep.com/api/v2/status.json", page_url: "https://status.lightstep.com", type: "statuspage" },
-  { id: "lumigo", name: "Lumigo", tags: ["observability", "serverless", "aws-lambda", "monitoring", "saas"], status_url: "https://status.lumigo.io/api/v2/status.json", page_url: "https://status.lumigo.io", type: "statuspage" },
-  { id: "axiom", name: "Axiom", tags: ["observability", "logging", "analytics", "developer-tools", "saas"], status_url: "https://status.axiom.co/api/v2/status.json", page_url: "https://status.axiom.co", type: "statuspage" },
-  { id: "kustomer", name: "Kustomer", tags: ["customer-support", "crm", "helpdesk", "saas", "enterprise"], status_url: "https://status.kustomer.com/api/v2/status.json", page_url: "https://status.kustomer.com", type: "statuspage" },
-  { id: "kayako", name: "Kayako", tags: ["customer-support", "helpdesk", "live-chat", "saas"], status_url: "https://status.kayako.com/api/v2/status.json", page_url: "https://status.kayako.com", type: "statuspage" },
-  { id: "gorgias", name: "Gorgias", tags: ["customer-support", "helpdesk", "e-commerce", "saas"], status_url: "https://status.gorgias.com/api/v2/status.json", page_url: "https://status.gorgias.com", type: "statuspage" },
-  { id: "okendo", name: "Okendo", tags: ["reviews", "e-commerce", "shopify", "saas", "marketing"], status_url: "https://status.okendo.io/api/v2/status.json", page_url: "https://status.okendo.io", type: "statuspage" },
-  { id: "yotpo", name: "Yotpo", tags: ["reviews", "loyalty", "e-commerce", "marketing", "saas"], status_url: "https://status.yotpo.com/api/v2/status.json", page_url: "https://status.yotpo.com", type: "statuspage" },
-  // Batch added tick 305 — 11 new live-verified services
   { id: "fluxx", name: "Fluxx", tags: ["grants", "nonprofit", "philanthropy", "saas", "enterprise"], status_url: "https://status.fluxx.io/api/v2/status.json", page_url: "https://status.fluxx.io", type: "statuspage" },
   { id: "ebsco", name: "EBSCO", tags: ["research", "academic", "library", "databases", "information-services"], status_url: "https://status.ebsco.com/api/v2/status.json", page_url: "https://status.ebsco.com", type: "statuspage" },
   { id: "engagebay", name: "EngageBay", tags: ["crm", "marketing", "email", "automation", "saas"], status_url: "https://engagebay.statuspage.io/api/v2/status.json", page_url: "https://engagebay.statuspage.io", type: "statuspage" },
@@ -5614,7 +3532,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "qubole", name: "Qubole", tags: ["big-data", "cloud-data-platform", "analytics", "ai", "saas"], status_url: "https://status.qubole.com/api/v2/status.json", page_url: "https://status.qubole.com", type: "statuspage" },
   { id: "xe", name: "XE", tags: ["currency", "forex", "exchange-rates", "finance", "api"], status_url: "https://status.xe.com/api/v2/status.json", page_url: "https://status.xe.com", type: "statuspage" },
   { id: "openexchangerates", name: "Open Exchange Rates", tags: ["currency", "forex", "exchange-rates", "api", "finance"], status_url: "https://status.openexchangerates.org/api/v2/status.json", page_url: "https://status.openexchangerates.org", type: "statuspage" },
-  // Batch added tick 309 — 10 new live-verified services
   { id: "practice_panther", name: "PracticePanther", tags: ["legal", "law-practice", "case-management", "billing", "saas"], status_url: "https://status.practicepanther.com/api/v2/status.json", page_url: "https://status.practicepanther.com", type: "statuspage" },
   { id: "viant", name: "Viant", tags: ["adtech", "dsp", "programmatic", "advertising", "saas"], status_url: "https://status.viantinc.com/api/v2/status.json", page_url: "https://status.viantinc.com", type: "statuspage" },
   { id: "shootproof", name: "ShootProof", tags: ["photography", "gallery", "client-portal", "contracts", "saas"], status_url: "https://status.shootproof.com/api/v2/status.json", page_url: "https://status.shootproof.com", type: "statuspage" },
@@ -5625,7 +3542,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "sellbrite", name: "Sellbrite", tags: ["e-commerce", "multichannel", "inventory", "amazon", "saas"], status_url: "https://status.sellbrite.com/api/v2/status.json", page_url: "https://status.sellbrite.com", type: "statuspage" },
   { id: "finale_inventory", name: "Finale Inventory", tags: ["inventory", "warehouse", "e-commerce", "smb", "saas"], status_url: "https://status.finaleinventory.com/api/v2/status.json", page_url: "https://status.finaleinventory.com", type: "statuspage" },
   { id: "cloud_elements", name: "Cloud Elements", tags: ["api-integration", "ipaas", "middleware", "developer-tools", "saas"], status_url: "https://status.cloud-elements.com/api/v2/status.json", page_url: "https://status.cloud-elements.com", type: "statuspage" },
-  // Batch added tick 312 — 11 new live-verified services
   { id: "wave_mobile", name: "Wave Mobile Money", tags: ["payments", "mobile-money", "africa", "fintech", "saas"], status_url: "https://status.wave.com/api/v2/status.json", page_url: "https://status.wave.com", type: "statuspage" },
   { id: "upvest", name: "Upvest", tags: ["fintech", "investment-api", "securities", "europe", "api"], status_url: "https://status.upvest.co/api/v2/status.json", page_url: "https://status.upvest.co", type: "statuspage" },
   { id: "figshare", name: "Figshare", tags: ["research", "data-repository", "academic", "open-science", "saas"], status_url: "https://status.figshare.com/api/v2/status.json", page_url: "https://status.figshare.com", type: "statuspage" },
@@ -5648,152 +3564,77 @@ const SERVICES: ServiceConfig[] = [
   { id: "ziflow", name: "Ziflow", tags: ["creative-review", "approval", "proofing", "marketing", "saas"], status_url: "https://status.ziflow.com/api/v2/status.json", page_url: "https://status.ziflow.com", type: "statuspage" },
   { id: "lytho", name: "Lytho", tags: ["creative-ops", "brand-management", "dam", "marketing", "saas"], status_url: "https://status.lytho.com/api/v2/status.json", page_url: "https://status.lytho.com", type: "statuspage" },
   { id: "perion", name: "Perion Network", tags: ["adtech", "advertising", "digital-media", "publisher", "saas"], status_url: "https://status.perion.com/api/v2/status.json", page_url: "https://status.perion.com", type: "statuspage" },
-  // FastPix — video infrastructure API platform for building streaming applications
   { id: "fastpix", name: "FastPix", tags: ["video", "streaming", "media", "api", "developer-tools"], status_url: "https://fastpix.statuspage.io/api/v2/status.json", page_url: "https://fastpix.statuspage.io", type: "statuspage" },
-  // Neptune.ai — ML experiment tracking and model registry platform
-  { id: "neptune_ai", name: "Neptune.ai", tags: ["mlops", "ml", "experiment-tracking", "ai", "developer-tools"], status_url: "https://neptune.statuspage.io/api/v2/status.json", page_url: "https://neptune.statuspage.io", type: "statuspage" },
-  // Agora — real-time voice, video, and live interactive streaming API
   { id: "agora", name: "Agora", tags: ["video", "voice", "rtc", "streaming", "api"], status_url: "https://agora.instatus.com/api/v2/summary.json", page_url: "https://agora.instatus.com", type: "betterstack" },
-  // Zeabur — cloud PaaS for deploying and scaling applications
   { id: "zeabur", name: "Zeabur", tags: ["hosting", "paas", "deployment", "cloud", "developer-tools"], status_url: "https://zeabur.instatus.com/api/v2/summary.json", page_url: "https://zeabur.instatus.com", type: "betterstack" },
-  // Mercury — banking platform built for startups and tech companies
   { id: "mercury", name: "Mercury", tags: ["banking", "fintech", "startup", "payments", "saas"], status_url: "https://mercury.instatus.com/api/v2/summary.json", page_url: "https://mercury.instatus.com", type: "betterstack" },
-  // Oracle Cloud — enterprise cloud infrastructure and SaaS from Oracle
-  { id: "oracle_cloud", name: "Oracle Cloud", tags: ["cloud", "infrastructure", "enterprise", "database", "saas"], status_url: "https://oracle.instatus.com/api/v2/summary.json", page_url: "https://oracle.instatus.com", type: "betterstack" },
-  // DreamHost — web hosting and domain services provider
   { id: "dreamhost", name: "DreamHost", tags: ["hosting", "web-hosting", "domain", "cloud", "saas"], status_url: "https://dreamhost.instatus.com/api/v2/summary.json", page_url: "https://dreamhost.instatus.com", type: "betterstack" },
-  // Namecheap — domain registrar and web hosting services
   { id: "namecheap", name: "Namecheap", tags: ["domain", "hosting", "dns", "ssl", "registrar"], status_url: "https://namecheap.instatus.com/api/v2/summary.json", page_url: "https://namecheap.instatus.com", type: "betterstack" },
-  // jsDelivr — free CDN for open-source npm and GitHub packages
   { id: "jsdelivr", name: "jsDelivr", tags: ["cdn", "open-source", "javascript", "npm", "developer-tools"], status_url: "https://jsdelivr.instatus.com/api/v2/summary.json", page_url: "https://jsdelivr.instatus.com", type: "betterstack" },
-  // Hetzner — German cloud and dedicated server provider
   { id: "hetzner", name: "Hetzner", tags: ["cloud", "hosting", "servers", "infrastructure", "iaas"], status_url: "https://hetzner.instatus.com/api/v2/summary.json", page_url: "https://hetzner.instatus.com", type: "betterstack" },
-  // Replit — online IDE and collaborative coding environment with AI coding assistant
   { id: "replit", name: "Replit", tags: ["ide", "cloud", "developer-tools", "coding", "education"], status_url: "https://replit.instatus.com/api/v2/summary.json", page_url: "https://replit.instatus.com", type: "betterstack" },
-  // Glitch — collaborative web app coding and hosting platform
   { id: "glitch", name: "Glitch", tags: ["hosting", "developer-tools", "coding", "collaboration", "saas"], status_url: "https://glitch.instatus.com/api/v2/summary.json", page_url: "https://glitch.instatus.com", type: "betterstack" },
-  // Windmill — open-source developer platform for workflows, scripts, and internal tools
   { id: "windmill", name: "Windmill", tags: ["workflow", "automation", "developer-tools", "internal-tools", "saas"], status_url: "https://windmill.instatus.com/api/v2/summary.json", page_url: "https://windmill.instatus.com", type: "betterstack" },
-  // Drift — conversational marketing and sales platform (acquired by Salesloft)
   { id: "drift", name: "Drift", tags: ["chat", "marketing", "sales", "conversational", "saas"], status_url: "https://drift.instatus.com/api/v2/summary.json", page_url: "https://drift.instatus.com", type: "betterstack" },
-  // Descope — no-code customer identity and authentication platform
   { id: "descope", name: "Descope", tags: ["auth", "identity", "ciam", "no-code", "developer-tools"], status_url: "https://descope.instatus.com/api/v2/summary.json", page_url: "https://descope.instatus.com", type: "betterstack" },
-  // Poe — AI chat platform by Quora with access to multiple LLM models
-  { id: "poe", name: "Poe", tags: ["ai", "llm", "chat", "saas"], status_url: "https://status.poe.com/api/v2/status.json", page_url: "https://status.poe.com", type: "statuspage" },
-  // Socket — open-source supply chain security for npm and other package ecosystems
-  { id: "socket_dev", name: "Socket", tags: ["security", "supply-chain", "developer-tools", "api"], status_url: "https://status.socket.dev/api/v2/status.json", page_url: "https://status.socket.dev", type: "statuspage" },
-  // Apiiro — code risk platform for application security posture management
   { id: "apiiro", name: "Apiiro", tags: ["security", "appsec", "code-risk", "developer-tools"], status_url: "https://status.apiiro.com/api/v2/status.json", page_url: "https://status.apiiro.com", type: "statuspage" },
-  // AutoFi — embedded vehicle financing platform for dealerships
   { id: "autofi", name: "AutoFi", tags: ["fintech", "automotive", "financing", "saas"], status_url: "https://status.autofi.com/api/v2/status.json", page_url: "https://status.autofi.com", type: "statuspage" },
-  // Justuno — e-commerce conversion optimization and pop-up marketing platform
   { id: "justuno", name: "Justuno", tags: ["e-commerce", "marketing", "conversion", "saas"], status_url: "https://justuno.statuspage.io/api/v2/status.json", page_url: "https://justuno.statuspage.io", type: "statuspage" },
-  // Latch — smart access control and building entry system for residential and commercial
   { id: "latch", name: "Latch", tags: ["iot", "access-control", "smart-building", "saas"], status_url: "https://status.latch.com/api/v2/status.json", page_url: "https://status.latch.com", type: "statuspage" },
-  // Castlight Health — employee health benefits navigation and transparency platform
   { id: "castlight_health", name: "Castlight Health", tags: ["healthcare", "benefits", "hr", "saas"], status_url: "https://status.castlighthealth.com/api/v2/status.json", page_url: "https://status.castlighthealth.com", type: "statuspage" },
-  // Crusoe Cloud — sustainable AI cloud computing powered by flared natural gas energy
   { id: "crusoe_cloud", name: "Crusoe Cloud", tags: ["cloud", "ai", "gpu", "infrastructure", "iaas"], status_url: "https://status.crusoecloud.com/api/v2/status.json", page_url: "https://status.crusoecloud.com", type: "statuspage" },
-  // ArcSite — field service and construction drawing/estimation mobile platform
   { id: "arcsite", name: "ArcSite", tags: ["construction", "field-service", "mobile", "saas"], status_url: "https://status.arcsite.com/api/v2/status.json", page_url: "https://status.arcsite.com", type: "statuspage" },
-  // Super — publish Notion pages as websites with custom domains and SEO
   { id: "super_so", name: "Super", tags: ["website-builder", "notion", "hosting", "saas"], status_url: "https://super.instatus.com/api/v2/summary.json", page_url: "https://super.instatus.com", type: "betterstack" },
-  // Flatfile — data import and onboarding platform for SaaS products
   { id: "flatfile", name: "Flatfile", tags: ["data-import", "etl", "developer-tools", "saas"], status_url: "https://status.flatfile.com/api/v2/status.json", page_url: "https://status.flatfile.com", type: "statuspage" },
-  // OneSchema — AI-powered CSV import and data onboarding for SaaS
   { id: "oneschema", name: "OneSchema", tags: ["data-import", "csv", "developer-tools", "saas"], status_url: "https://status.oneschema.co/api/v2/status.json", page_url: "https://status.oneschema.co", type: "statuspage" },
-  // NetBird — open-source WireGuard-based secure peer-to-peer overlay network
   { id: "netbird", name: "NetBird", tags: ["vpn", "networking", "security", "zero-trust", "infrastructure"], status_url: "https://status.netbird.io/api/v2/status.json", page_url: "https://status.netbird.io", type: "statuspage" },
-  // Novu — open-source notification infrastructure for developers (email, SMS, push, chat)
   { id: "novu", name: "Novu", tags: ["notifications", "email", "sms", "push", "developer-tools"], status_url: "https://novu.instatus.com/api/v2/summary.json", page_url: "https://novu.instatus.com", type: "betterstack" },
-  // Laravel Cloud — official managed cloud hosting platform for Laravel PHP applications
   { id: "laravel_cloud", name: "Laravel Cloud", tags: ["hosting", "php", "paas", "laravel", "developer-tools"], status_url: "https://status.laravel.cloud/api/v2/status.json", page_url: "https://status.laravel.cloud", type: "statuspage" },
-  // Qualified.io — technical assessment and coding interview platform for engineering teams
   { id: "qualified_io", name: "Qualified.io", tags: ["recruiting", "technical-interview", "assessment", "developer-tools", "saas"], status_url: "https://status.qualified.io/api/v2/status.json", page_url: "https://status.qualified.io", type: "statuspage" },
-  // Zencoder AI — JetBrains AI coding assistant for IDEs (IntelliJ, PyCharm, etc.)
   { id: "zencoder_ai", name: "Zencoder AI", tags: ["ai", "ide", "code-completion", "developer-tools", "jetbrains"], status_url: "https://status.zencoder.ai/api/v2/status.json", page_url: "https://status.zencoder.ai", type: "statuspage" },
-  // GOV.UK — UK government publishing platform serving official government content
   { id: "gov_uk", name: "GOV.UK", tags: ["government", "uk", "publishing", "digital-services"], status_url: "https://status.publishing.service.gov.uk/api/v2/status.json", page_url: "https://status.publishing.service.gov.uk", type: "statuspage" },
-  // GOV.UK Notify — UK government notification service for sending emails, SMS, and letters
   { id: "govuk_notify", name: "GOV.UK Notify", tags: ["government", "uk", "notifications", "email", "sms"], status_url: "https://status.notifications.service.gov.uk/api/v2/status.json", page_url: "https://status.notifications.service.gov.uk", type: "statuspage" },
-  // GOV.UK Pay — UK government payment service for taking online payments
   { id: "govuk_pay", name: "GOV.UK Pay", tags: ["government", "uk", "payments", "digital-services"], status_url: "https://payments.statuspage.io/api/v2/status.json", page_url: "https://payments.statuspage.io", type: "statuspage" },
-  // StoreFeeder — UK-based multichannel e-commerce management and inventory platform
   { id: "storefeeder", name: "StoreFeeder", tags: ["e-commerce", "multichannel", "inventory", "uk", "saas"], status_url: "https://status.storefeeder.com/api/v2/status.json", page_url: "https://status.storefeeder.com", type: "statuspage" },
-  // Fathom Analytics — privacy-first web analytics platform (GDPR/CCPA compliant, no cookie banners)
   { id: "fathom_analytics", name: "Fathom Analytics", tags: ["analytics", "web-analytics", "privacy", "saas"], status_url: "https://status.fathomhq.com/api/v2/status.json", page_url: "https://status.fathomhq.com", type: "statuspage" },
-  // Woopra — customer analytics and journey tracking platform for product and marketing teams
   { id: "woopra", name: "Woopra", tags: ["analytics", "customer-analytics", "product-analytics", "saas"], status_url: "https://status.woopra.com/api/v2/status.json", page_url: "https://status.woopra.com", type: "statuspage" },
-  // Marsello — loyalty, marketing and analytics platform for retail and e-commerce brands
   { id: "marsello", name: "Marsello", tags: ["loyalty", "e-commerce", "marketing", "retail", "saas"], status_url: "https://status.marsello.com/api/v2/status.json", page_url: "https://status.marsello.com", type: "statuspage" },
-  // Convoso — cloud contact center platform with predictive dialer for sales and collections teams
   { id: "convoso", name: "Convoso", tags: ["contact-center", "dialer", "sales", "telephony", "saas"], status_url: "https://status.convoso.com/api/v2/status.json", page_url: "https://status.convoso.com", type: "statuspage" },
-  // Luma Health — patient communication and engagement platform for healthcare providers
   { id: "luma_health", name: "Luma Health", tags: ["healthcare", "patient-communication", "telehealth", "saas"], status_url: "https://status.lumahealth.io/api/v2/status.json", page_url: "https://status.lumahealth.io", type: "statuspage" },
-  // Helpwise — shared inbox platform for customer support via email, SMS, WhatsApp, and live chat
   { id: "helpwise", name: "Helpwise", tags: ["customer-support", "shared-inbox", "help-desk", "saas"], status_url: "https://status.helpwise.io/api/v2/status.json", page_url: "https://status.helpwise.io", type: "statuspage" },
-  // Pylon — B2B customer support platform with Slack-native support for post-sales teams
   { id: "pylon_support", name: "Pylon", tags: ["customer-support", "b2b", "saas", "slack"], status_url: "https://status.usepylon.com/api/v2/status.json", page_url: "https://status.usepylon.com", type: "statuspage" },
-  // OnlineOrNot — website and API uptime monitoring with public status pages
   { id: "onlineornot", name: "OnlineOrNot", tags: ["monitoring", "uptime", "status-page", "saas"], status_url: "https://status.onlineornot.com/api/v2/status.json", page_url: "https://status.onlineornot.com", type: "statuspage" },
-  // Aplos — cloud-based accounting and fund accounting software for nonprofits and churches
   { id: "aplos", name: "Aplos", tags: ["accounting", "nonprofit", "fund-accounting", "saas"], status_url: "https://status.aplos.com/api/v2/status.json", page_url: "https://status.aplos.com", type: "statuspage" },
-  // Propel Software — product lifecycle management (PLM) and quality management platform built on Salesforce
   { id: "propel_software", name: "Propel Software", tags: ["plm", "quality-management", "manufacturing", "salesforce", "saas"], status_url: "https://status.propelsoftware.com/api/v2/status.json", page_url: "https://status.propelsoftware.com", type: "statuspage" },
-  // Plecto — real-time sales performance dashboard and gamification platform for revenue teams
   { id: "plecto", name: "Plecto", tags: ["sales", "dashboard", "gamification", "analytics", "saas"], status_url: "https://status.plecto.com/api/v2/status.json", page_url: "https://status.plecto.com", type: "statuspage" },
-  // Riverside.fm — professional remote podcast and video recording studio
   { id: "riverside_fm", name: "Riverside.fm", tags: ["podcast", "recording", "video", "media", "saas"], status_url: "https://status.riverside.fm/api/v2/status.json", page_url: "https://status.riverside.fm", type: "statuspage" },
-  // Crossref — scholarly metadata infrastructure and DOI registration agency
   { id: "crossref", name: "Crossref", tags: ["academic", "research", "metadata", "doi", "open-science"], status_url: "https://status.crossref.org/api/v2/status.json", page_url: "https://status.crossref.org", type: "statuspage" },
-  // Phrase — localization and translation management platform
   { id: "phrase_com", name: "Phrase", tags: ["localization", "translation", "l10n", "i18n", "saas"], status_url: "https://status.phrase.com/api/v2/status.json", page_url: "https://status.phrase.com", type: "statuspage" },
-  // VTS — commercial real estate leasing and asset management platform
   { id: "vts", name: "VTS", tags: ["real-estate", "commercial", "leasing", "asset-management", "saas"], status_url: "https://status.vts.com/api/v2/status.json", page_url: "https://status.vts.com", type: "statuspage" },
-  // ParentSquare — unified school-home communication platform for K-12 districts
   { id: "parentsquare", name: "ParentSquare", tags: ["edtech", "k12", "school-communication", "parent-engagement", "saas"], status_url: "https://status.parentsquare.com/api/v2/status.json", page_url: "https://status.parentsquare.com", type: "statuspage" },
-  // Postscript — SMS and MMS marketing automation platform for e-commerce
   { id: "postscript_io", name: "Postscript", tags: ["sms-marketing", "e-commerce", "marketing-automation", "shopify", "saas"], status_url: "https://status.postscript.io/api/v2/status.json", page_url: "https://status.postscript.io", type: "statuspage" },
-  // Ring — Amazon smart home security cameras and doorbells cloud platform
   { id: "ring", name: "Ring", tags: ["smart-home", "security", "iot", "amazon", "consumer"], status_url: "https://status.ring.com/api/v2/status.json", page_url: "https://status.ring.com", type: "statuspage" },
-  // Sense — home energy monitoring platform (real-time electricity usage)
   { id: "sense", name: "Sense", tags: ["energy", "smart-home", "iot", "monitoring", "consumer"], status_url: "https://status.sense.com/api/v2/status.json", page_url: "https://status.sense.com", type: "statuspage" },
-  // BigTime Software — time tracking and project management for professional services firms
   { id: "bigtime", name: "BigTime Software", tags: ["time-tracking", "project-management", "professional-services", "billing", "saas"], status_url: "https://status.bigtime.net/api/v2/status.json", page_url: "https://status.bigtime.net", type: "statuspage" },
-  // People Data Labs — B2B data enrichment API for person and company data
   { id: "peopledatalabs", name: "People Data Labs", tags: ["data-enrichment", "b2b-data", "person-data", "api", "developer-tools"], status_url: "https://status.peopledatalabs.com/api/v2/status.json", page_url: "https://status.peopledatalabs.com", type: "statuspage" },
-  // Goldcast — video-first B2B event and webinar platform
   { id: "goldcast_io", name: "Goldcast", tags: ["webinar", "virtual-events", "b2b", "video", "saas"], status_url: "https://status.goldcast.io/api/v2/status.json", page_url: "https://status.goldcast.io", type: "statuspage" },
-  // Storylane — interactive product demo and sales enablement platform
   { id: "storylane_io", name: "Storylane", tags: ["sales-enablement", "product-demo", "interactive", "b2b", "saas"], status_url: "https://status.storylane.io/api/v2/status.json", page_url: "https://status.storylane.io", type: "statuspage" },
-  // Fathom Video — AI meeting recorder and note-taking assistant (distinct from Fathom Analytics)
   { id: "fathom_video", name: "Fathom Video", tags: ["ai", "meeting", "recording", "transcription", "productivity", "saas"], status_url: "https://status.fathom.video/api/v2/status.json", page_url: "https://status.fathom.video", type: "statuspage" },
-  // Exa AI — AI-powered neural search API for web and enterprise data
   { id: "exa_ai", name: "Exa AI", tags: ["ai", "search", "api", "developer-tools", "llm"], status_url: "https://status.exa.ai/api/v2/summary.json", page_url: "https://status.exa.ai", type: "betterstack" },
-  // DataCite — persistent identifier (DOI) registration and metadata infrastructure for research
   { id: "datacite", name: "DataCite", tags: ["academic", "research", "doi", "metadata", "open-science"], status_url: "https://status.datacite.org/api/v2/status.json", page_url: "https://status.datacite.org", type: "statuspage" },
-  // Bonterra — nonprofit technology platform (merged EveryAction, NGP VAN, and others)
   { id: "bonterra", name: "Bonterra", tags: ["nonprofit", "crm", "fundraising", "political", "saas"], status_url: "https://status.bonterratech.com/api/v2/status.json", page_url: "https://status.bonterratech.com", type: "statuspage" },
-  // IVANS — insurance industry connectivity and data exchange platform
   { id: "ivans", name: "IVANS", tags: ["insurance", "connectivity", "data-exchange", "fintech", "enterprise"], status_url: "https://status.ivans.com/api/v2/status.json", page_url: "https://status.ivans.com", type: "statuspage" },
-  // SalesRabbit — door-to-door and field sales platform with route optimization
   { id: "salesrabbit", name: "SalesRabbit", tags: ["sales", "field-sales", "crm", "mobile", "saas"], status_url: "https://status.salesrabbit.com/api/v2/status.json", page_url: "https://status.salesrabbit.com", type: "statuspage" },
-  // fraud.net — enterprise AI-powered fraud detection and prevention platform
   { id: "fraud_net", name: "fraud.net", tags: ["fraud", "security", "ai", "fintech", "enterprise"], status_url: "https://status.fraud.net/api/v2/status.json", page_url: "https://status.fraud.net", type: "statuspage" },
-  // Conekta — Mexican payment gateway and fintech platform for LATAM
   { id: "conekta", name: "Conekta", tags: ["payments", "fintech", "latam", "mexico", "api"], status_url: "https://status.conekta.com/api/v2/status.json", page_url: "https://status.conekta.com", type: "statuspage" },
-  // TapClicks — unified marketing analytics and reporting platform
   { id: "tapclicks", name: "TapClicks", tags: ["analytics", "marketing", "reporting", "data", "saas"], status_url: "https://status.tapclicks.com/api/v2/status.json", page_url: "https://status.tapclicks.com", type: "statuspage" },
-  // SuperOffice — Scandinavian CRM platform for B2B sales, marketing, and customer service
   { id: "superoffice", name: "SuperOffice", tags: ["crm", "sales", "marketing", "b2b", "nordic", "saas"], status_url: "https://status.superoffice.com/api/v2/status.json", page_url: "https://status.superoffice.com", type: "statuspage" },
-  // New services added tick 330
   { id: "homerun", name: "Homerun", tags: ["ats", "recruiting", "employer-brand", "hr", "european"], status_url: "https://status.homerun.co/api/v2/status.json", page_url: "https://status.homerun.co", type: "statuspage" },
   { id: "commure", name: "Commure", tags: ["healthcare", "clinical-workflows", "ehr", "api", "saas"], status_url: "https://status.commure.com/api/v2/status.json", page_url: "https://status.commure.com", type: "statuspage" },
   { id: "updox", name: "Updox", tags: ["healthcare", "messaging", "fax", "patient-communications", "saas"], status_url: "https://status.updox.com/api/v2/status.json", page_url: "https://status.updox.com", type: "statuspage" },
   { id: "patch_io", name: "Patch", tags: ["climate", "carbon-offsets", "sustainability", "api", "developer-tools"], status_url: "https://status.patch.io/api/v2/status.json", page_url: "https://status.patch.io", type: "statuspage" },
   { id: "paymentworks", name: "PaymentWorks", tags: ["payments", "fintech", "supplier-management", "vendor-verification", "b2b"], status_url: "https://status.paymentworks.com/api/v2/status.json", page_url: "https://status.paymentworks.com", type: "statuspage" },
   { id: "hotglue", name: "hotglue", tags: ["integration", "etl", "embedded-integrations", "developer-tools", "saas"], status_url: "https://status.hotglue.xyz/api/v2/status.json", page_url: "https://status.hotglue.xyz", type: "statuspage" },
-  // New services added tick 332
   { id: "teamdynamix", name: "TeamDynamix", tags: ["itsm", "it-service-management", "enterprise-service-management", "higher-education", "saas"], status_url: "https://status.teamdynamix.com/api/v2/status.json", page_url: "https://status.teamdynamix.com", type: "statuspage" },
   { id: "solaris_baas", name: "Solaris", tags: ["banking-as-a-service", "baas", "fintech", "europe", "api"], status_url: "https://status.solarisgroup.com/api/v2/status.json", page_url: "https://status.solarisgroup.com", type: "statuspage" },
   { id: "balance_bnpl", name: "Balance", tags: ["b2b-payments", "bnpl", "fintech", "trade-credit", "api"], status_url: "https://status.getbalance.com/api/v2/status.json", page_url: "https://status.getbalance.com", type: "statuspage" },
@@ -5807,11 +3648,8 @@ const SERVICES: ServiceConfig[] = [
   { id: "propertymeld", name: "Property Meld", tags: ["proptech", "property-management", "maintenance", "real-estate", "saas"], status_url: "https://status.propertymeld.com/api/v2/status.json", page_url: "https://status.propertymeld.com", type: "statuspage" },
   { id: "rentspree", name: "RentSpree", tags: ["proptech", "rental", "tenant-screening", "real-estate", "saas"], status_url: "https://status.rentspree.com/api/v2/status.json", page_url: "https://status.rentspree.com", type: "statuspage" },
   { id: "trakstar_hire", name: "Trakstar Hire", tags: ["ats", "recruiting", "hr", "applicant-tracking", "saas"], status_url: "https://status.hire.trakstar.com/api/v2/status.json", page_url: "https://status.hire.trakstar.com", type: "statuspage" },
-  { id: "spark_hire", name: "Spark Hire", tags: ["ats", "video-interviews", "recruiting", "hr", "saas"], status_url: "https://status.comeet.com/api/v2/status.json", page_url: "https://status.comeet.com", type: "statuspage" },
   { id: "workstep", name: "WorkStep", tags: ["hr", "frontline-workers", "retention", "workforce", "saas"], status_url: "https://status.workstep.com/api/v2/status.json", page_url: "https://status.workstep.com", type: "statuspage" },
   { id: "freckle", name: "Freckle", tags: ["time-tracking", "productivity", "team", "billing", "saas"], status_url: "https://status.freckle.com/api/v2/status.json", page_url: "https://status.freckle.com", type: "statuspage" },
-  { id: "newforma_konekt", name: "Newforma Konekt", tags: ["construction", "bim", "project-information-management", "architecture", "saas"], status_url: "https://status.bimtrack.co/api/v2/status.json", page_url: "https://status.bimtrack.co", type: "statuspage" },
-  { id: "global_e", name: "Global-e", tags: ["e-commerce", "cross-border", "international", "checkout", "saas"], status_url: "https://status.global-e.com/api/v2/status.json", page_url: "https://status.global-e.com", type: "statuspage" },
   { id: "unlayer", name: "Unlayer", tags: ["email-editor", "drag-and-drop", "marketing", "embed", "saas"], status_url: "https://status.unlayer.com/api/v2/status.json", page_url: "https://status.unlayer.com", type: "statuspage" },
   { id: "clara", name: "Clara", tags: ["scheduling", "ai", "meetings", "assistant", "productivity"], status_url: "https://status.clara.com/api/v2/status.json", page_url: "https://status.clara.com", type: "statuspage" },
   { id: "lexer", name: "Lexer", tags: ["cdp", "customer-data", "retail", "analytics", "saas"], status_url: "https://status.lexer.io/api/v2/status.json", page_url: "https://status.lexer.io", type: "statuspage" },
@@ -5847,9 +3685,7 @@ const SERVICES: ServiceConfig[] = [
   { id: "warrant", name: "Warrant", tags: ["authorization", "permissions", "security", "saas"], status_url: "https://warrant.statuspage.io/api/v2/status.json", page_url: "https://warrant.statuspage.io", type: "statuspage" },
   { id: "bokio", name: "Bokio", tags: ["accounting", "finance", "smb", "saas"], status_url: "https://status.bokio.se/api/v2/status.json", page_url: "https://status.bokio.se", type: "statuspage" },
   { id: "tallie", name: "Tallie", tags: ["expense-management", "finance", "travel", "enterprise"], status_url: "https://tallie.statuspage.io/api/v2/status.json", page_url: "https://tallie.statuspage.io", type: "statuspage" },
-  // New services added tick 340
   { id: "spinupwp", name: "SpinupWP", tags: ["wordpress", "hosting", "server-management", "devtools", "saas"], status_url: "https://status.spinupwp.com/api/v2/status.json", page_url: "https://status.spinupwp.com", type: "statuspage" },
-  { id: "count_co", name: "Count", tags: ["analytics", "data", "collaboration", "bi", "saas"], status_url: "https://status.count.co/api/v2/status.json", page_url: "https://status.count.co", type: "statuspage" },
   { id: "boxyhq", name: "BoxyHQ", tags: ["auth", "saml", "sso", "enterprise", "developer-tools"], status_url: "https://boxyhq.statuspage.io/api/v2/status.json", page_url: "https://boxyhq.statuspage.io", type: "statuspage" },
   { id: "opensrs", name: "OpenSRS", tags: ["domain-registrar", "dns", "reseller", "hosting", "infrastructure"], status_url: "https://status.opensrs.com/api/v2/status.json", page_url: "https://status.opensrs.com", type: "statuspage" },
   { id: "column_bank", name: "Column", tags: ["banking-as-a-service", "baas", "fintech", "payments", "api"], status_url: "https://status.column.com/api/v2/status.json", page_url: "https://status.column.com", type: "statuspage" },
@@ -5858,7 +3694,6 @@ const SERVICES: ServiceConfig[] = [
   { id: "lyssna", name: "Lyssna", tags: ["ux-research", "usability-testing", "design", "user-research", "saas"], status_url: "https://status.lyssna.com/api/v2/status.json", page_url: "https://status.lyssna.com", type: "statuspage" },
   { id: "metoro", name: "Metoro", tags: ["observability", "monitoring", "kubernetes", "cloud", "developer-tools"], status_url: "https://status.metoro.io/api/v2/status.json", page_url: "https://status.metoro.io", type: "statuspage" },
   { id: "assently", name: "Assently", tags: ["e-signature", "documents", "nordic", "compliance", "saas"], status_url: "https://status.assently.com/api/v2/status.json", page_url: "https://status.assently.com", type: "statuspage" },
-  // Tick 342 additions
   { id: "koyeb", name: "Koyeb", tags: ["hosting", "paas", "serverless", "deployment", "cloud"], status_url: "https://koyeb.instatus.com/api/v2/summary.json", page_url: "https://status.koyeb.com", type: "betterstack" },
   { id: "typesense", name: "Typesense", tags: ["search", "database", "open-source", "developer-tools", "saas"], status_url: "https://typesense.instatus.com/api/v2/summary.json", page_url: "https://cloud.typesense.org", type: "betterstack" },
   { id: "grafbase", name: "Grafbase", tags: ["graphql", "edge", "api", "caching", "developer-tools"], status_url: "https://grafbase.instatus.com/api/v2/summary.json", page_url: "https://grafbase.com", type: "betterstack" },
@@ -5871,12 +3706,10 @@ const SERVICES: ServiceConfig[] = [
   { id: "cerbos", name: "Cerbos Cloud", tags: ["authorization", "permissions", "policy", "developer-tools", "security"], status_url: "https://cerbos.instatus.com/api/v2/summary.json", page_url: "https://status.cerbos.cloud", type: "betterstack" },
   { id: "hopsworks", name: "Hopsworks", tags: ["ml", "feature-store", "mlops", "data", "saas"], status_url: "https://hopsworks.statuspage.io/api/v2/status.json", page_url: "https://hopsworks.statuspage.io", type: "statuspage" },
   { id: "umami", name: "Umami Cloud", tags: ["analytics", "privacy", "open-source", "web", "saas"], status_url: "https://umami.statuspage.io/api/v2/status.json", page_url: "https://umami.statuspage.io", type: "statuspage" },
-  { id: "exa_ai", name: "Exa", tags: ["search", "ai", "api", "developer-tools", "web"], status_url: "https://exa.instatus.com/api/v2/summary.json", page_url: "https://exa.ai", type: "betterstack" },
   { id: "serper", name: "Serper", tags: ["search", "google", "api", "developer-tools", "ai"], status_url: "https://serper.instatus.com/api/v2/summary.json", page_url: "https://serper.dev", type: "betterstack" },
   { id: "coder", name: "Coder", tags: ["developer-tools", "cloud-ide", "remote-dev", "kubernetes", "saas"], status_url: "https://coder.instatus.com/api/v2/summary.json", page_url: "https://coder.com", type: "betterstack" },
   { id: "codestory", name: "CodeStory (Aide)", tags: ["ai", "ide", "developer-tools", "coding-assistant", "saas"], status_url: "https://codestory.statuspage.io/api/v2/status.json", page_url: "https://codestory.statuspage.io", type: "statuspage" },
   { id: "atlantis_tf", name: "Atlantis", tags: ["terraform", "infrastructure", "gitops", "devops", "open-source"], status_url: "https://atlantis.instatus.com/api/v2/summary.json", page_url: "https://www.runatlantis.io", type: "betterstack" },
-  // Tick 346 additions
   { id: "razorpay", name: "Razorpay", tags: ["payments", "fintech", "india", "api", "gateway"], status_url: "https://razorpay.instatus.com/api/v2/summary.json", page_url: "https://razorpay.com", type: "betterstack" },
   { id: "gcore", name: "Gcore", tags: ["cdn", "cloud", "infrastructure", "networking", "edge"], status_url: "https://gcore.instatus.com/api/v2/summary.json", page_url: "https://gcore.com", type: "betterstack" },
   { id: "porkbun", name: "Porkbun", tags: ["dns", "domains", "registrar", "hosting", "saas"], status_url: "https://porkbun.instatus.com/api/v2/summary.json", page_url: "https://porkbun.com", type: "betterstack" },
@@ -5887,18 +3720,13 @@ const SERVICES: ServiceConfig[] = [
   { id: "zabbix", name: "Zabbix", tags: ["monitoring", "open-source", "infrastructure", "observability", "network"], status_url: "https://zabbix.statuspage.io/api/v2/status.json", page_url: "https://zabbix.statuspage.io", type: "statuspage" },
   { id: "outreach_io", name: "Outreach", tags: ["sales", "sales-engagement", "crm", "email", "saas"], status_url: "https://outreach.instatus.com/api/v2/summary.json", page_url: "https://outreach.io", type: "betterstack" },
   { id: "bambootech", name: "Bamboo", tags: ["hospitality", "hotel", "revenue-management", "ai", "saas"], status_url: "https://bamboo.statuspage.io/api/v2/status.json", page_url: "https://status.bambootech.ai", type: "statuspage" },
-  // Tick 349 additions
   { id: "marvel_app", name: "Marvel App", tags: ["design", "prototyping", "wireframing", "ux", "developer-tools"], status_url: "https://marvelapp.statuspage.io/api/v2/status.json", page_url: "https://marvelapp.statuspage.io", type: "statuspage" },
   { id: "lucid_software", name: "Lucid Software", tags: ["diagramming", "visual-collaboration", "design", "productivity", "saas"], status_url: "https://status.lucid.co/api/v2/status.json", page_url: "https://status.lucid.co", type: "statuspage" },
-  { id: "magic_eden", name: "Magic Eden", tags: ["nft", "marketplace", "solana", "web3", "crypto"], status_url: "https://status.magiceden.io/api/v2/status.json", page_url: "https://status.magiceden.io", type: "statuspage" },
   { id: "papercut_software", name: "PaperCut Software", tags: ["print-management", "printing", "enterprise", "saas"], status_url: "https://status.papercut.com/api/v2/status.json", page_url: "https://status.papercut.com", type: "statuspage" },
-  { id: "spire_maritime", name: "Spire Maritime", tags: ["satellite", "maritime", "ais", "data", "analytics"], status_url: "https://status.spire.com/api/v2/status.json", page_url: "https://status.spire.com", type: "statuspage" },
   { id: "pitney_bowes", name: "Pitney Bowes", tags: ["shipping", "mailing", "e-commerce", "data", "enterprise"], status_url: "https://status.pitneybowes.com/api/v2/status.json", page_url: "https://status.pitneybowes.com", type: "statuspage" },
-  { id: "agility_cms", name: "Agility CMS", tags: ["cms", "headless-cms", "content-management", "saas", "api"], status_url: "https://status.agilitycms.com/api/v2/status.json", page_url: "https://status.agilitycms.com", type: "statuspage" },
   { id: "butter_cms", name: "ButterCMS", tags: ["cms", "headless-cms", "content-management", "api", "saas"], status_url: "https://status.buttercms.com/api/v2/status.json", page_url: "https://status.buttercms.com", type: "statuspage" },
   { id: "beatstars", name: "BeatStars", tags: ["music", "marketplace", "beats", "producers", "creator-economy"], status_url: "https://status.beatstars.com/api/v2/status.json", page_url: "https://status.beatstars.com", type: "statuspage" },
   { id: "lexisnexis_risk", name: "LexisNexis Risk Solutions", tags: ["data-analytics", "risk", "identity", "compliance", "enterprise"], status_url: "https://status.lexisnexisrisk.com/api/v2/status.json", page_url: "https://status.lexisnexisrisk.com", type: "statuspage" },
-  { id: "limble_cmms", name: "Limble CMMS", tags: ["maintenance", "cmms", "facilities", "asset-management", "saas"], status_url: "https://status.limblecmms.com/api/v2/status.json", page_url: "https://status.limblecmms.com", type: "statuspage" },
   { id: "fiix_software", name: "Fiix Software", tags: ["maintenance", "cmms", "asset-management", "facilities", "saas"], status_url: "https://status.fiixsoftware.com/api/v2/status.json", page_url: "https://status.fiixsoftware.com", type: "statuspage" },
   { id: "periscope_data", name: "Periscope Data", tags: ["analytics", "bi", "data", "sql", "saas"], status_url: "https://status.periscopedata.com/api/v2/status.json", page_url: "https://status.periscopedata.com", type: "statuspage" },
   { id: "coterie_insurance", name: "Coterie Insurance", tags: ["insurance", "insurtech", "smb", "api", "saas"], status_url: "https://status.coterieinsurance.com/api/v2/status.json", page_url: "https://status.coterieinsurance.com", type: "statuspage" },
@@ -5910,264 +3738,121 @@ const SERVICES: ServiceConfig[] = [
   { id: "armorcode", name: "ArmorCode", tags: ["security", "aspm", "devsecops", "appsec", "saas"], status_url: "https://status.armorcode.com/api/v2/status.json", page_url: "https://status.armorcode.com", type: "statuspage" },
   { id: "velocity_global", name: "Velocity Global", tags: ["hr", "eor", "employer-of-record", "global-payroll", "saas"], status_url: "https://status.velocityglobal.com/api/v2/status.json", page_url: "https://status.velocityglobal.com", type: "statuspage" },
   { id: "capdesk", name: "Capdesk (Carta Europe)", tags: ["fintech", "cap-table", "equity", "europe", "saas"], status_url: "https://status.capdesk.com/api/v2/status.json", page_url: "https://status.capdesk.com", type: "statuspage" },
-  // Sylvera — carbon credit ratings, analytics, and climate risk intelligence platform
   { id: "sylvera", name: "Sylvera", tags: ["climate", "carbon", "esg", "sustainability", "analytics"], status_url: "https://status.sylvera.com/api/v2/status.json", page_url: "https://status.sylvera.com", type: "statuspage" },
-  // TraceLink — pharmaceutical supply chain serialization and track-and-trace compliance network
   { id: "tracelink", name: "TraceLink", tags: ["pharma", "supply-chain", "compliance", "serialization", "enterprise"], status_url: "https://tracelink.statuspage.io/api/v2/status.json", page_url: "https://tracelink.statuspage.io", type: "statuspage" },
-  // Vellum — LLM development platform for building, testing, and deploying AI workflows
-  { id: "vellum", name: "Vellum", tags: ["ai", "llm", "developer-tools", "workflows", "saas"], status_url: "https://status.vellum.ai/api/v2/status.json", page_url: "https://status.vellum.ai", type: "statuspage" },
-  // Instawork — on-demand staffing marketplace connecting businesses with hourly workers
   { id: "instawork", name: "Instawork", tags: ["staffing", "hr", "marketplace", "gig-economy", "saas"], status_url: "https://status.instawork.com/api/v2/status.json", page_url: "https://status.instawork.com", type: "statuspage" },
-  // Heron Data — AI-powered financial transaction data enrichment and categorization API
   { id: "heron_data", name: "Heron Data", tags: ["fintech", "ai", "data-enrichment", "banking", "api"], status_url: "https://status.herondata.io/api/v2/status.json", page_url: "https://status.herondata.io", type: "statuspage" },
-  // PocketSmith — personal finance forecasting and budgeting platform with bank feed integration
   { id: "pocketsmith", name: "PocketSmith", tags: ["fintech", "personal-finance", "budgeting", "forecasting", "saas"], status_url: "https://status.pocketsmith.com/api/v2/status.json", page_url: "https://status.pocketsmith.com", type: "statuspage" },
-  // Castor — data catalog and data lineage platform for modern data teams (European)
   { id: "castor_dc", name: "Castor", tags: ["data", "catalog", "lineage", "governance", "saas"], status_url: "https://www.castorstatus.com/api/v2/status.json", page_url: "https://www.castorstatus.com", type: "statuspage" },
-  // Orbit — developer community growth and engagement analytics platform
   { id: "orbit", name: "Orbit", tags: ["community", "developer-relations", "analytics", "engagement", "saas"], status_url: "https://orbit.statuspage.io/api/v2/status.json", page_url: "https://orbit.statuspage.io", type: "statuspage" },
-  // Test IO — crowdsourced software testing platform connecting companies with global QA testers
-  { id: "test_io", name: "Test IO", tags: ["testing", "qa", "crowdtesting", "quality-assurance", "saas"], status_url: "https://testio.statuspage.io/api/v2/status.json", page_url: "https://status.test.io", type: "statuspage" },
-  // Ockam — secure communication and identity platform for distributed IoT and cloud-native apps
   { id: "ockam", name: "Ockam", tags: ["security", "iot", "identity", "infrastructure", "open-source"], status_url: "https://ockam.statuspage.io/api/v2/status.json", page_url: "https://status.ockam.io", type: "statuspage" },
-  // Fountain — high-volume hourly worker recruiting platform for frontline hiring
   { id: "fountain_hr", name: "Fountain", tags: ["hr", "recruiting", "hourly-workers", "frontline", "saas"], status_url: "https://status.fountain.com/api/v2/status.json", page_url: "https://status.fountain.com", type: "statuspage" },
-  // Together AI — cloud inference API for open-source LLMs (Llama, Mistral, etc.) at scale
   { id: "togethercomputer", name: "Together AI", tags: ["ai", "llm", "inference", "open-source", "api"], status_url: "https://togethercomputer.statuspage.io/api/v2/status.json", page_url: "https://togethercomputer.statuspage.io", type: "statuspage" },
-  // AI21 Labs — enterprise NLP platform with Jurassic LLMs and Wordtune writing assistant
   { id: "ai21labs", name: "AI21 Labs", tags: ["ai", "llm", "nlp", "api", "enterprise"], status_url: "https://status.ai21.com/api/v2/status.json", page_url: "https://status.ai21.com", type: "statuspage" },
-  // HiBob — modern HR platform (Bob) for mid-size companies with payroll, time and attendance
   { id: "bob_hr", name: "HiBob", tags: ["hr", "hris", "payroll", "people-ops", "saas"], status_url: "https://hibob.statuspage.io/api/v2/status.json", page_url: "https://status.hibob.io", type: "statuspage" },
-  // Cortex — internal developer portal and service catalog platform for platform engineering
   { id: "cortex_io", name: "Cortex", tags: ["devtools", "platform-engineering", "service-catalog", "developer-portal", "saas"], status_url: "https://status.cortex.io/api/v2/status.json", page_url: "https://status.cortex.io", type: "statuspage" },
-  // Mux — video infrastructure API for streaming, encoding, and data analytics at scale
   { id: "mux_video", name: "Mux", tags: ["video", "streaming", "api", "infrastructure", "developer-tools"], status_url: "https://status.mux.com/api/v2/status.json", page_url: "https://status.mux.com", type: "statuspage" },
-  // Mapbox — mapping, navigation, and location data APIs for web and mobile applications
   { id: "mapbox_status", name: "Mapbox", tags: ["maps", "geospatial", "location", "navigation", "api"], status_url: "https://status.mapbox.com/api/v2/status.json", page_url: "https://status.mapbox.com", type: "statuspage" },
-  // Weave — patient communications and engagement platform for dental and medical practices
   { id: "weave_hc", name: "Weave", tags: ["healthcare", "patient-communication", "dental", "practice-management", "saas"], status_url: "https://status.getweave.com/api/v2/status.json", page_url: "https://status.getweave.com", type: "statuspage" },
-  // Arduino Cloud — IoT cloud platform for connecting, managing and monitoring Arduino devices
   { id: "arduino_iot", name: "Arduino Cloud", tags: ["iot", "cloud", "arduino", "embedded", "maker"], status_url: "https://status.arduino.cc/api/v2/status.json", page_url: "https://status.arduino.cc", type: "statuspage" },
-  // balena — fleet management platform for deploying and managing Linux-based IoT devices
   { id: "balena_io", name: "balena", tags: ["iot", "fleet-management", "linux", "containers", "infrastructure"], status_url: "https://status.balena.io/api/v2/status.json", page_url: "https://status.balena.io", type: "statuspage" },
-  // Palo Alto Networks Cloud Services — NGFW, Prisma Cloud, and security platform status
   { id: "prisma_cloud", name: "Palo Alto Networks", tags: ["security", "cloud-security", "ngfw", "prisma", "enterprise"], status_url: "https://status.paloaltonetworks.com/api/v2/status.json", page_url: "https://status.paloaltonetworks.com", type: "statuspage" },
-  // Cortex XDR — Palo Alto Networks extended detection and response (XDR) platform
   { id: "cortex_xdr", name: "Cortex XDR", tags: ["security", "xdr", "endpoint", "detection-response", "enterprise"], status_url: "https://cortex.statuspage.io/api/v2/status.json", page_url: "https://cortex.statuspage.io", type: "statuspage" },
-  // Lumen5 — AI-powered video content creation platform for marketing
   { id: "lumen5", name: "Lumen5", tags: ["video", "content-creation", "ai", "marketing", "saas"], status_url: "https://status.lumen5.com/api/v2/status.json", page_url: "https://status.lumen5.com", type: "statuspage" },
-  // Gupshup — conversational messaging API platform for WhatsApp, SMS, and chatbots
   { id: "gupshup", name: "Gupshup", tags: ["messaging", "whatsapp", "sms", "chatbot", "api"], status_url: "https://gupshup.statuspage.io/api/v2/status.json", page_url: "https://gupshup.statuspage.io", type: "statuspage" },
-  // Podium — customer interaction platform for reviews, messaging, and payments
   { id: "podium", name: "Podium", tags: ["reviews", "messaging", "customer-experience", "reputation", "saas"], status_url: "https://status.podium.com/api/v2/summary.json", page_url: "https://status.podium.com", type: "betterstack" },
-  // Fibery — connected work platform combining project management, knowledge base, and automation
   { id: "fibery", name: "Fibery", tags: ["project-management", "collaboration", "knowledge-base", "automation", "saas"], status_url: "https://status.fibery.io/api/v2/summary.json", page_url: "https://status.fibery.io", type: "betterstack" },
-  // Embrace — mobile observability and crash reporting platform for iOS and Android
   { id: "embrace_io", name: "Embrace", tags: ["mobile", "observability", "crash-reporting", "performance", "developer-tools"], status_url: "https://status.embrace.io/api/v2/status.json", page_url: "https://status.embrace.io", type: "statuspage" },
-  // Codemagic — CI/CD platform purpose-built for mobile apps (Flutter, iOS, Android, React Native)
   { id: "codemagic", name: "Codemagic", tags: ["ci-cd", "mobile", "flutter", "ios", "android"], status_url: "https://status.codemagic.io/api/v2/summary.json", page_url: "https://status.codemagic.io", type: "betterstack" },
-  // Appcircle — mobile CI/CD and testing platform for iOS and Android teams
   { id: "appcircle", name: "Appcircle", tags: ["ci-cd", "mobile", "ios", "android", "developer-tools"], status_url: "https://status.appcircle.io/api/v2/summary.json", page_url: "https://status.appcircle.io", type: "betterstack" },
-  // Restream — multistreaming platform for live broadcasting to multiple platforms simultaneously
   { id: "restream", name: "Restream", tags: ["live-streaming", "multistream", "video", "broadcast", "saas"], status_url: "https://status.restream.io/api/v2/summary.json", page_url: "https://status.restream.io", type: "betterstack" },
-  // Retrium — retrospective meeting and team health tool for agile teams
   { id: "retrium", name: "Retrium", tags: ["retrospectives", "agile", "team-collaboration", "meetings", "saas"], status_url: "https://status.retrium.com/api/v2/status.json", page_url: "https://status.retrium.com", type: "statuspage" },
-  // Rive — interactive animation and motion design platform for apps and games
   { id: "rive_app", name: "Rive", tags: ["animation", "motion-design", "interactive", "design", "developer-tools"], status_url: "https://status.rive.app/api/v2/summary.json", page_url: "https://status.rive.app", type: "betterstack" },
-  // Askable — user research recruitment and participant management platform
   { id: "askable", name: "Askable", tags: ["user-research", "ux-research", "participant-recruitment", "testing", "saas"], status_url: "https://status.askable.com/api/v2/status.json", page_url: "https://status.askable.com", type: "statuspage" },
-  // Ikeono — SMS/text messaging platform for auto dealerships and service centers
   { id: "ikeono", name: "Ikeono", tags: ["sms", "messaging", "automotive", "dealership", "saas"], status_url: "https://status.ikeono.com/api/v2/status.json", page_url: "https://status.ikeono.com", type: "statuspage" },
-  // CompanyCam — photo documentation and visual communication platform for contractors
   { id: "companycam", name: "CompanyCam", tags: ["construction", "field-service", "photos", "documentation", "saas"], status_url: "https://status.companycam.com/api/v2/status.json", page_url: "https://status.companycam.com", type: "statuspage" },
-  // Courier — multi-channel notification routing and delivery API platform
-  { id: "courier", name: "Courier", tags: ["notifications", "messaging", "api", "multi-channel", "developer-tools"], status_url: "https://status.courier.com/api/v2/status.json", page_url: "https://status.courier.com", type: "statuspage" },
-  // Knock — developer-first notification infrastructure for product teams
-  { id: "knock", name: "Knock", tags: ["notifications", "infrastructure", "api", "developer-tools", "saas"], status_url: "https://status.knock.app/api/v2/status.json", page_url: "https://status.knock.app", type: "statuspage" },
-  // Batch — mobile engagement platform for push notifications, in-app messaging, and CRM
-  { id: "batch", name: "Batch", tags: ["push-notifications", "mobile", "engagement", "crm", "marketing"], status_url: "https://status.batch.com/api/v2/status.json", page_url: "https://status.batch.com", type: "statuspage" },
-  // Samepage — team collaboration platform combining chat, tasks, and file sharing
   { id: "samepage_io", name: "Samepage", tags: ["collaboration", "team-chat", "project-management", "productivity", "saas"], status_url: "https://status.samepage.io/api/v2/status.json", page_url: "https://status.samepage.io", type: "statuspage" },
-  // Port — internal developer portal and platform engineering service catalog
   { id: "getport_io", name: "Port", tags: ["developer-portal", "platform-engineering", "service-catalog", "devtools", "saas"], status_url: "https://status.getport.io/api/v2/status.json", page_url: "https://status.getport.io", type: "statuspage" },
-  // Peach Payments — African-focused online payment gateway and commerce platform
-  { id: "peach_payments", name: "Peach Payments", tags: ["payments", "fintech", "africa", "ecommerce", "api"], status_url: "https://status.peachpayments.com/api/v2/status.json", page_url: "https://status.peachpayments.com", type: "statuspage" },
-  // Atlas.md — direct primary care (DPC) practice management platform
   { id: "atlas_md", name: "Atlas.md", tags: ["healthcare", "ehr", "direct-primary-care", "practice-management", "saas"], status_url: "https://status.atlas.md/api/v2/status.json", page_url: "https://status.atlas.md", type: "statuspage" },
-  // WorkMarket — enterprise freelancer and contractor workforce management platform (ADP)
   { id: "workmarket", name: "WorkMarket", tags: ["freelance", "workforce", "contractors", "hr", "enterprise"], status_url: "https://status.workmarket.com/api/v2/status.json", page_url: "https://status.workmarket.com", type: "statuspage" },
-  // Qualio — life sciences quality management system (QMS) for pharma, biotech, and MedTech
   { id: "qualio", name: "Qualio", tags: ["life-sciences", "quality-management", "pharma", "compliance", "saas"], status_url: "https://status.qualio.com/api/v2/status.json", page_url: "https://status.qualio.com", type: "statuspage" },
-  // Neuphonic — ultra-low-latency AI text-to-speech and voice API
   { id: "neuphonic", name: "Neuphonic", tags: ["ai", "tts", "voice", "text-to-speech", "api"], status_url: "https://status.neuphonic.com/api/v2/status.json", page_url: "https://status.neuphonic.com", type: "statuspage" },
-  // PracticeQ — healthcare intake, scheduling, and practice management platform
   { id: "practiceq", name: "PracticeQ", tags: ["healthcare", "practice-management", "ehr", "scheduling", "saas"], status_url: "https://status.practiceq.com/api/v2/status.json", page_url: "https://status.practiceq.com", type: "statuspage" },
-  // iClassPro — class management software for gymnastics, swim, dance, and activity centers
   { id: "iclasspro", name: "iClassPro", tags: ["scheduling", "class-management", "fitness", "recreation", "saas"], status_url: "https://status.iclasspro.com/api/v2/status.json", page_url: "https://status.iclasspro.com", type: "statuspage" },
-  // Briostack — pest control business management and CRM platform
   { id: "briostack", name: "Briostack", tags: ["pest-control", "field-service", "scheduling", "crm", "saas"], status_url: "https://status.briostack.com/api/v2/status.json", page_url: "https://status.briostack.com", type: "statuspage" },
-  // ServiceCore — waste hauling and roll-off container management software
   { id: "servicecore", name: "ServiceCore", tags: ["waste-management", "field-service", "rolloff", "hauling", "saas"], status_url: "https://status.servicecore.com/api/v2/status.json", page_url: "https://status.servicecore.com", type: "statuspage" },
-  // Loc8 — field service management platform for asset maintenance and job scheduling
   { id: "loc8", name: "Loc8", tags: ["field-service", "maintenance", "asset-management", "cmms", "saas"], status_url: "https://status.loc8.com/api/v2/status.json", page_url: "https://status.loc8.com", type: "statuspage" },
-  // isolved — cloud-based HR, payroll, benefits, and workforce management platform
   { id: "isolved", name: "isolved", tags: ["hr", "payroll", "benefits", "workforce", "saas"], status_url: "https://status.isolvedhcm.com/api/v2/status.json", page_url: "https://status.isolvedhcm.com", type: "statuspage" },
-  // GoHighLevel — all-in-one CRM, marketing automation, and sales funnel platform for agencies
   { id: "gohighlevel", name: "GoHighLevel", tags: ["crm", "marketing", "automation", "agency", "saas"], status_url: "https://gohighlevel.statuspage.io/api/v2/status.json", page_url: "https://gohighlevel.statuspage.io", type: "statuspage" },
-  // Autify — no-code AI-powered test automation for web and mobile apps
   { id: "autify", name: "Autify", tags: ["testing", "qa", "automation", "no-code", "developer-tools"], status_url: "https://status.autify.com/api/v2/status.json", page_url: "https://status.autify.com", type: "statuspage" },
-  // Lofty (formerly Chime CRM) — AI-powered real estate CRM and lead generation platform
   { id: "lofty_crm", name: "Lofty", tags: ["crm", "real-estate", "lead-generation", "marketing", "saas"], status_url: "https://status.chime.me/api/v2/status.json", page_url: "https://status.lofty.com", type: "statuspage" },
-  // Renaissance Learning — K-12 edtech platform (Accelerated Reader, Star assessments, myON)
   { id: "renaissance_learning", name: "Renaissance Learning", tags: ["edtech", "k12", "assessment", "reading", "saas"], status_url: "https://status.renaissance.com/api/v2/status.json", page_url: "https://status.renaissance.com", type: "statuspage" },
-  // RevenueWell — dental patient communication, marketing automation, and engagement platform
   { id: "revenuewell", name: "RevenueWell", tags: ["dental", "healthcare", "patient-communication", "marketing", "saas"], status_url: "https://status.revenuewell.com/api/v2/status.json", page_url: "https://status.revenuewell.com", type: "statuspage" },
-  // Neto by Maropost — Australian multi-channel e-commerce and retail management platform
   { id: "neto", name: "Neto", tags: ["ecommerce", "retail", "multi-channel", "australia", "saas"], status_url: "https://status.netohq.com/api/v2/status.json", page_url: "https://status.netohq.com", type: "statuspage" },
-  // Secureframe — automated SOC 2, ISO 27001, HIPAA, and PCI compliance management platform
-  { id: "secureframe", name: "Secureframe", tags: ["compliance", "soc2", "security", "iso27001", "saas"], status_url: "https://status.secureframe.com/api/v2/status.json", page_url: "https://status.secureframe.com", type: "statuspage" },
-  // Shortcut (formerly Clubhouse) — software project management and issue tracking for engineering teams
-  { id: "shortcut", name: "Shortcut", tags: ["project-management", "issue-tracking", "developer-tools", "agile", "saas"], status_url: "https://status.shortcut.com/api/v2/status.json", page_url: "https://status.shortcut.com", type: "statuspage" },
-  // Passare — cloud-based funeral home management, arrangement, and collaboration software
   { id: "passare", name: "Passare", tags: ["funeral-home", "death-care", "case-management", "saas"], status_url: "https://status.passare.com/api/v2/status.json", page_url: "https://status.passare.com", type: "statuspage" },
-  // MJ Freeway — seed-to-sale cannabis business management, compliance, and POS platform
   { id: "mj_freeway", name: "MJ Freeway", tags: ["cannabis", "seed-to-sale", "compliance", "pos", "saas"], status_url: "https://status.mjplatform.com/api/v2/status.json", page_url: "https://status.mjplatform.com", type: "statuspage" },
-  // Augment Code — AI-powered coding assistant and IDE integration for software development teams
   { id: "augment_code", name: "Augment Code", tags: ["ai", "coding-assistant", "developer-tools", "ide", "saas"], status_url: "https://status.augmentcode.com/api/v2/status.json", page_url: "https://status.augmentcode.com", type: "statuspage" },
-  // Teesnap — cloud-based POS, tee sheet, and management software for golf courses and country clubs
   { id: "teesnap", name: "Teesnap", tags: ["golf", "pos", "tee-sheet", "club-management", "saas"], status_url: "https://status.teesnap.com/api/v2/status.json", page_url: "https://status.teesnap.com", type: "statuspage" },
-  // Overhaul — supply chain visibility, risk management, and cargo security platform
   { id: "overhaul", name: "Overhaul", tags: ["supply-chain", "logistics", "cargo-security", "risk-management", "saas"], status_url: "https://status.over-haul.com/api/v2/status.json", page_url: "https://status.over-haul.com", type: "statuspage" },
-  // Swell — headless e-commerce backend API platform for building custom storefronts
   { id: "swell", name: "Swell", tags: ["ecommerce", "headless", "api", "developer-tools", "saas"], status_url: "https://status.swell.store/api/v2/status.json", page_url: "https://status.swell.store", type: "statuspage" },
-  // fal.ai — serverless AI inference platform for running and scaling ML models
   { id: "fal_ai", name: "fal.ai", tags: ["ai", "ml", "inference", "serverless", "developer-tools"], status_url: "https://status.fal.ai/api/v2/summary.json", page_url: "https://status.fal.ai", type: "betterstack" },
-  // Darwin — global HR and employee benefits management platform
   { id: "darwin", name: "Darwin", tags: ["hr", "benefits", "employee-experience", "enterprise", "saas"], status_url: "https://status.darwin.com/api/v2/status.json", page_url: "https://status.darwin.com", type: "statuspage" },
-  // Bold Penguin — commercial insurance quoting and marketplace platform for agents and carriers
-  { id: "bold_penguin", name: "Bold Penguin", tags: ["insurance", "insurtech", "commercial", "marketplace", "api"], status_url: "https://status.boldpenguin.com/api/v2/status.json", page_url: "https://status.boldpenguin.com", type: "statuspage" },
-  // Pitney Bowes — shipping, mailing, e-commerce, and financial services platform
-  { id: "pitney_bowes", name: "Pitney Bowes", tags: ["shipping", "mailing", "ecommerce", "fintech", "enterprise"], status_url: "https://status.pitneybowes.com/api/v2/status.json", page_url: "https://status.pitneybowes.com", type: "statuspage" },
-  // Matrix — open standard for decentralized, real-time communication and messaging
   { id: "matrix", name: "Matrix", tags: ["messaging", "communication", "open-source", "decentralized", "protocol"], status_url: "https://status.matrix.org/api/v2/status.json", page_url: "https://status.matrix.org", type: "statuspage" },
-  // TuneIn — live radio, sports, news, music, and podcast audio streaming platform
   { id: "tunein", name: "TuneIn", tags: ["audio", "streaming", "radio", "podcasts", "media"], status_url: "https://status.tunein.com/api/v2/status.json", page_url: "https://status.tunein.com", type: "statuspage" },
-  // Tithe.ly — church giving, ChMS, website, and ministry management platform
   { id: "tithe_ly", name: "Tithe.ly", tags: ["church", "nonprofit", "giving", "chms", "saas"], status_url: "https://status.tithe.ly/api/v2/status.json", page_url: "https://status.tithe.ly", type: "statuspage" },
-  // Populi — all-in-one higher education student information and learning management system
   { id: "populi", name: "Populi", tags: ["edtech", "higher-education", "sis", "lms", "saas"], status_url: "https://status.populi.co/api/v2/status.json", page_url: "https://status.populi.co", type: "statuspage" },
-  // RMS Cloud — property management, central reservations, and revenue management for hospitality
-  { id: "rms_cloud", name: "RMS Cloud", tags: ["hospitality", "property-management", "reservations", "hotel", "saas"], status_url: "https://status.rmscloud.com/api/v2/status.json", page_url: "https://status.rmscloud.com", type: "statuspage" },
-  // Palo Alto Networks — cloud security, SASE, CASB, and threat prevention services
-  { id: "palo_alto_networks", name: "Palo Alto Networks", tags: ["security", "cloud-security", "sase", "firewall", "enterprise"], status_url: "https://status.paloaltonetworks.com/api/v2/status.json", page_url: "https://status.paloaltonetworks.com", type: "statuspage" },
-  // Axonize — enterprise IoT management and connectivity platform
   { id: "axonize", name: "Axonize", tags: ["iot", "enterprise", "connectivity", "saas"], status_url: "https://status.axonize.com/api/v2/status.json", page_url: "https://status.axonize.com", type: "statuspage" },
-  // Greenphire — clinical trial payment and financial management platform
   { id: "greenphire", name: "Greenphire", tags: ["clinical-trials", "payments", "healthcare", "finance", "saas"], status_url: "https://status.greenphire.com/api/v2/status.json", page_url: "https://status.greenphire.com", type: "statuspage" },
-  // DrFirst — e-prescribing, medication management, and pharmacy services
   { id: "drfirst", name: "DrFirst", tags: ["healthcare", "eprescribing", "pharmacy", "medication", "saas"], status_url: "https://status.drfirst.com/api/v2/status.json", page_url: "https://status.drfirst.com", type: "statuspage" },
-  // Continu — learning management system for corporate training and onboarding
   { id: "continu", name: "Continu", tags: ["lms", "learning", "training", "hr", "saas"], status_url: "https://status.continu.co/api/v2/status.json", page_url: "https://status.continu.co", type: "statuspage" },
-  // Learn Amp — people development, LMS, and performance platform
   { id: "learn_amp", name: "Learn Amp", tags: ["lms", "learning", "people-development", "hr", "saas"], status_url: "https://status.learnamp.com/api/v2/status.json", page_url: "https://status.learnamp.com", type: "statuspage" },
-  // BQE Core — project management, billing, and accounting for AEC firms
   { id: "bqe_core", name: "BQE Core", tags: ["aec", "project-management", "billing", "accounting", "saas"], status_url: "https://status.bqe.com/api/v2/status.json", page_url: "https://status.bqe.com", type: "statuspage" },
-  // ShiftCare — home care, disability support, and NDIS scheduling platform
   { id: "shiftcare", name: "ShiftCare", tags: ["homecare", "disability", "ndis", "scheduling", "saas"], status_url: "https://status.shiftcare.com/api/v2/status.json", page_url: "https://status.shiftcare.com", type: "statuspage" },
-  // Shepherd Vet — cloud-based practice management software for veterinary clinics
   { id: "shepherd_vet", name: "Shepherd Vet", tags: ["veterinary", "pims", "practice-management", "healthcare", "saas"], status_url: "https://status.shepherd.vet/api/v2/status.json", page_url: "https://status.shepherd.vet", type: "statuspage" },
-  // FLASH Parking — parking operations management and enforcement platform
   { id: "flash_parking", name: "FLASH Parking", tags: ["parking", "operations", "smart-city", "saas"], status_url: "https://status.flashparking.com/api/v2/status.json", page_url: "https://status.flashparking.com", type: "statuspage" },
-  // Campus Labs — higher education student success, assessment, and engagement platform
   { id: "campus_labs", name: "Campus Labs", tags: ["edtech", "higher-education", "student-success", "assessment", "saas"], status_url: "https://status.campuslabs.com/api/v2/status.json", page_url: "https://status.campuslabs.com", type: "statuspage" },
-  // ScopeStack — IT procurement, SOW automation, and vendor management platform
   { id: "scopestack", name: "ScopeStack", tags: ["it-procurement", "sow", "vendor-management", "enterprise", "saas"], status_url: "https://status.scopestack.io/api/v2/status.json", page_url: "https://status.scopestack.io", type: "statuspage" },
-  // CourtReserve — court reservation and club management for tennis, pickleball, and sports facilities
   { id: "courtreserve", name: "CourtReserve", tags: ["sports", "court-management", "reservations", "club", "saas"], status_url: "https://status.courtreserve.com/api/v2/status.json", page_url: "https://status.courtreserve.com", type: "statuspage" },
-  // iClicker Cloud — student response and classroom engagement platform for higher education
   { id: "iclicker", name: "iClicker Cloud", tags: ["edtech", "higher-education", "classroom", "engagement", "saas"], status_url: "https://status.iclicker.com/api/v2/status.json", page_url: "https://status.iclicker.com", type: "statuspage" },
-  // Activix — automotive dealer CRM and sales management platform (Canada/US)
   { id: "activix", name: "Activix", tags: ["automotive", "dealer", "crm", "sales", "saas"], status_url: "https://status.activix.ca/api/v2/status.json", page_url: "https://status.activix.ca", type: "statuspage" },
-  // ZoomShift — employee scheduling, time tracking, and team communication for shift-based workforces
   { id: "zoomshift", name: "ZoomShift", tags: ["scheduling", "time-tracking", "hr", "workforce", "saas"], status_url: "https://status.zoomshift.com/api/v2/status.json", page_url: "https://status.zoomshift.com", type: "statuspage" },
-  // Rubicon — smart waste and recycling technology platform for commercial fleets and municipalities
   { id: "rubicon", name: "Rubicon", tags: ["waste-management", "recycling", "smart-city", "sustainability", "saas"], status_url: "https://status.rubicon.com/api/v2/status.json", page_url: "https://status.rubicon.com", type: "statuspage" },
-  // FieldRoutes — field service management and CRM for pest control and lawn care companies
   { id: "fieldroutes", name: "FieldRoutes", tags: ["field-service", "pest-control", "lawn-care", "crm", "saas"], status_url: "https://status.fieldroutes.com/api/v2/status.json", page_url: "https://status.fieldroutes.com", type: "statuspage" },
-  // Serenova — cloud contact center and workforce optimization platform (CxEngage)
   { id: "serenova", name: "Serenova", tags: ["contact-center", "ccaas", "workforce-optimization", "enterprise", "saas"], status_url: "https://status.serenova.com/api/v2/status.json", page_url: "https://status.serenova.com", type: "statuspage" },
-  // Swiftly — digital engagement and loyalty platform for convenience retail and fuel brands
   { id: "swiftly", name: "Swiftly", tags: ["retail", "loyalty", "digital-engagement", "convenience", "saas"], status_url: "https://swiftly.statuspage.io/api/v2/status.json", page_url: "https://swiftly.statuspage.io", type: "statuspage" },
-  // GoGuardian — student safety, classroom management, and digital wellbeing software for K-12 schools
   { id: "goguardian", name: "GoGuardian", tags: ["edtech", "k12", "student-safety", "classroom-management", "saas"], status_url: "https://status.goguardian.com/api/v2/status.json", page_url: "https://status.goguardian.com", type: "statuspage" },
-  // Udemy — online learning marketplace with courses in tech, business, and creative skills
-  { id: "udemy", name: "Udemy", tags: ["edtech", "online-learning", "courses", "marketplace", "saas"], status_url: "https://status.udemy.com/api/v2/status.json", page_url: "https://status.udemy.com", type: "statuspage" },
-  // SentinelOne — AI-powered endpoint detection and response (EDR) and cybersecurity platform
   { id: "sentinel_one", name: "SentinelOne", tags: ["security", "edr", "endpoint-protection", "ai", "enterprise"], status_url: "https://status.sentinelone.com/api/v2/status.json", page_url: "https://status.sentinelone.com", type: "statuspage" },
-  // When I Work — employee scheduling, time tracking, and team communication for hourly workforces
   { id: "when_i_work", name: "When I Work", tags: ["scheduling", "time-tracking", "hr", "workforce", "saas"], status_url: "https://status.wheniwork.com/api/v2/status.json", page_url: "https://status.wheniwork.com", type: "statuspage" },
-  // Polly — surveys, polls, and feedback platform integrated with Slack and Microsoft Teams
   { id: "polly", name: "Polly", tags: ["surveys", "feedback", "slack", "teams", "collaboration"], status_url: "https://status.polly.io/api/v2/status.json", page_url: "https://status.polly.io", type: "statuspage" },
-  // ServiceTitan — cloud-based field service management software for HVAC, plumbing, and electrical
   { id: "service_titan", name: "ServiceTitan", tags: ["field-service", "hvac", "plumbing", "scheduling", "saas"], status_url: "https://status.servicetitan.com/api/v2/status.json", page_url: "https://status.servicetitan.com", type: "statuspage" },
-  // Toast — restaurant POS, management, and digital ordering platform for food service businesses
   { id: "toast_tab", name: "Toast", tags: ["restaurant", "pos", "hospitality", "ordering", "saas"], status_url: "https://status.toasttab.com/api/v2/status.json", page_url: "https://status.toasttab.com", type: "statuspage" },
-  // Depot — fast Docker image builds on managed infrastructure with remote layer caching
   { id: "depot_build", name: "Depot", tags: ["ci-cd", "docker", "builds", "developer-tools", "cloud"], status_url: "https://depot.instatus.com/api/v2/summary.json", page_url: "https://depot.instatus.com", type: "betterstack" },
-  // Activeloop — deep learning data management platform and Deep Lake vector store for AI/ML
   { id: "activeloop", name: "Activeloop", tags: ["ai", "ml", "vector-database", "data-management", "developer-tools"], status_url: "https://activeloop.instatus.com/api/v2/summary.json", page_url: "https://status.activeloop.ai", type: "betterstack" },
-  // Nayya — AI-powered employee benefits navigation and decision support platform
   { id: "nayya", name: "Nayya", tags: ["benefits", "hr", "insurance", "employee-experience", "saas"], status_url: "https://status.nayya.com/api/v2/status.json", page_url: "https://status.nayya.com", type: "statuspage" },
-  // Milvus — open-source vector database for similarity search and unstructured data in AI applications
   { id: "milvus", name: "Milvus", tags: ["vector-database", "ai", "ml", "open-source", "developer-tools"], status_url: "https://milvus.instatus.com/api/v2/summary.json", page_url: "https://milvus.instatus.com", type: "betterstack" },
-  // Pandle — UK cloud accounting software for small businesses and sole traders
   { id: "pandle", name: "Pandle", tags: ["accounting", "finance", "uk", "small-business", "saas"], status_url: "https://status.pandle.com/api/v2/status.json", page_url: "https://status.pandle.com", type: "statuspage" },
-  // Centage — cloud budgeting, planning, and forecasting platform for mid-market companies
   { id: "centage", name: "Centage", tags: ["budgeting", "planning", "forecasting", "finance", "saas"], status_url: "https://status.centage.com/api/v2/status.json", page_url: "https://status.centage.com", type: "statuspage" },
-  // Engaging Networks — digital fundraising, advocacy, and peer-to-peer platform for nonprofits
   { id: "engaging_networks", name: "Engaging Networks", tags: ["nonprofit", "fundraising", "advocacy", "digital", "saas"], status_url: "https://status.engagingnetworks.net/api/v2/status.json", page_url: "https://status.engagingnetworks.net", type: "statuspage" },
-  // SmartThings — Samsung IoT smart home platform for connected devices and automation
   { id: "smartthings", name: "SmartThings", tags: ["iot", "smart-home", "samsung", "automation", "consumer"], status_url: "https://status.smartthings.com/api/v2/status.json", page_url: "https://status.smartthings.com", type: "statuspage" },
-  // Omnata — no-code reverse ETL and data sync connector for Snowflake and modern data stacks
   { id: "omnata", name: "Omnata", tags: ["data", "etl", "snowflake", "reverse-etl", "developer-tools"], status_url: "https://status.omnata.com/api/v2/status.json", page_url: "https://status.omnata.com", type: "statuspage" },
-  // VaultSpeed — automated data vault generation and ELT acceleration platform
   { id: "vaultspeed", name: "VaultSpeed", tags: ["data-vault", "etl", "data-warehousing", "automation", "enterprise"], status_url: "https://status.vaultspeed.com/api/v2/status.json", page_url: "https://status.vaultspeed.com", type: "statuspage" },
-  // Foundant Technologies — grant management software for foundations and nonprofits
   { id: "foundant", name: "Foundant Technologies", tags: ["grant-management", "nonprofit", "foundation", "philanthropy", "saas"], status_url: "https://status.foundant.com/api/v2/status.json", page_url: "https://status.foundant.com", type: "statuspage" },
-  // Levity AI — no-code AI automation platform for document and text classification workflows
   { id: "levity_ai", name: "Levity AI", tags: ["ai", "automation", "document-processing", "no-code", "saas"], status_url: "https://status.levity.ai/api/v2/status.json", page_url: "https://status.levity.ai", type: "statuspage" },
-  // Agilent Technologies — life sciences, diagnostics, and applied chemical analysis instruments/software
   { id: "agilent", name: "Agilent", tags: ["life-sciences", "diagnostics", "laboratory", "enterprise", "saas"], status_url: "https://status.agilent.com/api/v2/status.json", page_url: "https://status.agilent.com", type: "statuspage" },
-  // Recurrency — ERP and inventory management platform purpose-built for wholesale distributors
   { id: "recurrency", name: "Recurrency", tags: ["erp", "inventory", "distribution", "wholesale", "saas"], status_url: "https://status.recurrency.com/api/v2/status.json", page_url: "https://status.recurrency.com", type: "statuspage" },
-  // Suralink — audit and accounting request list collaboration platform for CPA firms
   { id: "suralink", name: "Suralink", tags: ["accounting", "audit", "collaboration", "cpa", "saas"], status_url: "https://status.suralink.com/api/v2/status.json", page_url: "https://status.suralink.com", type: "statuspage" },
-  // Fathom HQ — financial planning, analysis, and reporting for small businesses and accountants
   { id: "fathom_hq", name: "Fathom HQ", tags: ["finance", "reporting", "accounting", "analytics", "saas"], status_url: "https://status.fathomhq.com/api/v2/status.json", page_url: "https://status.fathomhq.com", type: "statuspage" },
-  // Chronograph — portfolio analytics and monitoring platform for private equity and venture capital
   { id: "chronograph", name: "Chronograph", tags: ["private-equity", "venture-capital", "portfolio", "analytics", "finance"], status_url: "https://status.chronograph.pe/api/v2/status.json", page_url: "https://status.chronograph.pe", type: "statuspage" },
-  // Onehub — secure business file sharing and client portal platform
   { id: "onehub", name: "Onehub", tags: ["file-sharing", "client-portal", "collaboration", "secure", "saas"], status_url: "https://status.onehub.com/api/v2/status.json", page_url: "https://status.onehub.com", type: "statuspage" },
-  // UpGuard — cyber risk management and vendor risk assessment platform
   { id: "upguard", name: "UpGuard", tags: ["security", "cyber-risk", "vendor-risk", "compliance", "saas"], status_url: "https://status.upguard.com/api/v2/status.json", page_url: "https://status.upguard.com", type: "statuspage" },
-  // Traceable AI — API security platform for threat detection and protection
   { id: "traceable_ai", name: "Traceable AI", tags: ["api-security", "security", "threat-detection", "observability", "saas"], status_url: "https://status.traceable.ai/api/v2/status.json", page_url: "https://status.traceable.ai", type: "statuspage" },
-  // ChatBot — AI-powered chatbot platform for customer service automation
   { id: "chatbot", name: "ChatBot", tags: ["chatbot", "customer-support", "automation", "ai", "saas"], status_url: "https://status.chatbot.com/api/v2/status.json", page_url: "https://status.chatbot.com", type: "statuspage" },
-  // Happeo — intranet and employee communication platform for distributed teams
   { id: "happeo", name: "Happeo", tags: ["intranet", "employee-communication", "collaboration", "workspace", "saas"], status_url: "https://status.happeo.com/api/v2/status.json", page_url: "https://status.happeo.com", type: "statuspage" },
-  // Finmo — Canadian mortgage origination and broker platform
   { id: "finmo", name: "Finmo", tags: ["mortgage", "fintech", "broker", "canada", "saas"], status_url: "https://status.finmo.ca/api/v2/status.json", page_url: "https://status.finmo.ca", type: "statuspage" },
-  // Inscribe AI — AI-powered fraud detection and document verification for financial services
   { id: "inscribe_ai", name: "Inscribe AI", tags: ["fraud-detection", "ai", "fintech", "document-verification", "security"], status_url: "https://status.inscribe.ai/api/v2/status.json", page_url: "https://status.inscribe.ai", type: "statuspage" },
-  { id: "pitney_bowes", name: "Pitney Bowes", tags: ["shipping", "mailing", "logistics", "ecommerce", "enterprise"], status_url: "https://status.pitneybowes.com/api/v2/status.json", page_url: "https://status.pitneybowes.com", type: "statuspage" },
-  { id: "beam_cloud", name: "Beam", tags: ["ml", "ai", "cloud", "serverless", "developer-tools"], status_url: "https://status.beam.cloud/api/v2/status.json", page_url: "https://status.beam.cloud", type: "statuspage" },
-  { id: "lepton_ai", name: "Lepton AI", tags: ["ai", "llm", "cloud", "serverless", "developer-tools"], status_url: "https://lepton.statuspage.io/api/v2/status.json", page_url: "https://lepton.statuspage.io", type: "statuspage" },
   { id: "wellfound", name: "Wellfound", tags: ["recruiting", "startups", "jobs", "talent", "saas"], status_url: "https://status.wellfound.com/api/v2/status.json", page_url: "https://status.wellfound.com", type: "statuspage" },
   { id: "zen_planner", name: "Zen Planner", tags: ["fitness", "gym", "scheduling", "membership", "saas"], status_url: "https://zenplanner.statuspage.io/api/v2/status.json", page_url: "https://zenplanner.statuspage.io", type: "statuspage" },
-  { id: "mariana_tek", name: "Mariana Tek", tags: ["fitness", "boutique", "scheduling", "pos", "saas"], status_url: "https://status.marianatek.com/api/v2/status.json", page_url: "https://status.marianatek.com", type: "statuspage" },
   { id: "elastic_path", name: "Elastic Path", tags: ["e-commerce", "headless", "composable", "api", "enterprise"], status_url: "https://status.elasticpath.com/api/v2/status.json", page_url: "https://status.elasticpath.com", type: "statuspage" },
-  { id: "chord_commerce", name: "Chord Commerce", tags: ["e-commerce", "dtc", "analytics", "headless", "saas"], status_url: "https://status.chord.co/api/v2/status.json", page_url: "https://status.chord.co", type: "statuspage" },
   { id: "tripletex", name: "Tripletex", tags: ["accounting", "erp", "norway", "finance", "saas"], status_url: "https://status.tripletex.no/api/v2/status.json", page_url: "https://status.tripletex.no", type: "statuspage" },
   { id: "continia", name: "Continia Software", tags: ["document-management", "ap-automation", "expense", "dynamics", "saas"], status_url: "https://status.continia.com/api/v2/status.json", page_url: "https://status.continia.com", type: "statuspage" },
   { id: "dinero", name: "Dinero", tags: ["accounting", "invoicing", "denmark", "small-business", "saas"], status_url: "https://status.dinero.dk/api/v2/status.json", page_url: "https://status.dinero.dk", type: "statuspage" },
@@ -6177,765 +3862,349 @@ const SERVICES: ServiceConfig[] = [
   { id: "alert_media", name: "AlertMedia", tags: ["emergency-notifications", "mass-notification", "safety", "hr", "saas"], status_url: "https://status.alertmedia.com/api/v2/status.json", page_url: "https://status.alertmedia.com", type: "statuspage" },
   { id: "crisisgo", name: "CrisisGo", tags: ["safety", "emergency", "schools", "communication", "saas"], status_url: "https://crisisgo.statuspage.io/api/v2/status.json", page_url: "https://crisisgo.statuspage.io", type: "statuspage" },
   { id: "preparis", name: "Preparis", tags: ["business-continuity", "emergency-management", "compliance", "enterprise", "saas"], status_url: "https://preparis.statuspage.io/api/v2/status.json", page_url: "https://preparis.statuspage.io", type: "statuspage" },
-  // Storable — cloud platform for self-storage facility management (units, tenants, payments)
   { id: "storable", name: "Storable", tags: ["self-storage", "property-management", "payments", "saas"], status_url: "https://status.storable.com/api/v2/status.json", page_url: "https://status.storable.com", type: "statuspage" },
-  // Smartsheet Gov — FedRAMP-authorized Smartsheet for US government agencies
   { id: "smartsheet_gov", name: "Smartsheet Gov", tags: ["government", "fedramp", "project-management", "collaboration", "saas"], status_url: "https://status.smartsheetgov.com/api/v2/status.json", page_url: "https://status.smartsheetgov.com", type: "statuspage" },
-  // Imprivata — healthcare IT security: single sign-on, identity, and access management for clinical settings
   { id: "imprivata", name: "Imprivata", tags: ["healthcare", "identity", "sso", "access-management", "security"], status_url: "https://status.imprivata.com/api/v2/status.json", page_url: "https://status.imprivata.com", type: "statuspage" },
-  // PropertyMe — Australian property management platform for real estate agents
   { id: "propertyme", name: "PropertyMe", tags: ["proptech", "property-management", "australia", "real-estate", "saas"], status_url: "https://status.propertyme.com/api/v2/status.json", page_url: "https://status.propertyme.com", type: "statuspage" },
-  // Tradecloud One — European B2B supply chain collaboration and digital procurement network
   { id: "tradecloud_one", name: "Tradecloud One", tags: ["supply-chain", "procurement", "b2b", "europe", "saas"], status_url: "https://status.tradecloud1.com/api/v2/status.json", page_url: "https://status.tradecloud1.com", type: "statuspage" },
-  // SynergySuite — restaurant back-office operations: scheduling, inventory, purchasing, HR
   { id: "synergysuite", name: "SynergySuite", tags: ["restaurant", "operations", "scheduling", "inventory", "saas"], status_url: "https://status.synergysuite.com/api/v2/status.json", page_url: "https://status.synergysuite.com", type: "statuspage" },
-  // Paubox — HIPAA-compliant email encryption and inbound security for healthcare
   { id: "paubox", name: "Paubox", tags: ["healthcare", "email", "hipaa", "security", "encryption"], status_url: "https://status.paubox.com/api/v2/status.json", page_url: "https://status.paubox.com", type: "statuspage" },
-  // One Inc — digital payments platform for the insurance industry (premiums + claims)
   { id: "one_inc", name: "One Inc", tags: ["insurance", "payments", "fintech", "claims", "saas"], status_url: "https://status.oneinc.com/api/v2/status.json", page_url: "https://status.oneinc.com", type: "statuspage" },
-  // HEXONET — global domain registrar and wholesale registry services platform
   { id: "hexonet", name: "HEXONET", tags: ["domain", "registrar", "dns", "wholesale", "registry"], status_url: "https://status.hexonet.net/api/v2/status.json", page_url: "https://status.hexonet.net", type: "statuspage" },
-  // AutoVitals — digital vehicle inspection and shop workflow management for auto repair shops
   { id: "autovitals", name: "AutoVitals", tags: ["automotive", "vehicle-inspection", "shop-management", "saas"], status_url: "https://status.autovitals.com/api/v2/status.json", page_url: "https://status.autovitals.com", type: "statuspage" },
-  // PayByPhone — mobile parking payment app (cashless parking meters)
   { id: "paybyphone", name: "PayByPhone", tags: ["parking", "mobility", "payments", "mobile", "saas"], status_url: "https://status.paybyphone.com/api/v2/status.json", page_url: "https://status.paybyphone.com", type: "statuspage" },
-  // Luno — cryptocurrency exchange serving Africa, Asia and Europe
   { id: "luno", name: "Luno", tags: ["crypto", "exchange", "bitcoin", "fintech", "africa"], status_url: "https://luno.statuspage.io/api/v2/status.json", page_url: "https://luno.statuspage.io", type: "statuspage" },
-  // Shakepay — Canadian Bitcoin and crypto app
   { id: "shakepay", name: "Shakepay", tags: ["crypto", "bitcoin", "canada", "fintech", "payments"], status_url: "https://status.shakepay.com/api/v2/status.json", page_url: "https://status.shakepay.com", type: "statuspage" },
-  // MetaMap — global identity verification and KYC platform
   { id: "metamap", name: "MetaMap", tags: ["identity", "kyc", "verification", "compliance", "api"], status_url: "https://status.metamap.com/api/v2/status.json", page_url: "https://status.metamap.com", type: "statuspage" },
-  // bitFlyer — Japanese cryptocurrency exchange
   { id: "bitflyer", name: "bitFlyer", tags: ["crypto", "exchange", "japan", "bitcoin", "fintech"], status_url: "https://bitflyer.statuspage.io/api/v2/status.json", page_url: "https://bitflyer.statuspage.io", type: "statuspage" },
-  // Uphold — multi-asset digital money platform and trading
   { id: "uphold", name: "Uphold", tags: ["crypto", "payments", "trading", "fintech", "multi-asset"], status_url: "https://status.uphold.com/api/v2/status.json", page_url: "https://status.uphold.com", type: "statuspage" },
-  // Strike — Bitcoin Lightning payments app
   { id: "strike", name: "Strike", tags: ["bitcoin", "lightning", "payments", "crypto", "fintech"], status_url: "https://status.strike.me/api/v2/status.json", page_url: "https://status.strike.me", type: "statuspage" },
-  // PayJunction — integrated payments platform for businesses
   { id: "payjunction", name: "PayJunction", tags: ["payments", "pos", "processing", "fintech", "saas"], status_url: "https://status.payjunction.com/api/v2/status.json", page_url: "https://status.payjunction.com", type: "statuspage" },
-  // Airtasker — Australian online marketplace for local services and tasks
   { id: "airtasker", name: "Airtasker", tags: ["marketplace", "gig-economy", "australia", "services", "saas"], status_url: "https://status.airtasker.com/api/v2/status.json", page_url: "https://status.airtasker.com", type: "statuspage" },
-  // Credova — point-of-sale BNPL financing for retailers
   { id: "credova", name: "Credova", tags: ["bnpl", "financing", "retail", "pos", "fintech"], status_url: "https://status.credova.com/api/v2/status.json", page_url: "https://status.credova.com", type: "statuspage" },
-  // Insellerate — mortgage and insurance CRM / lead management platform
   { id: "insellerate", name: "Insellerate", tags: ["mortgage", "insurance", "crm", "lead-management", "saas"], status_url: "https://status.insellerate.com/api/v2/status.json", page_url: "https://status.insellerate.com", type: "statuspage" },
-  // Linktree — link-in-bio platform for creators and brands
   { id: "linktree", name: "Linktree", tags: ["creator", "link-in-bio", "marketing", "social", "saas"], status_url: "https://linktree.statuspage.io/api/v2/status.json", page_url: "https://linktree.statuspage.io", type: "statuspage" },
-  // FastMail — privacy-focused email hosting service
   { id: "fastmail", name: "FastMail", tags: ["email", "hosting", "privacy", "productivity", "saas"], status_url: "https://fastmailstatus.com/api/v2/summary.json", page_url: "https://fastmailstatus.com", type: "betterstack" },
-  // Tuta (formerly Tutanota) — encrypted email and calendar service
   { id: "tuta", name: "Tuta", tags: ["email", "privacy", "encryption", "calendar", "saas"], status_url: "https://tuta.statuspage.io/api/v2/status.json", page_url: "https://tuta.statuspage.io", type: "statuspage" },
-  // Tome — AI-powered storytelling and presentation platform
   { id: "tome_app", name: "Tome", tags: ["ai", "presentations", "storytelling", "creative", "saas"], status_url: "https://tome.statuspage.io/api/v2/status.json", page_url: "https://tome.statuspage.io", type: "statuspage" },
-  // HackerRank — technical skills assessment and hiring platform
   { id: "hackerrank", name: "HackerRank", tags: ["developer-tools", "hiring", "assessments", "coding", "saas"], status_url: "https://hackerrank.statuspage.io/api/v2/status.json", page_url: "https://hackerrank.statuspage.io", type: "statuspage" },
-  // Concord — contract management and e-signature platform
   { id: "concord_contracts", name: "Concord", tags: ["contracts", "e-signature", "legal", "clm", "saas"], status_url: "https://concord.statuspage.io/api/v2/status.json", page_url: "https://concord.statuspage.io", type: "statuspage" },
-  // WorldRemit — international money transfer service
   { id: "worldremit", name: "WorldRemit", tags: ["fintech", "money-transfer", "international", "payments", "remittance"], status_url: "https://worldremit.statuspage.io/api/v2/status.json", page_url: "https://worldremit.statuspage.io", type: "statuspage" },
-  // Cartesia AI — real-time voice AI and text-to-speech platform
   { id: "cartesia_ai", name: "Cartesia AI", tags: ["ai", "tts", "voice", "audio", "api"], status_url: "https://status.cartesia.ai/api/v2/status.json", page_url: "https://status.cartesia.ai", type: "statuspage" },
-  // Hive — project management and team collaboration platform
   { id: "hive_pm", name: "Hive", tags: ["project-management", "collaboration", "productivity", "tasks", "saas"], status_url: "https://status.hive.com/api/v2/status.json", page_url: "https://status.hive.com", type: "statuspage" },
-  // Reclaim — AI-powered calendar scheduling and time management
   { id: "reclaim_ai", name: "Reclaim", tags: ["calendar", "scheduling", "ai", "productivity", "saas"], status_url: "https://status.reclaim.ai/api/v2/status.json", page_url: "https://status.reclaim.ai", type: "statuspage" },
-  // BombBomb — video email and relationship marketing platform
   { id: "bombbomb", name: "BombBomb", tags: ["video-email", "marketing", "sales", "communication", "saas"], status_url: "https://status.bombbomb.com/api/v2/status.json", page_url: "https://status.bombbomb.com", type: "statuspage" },
-  // Arcserve — data protection, backup, and disaster recovery platform
   { id: "arcserve", name: "Arcserve", tags: ["backup", "disaster-recovery", "data-protection", "storage", "enterprise"], status_url: "https://arcserve.statuspage.io/api/v2/status.json", page_url: "https://arcserve.statuspage.io", type: "statuspage" },
-  // Phenom People — AI-powered talent experience platform for candidates, employees, and recruiters
   { id: "phenom_people", name: "Phenom People", tags: ["hr", "recruiting", "talent", "ai", "saas"], status_url: "https://status.phenom.com/api/v2/status.json", page_url: "https://status.phenom.com", type: "statuspage" },
-  // Eightfold AI — AI-powered talent intelligence and workforce management platform
   { id: "eightfold_ai", name: "Eightfold AI", tags: ["hr", "recruiting", "ai", "talent", "saas"], status_url: "https://eightfold.statuspage.io/api/v2/status.json", page_url: "https://eightfold.statuspage.io", type: "statuspage" },
-  // Sierra Interactive — real estate CRM and lead generation platform for agents and brokerages
-  { id: "sierra_interactive", name: "Sierra Interactive", tags: ["real-estate", "crm", "lead-generation", "saas"], status_url: "https://status.sierrainteractive.com/api/v2/status.json", page_url: "https://status.sierrainteractive.com", type: "statuspage" },
-  // Tenant Turner — automated leasing and tenant screening platform for property managers
   { id: "tenant_turner", name: "Tenant Turner", tags: ["real-estate", "property-management", "leasing", "saas"], status_url: "https://status.tenantturner.com/api/v2/status.json", page_url: "https://status.tenantturner.com", type: "statuspage" },
-  // ABC Fitness Solutions — club management software for fitness studios and gyms
   { id: "abc_fitness", name: "ABC Fitness", tags: ["fitness", "gym-management", "wellness", "saas"], status_url: "https://abcfitness.statuspage.io/api/v2/status.json", page_url: "https://systemstatus.abcfitness.com", type: "statuspage" },
-  // ForeFlight — aviation navigation and flight planning app for pilots and airlines
   { id: "foreflight", name: "ForeFlight", tags: ["aviation", "navigation", "flight-planning", "mobile", "saas"], status_url: "https://foreflight.statuspage.io/api/v2/status.json", page_url: "http://info.foreflight-status.com", type: "statuspage" },
-  // Genesis Cloud — European GPU cloud for AI/ML workloads and high-performance computing
   { id: "genesis_cloud", name: "Genesis Cloud", tags: ["cloud", "gpu", "ai", "ml", "iaas"], status_url: "https://genesiscloud.statuspage.io/api/v2/status.json", page_url: "https://genesiscloud.statuspage.io", type: "statuspage" },
-  // Inky — AI-powered anti-phishing email security platform for enterprises
   { id: "inky_phish", name: "Inky", tags: ["security", "email", "anti-phishing", "ai", "enterprise"], status_url: "https://inky.statuspage.io/api/v2/status.json", page_url: "https://status.inkyphishfence.com", type: "statuspage" },
-  // MeisterLabs — suite of productivity tools including MeisterTask and MindMeister
   { id: "meisterlabs", name: "MeisterLabs", tags: ["productivity", "project-management", "mind-mapping", "collaboration", "saas"], status_url: "https://status.meisterlabs.com/api/v2/status.json", page_url: "https://status.meisterlabs.com", type: "statuspage" },
-  // TrustGrid — network virtualization and SD-WAN platform for financial services
   { id: "trustgrid", name: "TrustGrid", tags: ["networking", "sd-wan", "fintech", "security", "enterprise"], status_url: "https://status.trustgrid.io/api/v2/status.json", page_url: "https://status.trustgrid.io", type: "statuspage" },
-  // MetaRouter — enterprise customer data infrastructure and server-side tag management platform
   { id: "metarouter", name: "MetaRouter", tags: ["data", "analytics", "cdp", "tag-management", "enterprise"], status_url: "https://metarouter.statuspage.io/api/v2/status.json", page_url: "http://status.metarouter.io", type: "statuspage" },
-  // Invaluable — world's largest online auction marketplace for fine art, antiques, and collectibles
   { id: "invaluable", name: "Invaluable", tags: ["marketplace", "auctions", "art", "collectibles", "ecommerce"], status_url: "https://status.invaluable.com/api/v2/status.json", page_url: "https://status.invaluable.com", type: "statuspage" },
-  // AgentSync — insurance compliance and producer licensing management platform
   { id: "agentsync", name: "AgentSync", tags: ["insurance", "compliance", "licensing", "fintech", "saas"], status_url: "https://status.agentsync.io/api/v2/status.json", page_url: "https://status.agentsync.io", type: "statuspage" },
-  // Veratad — age verification and identity verification API for regulated industries
   { id: "veratad", name: "Veratad", tags: ["identity-verification", "age-verification", "compliance", "api", "fintech"], status_url: "https://status.veratad.com/api/v2/status.json", page_url: "https://status.veratad.com", type: "statuspage" },
-  // Enigma — authoritative business data and intelligence platform for financial services
   { id: "enigma", name: "Enigma", tags: ["data", "business-intelligence", "analytics", "api", "fintech"], status_url: "https://status.enigma.com/api/v2/status.json", page_url: "https://status.enigma.com", type: "statuspage" },
-  // ComplyCube — KYC, AML, and identity verification compliance platform
   { id: "complycube", name: "ComplyCube", tags: ["kyc", "aml", "compliance", "identity-verification", "fintech"], status_url: "https://status.complycube.com/api/v2/status.json", page_url: "https://status.complycube.com", type: "statuspage" },
-  // DNAnexus — cloud platform for bioinformatics and genomics research
   { id: "dnanexus", name: "DNAnexus", tags: ["bioinformatics", "genomics", "cloud", "healthcare", "research"], status_url: "https://status.dnanexus.com/api/v2/status.json", page_url: "https://status.dnanexus.com", type: "statuspage" },
-  // SourceDay — supply chain and purchase order management platform
   { id: "sourceday", name: "SourceDay", tags: ["supply-chain", "procurement", "vendor-management", "manufacturing", "saas"], status_url: "https://status.sourceday.com/api/v2/status.json", page_url: "https://status.sourceday.com", type: "statuspage" },
-  // Threecolts — e-commerce software suite for Amazon and marketplace sellers
   { id: "threecolts", name: "Threecolts", tags: ["ecommerce", "amazon", "marketplace", "seller-tools", "saas"], status_url: "https://status.threecolts.com/api/v2/status.json", page_url: "https://status.threecolts.com", type: "statuspage" },
-  // Engageli — live online learning and virtual classroom platform for higher education
   { id: "engageli", name: "Engageli", tags: ["edtech", "virtual-classroom", "learning", "higher-education", "saas"], status_url: "https://status.engageli.com/api/v2/status.json", page_url: "https://status.engageli.com", type: "statuspage" },
-  // Cambly — English tutoring and language learning platform connecting learners with native speakers
   { id: "cambly", name: "Cambly", tags: ["language-learning", "tutoring", "english", "edtech", "consumer"], status_url: "https://status.cambly.com/api/v2/status.json", page_url: "https://status.cambly.com", type: "statuspage" },
-  // Honorlock — AI-powered online proctoring and academic integrity platform
   { id: "honorlock", name: "Honorlock", tags: ["online-proctoring", "edtech", "academic-integrity", "higher-education", "saas"], status_url: "https://status.honorlock.com/api/v2/status.json", page_url: "https://status.honorlock.com", type: "statuspage" },
-  // Springbrook — ERP/finance software for local government agencies
   { id: "springbrook", name: "Springbrook", tags: ["government", "erp", "finance", "public-sector", "saas"], status_url: "https://status.springbrooksoftware.com/api/v2/status.json", page_url: "https://status.springbrooksoftware.com", type: "statuspage" },
-  // SafetyChain — food safety and quality management platform for food/beverage manufacturers
   { id: "safetychain", name: "SafetyChain", tags: ["food-safety", "quality-management", "compliance", "manufacturing", "saas"], status_url: "https://status.safetychain.com/api/v2/status.json", page_url: "https://status.safetychain.com", type: "statuspage" },
-  // FoodLogiQ — food supply chain transparency and traceability platform
   { id: "foodlogiq", name: "FoodLogiQ", tags: ["food-safety", "supply-chain", "traceability", "compliance", "saas"], status_url: "https://status.foodlogiq.com/api/v2/status.json", page_url: "https://status.foodlogiq.com", type: "statuspage" },
-  // Energage — employer branding and employee engagement/recognition platform
   { id: "energage", name: "Energage", tags: ["employer-branding", "employee-engagement", "hr", "recognition", "saas"], status_url: "https://status.energage.com/api/v2/status.json", page_url: "https://status.energage.com", type: "statuspage" },
-  // Aurora Solar — solar design and sales software for installers and utilities
   { id: "aurora_solar", name: "Aurora Solar", tags: ["solar", "energy", "design", "cleantech", "saas"], status_url: "https://status.aurorasolar.com/api/v2/status.json", page_url: "https://status.aurorasolar.com", type: "statuspage" },
-  // PDFfiller — online PDF editor, form builder, and e-signature platform
   { id: "pdffiller", name: "PDFfiller", tags: ["pdf", "documents", "e-signature", "forms", "saas"], status_url: "https://status.pdffiller.com/api/v2/status.json", page_url: "https://status.pdffiller.com", type: "statuspage" },
-  // Pix4D — drone mapping and photogrammetry software for aerial data processing
   { id: "pix4d", name: "Pix4D", tags: ["drone", "mapping", "photogrammetry", "gis", "saas"], status_url: "https://status.pix4d.com/api/v2/status.json", page_url: "https://status.pix4d.com", type: "statuspage" },
-  // MailerCheck — email verification and list cleaning service by MailerLite
   { id: "mailercheck", name: "MailerCheck", tags: ["email-verification", "email", "list-hygiene", "marketing", "saas"], status_url: "https://status.mailercheck.com/api/v2/status.json", page_url: "https://status.mailercheck.com", type: "statuspage" },
-  // Meevo — salon, spa, and wellness business management software
   { id: "meevo", name: "Meevo", tags: ["salon", "spa", "wellness", "scheduling", "saas"], status_url: "https://status.meevo.com/api/v2/status.json", page_url: "https://status.meevo.com", type: "statuspage" },
-  // Workona — browser tab and workspace organizer for productivity
   { id: "workona", name: "Workona", tags: ["productivity", "browser", "workspace", "tabs", "saas"], status_url: "https://status.workona.com/api/v2/status.json", page_url: "https://status.workona.com", type: "statuspage" },
-  // WorkFlowy — minimalist outliner and note-taking app for nested lists
   { id: "workflowy", name: "WorkFlowy", tags: ["notes", "outliner", "productivity", "lists", "saas"], status_url: "https://status.workflowy.com/api/v2/status.json", page_url: "https://status.workflowy.com", type: "statuspage" },
-  // Fracttal — cloud CMMS / asset-maintenance management platform (LATAM)
   { id: "fracttal", name: "Fracttal", tags: ["cmms", "maintenance", "asset-management", "iot", "saas"], status_url: "https://status.fracttal.com/api/v2/status.json", page_url: "https://status.fracttal.com", type: "statuspage" },
-  // AlignOps (formerly BusyBusy) — construction workforce time-tracking & management
   { id: "alignops", name: "AlignOps", tags: ["construction", "workforce-management", "time-tracking", "field-service", "saas"], status_url: "https://status.alignops.com/api/v2/status.json", page_url: "https://status.alignops.com", type: "statuspage" },
-  // Profit.co — OKR and goal-management platform
   { id: "profit_co", name: "Profit.co", tags: ["okr", "goal-management", "performance", "hr", "saas"], status_url: "https://status.profit.co/api/v2/status.json", page_url: "https://status.profit.co", type: "statuspage" },
-  // Knot — subscription-card-update and merchant-switch API
   { id: "knot", name: "Knot", tags: ["fintech", "payments", "subscriptions", "api", "card-management"], status_url: "https://status.knotapi.com/api/v2/status.json", page_url: "https://status.knotapi.com", type: "statuspage" },
-  // ProsperOps — automated AWS savings (Reserved Instances / Savings Plans)
   { id: "prosperops", name: "ProsperOps", tags: ["finops", "cloud-cost", "aws", "cost-optimization", "saas"], status_url: "https://status.prosperops.com/api/v2/status.json", page_url: "https://status.prosperops.com", type: "statuspage" },
-  // Finout — multi-cloud cost management and FinOps visibility platform
   { id: "finout", name: "Finout", tags: ["finops", "cloud-cost", "cost-management", "multi-cloud", "saas"], status_url: "https://status.finout.io/api/v2/status.json", page_url: "https://status.finout.io", type: "statuspage" },
-  // Ternary — Google Cloud cost management and FinOps platform
   { id: "ternary", name: "Ternary", tags: ["finops", "cloud-cost", "gcp", "cost-optimization", "saas"], status_url: "https://status.ternary.app/api/v2/status.json", page_url: "https://status.ternary.app", type: "statuspage" },
-  // Otus — K-12 instructional data and standards-aligned assessment platform
   { id: "otus", name: "Otus", tags: ["edtech", "k12", "assessment", "lms", "saas"], status_url: "https://status.otus.com/api/v2/status.json", page_url: "https://status.otus.com", type: "statuspage" },
-  // Vetstoria — veterinary online appointment booking and digital engagement platform
   { id: "vetstoria", name: "Vetstoria", tags: ["veterinary", "scheduling", "pet-care", "healthcare", "saas"], status_url: "https://status.vetstoria.com/api/v2/status.json", page_url: "https://status.vetstoria.com", type: "statuspage" },
-  // iQmetrix — retail management platform for wireless and consumer electronics
   { id: "iqmetrix", name: "iQmetrix", tags: ["retail", "pos", "wireless", "telecom", "saas"], status_url: "https://status.iqmetrix.com/api/v2/status.json", page_url: "https://status.iqmetrix.com", type: "statuspage" },
-  // SuperOps — unified PSA and RMM platform for managed service providers
   { id: "superops", name: "SuperOps", tags: ["msp", "itsm", "rmm", "psa", "it-management", "saas"], status_url: "https://superops.statuspage.io/api/v2/status.json", page_url: "https://superops.statuspage.io", type: "statuspage" },
-  // DoControl — automated SaaS data access governance and security platform
   { id: "docontrol", name: "DoControl", tags: ["security", "data-governance", "saas-security", "dlp", "cloud"], status_url: "https://status.docontrol.io/api/v2/status.json", page_url: "https://status.docontrol.io", type: "statuspage" },
-  // Eway — Australian online payment gateway for businesses
   { id: "eway", name: "Eway", tags: ["payments", "payment-gateway", "fintech", "ecommerce", "australia"], status_url: "https://eway.statuspage.io/api/v2/status.json", page_url: "https://eway.statuspage.io", type: "statuspage" },
-  // Respondus — assessment and proctoring software for higher education
   { id: "respondus", name: "Respondus", tags: ["edtech", "proctoring", "assessment", "higher-education", "saas"], status_url: "https://status.respondus.com/api/v2/status.json", page_url: "https://status.respondus.com", type: "statuspage" },
-  // Bearer — API security and data governance observability platform
   { id: "bearer", name: "Bearer", tags: ["security", "api-security", "data-governance", "developer-tools", "saas"], status_url: "https://bearer.statuspage.io/api/v2/status.json", page_url: "https://bearer.statuspage.io", type: "statuspage" },
-  // WorkBoard — enterprise OKR and strategy execution platform
   { id: "workboard", name: "WorkBoard", tags: ["okr", "strategy", "performance", "enterprise", "saas"], status_url: "https://workboard.statuspage.io/api/v2/status.json", page_url: "https://workboard.statuspage.io", type: "statuspage" },
-  // Meddbase — cloud-based practice management software for healthcare providers
   { id: "meddbase", name: "Meddbase", tags: ["healthcare", "practice-management", "clinical", "emr", "saas"], status_url: "https://meddbase.statuspage.io/api/v2/status.json", page_url: "https://meddbase.statuspage.io", type: "statuspage" },
-  // Bildr — visual no-code platform for building web applications
   { id: "bildr", name: "Bildr", tags: ["no-code", "web-builder", "developer-tools", "paas", "saas"], status_url: "https://bildr.statuspage.io/api/v2/status.json", page_url: "https://bildr.statuspage.io", type: "statuspage" },
-  // Pory — no-code portal builder powered by Airtable and Google Sheets
   { id: "pory", name: "Pory", tags: ["no-code", "portal", "web-builder", "airtable", "saas"], status_url: "https://pory.statuspage.io/api/v2/status.json", page_url: "https://pory.statuspage.io", type: "statuspage" },
-  // Epsio — real-time incremental view computation engine for databases
   { id: "epsio", name: "Epsio", tags: ["database", "analytics", "real-time", "data", "developer-tools"], status_url: "https://epsio.statuspage.io/api/v2/status.json", page_url: "https://epsio.statuspage.io", type: "statuspage" },
-  // Dubsado — CRM and business management platform for creative professionals
   { id: "dubsado", name: "Dubsado", tags: ["crm", "freelance", "business-management", "scheduling", "saas"], status_url: "https://dubsado.statuspage.io/api/v2/status.json", page_url: "https://dubsado.statuspage.io", type: "statuspage" },
-  // Interact — quiz and interactive content marketing platform
   { id: "interact_quiz", name: "Interact", tags: ["marketing", "quiz", "interactive-content", "lead-generation", "saas"], status_url: "https://interact.statuspage.io/api/v2/status.json", page_url: "https://status.tryinteract.com", type: "statuspage" },
-  // Guidde — AI-powered video guide and how-to documentation platform
   { id: "guidde", name: "Guidde", tags: ["ai", "video", "documentation", "knowledge-base", "saas"], status_url: "https://guidde.statuspage.io/api/v2/status.json", page_url: "https://guidde.statuspage.io", type: "statuspage" },
-  // Turnkey — embedded crypto wallet and key management infrastructure
   { id: "turnkey", name: "Turnkey", tags: ["crypto", "wallet", "web3", "security", "infrastructure"], status_url: "https://turnkey.statuspage.io/api/v2/status.json", page_url: "https://turnkey.statuspage.io", type: "statuspage" },
-  // Aserto — cloud-native authorization as a service platform
   { id: "aserto", name: "Aserto", tags: ["authorization", "identity", "security", "developer-tools", "saas"], status_url: "https://aserto.statuspage.io/api/v2/status.json", page_url: "https://aserto.statuspage.io", type: "statuspage" },
-  // Pathfinder — customer journey and communications automation platform
   { id: "pathfinder", name: "Pathfinder", tags: ["marketing", "automation", "customer-journey", "email", "saas"], status_url: "https://pathfinder.statuspage.io/api/v2/status.json", page_url: "https://pathfinder.statuspage.io", type: "statuspage" },
-  // Vantage — cloud data analytics and AI/ML platform
   { id: "vantage_data", name: "Vantage", tags: ["analytics", "data", "ai", "ml", "cloud", "saas"], status_url: "https://vantage.statuspage.io/api/v2/status.json", page_url: "https://vantage.statuspage.io", type: "statuspage" },
-  // Dover — AI-powered recruiting automation and sourcing platform
   { id: "dover", name: "Dover", tags: ["recruiting", "hr", "automation", "hiring", "saas"], status_url: "https://dover.statuspage.io/api/v2/status.json", page_url: "https://dover.statuspage.io", type: "statuspage" },
-  // Findem — AI talent intelligence and people data platform
   { id: "findem", name: "Findem", tags: ["recruiting", "hr", "talent", "ai", "saas"], status_url: "https://findem.statuspage.io/api/v2/status.json", page_url: "https://findem.statuspage.io", type: "statuspage" },
-  // Bucketlist — employee recognition and rewards platform
   { id: "bucketlist", name: "Bucketlist", tags: ["hr", "employee-recognition", "rewards", "engagement", "saas"], status_url: "https://bucketlist.statuspage.io/api/v2/status.json", page_url: "https://bucketlist.statuspage.io", type: "statuspage" },
-  // Unison — collaborative platform for the Unison programming language (Unison Share)
   { id: "unison_lang", name: "Unison", tags: ["developer-tools", "programming-language", "collaboration", "cloud", "saas"], status_url: "https://unison.statuspage.io/api/v2/status.json", page_url: "https://unison.statuspage.io", type: "statuspage" },
-  // AgentFire — real estate agent website and lead generation platform
   { id: "agentfire", name: "AgentFire", tags: ["real-estate", "website-builder", "crm", "proptech", "saas"], status_url: "https://agentfire.statuspage.io/api/v2/status.json", page_url: "https://agentfire.statuspage.io", type: "statuspage" },
-  // DataGuard — privacy operations and GDPR/data protection compliance platform
   { id: "dataguard", name: "DataGuard", tags: ["privacy", "compliance", "gdpr", "data-protection", "saas"], status_url: "https://dataguard.statuspage.io/api/v2/status.json", page_url: "https://dataguard.statuspage.io", type: "statuspage" },
-  // Better Impact — volunteer management and engagement software
   { id: "better_impact", name: "Better Impact", tags: ["volunteer-management", "nonprofit", "scheduling", "community", "saas"], status_url: "https://betterimpact.statuspage.io/api/v2/status.json", page_url: "https://betterimpact.statuspage.io", type: "statuspage" },
-  // Pay.com — payment processing and checkout platform for merchants
-  { id: "pay_com", name: "Pay.com", tags: ["payments", "fintech", "payment-gateway", "ecommerce", "saas"], status_url: "https://paycom.statuspage.io/api/v2/status.json", page_url: "https://paycom.statuspage.io", type: "statuspage" },
-  // InfoPlus — cloud warehouse management system (WMS) for 3PLs and ecommerce
   { id: "infoplus", name: "InfoPlus", tags: ["logistics", "warehouse", "wms", "inventory", "saas"], status_url: "https://infoplus.statuspage.io/api/v2/status.json", page_url: "https://infoplus.statuspage.io", type: "statuspage" },
-  // Waymark — AI-powered video advertising creation platform for local businesses
   { id: "waymark", name: "Waymark", tags: ["ai", "video", "advertising", "marketing", "saas"], status_url: "https://waymark.statuspage.io/api/v2/status.json", page_url: "https://waymark.statuspage.io", type: "statuspage" },
-  // Resemble AI — AI voice synthesis, cloning, and speech generation platform
   { id: "resemble_ai", name: "Resemble AI", tags: ["ai", "voice", "text-to-speech", "audio", "saas"], status_url: "https://resemble-ai.statuspage.io/api/v2/status.json", page_url: "https://resemble-ai.statuspage.io", type: "statuspage" },
-  // Browse AI — no-code web scraping and data extraction automation platform
   { id: "browse_ai", name: "Browse AI", tags: ["web-scraping", "automation", "data", "no-code", "saas"], status_url: "https://browseai.statuspage.io/api/v2/status.json", page_url: "https://browseai.statuspage.io", type: "statuspage" },
-  // Todyl — SASE cybersecurity platform for SMBs (SIEM, EDR, MDR, SASE)
   { id: "todyl", name: "Todyl", tags: ["security", "sase", "siem", "edr", "cybersecurity", "smb"], status_url: "https://status.todyl.com/api/v2/status.json", page_url: "https://status.todyl.com", type: "statuspage" },
-  // Electric AI — IT management platform for SMBs (device management, help desk, security)
   { id: "electric_ai", name: "Electric AI", tags: ["it-management", "mdm", "help-desk", "smb", "saas"], status_url: "https://status.electric.ai/api/v2/status.json", page_url: "https://status.electric.ai", type: "statuspage" },
-  // Pax8 — cloud marketplace platform for MSPs and their clients
   { id: "pax8", name: "Pax8", tags: ["msp", "cloud-marketplace", "reseller", "it", "saas"], status_url: "https://status.pax8.com/api/v2/status.json", page_url: "https://status.pax8.com", type: "statuspage" },
-  // Cleo — integration platform for EDI, API, and MFT connectivity
   { id: "cleo", name: "Cleo", tags: ["integration", "edi", "api", "supply-chain", "saas"], status_url: "https://status.cleo.com/api/v2/status.json", page_url: "https://status.cleo.com", type: "statuspage" },
-  // Omnissa Workspace ONE — unified endpoint management (UEM) platform (formerly VMware Workspace ONE)
   { id: "workspace_one", name: "Omnissa Workspace ONE", tags: ["mdm", "uem", "endpoint-management", "enterprise", "saas"], status_url: "https://status.workspaceone.com/api/v2/status.json", page_url: "https://status.workspaceone.com", type: "statuspage" },
-  // Inline Manual — digital adoption platform for in-app user onboarding and guidance
   { id: "inline_manual", name: "Inline Manual", tags: ["digital-adoption", "user-onboarding", "product-tours", "saas"], status_url: "https://inlinemanual.statuspage.io/api/v2/status.json", page_url: "https://inlinemanual.statuspage.io", type: "statuspage" },
-  // Nudge Security — SaaS security and governance platform for IT and security teams
   { id: "nudge_security", name: "Nudge Security", tags: ["security", "saas-security", "governance", "it", "saas"], status_url: "https://nudgesecurity.statuspage.io/api/v2/status.json", page_url: "https://nudgesecurity.statuspage.io", type: "statuspage" },
-  // RealVNC — enterprise remote access and desktop control software
   { id: "realvnc", name: "RealVNC", tags: ["remote-access", "vnc", "remote-desktop", "it", "enterprise"], status_url: "https://realvnc.statuspage.io/api/v2/status.json", page_url: "https://realvnc.statuspage.io", type: "statuspage" },
-  // Parsec — high-performance remote desktop and cloud gaming streaming platform
   { id: "parsec", name: "Parsec", tags: ["remote-desktop", "gaming", "cloud", "streaming", "saas"], status_url: "https://parsec.statuspage.io/api/v2/status.json", page_url: "https://parsec.statuspage.io", type: "statuspage" },
-  // Yello — talent acquisition and recruiting platform for campus and early career hiring
   { id: "yello", name: "Yello", tags: ["recruiting", "hr", "talent-acquisition", "campus-recruiting", "saas"], status_url: "https://yello.statuspage.io/api/v2/status.json", page_url: "https://yello.statuspage.io", type: "statuspage" },
-  // Montage — structured video interviewing and hiring platform
   { id: "montage", name: "Montage", tags: ["video-interview", "hiring", "recruiting", "hr", "saas"], status_url: "https://montage.statuspage.io/api/v2/status.json", page_url: "https://montage.statuspage.io", type: "statuspage" },
-  // Karat — human-powered technical interview-as-a-service platform
   { id: "karat", name: "Karat", tags: ["technical-interviews", "recruiting", "hr", "engineering", "saas"], status_url: "https://karat.statuspage.io/api/v2/status.json", page_url: "https://karat.statuspage.io", type: "statuspage" },
-  // Eightfold AI — AI-driven talent intelligence and workforce management platform
   { id: "eightfold", name: "Eightfold AI", tags: ["ai", "talent-intelligence", "hr", "recruiting", "workforce"], status_url: "https://eightfold.statuspage.io/api/v2/status.json", page_url: "https://eightfold.statuspage.io", type: "statuspage" },
-  // Honeybadger — error monitoring, uptime, and cron job monitoring for developers
-  { id: "honeybadger", name: "Honeybadger", tags: ["monitoring", "error-tracking", "developer-tools", "observability", "saas"], status_url: "https://status.honeybadger.io/api/v2/status.json", page_url: "https://status.honeybadger.io", type: "statuspage" },
-  // IdeaPlace — employee idea management and innovation platform
   { id: "ideaplace", name: "IdeaPlace", tags: ["innovation", "idea-management", "employee-engagement", "enterprise", "saas"], status_url: "https://ideaplace.statuspage.io/api/v2/status.json", page_url: "https://ideaplace.statuspage.io", type: "statuspage" },
-  // Cargo — creative website builder platform for designers and artists
   { id: "cargo", name: "Cargo", tags: ["website-builder", "design", "creative", "portfolio", "saas"], status_url: "https://cargo.statuspage.io/api/v2/status.json", page_url: "https://cargo.statuspage.io", type: "statuspage" },
-  // Infogram — interactive infographic, chart, and data visualization creation tool
   { id: "infogram", name: "Infogram", tags: ["data-visualization", "infographics", "charts", "marketing", "saas"], status_url: "https://infogram.statuspage.io/api/v2/status.json", page_url: "https://infogram.statuspage.io", type: "statuspage" },
-  // Pixlr — AI-powered online photo editor and design tool
   { id: "pixlr", name: "Pixlr", tags: ["photo-editor", "design", "ai", "creative", "saas"], status_url: "https://pixlr.statuspage.io/api/v2/status.json", page_url: "https://pixlr.statuspage.io", type: "statuspage" },
-  // D-ID — AI-powered video generation platform using talking avatar technology
-  { id: "d_id", name: "D-ID", tags: ["ai", "video-generation", "avatars", "creative", "saas"], status_url: "https://status.d-id.com/api/v2/status.json", page_url: "https://status.d-id.com", type: "statuspage" },
-  // Stablecog — open-source AI image generation platform powered by Stable Diffusion
   { id: "stablecog", name: "Stablecog", tags: ["ai", "image-generation", "stable-diffusion", "open-source", "creative"], status_url: "https://stablecog.statuspage.io/api/v2/status.json", page_url: "https://stablecog.statuspage.io", type: "statuspage" },
-  // Wordly — AI-powered real-time translation and interpretation for live events and meetings
   { id: "wordly", name: "Wordly", tags: ["ai", "translation", "events", "meetings", "saas"], status_url: "https://wordly.statuspage.io/api/v2/status.json", page_url: "https://wordly.statuspage.io", type: "statuspage" },
-  // Interprefy — remote simultaneous interpretation platform for multilingual events and conferences
   { id: "interprefy", name: "Interprefy", tags: ["interpretation", "translation", "events", "conference", "saas"], status_url: "https://interprefy.statuspage.io/api/v2/status.json", page_url: "https://interprefy.statuspage.io", type: "statuspage" },
-  // Cosmic — headless CMS for building modern content-driven apps and websites
   { id: "cosmic_cms", name: "Cosmic", tags: ["headless-cms", "content-management", "developer-tools", "api", "saas"], status_url: "https://cosmicjs.statuspage.io/api/v2/status.json", page_url: "https://cosmicjs.statuspage.io", type: "statuspage" },
-  // Versapay — B2B accounts-receivable automation and payments platform
   { id: "versapay", name: "Versapay", tags: ["accounts-receivable", "payments", "fintech", "b2b", "saas"], status_url: "https://status.versapay.com/api/v2/status.json", page_url: "https://status.versapay.com", type: "statuspage" },
-  // Illumina Cloud — genomics and life-sciences cloud sequencing platform
   { id: "illumina", name: "Illumina Cloud", tags: ["genomics", "life-sciences", "cloud", "bioinformatics", "enterprise"], status_url: "https://status.illumina.com/api/v2/status.json", page_url: "https://status.illumina.com", type: "statuspage" },
-  // Frontline Education — K-12 HR and workforce management SaaS
   { id: "frontline_education", name: "Frontline Education", tags: ["edtech", "k12", "hr", "education", "saas"], status_url: "https://frontlineeducation.statuspage.io/api/v2/status.json", page_url: "https://frontlineeducation.statuspage.io", type: "statuspage" },
-  // Verimatrix — streaming DRM and cybersecurity for media and entertainment
   { id: "verimatrix", name: "Verimatrix", tags: ["streaming", "drm", "security", "media", "enterprise"], status_url: "https://status.verimatrix.com/api/v2/status.json", page_url: "https://status.verimatrix.com", type: "statuspage" },
-  // Controlant — cold-chain IoT monitoring and supply-chain visibility
   { id: "controlant", name: "Controlant", tags: ["cold-chain", "iot", "monitoring", "logistics", "saas"], status_url: "https://status.controlant.com/api/v2/status.json", page_url: "https://status.controlant.com", type: "statuspage" },
-  // TwelveLabs — video understanding AI and multimodal search API
   { id: "twelvelabs", name: "TwelveLabs", tags: ["ai", "video", "search", "embeddings", "developer-tools"], status_url: "https://twelvelabs.statuspage.io/api/v2/status.json", page_url: "https://status.twelvelabs.io", type: "statuspage" },
-  // Inductive Automation — Ignition SCADA and industrial IoT cloud platform
   { id: "inductive_automation", name: "Inductive Automation", tags: ["scada", "iot", "industrial", "automation", "saas"], status_url: "https://status.inductiveautomation.com/api/v2/status.json", page_url: "https://status.inductiveautomation.com", type: "statuspage" },
-  // HumanSignal — Label Studio Enterprise annotation and ML data labeling platform
   { id: "humansignal", name: "HumanSignal (Label Studio)", tags: ["ml", "data-labeling", "annotation", "ai", "developer-tools"], status_url: "https://humansignal.statuspage.io/api/v2/status.json", page_url: "https://status.humansignal.com", type: "statuspage" },
-  // Fleek — web3 and edge deployment platform for decentralized apps
   { id: "fleek", name: "Fleek", tags: ["web3", "edge", "hosting", "decentralized", "developer-tools"], status_url: "https://fleek.statuspage.io/api/v2/status.json", page_url: "https://status.fleek.xyz", type: "statuspage" },
-  // SuprSend — multi-channel notification infrastructure API for product teams
   { id: "suprsend", name: "SuprSend", tags: ["notifications", "messaging", "api", "developer-tools", "saas"], status_url: "https://suprsend.statuspage.io/api/v2/status.json", page_url: "https://suprsend.statuspage.io", type: "statuspage" },
-  // WhenThen — payment orchestration and flow automation platform
   { id: "whenthen", name: "WhenThen", tags: ["payments", "orchestration", "fintech", "api", "developer-tools"], status_url: "https://whenthen.statuspage.io/api/v2/status.json", page_url: "https://whenthen.statuspage.io", type: "statuspage" },
-  // Winmore — enterprise bid and proposal management platform
   { id: "winmore", name: "Winmore", tags: ["rfp", "bid-management", "proposal", "enterprise", "saas"], status_url: "https://winmore.statuspage.io/api/v2/status.json", page_url: "https://winmore.statuspage.io", type: "statuspage" },
-  // Linkfire — music marketing link management and analytics
   { id: "linkfire", name: "Linkfire", tags: ["music", "marketing", "analytics", "creator-economy", "saas"], status_url: "https://status.linkfire.com/api/v2/status.json", page_url: "https://status.linkfire.com", type: "statuspage" },
-  // ezyVet — cloud-based veterinary practice management software by IDEXX
   { id: "ezyvet", name: "ezyVet", tags: ["veterinary", "practice-management", "healthcare", "cloud", "saas"], status_url: "https://status.ezyvet.com/api/v2/status.json", page_url: "https://status.ezyvet.com", type: "statuspage" },
-  // WorkRamp — all-in-one learning platform for sales enablement and employee training
   { id: "workramp", name: "WorkRamp", tags: ["lms", "training", "sales-enablement", "enterprise", "saas"], status_url: "https://workramp.statuspage.io/api/v2/status.json", page_url: "https://workramp.statuspage.io", type: "statuspage" },
-  // Datafold — data quality and observability platform for analytics engineers
   { id: "datafold", name: "Datafold", tags: ["data-quality", "analytics", "developer-tools", "data", "saas"], status_url: "https://datafold.statuspage.io/api/v2/status.json", page_url: "https://datafold.statuspage.io", type: "statuspage" },
-  // Talkspace — online therapy and mental health platform
   { id: "talkspace", name: "Talkspace", tags: ["mental-health", "telehealth", "healthcare", "consumer", "b2b"], status_url: "https://talkspace.statuspage.io/api/v2/status.json", page_url: "https://talkspace.statuspage.io", type: "statuspage" },
-  // Brightpearl — retail operations platform for omnichannel inventory and fulfillment
   { id: "brightpearl", name: "Brightpearl", tags: ["inventory", "ecommerce", "retail", "erp", "saas"], status_url: "https://status.brightpearl.com/api/v2/status.json", page_url: "https://status.brightpearl.com", type: "statuspage" },
-  // Human API — health data integration API for digital health applications
   { id: "human_api", name: "Human API", tags: ["health", "healthcare", "medical-data", "api", "developer-tools"], status_url: "https://hapi.statuspage.io/api/v2/status.json", page_url: "https://hapi.statuspage.io", type: "statuspage" },
-  // Timeplus — real-time streaming analytics database and developer platform
   { id: "timeplus", name: "Timeplus", tags: ["streaming", "analytics", "real-time", "developer-tools", "saas"], status_url: "https://timeplus.statuspage.io/api/v2/status.json", page_url: "https://timeplus.statuspage.io", type: "statuspage" },
-  // Sequin — data streaming and sync platform for Postgres-backed applications
   { id: "sequin", name: "Sequin", tags: ["data", "streaming", "postgres", "developer-tools", "saas"], status_url: "https://sequin.statuspage.io/api/v2/status.json", page_url: "https://sequin.statuspage.io", type: "statuspage" },
-  // Hydra — analytical Postgres for data warehousing and real-time queries
   { id: "hydra_db", name: "Hydra", tags: ["database", "postgres", "analytics", "developer-tools", "saas"], status_url: "https://hydra.statuspage.io/api/v2/status.json", page_url: "https://hydra.statuspage.io", type: "statuspage" },
-  // Make (formerly Integromat) — visual no-code automation and workflow builder
-  { id: "make", name: "Make", tags: ["automation", "no-code", "workflow", "integration", "saas"], status_url: "https://status.make.com/api/v2/status.json", page_url: "https://status.make.com", type: "statuspage" },
-  // Remote — global employer of record and international payroll platform
   { id: "remote_com", name: "Remote", tags: ["eor", "hr", "payroll", "global", "saas"], status_url: "https://remote.statuspage.io/api/v2/status.json", page_url: "https://remote.statuspage.io", type: "statuspage" },
-  // GetAccept — digital sales room and e-signing platform for B2B deals
   { id: "getaccept", name: "GetAccept", tags: ["sales", "e-sign", "digital-sales-room", "crm", "saas"], status_url: "https://getaccept.statuspage.io/api/v2/status.json", page_url: "https://getaccept.statuspage.io", type: "statuspage" },
-  // Concord — contract lifecycle management and digital contracting platform
   { id: "concord_clm", name: "Concord", tags: ["contract-management", "clm", "legal", "e-sign", "saas"], status_url: "https://concord.statuspage.io/api/v2/status.json", page_url: "https://concord.statuspage.io", type: "statuspage" },
-  // Treasure — embedded finance and Web3 business treasury tools
   { id: "treasure_fi", name: "Treasure", tags: ["finance", "treasury", "web3", "embedded-finance", "saas"], status_url: "https://treasure.statuspage.io/api/v2/status.json", page_url: "https://treasure.statuspage.io", type: "statuspage" },
-  // Hint Health — direct primary care platform for independent medical practices
-  { id: "hint_health", name: "Hint Health", tags: ["healthcare", "direct-primary-care", "practice-management", "saas"], status_url: "https://status.hint.com/api/v2/status.json", page_url: "https://status.hint.com", type: "statuspage" },
-  // 1upHealth — health data aggregation and FHIR API platform for digital health
   { id: "oneup_health", name: "1upHealth", tags: ["health", "fhir", "api", "interoperability", "developer-tools"], status_url: "https://status.1up.health/api/v2/status.json", page_url: "https://status.1up.health", type: "statuspage" },
-  // Makeswift — visual headless CMS builder for Next.js and React websites
   { id: "makeswift", name: "Makeswift", tags: ["cms", "headless", "website-builder", "nextjs", "saas"], status_url: "https://status.makeswift.com/api/v2/status.json", page_url: "https://status.makeswift.com", type: "statuspage" },
-  // SPS Commerce — cloud-based EDI and supply chain management platform
   { id: "sps_commerce", name: "SPS Commerce", tags: ["edi", "supply-chain", "retail", "integration", "saas"], status_url: "https://spscommerce.statuspage.io/api/v2/status.json", page_url: "https://spscommerce.statuspage.io", type: "statuspage" },
-  // ID.me — digital identity verification and authentication platform
-  { id: "idme", name: "ID.me", tags: ["identity", "verification", "authentication", "government", "saas"], status_url: "https://status.id.me/api/v2/status.json", page_url: "https://status.id.me", type: "statuspage" },
-  // PTC Atlas — industrial IoT, CAD, and connected operations cloud platform
-  { id: "ptc_atlas", name: "PTC Atlas", tags: ["iot", "industrial", "cad", "manufacturing", "enterprise"], status_url: "https://status.ptc.com/api/v2/status.json", page_url: "https://status.ptc.com", type: "statuspage" },
-  // Syte — visual AI search and discovery platform for retail and ecommerce
   { id: "syte", name: "Syte", tags: ["ai", "visual-search", "retail", "ecommerce", "saas"], status_url: "https://status.syte.ai/api/v2/status.json", page_url: "https://status.syte.ai", type: "statuspage" },
-  // Alumio — cloud-native iPaaS integration platform for connecting enterprise systems
   { id: "alumio", name: "Alumio", tags: ["integration", "ipaas", "automation", "enterprise", "saas"], status_url: "https://status.alumio.com/api/v2/status.json", page_url: "https://status.alumio.com", type: "statuspage" },
-  // PROS — AI-powered pricing and revenue management for B2B enterprises
   { id: "pros", name: "PROS", tags: ["pricing", "revenue-management", "b2b", "saas", "enterprise"], status_url: "https://status.pros.com/api/v2/status.json", page_url: "https://status.pros.com", type: "statuspage" },
-  // Reducto — AI document parsing and data extraction API
   { id: "reducto", name: "Reducto", tags: ["ai", "document-parsing", "ocr", "developer-tools", "api"], status_url: "https://status.reducto.ai/api/v2/status.json", page_url: "https://status.reducto.ai", type: "statuspage" },
-  // Spacebring — coworking and shared workspace management platform
   { id: "spacebring", name: "Spacebring", tags: ["coworking", "facility-management", "workspace", "saas"], status_url: "https://status.spacebring.com/api/v2/status.json", page_url: "https://status.spacebring.com", type: "statuspage" },
-  // Avetta — supply chain risk management and contractor compliance platform
   { id: "avetta", name: "Avetta", tags: ["supply-chain", "compliance", "risk-management", "vendor-management", "saas"], status_url: "https://status.avetta.com/api/v2/status.json", page_url: "https://status.avetta.com", type: "statuspage" },
-  // Achilles — global supply chain risk intelligence and vendor qualification
   { id: "achilles", name: "Achilles", tags: ["supply-chain", "risk-management", "compliance", "vendor-management", "enterprise"], status_url: "https://status.achilles.com/api/v2/status.json", page_url: "https://status.achilles.com", type: "statuspage" },
-  // Spire Maritime — AIS vessel tracking and maritime analytics (a Kpler company)
-  { id: "spire_maritime", name: "Spire Maritime", tags: ["maritime", "ais", "vessel-tracking", "analytics", "logistics"], status_url: "https://status.spire.com/api/v2/status.json", page_url: "https://status.spire.com", type: "statuspage" },
-  // Veson — commercial maritime and vessel operations software platform
-  { id: "veson", name: "Veson", tags: ["maritime", "shipping", "vessel-operations", "logistics", "enterprise"], status_url: "https://status.veson.com/api/v2/status.json", page_url: "https://status.veson.com", type: "statuspage" },
-  // Inveniam — private markets data and valuation intelligence platform
   { id: "inveniam", name: "Inveniam", tags: ["fintech", "private-markets", "data", "valuation", "enterprise"], status_url: "https://status.inveniam.io/api/v2/status.json", page_url: "https://status.inveniam.io", type: "statuspage" },
-  // Hint Health — direct primary care (DPC) practice management platform
-  { id: "hint_health", name: "Hint Health", tags: ["healthcare", "primary-care", "dpc", "practice-management", "saas"], status_url: "https://status.hint.com/api/v2/status.json", page_url: "https://status.hint.com", type: "statuspage" },
-  // Akana — API management and lifecycle platform
   { id: "akana", name: "Akana", tags: ["api-management", "api-gateway", "lifecycle", "enterprise", "developer-tools"], status_url: "https://status.akana.com/api/v2/status.json", page_url: "https://status.akana.com", type: "statuspage" },
-  // Tideways — PHP application performance monitoring
   { id: "tideways", name: "Tideways", tags: ["apm", "monitoring", "php", "performance", "developer-tools"], status_url: "https://tideways.statuspage.io/api/v2/status.json", page_url: "https://tideways.statuspage.io", type: "statuspage" },
-  // Nusii — proposal software for creative agencies and freelancers
   { id: "nusii", name: "Nusii", tags: ["proposals", "sales", "crm", "agencies", "saas"], status_url: "https://nusii.statuspage.io/api/v2/status.json", page_url: "https://nusii.statuspage.io", type: "statuspage" },
-  // Middleware — full-stack observability and monitoring platform
   { id: "middleware_io", name: "Middleware", tags: ["observability", "monitoring", "apm", "logs", "infrastructure"], status_url: "https://middleware.statuspage.io/api/v2/status.json", page_url: "https://middleware.statuspage.io", type: "statuspage" },
-  // Mighty Networks — community and membership platform for creators
-  { id: "mighty_networks", name: "Mighty Networks", tags: ["community", "membership", "creators", "courses", "saas"], status_url: "https://mightynetworks.statuspage.io/api/v2/status.json", page_url: "https://mightynetworks.statuspage.io", type: "statuspage" },
-  // Typeface — generative AI content platform for enterprise marketing
   { id: "typeface", name: "Typeface", tags: ["ai", "content", "marketing", "generative-ai", "enterprise"], status_url: "https://status.typeface.ai/api/v2/status.json", page_url: "https://status.typeface.ai", type: "statuspage" },
-  // PAR POS (Brink) — enterprise restaurant point-of-sale platform
   { id: "par_brink", name: "PAR Brink POS", tags: ["pos", "restaurants", "enterprise", "point-of-sale", "saas"], status_url: "https://brinkpos.statuspage.io/api/v2/status.json", page_url: "https://brinkpos.statuspage.io", type: "statuspage" },
-  // ElationHealth — clinical-first EHR for independent primary care physicians
   { id: "elation_health", name: "ElationHealth", tags: ["healthcare", "ehr", "primary-care", "clinical", "saas"], status_url: "https://elationhealth.statuspage.io/api/v2/status.json", page_url: "https://elationhealth.statuspage.io", type: "statuspage" },
-  // MerchantSpring — multichannel marketplace analytics and management
   { id: "merchantspring", name: "MerchantSpring", tags: ["ecommerce", "marketplace", "analytics", "multichannel", "saas"], status_url: "https://status.merchantspring.io/api/v2/status.json", page_url: "https://status.merchantspring.io", type: "statuspage" },
-  // Voyage AI — embedding models and rerankers API
   { id: "voyage_ai", name: "Voyage AI", tags: ["ai", "embeddings", "api", "search", "developer-tools"], status_url: "https://voyage.statuspage.io/api/v2/status.json", page_url: "https://voyage.statuspage.io", type: "statuspage" },
-  // Nomic AI — open source embedding models and data visualization platform
-  { id: "nomic_ai", name: "Nomic AI", tags: ["ai", "embeddings", "data", "developer-tools", "open-source"], status_url: "https://status.nomic.ai/api/v2/status.json", page_url: "https://status.nomic.ai", type: "statuspage" },
-  // Thanos — highly available Prometheus setup with long-term storage (CNCF project)
   { id: "thanos_io", name: "Thanos", tags: ["observability", "monitoring", "open-source", "cncf", "metrics"], status_url: "https://thanos.statuspage.io/api/v2/status.json", page_url: "https://thanos.statuspage.io", type: "statuspage" },
-  // Coval — AI evaluation platform for voice and language agents
   { id: "coval", name: "Coval", tags: ["ai", "evaluation", "llm", "voice", "developer-tools"], status_url: "https://status.coval.dev/api/v2/status.json", page_url: "https://status.coval.dev", type: "statuspage" },
-  // Posit — open source data science platform (RStudio, Quarto, Shiny)
   { id: "posit", name: "Posit", tags: ["analytics", "data-science", "developer-tools", "r", "python"], status_url: "https://status.posit.co/api/v2/status.json", page_url: "https://status.posit.co", type: "statuspage" },
-  // Beam Cloud — serverless GPU compute for ML workloads
-  { id: "beam_cloud", name: "Beam", tags: ["serverless", "gpu", "ml", "compute", "developer-tools"], status_url: "https://status.beam.cloud/api/v2/status.json", page_url: "https://status.beam.cloud", type: "statuspage" },
-  // Lightning AI — AI development platform (PyTorch Lightning cloud)
-  { id: "lightning_ai", name: "Lightning AI", tags: ["ai", "ml", "compute", "developer-tools", "python"], status_url: "https://status.lightning.ai/api/v2/status.json", page_url: "https://status.lightning.ai", type: "statuspage" },
-  // Lepton AI — cloud platform for LLM inference and AI applications
-  { id: "lepton_ai", name: "Lepton AI", tags: ["ai", "llm", "inference", "cloud", "developer-tools"], status_url: "https://lepton.statuspage.io/api/v2/status.json", page_url: "https://lepton.statuspage.io", type: "statuspage" },
-  // Moonshot AI — Chinese AI company (Kimi chat / API provider)
-  { id: "moonshot_ai", name: "Moonshot AI", tags: ["ai", "llm", "api", "chinese"], status_url: "https://status.moonshot.cn/api/v2/status.json", page_url: "https://status.moonshot.cn", type: "statuspage" },
-  // Scaleflex (Cloudimage) — image CDN and visual experience platform
   { id: "scaleflex", name: "Scaleflex (Cloudimage)", tags: ["cdn", "image-processing", "media", "saas"], status_url: "https://cloudimage.statuspage.io/api/v2/status.json", page_url: "https://cloudimage.statuspage.io", type: "statuspage" },
-  // Black Forest Labs — AI image generation (FLUX models)
-  { id: "black_forest_labs", name: "Black Forest Labs", tags: ["ai", "image-generation", "api", "developer-tools"], status_url: "https://status.bfl.ml/api/v2/status.json", page_url: "https://status.bfl.ml", type: "statuspage" },
-  // Neets.ai — fast and affordable TTS / voice synthesis API
   { id: "neets_ai", name: "Neets.ai", tags: ["ai", "text-to-speech", "voice", "api", "developer-tools"], status_url: "https://neets.statuspage.io/api/v2/status.json", page_url: "https://neets.statuspage.io", type: "statuspage" },
-  // GoTo (GoToMeeting) — video conferencing and collaboration platform by GoTo (formerly LogMeIn)
-  { id: "goto", name: "GoTo (GoToMeeting)", tags: ["video-conferencing", "collaboration", "meetings", "webinars", "saas"], status_url: "https://status.gotomeeting.com/api/v2/status.json", page_url: "https://status.gotomeeting.com", type: "statuspage" },
-  // Demodesk — AI-powered sales meeting platform with real-time coaching
   { id: "demodesk", name: "Demodesk", tags: ["sales", "video-conferencing", "ai", "coaching", "saas"], status_url: "https://status.demodesk.com/api/v2/status.json", page_url: "https://status.demodesk.com", type: "statuspage" },
-  // Zowie — AI customer service automation for e-commerce brands
   { id: "zowie", name: "Zowie", tags: ["ai", "customer-service", "chatbot", "ecommerce", "automation"], status_url: "https://zowie.statuspage.io/api/v2/status.json", page_url: "https://zowie.statuspage.io", type: "statuspage" },
-  // Yuma — AI-powered customer support automation for Shopify merchants
   { id: "yuma", name: "Yuma AI", tags: ["ai", "customer-service", "ecommerce", "shopify", "automation"], status_url: "https://yuma.statuspage.io/api/v2/status.json", page_url: "https://yuma.statuspage.io", type: "statuspage" },
-  // Xref — automated reference checking and candidate verification platform for HR
   { id: "xref", name: "Xref", tags: ["hr", "recruiting", "reference-checking", "talent-acquisition", "saas"], status_url: "https://status.xref.com/api/v2/status.json", page_url: "https://status.xref.com", type: "statuspage" },
-  // Exalate — bi-directional issue tracker sync (Jira, GitHub, Zendesk, ServiceNow)
   { id: "exalate", name: "Exalate", tags: ["integration", "jira", "issue-tracking", "developer-tools", "saas"], status_url: "https://status.exalate.com/api/v2/status.json", page_url: "https://status.exalate.com", type: "statuspage" },
-  // Calix — cloud platform and managed services for broadband service providers (BSPs)
   { id: "calix", name: "Calix", tags: ["broadband", "isp", "cloud", "networking", "enterprise"], status_url: "https://calix.statuspage.io/api/v2/status.json", page_url: "https://calix.statuspage.io", type: "statuspage" },
-  // Ovation — restaurant customer feedback and reputation management platform
   { id: "ovation", name: "Ovation", tags: ["restaurants", "feedback", "customer-experience", "reputation", "saas"], status_url: "https://ovation.statuspage.io/api/v2/status.json", page_url: "https://ovation.statuspage.io", type: "statuspage" },
-  // Tilda — no-code website builder popular with designers and media companies
   { id: "tilda", name: "Tilda", tags: ["website-builder", "no-code", "design", "publishing", "saas"], status_url: "https://tilda.statuspage.io/api/v2/status.json", page_url: "https://tilda.statuspage.io", type: "statuspage" },
-  // Lumin — collaborative PDF platform for teams and education
   { id: "lumin", name: "Lumin", tags: ["pdf", "documents", "collaboration", "edtech", "saas"], status_url: "https://lumin.statuspage.io/api/v2/status.json", page_url: "https://lumin.statuspage.io", type: "statuspage" },
-  // Mutiny — B2B website personalization and conversion rate optimization platform
   { id: "mutiny", name: "Mutiny", tags: ["cro", "personalization", "abm", "b2b", "marketing", "saas"], status_url: "https://mutiny.statuspage.io/api/v2/status.json", page_url: "https://mutiny.statuspage.io", type: "statuspage" },
-  // Steadybit — chaos engineering and reliability testing platform for cloud-native apps
   { id: "steadybit", name: "Steadybit", tags: ["chaos-engineering", "reliability", "devops", "kubernetes", "testing"], status_url: "https://steadybit.statuspage.io/api/v2/status.json", page_url: "https://steadybit.statuspage.io", type: "statuspage" },
-  // Devo — cloud-native SIEM and security analytics platform for real-time threat detection
   { id: "devo", name: "Devo", tags: ["siem", "security-analytics", "threat-detection", "log-management", "cybersecurity"], status_url: "https://devo.statuspage.io/api/v2/status.json", page_url: "https://devo.statuspage.io", type: "statuspage" },
-  // Mandiant — threat intelligence and incident response platform (Google Cloud)
   { id: "mandiant", name: "Mandiant", tags: ["threat-intelligence", "incident-response", "cybersecurity", "security", "google"], status_url: "https://mandiant.statuspage.io/api/v2/status.json", page_url: "https://mandiant.statuspage.io", type: "statuspage" },
-  // Cybersixgill — automated dark web and cyber threat intelligence platform
   { id: "cybersixgill", name: "Cybersixgill", tags: ["threat-intelligence", "dark-web", "cybersecurity", "cti", "api"], status_url: "https://cybersixgill.statuspage.io/api/v2/status.json", page_url: "https://cybersixgill.statuspage.io", type: "statuspage" },
-  // IntSights (Rapid7) — external threat intelligence and digital risk protection
   { id: "intsights", name: "IntSights", tags: ["threat-intelligence", "digital-risk", "cybersecurity", "rapid7", "cti"], status_url: "https://intsights.statuspage.io/api/v2/status.json", page_url: "https://intsights.statuspage.io", type: "statuspage" },
-  // Successware — field service management software for HVAC, plumbing, and electrical contractors
   { id: "successware", name: "Successware", tags: ["field-service", "hvac", "plumbing", "fsm", "saas"], status_url: "https://successware.statuspage.io/api/v2/status.json", page_url: "https://successware.statuspage.io", type: "statuspage" },
-  // GroundTruth — location-based mobile advertising and audience intelligence platform
   { id: "groundtruth", name: "GroundTruth", tags: ["advertising", "location-data", "mobile-ads", "audience", "adtech"], status_url: "https://groundtruth.statuspage.io/api/v2/status.json", page_url: "https://groundtruth.statuspage.io", type: "statuspage" },
-  // D7 Networks — global SMS, WhatsApp, and messaging API provider
   { id: "d7networks", name: "D7 Networks", tags: ["sms", "messaging", "whatsapp", "api", "communications"], status_url: "https://d7networks.statuspage.io/api/v2/status.json", page_url: "https://d7networks.statuspage.io", type: "statuspage" },
-  // Fastly — edge cloud platform for CDN, security, and serverless compute
   { id: "fastly", name: "Fastly", tags: ["cdn", "edge-cloud", "waf", "ddos", "infrastructure"], status_url: "https://fastly-inc.statuspage.io/api/v2/status.json", page_url: "https://fastly-inc.statuspage.io", type: "statuspage" },
-  // Panoply — automated cloud data warehouse and ETL platform built on Redshift/BigQuery
   { id: "panoply", name: "Panoply", tags: ["data-warehouse", "etl", "analytics", "redshift", "saas"], status_url: "https://panoply.statuspage.io/api/v2/status.json", page_url: "https://panoply.statuspage.io", type: "statuspage" },
-  // Select Star — automated data discovery, lineage, and catalog platform
   { id: "selectstar", name: "Select Star", tags: ["data-catalog", "data-lineage", "data-discovery", "analytics", "saas"], status_url: "https://selectstar.statuspage.io/api/v2/status.json", page_url: "https://selectstar.statuspage.io", type: "statuspage" },
-  // data.world — cloud-native data catalog and collaboration platform
   { id: "dataworld", name: "data.world", tags: ["data-catalog", "data-collaboration", "knowledge-graph", "governance", "saas"], status_url: "https://dataworld.statuspage.io/api/v2/status.json", page_url: "https://dataworld.statuspage.io", type: "statuspage" },
-  // Act-On Software — marketing automation platform for demand generation and lead nurturing
   { id: "acton", name: "Act-On", tags: ["marketing", "marketing-automation", "email", "lead-generation", "saas"], status_url: "https://acton.statuspage.io/api/v2/status.json", page_url: "https://status.act-on.com", type: "statuspage" },
-  // GrowthBook — open-source A/B testing and feature flag platform
   { id: "growthbook", name: "GrowthBook", tags: ["feature-flags", "ab-testing", "experimentation", "developer-tools", "open-source"], status_url: "https://status.growthbook.io/api/v2/summary.json", page_url: "https://status.growthbook.io", type: "betterstack" },
-  // Vessel — native integration platform for CRM and sales tools
   { id: "vessel", name: "Vessel", tags: ["integrations", "crm", "native-integrations", "api", "developer-tools"], status_url: "https://vessel.statuspage.io/api/v2/status.json", page_url: "https://vessel.statuspage.io", type: "statuspage" },
-  // Middleware.io — full-stack cloud observability and APM platform
   { id: "middleware", name: "Middleware", tags: ["monitoring", "observability", "apm", "logging", "developer-tools"], status_url: "https://middleware.statuspage.io/api/v2/status.json", page_url: "https://middleware.statuspage.io", type: "statuspage" },
-  // HelpSpot — self-hosted and cloud help desk ticketing software
   { id: "helpspot", name: "HelpSpot", tags: ["customer-support", "help-desk", "ticketing", "email", "saas"], status_url: "https://helpspot.statuspage.io/api/v2/status.json", page_url: "https://helpspot.statuspage.io", type: "statuspage" },
-  // Akita — customer success platform for health scoring and churn prevention
   { id: "akita", name: "Akita", tags: ["customer-success", "health-scoring", "retention", "saas", "analytics"], status_url: "https://akita.statuspage.io/api/v2/status.json", page_url: "https://akita.statuspage.io", type: "statuspage" },
-  // Nimbly Technologies — operations, audit, and inspection management platform
   { id: "nimbly", name: "Nimbly", tags: ["operations", "audit", "inspections", "retail", "saas"], status_url: "https://nimbly.statuspage.io/api/v2/status.json", page_url: "https://nimbly.statuspage.io", type: "statuspage" },
-  // Zen Planner — fitness studio and gym management software
   { id: "zenplanner", name: "Zen Planner", tags: ["fitness", "scheduling", "studio-management", "sports", "saas"], status_url: "https://zenplanner.statuspage.io/api/v2/status.json", page_url: "https://zenplanner.statuspage.io", type: "statuspage" },
-  // Tapcart — mobile commerce app builder for Shopify brands
   { id: "tapcart", name: "Tapcart", tags: ["ecommerce", "mobile", "shopify", "app-builder", "saas"], status_url: "https://tapcart.statuspage.io/api/v2/status.json", page_url: "https://status.tapcart.co", type: "statuspage" },
-  // Tandem — remote team communication and virtual office platform
   { id: "tandem", name: "Tandem", tags: ["remote-work", "communication", "virtual-office", "collaboration", "saas"], status_url: "https://tandem.statuspage.io/api/v2/status.json", page_url: "https://tandem.statuspage.io", type: "statuspage" },
-  // Teamflow — virtual office for remote and hybrid teams
   { id: "teamflow", name: "Teamflow", tags: ["remote-work", "virtual-office", "collaboration", "video", "saas"], status_url: "https://teamflow.statuspage.io/api/v2/status.json", page_url: "https://teamflow.statuspage.io", type: "statuspage" },
-  // Lepton AI — AI inference and LLM deployment platform
   { id: "lepton", name: "Lepton AI", tags: ["ai", "llm", "inference", "developer-tools", "api"], status_url: "https://lepton.statuspage.io/api/v2/status.json", page_url: "https://lepton.statuspage.io", type: "statuspage" },
-  // Sora — OpenAI's AI video generation model
   { id: "sora", name: "Sora", tags: ["ai", "video", "generative-ai", "openai", "media"], status_url: "https://sora.statuspage.io/api/v2/status.json", page_url: "https://sora.statuspage.io", type: "statuspage" },
-  // Rev AI — automatic speech recognition and transcription API
   { id: "revai", name: "Rev AI", tags: ["speech-to-text", "transcription", "ai", "api", "developer-tools"], status_url: "https://revai.statuspage.io/api/v2/status.json", page_url: "https://status.rev.ai", type: "statuspage" },
-  // Layer0 (Edgio) — edge CDN and performance platform
   { id: "layer0", name: "Layer0", tags: ["cdn", "edge", "performance", "web", "infrastructure"], status_url: "https://layer0.statuspage.io/api/v2/status.json", page_url: "https://status.layer0.co", type: "statuspage" },
-  // Zenlayer — global edge cloud and CDN network
   { id: "zenlayer", name: "Zenlayer", tags: ["cdn", "edge", "cloud", "network", "infrastructure"], status_url: "https://zenlayer.statuspage.io/api/v2/status.json", page_url: "https://zenlayer.statuspage.io", type: "statuspage" },
-  // Synapse — open-source Matrix homeserver
   { id: "synapse", name: "Synapse", tags: ["matrix", "messaging", "open-source", "communication", "decentralized"], status_url: "https://synapse.statuspage.io/api/v2/status.json", page_url: "https://status.synapse.org", type: "statuspage" },
-  // Ginger — on-demand mental health coaching and therapy
   { id: "ginger", name: "Ginger", tags: ["mental-health", "telehealth", "coaching", "therapy", "health-tech"], status_url: "https://ginger.statuspage.io/api/v2/status.json", page_url: "https://status.ginger.io", type: "statuspage" },
-  // Spring Health — workplace mental health platform
   { id: "springhealth", name: "Spring Health", tags: ["mental-health", "workplace-wellness", "therapy", "health-tech", "enterprise"], status_url: "https://springhealth.statuspage.io/api/v2/status.json", page_url: "https://springhealth.statuspage.io", type: "statuspage" },
-  // Apache Superset — open-source BI and data exploration platform
   { id: "superset", name: "Apache Superset", tags: ["bi", "data-visualization", "analytics", "open-source", "saas"], status_url: "https://superset.statuspage.io/api/v2/status.json", page_url: "https://superset.statuspage.io", type: "statuspage" },
-  // Zip — buy now pay later (BNPL) payment platform
   { id: "zip", name: "Zip", tags: ["payments", "bnpl", "fintech", "consumer", "buy-now-pay-later"], status_url: "https://zip.statuspage.io/api/v2/status.json", page_url: "https://zip.statuspage.io", type: "statuspage" },
-  // 3dcart (Shift4Shop) — e-commerce platform
   { id: "3dcart", name: "3dcart", tags: ["ecommerce", "shopping-cart", "payments", "saas", "online-store"], status_url: "https://3dcart.statuspage.io/api/v2/status.json", page_url: "https://3dcart.statuspage.io", type: "statuspage" },
-  // ThriveCart — high-converting checkout and cart platform
   { id: "thrivecart", name: "ThriveCart", tags: ["ecommerce", "checkout", "payments", "affiliate", "saas"], status_url: "https://thrivecart.statuspage.io/api/v2/status.json", page_url: "https://thrivecart.statuspage.io", type: "statuspage" },
-  // Vanilla Forums — community and forum software
   { id: "vanilla", name: "Vanilla Forums", tags: ["community", "forum", "discussion", "saas", "social"], status_url: "https://vanilla.statuspage.io/api/v2/status.json", page_url: "https://vanilla.statuspage.io", type: "statuspage" },
-  // Disqus — embedded comment and discussion platform
   { id: "disqus", name: "Disqus", tags: ["comments", "community", "discussion", "publishing", "saas"], status_url: "https://disqus.statuspage.io/api/v2/status.json", page_url: "https://disqus.statuspage.io", type: "statuspage" },
-  // Sign In Scheduling (10to8) — appointment scheduling software
   { id: "10to8", name: "Sign In Scheduling", tags: ["scheduling", "appointments", "calendar", "healthcare", "saas"], status_url: "https://10to8.statuspage.io/api/v2/status.json", page_url: "https://status.10to8.com", type: "statuspage" },
-  // ValueSERP — real-time search engine results page API
   { id: "valueserp", name: "ValueSERP", tags: ["serp", "search-api", "seo", "scraping", "developer-tools"], status_url: "https://valueserp.statuspage.io/api/v2/status.json", page_url: "https://valueserp.statuspage.io", type: "statuspage" },
-  // PayTrace — payment gateway for merchants
   { id: "paytrace", name: "PayTrace", tags: ["payments", "payment-gateway", "merchant", "fintech", "api"], status_url: "https://paytrace.statuspage.io/api/v2/status.json", page_url: "https://status.paytrace.com", type: "statuspage" },
-  // Observe Inc. — cloud observability and log analytics platform
   { id: "observe", name: "Observe", tags: ["observability", "monitoring", "logs", "analytics", "cloud"], status_url: "https://observe.statuspage.io/api/v2/status.json", page_url: "https://status.observeinc.com", type: "statuspage" },
-  // Zenoss Cloud — AI-driven IT monitoring and observability
   { id: "zenoss", name: "Zenoss Cloud", tags: ["monitoring", "observability", "it-ops", "aiops", "enterprise"], status_url: "https://zenoss.statuspage.io/api/v2/status.json", page_url: "https://status.zenoss.io", type: "statuspage" },
-  // Highway — trucking and freight logistics platform
   { id: "highway", name: "Highway", tags: ["logistics", "freight", "trucking", "saas", "transportation"], status_url: "https://highway.statuspage.io/api/v2/status.json", page_url: "https://status.highway.com", type: "statuspage" },
-  // RyderShip (Whiplash) — e-commerce fulfillment and 3PL platform
   { id: "whiplash", name: "RyderShip", tags: ["fulfillment", "3pl", "ecommerce", "logistics", "warehouse"], status_url: "https://whiplash.statuspage.io/api/v2/status.json", page_url: "https://status.getwhiplash.com", type: "statuspage" },
-  // Ringr — remote podcast recording platform
   { id: "ringr", name: "Ringr", tags: ["podcast", "recording", "audio", "remote", "creator"], status_url: "https://ringr.statuspage.io/api/v2/status.json", page_url: "https://ringr.statuspage.io", type: "statuspage" },
-  // Ableton — music production software and online services
   { id: "ableton", name: "Ableton", tags: ["music", "daw", "audio-production", "creator-tools", "saas"], status_url: "https://ableton.statuspage.io/api/v2/status.json", page_url: "https://status.ableton.com", type: "statuspage" },
-  // VidyoCloud — enterprise video conferencing platform
   { id: "vidyo", name: "VidyoCloud", tags: ["video-conferencing", "enterprise", "communication", "embedded", "saas"], status_url: "https://vidyo.statuspage.io/api/v2/status.json", page_url: "https://status.vidyo.com", type: "statuspage" },
-  // Lumen — global fiber and edge networking provider
   { id: "lumen", name: "Lumen", tags: ["network", "cdn", "connectivity", "enterprise", "telecommunications"], status_url: "https://lumen.statuspage.io/api/v2/status.json", page_url: "https://lumen.statuspage.io", type: "statuspage" },
-  // ZAYO — global fiber and network-as-a-service provider
   { id: "zayo", name: "ZAYO", tags: ["network", "fiber", "connectivity", "enterprise", "telecommunications"], status_url: "https://zayo.statuspage.io/api/v2/status.json", page_url: "https://zayo.statuspage.io", type: "statuspage" },
-  // Redox — healthcare data integration and interoperability platform
   { id: "redoxengine", name: "Redox", tags: ["healthcare", "hl7", "fhir", "integration", "api", "health-tech"], status_url: "https://status.redoxengine.com/api/v2/status.json", page_url: "https://status.redoxengine.com", type: "statuspage" },
-  // Notificare — multi-channel push notification and customer engagement platform
   { id: "notificare", name: "Notificare", tags: ["push-notifications", "mobile", "engagement", "saas", "messaging"], status_url: "https://notificare.statuspage.io/api/v2/status.json", page_url: "https://notificare.statuspage.io", type: "statuspage" },
-  // WellSaid Labs — AI-powered text-to-speech voice generation platform
   { id: "wellsaidlabs", name: "WellSaid Labs", tags: ["ai", "tts", "voice", "speech", "saas", "audio"], status_url: "https://status.wellsaidlabs.com/api/v2/status.json", page_url: "https://status.wellsaidlabs.com", type: "statuspage" },
-  // Reown (formerly WalletConnect) — web3 wallet connection and authentication protocol
   { id: "reown", name: "Reown", tags: ["web3", "wallet", "crypto", "blockchain", "authentication", "defi"], status_url: "https://status.reown.com/api/v2/status.json", page_url: "https://status.reown.com", type: "statuspage" },
-  // Scorechain — blockchain analytics and crypto compliance platform
   { id: "scorechain", name: "Scorechain", tags: ["blockchain", "crypto", "analytics", "compliance", "aml", "fintech"], status_url: "https://status.scorechain.com/api/v2/status.json", page_url: "https://status.scorechain.com", type: "statuspage" },
-  // CoinCorner — UK-based bitcoin exchange and payments platform
   { id: "coincorner", name: "CoinCorner", tags: ["bitcoin", "crypto", "exchange", "payments", "fintech"], status_url: "https://status.coincorner.com/api/v2/status.json", page_url: "https://status.coincorner.com", type: "statuspage" },
-  // Adra Suite — financial close and account reconciliation software
   { id: "adra", name: "Adra Suite", tags: ["accounting", "finance", "close-management", "reconciliation", "saas", "erp"], status_url: "https://status.adra.com/api/v2/status.json", page_url: "https://status.adra.com", type: "statuspage" },
-  // Carbon — DLS 3D printing manufacturing platform and cloud software
   { id: "carbon3d", name: "Carbon", tags: ["3d-printing", "manufacturing", "additive", "hardware", "saas", "production"], status_url: "https://status.carbon3d.com/api/v2/status.json", page_url: "https://status.carbon3d.com", type: "statuspage" },
-  // Pitney Bowes — global shipping, mailing, and ecommerce solutions
   { id: "pitneybowes", name: "Pitney Bowes", tags: ["shipping", "mailing", "ecommerce", "logistics", "postage", "enterprise"], status_url: "https://status.pitneybowes.com/api/v2/status.json", page_url: "https://status.pitneybowes.com", type: "statuspage" },
-  // Creatify — AI-powered video ad creation platform
   { id: "creatify", name: "Creatify", tags: ["ai", "video", "advertising", "marketing", "generation", "saas"], status_url: "https://status.creatify.ai/api/v2/status.json", page_url: "https://status.creatify.ai", type: "statuspage" },
-  // EnergyCAP — energy management and utility bill tracking software
   { id: "energycap", name: "EnergyCAP", tags: ["energy", "management", "utilities", "sustainability", "saas", "software"], status_url: "https://status.energycap.com/api/v2/status.json", page_url: "https://status.energycap.com", type: "statuspage" },
-  // Teamgo — visitor management and sign-in system
   { id: "teamgo", name: "Teamgo", tags: ["visitor-management", "security", "sign-in", "facilities", "saas"], status_url: "https://status.teamgo.co/api/v2/status.json", page_url: "https://status.teamgo.co", type: "statuspage" },
-  // Service Fusion — field service management and CRM platform
   { id: "service_fusion", name: "Service Fusion", tags: ["field-service", "saas", "crm", "scheduling", "dispatch", "hvac"], status_url: "https://status.servicefusion.com/api/v2/status.json", page_url: "https://status.servicefusion.com", type: "statuspage" },
-  // Acenda — omnichannel ecommerce platform
   { id: "acenda", name: "Acenda", tags: ["ecommerce", "retail", "saas", "omnichannel", "shopping-cart", "marketplace"], status_url: "https://status.acenda.com/api/v2/status.json", page_url: "https://status.acenda.com", type: "statuspage" },
-  // tamigo — employee scheduling and workforce management platform
   { id: "tamigo", name: "tamigo", tags: ["workforce-management", "scheduling", "hr", "saas", "time-tracking", "retail"], status_url: "https://tamigo.statuspage.io/api/v2/status.json", page_url: "https://tamigo.statuspage.io", type: "statuspage" },
-  // Tapdesk — CRM and lead intelligence platform
   { id: "tapdesk", name: "Tapdesk", tags: ["crm", "sales", "lead-generation", "prospecting", "saas", "b2b"], status_url: "https://tapdesk.statuspage.io/api/v2/status.json", page_url: "https://tapdesk.statuspage.io", type: "statuspage" },
-  // EDNA — omnichannel customer communications and CRM platform
   { id: "edna", name: "EDNA", tags: ["crm", "omnichannel", "helpdesk", "messaging", "saas", "customer-communications"], status_url: "https://edna.statuspage.io/api/v2/status.json", page_url: "https://edna.statuspage.io", type: "statuspage" },
-  // Saildrone — autonomous ocean data collection and maritime intelligence platform
   { id: "saildrone", name: "Saildrone", tags: ["ocean-data", "iot", "maritime", "autonomous", "api", "saas"], status_url: "https://saildrone.statuspage.io/api/v2/status.json", page_url: "https://saildrone.statuspage.io", type: "statuspage" },
-  // Salesbricks — B2B deal workflow and buyer checkout platform
   { id: "salesbricks", name: "Salesbricks", tags: ["b2b", "saas", "deals", "revenue-operations", "checkout", "sales"], status_url: "https://salesbricks.statuspage.io/api/v2/status.json", page_url: "https://salesbricks.statuspage.io", type: "statuspage" },
-  // Scalefast — international ecommerce and subscription management platform
   { id: "scalefast", name: "Scalefast", tags: ["ecommerce", "international", "saas", "subscriptions", "payments", "d2c"], status_url: "https://scalefast.statuspage.io/api/v2/status.json", page_url: "https://scalefast.statuspage.io", type: "statuspage" },
-  // Dashly — customer engagement and live chat platform for SaaS
   { id: "dashly", name: "Dashly", tags: ["customer-engagement", "live-chat", "crm", "saas", "marketing", "messaging"], status_url: "https://status.dashly.io/api/v2/status.json", page_url: "https://status.dashly.io", type: "statuspage" },
-  // Spotlightr — video hosting platform for online course creators and educators
   { id: "spotlightr", name: "Spotlightr", tags: ["video", "elearning", "hosting", "saas", "content", "education"], status_url: "https://status.spotlightr.com/api/v2/status.json", page_url: "https://status.spotlightr.com", type: "statuspage" },
-  // vMix — live video production and streaming software platform
   { id: "vmix", name: "vMix", tags: ["video", "live-streaming", "production", "broadcast", "saas", "software"], status_url: "https://status.vmix.com/api/v2/status.json", page_url: "https://status.vmix.com", type: "statuspage" },
-  // Hub360 (Haivision) — live video streaming and broadcast management platform
   { id: "hub360", name: "Hub360", tags: ["video", "broadcast", "live-streaming", "enterprise", "saas", "media"], status_url: "https://status.haivision.com/api/v2/status.json", page_url: "https://status.haivision.com", type: "statuspage" },
-  // Vimeo OTT (formerly VHX) — white-label OTT streaming and video monetization platform
   { id: "vimeo_ott", name: "Vimeo OTT", tags: ["video", "ott", "streaming", "monetization", "saas", "media"], status_url: "https://status.vhx.tv/api/v2/status.json", page_url: "https://status.vhx.tv", type: "statuspage" },
-  // Learnerbly — employee L&D marketplace for curated learning resources
   { id: "learnerbly", name: "Learnerbly", tags: ["elearning", "hr", "l-and-d", "marketplace", "saas", "training"], status_url: "https://status.learnerbly.com/api/v2/status.json", page_url: "https://status.learnerbly.com", type: "statuspage" },
-  // Skyvera (formerly Kandy) — cloud communications and CPaaS platform
   { id: "skyvera", name: "Skyvera", tags: ["communications", "cpaas", "voip", "api", "enterprise", "cloud"], status_url: "https://status.kandy.io/api/v2/status.json", page_url: "https://status.kandy.io", type: "statuspage" },
-  // Woosmap — location intelligence and mapping API platform
   { id: "woosmap", name: "Woosmap", tags: ["maps", "location", "api", "geolocation", "saas", "developer-tools"], status_url: "https://status.woosmap.com/api/v2/status.json", page_url: "https://status.woosmap.com", type: "statuspage" },
-  // PTC Cloud Services — industrial IoT and PLM cloud services platform (distinct from PTC Atlas)
   { id: "ptc_cloud", name: "PTC Cloud Services", tags: ["industrial-iot", "plm", "enterprise", "manufacturing", "cloud", "saas"], status_url: "https://status.ptc.io/api/v2/status.json", page_url: "https://status.ptc.io", type: "statuspage" },
-  // Rivo — loyalty and rewards platform for Shopify merchants and ecommerce brands
   { id: "rivo", name: "Rivo", tags: ["loyalty", "rewards", "ecommerce", "shopify", "saas", "marketing"], status_url: "https://status.rivo.io/api/v2/status.json", page_url: "https://status.rivo.io", type: "statuspage" },
-  // Patch — carbon credit and climate API platform for integrating carbon offsets into products
   { id: "patch", name: "Patch", tags: ["carbon", "climate", "api", "sustainability", "developer-tools"], status_url: "https://status.patch.io/api/v2/status.json", page_url: "https://status.patch.io", type: "statuspage" },
-  // ClearTrace — clean energy tracking and carbon reporting platform for enterprises
   { id: "cleartrace", name: "ClearTrace", tags: ["clean-energy", "carbon", "esg", "reporting", "sustainability"], status_url: "https://status.cleartrace.io/api/v2/status.json", page_url: "https://status.cleartrace.io", type: "statuspage" },
-  // Alpine IQ — cannabis CRM, analytics, and marketing automation platform
   { id: "alpine_iq", name: "Alpine IQ", tags: ["cannabis", "crm", "analytics", "marketing", "retail"], status_url: "https://status.alpineiq.com/api/v2/status.json", page_url: "https://status.alpineiq.com", type: "statuspage" },
-  // Welocalize — translation and localization services platform for global content
   { id: "welocalize", name: "Welocalize", tags: ["translation", "localization", "l10n", "enterprise", "ai"], status_url: "https://status.welocalize.com/api/v2/status.json", page_url: "https://status.welocalize.com", type: "statuspage" },
-  // HireEZ — AI-powered outbound recruiting and talent sourcing platform
   { id: "hireez", name: "HireEZ", tags: ["recruiting", "hr", "ai", "talent-acquisition", "saas"], status_url: "https://status.hireez.com/api/v2/status.json", page_url: "https://status.hireez.com", type: "statuspage" },
-  // Nooks — AI sales calling and parallel dialer platform for revenue teams
   { id: "nooks", name: "Nooks", tags: ["sales", "calling", "ai", "dialer", "revenue"], status_url: "https://status.nooks.in/api/v2/status.json", page_url: "https://status.nooks.in", type: "statuspage" },
-  // DailyPay — earned wage access platform enabling on-demand pay for employees
   { id: "dailypay", name: "DailyPay", tags: ["earned-wage-access", "ewa", "fintech", "payroll", "hr"], status_url: "https://status.dailypay.com/api/v2/status.json", page_url: "https://status.dailypay.com", type: "statuspage" },
-  // Rain — earned wage access and financial wellness platform for hourly workers
   { id: "rain", name: "Rain", tags: ["earned-wage-access", "ewa", "fintech", "payroll", "financial-wellness"], status_url: "https://status.rain.com/api/v2/status.json", page_url: "https://status.rain.com", type: "statuspage" },
-  // Signing Order — notary signing platform for real estate closing coordination
   { id: "signing_order", name: "Signing Order", tags: ["notary", "real-estate", "closing", "esign", "fintech"], status_url: "https://status.signingorder.com/api/v2/status.json", page_url: "https://status.signingorder.com", type: "statuspage" },
-  // Cradlepoint — enterprise cellular networking and NetCloud platform (Ericsson)
   { id: "cradlepoint", name: "Cradlepoint", tags: ["networking", "cellular", "enterprise", "iot", "wan"], status_url: "https://status.cradlepoint.com/api/v2/status.json", page_url: "https://status.cradlepoint.com", type: "statuspage" },
-  // Pagerly — on-call and incident management platform (Slack-native)
   { id: "pagerly", name: "Pagerly", tags: ["on-call", "incident-management", "monitoring", "devops", "alerting"], status_url: "https://pagerly.statuspage.io/api/v2/status.json", page_url: "https://pagerly.statuspage.io", type: "statuspage" },
-  // ServiceNow Cloud Observability — (formerly Lightstep) distributed tracing and APM platform
   { id: "servicenow_cloud_observability", name: "ServiceNow Cloud Observability", tags: ["observability", "tracing", "apm", "monitoring", "devops"], status_url: "https://lightstep.statuspage.io/api/v2/status.json", page_url: "https://lightstep.statuspage.io", type: "statuspage" },
-  // JumpCloud — cloud directory platform for unified device and identity management
-  { id: "jumpcloud", name: "JumpCloud", tags: ["identity", "directory", "mdm", "sso", "security"], status_url: "https://jumpcloud.statuspage.io/api/v2/status.json", page_url: "https://jumpcloud.statuspage.io", type: "statuspage" },
-  // Kandji — Apple device management (MDM) platform for macOS, iOS, and iPadOS
-  { id: "kandji", name: "Kandji", tags: ["mdm", "apple", "macos", "ios", "device-management"], status_url: "https://kandji.statuspage.io/api/v2/status.json", page_url: "https://kandji.statuspage.io", type: "statuspage" },
-  // Filestack — file upload, transform, and delivery API platform
-  { id: "filestack", name: "Filestack", tags: ["file-upload", "cdn", "media", "api", "developer-tools"], status_url: "https://filestack.statuspage.io/api/v2/status.json", page_url: "https://filestack.statuspage.io", type: "statuspage" },
-  // Bandwidth — enterprise cloud communications platform (voice, messaging, 911)
-  { id: "bandwidth", name: "Bandwidth", tags: ["communications", "voip", "sms", "voice", "telecom"], status_url: "https://bandwidth.statuspage.io/api/v2/status.json", page_url: "https://bandwidth.statuspage.io", type: "statuspage" },
-  // Telnyx — cloud communications platform for voice, SMS, and fax APIs
-  { id: "telnyx", name: "Telnyx", tags: ["communications", "voip", "sms", "api", "telecom"], status_url: "https://telnyx.statuspage.io/api/v2/status.json", page_url: "https://telnyx.statuspage.io", type: "statuspage" },
-  // Bird (formerly MessageBird) — omnichannel customer communications platform
-  { id: "bird", name: "Bird (MessageBird)", tags: ["communications", "sms", "messaging", "omnichannel", "api"], status_url: "https://messagebird.statuspage.io/api/v2/status.json", page_url: "https://messagebird.statuspage.io", type: "statuspage" },
-  // Plivo — cloud communications platform for voice and SMS APIs
-  { id: "plivo", name: "Plivo", tags: ["communications", "voip", "sms", "api", "telecom"], status_url: "https://plivo.statuspage.io/api/v2/status.json", page_url: "https://plivo.statuspage.io", type: "statuspage" },
-  // Telerivet — cloud messaging platform for SMS and mobile messaging in emerging markets
-  { id: "telerivet", name: "Telerivet", tags: ["sms", "messaging", "mobile", "api", "communications"], status_url: "https://telerivet.statuspage.io/api/v2/status.json", page_url: "https://telerivet.statuspage.io", type: "statuspage" },
-  // Sinch — cloud communications platform for SMS, voice, email, and WhatsApp
-  { id: "sinch", name: "Sinch", tags: ["communications", "sms", "voice", "messaging", "api"], status_url: "https://sinch.statuspage.io/api/v2/status.json", page_url: "https://sinch.statuspage.io", type: "statuspage" },
-  // Fivetran — automated data integration and ELT pipeline platform
-  { id: "fivetran", name: "Fivetran", tags: ["data-integration", "etl", "elt", "analytics", "data"], status_url: "https://fivetran.statuspage.io/api/v2/status.json", page_url: "https://fivetran.statuspage.io", type: "statuspage" },
-  // Segment — customer data platform (CDP) for collecting, unifying, and routing user data
-  { id: "segment", name: "Segment", tags: ["cdp", "analytics", "data", "marketing", "api"], status_url: "https://segment.statuspage.io/api/v2/status.json", page_url: "https://segment.statuspage.io", type: "statuspage" },
-  // LiveChat — customer service platform for live chat and helpdesk support
-  { id: "livechat", name: "LiveChat", tags: ["customer-support", "live-chat", "helpdesk", "saas", "communication"], status_url: "https://status.livechat.com/api/v2/status.json", page_url: "https://status.livechat.com", type: "statuspage" },
-  // Lattice — people management platform for performance reviews, OKRs, and engagement
-  { id: "lattice", name: "Lattice", tags: ["hr", "performance-management", "okr", "engagement", "people-ops"], status_url: "https://status.lattice.com/api/v2/status.json", page_url: "https://status.lattice.com", type: "statuspage" },
-  // Metabase Cloud — open-source BI and analytics platform (hosted cloud version)
   { id: "metabase_cloud", name: "Metabase Cloud", tags: ["analytics", "bi", "data-visualization", "reporting", "saas"], status_url: "https://metabase.statuspage.io/api/v2/status.json", page_url: "https://metabase.statuspage.io", type: "statuspage" },
-  // m3ter — usage-based billing and metering platform for SaaS
   { id: "m3ter", name: "m3ter", tags: ["billing", "metering", "usage-based", "saas", "developer-tools"], status_url: "https://status.m3ter.com/api/v2/status.json", page_url: "https://status.m3ter.com", type: "statuspage" },
-  // Forma — employee benefits and spending accounts platform
   { id: "forma", name: "Forma", tags: ["employee-benefits", "hr", "spending-accounts", "wellness", "saas"], status_url: "https://forma.statuspage.io/api/v2/status.json", page_url: "https://forma.statuspage.io", type: "statuspage" },
-  // MoeGo — pet grooming business management and scheduling software
   { id: "moego", name: "MoeGo", tags: ["pet-grooming", "scheduling", "field-service", "saas"], status_url: "https://moego.statuspage.io/api/v2/status.json", page_url: "https://moego.statuspage.io", type: "statuspage" },
-  // Mineral — HR compliance and employment law guidance platform
   { id: "mineral", name: "Mineral", tags: ["hr-compliance", "employment-law", "hr", "saas"], status_url: "https://mineral.statuspage.io/api/v2/status.json", page_url: "https://mineral.statuspage.io", type: "statuspage" },
-  // Chipper Cash — pan-African cross-border payments and financial services
   { id: "chipper_cash", name: "Chipper Cash", tags: ["fintech", "payments", "africa", "cross-border", "mobile-money"], status_url: "https://chipper.statuspage.io/api/v2/status.json", page_url: "https://chipper.statuspage.io", type: "statuspage" },
-  // Fluix — mobile field workflow and paperless forms automation
   { id: "fluix", name: "Fluix", tags: ["field-workflows", "paperless", "forms", "productivity", "saas"], status_url: "https://status.fluix.io/api/v2/status.json", page_url: "https://status.fluix.io", type: "statuspage" },
-  // JOOR — B2B wholesale fashion marketplace connecting brands and retailers
   { id: "joor", name: "JOOR", tags: ["fashion", "wholesale", "b2b-marketplace", "retail", "saas"], status_url: "https://status.joor.com/api/v2/status.json", page_url: "https://status.joor.com", type: "statuspage" },
-  // Centra — headless e-commerce platform for fashion and lifestyle brands
   { id: "centra", name: "Centra", tags: ["ecommerce", "fashion", "retail", "headless", "saas"], status_url: "https://centra.statuspage.io/api/v2/status.json", page_url: "https://centra.statuspage.io", type: "statuspage" },
-  // Greenway Services — healthcare IT and electronic health record solutions
   { id: "greenway_services", name: "Greenway Services", tags: ["healthcare", "ehr", "practice-management", "saas"], status_url: "https://greenway.statuspage.io/api/v2/status.json", page_url: "https://greenway.statuspage.io", type: "statuspage" },
-  // Patientco — patient payment and financial engagement platform for healthcare
   { id: "patientco", name: "Patientco", tags: ["healthcare", "patient-payments", "billing", "revenue-cycle", "saas"], status_url: "https://patientco.statuspage.io/api/v2/status.json", page_url: "https://status.patientco.com", type: "statuspage" },
-  // Parsable — connected worker platform for manufacturing operations (tick 456)
   { id: "parsable", name: "Parsable", tags: ["manufacturing", "operations", "connected-worker", "no-code", "saas"], status_url: "https://parsable.statuspage.io/api/v2/status.json", page_url: "https://parsable.statuspage.io", type: "statuspage" },
-  // Cornerstone OnDemand — enterprise talent management and learning management system
   { id: "cornerstone_ondemand", name: "Cornerstone OnDemand", tags: ["lms", "hr", "talent-management", "learning", "enterprise"], status_url: "https://status.csod.com/api/v2/status.json", page_url: "https://status.csod.com", type: "statuspage" },
-  // TiDB Cloud — distributed SQL cloud database by PingCAP
-  { id: "tidb_cloud", name: "TiDB Cloud", tags: ["database", "sql", "distributed", "cloud", "developer-tools"], status_url: "https://status.tidbcloud.com/api/v2/status.json", page_url: "https://status.tidbcloud.com", type: "statuspage" },
-  // Abnormal AI — AI-native email security platform detecting advanced threats
   { id: "abnormal_ai", name: "Abnormal AI", tags: ["security", "email-security", "ai", "saas", "enterprise"], status_url: "https://status.abnormalsecurity.com/api/v2/status.json", page_url: "https://status.abnormalsecurity.com", type: "statuspage" },
-  // Revel Digital — digital signage content management system
   { id: "revel_digital", name: "Revel Digital", tags: ["digital-signage", "cms", "media", "saas"], status_url: "https://reveldigital.statuspage.io/api/v2/status.json", page_url: "https://reveldigital.statuspage.io", type: "statuspage" },
-  // ChartHop — people analytics and org design platform
   { id: "charthop", name: "ChartHop", tags: ["hr", "people-analytics", "org-design", "workforce", "saas"], status_url: "https://status.charthop.com/api/v2/status.json", page_url: "https://status.charthop.com", type: "statuspage" },
-  // Board BI — integrated business planning and analytics platform
   { id: "board_bi", name: "Board BI", tags: ["bi", "planning", "analytics", "budgeting", "enterprise"], status_url: "https://board.statuspage.io/api/v2/status.json", page_url: "https://board.statuspage.io", type: "statuspage" },
-  // Limeade — employee wellness and engagement experience platform
   { id: "limeade", name: "Limeade", tags: ["wellness", "employee-experience", "hr", "benefits", "saas"], status_url: "https://limeade.statuspage.io/api/v2/status.json", page_url: "https://limeade.statuspage.io", type: "statuspage" },
-  // BloomBoard — professional learning and micro-credential platform for educators
   { id: "bloomboard", name: "BloomBoard", tags: ["edtech", "professional-learning", "credentials", "k12", "saas"], status_url: "https://status.bloomboard.com/api/v2/status.json", page_url: "https://status.bloomboard.com", type: "statuspage" },
-  // Limble — cloud-based CMMS for maintenance management and asset tracking
   { id: "limble", name: "Limble", tags: ["cmms", "maintenance", "asset-management", "operations", "saas"], status_url: "https://status.limblecmms.com/api/v2/status.json", page_url: "https://status.limblecmms.com", type: "statuspage" },
-  // Infor CloudSuite — enterprise ERP and industry cloud platform for manufacturing, healthcare, and distribution
   { id: "infor", name: "Infor CloudSuite", tags: ["erp", "manufacturing", "enterprise", "cloud", "saas"], status_url: "https://infor.statuspage.io/api/v2/status.json", page_url: "https://infor.statuspage.io", type: "statuspage" },
-  // Continue — open-source AI coding assistant IDE extension for VS Code and JetBrains
   { id: "continue", name: "Continue", tags: ["ai", "coding-assistant", "open-source", "ide", "developer-tools"], status_url: "https://continue.statuspage.io/api/v2/status.json", page_url: "https://continue.statuspage.io", type: "statuspage" },
-  // Chartmetric — music analytics and streaming intelligence platform for artists and labels
   { id: "chartmetric", name: "Chartmetric", tags: ["music", "analytics", "streaming", "artist-tools", "saas"], status_url: "https://chartmetric.statuspage.io/api/v2/status.json", page_url: "https://chartmetric.statuspage.io", type: "statuspage" },
-  // Cerbo — EHR and practice management platform built for direct primary care and concierge medicine
   { id: "cerbo", name: "Cerbo", tags: ["healthcare", "ehr", "direct-primary-care", "practice-management", "saas"], status_url: "https://cerbo.statuspage.io/api/v2/status.json", page_url: "https://cerbo.statuspage.io", type: "statuspage" },
-  // Elation Health — EHR designed for independent primary care practices
   { id: "elationhealth", name: "Elation Health", tags: ["healthcare", "ehr", "primary-care", "practice-management", "saas"], status_url: "https://elationhealth.statuspage.io/api/v2/status.json", page_url: "https://elationhealth.statuspage.io", type: "statuspage" },
-  // Enpass — offline-first cross-platform password manager with cloud sync
   { id: "enpass", name: "Enpass", tags: ["password-manager", "security", "offline", "cross-platform", "saas"], status_url: "https://enpass.statuspage.io/api/v2/status.json", page_url: "https://enpass.statuspage.io", type: "statuspage" },
-  // Proto.io — high-fidelity mobile and web prototyping platform
   { id: "proto_io", name: "Proto.io", tags: ["design", "prototyping", "mobile", "ux", "saas"], status_url: "https://proto.statuspage.io/api/v2/status.json", page_url: "https://proto.statuspage.io", type: "statuspage" },
-  // Specify — design token and asset management platform bridging design and engineering
   { id: "specify", name: "Specify", tags: ["design-tokens", "design-systems", "design-engineering", "saas"], status_url: "https://specify.statuspage.io/api/v2/status.json", page_url: "https://specify.statuspage.io", type: "statuspage" },
-  // Trezor — open-source hardware cryptocurrency wallet and key management
   { id: "trezor", name: "Trezor", tags: ["crypto", "hardware-wallet", "security", "open-source", "web3"], status_url: "https://trezor.statuspage.io/api/v2/status.json", page_url: "https://trezor.statuspage.io", type: "statuspage" },
-  // Bybit — cryptocurrency derivatives and spot exchange
   { id: "bybit", name: "Bybit", tags: ["crypto", "exchange", "derivatives", "trading", "fintech"], status_url: "https://bybit.statuspage.io/api/v2/status.json", page_url: "https://bybit.statuspage.io", type: "statuspage" },
-  // Prevalent — third-party risk management and vendor assessment platform (tick 458)
   { id: "prevalent", name: "Prevalent", tags: ["security", "risk-management", "vendor-management", "compliance", "saas"], status_url: "https://prevalent.statuspage.io/api/v2/status.json", page_url: "https://prevalent.statuspage.io", type: "statuspage" },
-  // Veremark — employment background screening and reference checking platform
   { id: "veremark", name: "Veremark", tags: ["background-screening", "hr", "compliance", "identity", "saas"], status_url: "https://status.veremark.com/api/v2/status.json", page_url: "https://status.veremark.com", type: "statuspage" },
-  // Alert Logic — managed detection and response (MDR) and cloud security platform
-  { id: "alert_logic", name: "Alert Logic", tags: ["security", "mdr", "monitoring", "threat-detection", "saas"], status_url: "https://status.alertlogic.com/api/v2/status.json", page_url: "https://status.alertlogic.com", type: "statuspage" },
-  // Condeco (Eptura Engage) — workplace and desk booking management platform
   { id: "condeco", name: "Condeco", tags: ["workspace", "desk-booking", "facilities", "hybrid-work", "saas"], status_url: "https://condeco.statuspage.io/api/v2/status.json", page_url: "https://condeco.statuspage.io", type: "statuspage" },
-  // Solink — cloud video surveillance and loss prevention platform for retail and restaurants
   { id: "solink", name: "Solink", tags: ["video-surveillance", "security", "retail", "loss-prevention", "saas"], status_url: "https://solink.statuspage.io/api/v2/status.json", page_url: "https://solink.statuspage.io", type: "statuspage" },
-  // Coram AI — AI-powered video security and physical security platform
   { id: "coram_ai", name: "Coram AI", tags: ["security", "video-surveillance", "ai", "physical-security", "saas"], status_url: "https://status.coram.ai/api/v2/status.json", page_url: "https://status.coram.ai", type: "statuspage" },
-  // Vestd — equity management and employee share scheme platform (UK-focused)
   { id: "vestd", name: "Vestd", tags: ["equity-management", "share-schemes", "hr", "fintech", "saas"], status_url: "https://vestd.statuspage.io/api/v2/status.json", page_url: "https://vestd.statuspage.io", type: "statuspage" },
-  // Jackrabbit Class — class management software for youth activity businesses (gymnastics, dance, swim)
   { id: "jackrabbit_class", name: "Jackrabbit Class", tags: ["class-management", "youth", "scheduling", "gym", "saas"], status_url: "https://jackrabbitclass.statuspage.io/api/v2/status.json", page_url: "https://jackrabbitclass.statuspage.io", type: "statuspage" },
-  // Bókun — travel and activities booking platform (TripAdvisor Group)
   { id: "bokun", name: "Bókun", tags: ["travel", "booking", "activities", "tours", "saas"], status_url: "https://bokun.statuspage.io/api/v2/status.json", page_url: "https://bokun.statuspage.io", type: "statuspage" },
-  // Altium 365 — cloud-based PCB design and electronics engineering collaboration platform
   { id: "altium365", name: "Altium 365", tags: ["pcb", "eda", "electronics", "engineering", "cloud"], status_url: "https://status.altium.com/api/v2/status.json", page_url: "https://status.altium.com", type: "statuspage" },
-  // Truevo — payment processing and acquiring platform for European merchants
   { id: "truevo", name: "Truevo", tags: ["payments", "acquiring", "fintech", "merchant-services", "saas"], status_url: "https://status.truevo.com/api/v2/status.json", page_url: "https://status.truevo.com", type: "statuspage" },
-  // Edge Delta — streaming telemetry and observability platform for log processing at the edge
   { id: "edgedelta", name: "Edge Delta", tags: ["observability", "logging", "telemetry", "monitoring", "saas"], status_url: "https://edgedelta.statuspage.io/api/v2/status.json", page_url: "https://edgedelta.statuspage.io", type: "statuspage" },
-  // Hint Health — direct primary care (DPC) practice management software
   { id: "hint", name: "Hint Health", tags: ["healthcare", "ehr", "direct-primary-care", "practice-management", "saas"], status_url: "https://status.hint.com/api/v2/status.json", page_url: "https://status.hint.com", type: "statuspage" },
-  // Blue Canvas — Salesforce DevOps and version control platform
   { id: "bluecanvas", name: "Blue Canvas", tags: ["salesforce", "devops", "version-control", "deployment", "saas"], status_url: "https://status.bluecanvas.io/api/v2/status.json", page_url: "https://status.bluecanvas.io", type: "statuspage" },
-  // ElementsCloud — Salesforce metadata management and impact analysis platform
   { id: "elements_cloud", name: "ElementsCloud", tags: ["salesforce", "metadata", "impact-analysis", "devops", "saas"], status_url: "https://status.elements.cloud/api/v2/status.json", page_url: "https://status.elements.cloud", type: "statuspage" },
-  // WatchGuard Technologies — network security, endpoint security, and multi-factor authentication
   { id: "watchguard", name: "WatchGuard Technologies", tags: ["security", "network-security", "firewall", "mfa", "enterprise"], status_url: "https://status.watchguard.com/api/v2/status.json", page_url: "https://status.watchguard.com", type: "statuspage" },
-  // Provenir — AI-powered credit risk decisioning and data orchestration platform
   { id: "provenir", name: "Provenir", tags: ["fintech", "credit-risk", "decisioning", "ai", "enterprise"], status_url: "https://status.provenir.com/api/v2/status.json", page_url: "https://status.provenir.com", type: "statuspage" },
-  // orderbird — iPad-based POS system for restaurants, cafes, and bars (Germany/Europe)
   { id: "orderbird", name: "orderbird", tags: ["pos", "restaurant", "hospitality", "payments", "saas"], status_url: "https://status.orderbird.com/api/v2/status.json", page_url: "https://status.orderbird.com", type: "statuspage" },
-  // Speakeasy — API SDK generation and developer experience tooling
   { id: "speakeasyapi", name: "Speakeasy", tags: ["api", "sdk", "developer-tools", "devex", "saas"], status_url: "https://status.speakeasyapi.dev/api/v2/status.json", page_url: "https://status.speakeasyapi.dev", type: "statuspage" },
-  // Socket — software supply chain security for open-source dependencies
   { id: "socket", name: "Socket", tags: ["security", "supply-chain", "open-source", "dependencies", "developer-tools"], status_url: "https://status.socket.dev/api/v2/status.json", page_url: "https://status.socket.dev", type: "statuspage" },
-  // Luma Health — patient engagement and scheduling platform for healthcare providers
   { id: "lumahealth", name: "Luma Health", tags: ["healthcare", "patient-engagement", "scheduling", "saas"], status_url: "https://status.lumahealth.io/api/v2/status.json", page_url: "https://status.lumahealth.io", type: "statuspage" },
-  // Equinix Metal — bare metal cloud infrastructure and colocation services
   { id: "equinixmetal", name: "Equinix Metal", tags: ["cloud", "bare-metal", "infrastructure", "colocation", "iaas"], status_url: "https://status.equinixmetal.com/api/v2/status.json", page_url: "https://status.equinixmetal.com", type: "statuspage" },
-  // fieldd — field service management platform for mobile workforce
   { id: "fieldd", name: "fieldd", tags: ["field-service", "workforce-management", "scheduling", "mobile", "saas"], status_url: "https://status.fieldd.co/api/v2/status.json", page_url: "https://status.fieldd.co", type: "statuspage" },
-  // Patriot Software — payroll, accounting, and HR software for small businesses
   { id: "patriotsoftware", name: "Patriot Software", tags: ["payroll", "hr", "accounting", "small-business", "saas"], status_url: "https://status.patriotsoftware.com/api/v2/status.json", page_url: "https://status.patriotsoftware.com", type: "statuspage" },
-  // PTC — industrial IoT, PLM, and augmented reality software platform (Atlas)
   { id: "ptc", name: "PTC", tags: ["industrial", "plm", "iot", "ar", "enterprise"], status_url: "https://status.ptc.com/api/v2/status.json", page_url: "https://status.ptc.com", type: "statuspage" },
-  // Saba — talent management and learning management system
   { id: "saba", name: "Saba", tags: ["lms", "talent-management", "learning", "hr", "saas"], status_url: "https://saba.statuspage.io/api/v2/status.json", page_url: "https://saba.statuspage.io", type: "statuspage" },
-  // Shelf — AI-powered knowledge management and content library platform
   { id: "shelf", name: "Shelf", tags: ["knowledge-management", "content-library", "search", "ai", "saas"], status_url: "https://status.shelf.io/api/v2/status.json", page_url: "https://status.shelf.io", type: "statuspage" },
-  // CM.com — cloud communications platform (CPaaS) for messaging, voice, and payments
-  { id: "cm_com", name: "CM.com", tags: ["cpaas", "sms", "messaging", "voice", "payments"], status_url: "https://status.cm.com/api/v2/status.json", page_url: "https://status.cm.com", type: "statuspage" },
-  // Embrace — mobile observability and crash reporting platform
   { id: "embrace", name: "Embrace", tags: ["mobile", "observability", "crash-reporting", "monitoring", "developer-tools"], status_url: "https://status.embrace.io/api/v2/status.json", page_url: "https://status.embrace.io", type: "statuspage" },
-  // Count — collaborative data workspace and BI notebook platform
   { id: "count", name: "Count", tags: ["analytics", "bi", "notebooks", "data", "collaboration"], status_url: "https://status.count.co/api/v2/status.json", page_url: "https://status.count.co", type: "statuspage" },
-  // xMatters — intelligent incident management and on-call alerting platform
-  { id: "xmatters", name: "xMatters", tags: ["incident-management", "alerting", "on-call", "devops", "saas"], status_url: "https://status.xmatters.com/api/v2/status.json", page_url: "https://status.xmatters.com", type: "statuspage" },
-  // Human API — healthcare data aggregation and interoperability API platform
   { id: "humanapi", name: "Human API", tags: ["healthcare", "health-data", "interoperability", "api", "fhir"], status_url: "https://status.humanapi.co/api/v2/status.json", page_url: "https://status.humanapi.co", type: "statuspage" },
-  // Portbase — Dutch port community system for logistics and cargo data exchange at Rotterdam and Amsterdam
   { id: "portbase", name: "Portbase", tags: ["logistics", "maritime", "port", "cargo", "data-exchange"], status_url: "https://status.portbase.com/api/v2/status.json", page_url: "https://status.portbase.com", type: "statuspage" },
-  // Flowable — open-source BPMN workflow and business process automation platform
   { id: "flowable", name: "Flowable", tags: ["bpm", "workflow", "automation", "process-management", "enterprise"], status_url: "https://status.flowable.com/api/v2/status.json", page_url: "https://status.flowable.com", type: "statuspage" },
-  // Gnatta — omnichannel customer communications and engagement platform
   { id: "gnatta", name: "Gnatta", tags: ["customer-communications", "omnichannel", "crm", "helpdesk", "saas"], status_url: "https://status.gnatta.com/api/v2/status.json", page_url: "https://status.gnatta.com", type: "statuspage" },
-  // HappyCo — property inspection and condition assessment platform for multifamily real estate
   { id: "happyco", name: "HappyCo", tags: ["property-management", "real-estate", "inspection", "multifamily", "saas"], status_url: "https://status.happyco.com/api/v2/status.json", page_url: "https://status.happyco.com", type: "statuspage" },
-  // IgniteTech — enterprise software portfolio (Aurea, Openwave, ILOG, and others)
   { id: "ignitetech", name: "IgniteTech", tags: ["enterprise", "software", "crm", "integration", "saas"], status_url: "https://status.ignitetech.com/api/v2/status.json", page_url: "https://status.ignitetech.com", type: "statuspage" },
-  // Medmastery — online medical education and clinical skills training for physicians
   { id: "medmastery", name: "Medmastery", tags: ["medical-education", "cme", "healthcare", "elearning", "saas"], status_url: "https://status.medmastery.com/api/v2/status.json", page_url: "https://status.medmastery.com", type: "statuspage" },
-  // Vasion — cloud-native document management, print management, and capture automation
   { id: "vasion", name: "Vasion", tags: ["document-management", "print-management", "capture", "automation", "enterprise"], status_url: "https://status.vasion.com/api/v2/status.json", page_url: "https://status.vasion.com", type: "statuspage" },
-  // Voyado — customer engagement and loyalty platform for retail and e-commerce
   { id: "voyado", name: "Voyado", tags: ["loyalty", "customer-engagement", "retail", "ecommerce", "crm"], status_url: "https://status.voyado.com/api/v2/status.json", page_url: "https://status.voyado.com", type: "statuspage" },
-  // KOMOJU — payment gateway for Japan and Asia-Pacific markets
   { id: "komoju", name: "KOMOJU", tags: ["payments", "payment-gateway", "japan", "asia-pacific", "ecommerce"], status_url: "https://status.komoju.com/api/v2/status.json", page_url: "https://status.komoju.com", type: "statuspage" },
   { id: "pave", name: "Pave", tags: ["compensation", "hr", "salary-benchmarking", "analytics", "saas"], status_url: "https://status.pave.com/api/v2/status.json", page_url: "https://status.pave.com", type: "statuspage" },
   { id: "watttime", name: "WattTime API", tags: ["clean-energy", "electricity-grid", "emissions", "climate-tech", "api"], status_url: "https://status.watttime.org/api/v2/status.json", page_url: "https://status.watttime.org", type: "statuspage" },
@@ -6947,264 +4216,122 @@ const SERVICES: ServiceConfig[] = [
   { id: "ambassador_api", name: "Ambassador", tags: ["api-gateway", "kubernetes", "developer-tools", "cloud-native", "edge"], status_url: "https://status.getambassador.io/api/v2/status.json", page_url: "https://status.getambassador.io", type: "statuspage" },
   { id: "talis", name: "Talis", tags: ["edtech", "library", "higher-education", "reading-lists", "saas"], status_url: "https://status.talis.com/api/v2/status.json", page_url: "https://status.talis.com", type: "statuspage" },
   { id: "mastercard_ob", name: "Mastercard Open Banking EU/UK", tags: ["open-banking", "fintech", "payments", "europe", "api"], status_url: "https://status.aiia.eu/api/v2/status.json", page_url: "https://status.aiia.eu", type: "statuspage" },
-  // Torizon Cloud — Toradex embedded Linux and container platform for industrial IoT
   { id: "torizon_cloud", name: "Torizon Cloud", tags: ["iot", "embedded", "linux", "industrial", "saas"], status_url: "https://status.torizon.io/api/v2/status.json", page_url: "https://status.torizon.io", type: "statuspage" },
-  // Reachfive — customer identity and access management (CIAM) platform
   { id: "reachfive", name: "ReachFive", tags: ["ciam", "identity", "auth", "customer-identity", "saas"], status_url: "https://status.reachfive.com/api/v2/status.json", page_url: "https://status.reachfive.com", type: "statuspage" },
-  // Currenxie — multi-currency business accounts and FX payments platform
   { id: "currenxie", name: "Currenxie", tags: ["fx", "payments", "multi-currency", "fintech", "api"], status_url: "https://status.currenxie.com/api/v2/status.json", page_url: "https://status.currenxie.com", type: "statuspage" },
-  // XMTP — decentralized messaging protocol for web3 apps
   { id: "xmtp", name: "XMTP", tags: ["web3", "messaging", "decentralized", "protocol", "developer-tools"], status_url: "https://status.xmtp.org/api/v2/status.json", page_url: "https://status.xmtp.org", type: "statuspage" },
-  // Enchant — shared inbox and helpdesk for ecommerce customer support teams
   { id: "enchant", name: "Enchant", tags: ["customer-support", "helpdesk", "shared-inbox", "ecommerce", "saas"], status_url: "https://status.enchant.com/api/v2/status.json", page_url: "https://status.enchant.com", type: "statuspage" },
-  // Simetrik — financial reconciliation and transaction matching platform for fintechs
   { id: "simetrik", name: "Simetrik", tags: ["fintech", "reconciliation", "transactions", "finance", "saas"], status_url: "https://status.simetrik.com/api/v2/status.json", page_url: "https://status.simetrik.com", type: "statuspage" },
-  // Revenera — software licensing, compliance, and usage analytics platform
   { id: "revenera", name: "Revenera", tags: ["software-licensing", "compliance", "usage-analytics", "monetization", "enterprise"], status_url: "https://status.revenera.com/api/v2/status.json", page_url: "https://status.revenera.com", type: "statuspage" },
-  // KloudMate — cloud observability and monitoring platform with APM and traces
   { id: "kloudmate", name: "KloudMate", tags: ["observability", "monitoring", "apm", "cloud", "saas"], status_url: "https://status.kloudmate.com/api/v2/status.json", page_url: "https://status.kloudmate.com", type: "statuspage" },
-  // Aptem — apprenticeship management and work-based learning platform (UK)
   { id: "aptem", name: "Aptem", tags: ["apprenticeship", "elearning", "workforce", "uk", "saas"], status_url: "https://status.aptem.co.uk/api/v2/status.json", page_url: "https://status.aptem.co.uk", type: "statuspage" },
-  // Tuple — remote pair programming tool for developers
   { id: "tuple", name: "Tuple", tags: ["pair-programming", "remote-work", "developer-tools", "collaboration", "saas"], status_url: "https://status.tuple.app/api/v2/status.json", page_url: "https://status.tuple.app", type: "statuspage" },
-  // DonorDrive — peer-to-peer fundraising platform for nonprofits
   { id: "donordrive", name: "DonorDrive", tags: ["nonprofit", "fundraising", "donations", "peer-to-peer", "saas"], status_url: "https://status.donordrive.com/api/v2/status.json", page_url: "https://status.donordrive.com", type: "statuspage" },
-  // Boomy — AI music creation and publishing platform
   { id: "boomy", name: "Boomy", tags: ["ai", "music", "audio", "creative", "saas"], status_url: "https://status.boomy.com/api/v2/status.json", page_url: "https://status.boomy.com", type: "statuspage" },
-  // ControlUp — real-time IT endpoint monitoring and troubleshooting platform
   { id: "controlup", name: "ControlUp", tags: ["it-management", "endpoint", "monitoring", "virtual-desktop", "saas"], status_url: "https://status.controlup.com/api/v2/status.json", page_url: "https://status.controlup.com", type: "statuspage" },
-  // Help Scout — customer support and help desk platform
-  { id: "helpscout", name: "Help Scout", tags: ["customer-support", "helpdesk", "email", "live-chat", "saas"], status_url: "https://status.helpscout.com/api/v2/status.json", page_url: "https://status.helpscout.com", type: "statuspage" },
-  // Elium — knowledge management and sharing platform for enterprises
   { id: "elium", name: "Elium", tags: ["knowledge-management", "collaboration", "intranet", "enterprise", "saas"], status_url: "https://status.elium.com/api/v2/status.json", page_url: "https://status.elium.com", type: "statuspage" },
-  // Sunbit — buy-now-pay-later financing platform for point-of-sale
   { id: "sunbit", name: "Sunbit", tags: ["bnpl", "financing", "point-of-sale", "retail", "fintech"], status_url: "https://status.sunbit.com/api/v2/status.json", page_url: "https://status.sunbit.com", type: "statuspage" },
-  // Apicbase — food & beverage management platform for hospitality operations
   { id: "apicbase", name: "Apicbase", tags: ["food-beverage", "hospitality", "menu-management", "operations", "saas"], status_url: "https://status.apicbase.com/api/v2/status.json", page_url: "https://status.apicbase.com", type: "statuspage" },
-  // Bitwave — crypto accounting, tax, and DeFi finance operations platform
   { id: "bitwave", name: "Bitwave", tags: ["crypto", "accounting", "tax", "defi", "fintech"], status_url: "https://status.bitwave.io/api/v2/status.json", page_url: "https://status.bitwave.io", type: "statuspage" },
-  // Glassix — AI-powered unified customer communications platform
   { id: "glassix", name: "Glassix", tags: ["customer-support", "communications", "ai", "messaging", "saas"], status_url: "https://status.glassix.com/api/v2/status.json", page_url: "https://status.glassix.com", type: "statuspage" },
-  // Sherpany — board and leadership meeting management platform
   { id: "sherpany", name: "Sherpany", tags: ["meeting-management", "board", "governance", "enterprise", "saas"], status_url: "https://status.sherpany.com/api/v2/status.json", page_url: "https://status.sherpany.com", type: "statuspage" },
-  // Solidgate — European payment processing platform for digital goods and subscriptions
   { id: "solidgate", name: "Solidgate", tags: ["payments", "fintech", "europe", "subscriptions", "api"], status_url: "https://status.solidgate.com/api/v2/status.json", page_url: "https://status.solidgate.com", type: "statuspage" },
-  // Stax Payments — subscription-based payment processing platform for US SMBs
-  { id: "stax_payments", name: "Stax Payments", tags: ["payments", "fintech", "smb", "subscriptions", "saas"], status_url: "https://status.staxpayments.com/api/v2/status.json", page_url: "https://status.staxpayments.com", type: "statuspage" },
-  // Beam Cloud — serverless GPU cloud platform for Python/ML inference workloads
-  { id: "beam_cloud", name: "Beam Cloud", tags: ["gpu", "cloud", "ai", "ml", "inference", "developer-tools"], status_url: "https://status.beam.cloud/api/v2/status.json", page_url: "https://status.beam.cloud", type: "statuspage" },
-  // Built — construction lending, payments, and draw management platform
   { id: "built", name: "Built", tags: ["construction", "fintech", "lending", "payments", "proptech"], status_url: "https://status.getbuilt.com/api/v2/status.json", page_url: "https://status.getbuilt.com", type: "statuspage" },
-  // Arborgold — field service and business management software for landscaping and arborist companies
   { id: "arborgold", name: "Arborgold", tags: ["field-service", "landscaping", "arboriculture", "scheduling", "saas"], status_url: "https://status.arborgold.com/api/v2/status.json", page_url: "https://status.arborgold.com", type: "statuspage" },
-  // Asset Panda — cloud-based asset tracking and management platform
   { id: "asset_panda", name: "Asset Panda", tags: ["asset-management", "tracking", "inventory", "enterprise", "saas"], status_url: "https://status.assetpanda.com/api/v2/status.json", page_url: "https://status.assetpanda.com", type: "statuspage" },
-  // AirData UAV — drone flight data management, analysis, and compliance platform
   { id: "airdata_uav", name: "AirData UAV", tags: ["drones", "uav", "uas", "aviation", "fleet-management"], status_url: "https://status.airdata.com/api/v2/status.json", page_url: "https://status.airdata.com", type: "statuspage" },
-  // Kushki — Latin American payment processing gateway (Ecuador, Colombia, Mexico, Peru, Chile)
   { id: "kushki", name: "Kushki", tags: ["payments", "fintech", "latam", "payment-gateway", "api"], status_url: "https://status.kushkipagos.com/api/v2/status.json", page_url: "https://status.kushkipagos.com", type: "statuspage" },
-  // Homey — Dutch smart home automation platform supporting 50,000+ apps and devices
   { id: "homey", name: "Homey", tags: ["smart-home", "iot", "automation", "consumer", "saas"], status_url: "https://status.homey.app/api/v2/status.json", page_url: "https://status.homey.app", type: "statuspage" },
-  // Snap One (Control4) — smart home AV integration and control platform for installers
   { id: "snap_one", name: "Snap One", tags: ["smart-home", "av", "control4", "integration", "iot"], status_url: "https://status.control4.com/api/v2/status.json", page_url: "https://status.control4.com", type: "statuspage" },
-  // Briza — commercial insurance marketplace connecting brokers and carriers
   { id: "briza", name: "Briza", tags: ["insurance", "insurtech", "commercial", "marketplace", "saas"], status_url: "https://status.briza.com/api/v2/status.json", page_url: "https://status.briza.com", type: "statuspage" },
-  // Nuvei Australia and New Zealand — payment processing (formerly Till Payments)
   { id: "nuvei_au_nz", name: "Nuvei Australia and New Zealand", tags: ["payments", "fintech", "australia", "new-zealand", "smb"], status_url: "https://status.tillpayments.com/api/v2/status.json", page_url: "https://status.tillpayments.com", type: "statuspage" },
-  // Vimeo OTT (formerly VHX) — white-label streaming and video-on-demand platform
-  { id: "vimeo_ott", name: "Vimeo OTT", tags: ["video", "streaming", "ott", "vod", "media"], status_url: "https://status.vhx.tv/api/v2/status.json", page_url: "https://status.vhx.tv", type: "statuspage" },
-  // Peopleware — workforce management and scheduling for contact centres
   { id: "peopleware", name: "Peopleware", tags: ["workforce-management", "contact-center", "scheduling", "wfm", "saas"], status_url: "https://injixo.statuspage.io/api/v2/status.json", page_url: "https://injixo.statuspage.io", type: "statuspage" },
-  // Aivo — conversational AI platform for customer service (LATAM-focused)
   { id: "aivo", name: "Aivo", tags: ["ai", "chatbot", "customer-service", "conversational-ai", "latam"], status_url: "https://aivo.statuspage.io/api/v2/status.json", page_url: "https://aivo.statuspage.io", type: "statuspage" },
-  // rasa.io — AI-powered newsletter automation for membership organisations
   { id: "rasa_io", name: "rasa.io", tags: ["email", "newsletter", "ai", "associations", "membership"], status_url: "https://rasa-io.statuspage.io/api/v2/status.json", page_url: "https://rasa-io.statuspage.io", type: "statuspage" },
-  // Touchwork — field workforce management and mobile task-dispatch platform
   { id: "touchwork", name: "Touchwork", tags: ["field-service", "workforce-management", "mobile", "scheduling", "saas"], status_url: "https://touchwork.statuspage.io/api/v2/status.json", page_url: "https://touchwork.statuspage.io", type: "statuspage" },
-  // Apptega — cybersecurity programme management and GRC platform
   { id: "apptega", name: "Apptega", tags: ["grc", "cybersecurity", "compliance", "risk", "saas"], status_url: "https://apptega.statuspage.io/api/v2/status.json", page_url: "https://apptega.statuspage.io", type: "statuspage" },
-  // Dentally — cloud-based dental practice management software (UK/Europe)
   { id: "dentally", name: "Dentally", tags: ["dental", "practice-management", "healthcare", "uk", "saas"], status_url: "https://dentally.statuspage.io/api/v2/status.json", page_url: "https://dentally.statuspage.io", type: "statuspage" },
-  // ARAS — enterprise PLM (product lifecycle management) software platform
   { id: "aras_plm", name: "ARAS", tags: ["plm", "manufacturing", "enterprise", "product-lifecycle", "saas"], status_url: "https://aras.statuspage.io/api/v2/status.json", page_url: "https://aras.statuspage.io", type: "statuspage" },
-  // NationBuilder — CRM and engagement platform for political campaigns, advocacy, and nonprofits
   { id: "nationbuilder", name: "NationBuilder", tags: ["crm", "political", "nonprofit", "campaign-management", "saas"], status_url: "https://status.nationbuilder.com/api/v2/status.json", page_url: "https://status.nationbuilder.com", type: "statuspage" },
-  // TripWorks — tour operator and activity booking management platform
   { id: "tripworks", name: "TripWorks", tags: ["tours", "activities", "booking", "travel", "saas"], status_url: "https://status.tripworks.com/api/v2/status.json", page_url: "https://status.tripworks.com", type: "statuspage" },
-  // Skimmer — pool service and route management software for pool care companies
   { id: "skimmer", name: "Skimmer", tags: ["pool-service", "field-service", "scheduling", "home-services", "saas"], status_url: "https://status.getskimmer.com/api/v2/status.json", page_url: "https://status.getskimmer.com", type: "statuspage" },
-  // TempWorks — staffing and temp-agency management software (ATS, payroll, billing)
   { id: "tempworks", name: "TempWorks", tags: ["staffing", "temp-agency", "recruiting", "ats", "saas"], status_url: "https://status.tempworks.com/api/v2/status.json", page_url: "https://status.tempworks.com", type: "statuspage" },
-  // Nova Credit — international credit bureau enabling newcomers to use foreign credit history
   { id: "nova_credit", name: "Nova Credit", tags: ["credit", "fintech", "identity", "immigration", "api"], status_url: "https://status.novacredit.com/api/v2/status.json", page_url: "https://status.novacredit.com", type: "statuspage" },
-  // Kintsugi — AI-powered sales tax compliance automation platform
   { id: "kintsugi", name: "Kintsugi", tags: ["tax", "compliance", "saas", "fintech", "ai"], status_url: "https://kintsugi.statuspage.io/api/v2/status.json", page_url: "https://status.trykintsugi.com", type: "statuspage" },
-  // Pylon — B2B customer support platform built for Slack-first teams
   { id: "pylon", name: "Pylon", tags: ["customer-support", "b2b", "slack", "saas", "crm"], status_url: "https://pylon.statuspage.io/api/v2/status.json", page_url: "https://status.getpylon.com", type: "statuspage" },
-  // Island — enterprise browser with built-in security controls and governance
   { id: "island", name: "Island", tags: ["browser", "enterprise", "security", "zero-trust", "saas"], status_url: "https://island.statuspage.io/api/v2/status.json", page_url: "https://island.statuspage.io", type: "statuspage" },
-  // Legit Security — application security posture management and software supply chain security
   { id: "legit_security", name: "Legit Security", tags: ["security", "appsec", "supply-chain", "devsecops", "saas"], status_url: "https://legitsecurity.statuspage.io/api/v2/status.json", page_url: "https://status.legitsecurity.co", type: "statuspage" },
-  // Seemplicity — security risk remediation and vulnerability management platform
   { id: "seemplicity", name: "Seemplicity", tags: ["security", "risk-management", "vulnerability-management", "devsecops", "saas"], status_url: "https://seemplicity.statuspage.io/api/v2/status.json", page_url: "https://seemplicity.statuspage.io", type: "statuspage" },
-  // Anecdotes — AI-powered GRC and compliance evidence automation platform
   { id: "anecdotes_ai", name: "Anecdotes", tags: ["grc", "compliance", "ai", "security", "saas"], status_url: "https://status.anecdotes.ai/api/v2/status.json", page_url: "https://status.anecdotes.ai", type: "statuspage" },
-  // D-ID — AI-powered digital human and avatar video generation platform
   { id: "did_ai", name: "D-ID", tags: ["ai", "video", "avatar", "creative", "saas"], status_url: "https://status.d-id.com/api/v2/status.json", page_url: "https://status.d-id.com", type: "statuspage" },
-  // Hinge Health — digital musculoskeletal health and physical therapy platform
   { id: "hinge_health", name: "Hinge Health", tags: ["healthcare", "digital-health", "msk", "physical-therapy", "saas"], status_url: "https://status.hingehealth.com/api/v2/status.json", page_url: "https://status.hingehealth.com", type: "statuspage" },
-  // Verifiable — healthcare provider credentialing and network management platform
   { id: "verifiable", name: "Verifiable", tags: ["healthcare", "credentialing", "provider-management", "compliance", "saas"], status_url: "https://status.verifiable.com/api/v2/status.json", page_url: "https://status.verifiable.com", type: "statuspage" },
-  // Emburse Professional (formerly Certify) — enterprise expense management and travel platform
   { id: "emburse_certify", name: "Emburse Professional", tags: ["expense-management", "travel", "finance", "enterprise", "saas"], status_url: "https://status.certify.com/api/v2/status.json", page_url: "https://status.certify.com", type: "statuspage" },
-  // Cezanne HR — cloud HR software for mid-size international organisations
   { id: "cezanne_hr", name: "Cezanne HR", tags: ["hr", "hrms", "people-management", "saas", "international"], status_url: "https://status.cezannehr.com/api/v2/status.json", page_url: "https://status.cezannehr.com", type: "statuspage" },
-  // Kintone — no-code business application platform by Cybozu
   { id: "kintone", name: "Kintone", tags: ["no-code", "business-apps", "workflow", "database", "saas"], status_url: "https://status.kintone.com/api/v2/status.json", page_url: "https://status.kintone.com", type: "statuspage" },
-  // Plentific — property management and maintenance operations platform
   { id: "plentific", name: "Plentific", tags: ["property-management", "maintenance", "real-estate", "facilities", "saas"], status_url: "https://status.plentific.com/api/v2/status.json", page_url: "https://status.plentific.com", type: "statuspage" },
-  // Zenput — operations execution platform for restaurants and multi-unit operators
   { id: "zenput", name: "Zenput", tags: ["operations", "restaurant", "multi-unit", "compliance", "saas"], status_url: "https://status.zenput.com/api/v2/status.json", page_url: "https://status.zenput.com", type: "statuspage" },
-  // Chameleon — product adoption and user onboarding tours platform
   { id: "chameleon_so", name: "Chameleon", tags: ["product-adoption", "onboarding", "ux", "saas", "growth"], status_url: "https://status.chameleon.io/api/v2/status.json", page_url: "https://status.chameleon.io", type: "statuspage" },
-  // Tick 492 additions — 11 new live-verified services
-  // LangSmith — LangChain's LLMOps and AI observability platform for tracing and evaluating LLM apps
   { id: "langchain_smith", name: "LangSmith", tags: ["ai", "llmops", "observability", "developer-tools", "llm"], status_url: "https://status.smith.langchain.com/api/v2/status.json", page_url: "https://status.smith.langchain.com", type: "statuspage" },
-  // Temporal — open-source durable workflow orchestration and microservice orchestration platform
   { id: "temporal_io", name: "Temporal", tags: ["workflow", "orchestration", "distributed-systems", "developer-tools", "cloud"], status_url: "https://status.temporal.io/api/v2/status.json", page_url: "https://status.temporal.io", type: "statuspage" },
-  // Heap — automatic product analytics platform that captures every user interaction
   { id: "heap_analytics", name: "Heap", tags: ["analytics", "product-analytics", "user-behavior", "saas", "developer-tools"], status_url: "https://status.heap.io/api/v2/status.json", page_url: "https://status.heap.io", type: "statuspage" },
-  // Sanity — structured content platform and headless CMS with real-time collaboration
   { id: "sanity_io", name: "Sanity", tags: ["cms", "headless-cms", "content", "developer-tools", "saas"], status_url: "https://status.sanity.io/api/v2/status.json", page_url: "https://status.sanity.io", type: "statuspage" },
-  // Harmonic (MediaKind) — professional video encoding, transcoding, and streaming infrastructure
   { id: "mediakind", name: "Harmonic MediaKind", tags: ["video", "streaming", "encoding", "media", "enterprise"], status_url: "https://status.harmonicinc.com/api/v2/status.json", page_url: "https://status.harmonicinc.com", type: "statuspage" },
-  // Healthwise — evidence-based patient education and clinical decision-support content platform
   { id: "healthwise", name: "Healthwise", tags: ["healthcare", "patient-education", "clinical", "content", "saas"], status_url: "https://status.healthwise.net/api/v2/status.json", page_url: "https://status.healthwise.net", type: "statuspage" },
-  // Sila Money — ACH and digital banking API platform for embedding payments into apps
   { id: "sila_money", name: "Sila", tags: ["payments", "fintech", "banking", "ach", "api"], status_url: "https://status.silamoney.com/api/v2/status.json", page_url: "https://status.silamoney.com", type: "statuspage" },
-  // Unit — banking-as-a-service platform for embedding financial products into software
   { id: "unit_finance", name: "Unit", tags: ["banking", "fintech", "baas", "payments", "api"], status_url: "https://status.unit.co/api/v2/status.json", page_url: "https://status.unit.co", type: "statuspage" },
-  // Homebase — employee scheduling, time tracking, and HR tools for hourly workers and small businesses
   { id: "homebase_app", name: "Homebase", tags: ["scheduling", "time-tracking", "hr", "workforce-management", "smb"], status_url: "https://status.joinhomebase.com/api/v2/status.json", page_url: "https://status.joinhomebase.com", type: "statuspage" },
-  // Codat — universal API for financial data — connects to accounting, banking, and commerce platforms
   { id: "codat_io", name: "Codat", tags: ["fintech", "financial-data", "accounting", "api", "integration"], status_url: "https://status.codat.io/api/v2/status.json", page_url: "https://status.codat.io", type: "statuspage" },
-  // Rutter — universal commerce and ERP data API for embedded fintech and accounting integrations
   { id: "rutter_api", name: "Rutter", tags: ["fintech", "commerce", "erp", "api", "integration"], status_url: "https://status.rutterapi.com/api/v2/status.json", page_url: "https://status.rutterapi.com", type: "statuspage" },
-  // Tick 509 additions — 10 new live-verified services
-  // OnFinality — multi-chain blockchain node infrastructure and API service for Web3 developers
   { id: "onfinality_io", name: "OnFinality", tags: ["blockchain", "web3", "node-infrastructure", "api", "multichain"], status_url: "https://status.onfinality.io/api/v2/status.json", page_url: "https://status.onfinality.io", type: "statuspage" },
-  // D-ID — AI-powered video generation and digital human avatar platform
-  { id: "d_id", name: "D-ID", tags: ["ai", "video", "avatar", "generative-ai", "saas"], status_url: "https://status.d-id.com/api/v2/status.json", page_url: "https://status.d-id.com", type: "statuspage" },
-  // Para — embedded Web3 wallet SDK for account abstraction and gasless transactions
   { id: "para_wallet", name: "Para", tags: ["web3", "wallet", "account-abstraction", "developer-tools", "api"], status_url: "https://status.getpara.com/api/v2/status.json", page_url: "https://status.getpara.com", type: "statuspage" },
-  // Stackup — ERC-4337 account abstraction bundler and paymaster infrastructure for Web3 apps
   { id: "stackup", name: "Stackup", tags: ["web3", "erc4337", "account-abstraction", "bundler", "infrastructure"], status_url: "https://status.stackup.sh/api/v2/status.json", page_url: "https://status.stackup.sh", type: "statuspage" },
-  // Click2Mail — cloud-based direct mail printing and mailing API for physical mail delivery
   { id: "click2mail", name: "Click2Mail", tags: ["direct-mail", "printing", "postal", "api", "saas"], status_url: "https://status.click2mail.com/api/v2/status.json", page_url: "https://status.click2mail.com", type: "statuspage" },
-  // Sine — workplace visitor management and contractor check-in platform (Australia)
   { id: "sine", name: "Sine", tags: ["visitor-management", "workplace", "contractor", "safety", "saas"], status_url: "https://status.sine.co/api/v2/status.json", page_url: "https://status.sine.co", type: "statuspage" },
-  // MindStudio — no-code AI app builder for creating custom AI assistants and workflows
   { id: "mindstudio", name: "MindStudio", tags: ["ai", "no-code", "llm", "app-builder", "saas"], status_url: "https://status.mindstudio.ai/api/v2/status.json", page_url: "https://status.mindstudio.ai", type: "statuspage" },
-  // ChatBot — AI chatbot platform by Text.com for automated customer conversations
   { id: "chatbot_com", name: "ChatBot", tags: ["chatbot", "ai", "customer-support", "automation", "saas"], status_url: "https://status.chatbot.com/api/v2/status.json", page_url: "https://status.chatbot.com", type: "statuspage" },
-  // ChatGuru — Brazilian WhatsApp Business chatbot and customer messaging platform
   { id: "chatguru", name: "ChatGuru", tags: ["chatbot", "whatsapp", "messaging", "customer-support", "brazil"], status_url: "https://status.chatguru.com.br/api/v2/status.json", page_url: "https://status.chatguru.com.br", type: "statuspage" },
-  // ChargeHub — EV charging station network directory and routing service for electric vehicles
   { id: "chargehub", name: "ChargeHub", tags: ["ev", "electric-vehicle", "charging", "network", "saas"], status_url: "https://status.chargehub.com/api/v2/status.json", page_url: "https://status.chargehub.com", type: "statuspage" },
-  // Tick 518 additions — 10 new live-verified services
-  // Carrot Fertility — global fertility and family-forming employee benefits platform
   { id: "carrot_fertility", name: "Carrot Fertility", tags: ["employee-benefits", "fertility", "healthcare", "hr", "saas"], status_url: "https://status.carrot.com/api/v2/status.json", page_url: "https://status.carrot.com", type: "statuspage" },
-  // GBIF — Global Biodiversity Information Facility; open data infrastructure for biodiversity research
   { id: "gbif", name: "GBIF", tags: ["biodiversity", "open-science", "research", "data", "api"], status_url: "https://status.gbif.org/api/v2/status.json", page_url: "https://status.gbif.org", type: "statuspage" },
-  // Gigs — embedded eSIM and mobile connectivity platform for apps and marketplaces
   { id: "gigs", name: "Gigs", tags: ["esim", "telecom", "mobile", "connectivity", "api"], status_url: "https://status.gigs.com/api/v2/status.json", page_url: "https://status.gigs.com", type: "statuspage" },
-  // Cisco Jasper — enterprise IoT device connectivity management and control center platform
   { id: "cisco_jasper", name: "Cisco Jasper", tags: ["iot", "connectivity", "device-management", "telecom", "enterprise"], status_url: "https://status.jasper.com/api/v2/status.json", page_url: "https://status.jasper.com", type: "statuspage" },
-  // Upstart — AI-powered consumer lending and credit decisioning platform
   { id: "upstart", name: "Upstart", tags: ["fintech", "lending", "ai", "credit", "consumer-finance"], status_url: "https://status.upstart.com/api/v2/status.json", page_url: "https://status.upstart.com", type: "statuspage" },
-  // Accelerate Learning — K-12 science curriculum and STEMscopes digital learning platform
   { id: "accelerate_learning", name: "Accelerate Learning", tags: ["edtech", "k12", "curriculum", "science", "saas"], status_url: "https://status.acceleratelearning.com/api/v2/status.json", page_url: "https://status.acceleratelearning.com", type: "statuspage" },
-  // Amplify — K-12 digital curriculum and assessment platform for core subjects
   { id: "amplify_education", name: "Amplify", tags: ["edtech", "k12", "curriculum", "assessment", "literacy"], status_url: "https://status.amplify.com/api/v2/status.json", page_url: "https://status.amplify.com", type: "statuspage" },
-  // Babel Street — AI-powered data intelligence and threat analytics platform
   { id: "babel_street", name: "Babel Street", tags: ["intelligence", "data-analytics", "security", "ai", "enterprise"], status_url: "https://status.babelstreet.com/api/v2/status.json", page_url: "https://status.babelstreet.com", type: "statuspage" },
-  // Torchbox — UK digital agency hosting platform; creators of the Wagtail open-source CMS
   { id: "torchbox", name: "Torchbox", tags: ["digital-agency", "cms", "wagtail", "hosting", "uk"], status_url: "https://status.torchbox.com/api/v2/status.json", page_url: "https://status.torchbox.com", type: "statuspage" },
-  // Fireside — podcast hosting and creator community platform for independent podcasters
   { id: "fireside_fm", name: "Fireside", tags: ["podcast", "hosting", "media", "community", "creator"], status_url: "https://fireside.statuspage.io/api/v2/status.json", page_url: "https://fireside.statuspage.io", type: "statuspage" },
-  // Oyster — global employer-of-record and HR platform for distributed teams in 180+ countries
-  { id: "oyster_hr", name: "Oyster", tags: ["hr", "eor", "remote-work", "global-employment", "saas"], status_url: "https://status.oysterhr.com/api/v2/status.json", page_url: "https://status.oysterhr.com", type: "statuspage" },
-  // Layer — AI data labeling and annotation platform for training computer vision and NLP models
   { id: "layer_ai", name: "Layer", tags: ["ai", "data-labeling", "annotation", "ml", "developer-tools"], status_url: "https://status.layer.ai/api/v2/status.json", page_url: "https://status.layer.ai", type: "statuspage" },
-  // Spring Health — employer-sponsored mental health and EAP benefits platform
-  { id: "spring_health", name: "Spring Health", tags: ["mental-health", "employee-benefits", "healthcare", "eap", "saas"], status_url: "https://springhealth.statuspage.io/api/v2/status.json", page_url: "https://springhealth.statuspage.io", type: "statuspage" },
-  // Perion — digital advertising technology platform for connected TV, retail media, and display
-  { id: "perion", name: "Perion", tags: ["adtech", "digital-advertising", "ctv", "retail-media", "saas"], status_url: "https://status.perion.com/api/v2/status.json", page_url: "https://status.perion.com", type: "statuspage" },
-  // Packiyo — cloud-based warehouse management and e-commerce fulfillment platform
   { id: "packiyo", name: "Packiyo", tags: ["ecommerce", "fulfillment", "wms", "warehousing", "saas"], status_url: "https://status.packiyo.com/api/v2/status.json", page_url: "https://status.packiyo.com", type: "statuspage" },
-  // Mambu Payments — cloud-native banking and payments engine (Mambu SaaS core banking)
   { id: "mambu_payments", name: "Mambu Payments", tags: ["fintech", "banking", "payments", "cloud-banking", "saas"], status_url: "https://status.numeral.io/api/v2/status.json", page_url: "https://status.numeral.io", type: "statuspage" },
-  // Riverside.fm — professional podcast and video recording platform for remote interviews
-  { id: "riverside_fm", name: "Riverside.fm", tags: ["podcast", "video", "recording", "media", "creator-tools"], status_url: "https://status.riverside.fm/api/v2/status.json", page_url: "https://status.riverside.fm", type: "statuspage" },
-  // Instructure — education technology company behind Canvas LMS and Mastery Connect
-  { id: "instructure", name: "Instructure", tags: ["edtech", "lms", "canvas", "education", "k12"], status_url: "https://status.instructure.com/api/v2/status.json", page_url: "https://status.instructure.com", type: "statuspage" },
-  // Pear Deck Learning — interactive presentation and formative assessment platform for K-12 classrooms
   { id: "pear_deck", name: "Pear Deck Learning", tags: ["edtech", "k12", "classroom", "assessment", "presentations"], status_url: "https://status.peardeck.com/api/v2/status.json", page_url: "https://status.peardeck.com", type: "statuspage" },
-  // Parchment — digital credential and academic transcript delivery platform for education institutions
   { id: "parchment", name: "Parchment", tags: ["edtech", "credentials", "transcripts", "higher-ed", "verification"], status_url: "https://status.parchment.com/api/v2/status.json", page_url: "https://status.parchment.com", type: "statuspage" },
-  // iDenfy — identity verification and KYC/AML compliance platform
   { id: "idenfy", name: "iDenfy", tags: ["identity", "kyc", "verification", "aml", "compliance"], status_url: "https://idenfy.statuspage.io/api/v2/status.json", page_url: "https://idenfy.statuspage.io", type: "statuspage" },
-  // Medusa — open-source headless ecommerce platform for developers
   { id: "medusa", name: "Medusa", tags: ["ecommerce", "headless", "open-source", "developer-tools", "saas"], status_url: "https://medusajs.statuspage.io/api/v2/status.json", page_url: "https://medusajs.statuspage.io", type: "statuspage" },
-  // Apsis One — APSIS email marketing and marketing automation platform
   { id: "apsis_one", name: "Apsis One", tags: ["email", "marketing", "automation", "saas", "nordics"], status_url: "https://status.apsis.one/api/v2/status.json", page_url: "https://status.apsis.one", type: "statuspage" },
-  // Iconfinder — icon and illustration marketplace for designers
   { id: "iconfinder", name: "Iconfinder", tags: ["icons", "design", "illustrations", "assets", "marketplace"], status_url: "https://iconfinder.statuspage.io/api/v2/status.json", page_url: "https://iconfinder.statuspage.io", type: "statuspage" },
-  // Altmetric — research impact and academic attention scoring platform
   { id: "altmetric", name: "Altmetric", tags: ["research", "academia", "metrics", "analytics", "science"], status_url: "https://status.altmetric.com/api/v2/status.json", page_url: "https://status.altmetric.com", type: "statuspage" },
-  // Trusona — passwordless and phishing-resistant authentication platform
   { id: "trusona", name: "Trusona", tags: ["authentication", "passwordless", "identity", "security", "saas"], status_url: "https://status.trusona.com/api/v2/status.json", page_url: "https://status.trusona.com", type: "statuspage" },
-  // Freshpaint — HIPAA-compliant data privacy and analytics routing platform
   { id: "freshpaint", name: "Freshpaint", tags: ["analytics", "privacy", "hipaa", "data-routing", "healthcare"], status_url: "https://freshpaint.statuspage.io/api/v2/status.json", page_url: "https://freshpaint.statuspage.io", type: "statuspage" },
-  // Blotout — privacy-first analytics and data collection platform
   { id: "blotout", name: "Blotout", tags: ["analytics", "privacy", "first-party", "data", "developer-tools"], status_url: "https://status.blotout.io/api/v2/status.json", page_url: "https://status.blotout.io", type: "statuspage" },
-  // Raidboxes — managed WordPress hosting platform
   { id: "raidboxes", name: "Raidboxes", tags: ["hosting", "wordpress", "managed", "saas", "europe"], status_url: "https://raidboxes.statuspage.io/api/v2/status.json", page_url: "https://raidboxes.statuspage.io", type: "statuspage" },
-  // Keen — event data streaming and analytics API platform
   { id: "keen", name: "Keen", tags: ["analytics", "event-data", "api", "streaming", "developer-tools"], status_url: "https://status.keen.io/api/v2/status.json", page_url: "https://status.keen.io", type: "statuspage" },
-  // Octadesk — customer service and CRM platform for Brazilian market
   { id: "octadesk", name: "Octadesk", tags: ["customer-service", "crm", "chat", "saas", "brazil"], status_url: "https://status.octadesk.com/api/v2/status.json", page_url: "https://status.octadesk.com", type: "statuspage" },
-  // Emotive — SMS and conversational commerce platform for ecommerce brands
   { id: "emotive", name: "Emotive", tags: ["sms", "ecommerce", "marketing", "conversational", "saas"], status_url: "https://status.emotive.io/api/v2/status.json", page_url: "https://status.emotive.io", type: "statuspage" },
-  // Clarivate — academic and scientific intelligence research platform
   { id: "clarivate", name: "Clarivate", tags: ["research", "academia", "intelligence", "data", "analytics"], status_url: "https://status.clarivate.com/api/v2/status.json", page_url: "https://status.clarivate.com", type: "statuspage" },
-  // ISO — International Organization for Standardization digital services
   { id: "iso", name: "ISO", tags: ["standards", "research", "data", "international", "organization"], status_url: "https://iso.statuspage.io/api/v2/status.json", page_url: "https://status.iso.org", type: "statuspage" },
-  // Tabby — MENA BNPL and payments platform
   { id: "tabby", name: "Tabby", tags: ["fintech", "bnpl", "payments", "mena", "saas"], status_url: "https://www.tabby-status.com/api/v2/status.json", page_url: "https://www.tabby-status.com", type: "statuspage" },
-  // Factorial HR — EU HR, payroll, and people management platform
   { id: "factorial_hr", name: "Factorial HR", tags: ["hr", "hrms", "payroll", "saas", "europe"], status_url: "https://status.factorialhr.com/api/v2/status.json", page_url: "https://status.factorialhr.com", type: "statuspage" },
-  // Hive — project management and collaboration platform
   { id: "hive_app", name: "Hive", tags: ["project-management", "collaboration", "productivity", "saas"], status_url: "https://status.hive.com/api/v2/status.json", page_url: "https://status.hive.com", type: "statuspage" },
-  // Indicative — product analytics and user journey intelligence platform
   { id: "indicative", name: "Indicative", tags: ["analytics", "product-analytics", "data", "saas"], status_url: "https://status.indicative.com/api/v2/status.json", page_url: "https://status.indicative.com", type: "statuspage" },
-  // Bucket — feature flags and experimentation platform for developers
-  { id: "bucket_io", name: "Bucket", tags: ["feature-flags", "developer-tools", "experimentation", "saas"], status_url: "https://status.bucket.io/api/v2/status.json", page_url: "https://status.bucket.io", type: "statuspage" },
-  // Maven AGI — AI-powered customer support automation platform
   { id: "maven_agi", name: "Maven AGI", tags: ["ai", "customer-support", "llm", "saas"], status_url: "https://status.mavenagi.com/api/v2/status.json", page_url: "https://status.mavenagi.com", type: "statuspage" },
-  // FareHarbor — booking and reservation software for tours and activities
-  { id: "fareharbor", name: "FareHarbor", tags: ["travel", "booking", "activities", "saas", "tours"], status_url: "https://status.fareharbor.com/api/v2/status.json", page_url: "https://status.fareharbor.com", type: "statuspage" },
-  // Obsidian Security — cloud security posture and identity threat detection
   { id: "obsidian_security", name: "Obsidian Security", tags: ["security", "cloud-security", "saas", "enterprise"], status_url: "https://status.obsidiansecurity.com/api/v2/status.json", page_url: "https://status.obsidiansecurity.com", type: "statuspage" },
-  // Simon Data — customer data platform for marketing and analytics
   { id: "simon_data", name: "Simon Data", tags: ["cdp", "data", "marketing", "customer-data", "saas"], status_url: "https://status.simondata.com/api/v2/status.json", page_url: "https://status.simondata.com", type: "statuspage" },
-  // Nightfall — AI-native DLP and data security platform
-  { id: "nightfall", name: "Nightfall", tags: ["security", "dlp", "data-protection", "ai", "saas"], status_url: "https://status.nightfall.ai/api/v2/status.json", page_url: "https://status.nightfall.ai", type: "statuspage" },
   { id: "clinician_nexus", name: "Clinician Nexus", tags: ["healthcare", "clinical", "education", "residency", "saas"], status_url: "https://cliniciannexus.statuspage.io/api/v2/status.json", page_url: "https://cliniciannexus.statuspage.io", type: "statuspage" },
   { id: "attendease", name: "AttendEase", tags: ["events", "event-management", "conference", "registration", "saas"], status_url: "https://attendease.statuspage.io/api/v2/status.json", page_url: "https://attendease.statuspage.io", type: "statuspage" },
   { id: "robin_powered", name: "Robin", tags: ["workplace", "desk-booking", "meeting-rooms", "hybrid-work", "saas"], status_url: "https://status.robinpowered.com/api/v2/status.json", page_url: "https://status.robinpowered.com", type: "statuspage" },
   { id: "teem", name: "Teem", tags: ["workplace", "meeting-rooms", "desk-booking", "facilities", "saas"], status_url: "https://status.teem.com/api/v2/status.json", page_url: "https://status.teem.com", type: "statuspage" },
-  { id: "emburse_professional", name: "Emburse Professional", tags: ["expense-management", "fintech", "corporate-cards", "saas", "enterprise"], status_url: "https://certify.statuspage.io/api/v2/status.json", page_url: "https://certify.statuspage.io", type: "statuspage" },
   { id: "snapsheet", name: "Snapsheet", tags: ["insurance", "claims", "insurtech", "auto", "saas"], status_url: "https://snapsheet.statuspage.io/api/v2/status.json", page_url: "https://snapsheet.statuspage.io", type: "statuspage" },
   { id: "lawyaw", name: "Lawyaw", tags: ["legal", "document-automation", "law-firm", "contracts", "saas"], status_url: "https://lawyaw.statuspage.io/api/v2/status.json", page_url: "https://lawyaw.statuspage.io", type: "statuspage" },
   { id: "findmyshift", name: "Findmyshift", tags: ["scheduling", "workforce", "shift-management", "hr", "saas"], status_url: "https://findmyshift.statuspage.io/api/v2/status.json", page_url: "https://findmyshift.statuspage.io", type: "statuspage" },
@@ -7234,76 +4361,27 @@ const SERVICES: ServiceConfig[] = [
   { id: "gophr", name: "Gophr", tags: ["delivery", "courier", "logistics", "on-demand", "uk"], status_url: "https://gophr.statuspage.io/api/v2/status.json", page_url: "https://gophr.statuspage.io", type: "statuspage" },
   { id: "haystax", name: "Haystax", tags: ["security", "threat-intelligence", "analytics", "ai", "enterprise"], status_url: "https://haystax.statuspage.io/api/v2/status.json", page_url: "https://haystax.statuspage.io", type: "statuspage" },
   { id: "heyorca", name: "HeyOrca", tags: ["social-media", "scheduling", "agency", "collaboration", "saas"], status_url: "https://heyorca.statuspage.io/api/v2/status.json", page_url: "https://heyorca.statuspage.io", type: "statuspage" },
-  // Tick 598 additions — 13 new live-verified services
-  // MessageBird — global cloud communications platform for SMS, voice, chat, and email APIs
-  { id: "messagebird", name: "MessageBird", tags: ["sms", "messaging", "communication", "api", "cpaas"], status_url: "https://messagebird.statuspage.io/api/v2/status.json", page_url: "https://messagebird.statuspage.io", type: "statuspage" },
-  // Infobip — enterprise omnichannel communications platform for SMS, WhatsApp, email, and voice
-  { id: "infobip", name: "Infobip", tags: ["sms", "messaging", "communication", "omnichannel", "cpaas"], status_url: "https://status.infobip.com/api/v2/status.json", page_url: "https://status.infobip.com", type: "statuspage" },
-  // Wiz — cloud security platform for CSPM, CWPP, and infrastructure risk assessment
-  { id: "wiz", name: "Wiz", tags: ["security", "cloud-security", "cspm", "cwpp", "enterprise"], status_url: "https://status.wiz.io/api/v2/status.json", page_url: "https://status.wiz.io", type: "statuspage" },
-  // Orca Security — agentless cloud security platform for risk detection and compliance
-  { id: "orca_security", name: "Orca Security", tags: ["security", "cloud-security", "cspm", "agentless", "saas"], status_url: "https://status.orcasecurity.io/api/v2/status.json", page_url: "https://status.orcasecurity.io", type: "statuspage" },
-  // BigCommerce — enterprise e-commerce platform for B2C and B2B online stores
-  { id: "bigcommerce", name: "BigCommerce", tags: ["ecommerce", "saas", "b2b", "online-store", "payments"], status_url: "https://status.bigcommerce.com/api/v2/status.json", page_url: "https://status.bigcommerce.com", type: "statuspage" },
-  // Gusto — payroll, HR, and benefits platform for small and mid-size businesses
-  { id: "gusto", name: "Gusto", tags: ["payroll", "hr", "benefits", "small-business", "saas"], status_url: "https://status.gusto.com/api/v2/status.json", page_url: "https://status.gusto.com", type: "statuspage" },
-  // Rippling — workforce management platform for HR, payroll, IT, and spend management
-  { id: "rippling", name: "Rippling", tags: ["hr", "payroll", "it-management", "workforce", "saas"], status_url: "https://status.rippling.com/api/v2/status.json", page_url: "https://status.rippling.com", type: "statuspage" },
-  // Redpanda — developer-friendly Kafka-compatible streaming data platform
-  { id: "redpanda", name: "Redpanda", tags: ["streaming", "kafka", "data", "messaging", "developer-tools"], status_url: "https://status.redpanda.com/api/v2/status.json", page_url: "https://status.redpanda.com", type: "statuspage" },
-  // Pulumi — infrastructure-as-code platform using general-purpose programming languages
-  { id: "pulumi", name: "Pulumi", tags: ["iac", "devops", "infrastructure", "cloud", "developer-tools"], status_url: "https://status.pulumi.com/api/v2/status.json", page_url: "https://status.pulumi.com", type: "statuspage" },
-  // WorkOS — enterprise SSO, SCIM, and directory sync platform for B2B SaaS apps
-  { id: "workos", name: "WorkOS", tags: ["sso", "auth", "enterprise", "saml", "scim"], status_url: "https://status.workos.com/api/v2/status.json", page_url: "https://status.workos.com", type: "statuspage" },
-  // Frontegg — multi-tenant authentication and authorization platform for SaaS products
-  { id: "frontegg", name: "Frontegg", tags: ["auth", "authentication", "multi-tenant", "saas", "developer-tools"], status_url: "https://status.frontegg.com/api/v2/status.json", page_url: "https://status.frontegg.com", type: "statuspage" },
-  // Clerk — user authentication and management platform for modern web applications
-  { id: "clerk", name: "Clerk", tags: ["auth", "authentication", "identity", "developer-tools", "saas"], status_url: "https://status.clerk.com/api/v2/status.json", page_url: "https://status.clerk.com", type: "statuspage" },
-  // Fauna — distributed document-relational serverless database with strong consistency guarantees
-  { id: "fauna", name: "Fauna", tags: ["database", "serverless", "distributed", "document", "developer-tools"], status_url: "https://fauna.statuspage.io/api/v2/status.json", page_url: "https://fauna.statuspage.io", type: "statuspage" },
-  // Neon — serverless Postgres with branching, autoscaling, and instant provisioning
   { id: "neon_database", name: "Neon", tags: ["database", "postgres", "serverless", "developer-tools", "cloud"], status_url: "https://neondb.statuspage.io/api/v2/status.json", page_url: "https://neondb.statuspage.io", type: "statuspage" },
-  // Hawk AI — AML and financial crime compliance platform for fintechs and banks
   { id: "hawk_ai", name: "Hawk AI", tags: ["compliance", "aml", "fintech", "fraud", "security"], status_url: "https://status.hawk.ai/api/v2/status.json", page_url: "https://status.hawk.ai", type: "statuspage" },
-  // MathWorks — MATLAB and Simulink cloud products for technical computing and simulation
   { id: "mathworks", name: "MathWorks", tags: ["developer-tools", "simulation", "cloud", "education", "engineering"], status_url: "https://status.mathworks.com/api/v2/status.json", page_url: "https://status.mathworks.com", type: "statuspage" },
-  // Marvel App — UI/UX design prototyping and collaboration platform
   { id: "marvel", name: "Marvel App", tags: ["design", "prototyping", "collaboration", "saas", "developer-tools"], status_url: "https://status.marvelapp.com/api/v2/status.json", page_url: "https://status.marvelapp.com", type: "statuspage" },
-  // Percolate — enterprise content marketing and campaign management platform
   { id: "perkolate", name: "Percolate", tags: ["marketing", "content", "enterprise", "saas", "collaboration"], status_url: "https://status.percolate.com/api/v2/status.json", page_url: "https://status.percolate.com", type: "statuspage" },
-  // Smarty — US and international address verification and geocoding APIs
   { id: "smartystreets", name: "Smarty", tags: ["address-verification", "geocoding", "api", "developer-tools", "data"], status_url: "https://status.smarty.com/api/v2/status.json", page_url: "https://status.smarty.com", type: "statuspage" },
-  // Capacity — AI-powered support automation and helpdesk platform
   { id: "capacity", name: "Capacity", tags: ["ai", "support", "automation", "helpdesk", "saas"], status_url: "https://status.capacity.com/api/v2/status.json", page_url: "https://status.capacity.com", type: "statuspage" },
-  // Balto — real-time AI call guidance and coaching for contact center agents
   { id: "balto", name: "Balto", tags: ["ai", "contact-center", "sales", "coaching", "saas"], status_url: "https://status.balto.ai/api/v2/status.json", page_url: "https://status.balto.ai", type: "statuspage" },
-  // Cursor — AI-powered code editor with inline code generation and chat
   { id: "cursor_ai", name: "Cursor", tags: ["ai", "developer-tools", "code-editor", "ide", "saas"], status_url: "https://status.cursor.com/api/v2/status.json", page_url: "https://status.cursor.com", type: "statuspage" },
-  // Socket — supply chain security for open-source packages (npm, PyPI, Go, etc.)
   { id: "socket_security", name: "Socket", tags: ["security", "supply-chain", "developer-tools", "npm", "saas"], status_url: "https://status.socket.dev/api/v2/status.json", page_url: "https://status.socket.dev", type: "statuspage" },
-  // StackHawk — DAST API security testing integrated into CI/CD pipelines
   { id: "stack_hawk", name: "StackHawk", tags: ["security", "dast", "api-testing", "devops", "developer-tools"], status_url: "https://status.stackhawk.com/api/v2/status.json", page_url: "https://status.stackhawk.com", type: "statuspage" },
-  // PortSwigger / Burp Suite — web application security testing platform
   { id: "burp_suite", name: "PortSwigger / Burp Suite", tags: ["security", "web-security", "penetration-testing", "appsec", "developer-tools"], status_url: "https://status.portswigger.net/api/v2/status.json", page_url: "https://status.portswigger.net", type: "statuspage" },
-  // Gloat — workforce agility and talent marketplace platform
   { id: "gloat", name: "Gloat", tags: ["hr", "talent", "workforce", "internal-mobility", "saas"], status_url: "https://status.gloat.com/api/v2/status.json", page_url: "https://status.gloat.com", type: "statuspage" },
-  // Firsthand — AI-powered career guidance and talent platform
   { id: "firsthand", name: "Firsthand", tags: ["hr", "recruiting", "ai", "career", "saas"], status_url: "https://status.firsthand.ai/api/v2/status.json", page_url: "https://status.firsthand.ai", type: "statuspage" },
-  // HiredScore — AI-driven talent scoring and hiring platform
   { id: "hiredscore", name: "HiredScore", tags: ["hr", "recruiting", "ai", "talent", "enterprise"], status_url: "https://status.hiredscore.com/api/v2/status.json", page_url: "https://status.hiredscore.com", type: "statuspage" },
-  // Contrast Security — application security platform (IAST/RASP/SCA)
   { id: "contrastsecurity", name: "Contrast Security", tags: ["security", "appsec", "iast", "developer-tools", "enterprise"], status_url: "https://status.contrastsecurity.com/api/v2/status.json", page_url: "https://status.contrastsecurity.com", type: "statuspage" },
-  // Trusted — per diem and travel healthcare staffing platform
   { id: "trusted_health", name: "Trusted Health", tags: ["healthcare", "staffing", "nursing", "hr", "saas"], status_url: "https://status.trustedhealth.com/api/v2/status.json", page_url: "https://status.trustedhealth.com", type: "statuspage" },
-  // Genymotion — Android emulator and cloud device testing platform
   { id: "genymotion", name: "Genymotion", tags: ["mobile", "testing", "android", "emulator", "developer-tools"], status_url: "https://status.genymotion.com/api/v2/status.json", page_url: "https://status.genymotion.com", type: "statuspage" },
-  // Eventive — film festival and virtual cinema streaming platform
   { id: "eventive", name: "Eventive", tags: ["media", "streaming", "film-festival", "events", "saas"], status_url: "https://status.eventive.org/api/v2/status.json", page_url: "https://status.eventive.org", type: "statuspage" },
-  // MJ Freeway — seed-to-sale cannabis compliance and POS platform
   { id: "mjfreeway", name: "MJ Freeway", tags: ["cannabis", "pos", "compliance", "retail", "saas"], status_url: "https://status.mjplatform.com/api/v2/status.json", page_url: "https://status.mjplatform.com", type: "statuspage" },
-  // Veradigm FollowMyHealth — patient engagement and health record portal
   { id: "followmyhealth", name: "Veradigm FollowMyHealth", tags: ["healthcare", "ehr", "patient-portal", "saas", "health-it"], status_url: "https://status.followmyhealth.com/api/v2/status.json", page_url: "https://status.followmyhealth.com", type: "statuspage" },
-  // Doxy.me — HIPAA-compliant telehealth video platform
   { id: "doxyme", name: "Doxy.me", tags: ["telehealth", "healthcare", "video", "hipaa", "saas"], status_url: "https://status.doxy.me/api/v2/status.json", page_url: "https://status.doxy.me", type: "statuspage" },
 ];
 
@@ -7671,7 +4749,90 @@ async function fetchBetterStackStatus(svc: ServiceConfig): Promise<ServiceStatus
   }
 }
 
+async function fetchSalesforceIncident(): Promise<ServiceStatus["incident"] | undefined> {
+  try {
+    const res = await fetch("https://api.status.salesforce.com/v1/incidents/active", {
+      signal: AbortSignal.timeout(6000),
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) return undefined;
+    const incidents = (await res.json()) as Array<{
+      status?: string;
+      type?: string;
+      createdAt?: string;
+      isCore?: boolean;
+      affectsAll?: boolean;
+      serviceKeys?: string[];
+      instanceKeys?: string[];
+      IncidentImpacts?: Array<{ severity?: string; startTime?: string }>;
+      IncidentEvents?: Array<{ message?: string; createdAt?: string }>;
+    }>;
+    if (!Array.isArray(incidents) || incidents.length === 0) return undefined;
+    // Prefer core/platform-wide incidents over instance-local ones
+    const inc = incidents.find((i) => i.isCore || i.affectsAll) ?? incidents[0];
+    const impact = inc.IncidentImpacts?.[0];
+    const latestEvent = (inc.IncidentEvents ?? [])
+      .slice()
+      .sort((a, b) => String(b.createdAt ?? "").localeCompare(String(a.createdAt ?? "")))[0];
+    return {
+      name: `${inc.type ?? "Incident"} affecting ${inc.instanceKeys?.length ?? 0} instance(s)`,
+      impact: impact?.severity ?? "unknown",
+      status: inc.status ?? "unknown",
+      started_at: impact?.startTime ?? inc.createdAt ?? "",
+      latest_update: String(latestEvent?.message ?? "").slice(0, 500),
+      affected_components: inc.serviceKeys ?? [],
+    };
+  } catch {
+    return undefined;
+  }
+}
+
+// Salesforce Trust API — per-instance statuses, aggregated over production instances.
+// (The old /v1/summary endpoint was removed and now 404s.)
+async function fetchSalesforceStatus(svc: ServiceConfig): Promise<ServiceStatus> {
+  const now = new Date().toISOString();
+  try {
+    const res = await fetch(svc.status_url, {
+      signal: AbortSignal.timeout(8000),
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const instances = (await res.json()) as Array<{ key?: string; environment?: string; status?: string }>;
+    const prod = instances.filter((i) => i.environment === "production");
+    const majors = prod.filter((i) => (i.status ?? "").startsWith("MAJOR_INCIDENT")).length;
+    const minors = prod.filter((i) => (i.status ?? "").startsWith("MINOR_INCIDENT")).length;
+    const maintenance = prod.filter((i) => (i.status ?? "").startsWith("MAINTENANCE")).length;
+    let status: StatusIndicator;
+    if (majors > 0) status = majors > prod.length * 0.25 ? "major_outage" : "partial_outage";
+    else if (minors > 0) status = "degraded";
+    // A handful of pods in routine maintenance is normal at this fleet size — only
+    // surface "maintenance" when it exceeds 1% of production instances.
+    else if (maintenance > prod.length * 0.01) status = "maintenance";
+    else status = "operational";
+    const description = status === "operational"
+      ? maintenance > 0
+        ? `${prod.length - maintenance} of ${prod.length} production instances operational (${maintenance} in routine maintenance)`
+        : `All ${prod.length} production instances operational`
+      : `${prod.length} production instances: ${majors} major incident, ${minors} minor incident, ${maintenance} in maintenance`;
+    const incident = status !== "operational" && status !== "maintenance"
+      ? await fetchSalesforceIncident()
+      : undefined;
+    return {
+      id: svc.id, name: svc.name, status, description,
+      last_checked: now, source_url: svc.page_url,
+      ...(incident ? { incident } : {}),
+    };
+  } catch (err) {
+    return {
+      id: svc.id, name: svc.name, status: "unknown",
+      description: `Fetch failed: ${err instanceof Error ? err.message : String(err)}`,
+      last_checked: now, source_url: svc.page_url,
+    };
+  }
+}
+
 async function fetchFresh(svc: ServiceConfig): Promise<ServiceStatus> {
+  if (svc.type === "salesforce") return fetchSalesforceStatus(svc);
   if (svc.type === "gcp") return fetchGCPStatus(svc);
   if (svc.type === "slack") return fetchSlackStatus(svc);
   if (svc.type === "azure") return fetchAzureStatus(svc);
@@ -7796,7 +4957,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         properties: {
           service: {
             type: "string",
-            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 4066 services.",
+            description: "Optional: service ID to refresh (e.g. 'github'). If omitted, refreshes all 3629 services.",
           },
         },
         required: [],

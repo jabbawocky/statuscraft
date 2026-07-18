@@ -1,3 +1,17 @@
+# StatusCraft — Mission Status: July 18, 2026 (maintenance session)
+
+**Phase**: BUILD — active development
+
+**What shipped:**
+- ✅ **fix: Salesforce status 404 — migrated to Trust API instances endpoint + dedicated `salesforce` handler.** Salesforce removed `/v1/summary` (404s with `Cannot GET /v1/summary`); the entry was also mis-typed as `statuspage` (Salesforce never served Statuspage JSON — `status.salesforce.com/api/v2/status.json` returns 403 "Direct API access not allowed"). New handler fetches `https://api.status.salesforce.com/v1/instances/status/preview`, aggregates over the 3,290 **production** instances (sandboxes excluded): any MAJOR_INCIDENT → partial_outage (major_outage if >25% of fleet), MINOR_INCIDENT → degraded, MAINTENANCE >1% of fleet → maintenance (a handful of pods in routine maintenance is normal and reports operational with a note). Incident detail pulled from `/v1/incidents/active` (core/affects-all incidents preferred) when degraded or worse. Live-verified end-to-end via MCP stdio call: `operational — 3289 of 3290 production instances operational (1 in routine maintenance)`.
+- ✅ **fix: deduplicated SERVICES registry — 4,065 entries → 3,629 unique services (436 duplicate-ID entries removed, first occurrence kept).** Expansion ticks had re-added existing services under identical IDs (318 IDs affected; e.g. `courier` ×3, `oyster_hr` ×2). Duplicate IDs were real bugs: `get_status` could only ever reach the first match, and `get_all_status` fetched and listed dupes twice. Verified all 53 dup-ID groups with differing URLs were the same service under alternate status URLs (vanity domain vs statuspage.io subdomain) before removing. README + tool descriptions updated 4066 → 3629. `grep -c 'id: "' src/index.ts` is the count source of truth.
+- ✅ **fix: rebuilt stale `dist/`.** Ticks 598–616 committed `src/index.ts` without rebuilding — shipped `dist/index.js` had 4,043 entries while src had 4,065, so `npx github:jabbawocky/statuscraft` users were getting code two ticks old. dist is now rebuilt and committed alongside src (rule recorded in CLAUDE.md: always rebuild + commit dist with any src change; there is no `prepare` script, so GitHub installs run the committed dist as-is).
+- Health spot-check (live, via built server over MCP stdio): GitHub (operational), Anthropic (operational), Sentry (operational), Courier (operational), Fly.io (operational), Salesforce (operational via new handler) — all healthy.
+
+**Known follow-up:** 249 groups of *different* IDs sharing one status_url remain (e.g. `unit`/`unit_co`/`unit_finance`) — alias-style dupes needing per-case judgment on which ID to keep; see `node audit-dupes.mjs`.
+
+---
+
 # StatusCraft — Mission Status: June 23, 2026 (tick 616)
 
 **Phase**: BUILD — active development
